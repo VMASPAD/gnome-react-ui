@@ -1,0 +1,117 @@
+---
+title: Floating
+---
+
+# Floating
+
+## FloatingDelayGroup
+
+Experimental next version of `FloatingDelayGroup` to become the default
+in the future. This component is not yet stable.
+Provides context for a group of floating elements that should share a
+`delay`. Unlike `FloatingDelayGroup`, `useDelayGroup` with this
+component does not cause a re-render of unrelated consumers of the
+context when the delay changes.
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **delay*** | `Delay` | — | The delay to use for the group when it's not in the instant phase. |
+| **timeoutMs** | `number` | — | An optional explicit timeout to use for the group, which represents when<br/>grouping logic will no longer be active after the close delay completes.<br/>This is useful if you want grouping to “last” longer than the close delay,<br/>for example if there is no close delay at all. |
+
+
+---
+
+## FloatingFocusManager
+
+Provides focus management for the floating element.
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **context*** | `FloatingRootStore \| FloatingContext` | — | The floating context returned from `useFloatingRootContext`. |
+| **openInteractionType** | `any` | — | The interaction type used to open the floating element. |
+| **disabled** | `boolean` | `false` | Whether or not the focus manager should be disabled. Useful to delay focus<br/>management until after a transition completes or some other conditional<br/>state. |
+| **initialFocus** | `boolean \| RefObject<HTMLElement> \| (...) => boolean \| void \| HTMLElement)` | `true` | Determines the element to focus when the floating element is opened.<br/><br/>- `false`: Do not move focus.<br/>- `true`: Move focus based on the default behavior (first tabbable element or floating element).<br/>- `RefObject`: Move focus to the ref element.<br/>- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).<br/>  Return an element to focus, `true` to use default behavior, `null` to fallback to default behavior,<br/>  or `false`/`undefined` to do nothing. |
+| **returnFocus** | `boolean \| RefObject<HTMLElement> \| (...) => boolean \| void \| HTMLElement)` | `true` | Determines the element to focus when the floating element is closed.<br/><br/>- `false`: Do not move focus.<br/>- `true`: Move focus based on the default behavior (reference or previously focused element).<br/>- `RefObject`: Move focus to the ref element.<br/>- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).<br/>  Return an element to focus, `true` to use the default behavior, `null` to fallback to default behavior,<br/>  or `false`/`undefined` to do nothing. |
+| **restoreFocus** | `boolean \| "popup"` | `false` | Determines where focus should be restored if focus inside the floating element is lost<br/>(such as due to the removal of the currently focused element from the DOM).<br/><br/>- `true`: restore to the nearest tabbable element inside the floating tree (previous<br/>  tabbable if possible, otherwise the last tabbable, then the floating element itself)<br/>- `'popup'`: restore directly to the floating element (container) itself<br/>- `false`: do not restore focus |
+| **modal** | `boolean` | `true` | Determines if focus is “modal”, meaning focus is fully trapped inside the<br/>floating element and outside content cannot be accessed. This includes<br/>screen reader virtual cursors. |
+| **closeOnFocusOut** | `boolean` | `true` | Determines whether `focusout` event listeners that control whether the<br/>floating element should be closed if the focus moves outside of it are<br/>attached to the reference and floating elements. This affects non-modal<br/>focus management. |
+| **nextFocusableElement** | `HTMLElement \| RefObject<HTMLElement>` | — | Overrides the element to focus when tabbing forward out of the floating element. |
+| **previousFocusableElement** | `HTMLElement \| RefObject<HTMLElement>` | — | Overrides the element to focus when tabbing backward out of the floating element. |
+| **beforeContentFocusGuardRef** | `RefObject<HTMLSpanElement>` | — | Ref to the focus guard preceding the floating element content.<br/>Can be useful to focus the popup progammatically. |
+| **externalTree** | `FloatingTreeStore` | — | External FlatingTree to use when the one provided by context can't be used. |
+
+
+---
+
+## FloatingPortal
+
+Portals the floating element into a given container element — by default,
+outside of the app root and into the body.
+This is necessary to ensure the floating element can appear outside any
+potential parent containers that cause clipping (such as `overflow: hidden`),
+while retaining its location in the React tree.
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **container** | `HTMLElement \| ShadowRoot \| RefObject<HTMLElement \| ShadowRoot>` | — | A parent element to render the portal element into. |
+| **renderGuards** | `boolean` | — | — |
+
+
+---
+
+## FloatingNode
+
+Provides parent node context for nested floating elements.
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **id*** | `string` | — | — |
+
+
+---
+
+## FloatingTree
+
+Provides context for nested floating elements when they are not children of
+each other on the DOM.
+This is not necessary in all cases, except when there must be explicit communication between parent and child floating elements. It is necessary for:
+- The `bubbles` option in the `useDismiss()` Hook
+- Nested virtual list navigation
+- Nested floating elements that each open on hover
+- Custom communication between parent and child floating elements
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **externalTree** | `FloatingTreeStore` | — | — |
+
+
+---
+
+## FloatingPortalLite
+
+`FloatingPortal` includes tabbable logic handling for focus management.
+For components that don't need tabbable logic, use `FloatingPortalLite`.
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **container** | `HTMLElement \| ShadowRoot \| RefObject<HTMLElement \| ShadowRoot>` | — | A parent element to render the portal element into. |
+
+
+---
+

@@ -1,0 +1,91 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/button/Button.tsx",
+    "description": "A button component that can be used to trigger actions.\nRenders a `<button>` element.\n\nDocumentation: [Base UI Button](https://base-ui.com/react/components/button)",
+    "displayName": "Button",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ButtonState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ButtonState>"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "focusableWhenDisabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the button should be focusable when disabled.",
+        "name": "focusableWhenDisabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/button/Button.tsx",
+          "name": "ButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/button/Button.tsx",
+            "name": "ButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/button/ButtonDataAttributes.tsx",
+    "description": "Present when the button is disabled.",
+    "displayName": "ButtonDataAttributes.disabled",
+    "methods": [],
+    "props": {}
+  }
+]

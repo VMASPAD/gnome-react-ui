@@ -1,0 +1,30 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/collection/GroupCollectionContext.tsx",
+    "description": "",
+    "displayName": "GroupCollectionProvider",
+    "methods": [],
+    "props": {
+      "items": {
+        "defaultValue": null,
+        "description": "",
+        "name": "items",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/collection/GroupCollectionContext.tsx",
+          "name": "Props"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/collection/GroupCollectionContext.tsx",
+            "name": "Props"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "readonly any[]"
+        }
+      }
+    }
+  }
+]

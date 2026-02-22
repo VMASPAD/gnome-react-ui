@@ -1,0 +1,463 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toolbar/button/ToolbarButton.tsx",
+    "description": "A button that can be used as-is or as a trigger for other components.\nRenders a `<button>` element.\n\nDocumentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)",
+    "displayName": "ToolbarButton",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ToolbarButtonState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToolbarButtonState>"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "When `true` the item is disabled.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toolbar/button/ToolbarButton.tsx",
+          "name": "ToolbarButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toolbar/button/ToolbarButton.tsx",
+            "name": "ToolbarButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "focusableWhenDisabled": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "When `true` the item remains focuseable when disabled.",
+        "name": "focusableWhenDisabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toolbar/button/ToolbarButton.tsx",
+          "name": "ToolbarButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toolbar/button/ToolbarButton.tsx",
+            "name": "ToolbarButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toolbar/group/ToolbarGroup.tsx",
+    "description": "Groups several toolbar items or toggles.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)",
+    "displayName": "ToolbarGroup",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ToolbarRootState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToolbarRootState>"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "When `true` all toolbar items in the group are disabled.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toolbar/group/ToolbarGroup.tsx",
+          "name": "ToolbarGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toolbar/group/ToolbarGroup.tsx",
+            "name": "ToolbarGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toolbar/input/ToolbarInput.tsx",
+    "description": "A native input element that integrates with Toolbar keyboard navigation.\nRenders an `<input>` element.\n\nDocumentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)",
+    "displayName": "ToolbarInput",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ToolbarInputState) => string)"
+        }
+      },
+      "defaultValue": {
+        "defaultValue": null,
+        "description": "",
+        "name": "defaultValue",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toolbar/input/ToolbarInput.tsx",
+          "name": "ToolbarInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toolbar/input/ToolbarInput.tsx",
+            "name": "ToolbarInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number | readonly string[]"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToolbarInputState>"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "When `true` the item is disabled.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toolbar/input/ToolbarInput.tsx",
+          "name": "ToolbarInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toolbar/input/ToolbarInput.tsx",
+            "name": "ToolbarInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "focusableWhenDisabled": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "When `true` the item remains focuseable when disabled.",
+        "name": "focusableWhenDisabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toolbar/input/ToolbarInput.tsx",
+          "name": "ToolbarInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toolbar/input/ToolbarInput.tsx",
+            "name": "ToolbarInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toolbar/link/ToolbarLink.tsx",
+    "description": "A link component.\nRenders an `<a>` element.\n\nDocumentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)",
+    "displayName": "ToolbarLink",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ToolbarLinkState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToolbarLinkState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toolbar/root/ToolbarRoot.tsx",
+    "description": "A container for grouping a set of controls, such as buttons, toggle groups, or menus.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)",
+    "displayName": "ToolbarRoot",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ToolbarRootState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToolbarRootState>"
+        }
+      },
+      "disabled": {
+        "defaultValue": null,
+        "description": "",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toolbar/root/ToolbarRoot.tsx",
+          "name": "ToolbarRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toolbar/root/ToolbarRoot.tsx",
+            "name": "ToolbarRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "orientation": {
+        "defaultValue": {
+          "value": "'horizontal'"
+        },
+        "description": "The orientation of the toolbar.",
+        "name": "orientation",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toolbar/root/ToolbarRoot.tsx",
+          "name": "ToolbarRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toolbar/root/ToolbarRoot.tsx",
+            "name": "ToolbarRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Orientation"
+        }
+      },
+      "loopFocus": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "If `true`, using keyboard navigation will wrap focus to the other end of the toolbar once the end is reached.",
+        "name": "loopFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toolbar/root/ToolbarRoot.tsx",
+          "name": "ToolbarRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toolbar/root/ToolbarRoot.tsx",
+            "name": "ToolbarRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toolbar/separator/ToolbarSeparator.tsx",
+    "description": "A separator element accessible to screen readers.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)",
+    "displayName": "ToolbarSeparator",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SeparatorState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SeparatorState>"
+        }
+      },
+      "orientation": {
+        "defaultValue": {
+          "value": "'horizontal'"
+        },
+        "description": "The orientation of the separator.",
+        "name": "orientation",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/separator/Separator.tsx",
+          "name": "SeparatorProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/separator/Separator.tsx",
+            "name": "SeparatorProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Orientation"
+        }
+      }
+    }
+  }
+]

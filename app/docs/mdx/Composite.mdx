@@ -1,0 +1,74 @@
+---
+title: Composite
+---
+
+# Composite
+
+## CompositeItem
+
+
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **metadata** | `Metadata` | — | — |
+| **refs** | `Ref<HTMLElement>[]` | — | — |
+| **props** | `(...) => Record<string, any>))[]` | — | — |
+| **state** | `Record<string, any>` | — | — |
+| **stateAttributesMapping** | `StateAttributesMapping<State>` | — | — |
+| **tag** | `keyof IntrinsicElements` | — | — |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## CompositeList
+
+Provides context for a list of items in a composite component.
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **elementsRef*** | `RefObject<HTMLElement[]>` | — | A ref to the list of HTML elements, ordered by their index.<br/>`useListNavigation`'s `listRef` prop. |
+| **labelsRef** | `RefObject<string[]>` | — | A ref to the list of element labels, ordered by their index.<br/>`useTypeahead`'s `listRef` prop. |
+| **onMapChange** | `(...) => void` | — | — |
+
+
+---
+
+## CompositeRoot
+
+
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **props** | `(...) => Record<string, any>))[]` | — | — |
+| **state** | `Record<string, any>` | — | — |
+| **stateAttributesMapping** | `StateAttributesMapping<State>` | — | — |
+| **refs** | `Ref<HTMLElement>[]` | — | — |
+| **tag** | `keyof IntrinsicElements` | — | — |
+| **orientation** | `"both" \| "horizontal" \| "vertical"` | — | — |
+| **cols** | `number` | — | — |
+| **loopFocus** | `boolean` | — | — |
+| **highlightedIndex** | `number` | — | — |
+| **onHighlightedIndexChange** | `(...) => void` | — | — |
+| **itemSizes** | `Dimensions[]` | — | — |
+| **dense** | `boolean` | — | — |
+| **enableHomeAndEndKeys** | `boolean` | — | — |
+| **onMapChange** | `(...) => void` | — | — |
+| **stopEventPropagation** | `boolean` | — | — |
+| **rootRef** | `RefObject<HTMLElement>` | — | — |
+| **disabledIndices** | `number[]` | — | — |
+| **modifierKeys** | `("Alt" \| "Control" \| "Meta" \| "Shift")[]` | — | — |
+| **highlightItemOnHover** | `boolean` | — | — |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+

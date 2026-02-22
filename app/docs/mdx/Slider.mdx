@@ -1,0 +1,132 @@
+---
+title: Slider
+---
+
+# Slider
+
+## SliderControl
+
+The clickable, interactive part of the slider.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## SliderIndicator
+
+Visualizes the current value of the slider.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## SliderRoot
+
+Groups all parts of the slider.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **defaultValue** | `number \| readonly number[]` | — | The uncontrolled value of the slider when it’s initially rendered.<br/><br/>To render a controlled slider, use the `value` prop instead. |
+| **disabled** | `boolean` | `false` | Whether the slider should ignore user interaction. |
+| **format** | `NumberFormatOptions` | — | Options to format the input value. |
+| **locale** | `LocalesArgument` | — | The locale used by `Intl.NumberFormat` when formatting the value.<br/>Defaults to the user's runtime locale. |
+| **max** | `number` | `100` | The maximum allowed value of the slider.<br/>Should not be equal to min. |
+| **min** | `number` | `0` | The minimum allowed value of the slider.<br/>Should not be equal to max. |
+| **minStepsBetweenValues** | `number` | `0` | The minimum steps between values in a range slider. |
+| **name** | `string` | — | Identifies the field when a form is submitted. |
+| **orientation** | `Orientation` | `'horizontal'` | The component orientation. |
+| **step** | `number` | `1` | The granularity with which the slider can step through values. (A "discrete" slider.)<br/>The `min` prop serves as the origin for the valid values.<br/>We recommend (max - min) to be evenly divisible by the step. |
+| **largeStep** | `number` | `10` | The granularity with which the slider can step through values when using Page Up/Page Down or Shift + Arrow Up/Arrow Down. |
+| **thumbAlignment** | `"center" \| "edge" \| "edge-client-only"` | `'center'` | How the thumb(s) are aligned relative to `Slider.Control` when the value is at `min` or `max`:<br/>- `center`: The center of the thumb is aligned with the control edge<br/>- `edge`: The thumb is inset within the control such that its edge is aligned with the control edge<br/>- `edge-client-only`: Same as `edge` but renders after React hydration on the client, reducing bundle size in return |
+| **thumbCollisionBehavior** | `"none" \| "push" \| "swap"` | `'push'` | Controls how thumbs behave when they collide during pointer interactions.<br/><br/>- `'push'` (default): Thumbs push each other without restoring their previous positions when dragged back.<br/>- `'swap'`: Thumbs swap places when dragged past each other.<br/>- `'none'`: Thumbs cannot move past each other; excess movement is ignored. |
+| **value** | `number \| readonly number[]` | — | The value of the slider.<br/>For ranged sliders, provide an array with two values. |
+| **onValueChange** | `(...) => void` | — | Callback function that is fired when the slider's value changed.<br/>You can pull out the new value by accessing `event.target.value` (any).<br/><br/>The `eventDetails.reason` indicates what triggered the change:<br/><br/>- `'input-change'` when the hidden range input emits a change event (for example, via form integration)<br/>- `'track-press'` when the control track is pressed<br/>- `'drag'` while dragging a thumb<br/>- `'keyboard'` for keyboard input<br/>- `'none'` when the change is triggered without a specific interaction |
+| **onValueCommitted** | `(...) => void` | — | Callback function that is fired when the `pointerup` is triggered.<br/>**Warning**: This is a generic event not a change event.<br/><br/>The `eventDetails.reason` indicates what triggered the commit:<br/><br/>- `'drag'` while dragging a thumb<br/>- `'track-press'` when the control track is pressed<br/>- `'keyboard'` for keyboard input<br/>- `'input-change'` when the hidden range input emits a change event (for example, via form integration)<br/>- `'none'` when the commit occurs without a specific interaction |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## SliderThumb
+
+The draggable part of the slider at the tip of the indicator.
+Renders a `&lt;div&gt;` element and a nested `&lt;input type="range"&gt;`.
+
+Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **tabIndex** | `number` | — | Optional tab index attribute forwarded to the `input`. |
+| **onFocus** | `FocusEventHandler<HTMLInputElement>` | — | A focus handler forwarded to the `input`. |
+| **onBlur** | `FocusEventHandler<HTMLInputElement>` | — | A blur handler forwarded to the `input`. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **index** | `number` | — | The index of the thumb which corresponds to the index of its value in the<br/>`value` or `defaultValue` array.<br/>This prop is required to support server-side rendering for range sliders<br/>with multiple thumbs.<br/>@example  |
+| **disabled** | `boolean` | `false` | Whether the thumb should ignore user interaction. |
+| **inputRef** | `Ref<HTMLInputElement>` | — | A ref to access the nested input element. |
+| **getAriaValueText** | `(...) => string` | — | A function which returns a string value for the [`aria-valuetext`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext) attribute of the `input`.<br/>This is important for screen reader users. |
+| **getAriaLabel** | `(...) => string` | — | A function which returns a string value for the [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) attribute of the `input`. |
+
+
+---
+
+## SliderTrack
+
+Contains the slider indicator and represents the entire range of the slider.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## SliderValue
+
+Displays the current value of the slider as text.
+Renders an `&lt;output&gt;` element.
+
+Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+

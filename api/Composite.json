@@ -1,0 +1,627 @@
+[
+  {
+    "tags": {
+      "internal": ""
+    },
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/composite/item/CompositeItem.tsx",
+    "description": "",
+    "displayName": "CompositeItem",
+    "methods": [],
+    "props": {
+      "metadata": {
+        "defaultValue": null,
+        "description": "",
+        "name": "metadata",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/item/CompositeItem.tsx",
+          "name": "CompositeItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/item/CompositeItem.tsx",
+            "name": "CompositeItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Metadata"
+        }
+      },
+      "refs": {
+        "defaultValue": null,
+        "description": "",
+        "name": "refs",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/item/CompositeItem.tsx",
+          "name": "CompositeItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/item/CompositeItem.tsx",
+            "name": "CompositeItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Ref<HTMLElement>[]"
+        }
+      },
+      "props": {
+        "defaultValue": null,
+        "description": "",
+        "name": "props",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/item/CompositeItem.tsx",
+          "name": "CompositeItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/item/CompositeItem.tsx",
+            "name": "CompositeItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(Record<string, any> | (() => Record<string, any>))[]"
+        }
+      },
+      "state": {
+        "defaultValue": null,
+        "description": "",
+        "name": "state",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/item/CompositeItem.tsx",
+          "name": "CompositeItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/item/CompositeItem.tsx",
+            "name": "CompositeItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Record<string, any>"
+        }
+      },
+      "stateAttributesMapping": {
+        "defaultValue": null,
+        "description": "",
+        "name": "stateAttributesMapping",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/item/CompositeItem.tsx",
+          "name": "CompositeItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/item/CompositeItem.tsx",
+            "name": "CompositeItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "StateAttributesMapping<State>"
+        }
+      },
+      "tag": {
+        "defaultValue": null,
+        "description": "",
+        "name": "tag",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/item/CompositeItem.tsx",
+          "name": "CompositeItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/item/CompositeItem.tsx",
+            "name": "CompositeItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "keyof IntrinsicElements"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: State) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, State>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {
+      "internal": ""
+    },
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/composite/list/CompositeList.tsx",
+    "description": "Provides context for a list of items in a composite component.",
+    "displayName": "CompositeList",
+    "methods": [],
+    "props": {
+      "elementsRef": {
+        "defaultValue": null,
+        "description": "A ref to the list of HTML elements, ordered by their index.\n`useListNavigation`'s `listRef` prop.",
+        "name": "elementsRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/list/CompositeList.tsx",
+          "name": "CompositeListProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/list/CompositeList.tsx",
+            "name": "CompositeListProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "RefObject<HTMLElement[]>"
+        }
+      },
+      "labelsRef": {
+        "defaultValue": null,
+        "description": "A ref to the list of element labels, ordered by their index.\n`useTypeahead`'s `listRef` prop.",
+        "name": "labelsRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/list/CompositeList.tsx",
+          "name": "CompositeListProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/list/CompositeList.tsx",
+            "name": "CompositeListProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "RefObject<string[]>"
+        }
+      },
+      "onMapChange": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onMapChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/list/CompositeList.tsx",
+          "name": "CompositeListProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/list/CompositeList.tsx",
+            "name": "CompositeListProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(newMap: Map<Element, CompositeMetadata<Metadata>>) => void"
+        }
+      }
+    }
+  },
+  {
+    "tags": {
+      "internal": ""
+    },
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+    "description": "",
+    "displayName": "CompositeRoot",
+    "methods": [],
+    "props": {
+      "props": {
+        "defaultValue": null,
+        "description": "",
+        "name": "props",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(Record<string, any> | (() => Record<string, any>))[]"
+        }
+      },
+      "state": {
+        "defaultValue": null,
+        "description": "",
+        "name": "state",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Record<string, any>"
+        }
+      },
+      "stateAttributesMapping": {
+        "defaultValue": null,
+        "description": "",
+        "name": "stateAttributesMapping",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "StateAttributesMapping<State>"
+        }
+      },
+      "refs": {
+        "defaultValue": null,
+        "description": "",
+        "name": "refs",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Ref<HTMLElement>[]"
+        }
+      },
+      "tag": {
+        "defaultValue": null,
+        "description": "",
+        "name": "tag",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "keyof IntrinsicElements"
+        }
+      },
+      "orientation": {
+        "defaultValue": null,
+        "description": "",
+        "name": "orientation",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"both\" | \"horizontal\" | \"vertical\""
+        }
+      },
+      "cols": {
+        "defaultValue": null,
+        "description": "",
+        "name": "cols",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "loopFocus": {
+        "defaultValue": null,
+        "description": "",
+        "name": "loopFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "highlightedIndex": {
+        "defaultValue": null,
+        "description": "",
+        "name": "highlightedIndex",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "onHighlightedIndexChange": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onHighlightedIndexChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(index: number) => void"
+        }
+      },
+      "itemSizes": {
+        "defaultValue": null,
+        "description": "",
+        "name": "itemSizes",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Dimensions[]"
+        }
+      },
+      "dense": {
+        "defaultValue": null,
+        "description": "",
+        "name": "dense",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "enableHomeAndEndKeys": {
+        "defaultValue": null,
+        "description": "",
+        "name": "enableHomeAndEndKeys",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "onMapChange": {
+        "defaultValue": null,
+        "description": "",
+        "name": "onMapChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(newMap: Map<Node, CompositeMetadata<Metadata>>) => void"
+        }
+      },
+      "stopEventPropagation": {
+        "defaultValue": null,
+        "description": "",
+        "name": "stopEventPropagation",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "rootRef": {
+        "defaultValue": null,
+        "description": "",
+        "name": "rootRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "RefObject<HTMLElement>"
+        }
+      },
+      "disabledIndices": {
+        "defaultValue": null,
+        "description": "",
+        "name": "disabledIndices",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number[]"
+        }
+      },
+      "modifierKeys": {
+        "defaultValue": null,
+        "description": "",
+        "name": "modifierKeys",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(\"Alt\" | \"Control\" | \"Meta\" | \"Shift\")[]"
+        }
+      },
+      "highlightItemOnHover": {
+        "defaultValue": null,
+        "description": "",
+        "name": "highlightItemOnHover",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+          "name": "CompositeRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/composite/root/CompositeRoot.tsx",
+            "name": "CompositeRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: State) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, State>"
+        }
+      }
+    }
+  }
+]

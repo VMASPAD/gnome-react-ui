@@ -1,0 +1,414 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/radio/indicator/RadioIndicator.tsx",
+    "description": "Indicates whether the radio button is selected.\nRenders a `<span>` element.\n\nDocumentation: [Base UI Radio](https://base-ui.com/react/components/radio)",
+    "displayName": "RadioIndicator",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: RadioIndicatorState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, RadioIndicatorState>"
+        }
+      },
+      "keepMounted": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to keep the HTML element in the DOM when the radio button is inactive.",
+        "name": "keepMounted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/radio/indicator/RadioIndicator.tsx",
+          "name": "RadioIndicatorProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/radio/indicator/RadioIndicator.tsx",
+            "name": "RadioIndicatorProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/radio/root/RadioRoot.tsx",
+    "description": "Represents the radio button itself.\nRenders a `<span>` element and a hidden `<input>` beside.\n\nDocumentation: [Base UI Radio](https://base-ui.com/react/components/radio)",
+    "displayName": "RadioRoot",
+    "methods": [],
+    "props": {
+      "value": {
+        "defaultValue": null,
+        "description": "The unique identifying value of the radio in a group.",
+        "name": "value",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/radio/root/RadioRoot.tsx",
+          "name": "RadioRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/radio/root/RadioRoot.tsx",
+            "name": "RadioRootProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "Value"
+        }
+      },
+      "disabled": {
+        "defaultValue": null,
+        "description": "Whether the component should ignore user interaction.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/radio/root/RadioRoot.tsx",
+          "name": "RadioRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/radio/root/RadioRoot.tsx",
+            "name": "RadioRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "required": {
+        "defaultValue": null,
+        "description": "Whether the user must choose a value before submitting a form.",
+        "name": "required",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/radio/root/RadioRoot.tsx",
+          "name": "RadioRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/radio/root/RadioRoot.tsx",
+            "name": "RadioRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "readOnly": {
+        "defaultValue": null,
+        "description": "Whether the user should be unable to select the radio button.",
+        "name": "readOnly",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/radio/root/RadioRoot.tsx",
+          "name": "RadioRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/radio/root/RadioRoot.tsx",
+            "name": "RadioRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "inputRef": {
+        "defaultValue": null,
+        "description": "A ref to access the hidden input element.",
+        "name": "inputRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/radio/root/RadioRoot.tsx",
+          "name": "RadioRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/radio/root/RadioRoot.tsx",
+            "name": "RadioRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Ref<HTMLInputElement>"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `true` if the rendered element is a native button.",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NonNativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NonNativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: RadioRootState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, RadioRootState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+    "description": "Provides a shared state to a series of radio buttons.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Radio Group](https://base-ui.com/react/components/radio)",
+    "displayName": "RadioGroup",
+    "methods": [],
+    "props": {
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component should ignore user interaction.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+          "name": "RadioGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+            "name": "RadioGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "readOnly": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the user should be unable to select a different radio button in the group.",
+        "name": "readOnly",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+          "name": "RadioGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+            "name": "RadioGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "required": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the user must choose a value before submitting a form.",
+        "name": "required",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+          "name": "RadioGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+            "name": "RadioGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "name": {
+        "defaultValue": null,
+        "description": "Identifies the field when a form is submitted.",
+        "name": "name",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+          "name": "RadioGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+            "name": "RadioGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "value": {
+        "defaultValue": null,
+        "description": "The controlled value of the radio item that should be currently selected.\n\nTo render an uncontrolled radio group, use the `defaultValue` prop instead.",
+        "name": "value",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+          "name": "RadioGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+            "name": "RadioGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Value"
+        }
+      },
+      "defaultValue": {
+        "defaultValue": null,
+        "description": "The uncontrolled value of the radio button that should be initially selected.\n\nTo render a controlled radio group, use the `value` prop instead.",
+        "name": "defaultValue",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+          "name": "RadioGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+            "name": "RadioGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Value"
+        }
+      },
+      "onValueChange": {
+        "defaultValue": null,
+        "description": "Callback fired when the value changes.",
+        "name": "onValueChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+          "name": "RadioGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+            "name": "RadioGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(value: Value, eventDetails: { reason: \"none\"; event: Event; cancel: () => void; allowPropagation: () => void; isCanceled: boolean; isPropagationAllowed: boolean; trigger: Element; }) => void"
+        }
+      },
+      "inputRef": {
+        "defaultValue": null,
+        "description": "A ref to access the hidden input element.",
+        "name": "inputRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+          "name": "RadioGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/radio-group/RadioGroup.tsx",
+            "name": "RadioGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Ref<HTMLInputElement>"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: RadioGroupState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, RadioGroupState>"
+        }
+      }
+    }
+  }
+]

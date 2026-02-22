@@ -1,0 +1,35 @@
+---
+title: Button
+---
+
+# Button
+
+## Button
+
+A button component that can be used to trigger actions.
+Renders a `&lt;button&gt;` element.
+
+Documentation: [Base UI Button](https://base-ui.com/react/components/button)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **nativeButton** | `boolean` | `true` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`). |
+| **focusableWhenDisabled** | `boolean` | `false` | Whether the button should be focusable when disabled. |
+
+
+---
+
+## ButtonDataAttributes.disabled
+
+Present when the button is disabled.
+
+### Props
+
+No props available.
+
+---
+

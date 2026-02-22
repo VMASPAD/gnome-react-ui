@@ -1,0 +1,328 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/context-menu/root/ContextMenuRoot.tsx",
+    "description": "A component that creates a context menu activated by right clicking or long pressing.\nDoesn’t render its own HTML element.\n\nDocumentation: [Base UI Context Menu](https://base-ui.com/react/components/context-menu)",
+    "displayName": "ContextMenuRoot",
+    "methods": [],
+    "props": {
+      "onOpenChange": {
+        "defaultValue": null,
+        "description": "Event handler called when the menu is opened or closed.",
+        "name": "onOpenChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/context-menu/root/ContextMenuRoot.tsx",
+          "name": "ContextMenuRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/context-menu/root/ContextMenuRoot.tsx",
+            "name": "ContextMenuRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean, eventDetails: ContextMenuRootChangeEventDetails) => void"
+        }
+      },
+      "children": {
+        "defaultValue": null,
+        "description": "The content of the popover.\nThis can be a regular React node or a render function that receives the `payload` of the active trigger.",
+        "name": "children",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+          "name": "MenuRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+            "name": "MenuRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode | PayloadChildRenderFunction<unknown>"
+        }
+      },
+      "open": {
+        "defaultValue": null,
+        "description": "Whether the menu is currently open.",
+        "name": "open",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+          "name": "MenuRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+            "name": "MenuRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component should ignore user interaction.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+          "name": "MenuRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+            "name": "MenuRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "orientation": {
+        "defaultValue": {
+          "value": "'vertical'"
+        },
+        "description": "The visual orientation of the menu.\nControls whether roving focus uses up/down or left/right arrow keys.",
+        "name": "orientation",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+          "name": "MenuRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+            "name": "MenuRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "MenuRootOrientation"
+        }
+      },
+      "triggerId": {
+        "defaultValue": null,
+        "description": "ID of the trigger that the popover is associated with.\nThis is useful in conjunction with the `open` prop to create a controlled popover.\nThere's no need to specify this prop when the popover is uncontrolled (i.e. when the `open` prop is not set).",
+        "name": "triggerId",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+          "name": "MenuRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+            "name": "MenuRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "loopFocus": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether to loop keyboard focus back to the first item\nwhen the end of the list is reached while using the arrow keys.",
+        "name": "loopFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+          "name": "MenuRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+            "name": "MenuRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "actionsRef": {
+        "defaultValue": null,
+        "description": "A ref to imperative actions.\n- `unmount`: When specified, the menu will not be unmounted when closed.\n   Instead, the `unmount` function must be called to unmount the menu manually.\n  Useful when the menu's animation is controlled by an external library.\n- `close`: When specified, the menu can be closed imperatively.",
+        "name": "actionsRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+          "name": "MenuRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+            "name": "MenuRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "RefObject<MenuRootActions>"
+        }
+      },
+      "handle": {
+        "defaultValue": null,
+        "description": "A handle to associate the menu with a trigger.\nIf specified, allows external triggers to control the menu's open state.",
+        "name": "handle",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+          "name": "MenuRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+            "name": "MenuRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "MenuHandle<unknown>"
+        }
+      },
+      "defaultOpen": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the menu is initially open.\n\nTo render a controlled menu, use the `open` prop instead.",
+        "name": "defaultOpen",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+          "name": "MenuRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+            "name": "MenuRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "onOpenChangeComplete": {
+        "defaultValue": null,
+        "description": "Event handler called after any animations complete when the menu is closed.",
+        "name": "onOpenChangeComplete",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+          "name": "MenuRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+            "name": "MenuRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean) => void"
+        }
+      },
+      "defaultTriggerId": {
+        "defaultValue": null,
+        "description": "ID of the trigger that the popover is associated with.\nThis is useful in conjunction with the `defaultOpen` prop to create an initially open popover.",
+        "name": "defaultTriggerId",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+          "name": "MenuRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+            "name": "MenuRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "highlightItemOnHover": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether moving the pointer over items should highlight them.\nDisabling this prop allows CSS `:hover` to be differentiated from the `:focus` (`data-highlighted`) state.",
+        "name": "highlightItemOnHover",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+          "name": "MenuRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+            "name": "MenuRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "closeParentOnEsc": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "When in a submenu, determines whether pressing the Escape key\ncloses the entire menu, or only the current child menu.",
+        "name": "closeParentOnEsc",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+          "name": "MenuRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menu/root/MenuRoot.tsx",
+            "name": "MenuRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/context-menu/trigger/ContextMenuTrigger.tsx",
+    "description": "An area that opens the menu on right click or long press.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Context Menu](https://base-ui.com/react/components/context-menu)",
+    "displayName": "ContextMenuTrigger",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ContextMenuTriggerState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ContextMenuTriggerState>"
+        }
+      }
+    }
+  }
+]

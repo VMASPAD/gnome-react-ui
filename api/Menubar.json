@@ -1,0 +1,125 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/menubar/Menubar.tsx",
+    "description": "The container for menus.\n\nDocumentation: [Base UI Menubar](https://base-ui.com/react/components/menubar)",
+    "displayName": "Menubar",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: MenubarState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, MenubarState>"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the whole menubar is disabled.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menubar/Menubar.tsx",
+          "name": "MenubarProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menubar/Menubar.tsx",
+            "name": "MenubarProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "orientation": {
+        "defaultValue": {
+          "value": "'horizontal'"
+        },
+        "description": "The orientation of the menubar.",
+        "name": "orientation",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menubar/Menubar.tsx",
+          "name": "MenubarProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menubar/Menubar.tsx",
+            "name": "MenubarProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "MenuRootOrientation"
+        }
+      },
+      "loopFocus": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether to loop keyboard focus back to the first item\nwhen the end of the list is reached while using the arrow keys.",
+        "name": "loopFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menubar/Menubar.tsx",
+          "name": "MenubarProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menubar/Menubar.tsx",
+            "name": "MenubarProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "modal": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the menubar is modal.",
+        "name": "modal",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/menubar/Menubar.tsx",
+          "name": "MenubarProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/menubar/Menubar.tsx",
+            "name": "MenubarProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  }
+]

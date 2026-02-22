@@ -1,0 +1,1676 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/arrow/SelectArrow.tsx",
+    "description": "Displays an element positioned against the select popup anchor.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectArrow",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SelectArrowState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectArrowState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/backdrop/SelectBackdrop.tsx",
+    "description": "An overlay displayed beneath the menu popup.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectBackdrop",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SelectBackdropState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectBackdropState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/group/SelectGroup.tsx",
+    "description": "Groups related select items with the corresponding label.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectGroup",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SelectGroupState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectGroupState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/group-label/SelectGroupLabel.tsx",
+    "description": "An accessible label that is automatically associated with its parent group.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectGroupLabel",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SelectGroupLabelState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectGroupLabelState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/icon/SelectIcon.tsx",
+    "description": "An icon that indicates that the trigger button opens a select popup.\nRenders a `<span>` element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectIcon",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SelectIconState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectIconState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/item/SelectItem.tsx",
+    "description": "An individual option in the select popup.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectItem",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SelectItemState) => string)"
+        }
+      },
+      "label": {
+        "defaultValue": null,
+        "description": "Specifies the text label to use when the item is matched during keyboard text navigation.\n\nDefaults to the item text content if not provided.",
+        "name": "label",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/item/SelectItem.tsx",
+          "name": "SelectItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/item/SelectItem.tsx",
+            "name": "SelectItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectItemState>"
+        }
+      },
+      "value": {
+        "defaultValue": {
+          "value": "null"
+        },
+        "description": "A unique value that identifies this select item.",
+        "name": "value",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/item/SelectItem.tsx",
+          "name": "SelectItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/item/SelectItem.tsx",
+            "name": "SelectItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "any"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component should ignore user interaction.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/item/SelectItem.tsx",
+          "name": "SelectItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/item/SelectItem.tsx",
+            "name": "SelectItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `true` if the rendered element is a native button.",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NonNativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NonNativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/item-indicator/SelectItemIndicator.tsx",
+    "description": "Indicates whether the select item is selected.\nRenders a `<span>` element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectItemIndicator",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SelectItemIndicatorState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectItemIndicatorState>"
+        }
+      },
+      "keepMounted": {
+        "defaultValue": null,
+        "description": "Whether to keep the HTML element in the DOM when the item is not selected.",
+        "name": "keepMounted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/item-indicator/SelectItemIndicator.tsx",
+          "name": "SelectItemIndicatorProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/item-indicator/SelectItemIndicator.tsx",
+            "name": "SelectItemIndicatorProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/item-text/SelectItemText.tsx",
+    "description": "A text label of the select item.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectItemText",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SelectItemTextState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectItemTextState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/list/SelectList.tsx",
+    "description": "A container for the select items.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectList",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SelectListState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectListState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/popup/SelectPopup.tsx",
+    "description": "A container for the select list.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectPopup",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SelectPopupState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectPopupState>"
+        }
+      },
+      "finalFocus": {
+        "defaultValue": null,
+        "description": "Determines the element to focus when the select popup is closed.\n\n- `false`: Do not move focus.\n- `true`: Move focus based on the default behavior (trigger or previously focused element).\n- `RefObject`: Move focus to the ref element.\n- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).\n  Return an element to focus, `true` to use the default behavior, or `false`/`undefined` to do nothing.",
+        "name": "finalFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/popup/SelectPopup.tsx",
+          "name": "SelectPopupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/popup/SelectPopup.tsx",
+            "name": "SelectPopupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | RefObject<HTMLElement> | ((closeType: InteractionType) => boolean | void | HTMLElement)"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/portal/SelectPortal.tsx",
+    "description": "A portal element that moves the popup to a different part of the DOM.\nBy default, the portal element is appended to `<body>`.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectPortal",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: State) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, State>"
+        }
+      },
+      "container": {
+        "defaultValue": null,
+        "description": "A parent element to render the portal element into.",
+        "name": "container",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingPortal.tsx",
+          "name": "Props"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingPortal.tsx",
+            "name": "Props"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "HTMLElement | ShadowRoot | RefObject<HTMLElement | ShadowRoot>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/positioner/SelectPositioner.tsx",
+    "description": "Positions the select popup.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectPositioner",
+    "methods": [],
+    "props": {
+      "anchor": {
+        "defaultValue": null,
+        "description": "An element to position the popup against.\nBy default, the popup will be positioned against the trigger.",
+        "name": "anchor",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Element | RefObject<Element> | VirtualElement | (() => Element | VirtualElement)"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SelectPositionerState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectPositionerState>"
+        }
+      },
+      "sticky": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to maintain the popup in the viewport after\nthe anchor element was scrolled out of view.",
+        "name": "sticky",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "side": {
+        "defaultValue": {
+          "value": "'bottom'"
+        },
+        "description": "Which side of the anchor element to align the popup against.\nMay automatically change to avoid collisions.",
+        "name": "side",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Side"
+        }
+      },
+      "align": {
+        "defaultValue": {
+          "value": "'center'"
+        },
+        "description": "How to align the popup relative to the specified side.",
+        "name": "align",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Align"
+        }
+      },
+      "positionMethod": {
+        "defaultValue": {
+          "value": "'absolute'"
+        },
+        "description": "Determines which CSS `position` property to use.",
+        "name": "positionMethod",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"fixed\" | \"absolute\""
+        }
+      },
+      "sideOffset": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "Distance between the anchor and the popup in pixels.\nAlso accepts a function that returns the distance to read the dimensions of the anchor\nand positioner elements, along with its side and alignment.\n\nThe function takes a `data` object parameter with the following properties:\n- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.\n- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.\n- `data.side`: which side of the anchor element the positioner is aligned against.\n- `data.align`: how the positioner is aligned relative to the specified side.\n@example ```jsx\n<Positioner\n  sideOffset={({ side, align, anchor, positioner }) => {\n    return side === 'top' || side === 'bottom'\n      ? anchor.height\n      : anchor.width;\n  }}\n/>\n```",
+        "name": "sideOffset",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number | OffsetFunction"
+        }
+      },
+      "alignOffset": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "Additional offset along the alignment axis in pixels.\nAlso accepts a function that returns the offset to read the dimensions of the anchor\nand positioner elements, along with its side and alignment.\n\nThe function takes a `data` object parameter with the following properties:\n- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.\n- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.\n- `data.side`: which side of the anchor element the positioner is aligned against.\n- `data.align`: how the positioner is aligned relative to the specified side.\n@example ```jsx\n<Positioner\n  alignOffset={({ side, align, anchor, positioner }) => {\n    return side === 'top' || side === 'bottom'\n      ? anchor.width\n      : anchor.height;\n  }}\n/>\n```",
+        "name": "alignOffset",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number | OffsetFunction"
+        }
+      },
+      "collisionBoundary": {
+        "defaultValue": {
+          "value": "'clipping-ancestors'"
+        },
+        "description": "An element or a rectangle that delimits the area that the popup is confined to.",
+        "name": "collisionBoundary",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Boundary"
+        }
+      },
+      "collisionPadding": {
+        "defaultValue": {
+          "value": "5"
+        },
+        "description": "Additional space to maintain from the edge of the collision boundary.",
+        "name": "collisionPadding",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Padding"
+        }
+      },
+      "arrowPadding": {
+        "defaultValue": {
+          "value": "5"
+        },
+        "description": "Minimum distance to maintain between the arrow and the edges of the popup.\n\nUse it to prevent the arrow element from hanging out of the rounded corners of a popup.",
+        "name": "arrowPadding",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "disableAnchorTracking": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to disable the popup from tracking any layout shift of its positioning anchor.",
+        "name": "disableAnchorTracking",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "collisionAvoidance": {
+        "defaultValue": null,
+        "description": "Determines how to handle collisions when positioning the popup.\n@example ```jsx\n<Positioner\n  collisionAvoidance={{\n    side: 'shift',\n    align: 'shift',\n    fallbackAxisSide: 'none',\n  }}\n/>\n```",
+        "name": "collisionAvoidance",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "CollisionAvoidance"
+        }
+      },
+      "alignItemWithTrigger": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the positioner overlaps the trigger so the selected item's text is aligned with the trigger's value text. This only applies to mouse input and is automatically disabled if there is not enough space.",
+        "name": "alignItemWithTrigger",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/positioner/SelectPositioner.tsx",
+          "name": "SelectPositionerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/positioner/SelectPositioner.tsx",
+            "name": "SelectPositionerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+    "description": "Groups all parts of the select.\nDoesn’t render its own HTML element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectRoot",
+    "methods": [],
+    "props": {
+      "inputRef": {
+        "defaultValue": null,
+        "description": "A ref to access the hidden input element.",
+        "name": "inputRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Ref<HTMLInputElement>"
+        }
+      },
+      "name": {
+        "defaultValue": null,
+        "description": "Identifies the field when a form is submitted.",
+        "name": "name",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "autoComplete": {
+        "defaultValue": null,
+        "description": "Provides a hint to the browser for autofill.\n@see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete",
+        "name": "autoComplete",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "id": {
+        "defaultValue": null,
+        "description": "The id of the Select.",
+        "name": "id",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "required": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the user must choose a value before submitting a form.",
+        "name": "required",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "readOnly": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the user should be unable to choose a different option from the select popup.",
+        "name": "readOnly",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component should ignore user interaction.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "multiple": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether multiple items can be selected.",
+        "name": "multiple",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "highlightItemOnHover": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether moving the pointer over items should highlight them.\nDisabling this prop allows CSS `:hover` to be differentiated from the `:focus` (`data-highlighted`) state.",
+        "name": "highlightItemOnHover",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "defaultOpen": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the select popup is initially open.\n\nTo render a controlled select popup, use the `open` prop instead.",
+        "name": "defaultOpen",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "onOpenChange": {
+        "defaultValue": null,
+        "description": "Event handler called when the select popup is opened or closed.",
+        "name": "onOpenChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean, eventDetails: SelectRootChangeEventDetails) => void"
+        }
+      },
+      "onOpenChangeComplete": {
+        "defaultValue": null,
+        "description": "Event handler called after any animations complete when the select popup is opened or closed.",
+        "name": "onOpenChangeComplete",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean) => void"
+        }
+      },
+      "open": {
+        "defaultValue": null,
+        "description": "Whether the select popup is currently open.",
+        "name": "open",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "modal": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Determines if the select enters a modal state when open.\n- `true`: user interaction is limited to the select: document page scroll is locked and pointer interactions on outside elements are disabled.\n- `false`: user interaction with the rest of the document is allowed.",
+        "name": "modal",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "actionsRef": {
+        "defaultValue": null,
+        "description": "A ref to imperative actions.\n- `unmount`: When specified, the select will not be unmounted when closed.\nInstead, the `unmount` function must be called to unmount the select manually.\nUseful when the select's animation is controlled by an external library.",
+        "name": "actionsRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "RefObject<SelectRootActions>"
+        }
+      },
+      "items": {
+        "defaultValue": null,
+        "description": "Data structure of the items rendered in the select popup.\nWhen specified, `<Select.Value>` renders the label of the selected item instead of the raw value.\n@example ```tsx\nconst items = {\n  sans: 'Sans-serif',\n  serif: 'Serif',\n  mono: 'Monospace',\n  cursive: 'Cursive',\n};\n<Select.Root items={items} />\n```",
+        "name": "items",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Record<string, ReactNode> | readonly { label: ReactNode; value: any; }[]"
+        }
+      },
+      "itemToStringLabel": {
+        "defaultValue": null,
+        "description": "When the item values are objects (`<Select.Item value={object}>`), this function converts the object value to a string representation for display in the trigger.\nIf the shape of the object is `{ value, label }`, the label will be used automatically without needing to specify this prop.",
+        "name": "itemToStringLabel",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(itemValue: Value) => string"
+        }
+      },
+      "itemToStringValue": {
+        "defaultValue": null,
+        "description": "When the item values are objects (`<Select.Item value={object}>`), this function converts the object value to a string representation for form submission.\nIf the shape of the object is `{ value, label }`, the value will be used automatically without needing to specify this prop.",
+        "name": "itemToStringValue",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(itemValue: Value) => string"
+        }
+      },
+      "isItemEqualToValue": {
+        "defaultValue": null,
+        "description": "Custom comparison logic used to determine if a select item value matches the current selected value. Useful when item values are objects without matching referentially.\nDefaults to `Object.is` comparison.",
+        "name": "isItemEqualToValue",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(itemValue: Value, value: Value) => boolean"
+        }
+      },
+      "defaultValue": {
+        "defaultValue": null,
+        "description": "The uncontrolled value of the select when it’s initially rendered.\n\nTo render a controlled select, use the `value` prop instead.",
+        "name": "defaultValue",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "SelectValueType<Value, Multiple>"
+        }
+      },
+      "value": {
+        "defaultValue": null,
+        "description": "The value of the select. Use when controlled.",
+        "name": "value",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "SelectValueType<Value, Multiple>"
+        }
+      },
+      "onValueChange": {
+        "defaultValue": null,
+        "description": "Event handler called when the value of the select changes.",
+        "name": "onValueChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+          "name": "SelectRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/root/SelectRoot.tsx",
+            "name": "SelectRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(value: SelectValueType<Value, Multiple> | (Multiple extends true ? never : null), eventDetails: SelectRootChangeEventDetails) => void"
+        }
+      }
+    }
+  },
+  {
+    "tags": {
+      "internal": ""
+    },
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/scroll-arrow/SelectScrollArrow.tsx",
+    "description": "",
+    "displayName": "SelectScrollArrow",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SelectScrollArrowState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectScrollArrowState>"
+        }
+      },
+      "keepMounted": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to keep the HTML element in the DOM while the select popup is not scrollable.",
+        "name": "keepMounted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/scroll-arrow/SelectScrollArrow.tsx",
+          "name": "SelectScrollArrowProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/scroll-arrow/SelectScrollArrow.tsx",
+            "name": "SelectScrollArrowProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "direction": {
+        "defaultValue": null,
+        "description": "",
+        "name": "direction",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/scroll-arrow/SelectScrollArrow.tsx",
+          "name": "SelectScrollArrowProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/scroll-arrow/SelectScrollArrow.tsx",
+            "name": "SelectScrollArrowProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "\"up\" | \"down\""
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/scroll-down-arrow/SelectScrollDownArrow.tsx",
+    "description": "An element that scrolls the select popup down when hovered. Does not render when using touch input.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectScrollDownArrow",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SelectScrollDownArrowState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectScrollDownArrowState>"
+        }
+      },
+      "keepMounted": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to keep the HTML element in the DOM while the select popup is not scrollable.",
+        "name": "keepMounted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/scroll-down-arrow/SelectScrollDownArrow.tsx",
+          "name": "SelectScrollDownArrowProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/scroll-down-arrow/SelectScrollDownArrow.tsx",
+            "name": "SelectScrollDownArrowProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/scroll-up-arrow/SelectScrollUpArrow.tsx",
+    "description": "An element that scrolls the select popup up when hovered. Does not render when using touch input.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectScrollUpArrow",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SelectScrollUpArrowState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectScrollUpArrowState>"
+        }
+      },
+      "keepMounted": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to keep the HTML element in the DOM while the select popup is not scrollable.",
+        "name": "keepMounted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/scroll-up-arrow/SelectScrollUpArrow.tsx",
+          "name": "SelectScrollUpArrowProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/scroll-up-arrow/SelectScrollUpArrow.tsx",
+            "name": "SelectScrollUpArrowProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/trigger/SelectTrigger.tsx",
+    "description": "A button that opens the select popup.\nRenders a `<button>` element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectTrigger",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SelectTriggerState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectTriggerState>"
+        }
+      },
+      "disabled": {
+        "defaultValue": null,
+        "description": "Whether the component should ignore user interaction.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/trigger/SelectTrigger.tsx",
+          "name": "SelectTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/trigger/SelectTrigger.tsx",
+            "name": "SelectTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/select/value/SelectValue.tsx",
+    "description": "A text label of the currently selected item.\nRenders a `<span>` element.\n\nDocumentation: [Base UI Select](https://base-ui.com/react/components/select)",
+    "displayName": "SelectValue",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SelectValueState) => string)"
+        }
+      },
+      "children": {
+        "defaultValue": null,
+        "description": "Accepts a function that returns a `ReactNode` to format the selected value.\n@example ```tsx\n<Select.Value>\n  {(value: string | null) => value ? labels[value] : 'No value'}\n</Select.Value>\n```",
+        "name": "children",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/value/SelectValue.tsx",
+          "name": "SelectValueProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/value/SelectValue.tsx",
+            "name": "SelectValueProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode | ((value: any) => ReactNode)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectValueState>"
+        }
+      },
+      "placeholder": {
+        "defaultValue": null,
+        "description": "The placeholder value to display when no value is selected.\nThis is overridden by `children` if specified, or by a null item's label in `items`.",
+        "name": "placeholder",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/select/value/SelectValue.tsx",
+          "name": "SelectValueProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/select/value/SelectValue.tsx",
+            "name": "SelectValueProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,2145 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/arrow/ComboboxArrow.tsx",
+    "description": "Displays an element positioned against the anchor.\nRenders a `<div>` element.",
+    "displayName": "ComboboxArrow",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxArrowState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxArrowState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/backdrop/ComboboxBackdrop.tsx",
+    "description": "An overlay displayed beneath the popup.\nRenders a `<div>` element.",
+    "displayName": "ComboboxBackdrop",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxBackdropState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxBackdropState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/chip/ComboboxChip.tsx",
+    "description": "An individual chip that represents a value in a multiselectable input.\nRenders a `<div>` element.",
+    "displayName": "ComboboxChip",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxChipState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxChipState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/chip-remove/ComboboxChipRemove.tsx",
+    "description": "A button to remove a chip.\nRenders a `<button>` element.",
+    "displayName": "ComboboxChipRemove",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxChipRemoveState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxChipRemoveState>"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/chips/ComboboxChips.tsx",
+    "description": "A container for the chips in a multiselectable input.\nRenders a `<div>` element.",
+    "displayName": "ComboboxChips",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxChipsState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxChipsState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/clear/ComboboxClear.tsx",
+    "description": "Clears the value when clicked.\nRenders a `<button>` element.",
+    "displayName": "ComboboxClear",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxClearState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxClearState>"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component should ignore user interaction.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/clear/ComboboxClear.tsx",
+          "name": "ComboboxClearProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/clear/ComboboxClear.tsx",
+            "name": "ComboboxClearProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "keepMounted": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component should remain mounted in the DOM when not visible.",
+        "name": "keepMounted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/clear/ComboboxClear.tsx",
+          "name": "ComboboxClearProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/clear/ComboboxClear.tsx",
+            "name": "ComboboxClearProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/collection/ComboboxCollection.tsx",
+    "description": "Renders filtered list items.\nDoesn't render its own HTML element.\n\nIf rendering a flat list, pass a function child to the `List` component instead, which implicitly wraps it.",
+    "displayName": "ComboboxCollection",
+    "methods": [],
+    "props": {}
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/empty/ComboboxEmpty.tsx",
+    "description": "Renders its children only when the list is empty.\nRequires the `items` prop on the root component.\nAnnounces changes politely to screen readers.\nRenders a `<div>` element.",
+    "displayName": "ComboboxEmpty",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxEmptyState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxEmptyState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/group/ComboboxGroup.tsx",
+    "description": "Groups related items with the corresponding label.\nRenders a `<div>` element.",
+    "displayName": "ComboboxGroup",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxGroupState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxGroupState>"
+        }
+      },
+      "items": {
+        "defaultValue": null,
+        "description": "Items to be rendered within this group.\nWhen provided, child `Collection` components will use these items.",
+        "name": "items",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/group/ComboboxGroup.tsx",
+          "name": "ComboboxGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/group/ComboboxGroup.tsx",
+            "name": "ComboboxGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "readonly any[]"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/group-label/ComboboxGroupLabel.tsx",
+    "description": "An accessible label that is automatically associated with its parent group.\nRenders a `<div>` element.",
+    "displayName": "ComboboxGroupLabel",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxGroupLabelState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxGroupLabelState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/icon/ComboboxIcon.tsx",
+    "description": "An icon that indicates that the trigger button opens the popup.\nRenders a `<span>` element.",
+    "displayName": "ComboboxIcon",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxIconState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxIconState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/input/ComboboxInput.tsx",
+    "description": "A text input to search for items in the list.\nRenders an `<input>` element.",
+    "displayName": "ComboboxInput",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxInputState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxInputState>"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component should ignore user interaction.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/input/ComboboxInput.tsx",
+          "name": "ComboboxInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/input/ComboboxInput.tsx",
+            "name": "ComboboxInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/item/ComboboxItem.tsx",
+    "description": "An individual item in the list.\nRenders a `<div>` element.",
+    "displayName": "ComboboxItem",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxItemState) => string)"
+        }
+      },
+      "onClick": {
+        "defaultValue": null,
+        "description": "An optional click handler for the item when selected.\nIt fires when clicking the item with the pointer, as well as when pressing `Enter` with the keyboard if the item is highlighted when the `Input` or `List` element has focus.",
+        "name": "onClick",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/item/ComboboxItem.tsx",
+          "name": "ComboboxItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/item/ComboboxItem.tsx",
+            "name": "ComboboxItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(event: BaseUIEvent<MouseEvent<HTMLDivElement, MouseEvent>>) => void"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxItemState>"
+        }
+      },
+      "index": {
+        "defaultValue": null,
+        "description": "The index of the item in the list. Improves performance when specified by avoiding the need to calculate the index automatically from the DOM.",
+        "name": "index",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/item/ComboboxItem.tsx",
+          "name": "ComboboxItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/item/ComboboxItem.tsx",
+            "name": "ComboboxItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "value": {
+        "defaultValue": {
+          "value": "null"
+        },
+        "description": "A unique value that identifies this item.",
+        "name": "value",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/item/ComboboxItem.tsx",
+          "name": "ComboboxItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/item/ComboboxItem.tsx",
+            "name": "ComboboxItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "any"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component should ignore user interaction.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/item/ComboboxItem.tsx",
+          "name": "ComboboxItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/item/ComboboxItem.tsx",
+            "name": "ComboboxItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `true` if the rendered element is a native button.",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NonNativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NonNativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/item-indicator/ComboboxItemIndicator.tsx",
+    "description": "Indicates whether the item is selected.\nRenders a `<span>` element.",
+    "displayName": "ComboboxItemIndicator",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxItemIndicatorState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxItemIndicatorState>"
+        }
+      },
+      "keepMounted": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to keep the HTML element in the DOM when the item is not selected.",
+        "name": "keepMounted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/item-indicator/ComboboxItemIndicator.tsx",
+          "name": "ComboboxItemIndicatorProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/item-indicator/ComboboxItemIndicator.tsx",
+            "name": "ComboboxItemIndicatorProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/list/ComboboxList.tsx",
+    "description": "A list container for the items.\nRenders a `<div>` element.",
+    "displayName": "ComboboxList",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxListState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxListState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/popup/ComboboxPopup.tsx",
+    "description": "A container for the list.\nRenders a `<div>` element.",
+    "displayName": "ComboboxPopup",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxPopupState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxPopupState>"
+        }
+      },
+      "initialFocus": {
+        "defaultValue": null,
+        "description": "Determines the element to focus when the popup is opened.\n\n- `false`: Do not move focus.\n- `true`: Move focus based on the default behavior (first tabbable element or popup).\n- `RefObject`: Move focus to the ref element.\n- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).\n  Return an element to focus, `true` to use the default behavior, or `false`/`undefined` to do nothing.",
+        "name": "initialFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/popup/ComboboxPopup.tsx",
+          "name": "ComboboxPopupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/popup/ComboboxPopup.tsx",
+            "name": "ComboboxPopupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | RefObject<HTMLElement> | ((openType: InteractionType) => boolean | void | HTMLElement)"
+        }
+      },
+      "finalFocus": {
+        "defaultValue": null,
+        "description": "Determines the element to focus when the popup is closed.\n\n- `false`: Do not move focus.\n- `true`: Move focus based on the default behavior (trigger or previously focused element).\n- `RefObject`: Move focus to the ref element.\n- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).\n  Return an element to focus, `true` to use the default behavior, or `false`/`undefined` to do nothing.",
+        "name": "finalFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/popup/ComboboxPopup.tsx",
+          "name": "ComboboxPopupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/popup/ComboboxPopup.tsx",
+            "name": "ComboboxPopupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | RefObject<HTMLElement> | ((closeType: InteractionType) => boolean | void | HTMLElement)"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/portal/ComboboxPortal.tsx",
+    "description": "A portal element that moves the popup to a different part of the DOM.\nBy default, the portal element is appended to `<body>`.\nRenders a `<div>` element.",
+    "displayName": "ComboboxPortal",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: State) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, State>"
+        }
+      },
+      "keepMounted": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to keep the portal mounted in the DOM while the popup is hidden.",
+        "name": "keepMounted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/portal/ComboboxPortal.tsx",
+          "name": "ComboboxPortalProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/portal/ComboboxPortal.tsx",
+            "name": "ComboboxPortalProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "container": {
+        "defaultValue": null,
+        "description": "A parent element to render the portal element into.",
+        "name": "container",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingPortal.tsx",
+          "name": "Props"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingPortal.tsx",
+            "name": "Props"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "HTMLElement | ShadowRoot | RefObject<HTMLElement | ShadowRoot>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/portal/ComboboxPortalContext.tsx",
+    "description": "",
+    "displayName": "ComboboxPortalContext",
+    "methods": [],
+    "props": {}
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/positioner/ComboboxPositioner.tsx",
+    "description": "Positions the popup against the trigger.\nRenders a `<div>` element.",
+    "displayName": "ComboboxPositioner",
+    "methods": [],
+    "props": {
+      "anchor": {
+        "defaultValue": null,
+        "description": "An element to position the popup against.\nBy default, the popup will be positioned against the trigger.",
+        "name": "anchor",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Element | RefObject<Element> | VirtualElement | (() => Element | VirtualElement)"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxPositionerState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxPositionerState>"
+        }
+      },
+      "sticky": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to maintain the popup in the viewport after\nthe anchor element was scrolled out of view.",
+        "name": "sticky",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "side": {
+        "defaultValue": {
+          "value": "'bottom'"
+        },
+        "description": "Which side of the anchor element to align the popup against.\nMay automatically change to avoid collisions.",
+        "name": "side",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Side"
+        }
+      },
+      "align": {
+        "defaultValue": {
+          "value": "'center'"
+        },
+        "description": "How to align the popup relative to the specified side.",
+        "name": "align",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Align"
+        }
+      },
+      "positionMethod": {
+        "defaultValue": {
+          "value": "'absolute'"
+        },
+        "description": "Determines which CSS `position` property to use.",
+        "name": "positionMethod",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"fixed\" | \"absolute\""
+        }
+      },
+      "sideOffset": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "Distance between the anchor and the popup in pixels.\nAlso accepts a function that returns the distance to read the dimensions of the anchor\nand positioner elements, along with its side and alignment.\n\nThe function takes a `data` object parameter with the following properties:\n- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.\n- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.\n- `data.side`: which side of the anchor element the positioner is aligned against.\n- `data.align`: how the positioner is aligned relative to the specified side.\n@example ```jsx\n<Positioner\n  sideOffset={({ side, align, anchor, positioner }) => {\n    return side === 'top' || side === 'bottom'\n      ? anchor.height\n      : anchor.width;\n  }}\n/>\n```",
+        "name": "sideOffset",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number | OffsetFunction"
+        }
+      },
+      "alignOffset": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "Additional offset along the alignment axis in pixels.\nAlso accepts a function that returns the offset to read the dimensions of the anchor\nand positioner elements, along with its side and alignment.\n\nThe function takes a `data` object parameter with the following properties:\n- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.\n- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.\n- `data.side`: which side of the anchor element the positioner is aligned against.\n- `data.align`: how the positioner is aligned relative to the specified side.\n@example ```jsx\n<Positioner\n  alignOffset={({ side, align, anchor, positioner }) => {\n    return side === 'top' || side === 'bottom'\n      ? anchor.width\n      : anchor.height;\n  }}\n/>\n```",
+        "name": "alignOffset",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number | OffsetFunction"
+        }
+      },
+      "collisionBoundary": {
+        "defaultValue": {
+          "value": "'clipping-ancestors'"
+        },
+        "description": "An element or a rectangle that delimits the area that the popup is confined to.",
+        "name": "collisionBoundary",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Boundary"
+        }
+      },
+      "collisionPadding": {
+        "defaultValue": {
+          "value": "5"
+        },
+        "description": "Additional space to maintain from the edge of the collision boundary.",
+        "name": "collisionPadding",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Padding"
+        }
+      },
+      "arrowPadding": {
+        "defaultValue": {
+          "value": "5"
+        },
+        "description": "Minimum distance to maintain between the arrow and the edges of the popup.\n\nUse it to prevent the arrow element from hanging out of the rounded corners of a popup.",
+        "name": "arrowPadding",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "disableAnchorTracking": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to disable the popup from tracking any layout shift of its positioning anchor.",
+        "name": "disableAnchorTracking",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "collisionAvoidance": {
+        "defaultValue": null,
+        "description": "Determines how to handle collisions when positioning the popup.\n@example ```jsx\n<Positioner\n  collisionAvoidance={{\n    side: 'shift',\n    align: 'shift',\n    fallbackAxisSide: 'none',\n  }}\n/>\n```",
+        "name": "collisionAvoidance",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "CollisionAvoidance"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/positioner/ComboboxPositionerContext.tsx",
+    "description": "",
+    "displayName": "ComboboxPositionerContext",
+    "methods": [],
+    "props": {}
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/root/ComboboxRoot.tsx",
+    "description": "Groups all parts of the combobox.\nDoesn't render its own HTML element.\n\nDocumentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)",
+    "displayName": "ComboboxRoot",
+    "methods": [],
+    "props": {
+      "filter": {
+        "defaultValue": null,
+        "description": "Filter function used to match items vs input query.",
+        "name": "filter",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(itemValue: Value, query: string, itemToString?: (itemValue: Value) => string) => boolean"
+        }
+      },
+      "id": {
+        "defaultValue": null,
+        "description": "The id of the component.",
+        "name": "id",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "open": {
+        "defaultValue": null,
+        "description": "Whether the popup is currently open. Use when controlled.",
+        "name": "open",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component should ignore user interaction.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "grid": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether list items are presented in a grid layout.\nWhen enabled, arrow keys navigate across rows and columns inferred from DOM rows.",
+        "name": "grid",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "inline": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the list is rendered inline without using the popup.",
+        "name": "inline",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "name": {
+        "defaultValue": null,
+        "description": "Identifies the field when a form is submitted.",
+        "name": "name",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "loopFocus": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether to loop keyboard focus back to the input when the end of the list is reached while using the arrow keys. The first item can then be reached by pressing <kbd>ArrowDown</kbd> again from the input, or the last item can be reached by pressing <kbd>ArrowUp</kbd> from the input.\nThe input is always included in the focus loop per [ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/).\nWhen disabled, focus does not move when on the last element and the user presses <kbd>ArrowDown</kbd>, or when on the first element and the user presses <kbd>ArrowUp</kbd>.",
+        "name": "loopFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "modal": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Determines if the popup enters a modal state when open.\n- `true`: user interaction is limited to the popup: document page scroll is locked and pointer interactions on outside elements are disabled.\n- `false`: user interaction with the rest of the document is allowed.",
+        "name": "modal",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "defaultOpen": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the popup is initially open.\n\nTo render a controlled popup, use the `open` prop instead.",
+        "name": "defaultOpen",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "onOpenChangeComplete": {
+        "defaultValue": null,
+        "description": "Event handler called after any animations complete when the popup is opened or closed.",
+        "name": "onOpenChangeComplete",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean) => void"
+        }
+      },
+      "items": {
+        "defaultValue": null,
+        "description": "The items to be displayed in the list.\nCan be either a flat array of items or an array of groups with items.",
+        "name": "items",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "readonly any[] | readonly Group<any>[]"
+        }
+      },
+      "inputValue": {
+        "defaultValue": null,
+        "description": "The input value of the combobox. Use when controlled.",
+        "name": "inputValue",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number | readonly string[]"
+        }
+      },
+      "defaultInputValue": {
+        "defaultValue": null,
+        "description": "The uncontrolled input value when initially rendered.\n\nTo render a controlled input, use the `inputValue` prop instead.",
+        "name": "defaultInputValue",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number | readonly string[]"
+        }
+      },
+      "openOnInputClick": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the popup opens when clicking the input.",
+        "name": "openOnInputClick",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "required": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the user must choose a value before submitting a form.",
+        "name": "required",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "readOnly": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the user should be unable to choose a different option from the popup.",
+        "name": "readOnly",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "inputRef": {
+        "defaultValue": null,
+        "description": "A ref to the hidden input element.",
+        "name": "inputRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Ref<HTMLInputElement>"
+        }
+      },
+      "filteredItems": {
+        "defaultValue": null,
+        "description": "Filtered items to display in the list.\nWhen provided, the list will use these items instead of filtering the `items` prop internally.\nUse when you want to control filtering logic externally with the `useFilter()` hook.",
+        "name": "filteredItems",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "readonly any[] | readonly Group<any>[]"
+        }
+      },
+      "virtualized": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the items are being externally virtualized.",
+        "name": "virtualized",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "limit": {
+        "defaultValue": {
+          "value": "-1"
+        },
+        "description": "The maximum number of items to display in the list.",
+        "name": "limit",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "locale": {
+        "defaultValue": null,
+        "description": "The locale to use for string comparison.\nDefaults to the user's runtime locale.",
+        "name": "locale",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "LocalesArgument"
+        }
+      },
+      "multiple": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether multiple items can be selected.",
+        "name": "multiple",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/ComboboxRoot.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "autoComplete": {
+        "defaultValue": null,
+        "description": "Provides a hint to the browser for autofill.\n@see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete",
+        "name": "autoComplete",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/ComboboxRoot.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "autoHighlight": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the first matching item is highlighted automatically while filtering.",
+        "name": "autoHighlight",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/ComboboxRoot.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "highlightItemOnHover": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether moving the pointer over items should highlight them.\nDisabling this prop allows CSS `:hover` to be differentiated from the `:focus` (`data-highlighted`) state.",
+        "name": "highlightItemOnHover",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/ComboboxRoot.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "itemToStringLabel": {
+        "defaultValue": null,
+        "description": "When the item values are objects (`<Combobox.Item value={object}>`), this function converts the object value to a string representation for display in the input.\nIf the shape of the object is `{ value, label }`, the label will be used automatically without needing to specify this prop.",
+        "name": "itemToStringLabel",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/ComboboxRoot.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(itemValue: Value) => string"
+        }
+      },
+      "itemToStringValue": {
+        "defaultValue": null,
+        "description": "When the item values are objects (`<Combobox.Item value={object}>`), this function converts the object value to a string representation for form submission.\nIf the shape of the object is `{ value, label }`, the value will be used automatically without needing to specify this prop.",
+        "name": "itemToStringValue",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/ComboboxRoot.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(itemValue: Value) => string"
+        }
+      },
+      "isItemEqualToValue": {
+        "defaultValue": null,
+        "description": "Custom comparison logic used to determine if a combobox item value matches the current selected value. Useful when item values are objects without matching referentially.\nDefaults to `Object.is` comparison.",
+        "name": "isItemEqualToValue",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/ComboboxRoot.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(itemValue: Value, value: Value) => boolean"
+        }
+      },
+      "defaultValue": {
+        "defaultValue": null,
+        "description": "The uncontrolled selected value of the combobox when it's initially rendered.\n\nTo render a controlled combobox, use the `value` prop instead.",
+        "name": "defaultValue",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/ComboboxRoot.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ComboboxValueType<Value, Multiple>"
+        }
+      },
+      "actionsRef": {
+        "defaultValue": null,
+        "description": "A ref to imperative actions.\n- `unmount`: When specified, the combobox will not be unmounted when closed.\nInstead, the `unmount` function must be called to unmount the combobox manually.\nUseful when the combobox's animation is controlled by an external library.",
+        "name": "actionsRef",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/ComboboxRoot.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "RefObject<Actions>"
+        }
+      },
+      "onOpenChange": {
+        "defaultValue": null,
+        "description": "Event handler called when the popup is opened or closed.",
+        "name": "onOpenChange",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/ComboboxRoot.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean, eventDetails: ChangeEventDetails) => void"
+        }
+      },
+      "onInputValueChange": {
+        "defaultValue": null,
+        "description": "Event handler called when the input value changes.",
+        "name": "onInputValueChange",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/ComboboxRoot.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(inputValue: string, eventDetails: ChangeEventDetails) => void"
+        }
+      },
+      "onItemHighlighted": {
+        "defaultValue": null,
+        "description": "Callback fired when an item is highlighted or unhighlighted.\nReceives the highlighted item value (or `undefined` if no item is highlighted) and event details with a `reason` property describing why the highlight changed.\nThe `reason` can be:\n- `'keyboard'`: the highlight changed due to keyboard navigation.\n- `'pointer'`: the highlight changed due to pointer hovering.\n- `'none'`: the highlight changed programmatically.",
+        "name": "onItemHighlighted",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/ComboboxRoot.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(highlightedValue: Value, eventDetails: HighlightEventDetails) => void"
+        }
+      },
+      "value": {
+        "defaultValue": null,
+        "description": "The selected value of the combobox. Use when controlled.",
+        "name": "value",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/ComboboxRoot.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ComboboxValueType<Value, Multiple>"
+        }
+      },
+      "onValueChange": {
+        "defaultValue": null,
+        "description": "Event handler called when the selected value of the combobox changes.",
+        "name": "onValueChange",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/ComboboxRoot.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(value: ComboboxValueType<Value, Multiple> | (Multiple extends true ? never : null), eventDetails: ChangeEventDetails) => void"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/root/ComboboxRootContext.tsx",
+    "description": "",
+    "displayName": "ComboboxDerivedItemsContext",
+    "methods": [],
+    "props": {}
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/root/ComboboxRootContext.tsx",
+    "description": "",
+    "displayName": "ComboboxRootContext",
+    "methods": [],
+    "props": {}
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/root/ComboboxRootContext.tsx",
+    "description": "",
+    "displayName": "ComboboxFloatingContext",
+    "methods": [],
+    "props": {}
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/root/ComboboxRootContext.tsx",
+    "description": "",
+    "displayName": "ComboboxInputValueContext",
+    "methods": [],
+    "props": {}
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/row/ComboboxRow.tsx",
+    "description": "Displays a single row of items in a grid list.\nEnable `grid` on the root component to turn the listbox into a grid.\nRenders a `<div>` element.",
+    "displayName": "ComboboxRow",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxRowState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxRowState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/status/ComboboxStatus.tsx",
+    "description": "Displays a status message whose content changes are announced politely to screen readers.\nUseful for conveying the status of an asynchronously loaded list.\nRenders a `<div>` element.",
+    "displayName": "ComboboxStatus",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxStatusState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxStatusState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/trigger/ComboboxTrigger.tsx",
+    "description": "A button that opens the popup.\nRenders a `<button>` element.",
+    "displayName": "ComboboxTrigger",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ComboboxTriggerState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ComboboxTriggerState>"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component should ignore user interaction.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/trigger/ComboboxTrigger.tsx",
+          "name": "ComboboxTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/trigger/ComboboxTrigger.tsx",
+            "name": "ComboboxTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/value/ComboboxValue.tsx",
+    "description": "The current value of the combobox.\nDoesn't render its own HTML element.\n\nDocumentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)",
+    "displayName": "ComboboxValue",
+    "methods": [],
+    "props": {
+      "placeholder": {
+        "defaultValue": null,
+        "description": "The placeholder value to display when no value is selected.\nThis is overridden by `children` if specified, or by a null item's label in `items`.",
+        "name": "placeholder",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/value/ComboboxValue.tsx",
+          "name": "ComboboxValueProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/value/ComboboxValue.tsx",
+            "name": "ComboboxValueProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      }
+    }
+  }
+]

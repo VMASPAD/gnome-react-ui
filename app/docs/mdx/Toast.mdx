@@ -1,0 +1,213 @@
+---
+title: Toast
+---
+
+# Toast
+
+## ToastAction
+
+Performs an action when clicked.
+Renders a `&lt;button&gt;` element.
+
+Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **nativeButton** | `boolean` | `true` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`). |
+
+
+---
+
+## ToastArrow
+
+Displays an element positioned against the toast anchor.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## ToastClose
+
+Closes the toast when clicked.
+Renders a `&lt;button&gt;` element.
+
+Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **nativeButton** | `boolean` | `true` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`). |
+
+
+---
+
+## ToastContent
+
+A container for the contents of a toast.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## ToastDescription
+
+A description that describes the toast.
+Can be used as the default message for the toast when no title is provided.
+Renders a `&lt;p&gt;` element.
+
+Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## ToastPortal
+
+A portal element that moves the viewport to a different part of the DOM.
+By default, the portal element is appended to `&lt;body&gt;`.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **container** | `HTMLElement \| ShadowRoot \| RefObject<HTMLElement \| ShadowRoot>` | — | A parent element to render the portal element into. |
+
+
+---
+
+## ToastPositioner
+
+Positions the toast against the anchor.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **anchor** | `Element` | — | An element to position the toast against. |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **sticky** | `boolean` | `false` | Whether to maintain the popup in the viewport after<br/>the anchor element was scrolled out of view. |
+| **side** | `Side` | `'top'` | Which side of the anchor element to align the toast against.<br/>May automatically change to avoid collisions. |
+| **align** | `Align` | `'center'` | How to align the popup relative to the specified side. |
+| **positionMethod** | `"fixed" \| "absolute"` | `'absolute'` | Determines which CSS `position` property to use. |
+| **sideOffset** | `number \| OffsetFunction` | `0` | Distance between the anchor and the popup in pixels.<br/>Also accepts a function that returns the distance to read the dimensions of the anchor<br/>and positioner elements, along with its side and alignment.<br/><br/>The function takes a `data` object parameter with the following properties:<br/>- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.<br/>- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.<br/>- `data.side`: which side of the anchor element the positioner is aligned against.<br/>- `data.align`: how the positioner is aligned relative to the specified side.<br/>@example  |
+| **alignOffset** | `number \| OffsetFunction` | `0` | Additional offset along the alignment axis in pixels.<br/>Also accepts a function that returns the offset to read the dimensions of the anchor<br/>and positioner elements, along with its side and alignment.<br/><br/>The function takes a `data` object parameter with the following properties:<br/>- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.<br/>- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.<br/>- `data.side`: which side of the anchor element the positioner is aligned against.<br/>- `data.align`: how the positioner is aligned relative to the specified side.<br/>@example  |
+| **collisionBoundary** | `Boundary` | `'clipping-ancestors'` | An element or a rectangle that delimits the area that the popup is confined to. |
+| **collisionPadding** | `Padding` | `5` | Additional space to maintain from the edge of the collision boundary. |
+| **arrowPadding** | `number` | `5` | Minimum distance to maintain between the arrow and the edges of the popup.<br/><br/>Use it to prevent the arrow element from hanging out of the rounded corners of a popup. |
+| **disableAnchorTracking** | `boolean` | `false` | Whether to disable the popup from tracking any layout shift of its positioning anchor. |
+| **collisionAvoidance** | `CollisionAvoidance` | — | Determines how to handle collisions when positioning the popup.<br/>@example  |
+| **toast*** | `ToastObject<any>` | — | The toast object associated with the positioner. |
+
+
+---
+
+## ToastProvider
+
+Provides a context for creating and managing toasts.
+
+Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **timeout** | `number` | `5000` | The default amount of time (in ms) before a toast is auto dismissed.<br/>A value of `0` will prevent the toast from being dismissed automatically. |
+| **limit** | `number` | `3` | The maximum number of toasts that can be displayed at once.<br/>When the limit is reached, the oldest toast will be removed to make room for the new one. |
+| **toastManager** | `ToastManager<any>` | — | A global manager for toasts to use outside of a React component. |
+
+
+---
+
+## ToastRoot
+
+Groups all parts of an individual toast.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **swipeDirection** | `"left" \| "right" \| "up" \| "down" \| ("left" \| "right" \| "up" \| "down")[]` | `['down', 'right']` | Direction(s) in which the toast can be swiped to dismiss. |
+| **toast*** | `ToastRootToastObject<any>` | — | The toast to render. |
+
+
+---
+
+## ToastTitle
+
+A title that labels the toast.
+Renders an `&lt;h2&gt;` element.
+
+Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## ToastViewport
+
+A container viewport for toasts.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+

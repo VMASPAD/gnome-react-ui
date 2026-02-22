@@ -1,0 +1,256 @@
+---
+title: Navigation
+---
+
+# Navigation
+
+## NavigationMenuArrow
+
+Displays an element pointing toward the navigation menu's current anchor.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## NavigationMenuBackdrop
+
+A backdrop for the navigation menu popup.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## NavigationMenuContent
+
+A container for the content of the navigation menu item that is moved into the popup
+when the item is active.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **keepMounted** | `boolean` | `false` | Whether to keep the content mounted in the DOM while the popup is closed.<br/>Ensures the content is present during server-side rendering for web crawlers. |
+
+
+---
+
+## NavigationMenuIcon
+
+An icon that indicates that the trigger button opens a menu.
+
+Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## NavigationMenuItem
+
+An individual navigation menu item.
+Renders a `&lt;li&gt;` element.
+
+Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **value** | `any` | — | A unique value that identifies this navigation menu item.<br/>If no value is provided, a unique ID will be generated automatically.<br/>Use when controlling the navigation menu programmatically. |
+
+
+---
+
+## NavigationMenuLink
+
+A link in the navigation menu that can be used to navigate to a different page or section.
+Renders an `&lt;a&gt;` element.
+
+Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **active** | `boolean` | `false` | Whether the link is the currently active page. |
+| **closeOnClick** | `boolean` | `false` | Whether to close the navigation menu when the link is clicked. |
+
+
+---
+
+## NavigationMenuList
+
+Contains a list of navigation menu items.
+Renders a `&lt;ul&gt;` element.
+
+Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## NavigationMenuPopup
+
+A container for the navigation menu contents.
+Renders a `&lt;nav&gt;` element.
+
+Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## NavigationMenuPortal
+
+A portal element that moves the popup to a different part of the DOM.
+By default, the portal element is appended to `&lt;body&gt;`.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **keepMounted** | `boolean` | `false` | Whether to keep the portal mounted in the DOM while the popup is hidden. |
+| **container** | `HTMLElement \| ShadowRoot \| RefObject<HTMLElement \| ShadowRoot>` | — | A parent element to render the portal element into. |
+
+
+---
+
+## NavigationMenuPositioner
+
+Positions the navigation menu against the currently active trigger.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **anchor** | `Element \| RefObject<Element> \| VirtualElement \| (...) => Element \| VirtualElement)` | — | An element to position the popup against.<br/>By default, the popup will be positioned against the trigger. |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **sticky** | `boolean` | `false` | Whether to maintain the popup in the viewport after<br/>the anchor element was scrolled out of view. |
+| **side** | `Side` | `'bottom'` | Which side of the anchor element to align the popup against.<br/>May automatically change to avoid collisions. |
+| **align** | `Align` | `'center'` | How to align the popup relative to the specified side. |
+| **positionMethod** | `"fixed" \| "absolute"` | `'absolute'` | Determines which CSS `position` property to use. |
+| **sideOffset** | `number \| OffsetFunction` | `0` | Distance between the anchor and the popup in pixels.<br/>Also accepts a function that returns the distance to read the dimensions of the anchor<br/>and positioner elements, along with its side and alignment.<br/><br/>The function takes a `data` object parameter with the following properties:<br/>- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.<br/>- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.<br/>- `data.side`: which side of the anchor element the positioner is aligned against.<br/>- `data.align`: how the positioner is aligned relative to the specified side.<br/>@example  |
+| **alignOffset** | `number \| OffsetFunction` | `0` | Additional offset along the alignment axis in pixels.<br/>Also accepts a function that returns the offset to read the dimensions of the anchor<br/>and positioner elements, along with its side and alignment.<br/><br/>The function takes a `data` object parameter with the following properties:<br/>- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.<br/>- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.<br/>- `data.side`: which side of the anchor element the positioner is aligned against.<br/>- `data.align`: how the positioner is aligned relative to the specified side.<br/>@example  |
+| **collisionBoundary** | `Boundary` | `'clipping-ancestors'` | An element or a rectangle that delimits the area that the popup is confined to. |
+| **collisionPadding** | `Padding` | `5` | Additional space to maintain from the edge of the collision boundary. |
+| **arrowPadding** | `number` | `5` | Minimum distance to maintain between the arrow and the edges of the popup.<br/><br/>Use it to prevent the arrow element from hanging out of the rounded corners of a popup. |
+| **disableAnchorTracking** | `boolean` | `false` | Whether to disable the popup from tracking any layout shift of its positioning anchor. |
+| **collisionAvoidance** | `CollisionAvoidance` | — | Determines how to handle collisions when positioning the popup.<br/>@example  |
+
+
+---
+
+## NavigationMenuRoot
+
+Groups all parts of the navigation menu.
+Renders a `&lt;nav&gt;` element at the root, or `&lt;div&gt;` element when nested.
+
+Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **defaultValue** | `any` | `null` | The uncontrolled value of the item that should be initially selected.<br/><br/>To render a controlled navigation menu, use the `value` prop instead. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **value** | `any` | `null` | The controlled value of the navigation menu item that should be currently open.<br/>When non-nullish, the menu will be open. When nullish, the menu will be closed.<br/><br/>To render an uncontrolled navigation menu, use the `defaultValue` prop instead. |
+| **orientation** | `"horizontal" \| "vertical"` | `'horizontal'` | The orientation of the navigation menu. |
+| **actionsRef** | `RefObject<NavigationMenuRootActions>` | — | A ref to imperative actions. |
+| **onOpenChangeComplete** | `(...) => void` | — | Event handler called after any animations complete when the navigation menu is closed. |
+| **onValueChange** | `(...) => void` | — | Callback fired when the value changes. |
+| **delay** | `number` | `50` | How long to wait before opening the navigation menu. Specified in milliseconds. |
+| **closeDelay** | `number` | `50` | How long to wait before closing the navigation menu. Specified in milliseconds. |
+
+
+---
+
+## NavigationMenuTrigger
+
+Opens the navigation menu popup when hovered or clicked, revealing the
+associated content.
+Renders a `&lt;button&gt;` element.
+
+Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **nativeButton** | `boolean` | `true` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`). |
+
+
+---
+
+## NavigationMenuViewport
+
+The clipping viewport of the navigation menu's current content.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+

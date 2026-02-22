@@ -1,0 +1,10 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/utils/resolveValueLabel.tsx",
+    "description": "Checks if the items array contains an item with a null value that has a non-null label.",
+    "displayName": "hasNullItemLabel",
+    "methods": [],
+    "props": {}
+  }
+]

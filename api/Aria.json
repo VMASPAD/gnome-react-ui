@@ -1,0 +1,787 @@
+[
+  {
+    "tags": {
+      "internal": ""
+    },
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+    "description": "",
+    "displayName": "AriaCombobox",
+    "methods": [],
+    "props": {
+      "filter": {
+        "defaultValue": null,
+        "description": "Filter function used to match items vs input query.",
+        "name": "filter",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(itemValue: Value, query: string, itemToString?: (itemValue: Value) => string) => boolean"
+        }
+      },
+      "id": {
+        "defaultValue": null,
+        "description": "The id of the component.",
+        "name": "id",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "open": {
+        "defaultValue": null,
+        "description": "Whether the popup is currently open. Use when controlled.",
+        "name": "open",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component should ignore user interaction.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "grid": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether list items are presented in a grid layout.\nWhen enabled, arrow keys navigate across rows and columns inferred from DOM rows.",
+        "name": "grid",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "inline": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the list is rendered inline without using the popup.",
+        "name": "inline",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "onOpenChange": {
+        "defaultValue": null,
+        "description": "Event handler called when the popup is opened or closed.",
+        "name": "onOpenChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean, eventDetails: ChangeEventDetails) => void"
+        }
+      },
+      "name": {
+        "defaultValue": null,
+        "description": "Identifies the field when a form is submitted.",
+        "name": "name",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "loopFocus": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether to loop keyboard focus back to the input when the end of the list is reached while using the arrow keys. The first item can then be reached by pressing <kbd>ArrowDown</kbd> again from the input, or the last item can be reached by pressing <kbd>ArrowUp</kbd> from the input.\nThe input is always included in the focus loop per [ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/).\nWhen disabled, focus does not move when on the last element and the user presses <kbd>ArrowDown</kbd>, or when on the first element and the user presses <kbd>ArrowUp</kbd>.",
+        "name": "loopFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "modal": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Determines if the popup enters a modal state when open.\n- `true`: user interaction is limited to the popup: document page scroll is locked and pointer interactions on outside elements are disabled.\n- `false`: user interaction with the rest of the document is allowed.",
+        "name": "modal",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "actionsRef": {
+        "defaultValue": null,
+        "description": "A ref to imperative actions.\n- `unmount`: When specified, the combobox will not be unmounted when closed.\nInstead, the `unmount` function must be called to unmount the combobox manually.\nUseful when the combobox's animation is controlled by an external library.",
+        "name": "actionsRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "RefObject<Actions>"
+        }
+      },
+      "defaultOpen": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the popup is initially open.\n\nTo render a controlled popup, use the `open` prop instead.",
+        "name": "defaultOpen",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "onOpenChangeComplete": {
+        "defaultValue": null,
+        "description": "Event handler called after any animations complete when the popup is opened or closed.",
+        "name": "onOpenChangeComplete",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean) => void"
+        }
+      },
+      "selectionMode": {
+        "defaultValue": {
+          "value": "'none'"
+        },
+        "description": "How the combobox should remember the selected value.\n- `single`: Remembers the last selected value.\n- `multiple`: Remember all selected values.\n- `none`: Do not remember the selected value.",
+        "name": "selectionMode",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "SelectionMode"
+        }
+      },
+      "selectedValue": {
+        "defaultValue": null,
+        "description": "The selected value of the combobox. Use when controlled.",
+        "name": "selectedValue",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ComboboxItemValueType<Value, Mode>"
+        }
+      },
+      "defaultSelectedValue": {
+        "defaultValue": null,
+        "description": "The uncontrolled selected value of the combobox when it's initially rendered.\n\nTo render a controlled combobox, use the `selectedValue` prop instead.",
+        "name": "defaultSelectedValue",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ComboboxItemValueType<Value, Mode>"
+        }
+      },
+      "onSelectedValueChange": {
+        "defaultValue": null,
+        "description": "Callback fired when the selected value of the combobox changes.",
+        "name": "onSelectedValueChange",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(value: ComboboxItemValueType<Value, Mode>, eventDetails: ChangeEventDetails) => void"
+        }
+      },
+      "fillInputOnItemPress": {
+        "defaultValue": null,
+        "description": "INTERNAL: When `selectionMode` is `none`, controls whether selecting an item fills the input.",
+        "name": "fillInputOnItemPress",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "itemToStringValue": {
+        "defaultValue": null,
+        "description": "When the item values are objects (`<Combobox.Item value={object}>`), this function converts the object value to a string representation for form submission.\nIf the shape of the object is `{ value, label }`, the value will be used automatically without needing to specify this prop.",
+        "name": "itemToStringValue",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(itemValue: Value) => string"
+        }
+      },
+      "isItemEqualToValue": {
+        "defaultValue": null,
+        "description": "Custom comparison logic used to determine if a combobox item value matches the current selected value. Useful when item values are objects without matching referentially.\nDefaults to `Object.is` comparison.",
+        "name": "isItemEqualToValue",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(itemValue: Value, value: Value) => boolean"
+        }
+      },
+      "inputValue": {
+        "defaultValue": null,
+        "description": "The input value of the combobox. Use when controlled.",
+        "name": "inputValue",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number | readonly string[]"
+        }
+      },
+      "defaultInputValue": {
+        "defaultValue": null,
+        "description": "The uncontrolled input value when initially rendered.\n\nTo render a controlled input, use the `inputValue` prop instead.",
+        "name": "defaultInputValue",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number | readonly string[]"
+        }
+      },
+      "onInputValueChange": {
+        "defaultValue": null,
+        "description": "Callback fired when the input value of the combobox changes.",
+        "name": "onInputValueChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(value: string, eventDetails: ChangeEventDetails) => void"
+        }
+      },
+      "autoComplete": {
+        "defaultValue": {
+          "value": "'list'"
+        },
+        "description": "Controls how the component behaves with respect to list filtering and inline autocompletion.\n- `list` (default): items are dynamically filtered based on the input value. The input value does not change based on the active item.\n- `both`: items are dynamically filtered based on the input value, which will temporarily change based on the active item (inline autocompletion).\n- `inline`: items are static (not filtered), and the input value will temporarily change based on the active item (inline autocompletion).\n- `none`: items are static (not filtered), and the input value will not change based on the active item.",
+        "name": "autoComplete",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"none\" | \"list\" | \"both\" | \"inline\""
+        }
+      },
+      "formAutoComplete": {
+        "defaultValue": null,
+        "description": "Provides a hint to the browser for autofill on the hidden input element.\n@see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete",
+        "name": "formAutoComplete",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "itemToStringLabel": {
+        "defaultValue": null,
+        "description": "When the item values are objects (`<Combobox.Item value={object}>`), this function converts the object value to a string representation for display in the input.\nIf the shape of the object is `{ value, label }`, the label will be used automatically without needing to specify this prop.",
+        "name": "itemToStringLabel",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(itemValue: Value) => string"
+        }
+      },
+      "autoHighlight": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the first matching item is highlighted automatically.\n- `false`: do not highlight automatically.\n- `true`: highlight after the user types and keep the highlight while the query changes.\n- `'always'`: highlight the first item as soon as the list opens.",
+        "name": "autoHighlight",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | \"always\""
+        }
+      },
+      "keepHighlight": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the highlighted item should be preserved when the pointer leaves the list.",
+        "name": "keepHighlight",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "highlightItemOnHover": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether moving the pointer over items should highlight them.\nDisabling this prop allows CSS `:hover` to be differentiated from the `:focus` (`data-highlighted`) state.",
+        "name": "highlightItemOnHover",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "openOnInputClick": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the popup opens when clicking the input.",
+        "name": "openOnInputClick",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "required": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the user must choose a value before submitting a form.",
+        "name": "required",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "readOnly": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the user should be unable to choose a different option from the popup.",
+        "name": "readOnly",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "onItemHighlighted": {
+        "defaultValue": null,
+        "description": "Callback fired when an item is highlighted or unhighlighted.\nReceives the highlighted item value (or `undefined` if no item is highlighted) and event details with a `reason` property describing why the highlight changed.\nThe `reason` can be:\n- `'keyboard'`: the highlight changed due to keyboard navigation.\n- `'pointer'`: the highlight changed due to pointer hovering.\n- `'none'`: the highlight changed programmatically.",
+        "name": "onItemHighlighted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(itemValue: Value, eventDetails: HighlightEventDetails) => void"
+        }
+      },
+      "inputRef": {
+        "defaultValue": null,
+        "description": "A ref to the hidden input element.",
+        "name": "inputRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Ref<HTMLInputElement>"
+        }
+      },
+      "filteredItems": {
+        "defaultValue": null,
+        "description": "Filtered items to display in the list.\nWhen provided, the list will use these items instead of filtering the `items` prop internally.\nUse when you want to control filtering logic externally with the `useFilter()` hook.",
+        "name": "filteredItems",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "readonly any[] | readonly Group<any>[]"
+        }
+      },
+      "virtualized": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the items are being externally virtualized.",
+        "name": "virtualized",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "limit": {
+        "defaultValue": {
+          "value": "-1"
+        },
+        "description": "The maximum number of items to display in the list.",
+        "name": "limit",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "locale": {
+        "defaultValue": null,
+        "description": "The locale to use for string comparison.\nDefaults to the user's runtime locale.",
+        "name": "locale",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "LocalesArgument"
+        }
+      },
+      "submitOnItemClick": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether clicking an item should submit the owning form.",
+        "name": "submitOnItemClick",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+          "name": "ComboboxRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "ComboboxRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "items": {
+        "defaultValue": null,
+        "description": "",
+        "name": "items",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/combobox/root/AriaCombobox.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "readonly Group<any>[]"
+        }
+      }
+    }
+  }
+]

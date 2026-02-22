@@ -1,0 +1,42 @@
+[
+  {
+    "tags": {
+      "internal": ""
+    },
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/direction-provider/DirectionContext.tsx",
+    "description": "",
+    "displayName": "DirectionContext",
+    "methods": [],
+    "props": {}
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/direction-provider/DirectionProvider.tsx",
+    "description": "Enables RTL behavior for Base UI components.\n\nDocumentation: [Base UI Direction Provider](https://base-ui.com/react/utils/direction-provider)",
+    "displayName": "DirectionProvider",
+    "methods": [],
+    "props": {
+      "direction": {
+        "defaultValue": {
+          "value": "'ltr'"
+        },
+        "description": "The reading direction of the text",
+        "name": "direction",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/direction-provider/DirectionProvider.tsx",
+          "name": "DirectionProviderProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/direction-provider/DirectionProvider.tsx",
+            "name": "DirectionProviderProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "TextDirection"
+        }
+      }
+    }
+  }
+]

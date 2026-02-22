@@ -1,0 +1,30 @@
+---
+title: Alert
+---
+
+# Alert
+
+## AlertDialogRoot
+
+Groups all parts of the alert dialog.
+Doesn’t render its own HTML element.
+
+Documentation: [Base UI Alert Dialog](https://base-ui.com/react/components/alert-dialog)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **onOpenChange** | `(...) => void` | — | Event handler called when the dialog is opened or closed. |
+| **actionsRef** | `RefObject<DialogRootActions>` | — | A ref to imperative actions.<br/>- `unmount`: When specified, the dialog will not be unmounted when closed.<br/>Instead, the `unmount` function must be called to unmount the dialog manually.<br/>Useful when the dialog's animation is controlled by an external library.<br/>- `close`: Closes the dialog imperatively when called. |
+| **handle** | `DialogHandle<Payload>` | — | A handle to associate the alert dialog with a trigger.<br/>If specified, allows external triggers to control the alert dialog's open state.<br/>Can be created with the AlertDialog.createHandle() method. |
+| **children** | `ReactNode \| PayloadChildRenderFunction<Payload>` | — | The content of the dialog.<br/>This can be a regular React node or a render function that receives the `payload` of the active trigger. |
+| **open** | `boolean` | — | Whether the dialog is currently open. |
+| **triggerId** | `string` | — | ID of the trigger that the dialog is associated with.<br/>This is useful in conjunction with the `open` prop to create a controlled dialog.<br/>There's no need to specify this prop when the popover is uncontrolled (i.e. when the `open` prop is not set). |
+| **defaultOpen** | `boolean` | `false` | Whether the dialog is initially open.<br/><br/>To render a controlled dialog, use the `open` prop instead. |
+| **onOpenChangeComplete** | `(...) => void` | — | Event handler called after any animations complete when the dialog is opened or closed. |
+| **defaultTriggerId** | `string` | — | ID of the trigger that the dialog is associated with.<br/>This is useful in conjunction with the `defaultOpen` prop to create an initially open dialog. |
+
+
+---
+

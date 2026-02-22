@@ -1,0 +1,103 @@
+---
+title: Tabs
+---
+
+# Tabs
+
+## TabsIndicator
+
+A visual indicator that can be styled to match the position of the currently active tab.
+Renders a `&lt;span&gt;` element.
+
+Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **renderBeforeHydration** | `boolean` | `false` | Whether to render itself before React hydrates.<br/>This minimizes the time that the indicator isn’t visible after server-side rendering. |
+
+
+---
+
+## TabsList
+
+Groups the individual tab buttons.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **loopFocus** | `boolean` | `true` | Whether to loop keyboard focus back to the first item<br/>when the end of the list is reached while using the arrow keys. |
+| **activateOnFocus** | `boolean` | `false` | Whether to automatically change the active tab on arrow key focus.<br/>Otherwise, tabs will be activated using &lt;kbd&gt;Enter&lt;/kbd&gt; or &lt;kbd&gt;Space&lt;/kbd&gt; key press. |
+
+
+---
+
+## TabsPanel
+
+A panel displayed when the corresponding tab is active.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **value*** | `any` | — | The value of the TabPanel. It will be shown when the Tab with the corresponding value is active. |
+| **keepMounted** | `boolean` | `false` | Whether to keep the HTML element in the DOM while the panel is hidden. |
+
+
+---
+
+## TabsRoot
+
+Groups the tabs and the corresponding panels.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **defaultValue** | `any` | `0` | The default value. Use when the component is not controlled.<br/>When the value is `null`, no Tab will be active. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **value** | `any` | — | The value of the currently active `Tab`. Use when the component is controlled.<br/>When the value is `null`, no Tab will be active. |
+| **orientation** | `Orientation` | `'horizontal'` | The component orientation (layout flow direction). |
+| **onValueChange** | `(...) => void` | — | Callback invoked when new value is being set. |
+
+
+---
+
+## TabsTab
+
+An individual interactive tab button that toggles the corresponding panel.
+Renders a `&lt;button&gt;` element.
+
+Documentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **value*** | `any` | — | The value of the Tab. |
+| **disabled** | `boolean` | — | Whether the Tab is disabled.<br/><br/>If a first Tab on a `&lt;Tabs.List&gt;` is disabled, it won't initially be selected.<br/>Instead, the next enabled Tab will be selected.<br/>However, it does not work like this during server-side rendering, as it is not known<br/>during pre-rendering which Tabs are disabled.<br/>To work around it, ensure that `defaultValue` or `value` on `&lt;Tabs.Root&gt;` is set to an enabled Tab's value. |
+| **nativeButton** | `boolean` | `true` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`). |
+
+
+---
+

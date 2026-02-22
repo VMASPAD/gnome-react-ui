@@ -1,0 +1,59 @@
+---
+title: Avatar
+---
+
+# Avatar
+
+## AvatarFallback
+
+Rendered when the image fails to load or when no image is provided.
+Renders a `&lt;span&gt;` element.
+
+Documentation: [Base UI Avatar](https://base-ui.com/react/components/avatar)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **delay** | `number` | — | How long to wait before showing the fallback. Specified in milliseconds. |
+
+
+---
+
+## AvatarImage
+
+The image to be displayed in the avatar.
+Renders an `&lt;img&gt;` element.
+
+Documentation: [Base UI Avatar](https://base-ui.com/react/components/avatar)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **onLoadingStatusChange** | `(...) => void` | — | Callback fired when the loading status changes. |
+
+
+---
+
+## AvatarRoot
+
+Displays a user's profile picture, initials, or fallback icon.
+Renders a `&lt;span&gt;` element.
+
+Documentation: [Base UI Avatar](https://base-ui.com/react/components/avatar)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+

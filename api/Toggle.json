@@ -1,0 +1,341 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toggle/Toggle.tsx",
+    "description": "A two-state button that can be on or off.\nRenders a `<button>` element.\n\nDocumentation: [Base UI Toggle](https://base-ui.com/react/components/toggle)",
+    "displayName": "Toggle",
+    "methods": [],
+    "props": {
+      "pressed": {
+        "defaultValue": null,
+        "description": "Whether the toggle button is currently pressed.\nThis is the controlled counterpart of `defaultPressed`.",
+        "name": "pressed",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toggle/Toggle.tsx",
+          "name": "ToggleProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toggle/Toggle.tsx",
+            "name": "ToggleProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "defaultPressed": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the toggle button is currently pressed.\nThis is the uncontrolled counterpart of `pressed`.",
+        "name": "defaultPressed",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toggle/Toggle.tsx",
+          "name": "ToggleProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toggle/Toggle.tsx",
+            "name": "ToggleProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component should ignore user interaction.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toggle/Toggle.tsx",
+          "name": "ToggleProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toggle/Toggle.tsx",
+            "name": "ToggleProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "onPressedChange": {
+        "defaultValue": null,
+        "description": "Callback fired when the pressed state is changed.",
+        "name": "onPressedChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toggle/Toggle.tsx",
+          "name": "ToggleProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toggle/Toggle.tsx",
+            "name": "ToggleProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(pressed: boolean, eventDetails: { reason: \"none\"; event: Event; cancel: () => void; allowPropagation: () => void; isCanceled: boolean; isPropagationAllowed: boolean; trigger: Element; }) => void"
+        }
+      },
+      "value": {
+        "defaultValue": null,
+        "description": "A unique string that identifies the toggle when used\ninside a toggle group.",
+        "name": "value",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toggle/Toggle.tsx",
+          "name": "ToggleProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toggle/Toggle.tsx",
+            "name": "ToggleProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ToggleState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToggleState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toggle-group/ToggleGroup.tsx",
+    "description": "Provides a shared state to a series of toggle buttons.\n\nDocumentation: [Base UI Toggle Group](https://base-ui.com/react/components/toggle-group)",
+    "displayName": "ToggleGroup",
+    "methods": [],
+    "props": {
+      "value": {
+        "defaultValue": null,
+        "description": "The open state of the toggle group represented by an array of\nthe values of all pressed toggle buttons.\nThis is the controlled counterpart of `defaultValue`.",
+        "name": "value",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toggle-group/ToggleGroup.tsx",
+          "name": "ToggleGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toggle-group/ToggleGroup.tsx",
+            "name": "ToggleGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "readonly Value[]"
+        }
+      },
+      "defaultValue": {
+        "defaultValue": null,
+        "description": "The open state of the toggle group represented by an array of\nthe values of all pressed toggle buttons.\nThis is the uncontrolled counterpart of `value`.",
+        "name": "defaultValue",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toggle-group/ToggleGroup.tsx",
+          "name": "ToggleGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toggle-group/ToggleGroup.tsx",
+            "name": "ToggleGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "readonly Value[]"
+        }
+      },
+      "onValueChange": {
+        "defaultValue": null,
+        "description": "Callback fired when the pressed states of the toggle group changes.",
+        "name": "onValueChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toggle-group/ToggleGroup.tsx",
+          "name": "ToggleGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toggle-group/ToggleGroup.tsx",
+            "name": "ToggleGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(groupValue: Value[], eventDetails: { reason: \"none\"; event: Event; cancel: () => void; allowPropagation: () => void; isCanceled: boolean; isPropagationAllowed: boolean; trigger: Element; }) => void"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the toggle group should ignore user interaction.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toggle-group/ToggleGroup.tsx",
+          "name": "ToggleGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toggle-group/ToggleGroup.tsx",
+            "name": "ToggleGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "orientation": {
+        "defaultValue": {
+          "value": "'horizontal'"
+        },
+        "description": "",
+        "name": "orientation",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toggle-group/ToggleGroup.tsx",
+          "name": "ToggleGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toggle-group/ToggleGroup.tsx",
+            "name": "ToggleGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Orientation"
+        }
+      },
+      "loopFocus": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether to loop keyboard focus back to the first item\nwhen the end of the list is reached while using the arrow keys.",
+        "name": "loopFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toggle-group/ToggleGroup.tsx",
+          "name": "ToggleGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toggle-group/ToggleGroup.tsx",
+            "name": "ToggleGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "multiple": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "When `false` only one item in the group can be pressed. If any item in\nthe group becomes pressed, the others will become unpressed.\nWhen `true` multiple items can be pressed.",
+        "name": "multiple",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toggle-group/ToggleGroup.tsx",
+          "name": "ToggleGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toggle-group/ToggleGroup.tsx",
+            "name": "ToggleGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ToggleGroupState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToggleGroupState>"
+        }
+      }
+    }
+  }
+]

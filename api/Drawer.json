@@ -1,0 +1,1066 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/drawer/backdrop/DrawerBackdrop.tsx",
+    "description": "An overlay displayed beneath the popup.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)",
+    "displayName": "DrawerBackdrop",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DrawerBackdropState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerBackdropState>"
+        }
+      },
+      "forceRender": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the backdrop is forced to render even when nested.",
+        "name": "forceRender",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/backdrop/DrawerBackdrop.tsx",
+          "name": "DrawerBackdropProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/backdrop/DrawerBackdrop.tsx",
+            "name": "DrawerBackdropProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/drawer/close/DrawerClose.tsx",
+    "description": "A button that closes the drawer.\nRenders a `<button>` element.\n\nDocumentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)",
+    "displayName": "DrawerClose",
+    "methods": [],
+    "props": {
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DrawerCloseState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerCloseState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/drawer/content/DrawerContent.tsx",
+    "description": "A container for the drawer contents.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)",
+    "displayName": "DrawerContent",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DrawerContentState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerContentState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/drawer/description/DrawerDescription.tsx",
+    "description": "A paragraph with additional information about the drawer.\nRenders a `<p>` element.\n\nDocumentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)",
+    "displayName": "DrawerDescription",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DrawerDescriptionState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerDescriptionState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/drawer/indent/DrawerIndent.tsx",
+    "description": "A wrapper element intended to contain your app's main UI.\nApplies `data-active` when any drawer within the nearest `<Drawer.Provider>` is open.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)",
+    "displayName": "DrawerIndent",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DrawerIndentState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerIndentState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/drawer/indent-background/DrawerIndentBackground.tsx",
+    "description": "An element placed before `<Drawer.Indent>` to render a background layer that can be styled based on whether any drawer is open.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)",
+    "displayName": "DrawerIndentBackground",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DrawerIndentBackgroundState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerIndentBackgroundState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/drawer/popup/DrawerPopup.tsx",
+    "description": "A container for the drawer contents.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)",
+    "displayName": "DrawerPopup",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DrawerPopupState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerPopupState>"
+        }
+      },
+      "initialFocus": {
+        "defaultValue": null,
+        "description": "Determines the element to focus when the drawer is opened.\n\n- `false`: Do not move focus.\n- `true`: Move focus based on the default behavior (first tabbable element or popup).\n- `RefObject`: Move focus to the ref element.\n- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).\n  Return an element to focus, `true` to use the default behavior, or `false`/`undefined` to do nothing.",
+        "name": "initialFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/popup/DrawerPopup.tsx",
+          "name": "DrawerPopupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/popup/DrawerPopup.tsx",
+            "name": "DrawerPopupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | RefObject<HTMLElement> | ((openType: InteractionType) => boolean | void | HTMLElement)"
+        }
+      },
+      "finalFocus": {
+        "defaultValue": null,
+        "description": "Determines the element to focus when the drawer is closed.\n\n- `false`: Do not move focus.\n- `true`: Move focus based on the default behavior (trigger or previously focused element).\n- `RefObject`: Move focus to the ref element.\n- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).\n  Return an element to focus, `true` to use the default behavior, or `false`/`undefined` to do nothing.",
+        "name": "finalFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/popup/DrawerPopup.tsx",
+          "name": "DrawerPopupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/popup/DrawerPopup.tsx",
+            "name": "DrawerPopupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | RefObject<HTMLElement> | ((closeType: InteractionType) => boolean | void | HTMLElement)"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/drawer/portal/DrawerPortal.tsx",
+    "description": "A portal element that moves the popup to a different part of the DOM.\nBy default, the portal element is appended to `<body>`.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)",
+    "displayName": "DrawerPortal",
+    "methods": [],
+    "props": {
+      "keepMounted": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to keep the portal mounted in the DOM while the popup is hidden.",
+        "name": "keepMounted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/portal/DrawerPortal.tsx",
+          "name": "DrawerPortalProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/portal/DrawerPortal.tsx",
+            "name": "DrawerPortalProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "container": {
+        "defaultValue": null,
+        "description": "A parent element to render the portal element into.",
+        "name": "container",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/portal/DrawerPortal.tsx",
+          "name": "DrawerPortalProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/portal/DrawerPortal.tsx",
+            "name": "DrawerPortalProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "HTMLElement | ShadowRoot | RefObject<HTMLElement | ShadowRoot>"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DrawerPortalState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerPortalState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/drawer/provider/DrawerProvider.tsx",
+    "description": "Provides a shared context for coordinating global Drawer UI, such as indent/background effects based on whether any Drawer is open.\nDoesn't render its own HTML element.\n\nDocumentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)",
+    "displayName": "DrawerProvider",
+    "methods": [],
+    "props": {}
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+    "description": "Groups all parts of the drawer.\nDoesn't render its own HTML element.\n\nDocumentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)",
+    "displayName": "DrawerRoot",
+    "methods": [],
+    "props": {
+      "open": {
+        "defaultValue": null,
+        "description": "Whether the drawer is currently open.",
+        "name": "open",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "defaultOpen": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the drawer is initially open.\n\nTo render a controlled drawer, use the `open` prop instead.",
+        "name": "defaultOpen",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "modal": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Determines if the drawer enters a modal state when open.\n- `true`: user interaction is limited to just the drawer: focus is trapped, document page scroll is locked, and pointer interactions on outside elements are disabled.\n- `false`: user interaction with the rest of the document is allowed.\n- `'trap-focus'`: focus is trapped inside the drawer, but document page scroll is not locked and pointer interactions outside of it remain enabled.",
+        "name": "modal",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | \"trap-focus\""
+        }
+      },
+      "onOpenChange": {
+        "defaultValue": null,
+        "description": "Event handler called when the drawer is opened or closed.",
+        "name": "onOpenChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean, eventDetails: DrawerRootChangeEventDetails) => void"
+        }
+      },
+      "onOpenChangeComplete": {
+        "defaultValue": null,
+        "description": "Event handler called after any animations complete when the drawer is opened or closed.",
+        "name": "onOpenChangeComplete",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean) => void"
+        }
+      },
+      "disablePointerDismissal": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Determines whether the drawer should close on outside clicks.",
+        "name": "disablePointerDismissal",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "actionsRef": {
+        "defaultValue": null,
+        "description": "A ref to imperative actions.\n- `unmount`: When specified, the drawer will not be unmounted when closed.\nInstead, the `unmount` function must be called to unmount the drawer manually.\nUseful when the drawer's animation is controlled by an external library.\n- `close`: Closes the drawer imperatively when called.",
+        "name": "actionsRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "RefObject<DrawerRootActions>"
+        }
+      },
+      "handle": {
+        "defaultValue": null,
+        "description": "A handle to associate the drawer with a trigger.\nIf specified, allows detached triggers to control the drawer's open state.\nCan be created with the Drawer.createHandle() method.",
+        "name": "handle",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "DialogHandle<Payload>"
+        }
+      },
+      "triggerId": {
+        "defaultValue": null,
+        "description": "ID of the trigger that the drawer is associated with.\nThis is useful in conjunction with the `open` prop to create a controlled drawer.\nThere's no need to specify this prop when the drawer is uncontrolled (i.e. when the `open` prop is not set).",
+        "name": "triggerId",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "defaultTriggerId": {
+        "defaultValue": null,
+        "description": "ID of the trigger that the drawer is associated with.\nThis is useful in conjunction with the `defaultOpen` prop to create an initially open drawer.",
+        "name": "defaultTriggerId",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "children": {
+        "defaultValue": null,
+        "description": "The content of the drawer.",
+        "name": "children",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode | PayloadChildRenderFunction<Payload>"
+        }
+      },
+      "swipeDirection": {
+        "defaultValue": {
+          "value": "'down'"
+        },
+        "description": "The swipe direction used to dismiss the drawer.",
+        "name": "swipeDirection",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "SwipeDirection"
+        }
+      },
+      "snapPoints": {
+        "defaultValue": null,
+        "description": "Snap points used to position the drawer.\nUse numbers between 0 and 1 to represent fractions of the viewport height,\nnumbers greater than 1 as pixel values, or strings in `px`/`rem` units\n(for example, `'148px'` or `'30rem'`).",
+        "name": "snapPoints",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "DrawerSnapPoint[]"
+        }
+      },
+      "snapToSequentialPoints": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Disables velocity-based snap skipping so drag distance determines the next snap point.",
+        "name": "snapToSequentialPoints",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "snapPoint": {
+        "defaultValue": null,
+        "description": "The currently active snap point. Use with `onSnapPointChange` to control the snap point.",
+        "name": "snapPoint",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "DrawerSnapPoint"
+        }
+      },
+      "defaultSnapPoint": {
+        "defaultValue": null,
+        "description": "The initial snap point value when uncontrolled.",
+        "name": "defaultSnapPoint",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "DrawerSnapPoint"
+        }
+      },
+      "onSnapPointChange": {
+        "defaultValue": null,
+        "description": "Callback fired when the snap point changes.",
+        "name": "onSnapPointChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+          "name": "DrawerRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/root/DrawerRoot.tsx",
+            "name": "DrawerRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(snapPoint: DrawerSnapPoint, eventDetails: DrawerRootSnapPointChangeEventDetails) => void"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/drawer/swipe-area/DrawerSwipeArea.tsx",
+    "description": "An invisible area that listens for swipe gestures to open the drawer.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)",
+    "displayName": "DrawerSwipeArea",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DrawerSwipeAreaState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerSwipeAreaState>"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the swipe area is disabled.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/swipe-area/DrawerSwipeArea.tsx",
+          "name": "DrawerSwipeAreaProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/swipe-area/DrawerSwipeArea.tsx",
+            "name": "DrawerSwipeAreaProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "swipeDirection": {
+        "defaultValue": null,
+        "description": "The swipe direction that opens the drawer.\nDefaults to the opposite of `Drawer.Root` `swipeDirection`.",
+        "name": "swipeDirection",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/swipe-area/DrawerSwipeArea.tsx",
+          "name": "DrawerSwipeAreaProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/swipe-area/DrawerSwipeArea.tsx",
+            "name": "DrawerSwipeAreaProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "SwipeDirection"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/drawer/title/DrawerTitle.tsx",
+    "description": "A heading that labels the drawer.\nRenders an `<h2>` element.\n\nDocumentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)",
+    "displayName": "DrawerTitle",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DrawerTitleState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerTitleState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/drawer/trigger/DrawerTrigger.tsx",
+    "description": "A button that opens the drawer.\nRenders a `<button>` element.\n\nDocumentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)",
+    "displayName": "DrawerTrigger",
+    "methods": [],
+    "props": {
+      "handle": {
+        "defaultValue": null,
+        "description": "A handle to associate the trigger with a drawer.\nCan be created with the Drawer.createHandle() method.",
+        "name": "handle",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/trigger/DrawerTrigger.tsx",
+          "name": "DrawerTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/trigger/DrawerTrigger.tsx",
+            "name": "DrawerTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "DialogHandle<Payload>"
+        }
+      },
+      "payload": {
+        "defaultValue": null,
+        "description": "A payload to pass to the drawer when it is opened.",
+        "name": "payload",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/trigger/DrawerTrigger.tsx",
+          "name": "DrawerTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/trigger/DrawerTrigger.tsx",
+            "name": "DrawerTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Payload"
+        }
+      },
+      "id": {
+        "defaultValue": null,
+        "description": "ID of the trigger. In addition to being forwarded to the rendered element,\nit is also used to specify the active trigger for drawers in controlled mode (with the Drawer.Root `triggerId` prop).",
+        "name": "id",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/drawer/trigger/DrawerTrigger.tsx",
+          "name": "DrawerTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/drawer/trigger/DrawerTrigger.tsx",
+            "name": "DrawerTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DrawerTriggerState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerTriggerState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/drawer/viewport/DrawerViewport.tsx",
+    "description": "A positioning container for the drawer popup that can be made scrollable.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)",
+    "displayName": "DrawerViewport",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DrawerViewportState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerViewportState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/drawer/viewport/DrawerViewportContext.tsx",
+    "description": "",
+    "displayName": "DrawerViewportContext",
+    "methods": [],
+    "props": {}
+  }
+]

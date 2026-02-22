@@ -1,0 +1,179 @@
+---
+title: Dialog
+---
+
+# Dialog
+
+## DialogBackdrop
+
+An overlay displayed beneath the popup.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **forceRender** | `boolean` | `false` | Whether the backdrop is forced to render even when nested. |
+
+
+---
+
+## DialogClose
+
+A button that closes the dialog.
+Renders a `&lt;button&gt;` element.
+
+Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **nativeButton** | `boolean` | `true` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`). |
+
+
+---
+
+## DialogDescription
+
+A paragraph with additional information about the dialog.
+Renders a `&lt;p&gt;` element.
+
+Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## DialogPopup
+
+A container for the dialog contents.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **initialFocus** | `boolean \| RefObject<HTMLElement> \| (...) => boolean \| void \| HTMLElement)` | — | Determines the element to focus when the dialog is opened.<br/><br/>- `false`: Do not move focus.<br/>- `true`: Move focus based on the default behavior (first tabbable element or popup).<br/>- `RefObject`: Move focus to the ref element.<br/>- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).<br/>  Return an element to focus, `true` to use the default behavior, or `false`/`undefined` to do nothing. |
+| **finalFocus** | `boolean \| RefObject<HTMLElement> \| (...) => boolean \| void \| HTMLElement)` | — | Determines the element to focus when the dialog is closed.<br/><br/>- `false`: Do not move focus.<br/>- `true`: Move focus based on the default behavior (trigger or previously focused element).<br/>- `RefObject`: Move focus to the ref element.<br/>- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).<br/>  Return an element to focus, `true` to use the default behavior, or `false`/`undefined` to do nothing. |
+
+
+---
+
+## DialogPortal
+
+A portal element that moves the popup to a different part of the DOM.
+By default, the portal element is appended to `&lt;body&gt;`.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **keepMounted** | `boolean` | `false` | Whether to keep the portal mounted in the DOM while the popup is hidden. |
+| **container** | `HTMLElement \| ShadowRoot \| RefObject<HTMLElement \| ShadowRoot>` | — | A parent element to render the portal element into. |
+
+
+---
+
+## DialogRoot
+
+Groups all parts of the dialog.
+Doesn’t render its own HTML element.
+
+Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **open** | `boolean` | — | Whether the dialog is currently open. |
+| **defaultOpen** | `boolean` | `false` | Whether the dialog is initially open.<br/><br/>To render a controlled dialog, use the `open` prop instead. |
+| **modal** | `boolean \| "trap-focus"` | `true` | Determines if the dialog enters a modal state when open.<br/>- `true`: user interaction is limited to just the dialog: focus is trapped, document page scroll is locked, and pointer interactions on outside elements are disabled.<br/>- `false`: user interaction with the rest of the document is allowed.<br/>- `'trap-focus'`: focus is trapped inside the dialog, but document page scroll is not locked and pointer interactions outside of it remain enabled. |
+| **onOpenChange** | `(...) => void` | — | Event handler called when the dialog is opened or closed. |
+| **onOpenChangeComplete** | `(...) => void` | — | Event handler called after any animations complete when the dialog is opened or closed. |
+| **disablePointerDismissal** | `boolean` | `false` | Determines whether the dialog should close on outside clicks. |
+| **actionsRef** | `RefObject<DialogRootActions>` | — | A ref to imperative actions.<br/>- `unmount`: When specified, the dialog will not be unmounted when closed.<br/>Instead, the `unmount` function must be called to unmount the dialog manually.<br/>Useful when the dialog's animation is controlled by an external library.<br/>- `close`: Closes the dialog imperatively when called. |
+| **handle** | `DialogHandle<Payload>` | — | A handle to associate the dialog with a trigger.<br/>If specified, allows external triggers to control the dialog's open state.<br/>Can be created with the Dialog.createHandle() method. |
+| **children** | `ReactNode \| PayloadChildRenderFunction<Payload>` | — | The content of the dialog.<br/>This can be a regular React node or a render function that receives the `payload` of the active trigger. |
+| **triggerId** | `string` | — | ID of the trigger that the dialog is associated with.<br/>This is useful in conjunction with the `open` prop to create a controlled dialog.<br/>There's no need to specify this prop when the popover is uncontrolled (i.e. when the `open` prop is not set). |
+| **defaultTriggerId** | `string` | — | ID of the trigger that the dialog is associated with.<br/>This is useful in conjunction with the `defaultOpen` prop to create an initially open dialog. |
+
+
+---
+
+## DialogTitle
+
+A heading that labels the dialog.
+Renders an `&lt;h2&gt;` element.
+
+Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## DialogTrigger
+
+A button that opens the dialog.
+Renders a `&lt;button&gt;` element.
+
+Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **handle** | `DialogHandle<Payload>` | — | A handle to associate the trigger with a dialog.<br/>Can be created with the Dialog.createHandle() method. |
+| **payload** | `Payload` | — | A payload to pass to the dialog when it is opened. |
+| **id** | `string` | — | ID of the trigger. In addition to being forwarded to the rendered element,<br/>it is also used to specify the active trigger for the dialogs in controlled mode (with the DialogRoot `triggerId` prop). |
+| **nativeButton** | `boolean` | `true` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`). |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## DialogViewport
+
+A positioning container for the dialog popup that can be made scrollable.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+

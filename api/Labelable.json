@@ -1,0 +1,32 @@
+[
+  {
+    "tags": {
+      "internal": ""
+    },
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/labelable-provider/LabelableProvider.tsx",
+    "description": "",
+    "displayName": "LabelableProvider",
+    "methods": [],
+    "props": {
+      "initialControlId": {
+        "defaultValue": null,
+        "description": "",
+        "name": "initialControlId",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/labelable-provider/LabelableProvider.tsx",
+          "name": "LabelableProviderProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/labelable-provider/LabelableProvider.tsx",
+            "name": "LabelableProviderProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/separator/Separator.tsx",
+    "description": "A separator element accessible to screen readers.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Separator](https://base-ui.com/react/components/separator)",
+    "displayName": "Separator",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: SeparatorState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SeparatorState>"
+        }
+      },
+      "orientation": {
+        "defaultValue": {
+          "value": "'horizontal'"
+        },
+        "description": "The orientation of the separator.",
+        "name": "orientation",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/separator/Separator.tsx",
+          "name": "SeparatorProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/separator/Separator.tsx",
+            "name": "SeparatorProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Orientation"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,119 @@
+---
+title: Toolbar
+---
+
+# Toolbar
+
+## ToolbarButton
+
+A button that can be used as-is or as a trigger for other components.
+Renders a `&lt;button&gt;` element.
+
+Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **disabled** | `boolean` | `false` | When `true` the item is disabled. |
+| **nativeButton** | `boolean` | `true` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`). |
+| **focusableWhenDisabled** | `boolean` | `true` | When `true` the item remains focuseable when disabled. |
+
+
+---
+
+## ToolbarGroup
+
+Groups several toolbar items or toggles.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **disabled** | `boolean` | `false` | When `true` all toolbar items in the group are disabled. |
+
+
+---
+
+## ToolbarInput
+
+A native input element that integrates with Toolbar keyboard navigation.
+Renders an `&lt;input&gt;` element.
+
+Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **defaultValue** | `string \| number \| readonly string[]` | — | — |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **disabled** | `boolean` | `false` | When `true` the item is disabled. |
+| **focusableWhenDisabled** | `boolean` | `true` | When `true` the item remains focuseable when disabled. |
+
+
+---
+
+## ToolbarLink
+
+A link component.
+Renders an `&lt;a&gt;` element.
+
+Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## ToolbarRoot
+
+A container for grouping a set of controls, such as buttons, toggle groups, or menus.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **disabled** | `boolean` | — | — |
+| **orientation** | `Orientation` | `'horizontal'` | The orientation of the toolbar. |
+| **loopFocus** | `boolean` | `true` | If `true`, using keyboard navigation will wrap focus to the other end of the toolbar once the end is reached. |
+
+
+---
+
+## ToolbarSeparator
+
+A separator element accessible to screen readers.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **orientation** | `Orientation` | `'horizontal'` | The orientation of the separator. |
+
+
+---
+

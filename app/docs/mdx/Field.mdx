@@ -1,0 +1,142 @@
+---
+title: Field
+---
+
+# Field
+
+## FieldControl
+
+The form control to label and validate.
+Renders an `&lt;input&gt;` element.
+
+You can omit this part and use any Base UI input component instead. For example,
+[Input](https://base-ui.com/react/components/input), [Checkbox](https://base-ui.com/react/components/checkbox),
+or [Select](https://base-ui.com/react/components/select), among others, will work with Field out of the box.
+
+Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **defaultValue** | `string \| number \| readonly string[]` | — | — |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **onValueChange** | `(...) => void` | — | Callback fired when the `value` changes. Use when controlled. |
+
+
+---
+
+## FieldDescription
+
+A paragraph with additional information about the field.
+Renders a `&lt;p&gt;` element.
+
+Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## FieldError
+
+An error message displayed if the field control fails validation.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **match** | `boolean \| keyof ValidityState` | — | Determines whether to show the error message according to the field’s<br/>[ValidityState](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState).<br/>Specifying `true` will always show the error message, and lets external libraries<br/>control the visibility. |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## FieldItem
+
+Groups individual items in a checkbox group or radio group with a label and description.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **disabled** | `boolean` | `false` | Whether the wrapped control should ignore user interaction.<br/>The `disabled` prop on `&lt;Field.Root&gt;` takes precedence over this. |
+
+
+---
+
+## FieldLabel
+
+An accessible label that is automatically associated with the field control.
+Renders a `&lt;label&gt;` element.
+
+Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **nativeLabel** | `boolean` | `true` | Whether the component renders a native `&lt;label&gt;` element when replacing it via the `render` prop.<br/>Set to `false` if the rendered element is not a label (e.g. `&lt;div&gt;`).<br/><br/>This is useful to avoid inheriting label behaviors on `&lt;button&gt;` controls (such as `&lt;Select.Trigger&gt;` and `&lt;Combobox.Trigger&gt;`), including avoiding `:hover` on the button when hovering the label, and preventing clicks on the label from firing on the button. |
+
+
+---
+
+## FieldRoot
+
+Groups all parts of the field.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **disabled** | `boolean` | `false` | Whether the component should ignore user interaction.<br/>Takes precedence over the `disabled` prop on the `&lt;Field.Control&gt;` component. |
+| **name** | `string` | — | Identifies the field when a form is submitted.<br/>Takes precedence over the `name` prop on the `&lt;Field.Control&gt;` component. |
+| **actionsRef** | `RefObject<FieldRootActions>` | — | A ref to imperative actions.<br/>- `validate`: Validates the field when called. |
+| **touched** | `boolean` | — | Whether the field has been touched.<br/>Useful when the field state is controlled by an external library. |
+| **dirty** | `boolean` | — | Whether the field's value has been changed from its initial value.<br/>Useful when the field state is controlled by an external library. |
+| **validate** | `(...) => string \| string[] \| Promise<string \| string[]>` | — | A function for custom validation. Return a string or an array of strings with<br/>the error message(s) if the value is invalid, or `null` if the value is valid.<br/>Asynchronous functions are supported, but they do not prevent form submission<br/>when using `validationMode="onSubmit"`. |
+| **validationMode** | `FormValidationMode` | `'onSubmit'` | Determines when the field should be validated.<br/>This takes precedence over the `validationMode` prop on `&lt;Form&gt;`.<br/><br/>- `onSubmit`: triggers validation when the form is submitted, and re-validates on change after submission.<br/>- `onBlur`: triggers validation when the control loses focus.<br/>- `onChange`: triggers validation on every change to the control value. |
+| **validationDebounceTime** | `number` | `0` | How long to wait between `validate` callbacks if<br/>`validationMode="onChange"` is used. Specified in milliseconds. |
+| **invalid** | `boolean` | — | Whether the field is invalid.<br/>Useful when the field state is controlled by an external library. |
+
+
+---
+
+## FieldValidity
+
+Used to display a custom message based on the field’s validity.
+Requires `children` to be a function that accepts field validity state as an argument.
+
+Documentation: [Base UI Field](https://base-ui.com/react/components/field)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **children*** | `(...) => ReactNode` | — | A function that accepts the field validity state as an argument.<br/><br/> |
+
+
+---
+

@@ -1,0 +1,119 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/form/Form.tsx",
+    "description": "A native form element with consolidated error handling.\nRenders a `<form>` element.\n\nDocumentation: [Base UI Form](https://base-ui.com/react/components/form)",
+    "displayName": "Form",
+    "methods": [],
+    "props": {
+      "validationMode": {
+        "defaultValue": {
+          "value": "'onSubmit'"
+        },
+        "description": "Determines when the form should be validated.\nThe `validationMode` prop on `<Field.Root>` takes precedence over this.\n\n- `onSubmit` (default): validates the field when the form is submitted, afterwards fields will re-validate on change.\n- `onBlur`: validates a field when it loses focus.\n- `onChange`: validates the field on every change to its value.",
+        "name": "validationMode",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/form/Form.tsx",
+          "name": "FormProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/form/Form.tsx",
+            "name": "FormProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "FormValidationMode"
+        }
+      },
+      "errors": {
+        "defaultValue": null,
+        "description": "Validation errors returned externally, typically after submission by a server or a form action.\nThis should be an object where keys correspond to the `name` attribute on `<Field.Root>`,\nand values correspond to error(s) related to that field.",
+        "name": "errors",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/form/Form.tsx",
+          "name": "FormProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/form/Form.tsx",
+            "name": "FormProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Errors"
+        }
+      },
+      "onFormSubmit": {
+        "defaultValue": null,
+        "description": "Event handler called when the form is submitted.\n`preventDefault()` is called on the native submit event when used.",
+        "name": "onFormSubmit",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/form/Form.tsx",
+          "name": "FormProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/form/Form.tsx",
+            "name": "FormProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(formValues: FormValues, eventDetails: { reason: \"none\"; event: Event; }) => void"
+        }
+      },
+      "actionsRef": {
+        "defaultValue": null,
+        "description": "A ref to imperative actions.\n- `validate`: Validates all fields when called. Optionally pass a field name to validate a single field.\n@example ```tsx\n// validate all fields\nactionsRef.current.validate();\n\n// validate one field\nactionsRef.current.validate('email');\n```",
+        "name": "actionsRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/form/Form.tsx",
+          "name": "FormProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/form/Form.tsx",
+            "name": "FormProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "RefObject<FormActions>"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: FormState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, FormState>"
+        }
+      }
+    }
+  }
+]

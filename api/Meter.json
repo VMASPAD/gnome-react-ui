@@ -1,0 +1,334 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/meter/indicator/MeterIndicator.tsx",
+    "description": "Visualizes the position of the value along the range.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Meter](https://base-ui.com/react/components/meter)",
+    "displayName": "MeterIndicator",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: MeterRootState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, MeterRootState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/meter/label/MeterLabel.tsx",
+    "description": "An accessible label for the meter.\nRenders a `<span>` element.\n\nDocumentation: [Base UI Meter](https://base-ui.com/react/components/meter)",
+    "displayName": "MeterLabel",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: MeterRootState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, MeterRootState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/meter/root/MeterRoot.tsx",
+    "description": "Groups all parts of the meter and provides the value for screen readers.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Meter](https://base-ui.com/react/components/meter)",
+    "displayName": "MeterRoot",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: MeterRootState) => string)"
+        }
+      },
+      "aria-valuetext": {
+        "defaultValue": null,
+        "description": "A string value that provides a user-friendly name for `aria-valuenow`, the current value of the meter.",
+        "name": "aria-valuetext",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/meter/root/MeterRoot.tsx",
+          "name": "MeterRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/meter/root/MeterRoot.tsx",
+            "name": "MeterRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, MeterRootState>"
+        }
+      },
+      "value": {
+        "defaultValue": null,
+        "description": "The current value.",
+        "name": "value",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/meter/root/MeterRoot.tsx",
+          "name": "MeterRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/meter/root/MeterRoot.tsx",
+            "name": "MeterRootProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "number"
+        }
+      },
+      "locale": {
+        "defaultValue": null,
+        "description": "The locale used by `Intl.NumberFormat` when formatting the value.\nDefaults to the user's runtime locale.",
+        "name": "locale",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/meter/root/MeterRoot.tsx",
+          "name": "MeterRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/meter/root/MeterRoot.tsx",
+            "name": "MeterRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "LocalesArgument"
+        }
+      },
+      "max": {
+        "defaultValue": {
+          "value": "100"
+        },
+        "description": "The maximum value",
+        "name": "max",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/meter/root/MeterRoot.tsx",
+          "name": "MeterRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/meter/root/MeterRoot.tsx",
+            "name": "MeterRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "min": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "The minimum value",
+        "name": "min",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/meter/root/MeterRoot.tsx",
+          "name": "MeterRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/meter/root/MeterRoot.tsx",
+            "name": "MeterRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "format": {
+        "defaultValue": null,
+        "description": "Options to format the value.",
+        "name": "format",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/meter/root/MeterRoot.tsx",
+          "name": "MeterRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/meter/root/MeterRoot.tsx",
+            "name": "MeterRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "NumberFormatOptions"
+        }
+      },
+      "getAriaValueText": {
+        "defaultValue": null,
+        "description": "A function that returns a string value that provides a human-readable text alternative for `aria-valuenow`, the current value of the meter.",
+        "name": "getAriaValueText",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/meter/root/MeterRoot.tsx",
+          "name": "MeterRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/meter/root/MeterRoot.tsx",
+            "name": "MeterRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(formattedValue: string, value: number) => string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/meter/track/MeterTrack.tsx",
+    "description": "Contains the meter indicator and represents the entire range of the meter.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Meter](https://base-ui.com/react/components/meter)",
+    "displayName": "MeterTrack",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: MeterRootState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, MeterRootState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/meter/value/MeterValue.tsx",
+    "description": "A text element displaying the current value.\nRenders a `<span>` element.\n\nDocumentation: [Base UI Meter](https://base-ui.com/react/components/meter)",
+    "displayName": "MeterValue",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: MeterRootState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, MeterRootState>"
+        }
+      }
+    }
+  }
+]

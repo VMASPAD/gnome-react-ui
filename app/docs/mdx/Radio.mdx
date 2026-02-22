@@ -1,0 +1,72 @@
+---
+title: Radio
+---
+
+# Radio
+
+## RadioIndicator
+
+Indicates whether the radio button is selected.
+Renders a `&lt;span&gt;` element.
+
+Documentation: [Base UI Radio](https://base-ui.com/react/components/radio)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **keepMounted** | `boolean` | `false` | Whether to keep the HTML element in the DOM when the radio button is inactive. |
+
+
+---
+
+## RadioRoot
+
+Represents the radio button itself.
+Renders a `&lt;span&gt;` element and a hidden `&lt;input&gt;` beside.
+
+Documentation: [Base UI Radio](https://base-ui.com/react/components/radio)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **value*** | `Value` | — | The unique identifying value of the radio in a group. |
+| **disabled** | `boolean` | — | Whether the component should ignore user interaction. |
+| **required** | `boolean` | — | Whether the user must choose a value before submitting a form. |
+| **readOnly** | `boolean` | — | Whether the user should be unable to select the radio button. |
+| **inputRef** | `Ref<HTMLInputElement>` | — | A ref to access the hidden input element. |
+| **nativeButton** | `boolean` | `false` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `true` if the rendered element is a native button. |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## RadioGroup
+
+Provides a shared state to a series of radio buttons.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Radio Group](https://base-ui.com/react/components/radio)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **disabled** | `boolean` | `false` | Whether the component should ignore user interaction. |
+| **readOnly** | `boolean` | `false` | Whether the user should be unable to select a different radio button in the group. |
+| **required** | `boolean` | `false` | Whether the user must choose a value before submitting a form. |
+| **name** | `string` | — | Identifies the field when a form is submitted. |
+| **value** | `Value` | — | The controlled value of the radio item that should be currently selected.<br/><br/>To render an uncontrolled radio group, use the `defaultValue` prop instead. |
+| **defaultValue** | `Value` | — | The uncontrolled value of the radio button that should be initially selected.<br/><br/>To render a controlled radio group, use the `value` prop instead. |
+| **onValueChange** | `(...) => void` | — | Callback fired when the value changes. |
+| **inputRef** | `Ref<HTMLInputElement>` | — | A ref to access the hidden input element. |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+

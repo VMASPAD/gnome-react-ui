@@ -1,0 +1,736 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/dialog/backdrop/DialogBackdrop.tsx",
+    "description": "An overlay displayed beneath the popup.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)",
+    "displayName": "DialogBackdrop",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DialogBackdropState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DialogBackdropState>"
+        }
+      },
+      "forceRender": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the backdrop is forced to render even when nested.",
+        "name": "forceRender",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/backdrop/DialogBackdrop.tsx",
+          "name": "DialogBackdropProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/backdrop/DialogBackdrop.tsx",
+            "name": "DialogBackdropProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/dialog/close/DialogClose.tsx",
+    "description": "A button that closes the dialog.\nRenders a `<button>` element.\n\nDocumentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)",
+    "displayName": "DialogClose",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DialogCloseState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DialogCloseState>"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/dialog/description/DialogDescription.tsx",
+    "description": "A paragraph with additional information about the dialog.\nRenders a `<p>` element.\n\nDocumentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)",
+    "displayName": "DialogDescription",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DialogDescriptionState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DialogDescriptionState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/dialog/popup/DialogPopup.tsx",
+    "description": "A container for the dialog contents.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)",
+    "displayName": "DialogPopup",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DialogPopupState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DialogPopupState>"
+        }
+      },
+      "initialFocus": {
+        "defaultValue": null,
+        "description": "Determines the element to focus when the dialog is opened.\n\n- `false`: Do not move focus.\n- `true`: Move focus based on the default behavior (first tabbable element or popup).\n- `RefObject`: Move focus to the ref element.\n- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).\n  Return an element to focus, `true` to use the default behavior, or `false`/`undefined` to do nothing.",
+        "name": "initialFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/popup/DialogPopup.tsx",
+          "name": "DialogPopupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/popup/DialogPopup.tsx",
+            "name": "DialogPopupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | RefObject<HTMLElement> | ((openType: InteractionType) => boolean | void | HTMLElement)"
+        }
+      },
+      "finalFocus": {
+        "defaultValue": null,
+        "description": "Determines the element to focus when the dialog is closed.\n\n- `false`: Do not move focus.\n- `true`: Move focus based on the default behavior (trigger or previously focused element).\n- `RefObject`: Move focus to the ref element.\n- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).\n  Return an element to focus, `true` to use the default behavior, or `false`/`undefined` to do nothing.",
+        "name": "finalFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/popup/DialogPopup.tsx",
+          "name": "DialogPopupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/popup/DialogPopup.tsx",
+            "name": "DialogPopupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | RefObject<HTMLElement> | ((closeType: InteractionType) => boolean | void | HTMLElement)"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/dialog/portal/DialogPortal.tsx",
+    "description": "A portal element that moves the popup to a different part of the DOM.\nBy default, the portal element is appended to `<body>`.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)",
+    "displayName": "DialogPortal",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: State) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, State>"
+        }
+      },
+      "keepMounted": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to keep the portal mounted in the DOM while the popup is hidden.",
+        "name": "keepMounted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/portal/DialogPortal.tsx",
+          "name": "DialogPortalProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/portal/DialogPortal.tsx",
+            "name": "DialogPortalProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "container": {
+        "defaultValue": null,
+        "description": "A parent element to render the portal element into.",
+        "name": "container",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/portal/DialogPortal.tsx",
+          "name": "DialogPortalProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/portal/DialogPortal.tsx",
+            "name": "DialogPortalProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "HTMLElement | ShadowRoot | RefObject<HTMLElement | ShadowRoot>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+    "description": "Groups all parts of the dialog.\nDoesn’t render its own HTML element.\n\nDocumentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)",
+    "displayName": "DialogRoot",
+    "methods": [],
+    "props": {
+      "open": {
+        "defaultValue": null,
+        "description": "Whether the dialog is currently open.",
+        "name": "open",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "defaultOpen": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the dialog is initially open.\n\nTo render a controlled dialog, use the `open` prop instead.",
+        "name": "defaultOpen",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "modal": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Determines if the dialog enters a modal state when open.\n- `true`: user interaction is limited to just the dialog: focus is trapped, document page scroll is locked, and pointer interactions on outside elements are disabled.\n- `false`: user interaction with the rest of the document is allowed.\n- `'trap-focus'`: focus is trapped inside the dialog, but document page scroll is not locked and pointer interactions outside of it remain enabled.",
+        "name": "modal",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | \"trap-focus\""
+        }
+      },
+      "onOpenChange": {
+        "defaultValue": null,
+        "description": "Event handler called when the dialog is opened or closed.",
+        "name": "onOpenChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean, eventDetails: DialogRootChangeEventDetails) => void"
+        }
+      },
+      "onOpenChangeComplete": {
+        "defaultValue": null,
+        "description": "Event handler called after any animations complete when the dialog is opened or closed.",
+        "name": "onOpenChangeComplete",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean) => void"
+        }
+      },
+      "disablePointerDismissal": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Determines whether the dialog should close on outside clicks.",
+        "name": "disablePointerDismissal",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "actionsRef": {
+        "defaultValue": null,
+        "description": "A ref to imperative actions.\n- `unmount`: When specified, the dialog will not be unmounted when closed.\nInstead, the `unmount` function must be called to unmount the dialog manually.\nUseful when the dialog's animation is controlled by an external library.\n- `close`: Closes the dialog imperatively when called.",
+        "name": "actionsRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "RefObject<DialogRootActions>"
+        }
+      },
+      "handle": {
+        "defaultValue": null,
+        "description": "A handle to associate the dialog with a trigger.\nIf specified, allows external triggers to control the dialog's open state.\nCan be created with the Dialog.createHandle() method.",
+        "name": "handle",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "DialogHandle<Payload>"
+        }
+      },
+      "children": {
+        "defaultValue": null,
+        "description": "The content of the dialog.\nThis can be a regular React node or a render function that receives the `payload` of the active trigger.",
+        "name": "children",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode | PayloadChildRenderFunction<Payload>"
+        }
+      },
+      "triggerId": {
+        "defaultValue": null,
+        "description": "ID of the trigger that the dialog is associated with.\nThis is useful in conjunction with the `open` prop to create a controlled dialog.\nThere's no need to specify this prop when the popover is uncontrolled (i.e. when the `open` prop is not set).",
+        "name": "triggerId",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "defaultTriggerId": {
+        "defaultValue": null,
+        "description": "ID of the trigger that the dialog is associated with.\nThis is useful in conjunction with the `defaultOpen` prop to create an initially open dialog.",
+        "name": "defaultTriggerId",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/dialog/title/DialogTitle.tsx",
+    "description": "A heading that labels the dialog.\nRenders an `<h2>` element.\n\nDocumentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)",
+    "displayName": "DialogTitle",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DialogTitleState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DialogTitleState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/dialog/trigger/DialogTrigger.tsx",
+    "description": "A button that opens the dialog.\nRenders a `<button>` element.\n\nDocumentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)",
+    "displayName": "DialogTrigger",
+    "methods": [],
+    "props": {
+      "handle": {
+        "defaultValue": null,
+        "description": "A handle to associate the trigger with a dialog.\nCan be created with the Dialog.createHandle() method.",
+        "name": "handle",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/trigger/DialogTrigger.tsx",
+          "name": "DialogTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/trigger/DialogTrigger.tsx",
+            "name": "DialogTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "DialogHandle<Payload>"
+        }
+      },
+      "payload": {
+        "defaultValue": null,
+        "description": "A payload to pass to the dialog when it is opened.",
+        "name": "payload",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/trigger/DialogTrigger.tsx",
+          "name": "DialogTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/trigger/DialogTrigger.tsx",
+            "name": "DialogTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Payload"
+        }
+      },
+      "id": {
+        "defaultValue": null,
+        "description": "ID of the trigger. In addition to being forwarded to the rendered element,\nit is also used to specify the active trigger for the dialogs in controlled mode (with the DialogRoot `triggerId` prop).",
+        "name": "id",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/trigger/DialogTrigger.tsx",
+          "name": "DialogTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/trigger/DialogTrigger.tsx",
+            "name": "DialogTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DialogTriggerState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DialogTriggerState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/dialog/viewport/DialogViewport.tsx",
+    "description": "A positioning container for the dialog popup that can be made scrollable.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Dialog](https://base-ui.com/react/components/dialog)",
+    "displayName": "DialogViewport",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: DialogViewportState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DialogViewportState>"
+        }
+      }
+    }
+  }
+]

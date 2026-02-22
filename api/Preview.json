@@ -1,0 +1,844 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/preview-card/arrow/PreviewCardArrow.tsx",
+    "description": "Displays an element positioned against the preview card anchor.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)",
+    "displayName": "PreviewCardArrow",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: PreviewCardArrowState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, PreviewCardArrowState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/preview-card/backdrop/PreviewCardBackdrop.tsx",
+    "description": "An overlay displayed beneath the popup.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)",
+    "displayName": "PreviewCardBackdrop",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: PreviewCardBackdropState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, PreviewCardBackdropState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/preview-card/popup/PreviewCardPopup.tsx",
+    "description": "A container for the preview card contents.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)",
+    "displayName": "PreviewCardPopup",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: PreviewCardPopupState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, PreviewCardPopupState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/preview-card/portal/PreviewCardPortal.tsx",
+    "description": "A portal element that moves the popup to a different part of the DOM.\nBy default, the portal element is appended to `<body>`.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)",
+    "displayName": "PreviewCardPortal",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: State) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, State>"
+        }
+      },
+      "keepMounted": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to keep the portal mounted in the DOM while the popup is hidden.",
+        "name": "keepMounted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/preview-card/portal/PreviewCardPortal.tsx",
+          "name": "PreviewCardPortalProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/preview-card/portal/PreviewCardPortal.tsx",
+            "name": "PreviewCardPortalProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "container": {
+        "defaultValue": null,
+        "description": "A parent element to render the portal element into.",
+        "name": "container",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingPortal.tsx",
+          "name": "Props"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingPortal.tsx",
+            "name": "Props"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "HTMLElement | ShadowRoot | RefObject<HTMLElement | ShadowRoot>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/preview-card/positioner/PreviewCardPositioner.tsx",
+    "description": "Positions the popup against the trigger.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)",
+    "displayName": "PreviewCardPositioner",
+    "methods": [],
+    "props": {
+      "anchor": {
+        "defaultValue": null,
+        "description": "An element to position the popup against.\nBy default, the popup will be positioned against the trigger.",
+        "name": "anchor",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Element | RefObject<Element> | VirtualElement | (() => Element | VirtualElement)"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: PreviewCardPositionerState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, PreviewCardPositionerState>"
+        }
+      },
+      "sticky": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to maintain the popup in the viewport after\nthe anchor element was scrolled out of view.",
+        "name": "sticky",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "side": {
+        "defaultValue": {
+          "value": "'bottom'"
+        },
+        "description": "Which side of the anchor element to align the popup against.\nMay automatically change to avoid collisions.",
+        "name": "side",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Side"
+        }
+      },
+      "align": {
+        "defaultValue": {
+          "value": "'center'"
+        },
+        "description": "How to align the popup relative to the specified side.",
+        "name": "align",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Align"
+        }
+      },
+      "positionMethod": {
+        "defaultValue": {
+          "value": "'absolute'"
+        },
+        "description": "Determines which CSS `position` property to use.",
+        "name": "positionMethod",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"fixed\" | \"absolute\""
+        }
+      },
+      "sideOffset": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "Distance between the anchor and the popup in pixels.\nAlso accepts a function that returns the distance to read the dimensions of the anchor\nand positioner elements, along with its side and alignment.\n\nThe function takes a `data` object parameter with the following properties:\n- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.\n- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.\n- `data.side`: which side of the anchor element the positioner is aligned against.\n- `data.align`: how the positioner is aligned relative to the specified side.\n@example ```jsx\n<Positioner\n  sideOffset={({ side, align, anchor, positioner }) => {\n    return side === 'top' || side === 'bottom'\n      ? anchor.height\n      : anchor.width;\n  }}\n/>\n```",
+        "name": "sideOffset",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number | OffsetFunction"
+        }
+      },
+      "alignOffset": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "Additional offset along the alignment axis in pixels.\nAlso accepts a function that returns the offset to read the dimensions of the anchor\nand positioner elements, along with its side and alignment.\n\nThe function takes a `data` object parameter with the following properties:\n- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.\n- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.\n- `data.side`: which side of the anchor element the positioner is aligned against.\n- `data.align`: how the positioner is aligned relative to the specified side.\n@example ```jsx\n<Positioner\n  alignOffset={({ side, align, anchor, positioner }) => {\n    return side === 'top' || side === 'bottom'\n      ? anchor.width\n      : anchor.height;\n  }}\n/>\n```",
+        "name": "alignOffset",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number | OffsetFunction"
+        }
+      },
+      "collisionBoundary": {
+        "defaultValue": {
+          "value": "'clipping-ancestors'"
+        },
+        "description": "An element or a rectangle that delimits the area that the popup is confined to.",
+        "name": "collisionBoundary",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Boundary"
+        }
+      },
+      "collisionPadding": {
+        "defaultValue": {
+          "value": "5"
+        },
+        "description": "Additional space to maintain from the edge of the collision boundary.",
+        "name": "collisionPadding",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Padding"
+        }
+      },
+      "arrowPadding": {
+        "defaultValue": {
+          "value": "5"
+        },
+        "description": "Minimum distance to maintain between the arrow and the edges of the popup.\n\nUse it to prevent the arrow element from hanging out of the rounded corners of a popup.",
+        "name": "arrowPadding",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "disableAnchorTracking": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to disable the popup from tracking any layout shift of its positioning anchor.",
+        "name": "disableAnchorTracking",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "collisionAvoidance": {
+        "defaultValue": null,
+        "description": "Determines how to handle collisions when positioning the popup.\n@example ```jsx\n<Positioner\n  collisionAvoidance={{\n    side: 'shift',\n    align: 'shift',\n    fallbackAxisSide: 'none',\n  }}\n/>\n```",
+        "name": "collisionAvoidance",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "CollisionAvoidance"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+    "description": "Groups all parts of the preview card.\nDoesn’t render its own HTML element.\n\nDocumentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)",
+    "displayName": "PreviewCardRoot",
+    "methods": [],
+    "props": {
+      "defaultOpen": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the preview card is initially open.\n\nTo render a controlled preview card, use the `open` prop instead.",
+        "name": "defaultOpen",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+          "name": "PreviewCardRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+            "name": "PreviewCardRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "open": {
+        "defaultValue": null,
+        "description": "Whether the preview card is currently open.",
+        "name": "open",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+          "name": "PreviewCardRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+            "name": "PreviewCardRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "onOpenChange": {
+        "defaultValue": null,
+        "description": "Event handler called when the preview card is opened or closed.",
+        "name": "onOpenChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+          "name": "PreviewCardRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+            "name": "PreviewCardRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean, eventDetails: PreviewCardRootChangeEventDetails) => void"
+        }
+      },
+      "onOpenChangeComplete": {
+        "defaultValue": null,
+        "description": "Event handler called after any animations complete when the preview card is opened or closed.",
+        "name": "onOpenChangeComplete",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+          "name": "PreviewCardRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+            "name": "PreviewCardRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean) => void"
+        }
+      },
+      "actionsRef": {
+        "defaultValue": null,
+        "description": "A ref to imperative actions.\n- `unmount`: Unmounts the preview card popup.\n- `close`: Closes the preview card imperatively when called.",
+        "name": "actionsRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+          "name": "PreviewCardRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+            "name": "PreviewCardRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "RefObject<PreviewCardRootActions>"
+        }
+      },
+      "handle": {
+        "defaultValue": null,
+        "description": "A handle to associate the preview card with a trigger.\nIf specified, allows external triggers to control the card's open state.\nCan be created with the PreviewCard.createHandle() method.",
+        "name": "handle",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+          "name": "PreviewCardRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+            "name": "PreviewCardRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "PreviewCardHandle<Payload>"
+        }
+      },
+      "children": {
+        "defaultValue": null,
+        "description": "The content of the preview card.\nThis can be a regular React node or a render function that receives the `payload` of the active trigger.",
+        "name": "children",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+          "name": "PreviewCardRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+            "name": "PreviewCardRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode | PayloadChildRenderFunction<Payload>"
+        }
+      },
+      "triggerId": {
+        "defaultValue": null,
+        "description": "ID of the trigger that the preview card is associated with.\nThis is useful in conjuntion with the `open` prop to create a controlled preview card.\nThere's no need to specify this prop when the preview card is uncontrolled (i.e. when the `open` prop is not set).",
+        "name": "triggerId",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+          "name": "PreviewCardRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+            "name": "PreviewCardRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "defaultTriggerId": {
+        "defaultValue": null,
+        "description": "ID of the trigger that the preview card is associated with.\nThis is useful in conjunction with the `defaultOpen` prop to create an initially open preview card.",
+        "name": "defaultTriggerId",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+          "name": "PreviewCardRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/preview-card/root/PreviewCardRoot.tsx",
+            "name": "PreviewCardRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/preview-card/trigger/PreviewCardTrigger.tsx",
+    "description": "A link that opens the preview card.\nRenders an `<a>` element.\n\nDocumentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)",
+    "displayName": "PreviewCardTrigger",
+    "methods": [],
+    "props": {
+      "handle": {
+        "defaultValue": null,
+        "description": "A handle to associate the trigger with a preview card.",
+        "name": "handle",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/preview-card/trigger/PreviewCardTrigger.tsx",
+          "name": "PreviewCardTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/preview-card/trigger/PreviewCardTrigger.tsx",
+            "name": "PreviewCardTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "PreviewCardHandle<Payload>"
+        }
+      },
+      "payload": {
+        "defaultValue": null,
+        "description": "A payload to pass to the preview card when it is opened.",
+        "name": "payload",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/preview-card/trigger/PreviewCardTrigger.tsx",
+          "name": "PreviewCardTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/preview-card/trigger/PreviewCardTrigger.tsx",
+            "name": "PreviewCardTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Payload"
+        }
+      },
+      "delay": {
+        "defaultValue": {
+          "value": "600"
+        },
+        "description": "How long to wait before the preview card opens. Specified in milliseconds.",
+        "name": "delay",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/preview-card/trigger/PreviewCardTrigger.tsx",
+          "name": "PreviewCardTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/preview-card/trigger/PreviewCardTrigger.tsx",
+            "name": "PreviewCardTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "closeDelay": {
+        "defaultValue": {
+          "value": "300"
+        },
+        "description": "How long to wait before closing the preview card. Specified in milliseconds.",
+        "name": "closeDelay",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/preview-card/trigger/PreviewCardTrigger.tsx",
+          "name": "PreviewCardTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/preview-card/trigger/PreviewCardTrigger.tsx",
+            "name": "PreviewCardTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: PreviewCardTriggerState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, PreviewCardTriggerState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/preview-card/viewport/PreviewCardViewport.tsx",
+    "description": "A viewport for displaying content transitions.\nThis component is only required if one popup can be opened by multiple triggers, its content change based on the trigger\nand switching between them is animated.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Preview Card](https://base-ui.com/react/components/preview-card)",
+    "displayName": "PreviewCardViewport",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: State) => string)"
+        }
+      },
+      "children": {
+        "defaultValue": null,
+        "description": "The content to render inside the transition container.",
+        "name": "children",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/preview-card/viewport/PreviewCardViewport.tsx",
+          "name": "Props"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/preview-card/viewport/PreviewCardViewport.tsx",
+            "name": "Props"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, State>"
+        }
+      }
+    }
+  }
+]

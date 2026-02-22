@@ -1,0 +1,98 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/input/Input.tsx",
+    "description": "A native input element that automatically works with [Field](https://base-ui.com/react/components/field).\nRenders an `<input>` element.\n\nDocumentation: [Base UI Input](https://base-ui.com/react/components/input)",
+    "displayName": "Input",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: InputState) => string)"
+        }
+      },
+      "defaultValue": {
+        "defaultValue": null,
+        "description": "The default value of the input. Use when uncontrolled.",
+        "name": "defaultValue",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number | readonly string[]"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, InputState>"
+        }
+      },
+      "value": {
+        "defaultValue": null,
+        "description": "The value of the input. Use when controlled.",
+        "name": "value",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number | readonly string[]"
+        }
+      },
+      "onValueChange": {
+        "defaultValue": null,
+        "description": "Callback fired when the `value` changes. Use when controlled.",
+        "name": "onValueChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/input/Input.tsx",
+          "name": "InputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/input/Input.tsx",
+            "name": "InputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(value: string, eventDetails: { reason: \"none\"; event: Event; cancel: () => void; allowPropagation: () => void; isCanceled: boolean; isPropagationAllowed: boolean; trigger: Element; }) => void"
+        }
+      }
+    }
+  }
+]

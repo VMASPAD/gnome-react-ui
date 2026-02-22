@@ -1,0 +1,502 @@
+[
+  {
+    "tags": {
+      "see": "https://floating-ui.com/docs/FloatingDelayGroup",
+      "internal": ""
+    },
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/floating-ui-react/components/FloatingDelayGroup.tsx",
+    "description": "Experimental next version of `FloatingDelayGroup` to become the default\nin the future. This component is not yet stable.\nProvides context for a group of floating elements that should share a\n`delay`. Unlike `FloatingDelayGroup`, `useDelayGroup` with this\ncomponent does not cause a re-render of unrelated consumers of the\ncontext when the delay changes.",
+    "displayName": "FloatingDelayGroup",
+    "methods": [],
+    "props": {
+      "delay": {
+        "defaultValue": null,
+        "description": "The delay to use for the group when it's not in the instant phase.",
+        "name": "delay",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingDelayGroup.tsx",
+          "name": "FloatingDelayGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingDelayGroup.tsx",
+            "name": "FloatingDelayGroupProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "Delay"
+        }
+      },
+      "timeoutMs": {
+        "defaultValue": null,
+        "description": "An optional explicit timeout to use for the group, which represents when\ngrouping logic will no longer be active after the close delay completes.\nThis is useful if you want grouping to “last” longer than the close delay,\nfor example if there is no close delay at all.",
+        "name": "timeoutMs",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingDelayGroup.tsx",
+          "name": "FloatingDelayGroupProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingDelayGroup.tsx",
+            "name": "FloatingDelayGroupProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      }
+    }
+  },
+  {
+    "tags": {
+      "see": "https://floating-ui.com/docs/FloatingFocusManager",
+      "internal": ""
+    },
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+    "description": "Provides focus management for the floating element.",
+    "displayName": "FloatingFocusManager",
+    "methods": [],
+    "props": {
+      "context": {
+        "defaultValue": null,
+        "description": "The floating context returned from `useFloatingRootContext`.",
+        "name": "context",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+          "name": "FloatingFocusManagerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+            "name": "FloatingFocusManagerProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "FloatingRootStore | FloatingContext"
+        }
+      },
+      "openInteractionType": {
+        "defaultValue": null,
+        "description": "The interaction type used to open the floating element.",
+        "name": "openInteractionType",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+          "name": "FloatingFocusManagerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+            "name": "FloatingFocusManagerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "any"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether or not the focus manager should be disabled. Useful to delay focus\nmanagement until after a transition completes or some other conditional\nstate.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+          "name": "FloatingFocusManagerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+            "name": "FloatingFocusManagerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "initialFocus": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Determines the element to focus when the floating element is opened.\n\n- `false`: Do not move focus.\n- `true`: Move focus based on the default behavior (first tabbable element or floating element).\n- `RefObject`: Move focus to the ref element.\n- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).\n  Return an element to focus, `true` to use default behavior, `null` to fallback to default behavior,\n  or `false`/`undefined` to do nothing.",
+        "name": "initialFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+          "name": "FloatingFocusManagerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+            "name": "FloatingFocusManagerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | RefObject<HTMLElement> | ((openType: InteractionType) => boolean | void | HTMLElement)"
+        }
+      },
+      "returnFocus": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Determines the element to focus when the floating element is closed.\n\n- `false`: Do not move focus.\n- `true`: Move focus based on the default behavior (reference or previously focused element).\n- `RefObject`: Move focus to the ref element.\n- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).\n  Return an element to focus, `true` to use the default behavior, `null` to fallback to default behavior,\n  or `false`/`undefined` to do nothing.",
+        "name": "returnFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+          "name": "FloatingFocusManagerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+            "name": "FloatingFocusManagerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | RefObject<HTMLElement> | ((closeType: InteractionType) => boolean | void | HTMLElement)"
+        }
+      },
+      "restoreFocus": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Determines where focus should be restored if focus inside the floating element is lost\n(such as due to the removal of the currently focused element from the DOM).\n\n- `true`: restore to the nearest tabbable element inside the floating tree (previous\n  tabbable if possible, otherwise the last tabbable, then the floating element itself)\n- `'popup'`: restore directly to the floating element (container) itself\n- `false`: do not restore focus",
+        "name": "restoreFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+          "name": "FloatingFocusManagerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+            "name": "FloatingFocusManagerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | \"popup\""
+        }
+      },
+      "modal": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Determines if focus is “modal”, meaning focus is fully trapped inside the\nfloating element and outside content cannot be accessed. This includes\nscreen reader virtual cursors.",
+        "name": "modal",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+          "name": "FloatingFocusManagerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+            "name": "FloatingFocusManagerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "closeOnFocusOut": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Determines whether `focusout` event listeners that control whether the\nfloating element should be closed if the focus moves outside of it are\nattached to the reference and floating elements. This affects non-modal\nfocus management.",
+        "name": "closeOnFocusOut",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+          "name": "FloatingFocusManagerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+            "name": "FloatingFocusManagerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "nextFocusableElement": {
+        "defaultValue": null,
+        "description": "Overrides the element to focus when tabbing forward out of the floating element.",
+        "name": "nextFocusableElement",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+          "name": "FloatingFocusManagerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+            "name": "FloatingFocusManagerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "HTMLElement | RefObject<HTMLElement>"
+        }
+      },
+      "previousFocusableElement": {
+        "defaultValue": null,
+        "description": "Overrides the element to focus when tabbing backward out of the floating element.",
+        "name": "previousFocusableElement",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+          "name": "FloatingFocusManagerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+            "name": "FloatingFocusManagerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "HTMLElement | RefObject<HTMLElement>"
+        }
+      },
+      "beforeContentFocusGuardRef": {
+        "defaultValue": null,
+        "description": "Ref to the focus guard preceding the floating element content.\nCan be useful to focus the popup progammatically.",
+        "name": "beforeContentFocusGuardRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+          "name": "FloatingFocusManagerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+            "name": "FloatingFocusManagerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "RefObject<HTMLSpanElement>"
+        }
+      },
+      "externalTree": {
+        "defaultValue": null,
+        "description": "External FlatingTree to use when the one provided by context can't be used.",
+        "name": "externalTree",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+          "name": "FloatingFocusManagerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingFocusManager.tsx",
+            "name": "FloatingFocusManagerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "FloatingTreeStore"
+        }
+      }
+    }
+  },
+  {
+    "tags": {
+      "see": "https://floating-ui.com/docs/FloatingPortal",
+      "internal": ""
+    },
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/floating-ui-react/components/FloatingPortal.tsx",
+    "description": "Portals the floating element into a given container element — by default,\noutside of the app root and into the body.\nThis is necessary to ensure the floating element can appear outside any\npotential parent containers that cause clipping (such as `overflow: hidden`),\nwhile retaining its location in the React tree.",
+    "displayName": "FloatingPortal",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: any) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, any>"
+        }
+      },
+      "container": {
+        "defaultValue": null,
+        "description": "A parent element to render the portal element into.",
+        "name": "container",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingPortal.tsx",
+          "name": "Props"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingPortal.tsx",
+            "name": "Props"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "HTMLElement | ShadowRoot | RefObject<HTMLElement | ShadowRoot>"
+        }
+      },
+      "renderGuards": {
+        "defaultValue": null,
+        "description": "",
+        "name": "renderGuards",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingPortal.tsx",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {
+      "see": "https://floating-ui.com/docs/FloatingTree",
+      "internal": ""
+    },
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/floating-ui-react/components/FloatingTree.tsx",
+    "description": "Provides parent node context for nested floating elements.",
+    "displayName": "FloatingNode",
+    "methods": [],
+    "props": {
+      "id": {
+        "defaultValue": null,
+        "description": "",
+        "name": "id",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingTree.tsx",
+          "name": "FloatingNodeProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingTree.tsx",
+            "name": "FloatingNodeProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  },
+  {
+    "tags": {
+      "see": "https://floating-ui.com/docs/FloatingTree",
+      "internal": ""
+    },
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/floating-ui-react/components/FloatingTree.tsx",
+    "description": "Provides context for nested floating elements when they are not children of\neach other on the DOM.\nThis is not necessary in all cases, except when there must be explicit communication between parent and child floating elements. It is necessary for:\n- The `bubbles` option in the `useDismiss()` Hook\n- Nested virtual list navigation\n- Nested floating elements that each open on hover\n- Custom communication between parent and child floating elements",
+    "displayName": "FloatingTree",
+    "methods": [],
+    "props": {
+      "externalTree": {
+        "defaultValue": null,
+        "description": "",
+        "name": "externalTree",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingTree.tsx",
+          "name": "FloatingTreeProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingTree.tsx",
+            "name": "FloatingTreeProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "FloatingTreeStore"
+        }
+      }
+    }
+  },
+  {
+    "tags": {
+      "internal": ""
+    },
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/utils/FloatingPortalLite.tsx",
+    "description": "`FloatingPortal` includes tabbable logic handling for focus management.\nFor components that don't need tabbable logic, use `FloatingPortalLite`.",
+    "displayName": "FloatingPortalLite",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: any) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, any>"
+        }
+      },
+      "container": {
+        "defaultValue": null,
+        "description": "A parent element to render the portal element into.",
+        "name": "container",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingPortal.tsx",
+          "name": "Props"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingPortal.tsx",
+            "name": "Props"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "HTMLElement | ShadowRoot | RefObject<HTMLElement | ShadowRoot>"
+        }
+      }
+    }
+  }
+]

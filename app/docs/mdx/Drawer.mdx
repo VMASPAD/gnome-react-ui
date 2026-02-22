@@ -1,0 +1,279 @@
+---
+title: Drawer
+---
+
+# Drawer
+
+## DrawerBackdrop
+
+An overlay displayed beneath the popup.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **forceRender** | `boolean` | `false` | Whether the backdrop is forced to render even when nested. |
+
+
+---
+
+## DrawerClose
+
+A button that closes the drawer.
+Renders a `&lt;button&gt;` element.
+
+Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **nativeButton** | `boolean` | `true` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`). |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## DrawerContent
+
+A container for the drawer contents.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## DrawerDescription
+
+A paragraph with additional information about the drawer.
+Renders a `&lt;p&gt;` element.
+
+Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## DrawerIndent
+
+A wrapper element intended to contain your app's main UI.
+Applies `data-active` when any drawer within the nearest `&lt;Drawer.Provider&gt;` is open.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## DrawerIndentBackground
+
+An element placed before `&lt;Drawer.Indent&gt;` to render a background layer that can be styled based on whether any drawer is open.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## DrawerPopup
+
+A container for the drawer contents.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **initialFocus** | `boolean \| RefObject<HTMLElement> \| (...) => boolean \| void \| HTMLElement)` | — | Determines the element to focus when the drawer is opened.<br/><br/>- `false`: Do not move focus.<br/>- `true`: Move focus based on the default behavior (first tabbable element or popup).<br/>- `RefObject`: Move focus to the ref element.<br/>- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).<br/>  Return an element to focus, `true` to use the default behavior, or `false`/`undefined` to do nothing. |
+| **finalFocus** | `boolean \| RefObject<HTMLElement> \| (...) => boolean \| void \| HTMLElement)` | — | Determines the element to focus when the drawer is closed.<br/><br/>- `false`: Do not move focus.<br/>- `true`: Move focus based on the default behavior (trigger or previously focused element).<br/>- `RefObject`: Move focus to the ref element.<br/>- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).<br/>  Return an element to focus, `true` to use the default behavior, or `false`/`undefined` to do nothing. |
+
+
+---
+
+## DrawerPortal
+
+A portal element that moves the popup to a different part of the DOM.
+By default, the portal element is appended to `&lt;body&gt;`.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **keepMounted** | `boolean` | `false` | Whether to keep the portal mounted in the DOM while the popup is hidden. |
+| **container** | `HTMLElement \| ShadowRoot \| RefObject<HTMLElement \| ShadowRoot>` | — | A parent element to render the portal element into. |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## DrawerProvider
+
+Provides a shared context for coordinating global Drawer UI, such as indent/background effects based on whether any Drawer is open.
+Doesn't render its own HTML element.
+
+Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+
+### Props
+
+No props available.
+
+---
+
+## DrawerRoot
+
+Groups all parts of the drawer.
+Doesn't render its own HTML element.
+
+Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **open** | `boolean` | — | Whether the drawer is currently open. |
+| **defaultOpen** | `boolean` | `false` | Whether the drawer is initially open.<br/><br/>To render a controlled drawer, use the `open` prop instead. |
+| **modal** | `boolean \| "trap-focus"` | `true` | Determines if the drawer enters a modal state when open.<br/>- `true`: user interaction is limited to just the drawer: focus is trapped, document page scroll is locked, and pointer interactions on outside elements are disabled.<br/>- `false`: user interaction with the rest of the document is allowed.<br/>- `'trap-focus'`: focus is trapped inside the drawer, but document page scroll is not locked and pointer interactions outside of it remain enabled. |
+| **onOpenChange** | `(...) => void` | — | Event handler called when the drawer is opened or closed. |
+| **onOpenChangeComplete** | `(...) => void` | — | Event handler called after any animations complete when the drawer is opened or closed. |
+| **disablePointerDismissal** | `boolean` | `false` | Determines whether the drawer should close on outside clicks. |
+| **actionsRef** | `RefObject<DrawerRootActions>` | — | A ref to imperative actions.<br/>- `unmount`: When specified, the drawer will not be unmounted when closed.<br/>Instead, the `unmount` function must be called to unmount the drawer manually.<br/>Useful when the drawer's animation is controlled by an external library.<br/>- `close`: Closes the drawer imperatively when called. |
+| **handle** | `DialogHandle<Payload>` | — | A handle to associate the drawer with a trigger.<br/>If specified, allows detached triggers to control the drawer's open state.<br/>Can be created with the Drawer.createHandle() method. |
+| **triggerId** | `string` | — | ID of the trigger that the drawer is associated with.<br/>This is useful in conjunction with the `open` prop to create a controlled drawer.<br/>There's no need to specify this prop when the drawer is uncontrolled (i.e. when the `open` prop is not set). |
+| **defaultTriggerId** | `string` | — | ID of the trigger that the drawer is associated with.<br/>This is useful in conjunction with the `defaultOpen` prop to create an initially open drawer. |
+| **children** | `ReactNode \| PayloadChildRenderFunction<Payload>` | — | The content of the drawer. |
+| **swipeDirection** | `SwipeDirection` | `'down'` | The swipe direction used to dismiss the drawer. |
+| **snapPoints** | `DrawerSnapPoint[]` | — | Snap points used to position the drawer.<br/>Use numbers between 0 and 1 to represent fractions of the viewport height,<br/>numbers greater than 1 as pixel values, or strings in `px`/`rem` units<br/>(for example, `'148px'` or `'30rem'`). |
+| **snapToSequentialPoints** | `boolean` | `false` | Disables velocity-based snap skipping so drag distance determines the next snap point. |
+| **snapPoint** | `DrawerSnapPoint` | — | The currently active snap point. Use with `onSnapPointChange` to control the snap point. |
+| **defaultSnapPoint** | `DrawerSnapPoint` | — | The initial snap point value when uncontrolled. |
+| **onSnapPointChange** | `(...) => void` | — | Callback fired when the snap point changes. |
+
+
+---
+
+## DrawerSwipeArea
+
+An invisible area that listens for swipe gestures to open the drawer.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **disabled** | `boolean` | `false` | Whether the swipe area is disabled. |
+| **swipeDirection** | `SwipeDirection` | — | The swipe direction that opens the drawer.<br/>Defaults to the opposite of `Drawer.Root` `swipeDirection`. |
+
+
+---
+
+## DrawerTitle
+
+A heading that labels the drawer.
+Renders an `&lt;h2&gt;` element.
+
+Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## DrawerTrigger
+
+A button that opens the drawer.
+Renders a `&lt;button&gt;` element.
+
+Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **handle** | `DialogHandle<Payload>` | — | A handle to associate the trigger with a drawer.<br/>Can be created with the Drawer.createHandle() method. |
+| **payload** | `Payload` | — | A payload to pass to the drawer when it is opened. |
+| **id** | `string` | — | ID of the trigger. In addition to being forwarded to the rendered element,<br/>it is also used to specify the active trigger for drawers in controlled mode (with the Drawer.Root `triggerId` prop). |
+| **nativeButton** | `boolean` | `true` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`). |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## DrawerViewport
+
+A positioning container for the drawer popup that can be made scrollable.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Drawer](https://base-ui.com/react/components/drawer)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## DrawerViewportContext
+
+
+
+### Props
+
+No props available.
+
+---
+

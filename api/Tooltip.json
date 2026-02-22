@@ -1,0 +1,720 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/tooltip/arrow/TooltipArrow.tsx",
+    "description": "Displays an element positioned against the tooltip anchor.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)",
+    "displayName": "TooltipArrow",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: TooltipArrowState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, TooltipArrowState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/tooltip/popup/TooltipPopup.tsx",
+    "description": "A container for the tooltip contents.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)",
+    "displayName": "TooltipPopup",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: TooltipPopupState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, TooltipPopupState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/tooltip/portal/TooltipPortal.tsx",
+    "description": "A portal element that moves the popup to a different part of the DOM.\nBy default, the portal element is appended to `<body>`.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)",
+    "displayName": "TooltipPortal",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: State) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, State>"
+        }
+      },
+      "keepMounted": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to keep the portal mounted in the DOM while the popup is hidden.",
+        "name": "keepMounted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tooltip/portal/TooltipPortal.tsx",
+          "name": "TooltipPortalProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tooltip/portal/TooltipPortal.tsx",
+            "name": "TooltipPortalProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "container": {
+        "defaultValue": null,
+        "description": "A parent element to render the portal element into.",
+        "name": "container",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingPortal.tsx",
+          "name": "Props"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingPortal.tsx",
+            "name": "Props"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "HTMLElement | ShadowRoot | RefObject<HTMLElement | ShadowRoot>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/tooltip/positioner/TooltipPositioner.tsx",
+    "description": "Positions the tooltip against the trigger.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)",
+    "displayName": "TooltipPositioner",
+    "methods": [],
+    "props": {
+      "anchor": {
+        "defaultValue": null,
+        "description": "An element to position the popup against.\nBy default, the popup will be positioned against the trigger.",
+        "name": "anchor",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Element | RefObject<Element> | VirtualElement | (() => Element | VirtualElement)"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: TooltipPositionerState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, TooltipPositionerState>"
+        }
+      },
+      "sticky": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to maintain the popup in the viewport after\nthe anchor element was scrolled out of view.",
+        "name": "sticky",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "side": {
+        "defaultValue": {
+          "value": "'top'"
+        },
+        "description": "Which side of the anchor element to align the popup against.\nMay automatically change to avoid collisions.",
+        "name": "side",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tooltip/positioner/TooltipPositioner.tsx",
+          "name": "TooltipPositionerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tooltip/positioner/TooltipPositioner.tsx",
+            "name": "TooltipPositionerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Side"
+        }
+      },
+      "align": {
+        "defaultValue": {
+          "value": "'center'"
+        },
+        "description": "How to align the popup relative to the specified side.",
+        "name": "align",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Align"
+        }
+      },
+      "positionMethod": {
+        "defaultValue": {
+          "value": "'absolute'"
+        },
+        "description": "Determines which CSS `position` property to use.",
+        "name": "positionMethod",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"fixed\" | \"absolute\""
+        }
+      },
+      "sideOffset": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "Distance between the anchor and the popup in pixels.\nAlso accepts a function that returns the distance to read the dimensions of the anchor\nand positioner elements, along with its side and alignment.\n\nThe function takes a `data` object parameter with the following properties:\n- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.\n- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.\n- `data.side`: which side of the anchor element the positioner is aligned against.\n- `data.align`: how the positioner is aligned relative to the specified side.\n@example ```jsx\n<Positioner\n  sideOffset={({ side, align, anchor, positioner }) => {\n    return side === 'top' || side === 'bottom'\n      ? anchor.height\n      : anchor.width;\n  }}\n/>\n```",
+        "name": "sideOffset",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number | OffsetFunction"
+        }
+      },
+      "alignOffset": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "Additional offset along the alignment axis in pixels.\nAlso accepts a function that returns the offset to read the dimensions of the anchor\nand positioner elements, along with its side and alignment.\n\nThe function takes a `data` object parameter with the following properties:\n- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.\n- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.\n- `data.side`: which side of the anchor element the positioner is aligned against.\n- `data.align`: how the positioner is aligned relative to the specified side.\n@example ```jsx\n<Positioner\n  alignOffset={({ side, align, anchor, positioner }) => {\n    return side === 'top' || side === 'bottom'\n      ? anchor.width\n      : anchor.height;\n  }}\n/>\n```",
+        "name": "alignOffset",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number | OffsetFunction"
+        }
+      },
+      "collisionBoundary": {
+        "defaultValue": {
+          "value": "'clipping-ancestors'"
+        },
+        "description": "An element or a rectangle that delimits the area that the popup is confined to.",
+        "name": "collisionBoundary",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Boundary"
+        }
+      },
+      "collisionPadding": {
+        "defaultValue": {
+          "value": "5"
+        },
+        "description": "Additional space to maintain from the edge of the collision boundary.",
+        "name": "collisionPadding",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Padding"
+        }
+      },
+      "arrowPadding": {
+        "defaultValue": {
+          "value": "5"
+        },
+        "description": "Minimum distance to maintain between the arrow and the edges of the popup.\n\nUse it to prevent the arrow element from hanging out of the rounded corners of a popup.",
+        "name": "arrowPadding",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "disableAnchorTracking": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to disable the popup from tracking any layout shift of its positioning anchor.",
+        "name": "disableAnchorTracking",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "collisionAvoidance": {
+        "defaultValue": null,
+        "description": "Determines how to handle collisions when positioning the popup.\n@example ```jsx\n<Positioner\n  collisionAvoidance={{\n    side: 'shift',\n    align: 'shift',\n    fallbackAxisSide: 'none',\n  }}\n/>\n```",
+        "name": "collisionAvoidance",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "CollisionAvoidance"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/tooltip/provider/TooltipProvider.tsx",
+    "description": "Provides a shared delay for multiple tooltips. The grouping logic ensures that\nonce a tooltip becomes visible, the adjacent tooltips will be shown instantly.\n\nDocumentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)",
+    "displayName": "TooltipProvider",
+    "methods": [],
+    "props": {
+      "delay": {
+        "defaultValue": null,
+        "description": "How long to wait before opening a tooltip. Specified in milliseconds.",
+        "name": "delay",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tooltip/provider/TooltipProvider.tsx",
+          "name": "TooltipProviderProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tooltip/provider/TooltipProvider.tsx",
+            "name": "TooltipProviderProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "closeDelay": {
+        "defaultValue": null,
+        "description": "How long to wait before closing a tooltip. Specified in milliseconds.",
+        "name": "closeDelay",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tooltip/provider/TooltipProvider.tsx",
+          "name": "TooltipProviderProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tooltip/provider/TooltipProvider.tsx",
+            "name": "TooltipProviderProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "timeout": {
+        "defaultValue": {
+          "value": "400"
+        },
+        "description": "Another tooltip will open instantly if the previous tooltip\nis closed within this timeout. Specified in milliseconds.",
+        "name": "timeout",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tooltip/provider/TooltipProvider.tsx",
+          "name": "TooltipProviderProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tooltip/provider/TooltipProvider.tsx",
+            "name": "TooltipProviderProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/tooltip/root/TooltipRoot.tsx",
+    "description": "Groups all parts of the tooltip.\nDoesn’t render its own HTML element.\n\nDocumentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)",
+    "displayName": "TooltipRoot",
+    "methods": [],
+    "props": {}
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/tooltip/trigger/TooltipTrigger.tsx",
+    "description": "An element to attach the tooltip to.\nRenders a `<button>` element.\n\nDocumentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)",
+    "displayName": "TooltipTrigger",
+    "methods": [],
+    "props": {
+      "handle": {
+        "defaultValue": null,
+        "description": "A handle to associate the trigger with a tooltip.",
+        "name": "handle",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tooltip/trigger/TooltipTrigger.tsx",
+          "name": "TooltipTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tooltip/trigger/TooltipTrigger.tsx",
+            "name": "TooltipTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "TooltipHandle<Payload>"
+        }
+      },
+      "payload": {
+        "defaultValue": null,
+        "description": "A payload to pass to the tooltip when it is opened.",
+        "name": "payload",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tooltip/trigger/TooltipTrigger.tsx",
+          "name": "TooltipTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tooltip/trigger/TooltipTrigger.tsx",
+            "name": "TooltipTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Payload"
+        }
+      },
+      "delay": {
+        "defaultValue": {
+          "value": "600"
+        },
+        "description": "How long to wait before opening the tooltip. Specified in milliseconds.",
+        "name": "delay",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tooltip/trigger/TooltipTrigger.tsx",
+          "name": "TooltipTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tooltip/trigger/TooltipTrigger.tsx",
+            "name": "TooltipTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "closeDelay": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "How long to wait before closing the tooltip. Specified in milliseconds.",
+        "name": "closeDelay",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tooltip/trigger/TooltipTrigger.tsx",
+          "name": "TooltipTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tooltip/trigger/TooltipTrigger.tsx",
+            "name": "TooltipTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "If `true`, the tooltip will not open when interacting with this trigger.\nNote that this doesn't apply the `disabled` attribute to the trigger element.\nIf you want to disable the trigger element itself, you can pass the `disabled` prop to the trigger element via the `render` prop.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tooltip/trigger/TooltipTrigger.tsx",
+          "name": "TooltipTriggerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tooltip/trigger/TooltipTrigger.tsx",
+            "name": "TooltipTriggerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: TooltipTriggerState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, TooltipTriggerState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/tooltip/viewport/TooltipViewport.tsx",
+    "description": "A viewport for displaying content transitions.\nThis component is only required if one popup can be opened by multiple triggers, its content change based on the trigger\nand switching between them is animated.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)",
+    "displayName": "TooltipViewport",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: State) => string)"
+        }
+      },
+      "children": {
+        "defaultValue": null,
+        "description": "The content to render inside the transition container.",
+        "name": "children",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tooltip/viewport/TooltipViewport.tsx",
+          "name": "Props"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tooltip/viewport/TooltipViewport.tsx",
+            "name": "Props"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, State>"
+        }
+      }
+    }
+  }
+]

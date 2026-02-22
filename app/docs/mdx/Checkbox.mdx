@@ -1,0 +1,76 @@
+---
+title: Checkbox
+---
+
+# Checkbox
+
+## CheckboxIndicator
+
+Indicates whether the checkbox is ticked.
+Renders a `&lt;span&gt;` element.
+
+Documentation: [Base UI Checkbox](https://base-ui.com/react/components/checkbox)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **keepMounted** | `boolean` | `false` | Whether to keep the element in the DOM when the checkbox is not checked. |
+
+
+---
+
+## CheckboxRoot
+
+Represents the checkbox itself.
+Renders a `&lt;span&gt;` element and a hidden `&lt;input&gt;` beside.
+
+Documentation: [Base UI Checkbox](https://base-ui.com/react/components/checkbox)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **defaultChecked** | `boolean` | `false` | Whether the checkbox is initially ticked.<br/><br/>To render a controlled checkbox, use the `checked` prop instead. |
+| **id** | `string` | — | The id of the input element. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **value** | `string` | — | The value of the selected checkbox. |
+| **disabled** | `boolean` | `false` | Whether the component should ignore user interaction. |
+| **name** | `string` | `undefined` | Identifies the field when a form is submitted. |
+| **nativeButton** | `boolean` | `false` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `true` if the rendered element is a native button. |
+| **required** | `boolean` | `false` | Whether the user must tick the checkbox before submitting a form. |
+| **readOnly** | `boolean` | `false` | Whether the user should be unable to tick or untick the checkbox. |
+| **inputRef** | `Ref<HTMLInputElement>` | — | A ref to access the hidden `&lt;input&gt;` element. |
+| **checked** | `boolean` | `undefined` | Whether the checkbox is currently ticked.<br/><br/>To render an uncontrolled checkbox, use the `defaultChecked` prop instead. |
+| **indeterminate** | `boolean` | `false` | Whether the checkbox is in a mixed state: neither ticked, nor unticked. |
+| **onCheckedChange** | `(...) => void` | — | Event handler called when the checkbox is ticked or unticked. |
+| **parent** | `boolean` | `false` | Whether the checkbox controls a group of child checkboxes.<br/><br/>Must be used in a [Checkbox Group](https://base-ui.com/react/components/checkbox-group). |
+| **uncheckedValue** | `string` | — | The value submitted with the form when the checkbox is unchecked.<br/>By default, unchecked checkboxes do not submit any value, matching native checkbox behavior. |
+
+
+---
+
+## CheckboxGroup
+
+Provides a shared state to a series of checkboxes.
+
+Documentation: [Base UI Checkbox Group](https://base-ui.com/react/components/checkbox-group)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **defaultValue** | `string[]` | — | Names of the checkboxes in the group that should be initially ticked.<br/><br/>To render a controlled checkbox group, use the `value` prop instead. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **value** | `string[]` | — | Names of the checkboxes in the group that should be ticked.<br/><br/>To render an uncontrolled checkbox group, use the `defaultValue` prop instead. |
+| **disabled** | `boolean` | `false` | Whether the component should ignore user interaction. |
+| **onValueChange** | `(...) => void` | — | Event handler called when a checkbox in the group is ticked or unticked.<br/>Provides the new value as an argument. |
+| **allValues** | `string[]` | — | Names of all checkboxes in the group. Use this when creating a parent checkbox. |
+
+
+---
+

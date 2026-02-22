@@ -1,0 +1,439 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/tabs/indicator/TabsIndicator.tsx",
+    "description": "A visual indicator that can be styled to match the position of the currently active tab.\nRenders a `<span>` element.\n\nDocumentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)",
+    "displayName": "TabsIndicator",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: TabsIndicatorState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, TabsIndicatorState>"
+        }
+      },
+      "renderBeforeHydration": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to render itself before React hydrates.\nThis minimizes the time that the indicator isn’t visible after server-side rendering.",
+        "name": "renderBeforeHydration",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tabs/indicator/TabsIndicator.tsx",
+          "name": "TabsIndicatorProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tabs/indicator/TabsIndicator.tsx",
+            "name": "TabsIndicatorProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/tabs/list/TabsList.tsx",
+    "description": "Groups the individual tab buttons.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)",
+    "displayName": "TabsList",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: TabsListState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, TabsListState>"
+        }
+      },
+      "loopFocus": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether to loop keyboard focus back to the first item\nwhen the end of the list is reached while using the arrow keys.",
+        "name": "loopFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tabs/list/TabsList.tsx",
+          "name": "TabsListProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tabs/list/TabsList.tsx",
+            "name": "TabsListProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "activateOnFocus": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to automatically change the active tab on arrow key focus.\nOtherwise, tabs will be activated using <kbd>Enter</kbd> or <kbd>Space</kbd> key press.",
+        "name": "activateOnFocus",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tabs/list/TabsList.tsx",
+          "name": "TabsListProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tabs/list/TabsList.tsx",
+            "name": "TabsListProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/tabs/panel/TabsPanel.tsx",
+    "description": "A panel displayed when the corresponding tab is active.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)",
+    "displayName": "TabsPanel",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: TabsPanelState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, TabsPanelState>"
+        }
+      },
+      "value": {
+        "defaultValue": null,
+        "description": "The value of the TabPanel. It will be shown when the Tab with the corresponding value is active.",
+        "name": "value",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tabs/panel/TabsPanel.tsx",
+          "name": "TabsPanelProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tabs/panel/TabsPanel.tsx",
+            "name": "TabsPanelProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "keepMounted": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to keep the HTML element in the DOM while the panel is hidden.",
+        "name": "keepMounted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tabs/panel/TabsPanel.tsx",
+          "name": "TabsPanelProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tabs/panel/TabsPanel.tsx",
+            "name": "TabsPanelProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/tabs/root/TabsRoot.tsx",
+    "description": "Groups the tabs and the corresponding panels.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)",
+    "displayName": "TabsRoot",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: TabsRootState) => string)"
+        }
+      },
+      "defaultValue": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "The default value. Use when the component is not controlled.\nWhen the value is `null`, no Tab will be active.",
+        "name": "defaultValue",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tabs/root/TabsRoot.tsx",
+          "name": "TabsRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tabs/root/TabsRoot.tsx",
+            "name": "TabsRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "any"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, TabsRootState>"
+        }
+      },
+      "value": {
+        "defaultValue": null,
+        "description": "The value of the currently active `Tab`. Use when the component is controlled.\nWhen the value is `null`, no Tab will be active.",
+        "name": "value",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tabs/root/TabsRoot.tsx",
+          "name": "TabsRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tabs/root/TabsRoot.tsx",
+            "name": "TabsRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "any"
+        }
+      },
+      "orientation": {
+        "defaultValue": {
+          "value": "'horizontal'"
+        },
+        "description": "The component orientation (layout flow direction).",
+        "name": "orientation",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tabs/root/TabsRoot.tsx",
+          "name": "TabsRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tabs/root/TabsRoot.tsx",
+            "name": "TabsRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Orientation"
+        }
+      },
+      "onValueChange": {
+        "defaultValue": null,
+        "description": "Callback invoked when new value is being set.",
+        "name": "onValueChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tabs/root/TabsRoot.tsx",
+          "name": "TabsRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tabs/root/TabsRoot.tsx",
+            "name": "TabsRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(value: any, eventDetails: BaseUIChangeEventDetail<\"none\", { activationDirection: TabsTabActivationDirection; }>) => void"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/tabs/tab/TabsTab.tsx",
+    "description": "An individual interactive tab button that toggles the corresponding panel.\nRenders a `<button>` element.\n\nDocumentation: [Base UI Tabs](https://base-ui.com/react/components/tabs)",
+    "displayName": "TabsTab",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: TabsTabState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, TabsTabState>"
+        }
+      },
+      "value": {
+        "defaultValue": null,
+        "description": "The value of the Tab.",
+        "name": "value",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tabs/tab/TabsTab.tsx",
+          "name": "TabsTabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tabs/tab/TabsTab.tsx",
+            "name": "TabsTabProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "any"
+        }
+      },
+      "disabled": {
+        "defaultValue": null,
+        "description": "Whether the Tab is disabled.\n\nIf a first Tab on a `<Tabs.List>` is disabled, it won't initially be selected.\nInstead, the next enabled Tab will be selected.\nHowever, it does not work like this during server-side rendering, as it is not known\nduring pre-rendering which Tabs are disabled.\nTo work around it, ensure that `defaultValue` or `value` on `<Tabs.Root>` is set to an enabled Tab's value.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/tabs/tab/TabsTab.tsx",
+          "name": "TabsTabProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/tabs/tab/TabsTab.tsx",
+            "name": "TabsTabProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  }
+]

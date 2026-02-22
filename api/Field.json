@@ -1,0 +1,540 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/field/control/FieldControl.tsx",
+    "description": "The form control to label and validate.\nRenders an `<input>` element.\n\nYou can omit this part and use any Base UI input component instead. For example,\n[Input](https://base-ui.com/react/components/input), [Checkbox](https://base-ui.com/react/components/checkbox),\nor [Select](https://base-ui.com/react/components/select), among others, will work with Field out of the box.\n\nDocumentation: [Base UI Field](https://base-ui.com/react/components/field)",
+    "displayName": "FieldControl",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: FieldRootState) => string)"
+        }
+      },
+      "defaultValue": {
+        "defaultValue": null,
+        "description": "",
+        "name": "defaultValue",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/field/control/FieldControl.tsx",
+          "name": "FieldControlProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/field/control/FieldControl.tsx",
+            "name": "FieldControlProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | number | readonly string[]"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, FieldRootState>"
+        }
+      },
+      "onValueChange": {
+        "defaultValue": null,
+        "description": "Callback fired when the `value` changes. Use when controlled.",
+        "name": "onValueChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/field/control/FieldControl.tsx",
+          "name": "FieldControlProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/field/control/FieldControl.tsx",
+            "name": "FieldControlProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(value: string, eventDetails: { reason: \"none\"; event: Event; cancel: () => void; allowPropagation: () => void; isCanceled: boolean; isPropagationAllowed: boolean; trigger: Element; }) => void"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/field/description/FieldDescription.tsx",
+    "description": "A paragraph with additional information about the field.\nRenders a `<p>` element.\n\nDocumentation: [Base UI Field](https://base-ui.com/react/components/field)",
+    "displayName": "FieldDescription",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: FieldRootState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, FieldRootState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/field/error/FieldError.tsx",
+    "description": "An error message displayed if the field control fails validation.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Field](https://base-ui.com/react/components/field)",
+    "displayName": "FieldError",
+    "methods": [],
+    "props": {
+      "match": {
+        "defaultValue": null,
+        "description": "Determines whether to show the error message according to the field’s\n[ValidityState](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState).\nSpecifying `true` will always show the error message, and lets external libraries\ncontrol the visibility.",
+        "name": "match",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/field/error/FieldError.tsx",
+          "name": "FieldErrorProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/field/error/FieldError.tsx",
+            "name": "FieldErrorProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean | keyof ValidityState"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: FieldErrorState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, FieldErrorState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/field/item/FieldItem.tsx",
+    "description": "Groups individual items in a checkbox group or radio group with a label and description.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Field](https://base-ui.com/react/components/field)",
+    "displayName": "FieldItem",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: FieldRootState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, FieldRootState>"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the wrapped control should ignore user interaction.\nThe `disabled` prop on `<Field.Root>` takes precedence over this.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/field/item/FieldItem.tsx",
+          "name": "FieldItemProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/field/item/FieldItem.tsx",
+            "name": "FieldItemProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/field/label/FieldLabel.tsx",
+    "description": "An accessible label that is automatically associated with the field control.\nRenders a `<label>` element.\n\nDocumentation: [Base UI Field](https://base-ui.com/react/components/field)",
+    "displayName": "FieldLabel",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: FieldRootState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, FieldRootState>"
+        }
+      },
+      "nativeLabel": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<label>` element when replacing it via the `render` prop.\nSet to `false` if the rendered element is not a label (e.g. `<div>`).\n\nThis is useful to avoid inheriting label behaviors on `<button>` controls (such as `<Select.Trigger>` and `<Combobox.Trigger>`), including avoiding `:hover` on the button when hovering the label, and preventing clicks on the label from firing on the button.",
+        "name": "nativeLabel",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/field/label/FieldLabel.tsx",
+          "name": "FieldLabelProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/field/label/FieldLabel.tsx",
+            "name": "FieldLabelProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+    "description": "Groups all parts of the field.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Field](https://base-ui.com/react/components/field)",
+    "displayName": "FieldRoot",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: FieldRootState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, FieldRootState>"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component should ignore user interaction.\nTakes precedence over the `disabled` prop on the `<Field.Control>` component.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+          "name": "FieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+            "name": "FieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "name": {
+        "defaultValue": null,
+        "description": "Identifies the field when a form is submitted.\nTakes precedence over the `name` prop on the `<Field.Control>` component.",
+        "name": "name",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+          "name": "FieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+            "name": "FieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "actionsRef": {
+        "defaultValue": null,
+        "description": "A ref to imperative actions.\n- `validate`: Validates the field when called.",
+        "name": "actionsRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+          "name": "FieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+            "name": "FieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "RefObject<FieldRootActions>"
+        }
+      },
+      "touched": {
+        "defaultValue": null,
+        "description": "Whether the field has been touched.\nUseful when the field state is controlled by an external library.",
+        "name": "touched",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+          "name": "FieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+            "name": "FieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "dirty": {
+        "defaultValue": null,
+        "description": "Whether the field's value has been changed from its initial value.\nUseful when the field state is controlled by an external library.",
+        "name": "dirty",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+          "name": "FieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+            "name": "FieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "validate": {
+        "defaultValue": null,
+        "description": "A function for custom validation. Return a string or an array of strings with\nthe error message(s) if the value is invalid, or `null` if the value is valid.\nAsynchronous functions are supported, but they do not prevent form submission\nwhen using `validationMode=\"onSubmit\"`.",
+        "name": "validate",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+          "name": "FieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+            "name": "FieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(value: unknown, formValues: Record<string, any>) => string | string[] | Promise<string | string[]>"
+        }
+      },
+      "validationMode": {
+        "defaultValue": {
+          "value": "'onSubmit'"
+        },
+        "description": "Determines when the field should be validated.\nThis takes precedence over the `validationMode` prop on `<Form>`.\n\n- `onSubmit`: triggers validation when the form is submitted, and re-validates on change after submission.\n- `onBlur`: triggers validation when the control loses focus.\n- `onChange`: triggers validation on every change to the control value.",
+        "name": "validationMode",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+          "name": "FieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+            "name": "FieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "FormValidationMode"
+        }
+      },
+      "validationDebounceTime": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "How long to wait between `validate` callbacks if\n`validationMode=\"onChange\"` is used. Specified in milliseconds.",
+        "name": "validationDebounceTime",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+          "name": "FieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+            "name": "FieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "invalid": {
+        "defaultValue": null,
+        "description": "Whether the field is invalid.\nUseful when the field state is controlled by an external library.",
+        "name": "invalid",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+          "name": "FieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/field/root/FieldRoot.tsx",
+            "name": "FieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/field/validity/FieldValidity.tsx",
+    "description": "Used to display a custom message based on the field’s validity.\nRequires `children` to be a function that accepts field validity state as an argument.\n\nDocumentation: [Base UI Field](https://base-ui.com/react/components/field)",
+    "displayName": "FieldValidity",
+    "methods": [],
+    "props": {
+      "children": {
+        "defaultValue": null,
+        "description": "A function that accepts the field validity state as an argument.\n\n```jsx\n<Field.Validity>\n  {(validity) => {\n    return <div>...</div>\n  }}\n</Field.Validity>\n```",
+        "name": "children",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/field/validity/FieldValidity.tsx",
+          "name": "FieldValidityProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/field/validity/FieldValidity.tsx",
+            "name": "FieldValidityProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "(state: FieldValidityState) => ReactNode"
+        }
+      }
+    }
+  }
+]

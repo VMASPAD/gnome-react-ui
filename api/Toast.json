@@ -1,0 +1,830 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toast/action/ToastAction.tsx",
+    "description": "Performs an action when clicked.\nRenders a `<button>` element.\n\nDocumentation: [Base UI Toast](https://base-ui.com/react/components/toast)",
+    "displayName": "ToastAction",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ToastActionState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToastActionState>"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toast/arrow/ToastArrow.tsx",
+    "description": "Displays an element positioned against the toast anchor.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Toast](https://base-ui.com/react/components/toast)",
+    "displayName": "ToastArrow",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ToastArrowState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToastArrowState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toast/close/ToastClose.tsx",
+    "description": "Closes the toast when clicked.\nRenders a `<button>` element.\n\nDocumentation: [Base UI Toast](https://base-ui.com/react/components/toast)",
+    "displayName": "ToastClose",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ToastCloseState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToastCloseState>"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toast/content/ToastContent.tsx",
+    "description": "A container for the contents of a toast.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Toast](https://base-ui.com/react/components/toast)",
+    "displayName": "ToastContent",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ToastContentState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToastContentState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toast/description/ToastDescription.tsx",
+    "description": "A description that describes the toast.\nCan be used as the default message for the toast when no title is provided.\nRenders a `<p>` element.\n\nDocumentation: [Base UI Toast](https://base-ui.com/react/components/toast)",
+    "displayName": "ToastDescription",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ToastDescriptionState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToastDescriptionState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toast/portal/ToastPortal.tsx",
+    "description": "A portal element that moves the viewport to a different part of the DOM.\nBy default, the portal element is appended to `<body>`.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Toast](https://base-ui.com/react/components/toast)",
+    "displayName": "ToastPortal",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: any) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, any>"
+        }
+      },
+      "container": {
+        "defaultValue": null,
+        "description": "A parent element to render the portal element into.",
+        "name": "container",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingPortal.tsx",
+          "name": "Props"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/floating-ui-react/components/FloatingPortal.tsx",
+            "name": "Props"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "HTMLElement | ShadowRoot | RefObject<HTMLElement | ShadowRoot>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toast/positioner/ToastPositioner.tsx",
+    "description": "Positions the toast against the anchor.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Toast](https://base-ui.com/react/components/toast)",
+    "displayName": "ToastPositioner",
+    "methods": [],
+    "props": {
+      "anchor": {
+        "defaultValue": null,
+        "description": "An element to position the toast against.",
+        "name": "anchor",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toast/positioner/ToastPositioner.tsx",
+          "name": "ToastPositionerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toast/positioner/ToastPositioner.tsx",
+            "name": "ToastPositionerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Element"
+        }
+      },
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ToastPositionerState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToastPositionerState>"
+        }
+      },
+      "sticky": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to maintain the popup in the viewport after\nthe anchor element was scrolled out of view.",
+        "name": "sticky",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "side": {
+        "defaultValue": {
+          "value": "'top'"
+        },
+        "description": "Which side of the anchor element to align the toast against.\nMay automatically change to avoid collisions.",
+        "name": "side",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toast/positioner/ToastPositioner.tsx",
+          "name": "ToastPositionerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toast/positioner/ToastPositioner.tsx",
+            "name": "ToastPositionerProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Side"
+        }
+      },
+      "align": {
+        "defaultValue": {
+          "value": "'center'"
+        },
+        "description": "How to align the popup relative to the specified side.",
+        "name": "align",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Align"
+        }
+      },
+      "positionMethod": {
+        "defaultValue": {
+          "value": "'absolute'"
+        },
+        "description": "Determines which CSS `position` property to use.",
+        "name": "positionMethod",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"fixed\" | \"absolute\""
+        }
+      },
+      "sideOffset": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "Distance between the anchor and the popup in pixels.\nAlso accepts a function that returns the distance to read the dimensions of the anchor\nand positioner elements, along with its side and alignment.\n\nThe function takes a `data` object parameter with the following properties:\n- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.\n- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.\n- `data.side`: which side of the anchor element the positioner is aligned against.\n- `data.align`: how the positioner is aligned relative to the specified side.\n@example ```jsx\n<Positioner\n  sideOffset={({ side, align, anchor, positioner }) => {\n    return side === 'top' || side === 'bottom'\n      ? anchor.height\n      : anchor.width;\n  }}\n/>\n```",
+        "name": "sideOffset",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number | OffsetFunction"
+        }
+      },
+      "alignOffset": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "Additional offset along the alignment axis in pixels.\nAlso accepts a function that returns the offset to read the dimensions of the anchor\nand positioner elements, along with its side and alignment.\n\nThe function takes a `data` object parameter with the following properties:\n- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.\n- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.\n- `data.side`: which side of the anchor element the positioner is aligned against.\n- `data.align`: how the positioner is aligned relative to the specified side.\n@example ```jsx\n<Positioner\n  alignOffset={({ side, align, anchor, positioner }) => {\n    return side === 'top' || side === 'bottom'\n      ? anchor.width\n      : anchor.height;\n  }}\n/>\n```",
+        "name": "alignOffset",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number | OffsetFunction"
+        }
+      },
+      "collisionBoundary": {
+        "defaultValue": {
+          "value": "'clipping-ancestors'"
+        },
+        "description": "An element or a rectangle that delimits the area that the popup is confined to.",
+        "name": "collisionBoundary",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Boundary"
+        }
+      },
+      "collisionPadding": {
+        "defaultValue": {
+          "value": "5"
+        },
+        "description": "Additional space to maintain from the edge of the collision boundary.",
+        "name": "collisionPadding",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Padding"
+        }
+      },
+      "arrowPadding": {
+        "defaultValue": {
+          "value": "5"
+        },
+        "description": "Minimum distance to maintain between the arrow and the edges of the popup.\n\nUse it to prevent the arrow element from hanging out of the rounded corners of a popup.",
+        "name": "arrowPadding",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "disableAnchorTracking": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to disable the popup from tracking any layout shift of its positioning anchor.",
+        "name": "disableAnchorTracking",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "collisionAvoidance": {
+        "defaultValue": null,
+        "description": "Determines how to handle collisions when positioning the popup.\n@example ```jsx\n<Positioner\n  collisionAvoidance={{\n    side: 'shift',\n    align: 'shift',\n    fallbackAxisSide: 'none',\n  }}\n/>\n```",
+        "name": "collisionAvoidance",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+          "name": "UseAnchorPositioningSharedParameters"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/useAnchorPositioning.ts",
+            "name": "UseAnchorPositioningSharedParameters"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "CollisionAvoidance"
+        }
+      },
+      "toast": {
+        "defaultValue": null,
+        "description": "The toast object associated with the positioner.",
+        "name": "toast",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toast/positioner/ToastPositioner.tsx",
+          "name": "ToastPositionerProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toast/positioner/ToastPositioner.tsx",
+            "name": "ToastPositionerProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "ToastObject<any>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toast/provider/ToastProvider.tsx",
+    "description": "Provides a context for creating and managing toasts.\n\nDocumentation: [Base UI Toast](https://base-ui.com/react/components/toast)",
+    "displayName": "ToastProvider",
+    "methods": [],
+    "props": {
+      "timeout": {
+        "defaultValue": {
+          "value": "5000"
+        },
+        "description": "The default amount of time (in ms) before a toast is auto dismissed.\nA value of `0` will prevent the toast from being dismissed automatically.",
+        "name": "timeout",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toast/provider/ToastProvider.tsx",
+          "name": "ToastProviderProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toast/provider/ToastProvider.tsx",
+            "name": "ToastProviderProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "limit": {
+        "defaultValue": {
+          "value": "3"
+        },
+        "description": "The maximum number of toasts that can be displayed at once.\nWhen the limit is reached, the oldest toast will be removed to make room for the new one.",
+        "name": "limit",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toast/provider/ToastProvider.tsx",
+          "name": "ToastProviderProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toast/provider/ToastProvider.tsx",
+            "name": "ToastProviderProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "toastManager": {
+        "defaultValue": null,
+        "description": "A global manager for toasts to use outside of a React component.",
+        "name": "toastManager",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toast/provider/ToastProvider.tsx",
+          "name": "ToastProviderProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toast/provider/ToastProvider.tsx",
+            "name": "ToastProviderProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ToastManager<any>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toast/root/ToastRoot.tsx",
+    "description": "Groups all parts of an individual toast.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Toast](https://base-ui.com/react/components/toast)",
+    "displayName": "ToastRoot",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ToastRootState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToastRootState>"
+        }
+      },
+      "swipeDirection": {
+        "defaultValue": {
+          "value": "['down', 'right']"
+        },
+        "description": "Direction(s) in which the toast can be swiped to dismiss.",
+        "name": "swipeDirection",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toast/root/ToastRoot.tsx",
+          "name": "ToastRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toast/root/ToastRoot.tsx",
+            "name": "ToastRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"left\" | \"right\" | \"up\" | \"down\" | (\"left\" | \"right\" | \"up\" | \"down\")[]"
+        }
+      },
+      "toast": {
+        "defaultValue": null,
+        "description": "The toast to render.",
+        "name": "toast",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/toast/root/ToastRoot.tsx",
+          "name": "ToastRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/toast/root/ToastRoot.tsx",
+            "name": "ToastRootProps"
+          }
+        ],
+        "required": true,
+        "type": {
+          "name": "ToastRootToastObject<any>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toast/title/ToastTitle.tsx",
+    "description": "A title that labels the toast.\nRenders an `<h2>` element.\n\nDocumentation: [Base UI Toast](https://base-ui.com/react/components/toast)",
+    "displayName": "ToastTitle",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ToastTitleState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToastTitleState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/toast/viewport/ToastViewport.tsx",
+    "description": "A container viewport for toasts.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Toast](https://base-ui.com/react/components/toast)",
+    "displayName": "ToastViewport",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ToastViewportState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToastViewportState>"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,797 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/number-field/decrement/NumberFieldDecrement.tsx",
+    "description": "A stepper button that decreases the field value when clicked.\nRenders an `<button>` element.\n\nDocumentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)",
+    "displayName": "NumberFieldDecrement",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: NumberFieldDecrementState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, NumberFieldDecrementState>"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/number-field/group/NumberFieldGroup.tsx",
+    "description": "Groups the input with the increment and decrement buttons.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)",
+    "displayName": "NumberFieldGroup",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: NumberFieldGroupState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, NumberFieldGroupState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/number-field/increment/NumberFieldIncrement.tsx",
+    "description": "A stepper button that increases the field value when clicked.\nRenders an `<button>` element.\n\nDocumentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)",
+    "displayName": "NumberFieldIncrement",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: NumberFieldIncrementState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, NumberFieldIncrementState>"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/number-field/input/NumberFieldInput.tsx",
+    "description": "The native input control in the number field.\nRenders an `<input>` element.\n\nDocumentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)",
+    "displayName": "NumberFieldInput",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: NumberFieldInputState) => string)"
+        }
+      },
+      "aria-roledescription": {
+        "defaultValue": {
+          "value": "'Number field'"
+        },
+        "description": "A string value that provides a user-friendly name for the role of the input.",
+        "name": "aria-roledescription",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/input/NumberFieldInput.tsx",
+          "name": "NumberFieldInputProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/input/NumberFieldInput.tsx",
+            "name": "NumberFieldInputProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, NumberFieldInputState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+    "description": "Groups all parts of the number field and manages its state.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)",
+    "displayName": "NumberFieldRoot",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: NumberFieldRootState) => string)"
+        }
+      },
+      "defaultValue": {
+        "defaultValue": null,
+        "description": "The uncontrolled value of the field when it’s initially rendered.\n\nTo render a controlled number field, use the `value` prop instead.",
+        "name": "defaultValue",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "id": {
+        "defaultValue": null,
+        "description": "The id of the input element.",
+        "name": "id",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, NumberFieldRootState>"
+        }
+      },
+      "value": {
+        "defaultValue": null,
+        "description": "The raw numeric value of the field.",
+        "name": "value",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component should ignore user interaction.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "step": {
+        "defaultValue": {
+          "value": "1"
+        },
+        "description": "Amount to increment and decrement with the buttons and arrow keys, or to scrub with pointer movement in the scrub area.\nTo always enable step validation on form submission, specify the `min` prop explicitly in conjunction with this prop.\nSpecify `step=\"any\"` to always disable step validation.",
+        "name": "step",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number | \"any\""
+        }
+      },
+      "name": {
+        "defaultValue": null,
+        "description": "Identifies the field when a form is submitted.",
+        "name": "name",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "required": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the user must enter a value before submitting a form.",
+        "name": "required",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "readOnly": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the user should be unable to change the field value.",
+        "name": "readOnly",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "inputRef": {
+        "defaultValue": null,
+        "description": "A ref to access the hidden input element.",
+        "name": "inputRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Ref<HTMLInputElement>"
+        }
+      },
+      "locale": {
+        "defaultValue": null,
+        "description": "The locale of the input element.\nDefaults to the user's runtime locale.",
+        "name": "locale",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "LocalesArgument"
+        }
+      },
+      "onValueChange": {
+        "defaultValue": null,
+        "description": "Callback fired when the number value changes.\n\nThe `eventDetails.reason` indicates what triggered the change:\n- `'input-change'` for parseable typing or programmatic text updates\n- `'input-clear'` when the field becomes empty\n- `'input-blur'` when formatting (and clamping, if enabled) occurs on blur\n- `'input-paste'` for paste interactions\n- `'keyboard'` for keyboard input\n- `'increment-press'` / `'decrement-press'` for button presses on the increment and decrement controls\n- `'wheel'` for wheel-based scrubbing\n- `'scrub'` for scrub area drags",
+        "name": "onValueChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(value: number, eventDetails: NumberFieldRootChangeEventDetails) => void"
+        }
+      },
+      "max": {
+        "defaultValue": null,
+        "description": "The maximum value of the input element.",
+        "name": "max",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "min": {
+        "defaultValue": null,
+        "description": "The minimum value of the input element.",
+        "name": "min",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "format": {
+        "defaultValue": null,
+        "description": "Options to format the input value.",
+        "name": "format",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "NumberFormatOptions"
+        }
+      },
+      "allowOutOfRange": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "When true, direct text entry may be outside the `min`/`max` range without clamping,\nso native range underflow/overflow validation can occur.\nStep-based interactions (keyboard arrows, buttons, wheel, scrub) still clamp.",
+        "name": "allowOutOfRange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "smallStep": {
+        "defaultValue": {
+          "value": "0.1"
+        },
+        "description": "The small step value of the input element when incrementing while the meta key is held. Snaps\nto multiples of this value.",
+        "name": "smallStep",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "largeStep": {
+        "defaultValue": {
+          "value": "10"
+        },
+        "description": "The large step value of the input element when incrementing while the shift key is held. Snaps\nto multiples of this value.",
+        "name": "largeStep",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "allowWheelScrub": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to allow the user to scrub the input value with the mouse wheel while focused and\nhovering over the input.",
+        "name": "allowWheelScrub",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "snapOnStep": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the value should snap to the nearest step when incrementing or decrementing.",
+        "name": "snapOnStep",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "onValueCommitted": {
+        "defaultValue": null,
+        "description": "Callback function that is fired when the value is committed.\nIt runs later than `onValueChange`, when:\n- The input is blurred after typing a value.\n- The pointer is released after scrubbing or pressing the increment/decrement buttons.\n\nIt runs simultaneously with `onValueChange` when interacting with the keyboard.\n\n**Warning**: This is a generic event not a change event.",
+        "name": "onValueCommitted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+          "name": "NumberFieldRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/root/NumberFieldRoot.tsx",
+            "name": "NumberFieldRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(value: number, eventDetails: NumberFieldRootCommitEventDetails) => void"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/number-field/scrub-area/NumberFieldScrubArea.tsx",
+    "description": "An interactive area where the user can click and drag to change the field value.\nRenders a `<span>` element.\n\nDocumentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)",
+    "displayName": "NumberFieldScrubArea",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: NumberFieldScrubAreaState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, NumberFieldScrubAreaState>"
+        }
+      },
+      "direction": {
+        "defaultValue": {
+          "value": "'horizontal'"
+        },
+        "description": "Cursor movement direction in the scrub area.",
+        "name": "direction",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/scrub-area/NumberFieldScrubArea.tsx",
+          "name": "NumberFieldScrubAreaProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/scrub-area/NumberFieldScrubArea.tsx",
+            "name": "NumberFieldScrubAreaProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"horizontal\" | \"vertical\""
+        }
+      },
+      "pixelSensitivity": {
+        "defaultValue": {
+          "value": "2"
+        },
+        "description": "Determines how many pixels the cursor must move before the value changes.\nA higher value will make scrubbing less sensitive.",
+        "name": "pixelSensitivity",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/scrub-area/NumberFieldScrubArea.tsx",
+          "name": "NumberFieldScrubAreaProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/scrub-area/NumberFieldScrubArea.tsx",
+            "name": "NumberFieldScrubAreaProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      },
+      "teleportDistance": {
+        "defaultValue": null,
+        "description": "If specified, determines the distance that the cursor may move from the center\nof the scrub area before it will loop back around.",
+        "name": "teleportDistance",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/number-field/scrub-area/NumberFieldScrubArea.tsx",
+          "name": "NumberFieldScrubAreaProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/number-field/scrub-area/NumberFieldScrubArea.tsx",
+            "name": "NumberFieldScrubAreaProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/number-field/scrub-area-cursor/NumberFieldScrubAreaCursor.tsx",
+    "description": "A custom element to display instead of the native cursor while using the scrub area.\nRenders a `<span>` element.\n\nThis component uses the [Pointer Lock API](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API), which may prompt the browser to display a related notification. It is disabled\nin Safari to avoid a layout shift that this notification causes there.\n\nDocumentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)",
+    "displayName": "NumberFieldScrubAreaCursor",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: NumberFieldScrubAreaCursorState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, NumberFieldScrubAreaCursorState>"
+        }
+      }
+    }
+  }
+]

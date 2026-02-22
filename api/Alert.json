@@ -1,0 +1,184 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/alert-dialog/root/AlertDialogRoot.tsx",
+    "description": "Groups all parts of the alert dialog.\nDoesn’t render its own HTML element.\n\nDocumentation: [Base UI Alert Dialog](https://base-ui.com/react/components/alert-dialog)",
+    "displayName": "AlertDialogRoot",
+    "methods": [],
+    "props": {
+      "onOpenChange": {
+        "defaultValue": null,
+        "description": "Event handler called when the dialog is opened or closed.",
+        "name": "onOpenChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/alert-dialog/root/AlertDialogRoot.tsx",
+          "name": "AlertDialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/alert-dialog/root/AlertDialogRoot.tsx",
+            "name": "AlertDialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean, eventDetails: AlertDialogRootChangeEventDetails) => void"
+        }
+      },
+      "actionsRef": {
+        "defaultValue": null,
+        "description": "A ref to imperative actions.\n- `unmount`: When specified, the dialog will not be unmounted when closed.\nInstead, the `unmount` function must be called to unmount the dialog manually.\nUseful when the dialog's animation is controlled by an external library.\n- `close`: Closes the dialog imperatively when called.",
+        "name": "actionsRef",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/alert-dialog/root/AlertDialogRoot.tsx",
+          "name": "AlertDialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/alert-dialog/root/AlertDialogRoot.tsx",
+            "name": "AlertDialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "RefObject<DialogRootActions>"
+        }
+      },
+      "handle": {
+        "defaultValue": null,
+        "description": "A handle to associate the alert dialog with a trigger.\nIf specified, allows external triggers to control the alert dialog's open state.\nCan be created with the AlertDialog.createHandle() method.",
+        "name": "handle",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/alert-dialog/root/AlertDialogRoot.tsx",
+          "name": "AlertDialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/alert-dialog/root/AlertDialogRoot.tsx",
+            "name": "AlertDialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "DialogHandle<Payload>"
+        }
+      },
+      "children": {
+        "defaultValue": null,
+        "description": "The content of the dialog.\nThis can be a regular React node or a render function that receives the `payload` of the active trigger.",
+        "name": "children",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactNode | PayloadChildRenderFunction<Payload>"
+        }
+      },
+      "open": {
+        "defaultValue": null,
+        "description": "Whether the dialog is currently open.",
+        "name": "open",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "triggerId": {
+        "defaultValue": null,
+        "description": "ID of the trigger that the dialog is associated with.\nThis is useful in conjunction with the `open` prop to create a controlled dialog.\nThere's no need to specify this prop when the popover is uncontrolled (i.e. when the `open` prop is not set).",
+        "name": "triggerId",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      "defaultOpen": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the dialog is initially open.\n\nTo render a controlled dialog, use the `open` prop instead.",
+        "name": "defaultOpen",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "onOpenChangeComplete": {
+        "defaultValue": null,
+        "description": "Event handler called after any animations complete when the dialog is opened or closed.",
+        "name": "onOpenChangeComplete",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean) => void"
+        }
+      },
+      "defaultTriggerId": {
+        "defaultValue": null,
+        "description": "ID of the trigger that the dialog is associated with.\nThis is useful in conjunction with the `defaultOpen` prop to create an initially open dialog.",
+        "name": "defaultTriggerId",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+          "name": "DialogRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/dialog/root/DialogRoot.tsx",
+            "name": "DialogRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    }
+  }
+]

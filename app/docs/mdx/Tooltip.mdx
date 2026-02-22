@@ -1,0 +1,162 @@
+---
+title: Tooltip
+---
+
+# Tooltip
+
+## TooltipArrow
+
+Displays an element positioned against the tooltip anchor.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## TooltipPopup
+
+A container for the tooltip contents.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## TooltipPortal
+
+A portal element that moves the popup to a different part of the DOM.
+By default, the portal element is appended to `&lt;body&gt;`.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **keepMounted** | `boolean` | `false` | Whether to keep the portal mounted in the DOM while the popup is hidden. |
+| **container** | `HTMLElement \| ShadowRoot \| RefObject<HTMLElement \| ShadowRoot>` | — | A parent element to render the portal element into. |
+
+
+---
+
+## TooltipPositioner
+
+Positions the tooltip against the trigger.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **anchor** | `Element \| RefObject<Element> \| VirtualElement \| (...) => Element \| VirtualElement)` | — | An element to position the popup against.<br/>By default, the popup will be positioned against the trigger. |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **sticky** | `boolean` | `false` | Whether to maintain the popup in the viewport after<br/>the anchor element was scrolled out of view. |
+| **side** | `Side` | `'top'` | Which side of the anchor element to align the popup against.<br/>May automatically change to avoid collisions. |
+| **align** | `Align` | `'center'` | How to align the popup relative to the specified side. |
+| **positionMethod** | `"fixed" \| "absolute"` | `'absolute'` | Determines which CSS `position` property to use. |
+| **sideOffset** | `number \| OffsetFunction` | `0` | Distance between the anchor and the popup in pixels.<br/>Also accepts a function that returns the distance to read the dimensions of the anchor<br/>and positioner elements, along with its side and alignment.<br/><br/>The function takes a `data` object parameter with the following properties:<br/>- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.<br/>- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.<br/>- `data.side`: which side of the anchor element the positioner is aligned against.<br/>- `data.align`: how the positioner is aligned relative to the specified side.<br/>@example  |
+| **alignOffset** | `number \| OffsetFunction` | `0` | Additional offset along the alignment axis in pixels.<br/>Also accepts a function that returns the offset to read the dimensions of the anchor<br/>and positioner elements, along with its side and alignment.<br/><br/>The function takes a `data` object parameter with the following properties:<br/>- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.<br/>- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.<br/>- `data.side`: which side of the anchor element the positioner is aligned against.<br/>- `data.align`: how the positioner is aligned relative to the specified side.<br/>@example  |
+| **collisionBoundary** | `Boundary` | `'clipping-ancestors'` | An element or a rectangle that delimits the area that the popup is confined to. |
+| **collisionPadding** | `Padding` | `5` | Additional space to maintain from the edge of the collision boundary. |
+| **arrowPadding** | `number` | `5` | Minimum distance to maintain between the arrow and the edges of the popup.<br/><br/>Use it to prevent the arrow element from hanging out of the rounded corners of a popup. |
+| **disableAnchorTracking** | `boolean` | `false` | Whether to disable the popup from tracking any layout shift of its positioning anchor. |
+| **collisionAvoidance** | `CollisionAvoidance` | — | Determines how to handle collisions when positioning the popup.<br/>@example  |
+
+
+---
+
+## TooltipProvider
+
+Provides a shared delay for multiple tooltips. The grouping logic ensures that
+once a tooltip becomes visible, the adjacent tooltips will be shown instantly.
+
+Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **delay** | `number` | — | How long to wait before opening a tooltip. Specified in milliseconds. |
+| **closeDelay** | `number` | — | How long to wait before closing a tooltip. Specified in milliseconds. |
+| **timeout** | `number` | `400` | Another tooltip will open instantly if the previous tooltip<br/>is closed within this timeout. Specified in milliseconds. |
+
+
+---
+
+## TooltipRoot
+
+Groups all parts of the tooltip.
+Doesn’t render its own HTML element.
+
+Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+
+### Props
+
+No props available.
+
+---
+
+## TooltipTrigger
+
+An element to attach the tooltip to.
+Renders a `&lt;button&gt;` element.
+
+Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **handle** | `TooltipHandle<Payload>` | — | A handle to associate the trigger with a tooltip. |
+| **payload** | `Payload` | — | A payload to pass to the tooltip when it is opened. |
+| **delay** | `number` | `600` | How long to wait before opening the tooltip. Specified in milliseconds. |
+| **closeDelay** | `number` | `0` | How long to wait before closing the tooltip. Specified in milliseconds. |
+| **disabled** | `boolean` | `false` | If `true`, the tooltip will not open when interacting with this trigger.<br/>Note that this doesn't apply the `disabled` attribute to the trigger element.<br/>If you want to disable the trigger element itself, you can pass the `disabled` prop to the trigger element via the `render` prop. |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## TooltipViewport
+
+A viewport for displaying content transitions.
+This component is only required if one popup can be opened by multiple triggers, its content change based on the trigger
+and switching between them is animated.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Tooltip](https://base-ui.com/react/components/tooltip)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **children** | `ReactNode` | — | The content to render inside the transition container. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+

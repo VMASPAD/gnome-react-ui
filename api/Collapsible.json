@@ -1,0 +1,262 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/collapsible/panel/CollapsiblePanel.tsx",
+    "description": "A panel with the collapsible contents.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Collapsible](https://base-ui.com/react/components/collapsible)",
+    "displayName": "CollapsiblePanel",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: CollapsiblePanelState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, CollapsiblePanelState>"
+        }
+      },
+      "hiddenUntilFound": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Allows the browser’s built-in page search to find and expand the panel contents.\n\nOverrides the `keepMounted` prop and uses `hidden=\"until-found\"`\nto hide the element without removing it from the DOM.",
+        "name": "hiddenUntilFound",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/collapsible/panel/CollapsiblePanel.tsx",
+          "name": "CollapsiblePanelProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/collapsible/panel/CollapsiblePanel.tsx",
+            "name": "CollapsiblePanelProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "keepMounted": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to keep the element in the DOM while the panel is hidden.\nThis prop is ignored when `hiddenUntilFound` is used.",
+        "name": "keepMounted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/collapsible/panel/CollapsiblePanel.tsx",
+          "name": "CollapsiblePanelProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/collapsible/panel/CollapsiblePanel.tsx",
+            "name": "CollapsiblePanelProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/collapsible/root/CollapsibleRoot.tsx",
+    "description": "Groups all parts of the collapsible.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Collapsible](https://base-ui.com/react/components/collapsible)",
+    "displayName": "CollapsibleRoot",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: CollapsibleRootState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, CollapsibleRootState>"
+        }
+      },
+      "open": {
+        "defaultValue": null,
+        "description": "Whether the collapsible panel is currently open.\n\nTo render an uncontrolled collapsible, use the `defaultOpen` prop instead.",
+        "name": "open",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/collapsible/root/CollapsibleRoot.tsx",
+          "name": "CollapsibleRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/collapsible/root/CollapsibleRoot.tsx",
+            "name": "CollapsibleRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "disabled": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the component should ignore user interaction.",
+        "name": "disabled",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/collapsible/root/CollapsibleRoot.tsx",
+          "name": "CollapsibleRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/collapsible/root/CollapsibleRoot.tsx",
+            "name": "CollapsibleRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      "onOpenChange": {
+        "defaultValue": null,
+        "description": "Event handler called when the panel is opened or closed.",
+        "name": "onOpenChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/collapsible/root/CollapsibleRoot.tsx",
+          "name": "CollapsibleRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/collapsible/root/CollapsibleRoot.tsx",
+            "name": "CollapsibleRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(open: boolean, eventDetails: CollapsibleRootChangeEventDetails) => void"
+        }
+      },
+      "defaultOpen": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether the collapsible panel is initially open.\n\nTo render a controlled collapsible, use the `open` prop instead.",
+        "name": "defaultOpen",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/collapsible/root/CollapsibleRoot.tsx",
+          "name": "CollapsibleRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/collapsible/root/CollapsibleRoot.tsx",
+            "name": "CollapsibleRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/collapsible/trigger/CollapsibleTrigger.tsx",
+    "description": "A button that opens and closes the collapsible panel.\nRenders a `<button>` element.\n\nDocumentation: [Base UI Collapsible](https://base-ui.com/react/components/collapsible)",
+    "displayName": "CollapsibleTrigger",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: CollapsibleRootState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, CollapsibleRootState>"
+        }
+      },
+      "nativeButton": {
+        "defaultValue": {
+          "value": "true"
+        },
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (e.g. `<div>`).",
+        "name": "nativeButton",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/types.ts",
+          "name": "NativeButtonProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "NativeButtonProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  }
+]

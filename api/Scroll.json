@@ -1,0 +1,299 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/scroll-area/content/ScrollAreaContent.tsx",
+    "description": "A container for the content of the scroll area.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)",
+    "displayName": "ScrollAreaContent",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ScrollAreaContentState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ScrollAreaContentState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/scroll-area/corner/ScrollAreaCorner.tsx",
+    "description": "A small rectangular area that appears at the intersection of horizontal and vertical scrollbars.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)",
+    "displayName": "ScrollAreaCorner",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ScrollAreaCornerState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ScrollAreaCornerState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/scroll-area/root/ScrollAreaRoot.tsx",
+    "description": "Groups all parts of the scroll area.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)",
+    "displayName": "ScrollAreaRoot",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ScrollAreaRootState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ScrollAreaRootState>"
+        }
+      },
+      "overflowEdgeThreshold": {
+        "defaultValue": {
+          "value": "0"
+        },
+        "description": "The threshold in pixels that must be passed before the overflow edge attributes are applied.\nAccepts a single number for all edges or an object to configure them individually.",
+        "name": "overflowEdgeThreshold",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/scroll-area/root/ScrollAreaRoot.tsx",
+          "name": "ScrollAreaRootProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/scroll-area/root/ScrollAreaRoot.tsx",
+            "name": "ScrollAreaRootProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number | Partial<{ xStart: number; xEnd: number; yStart: number; yEnd: number; }>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/scroll-area/scrollbar/ScrollAreaScrollbar.tsx",
+    "description": "A vertical or horizontal scrollbar for the scroll area.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)",
+    "displayName": "ScrollAreaScrollbar",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ScrollAreaScrollbarState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ScrollAreaScrollbarState>"
+        }
+      },
+      "orientation": {
+        "defaultValue": {
+          "value": "'vertical'"
+        },
+        "description": "Whether the scrollbar controls vertical or horizontal scroll.",
+        "name": "orientation",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/scroll-area/scrollbar/ScrollAreaScrollbar.tsx",
+          "name": "ScrollAreaScrollbarProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/scroll-area/scrollbar/ScrollAreaScrollbar.tsx",
+            "name": "ScrollAreaScrollbarProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "\"horizontal\" | \"vertical\""
+        }
+      },
+      "keepMounted": {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "Whether to keep the HTML element in the DOM when the viewport isn’t scrollable.",
+        "name": "keepMounted",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/scroll-area/scrollbar/ScrollAreaScrollbar.tsx",
+          "name": "ScrollAreaScrollbarProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/scroll-area/scrollbar/ScrollAreaScrollbar.tsx",
+            "name": "ScrollAreaScrollbarProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/scroll-area/thumb/ScrollAreaThumb.tsx",
+    "description": "The draggable part of the scrollbar that indicates the current scroll position.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)",
+    "displayName": "ScrollAreaThumb",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ScrollAreaThumbState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ScrollAreaThumbState>"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/scroll-area/viewport/ScrollAreaViewport.tsx",
+    "description": "The actual scrollable container of the scroll area.\nRenders a `<div>` element.\n\nDocumentation: [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area)",
+    "displayName": "ScrollAreaViewport",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: ScrollAreaViewportState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ScrollAreaViewportState>"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,154 @@
+---
+title: Number
+---
+
+# Number
+
+## NumberFieldDecrement
+
+A stepper button that decreases the field value when clicked.
+Renders an `&lt;button&gt;` element.
+
+Documentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **nativeButton** | `boolean` | `true` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`). |
+
+
+---
+
+## NumberFieldGroup
+
+Groups the input with the increment and decrement buttons.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## NumberFieldIncrement
+
+A stepper button that increases the field value when clicked.
+Renders an `&lt;button&gt;` element.
+
+Documentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **nativeButton** | `boolean` | `true` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`). |
+
+
+---
+
+## NumberFieldInput
+
+The native input control in the number field.
+Renders an `&lt;input&gt;` element.
+
+Documentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **aria-roledescription** | `string` | `'Number field'` | A string value that provides a user-friendly name for the role of the input. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## NumberFieldRoot
+
+Groups all parts of the number field and manages its state.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **defaultValue** | `number` | — | The uncontrolled value of the field when it’s initially rendered.<br/><br/>To render a controlled number field, use the `value` prop instead. |
+| **id** | `string` | — | The id of the input element. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **value** | `number` | — | The raw numeric value of the field. |
+| **disabled** | `boolean` | `false` | Whether the component should ignore user interaction. |
+| **step** | `number \| "any"` | `1` | Amount to increment and decrement with the buttons and arrow keys, or to scrub with pointer movement in the scrub area.<br/>To always enable step validation on form submission, specify the `min` prop explicitly in conjunction with this prop.<br/>Specify `step="any"` to always disable step validation. |
+| **name** | `string` | — | Identifies the field when a form is submitted. |
+| **required** | `boolean` | `false` | Whether the user must enter a value before submitting a form. |
+| **readOnly** | `boolean` | `false` | Whether the user should be unable to change the field value. |
+| **inputRef** | `Ref<HTMLInputElement>` | — | A ref to access the hidden input element. |
+| **locale** | `LocalesArgument` | — | The locale of the input element.<br/>Defaults to the user's runtime locale. |
+| **onValueChange** | `(...) => void` | — | Callback fired when the number value changes.<br/><br/>The `eventDetails.reason` indicates what triggered the change:<br/>- `'input-change'` for parseable typing or programmatic text updates<br/>- `'input-clear'` when the field becomes empty<br/>- `'input-blur'` when formatting (and clamping, if enabled) occurs on blur<br/>- `'input-paste'` for paste interactions<br/>- `'keyboard'` for keyboard input<br/>- `'increment-press'` / `'decrement-press'` for button presses on the increment and decrement controls<br/>- `'wheel'` for wheel-based scrubbing<br/>- `'scrub'` for scrub area drags |
+| **max** | `number` | — | The maximum value of the input element. |
+| **min** | `number` | — | The minimum value of the input element. |
+| **format** | `NumberFormatOptions` | — | Options to format the input value. |
+| **allowOutOfRange** | `boolean` | `false` | When true, direct text entry may be outside the `min`/`max` range without clamping,<br/>so native range underflow/overflow validation can occur.<br/>Step-based interactions (keyboard arrows, buttons, wheel, scrub) still clamp. |
+| **smallStep** | `number` | `0.1` | The small step value of the input element when incrementing while the meta key is held. Snaps<br/>to multiples of this value. |
+| **largeStep** | `number` | `10` | The large step value of the input element when incrementing while the shift key is held. Snaps<br/>to multiples of this value. |
+| **allowWheelScrub** | `boolean` | `false` | Whether to allow the user to scrub the input value with the mouse wheel while focused and<br/>hovering over the input. |
+| **snapOnStep** | `boolean` | `false` | Whether the value should snap to the nearest step when incrementing or decrementing. |
+| **onValueCommitted** | `(...) => void` | — | Callback function that is fired when the value is committed.<br/>It runs later than `onValueChange`, when:<br/>- The input is blurred after typing a value.<br/>- The pointer is released after scrubbing or pressing the increment/decrement buttons.<br/><br/>It runs simultaneously with `onValueChange` when interacting with the keyboard.<br/><br/>**Warning**: This is a generic event not a change event. |
+
+
+---
+
+## NumberFieldScrubArea
+
+An interactive area where the user can click and drag to change the field value.
+Renders a `&lt;span&gt;` element.
+
+Documentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **direction** | `"horizontal" \| "vertical"` | `'horizontal'` | Cursor movement direction in the scrub area. |
+| **pixelSensitivity** | `number` | `2` | Determines how many pixels the cursor must move before the value changes.<br/>A higher value will make scrubbing less sensitive. |
+| **teleportDistance** | `number` | — | If specified, determines the distance that the cursor may move from the center<br/>of the scrub area before it will loop back around. |
+
+
+---
+
+## NumberFieldScrubAreaCursor
+
+A custom element to display instead of the native cursor while using the scrub area.
+Renders a `&lt;span&gt;` element.
+
+This component uses the [Pointer Lock API](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API), which may prompt the browser to display a related notification. It is disabled
+in Safari to avoid a layout shift that this notification causes there.
+
+Documentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+

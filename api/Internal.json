@@ -1,0 +1,32 @@
+[
+  {
+    "tags": {
+      "internal": ""
+    },
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/utils/InternalBackdrop.tsx",
+    "description": "",
+    "displayName": "InternalBackdrop",
+    "methods": [],
+    "props": {
+      "cutout": {
+        "defaultValue": null,
+        "description": "The element to cut out of the backdrop.\nThis is useful for allowing certain elements to be interactive while the backdrop is present.",
+        "name": "cutout",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/utils/InternalBackdrop.tsx",
+          "name": "InternalBackdropProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/InternalBackdrop.tsx",
+            "name": "InternalBackdropProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "Element"
+        }
+      }
+    }
+  }
+]

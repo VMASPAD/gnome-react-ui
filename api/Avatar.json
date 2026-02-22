@@ -1,0 +1,157 @@
+[
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/avatar/fallback/AvatarFallback.tsx",
+    "description": "Rendered when the image fails to load or when no image is provided.\nRenders a `<span>` element.\n\nDocumentation: [Base UI Avatar](https://base-ui.com/react/components/avatar)",
+    "displayName": "AvatarFallback",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: AvatarFallbackState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, AvatarFallbackState>"
+        }
+      },
+      "delay": {
+        "defaultValue": null,
+        "description": "How long to wait before showing the fallback. Specified in milliseconds.",
+        "name": "delay",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/avatar/fallback/AvatarFallback.tsx",
+          "name": "AvatarFallbackProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/avatar/fallback/AvatarFallback.tsx",
+            "name": "AvatarFallbackProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "number"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/avatar/image/AvatarImage.tsx",
+    "description": "The image to be displayed in the avatar.\nRenders an `<img>` element.\n\nDocumentation: [Base UI Avatar](https://base-ui.com/react/components/avatar)",
+    "displayName": "AvatarImage",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: AvatarImageState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, AvatarImageState>"
+        }
+      },
+      "onLoadingStatusChange": {
+        "defaultValue": null,
+        "description": "Callback fired when the loading status changes.",
+        "name": "onLoadingStatusChange",
+        "parent": {
+          "fileName": "gnome-react-ui/app/components/avatar/image/AvatarImage.tsx",
+          "name": "AvatarImageProps"
+        },
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/avatar/image/AvatarImage.tsx",
+            "name": "AvatarImageProps"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "(status: ImageLoadingStatus) => void"
+        }
+      }
+    }
+  },
+  {
+    "tags": {},
+    "filePath": "/home/vmcode/Desktop/Atlas/UI GNOME/gnome-react-ui/app/components/avatar/root/AvatarRoot.tsx",
+    "description": "Displays a user's profile picture, initials, or fallback icon.\nRenders a `<span>` element.\n\nDocumentation: [Base UI Avatar](https://base-ui.com/react/components/avatar)",
+    "displayName": "AvatarRoot",
+    "methods": [],
+    "props": {
+      "className": {
+        "defaultValue": null,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component’s state.",
+        "name": "className",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "string | ((state: AvatarRootState) => string)"
+        }
+      },
+      "render": {
+        "defaultValue": null,
+        "description": "Allows you to replace the component’s HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render.",
+        "name": "render",
+        "declarations": [
+          {
+            "fileName": "gnome-react-ui/app/components/utils/types.ts",
+            "name": "TypeLiteral"
+          }
+        ],
+        "required": false,
+        "type": {
+          "name": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, AvatarRootState>"
+        }
+      }
+    }
+  }
+]

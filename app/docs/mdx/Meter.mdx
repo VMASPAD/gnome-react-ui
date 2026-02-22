@@ -1,0 +1,98 @@
+---
+title: Meter
+---
+
+# Meter
+
+## MeterIndicator
+
+Visualizes the position of the value along the range.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Meter](https://base-ui.com/react/components/meter)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## MeterLabel
+
+An accessible label for the meter.
+Renders a `&lt;span&gt;` element.
+
+Documentation: [Base UI Meter](https://base-ui.com/react/components/meter)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## MeterRoot
+
+Groups all parts of the meter and provides the value for screen readers.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Meter](https://base-ui.com/react/components/meter)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **aria-valuetext** | `string` | — | A string value that provides a user-friendly name for `aria-valuenow`, the current value of the meter. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **value*** | `number` | — | The current value. |
+| **locale** | `LocalesArgument` | — | The locale used by `Intl.NumberFormat` when formatting the value.<br/>Defaults to the user's runtime locale. |
+| **max** | `number` | `100` | The maximum value |
+| **min** | `number` | `0` | The minimum value |
+| **format** | `NumberFormatOptions` | — | Options to format the value. |
+| **getAriaValueText** | `(...) => string` | — | A function that returns a string value that provides a human-readable text alternative for `aria-valuenow`, the current value of the meter. |
+
+
+---
+
+## MeterTrack
+
+Contains the meter indicator and represents the entire range of the meter.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Meter](https://base-ui.com/react/components/meter)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
+## MeterValue
+
+A text element displaying the current value.
+Renders a `&lt;span&gt;` element.
+
+Documentation: [Base UI Meter](https://base-ui.com/react/components/meter)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+

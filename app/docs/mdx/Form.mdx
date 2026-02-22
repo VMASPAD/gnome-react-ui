@@ -1,0 +1,27 @@
+---
+title: Form
+---
+
+# Form
+
+## Form
+
+A native form element with consolidated error handling.
+Renders a `&lt;form&gt;` element.
+
+Documentation: [Base UI Form](https://base-ui.com/react/components/form)
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **validationMode** | `FormValidationMode` | `'onSubmit'` | Determines when the form should be validated.<br/>The `validationMode` prop on `&lt;Field.Root&gt;` takes precedence over this.<br/><br/>- `onSubmit` (default): validates the field when the form is submitted, afterwards fields will re-validate on change.<br/>- `onBlur`: validates a field when it loses focus.<br/>- `onChange`: validates the field on every change to its value. |
+| **errors** | `Errors` | — | Validation errors returned externally, typically after submission by a server or a form action.<br/>This should be an object where keys correspond to the `name` attribute on `&lt;Field.Root&gt;`,<br/>and values correspond to error(s) related to that field. |
+| **onFormSubmit** | `(...) => void` | — | Event handler called when the form is submitted.<br/>`preventDefault()` is called on the native submit event when used. |
+| **actionsRef** | `RefObject<FormActions>` | — | A ref to imperative actions.<br/>- `validate`: Validates all fields when called. Optionally pass a field name to validate a single field.<br/>@example  |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
+
+---
+
