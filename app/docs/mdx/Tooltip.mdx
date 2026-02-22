@@ -4,6 +4,156 @@ title: Tooltip
 
 # Tooltip
 
+## Examples
+
+### Example 1 — Basic tooltip
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+import * as Tooltip from './tooltip/index.parts';
+
+export default function BasicTooltip() {
+  return (
+    <Tooltip.Provider>
+      <Tooltip.Root>
+        <Tooltip.Trigger className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:bg-gray-100">
+          ?
+        </Tooltip.Trigger>
+        <Tooltip.Portal>
+          <Tooltip.Positioner sideOffset={6}>
+            <Tooltip.Popup className="rounded-md bg-gray-900 px-2.5 py-1.5 text-xs text-white shadow-sm">
+              Click for more information
+            </Tooltip.Popup>
+          </Tooltip.Positioner>
+        </Tooltip.Portal>
+      </Tooltip.Root>
+    </Tooltip.Provider>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <Tooltip.Provider>
+          <Tooltip.Root>
+            <Tooltip.Trigger className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:bg-gray-100">?</Tooltip.Trigger>
+            <Tooltip.Portal>
+              <Tooltip.Positioner sideOffset={6}>
+                <Tooltip.Popup className="rounded-md bg-gray-900 px-2.5 py-1.5 text-xs text-white shadow-sm">Click for more information</Tooltip.Popup>
+              </Tooltip.Positioner>
+            </Tooltip.Portal>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 2 — Tooltip with arrow
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+export default function TooltipWithArrow() {
+  return (
+    <Tooltip.Provider>
+      <Tooltip.Root>
+        <Tooltip.Trigger className="px-3 py-1.5 rounded-md bg-blue-600 text-white text-sm hover:bg-blue-700">
+          Save
+        </Tooltip.Trigger>
+        <Tooltip.Portal>
+          <Tooltip.Positioner side="top" sideOffset={8}>
+            <Tooltip.Popup className="rounded-lg bg-gray-900 px-3 py-2 text-xs text-white shadow-md">
+              <Tooltip.Arrow className="fill-gray-900" />
+              ⌘ + S to save quickly
+            </Tooltip.Popup>
+          </Tooltip.Positioner>
+        </Tooltip.Portal>
+      </Tooltip.Root>
+    </Tooltip.Provider>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <Tooltip.Provider>
+          <Tooltip.Root>
+            <Tooltip.Trigger className="px-3 py-1.5 rounded-md bg-blue-600 text-white text-sm hover:bg-blue-700">Save</Tooltip.Trigger>
+            <Tooltip.Portal>
+              <Tooltip.Positioner side="top" sideOffset={8}>
+                <Tooltip.Popup className="rounded-lg bg-gray-900 px-3 py-2 text-xs text-white shadow-md">
+                  <Tooltip.Arrow className="fill-gray-900" />
+                  ⌘ + S to save quickly
+                </Tooltip.Popup>
+              </Tooltip.Positioner>
+            </Tooltip.Portal>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 3 — Tooltip with custom delay
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+export default function DelayedTooltips() {
+  return (
+    <Tooltip.Provider delay={800} closeDelay={200}>
+      <div className="flex gap-3">
+        {['Cut', 'Copy', 'Paste'].map((action) => (
+          <Tooltip.Root key={action}>
+            <Tooltip.Trigger className="p-2 rounded border border-gray-200 text-gray-500 hover:bg-gray-100">
+              {action[0]}
+            </Tooltip.Trigger>
+            <Tooltip.Portal>
+              <Tooltip.Positioner side="bottom" sideOffset={6}>
+                <Tooltip.Popup className="rounded bg-gray-800 px-2 py-1 text-xs text-white">
+                  {action}
+                </Tooltip.Popup>
+              </Tooltip.Positioner>
+            </Tooltip.Portal>
+          </Tooltip.Root>
+        ))}
+      </div>
+    </Tooltip.Provider>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <Tooltip.Provider delay={800} closeDelay={200}>
+          <div className="flex gap-3">
+            <Tooltip.Root>
+              <Tooltip.Trigger className="p-2 rounded border border-gray-200 text-gray-500 hover:bg-gray-100 text-sm">C</Tooltip.Trigger>
+              <Tooltip.Portal><Tooltip.Positioner side="bottom" sideOffset={6}><Tooltip.Popup className="rounded bg-gray-800 px-2 py-1 text-xs text-white">Cut</Tooltip.Popup></Tooltip.Positioner></Tooltip.Portal>
+            </Tooltip.Root>
+            <Tooltip.Root>
+              <Tooltip.Trigger className="p-2 rounded border border-gray-200 text-gray-500 hover:bg-gray-100 text-sm">C</Tooltip.Trigger>
+              <Tooltip.Portal><Tooltip.Positioner side="bottom" sideOffset={6}><Tooltip.Popup className="rounded bg-gray-800 px-2 py-1 text-xs text-white">Copy</Tooltip.Popup></Tooltip.Positioner></Tooltip.Portal>
+            </Tooltip.Root>
+            <Tooltip.Root>
+              <Tooltip.Trigger className="p-2 rounded border border-gray-200 text-gray-500 hover:bg-gray-100 text-sm">P</Tooltip.Trigger>
+              <Tooltip.Portal><Tooltip.Positioner side="bottom" sideOffset={6}><Tooltip.Popup className="rounded bg-gray-800 px-2 py-1 text-xs text-white">Paste</Tooltip.Popup></Tooltip.Positioner></Tooltip.Portal>
+            </Tooltip.Root>
+          </div>
+        </Tooltip.Provider>
+    </Tabs.Panel>
+</Tabs.Root>
+
 ## TooltipArrow
 
 Displays an element positioned against the tooltip anchor.

@@ -4,6 +4,142 @@ title: Meter
 
 # Meter
 
+## Examples
+
+### Example 1 — Basic meter
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+import * as Meter from './meter/index.parts';
+
+export default function BasicMeter() {
+  return (
+    <div className="w-64 space-y-1">
+      <Meter.Label className="flex justify-between text-xs text-gray-500">
+        <span>Storage used</span>
+        <Meter.Value>{({ value, max }) => `${value}/${max} GB`}</Meter.Value>
+      </Meter.Label>
+      <Meter.Root value={30} max={100} className="block">
+        <Meter.Track className="h-2 w-full overflow-hidden rounded-full bg-gray-200">
+          <Meter.Indicator className="h-full rounded-full bg-blue-600" style={{ width: 'var(--meter-percent)' }} />
+        </Meter.Track>
+      </Meter.Root>
+    </div>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <div className="w-64 space-y-2">
+          <div className="flex justify-between text-xs text-gray-500"><span>Storage used</span><span>30/100 GB</span></div>
+          <Meter.Root value={30} max={100} className="block">
+            <Meter.Track className="h-2 w-full overflow-hidden rounded-full bg-gray-200">
+              <Meter.Indicator className="h-full rounded-full bg-blue-600" style={{width:'var(--meter-percent)'}} />
+            </Meter.Track>
+          </Meter.Root>
+        </div>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 2 — Color based on value
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+const levels = [
+  { label: 'Low', value: 20, color: 'bg-green-500' },
+  { label: 'Medium', value: 55, color: 'bg-yellow-500' },
+  { label: 'High', value: 85, color: 'bg-red-500' },
+];
+
+export default function ColoredMeter() {
+  return (
+    <div className="w-64 space-y-3">
+      {levels.map(({ label, value, color }) => (
+        <div key={label}>
+          <div className="flex justify-between text-xs mb-1">
+            <span className="text-gray-600">{label}</span>
+            <span className="text-gray-400">{value}%</span>
+          </div>
+          <Meter.Root value={value} max={100}>
+            <Meter.Track className="h-2 w-full overflow-hidden rounded-full bg-gray-200">
+              <Meter.Indicator className={`h-full rounded-full ${color}`} style={{ width: 'var(--meter-percent)' }} />
+            </Meter.Track>
+          </Meter.Root>
+        </div>
+      ))}
+    </div>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <div className="w-64 space-y-3">
+          <div><div className="flex justify-between text-xs mb-1"><span className="text-gray-600">Low</span><span className="text-gray-400">20%</span></div><Meter.Root value={20} max={100}><Meter.Track className="h-2 w-full overflow-hidden rounded-full bg-gray-200"><Meter.Indicator className="h-full rounded-full bg-green-500" style={{width:'var(--meter-percent)'}} /></Meter.Track></Meter.Root></div>
+          <div><div className="flex justify-between text-xs mb-1"><span className="text-gray-600">Medium</span><span className="text-gray-400">55%</span></div><Meter.Root value={55} max={100}><Meter.Track className="h-2 w-full overflow-hidden rounded-full bg-gray-200"><Meter.Indicator className="h-full rounded-full bg-yellow-500" style={{width:'var(--meter-percent)'}} /></Meter.Track></Meter.Root></div>
+          <div><div className="flex justify-between text-xs mb-1"><span className="text-gray-600">High</span><span className="text-gray-400">85%</span></div><Meter.Root value={85} max={100}><Meter.Track className="h-2 w-full overflow-hidden rounded-full bg-gray-200"><Meter.Indicator className="h-full rounded-full bg-red-500" style={{width:'var(--meter-percent)'}} /></Meter.Track></Meter.Root></div>
+        </div>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 3 — Thick meter with label value
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+export default function ThickMeter() {
+  return (
+    <div className="w-64">
+      <div className="mb-2 flex items-center justify-between">
+        <Meter.Label className="text-sm font-medium text-gray-700">Battery</Meter.Label>
+        <span className="text-sm font-semibold text-green-600">72%</span>
+      </div>
+      <Meter.Root value={72} max={100}>
+        <Meter.Track className="relative h-5 w-full overflow-hidden rounded-full bg-gray-100 border border-gray-200">
+          <Meter.Indicator
+            className="h-full rounded-full bg-gradient-to-r from-green-400 to-green-600 transition-all duration-500"
+            style={{ width: 'var(--meter-percent)' }}
+          />
+        </Meter.Track>
+      </Meter.Root>
+      <p className="mt-1 text-xs text-gray-400">Charging. ~2 hrs remaining.</p>
+    </div>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <div className="w-64">
+          <div className="mb-2 flex items-center justify-between">
+            <span className="text-sm font-medium text-gray-700">Battery</span>
+            <span className="text-sm font-semibold text-green-600">72%</span>
+          </div>
+          <Meter.Root value={72} max={100}>
+            <Meter.Track className="relative h-5 w-full overflow-hidden rounded-full bg-gray-100 border border-gray-200">
+              <Meter.Indicator className="h-full rounded-full bg-gradient-to-r from-green-400 to-green-600 transition-all duration-500" style={{width:'var(--meter-percent)'}} />
+            </Meter.Track>
+          </Meter.Root>
+          <p className="mt-1 text-xs text-gray-400">Charging. ~2 hrs remaining.</p>
+        </div>
+    </Tabs.Panel>
+</Tabs.Root>
+
 ## MeterIndicator
 
 Visualizes the position of the value along the range.

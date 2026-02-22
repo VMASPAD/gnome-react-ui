@@ -4,6 +4,149 @@ title: Avatar
 
 # Avatar
 
+## Examples
+
+### Example 1 — Avatar with image
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+import * as Avatar from './avatar/index.parts';
+
+export default function AvatarWithImage() {
+  return (
+    <Avatar.Root className="size-12 overflow-hidden rounded-full ring-2 ring-white shadow-md">
+      <Avatar.Image
+        src="https://i.pravatar.cc/300?img=12"
+        alt="Jane Doe"
+        className="size-full object-cover"
+      />
+      <Avatar.Fallback className="flex size-full items-center justify-center bg-blue-100 text-blue-700 text-sm font-semibold">
+        JD
+      </Avatar.Fallback>
+    </Avatar.Root>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <Avatar.Root className="size-12 overflow-hidden rounded-full ring-2 ring-white shadow-md">
+          <Avatar.Image src="https://i.pravatar.cc/300?img=12" alt="Jane Doe" className="size-full object-cover" />
+          <Avatar.Fallback className="flex size-full items-center justify-center bg-blue-100 text-blue-700 text-sm font-semibold">JD</Avatar.Fallback>
+        </Avatar.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 2 — Fallback initials (no image)
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+export default function AvatarFallback() {
+  return (
+    <div className="flex gap-3">
+      {[{ initials: 'AB', color: 'bg-purple-100 text-purple-700' },
+        { initials: 'CD', color: 'bg-green-100 text-green-700' },
+        { initials: 'EF', color: 'bg-orange-100 text-orange-700' }].map(({ initials, color }) => (
+        <Avatar.Root key={initials} className="size-10 overflow-hidden rounded-full">
+          <Avatar.Image src="/broken-url.jpg" alt={initials} className="size-full object-cover" />
+          <Avatar.Fallback className={`flex size-full items-center justify-center text-xs font-bold ${color}`}>
+            {initials}
+          </Avatar.Fallback>
+        </Avatar.Root>
+      ))}
+    </div>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <div className="flex gap-3">
+          <Avatar.Root className="size-10 overflow-hidden rounded-full">
+            <Avatar.Image src="/broken-url.jpg" alt="AB" className="size-full object-cover" />
+            <Avatar.Fallback className="flex size-full items-center justify-center bg-purple-100 text-purple-700 text-xs font-bold">AB</Avatar.Fallback>
+          </Avatar.Root>
+          <Avatar.Root className="size-10 overflow-hidden rounded-full">
+            <Avatar.Image src="/broken-url.jpg" alt="CD" className="size-full object-cover" />
+            <Avatar.Fallback className="flex size-full items-center justify-center bg-green-100 text-green-700 text-xs font-bold">CD</Avatar.Fallback>
+          </Avatar.Root>
+          <Avatar.Root className="size-10 overflow-hidden rounded-full">
+            <Avatar.Image src="/broken-url.jpg" alt="EF" className="size-full object-cover" />
+            <Avatar.Fallback className="flex size-full items-center justify-center bg-orange-100 text-orange-700 text-xs font-bold">EF</Avatar.Fallback>
+          </Avatar.Root>
+        </div>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 3 — Avatar group (stacked)
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+export default function AvatarGroup() {
+  const users = [
+    { src: 'https://i.pravatar.cc/300?img=1', initials: 'U1' },
+    { src: 'https://i.pravatar.cc/300?img=2', initials: 'U2' },
+    { src: 'https://i.pravatar.cc/300?img=3', initials: 'U3' },
+  ];
+
+  return (
+    <div className="flex items-center">
+      <div className="flex -space-x-2">
+        {users.map((u, i) => (
+          <Avatar.Root
+            key={i}
+            className="size-9 overflow-hidden rounded-full ring-2 ring-white"
+          >
+            <Avatar.Image src={u.src} alt={u.initials} className="size-full object-cover" />
+            <Avatar.Fallback className="flex size-full items-center justify-center bg-gray-200 text-gray-600 text-xs font-medium">
+              {u.initials}
+            </Avatar.Fallback>
+          </Avatar.Root>
+        ))}
+      </div>
+      <span className="ml-3 text-sm text-gray-500">3 members</span>
+    </div>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <div className="flex items-center">
+          <div className="flex -space-x-2">
+            <Avatar.Root className="size-9 overflow-hidden rounded-full ring-2 ring-white">
+              <Avatar.Image src="https://i.pravatar.cc/300?img=1" alt="U1" className="size-full object-cover" />
+              <Avatar.Fallback className="flex size-full items-center justify-center bg-gray-200 text-gray-600 text-xs font-medium">U1</Avatar.Fallback>
+            </Avatar.Root>
+            <Avatar.Root className="size-9 overflow-hidden rounded-full ring-2 ring-white">
+              <Avatar.Image src="https://i.pravatar.cc/300?img=2" alt="U2" className="size-full object-cover" />
+              <Avatar.Fallback className="flex size-full items-center justify-center bg-gray-200 text-gray-600 text-xs font-medium">U2</Avatar.Fallback>
+            </Avatar.Root>
+            <Avatar.Root className="size-9 overflow-hidden rounded-full ring-2 ring-white">
+              <Avatar.Image src="https://i.pravatar.cc/300?img=3" alt="U3" className="size-full object-cover" />
+              <Avatar.Fallback className="flex size-full items-center justify-center bg-gray-200 text-gray-600 text-xs font-medium">U3</Avatar.Fallback>
+            </Avatar.Root>
+          </div>
+          <span className="ml-3 text-sm text-gray-500">3 members</span>
+        </div>
+    </Tabs.Panel>
+</Tabs.Root>
+
 ## AvatarFallback
 
 Rendered when the image fails to load or when no image is provided.

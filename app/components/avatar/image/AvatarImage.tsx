@@ -38,7 +38,7 @@ export const AvatarImage = React.forwardRef(function AvatarImage(
   } = componentProps;
 
   const context = useAvatarRootContext();
-  const imageLoadingStatus = useImageLoadingStatus(componentProps.src, {
+  const imageLoadingStatus = useImageLoadingStatus(componentProps.src || '', {
     referrerPolicy,
     crossOrigin,
   });

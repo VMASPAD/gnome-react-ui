@@ -4,6 +4,136 @@ title: Slider
 
 # Slider
 
+## Examples
+
+### Example 1 — Basic slider
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+import * as Slider from './slider/index.parts';
+
+export default function BasicSlider() {
+  return (
+    <Slider.Root defaultValue={[40]} min={0} max={100} className="flex w-64 flex-col gap-2">
+      <Slider.Label className="text-sm font-medium text-gray-700">Volume</Slider.Label>
+      <Slider.Control className="relative flex h-5 w-full items-center">
+        <Slider.Track className="h-1.5 flex-1 overflow-hidden rounded-full bg-gray-200">
+          <Slider.Fill className="h-full rounded-full bg-blue-600" />
+        </Slider.Track>
+        <Slider.Thumb
+          tabIndex={0}
+          index={0}
+          className="size-4 rounded-full border-2 border-blue-600 bg-white shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+        />
+      </Slider.Control>
+    </Slider.Root>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <Slider.Root defaultValue={[40]} min={0} max={100} className="flex w-64 flex-col gap-2">
+          <Slider.Label className="text-sm font-medium text-gray-700">Volume</Slider.Label>
+          <Slider.Control className="relative flex h-5 w-full items-center">
+            <Slider.Track className="h-1.5 flex-1 overflow-hidden rounded-full bg-gray-200">
+              <Slider.Fill className="h-full rounded-full bg-blue-600" />
+            </Slider.Track>
+            <Slider.Thumb tabIndex={0} index={0} className="size-4 rounded-full border-2 border-blue-600 bg-white shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-blue-400" />
+          </Slider.Control>
+        </Slider.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 2 — Range slider (two thumbs)
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+export default function RangeSlider() {
+  return (
+    <Slider.Root defaultValue={[20, 70]} min={0} max={100} className="flex w-64 flex-col gap-2">
+      <Slider.Label className="text-sm font-medium text-gray-700">Price range</Slider.Label>
+      <Slider.Control className="relative flex h-5 w-full items-center">
+        <Slider.Track className="h-1.5 flex-1 overflow-hidden rounded-full bg-gray-200">
+          <Slider.Fill className="h-full rounded-full bg-indigo-500" />
+        </Slider.Track>
+        <Slider.Thumb index={0} tabIndex={0} className="size-4 rounded-full border-2 border-indigo-500 bg-white shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-indigo-400" />
+        <Slider.Thumb index={1} tabIndex={0} className="size-4 rounded-full border-2 border-indigo-500 bg-white shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-indigo-400" />
+      </Slider.Control>
+    </Slider.Root>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <Slider.Root defaultValue={[20, 70]} min={0} max={100} className="flex w-64 flex-col gap-2">
+          <Slider.Label className="text-sm font-medium text-gray-700">Price range</Slider.Label>
+          <Slider.Control className="relative flex h-5 w-full items-center">
+            <Slider.Track className="h-1.5 flex-1 overflow-hidden rounded-full bg-gray-200">
+              <Slider.Fill className="h-full rounded-full bg-indigo-500" />
+            </Slider.Track>
+            <Slider.Thumb index={0} tabIndex={0} className="size-4 rounded-full border-2 border-indigo-500 bg-white shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-indigo-400" />
+            <Slider.Thumb index={1} tabIndex={0} className="size-4 rounded-full border-2 border-indigo-500 bg-white shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-indigo-400" />
+          </Slider.Control>
+        </Slider.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 3 — Slider with value display
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+export default function SliderWithOutput() {
+  return (
+    <Slider.Root defaultValue={[60]} min={0} max={100} step={5} className="flex w-64 flex-col gap-2">
+      <div className="flex justify-between">
+        <Slider.Label className="text-sm font-medium text-gray-700">Brightness</Slider.Label>
+        <Slider.Output className="text-sm text-gray-400" />
+      </div>
+      <Slider.Control className="relative flex h-5 w-full items-center">
+        <Slider.Track className="h-2 flex-1 overflow-hidden rounded-full bg-gray-200">
+          <Slider.Fill className="h-full rounded-full bg-amber-500" />
+        </Slider.Track>
+        <Slider.Thumb index={0} tabIndex={0} className="size-5 rounded-full bg-amber-500 shadow-md outline-none focus-visible:ring-2 focus-visible:ring-amber-400" />
+      </Slider.Control>
+    </Slider.Root>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <Slider.Root defaultValue={[60]} min={0} max={100} step={5} className="flex w-64 flex-col gap-2">
+          <div className="flex justify-between">
+            <Slider.Label className="text-sm font-medium text-gray-700">Brightness</Slider.Label>
+            <Slider.Output className="text-sm text-gray-400" />
+          </div>
+          <Slider.Control className="relative flex h-5 w-full items-center">
+            <Slider.Track className="h-2 flex-1 overflow-hidden rounded-full bg-gray-200">
+              <Slider.Fill className="h-full rounded-full bg-amber-500" />
+            </Slider.Track>
+            <Slider.Thumb index={0} tabIndex={0} className="size-5 rounded-full bg-amber-500 shadow-md outline-none focus-visible:ring-2 focus-visible:ring-amber-400" />
+          </Slider.Control>
+        </Slider.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+
 ## SliderControl
 
 The clickable, interactive part of the slider.

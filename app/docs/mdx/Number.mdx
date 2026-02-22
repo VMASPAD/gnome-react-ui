@@ -4,6 +4,155 @@ title: Number
 
 # Number
 
+## Examples
+
+### Example 1 — Basic number field
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+import * as NumberField from './number-field/index.parts';
+
+export default function BasicNumberField() {
+  return (
+    <NumberField.Root defaultValue={5} min={0} max={20} className="flex flex-col gap-1">
+      <NumberField.Label className="text-sm font-medium text-gray-700">Quantity</NumberField.Label>
+      <div className="flex items-center rounded-md border border-gray-200 overflow-hidden w-32">
+        <NumberField.Decrement className="px-3 py-2 text-gray-500 hover:bg-gray-100 border-r border-gray-200 cursor-pointer select-none">
+          −
+        </NumberField.Decrement>
+        <NumberField.Input className="w-full text-center text-sm py-2 outline-none" />
+        <NumberField.Increment className="px-3 py-2 text-gray-500 hover:bg-gray-100 border-l border-gray-200 cursor-pointer select-none">
+          +
+        </NumberField.Increment>
+      </div>
+    </NumberField.Root>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <NumberField.Root defaultValue={5} min={0} max={20} className="flex flex-col gap-1">
+          <NumberField.Label className="text-sm font-medium text-gray-700">Quantity</NumberField.Label>
+          <div className="flex items-center rounded-md border border-gray-200 overflow-hidden w-32">
+            <NumberField.Decrement className="px-3 py-2 text-gray-500 hover:bg-gray-100 border-r border-gray-200 cursor-pointer select-none">−</NumberField.Decrement>
+            <NumberField.Input className="w-full text-center text-sm py-2 outline-none" />
+            <NumberField.Increment className="px-3 py-2 text-gray-500 hover:bg-gray-100 border-l border-gray-200 cursor-pointer select-none">+</NumberField.Increment>
+          </div>
+        </NumberField.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 2 — Min, max and step
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+export default function SteppedNumberField() {
+  return (
+    <div className="flex flex-col gap-4">
+      <NumberField.Root defaultValue={0} min={0} max={100} step={10} className="flex flex-col gap-1">
+        <NumberField.Label className="text-sm font-medium text-gray-700">Volume (0–100, step 10)</NumberField.Label>
+        <div className="flex items-center rounded-md border border-gray-200 overflow-hidden w-36">
+          <NumberField.Decrement className="px-3 py-2 text-gray-500 hover:bg-gray-100 border-r border-gray-200 cursor-pointer">−</NumberField.Decrement>
+          <NumberField.Input className="w-full text-center text-sm py-2 outline-none" />
+          <NumberField.Increment className="px-3 py-2 text-gray-500 hover:bg-gray-100 border-l border-gray-200 cursor-pointer">+</NumberField.Increment>
+        </div>
+      </NumberField.Root>
+      <NumberField.Root defaultValue={1.5} min={0.5} max={5} step={0.5} className="flex flex-col gap-1">
+        <NumberField.Label className="text-sm font-medium text-gray-700">Rating (0.5 step)</NumberField.Label>
+        <div className="flex items-center rounded-md border border-gray-200 overflow-hidden w-36">
+          <NumberField.Decrement className="px-3 py-2 text-gray-500 hover:bg-gray-100 border-r border-gray-200 cursor-pointer">−</NumberField.Decrement>
+          <NumberField.Input className="w-full text-center text-sm py-2 outline-none" />
+          <NumberField.Increment className="px-3 py-2 text-gray-500 hover:bg-gray-100 border-l border-gray-200 cursor-pointer">+</NumberField.Increment>
+        </div>
+      </NumberField.Root>
+    </div>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <div className="flex flex-col gap-4">
+          <NumberField.Root defaultValue={0} min={0} max={100} step={10} className="flex flex-col gap-1">
+            <NumberField.Label className="text-sm font-medium text-gray-700">Volume (0–100, step 10)</NumberField.Label>
+            <div className="flex items-center rounded-md border border-gray-200 overflow-hidden w-36">
+              <NumberField.Decrement className="px-3 py-2 text-gray-500 hover:bg-gray-100 border-r border-gray-200 cursor-pointer">−</NumberField.Decrement>
+              <NumberField.Input className="w-full text-center text-sm py-2 outline-none" />
+              <NumberField.Increment className="px-3 py-2 text-gray-500 hover:bg-gray-100 border-l border-gray-200 cursor-pointer">+</NumberField.Increment>
+            </div>
+          </NumberField.Root>
+          <NumberField.Root defaultValue={1.5} min={0.5} max={5} step={0.5} className="flex flex-col gap-1">
+            <NumberField.Label className="text-sm font-medium text-gray-700">Rating (0.5 step)</NumberField.Label>
+            <div className="flex items-center rounded-md border border-gray-200 overflow-hidden w-36">
+              <NumberField.Decrement className="px-3 py-2 text-gray-500 hover:bg-gray-100 border-r border-gray-200 cursor-pointer">−</NumberField.Decrement>
+              <NumberField.Input className="w-full text-center text-sm py-2 outline-none" />
+              <NumberField.Increment className="px-3 py-2 text-gray-500 hover:bg-gray-100 border-l border-gray-200 cursor-pointer">+</NumberField.Increment>
+            </div>
+          </NumberField.Root>
+        </div>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 3 — Currency formatting
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+export default function CurrencyNumberField() {
+  return (
+    <NumberField.Root
+      defaultValue={29.99}
+      step={0.01}
+      format={{ style: 'currency', currency: 'USD' }}
+      className="flex flex-col gap-1"
+    >
+      <NumberField.Label className="text-sm font-medium text-gray-700">Price</NumberField.Label>
+      <div className="flex items-center rounded-md border border-gray-200 overflow-hidden w-40">
+        <NumberField.Decrement className="px-3 py-2 text-gray-500 hover:bg-gray-100 border-r border-gray-200 cursor-pointer">−</NumberField.Decrement>
+        <NumberField.Input className="w-full text-center text-sm py-2 outline-none" />
+        <NumberField.Increment className="px-3 py-2 text-gray-500 hover:bg-gray-100 border-l border-gray-200 cursor-pointer">+</NumberField.Increment>
+      </div>
+      <NumberField.ScrubArea className="text-xs text-gray-400 cursor-ew-resize select-none">
+        <NumberField.ScrubAreaCursor />
+        Drag to adjust
+      </NumberField.ScrubArea>
+    </NumberField.Root>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <NumberField.Root defaultValue={29.99} step={0.01} format={{ style: 'currency', currency: 'USD' }} className="flex flex-col gap-1">
+          <NumberField.Label className="text-sm font-medium text-gray-700">Price</NumberField.Label>
+          <div className="flex items-center rounded-md border border-gray-200 overflow-hidden w-40">
+            <NumberField.Decrement className="px-3 py-2 text-gray-500 hover:bg-gray-100 border-r border-gray-200 cursor-pointer">−</NumberField.Decrement>
+            <NumberField.Input className="w-full text-center text-sm py-2 outline-none" />
+            <NumberField.Increment className="px-3 py-2 text-gray-500 hover:bg-gray-100 border-l border-gray-200 cursor-pointer">+</NumberField.Increment>
+          </div>
+          <NumberField.ScrubArea className="text-xs text-gray-400 cursor-ew-resize select-none">
+            <NumberField.ScrubAreaCursor />
+            Drag to adjust
+          </NumberField.ScrubArea>
+        </NumberField.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+
 ## NumberFieldDecrement
 
 A stepper button that decreases the field value when clicked.

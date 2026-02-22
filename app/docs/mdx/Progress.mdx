@@ -4,6 +4,134 @@ title: Progress
 
 # Progress
 
+## Examples
+
+### Example 1 — Determinate progress bar
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+import * as Progress from './progress/index.parts';
+
+export default function DeterminateProgress() {
+  return (
+    <div className="w-64 space-y-1.5">
+      <div className="flex justify-between text-xs text-gray-500">
+        <span>Uploading file…</span>
+        <span>65%</span>
+      </div>
+      <Progress.Root value={65} className="block">
+        <Progress.Track className="h-2 w-full overflow-hidden rounded-full bg-gray-200">
+          <Progress.Indicator className="h-full rounded-full bg-blue-600 transition-all duration-300" />
+        </Progress.Track>
+      </Progress.Root>
+    </div>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <div className="w-64 space-y-1.5">
+          <div className="flex justify-between text-xs text-gray-500"><span>Uploading file…</span><span>65%</span></div>
+          <Progress.Root value={65}>
+            <Progress.Track className="h-2 w-full overflow-hidden rounded-full bg-gray-200">
+              <Progress.Indicator className="h-full rounded-full bg-blue-600 transition-all duration-300" />
+            </Progress.Track>
+          </Progress.Root>
+        </div>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 2 — Indeterminate progress
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+export default function IndeterminateProgress() {
+  return (
+    <div className="w-64 space-y-1.5">
+      <p className="text-xs text-gray-500">Processing…</p>
+      <Progress.Root
+        value={null}
+        className="block"
+      >
+        <Progress.Track className="relative h-2 w-full overflow-hidden rounded-full bg-gray-200">
+          <Progress.Indicator className="h-full rounded-full bg-blue-500 data-[status=indeterminate]:animate-[indeterminate_1.5s_ease-in-out_infinite] w-1/3" />
+        </Progress.Track>
+      </Progress.Root>
+    </div>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <div className="w-64 space-y-1.5">
+          <p className="text-xs text-gray-500">Processing…</p>
+          <Progress.Root value={null}>
+            <Progress.Track className="relative h-2 w-full overflow-hidden rounded-full bg-gray-200">
+              <Progress.Indicator className="h-full rounded-full bg-blue-500 w-1/3" style={{animation:'indeterminate 1.5s ease-in-out infinite'}} />
+            </Progress.Track>
+          </Progress.Root>
+        </div>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 3 — Multiple progress bars with labels
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+const skills = [
+  { name: 'TypeScript', value: 90 },
+  { name: 'React', value: 82 },
+  { name: 'Rust', value: 45 },
+];
+
+export default function SkillBars() {
+  return (
+    <div className="w-64 space-y-3">
+      {skills.map(({ name, value }) => (
+        <div key={name}>
+          <div className="flex justify-between text-xs mb-1">
+            <span className="text-gray-700 font-medium">{name}</span>
+            <span className="text-gray-400">{value}%</span>
+          </div>
+          <Progress.Root value={value}>
+            <Progress.Track className="h-1.5 w-full overflow-hidden rounded-full bg-gray-100">
+              <Progress.Indicator className="h-full rounded-full bg-indigo-500" />
+            </Progress.Track>
+          </Progress.Root>
+        </div>
+      ))}
+    </div>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <div className="w-64 space-y-3">
+          <div><div className="flex justify-between text-xs mb-1"><span className="text-gray-700 font-medium">TypeScript</span><span className="text-gray-400">90%</span></div><Progress.Root value={90}><Progress.Track className="h-1.5 w-full overflow-hidden rounded-full bg-gray-100"><Progress.Indicator className="h-full rounded-full bg-indigo-500" /></Progress.Track></Progress.Root></div>
+          <div><div className="flex justify-between text-xs mb-1"><span className="text-gray-700 font-medium">React</span><span className="text-gray-400">82%</span></div><Progress.Root value={82}><Progress.Track className="h-1.5 w-full overflow-hidden rounded-full bg-gray-100"><Progress.Indicator className="h-full rounded-full bg-indigo-500" /></Progress.Track></Progress.Root></div>
+          <div><div className="flex justify-between text-xs mb-1"><span className="text-gray-700 font-medium">Rust</span><span className="text-gray-400">45%</span></div><Progress.Root value={45}><Progress.Track className="h-1.5 w-full overflow-hidden rounded-full bg-gray-100"><Progress.Indicator className="h-full rounded-full bg-indigo-500" /></Progress.Track></Progress.Root></div>
+        </div>
+    </Tabs.Panel>
+</Tabs.Root>
+
 ## ProgressIndicator
 
 Visualizes the completion status of the task.

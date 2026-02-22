@@ -4,6 +4,121 @@ title: Separator
 
 # Separator
 
+## Examples
+
+### Example 1 — Horizontal separator
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+import { Separator } from './separator';
+
+export default function HorizontalSeparator() {
+  return (
+    <div className="w-64 space-y-3">
+      <p className="text-sm font-medium text-gray-800">Section A</p>
+      <Separator className="border-t border-gray-200" />
+      <p className="text-sm font-medium text-gray-800">Section B</p>
+      <Separator className="border-t border-gray-200" />
+      <p className="text-sm font-medium text-gray-800">Section C</p>
+    </div>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <div className="w-64 space-y-3">
+          <p className="text-sm font-medium text-gray-800">Section A</p>
+          <Separator className="border-t border-gray-200" />
+          <p className="text-sm font-medium text-gray-800">Section B</p>
+          <Separator className="border-t border-gray-200" />
+          <p className="text-sm font-medium text-gray-800">Section C</p>
+        </div>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 2 — Vertical separator
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+export default function VerticalSeparator() {
+  return (
+    <div className="flex items-center gap-3 text-sm text-gray-600">
+      <span>Home</span>
+      <Separator orientation="vertical" className="h-4 w-px bg-gray-300" />
+      <span>Products</span>
+      <Separator orientation="vertical" className="h-4 w-px bg-gray-300" />
+      <span>Contact</span>
+    </div>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <div className="flex items-center gap-3 text-sm text-gray-600">
+          <span>Home</span>
+          <Separator orientation="vertical" className="h-4 w-px bg-gray-300" />
+          <span>Products</span>
+          <Separator orientation="vertical" className="h-4 w-px bg-gray-300" />
+          <span>Contact</span>
+        </div>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 3 — Separator in a card layout
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+export default function SeparatorInCard() {
+  return (
+    <div className="w-64 rounded-xl border border-gray-200 bg-white overflow-hidden">
+      <div className="px-4 py-3">
+        <p className="text-sm font-semibold text-gray-800">Account</p>
+        <p className="text-xs text-gray-400">Manage your settings</p>
+      </div>
+      <Separator className="border-t border-gray-100" />
+      <div className="px-4 py-3 space-y-2">
+        <p className="text-sm text-gray-600">Profile</p>
+        <p className="text-sm text-gray-600">Billing</p>
+        <p className="text-sm text-gray-600">Security</p>
+      </div>
+      <Separator className="border-t border-gray-100" />
+      <div className="px-4 py-3">
+        <p className="text-sm text-red-500">Sign out</p>
+      </div>
+    </div>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <div className="w-56 rounded-xl border border-gray-200 bg-white overflow-hidden">
+          <div className="px-4 py-3"><p className="text-sm font-semibold text-gray-800">Account</p><p className="text-xs text-gray-400">Manage your settings</p></div>
+          <Separator className="border-t border-gray-100" />
+          <div className="px-4 py-3 space-y-2"><p className="text-sm text-gray-600">Profile</p><p className="text-sm text-gray-600">Billing</p><p className="text-sm text-gray-600">Security</p></div>
+          <Separator className="border-t border-gray-100" />
+          <div className="px-4 py-3"><p className="text-sm text-red-500">Sign out</p></div>
+        </div>
+    </Tabs.Panel>
+</Tabs.Root>
+
 ## Separator
 
 A separator element accessible to screen readers.

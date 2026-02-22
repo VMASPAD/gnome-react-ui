@@ -4,6 +4,213 @@ title: Combobox
 
 # Combobox
 
+## Examples
+
+### Example 1 — Basic single-select combobox
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+import * as Combobox from './combobox/index.parts';
+
+const fruits = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape'];
+
+export default function BasicCombobox() {
+  return (
+    <Combobox.Root items={fruits}>
+      <Combobox.Trigger className="flex h-9 w-56 items-center justify-between rounded-md border border-gray-200 bg-white px-3 text-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <Combobox.Value placeholder="Select a fruit..." />
+        <Combobox.Icon />
+      </Combobox.Trigger>
+      <Combobox.Portal>
+        <Combobox.Positioner sideOffset={4}>
+          <Combobox.Popup className="w-56 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
+            <Combobox.Input className="mx-2 my-1 w-[calc(100%-16px)] rounded border border-gray-200 px-3 py-1.5 text-sm outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search..." />
+            <Combobox.List className="max-h-48 overflow-y-auto">
+              {fruits.map((fruit) => (
+                <Combobox.Item key={fruit} value={fruit} className="flex cursor-pointer items-center px-3 py-2 text-sm hover:bg-gray-100 data-[highlighted]:bg-gray-100">
+                  {fruit}
+                </Combobox.Item>
+              ))}
+            </Combobox.List>
+          </Combobox.Popup>
+        </Combobox.Positioner>
+      </Combobox.Portal>
+    </Combobox.Root>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <Combobox.Root items={["Apple","Banana","Cherry","Date","Elderberry","Fig","Grape"]}>
+          <Combobox.Trigger className="flex h-9 w-56 items-center justify-between rounded-md border border-gray-200 bg-white px-3 text-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <Combobox.Value placeholder="Select a fruit..." />
+            <Combobox.Icon />
+          </Combobox.Trigger>
+          <Combobox.Portal>
+            <Combobox.Positioner sideOffset={4}>
+              <Combobox.Popup className="w-56 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
+                <Combobox.Input className="mx-2 my-1 w-[calc(100%-16px)] rounded border border-gray-200 px-3 py-1.5 text-sm outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search..." />
+                <Combobox.List className="max-h-48 overflow-y-auto">
+                  <Combobox.Item value="Apple" className="flex cursor-pointer items-center px-3 py-2 text-sm hover:bg-gray-100 data-[highlighted]:bg-gray-100">Apple</Combobox.Item>
+                  <Combobox.Item value="Banana" className="flex cursor-pointer items-center px-3 py-2 text-sm hover:bg-gray-100 data-[highlighted]:bg-gray-100">Banana</Combobox.Item>
+                  <Combobox.Item value="Cherry" className="flex cursor-pointer items-center px-3 py-2 text-sm hover:bg-gray-100 data-[highlighted]:bg-gray-100">Cherry</Combobox.Item>
+                  <Combobox.Item value="Date" className="flex cursor-pointer items-center px-3 py-2 text-sm hover:bg-gray-100 data-[highlighted]:bg-gray-100">Date</Combobox.Item>
+                  <Combobox.Item value="Grape" className="flex cursor-pointer items-center px-3 py-2 text-sm hover:bg-gray-100 data-[highlighted]:bg-gray-100">Grape</Combobox.Item>
+                </Combobox.List>
+              </Combobox.Popup>
+            </Combobox.Positioner>
+          </Combobox.Portal>
+        </Combobox.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 2 — Combobox with grouped items
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+const items = ['React', 'Vue', 'Svelte', 'Python', 'Ruby', 'Go'];
+
+export default function GroupedCombobox() {
+  return (
+    <Combobox.Root items={items}>
+      <Combobox.Trigger className="flex h-9 w-56 items-center justify-between rounded-md border border-gray-200 px-3 text-sm hover:bg-gray-50">
+        <Combobox.Value placeholder="Select technology..." />
+        <Combobox.Icon />
+      </Combobox.Trigger>
+      <Combobox.Portal>
+        <Combobox.Positioner sideOffset={4}>
+          <Combobox.Popup className="w-56 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
+            <Combobox.Input className="mx-2 my-1 w-[calc(100%-16px)] rounded border border-gray-200 px-3 py-1.5 text-sm outline-none" placeholder="Search..." />
+            <Combobox.List className="max-h-48 overflow-y-auto">
+              <Combobox.Group>
+                <Combobox.GroupLabel className="px-3 py-1 text-xs font-semibold uppercase text-gray-400">Frontend</Combobox.GroupLabel>
+                {['React', 'Vue', 'Svelte'].map(f => (
+                  <Combobox.Item key={f} value={f} className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100">{f}</Combobox.Item>
+                ))}
+              </Combobox.Group>
+              <Combobox.Separator className="my-1 border-t border-gray-100" />
+              <Combobox.Group>
+                <Combobox.GroupLabel className="px-3 py-1 text-xs font-semibold uppercase text-gray-400">Backend</Combobox.GroupLabel>
+                {['Python', 'Ruby', 'Go'].map(b => (
+                  <Combobox.Item key={b} value={b} className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100">{b}</Combobox.Item>
+                ))}
+              </Combobox.Group>
+            </Combobox.List>
+          </Combobox.Popup>
+        </Combobox.Positioner>
+      </Combobox.Portal>
+    </Combobox.Root>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <Combobox.Root items={["React","Vue","Svelte","Python","Ruby","Go"]}>
+          <Combobox.Trigger className="flex h-9 w-56 items-center justify-between rounded-md border border-gray-200 px-3 text-sm hover:bg-gray-50">
+            <Combobox.Value placeholder="Select technology..." />
+            <Combobox.Icon />
+          </Combobox.Trigger>
+          <Combobox.Portal>
+            <Combobox.Positioner sideOffset={4}>
+              <Combobox.Popup className="w-56 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
+                <Combobox.Input className="mx-2 my-1 w-[calc(100%-16px)] rounded border border-gray-200 px-3 py-1.5 text-sm outline-none" placeholder="Search..." />
+                <Combobox.List className="max-h-48 overflow-y-auto">
+                  <Combobox.Group>
+                    <Combobox.GroupLabel className="px-3 py-1 text-xs font-semibold uppercase text-gray-400">Frontend</Combobox.GroupLabel>
+                    <Combobox.Item value="React" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">React</Combobox.Item>
+                    <Combobox.Item value="Vue" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Vue</Combobox.Item>
+                    <Combobox.Item value="Svelte" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Svelte</Combobox.Item>
+                  </Combobox.Group>
+                  <Combobox.Separator className="my-1 border-t border-gray-100" />
+                  <Combobox.Group>
+                    <Combobox.GroupLabel className="px-3 py-1 text-xs font-semibold uppercase text-gray-400">Backend</Combobox.GroupLabel>
+                    <Combobox.Item value="Python" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Python</Combobox.Item>
+                    <Combobox.Item value="Ruby" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Ruby</Combobox.Item>
+                    <Combobox.Item value="Go" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Go</Combobox.Item>
+                  </Combobox.Group>
+                </Combobox.List>
+              </Combobox.Popup>
+            </Combobox.Positioner>
+          </Combobox.Portal>
+        </Combobox.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 3 — Custom empty state
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+const items = ['Design', 'Engineering', 'Marketing', 'Sales'];
+
+export default function ComboboxWithEmpty() {
+  return (
+    <Combobox.Root items={items}>
+      <Combobox.Trigger className="flex h-9 w-56 items-center justify-between rounded-md border border-gray-200 px-3 text-sm hover:bg-gray-50">
+        <Combobox.Value placeholder="Choose department..." />
+        <Combobox.Icon />
+      </Combobox.Trigger>
+      <Combobox.Portal>
+        <Combobox.Positioner sideOffset={4}>
+          <Combobox.Popup className="w-56 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
+            <Combobox.Input className="mx-2 my-1 w-[calc(100%-16px)] rounded border border-gray-200 px-3 py-1.5 text-sm outline-none" placeholder="Search departments..." />
+            <Combobox.List className="max-h-40 overflow-y-auto">
+              {items.map(item => (
+                <Combobox.Item key={item} value={item} className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">{item}</Combobox.Item>
+              ))}
+            </Combobox.List>
+            <Combobox.Empty className="px-3 py-4 text-center text-sm text-gray-400">
+              No departments found.
+            </Combobox.Empty>
+          </Combobox.Popup>
+        </Combobox.Positioner>
+      </Combobox.Portal>
+    </Combobox.Root>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <Combobox.Root items={["Design","Engineering","Marketing","Sales"]}>
+          <Combobox.Trigger className="flex h-9 w-56 items-center justify-between rounded-md border border-gray-200 px-3 text-sm hover:bg-gray-50">
+            <Combobox.Value placeholder="Choose department..." />
+            <Combobox.Icon />
+          </Combobox.Trigger>
+          <Combobox.Portal>
+            <Combobox.Positioner sideOffset={4}>
+              <Combobox.Popup className="w-56 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
+                <Combobox.Input className="mx-2 my-1 w-[calc(100%-16px)] rounded border border-gray-200 px-3 py-1.5 text-sm outline-none" placeholder="Search departments..." />
+                <Combobox.List className="max-h-40 overflow-y-auto">
+                  <Combobox.Item value="Design" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Design</Combobox.Item>
+                  <Combobox.Item value="Engineering" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Engineering</Combobox.Item>
+                  <Combobox.Item value="Marketing" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Marketing</Combobox.Item>
+                  <Combobox.Item value="Sales" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Sales</Combobox.Item>
+                </Combobox.List>
+                <Combobox.Empty className="px-3 py-4 text-center text-sm text-gray-400">No departments found.</Combobox.Empty>
+              </Combobox.Popup>
+            </Combobox.Positioner>
+          </Combobox.Portal>
+        </Combobox.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+
 ## ComboboxArrow
 
 Displays an element positioned against the anchor.

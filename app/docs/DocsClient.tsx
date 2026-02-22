@@ -4,7 +4,41 @@
 import React from "react";
 import { MDXRemote } from "next-mdx-remote";
 import * as Accordion from "../components/accordion/index.parts";
+import * as AlertDialog from "../components/alert-dialog/index.parts";
+import * as Autocomplete from "../components/autocomplete/index.parts";
+import * as Avatar from "../components/avatar/index.parts";
+import { Button } from "../components/button";
+import * as Checkbox from "../components/checkbox/index.parts";
+import * as Collapsible from "../components/collapsible/index.parts";
+import * as Combobox from "../components/combobox/index.parts";
+import * as ContextMenu from "../components/context-menu/index.parts";
+import * as Dialog from "../components/dialog/index.parts";
+import * as Drawer from "../components/drawer/index.parts";
+import * as Field from "../components/field/index.parts";
+import * as Fieldset from "../components/fieldset/index.parts";
+import { Form } from "../components/form";
+import { Input } from "../components/input";
+import * as Menu from "../components/menu/index.parts";
+import { Menubar } from "../components/menubar";
+import * as Meter from "../components/meter/index.parts";
+import * as NavigationMenu from "../components/navigation-menu/index.parts";
+import * as NumberField from "../components/number-field/index.parts";
+import * as Popover from "../components/popover/index.parts";
+import * as PreviewCard from "../components/preview-card/index.parts";
+import * as Progress from "../components/progress/index.parts";
+import * as Radio from "../components/radio/index.parts";
+import { RadioGroup } from "../components/radio-group";
+import * as ScrollArea from "../components/scroll-area/index.parts";
+import * as Select from "../components/select/index.parts";
+import { Separator } from "../components/separator";
+import * as Slider from "../components/slider/index.parts";
+import * as Switch from "../components/switch/index.parts";
 import * as Tabs from "../components/tabs/index.parts";
+import * as Toast from "../components/toast/index.parts";
+import { Toggle } from "../components/toggle";
+import { ToggleGroup } from "../components/toggle-group";
+import * as Toolbar from "../components/toolbar/index.parts";
+import * as Tooltip from "../components/tooltip/index.parts";
 import * as Icons from "lucide-react";
 import {
   ChevronRight,
@@ -285,7 +319,14 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
                 <MDXRemote
                   {...activeDoc.content}
                   components={{
-                    Accordion,Tabs, Icons,
+                    Accordion, AlertDialog, Autocomplete, Avatar, Button,
+                    Checkbox, Collapsible, Combobox, ContextMenu,
+                    Dialog, Drawer, Field, Fieldset, Form, Input,
+                    Menu, Menubar, Meter, NavigationMenu, NumberField,
+                    Popover, PreviewCard, Progress, Radio, RadioGroup,
+                    ScrollArea, Select, Separator, Slider, Switch,
+                    Tabs, Toast, Toggle, ToggleGroup, Toolbar, Tooltip,
+                    Icons,
                     Subtitle: ({ children }: any) => (
                       <p className="text-sm text-muted-foreground mt-0 mb-6 leading-relaxed">
                         {children}

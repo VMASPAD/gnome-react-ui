@@ -4,6 +4,135 @@ title: Button
 
 # Button
 
+## Examples
+
+### Example 1 — Button variants
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+import { Button } from './button';
+
+export default function ButtonVariants() {
+  return (
+    <div className="flex flex-wrap gap-3">
+      <Button className="px-4 py-2 rounded-md bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500">
+        Primary
+      </Button>
+      <Button className="px-4 py-2 rounded-md border border-gray-300 text-sm font-medium hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500">
+        Secondary
+      </Button>
+      <Button className="px-4 py-2 rounded-md bg-red-600 text-white text-sm font-medium hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-500">
+        Danger
+      </Button>
+      <Button className="px-4 py-2 rounded-md text-sm font-medium text-gray-600 hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500">
+        Ghost
+      </Button>
+    </div>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <div className="flex flex-wrap gap-3">
+          <Button className="px-4 py-2 rounded-md bg-blue-600 text-white text-sm font-medium hover:bg-blue-700">Primary</Button>
+          <Button className="px-4 py-2 rounded-md border border-gray-300 text-sm font-medium hover:bg-gray-50">Secondary</Button>
+          <Button className="px-4 py-2 rounded-md bg-red-600 text-white text-sm font-medium hover:bg-red-700">Danger</Button>
+          <Button className="px-4 py-2 rounded-md text-sm font-medium text-gray-600 hover:bg-gray-100">Ghost</Button>
+        </div>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 2 — Disabled with `focusableWhenDisabled`
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+// focusableWhenDisabled lets screen readers still focus the button.
+// Useful for showing tooltips on disabled buttons.
+export default function DisabledButton() {
+  return (
+    <div className="flex gap-3">
+      <Button
+        disabled
+        className="px-4 py-2 rounded-md bg-blue-600 text-white text-sm font-medium opacity-40 cursor-not-allowed"
+      >
+        Normal disabled
+      </Button>
+      <Button
+        disabled
+        focusableWhenDisabled
+        className="px-4 py-2 rounded-md bg-blue-600 text-white text-sm font-medium opacity-40 data-[disabled]:cursor-not-allowed focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500"
+      >
+        Focusable disabled
+      </Button>
+    </div>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <div className="flex flex-wrap gap-3">
+          <Button disabled className="px-4 py-2 rounded-md bg-blue-600 text-white text-sm font-medium opacity-40 cursor-not-allowed">Normal disabled</Button>
+          <Button disabled focusableWhenDisabled className="px-4 py-2 rounded-md bg-blue-600 text-white text-sm font-medium opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500">Focusable disabled</Button>
+        </div>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 3 — Icon button with custom render
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+import { Plus, Trash2, Download } from 'lucide-react';
+
+export default function IconButtons() {
+  return (
+    <div className="flex gap-2">
+      <Button className="inline-flex items-center gap-1.5 px-3 py-2 rounded-md bg-blue-600 text-white text-sm font-medium hover:bg-blue-700">
+        <Plus size={14} /> New item
+      </Button>
+      <Button className="p-2 rounded-md border border-gray-200 hover:bg-gray-50" aria-label="Download">
+        <Download size={16} className="text-gray-600" />
+      </Button>
+      <Button className="p-2 rounded-md border border-red-200 hover:bg-red-50" aria-label="Delete">
+        <Trash2 size={16} className="text-red-500" />
+      </Button>
+    </div>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <div className="flex gap-2">
+          <Button className="inline-flex items-center gap-1.5 px-3 py-2 rounded-md bg-blue-600 text-white text-sm font-medium hover:bg-blue-700">
+            <Icons.Plus size={14} /> New item
+          </Button>
+          <Button className="p-2 rounded-md border border-gray-200 hover:bg-gray-50" aria-label="Download">
+            <Icons.Download size={16} className="text-gray-600" />
+          </Button>
+          <Button className="p-2 rounded-md border border-red-200 hover:bg-red-50" aria-label="Delete">
+            <Icons.Trash2 size={16} className="text-red-500" />
+          </Button>
+        </div>
+    </Tabs.Panel>
+</Tabs.Root>
+
 ## Button
 
 A button component that can be used to trigger actions.

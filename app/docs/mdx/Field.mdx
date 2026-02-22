@@ -4,6 +4,139 @@ title: Field
 
 # Field
 
+## Examples
+
+### Example 1 — Basic field with label
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+import * as Field from './field/index.parts';
+
+export default function BasicField() {
+  return (
+    <Field.Root className="flex flex-col gap-1.5 w-64">
+      <Field.Label className="text-sm font-medium text-gray-700">Username</Field.Label>
+      <Field.Control
+        className="rounded-md border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="john_doe"
+      />
+    </Field.Root>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <Field.Root className="flex flex-col gap-1.5 w-64">
+          <Field.Label className="text-sm font-medium text-gray-700">Username</Field.Label>
+          <Field.Control className="rounded-md border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500" placeholder="john_doe" />
+        </Field.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 2 — Field with description and error
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+export default function FieldWithError() {
+  return (
+    <Field.Root invalid className="flex flex-col gap-1.5 w-64">
+      <Field.Label className="text-sm font-medium text-gray-700">Email</Field.Label>
+      <Field.Description className="text-xs text-gray-400">
+        You will receive a confirmation email.
+      </Field.Description>
+      <Field.Control
+        type="email"
+        defaultValue="not-an-email"
+        className="rounded-md border border-red-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-red-500 data-[invalid]:border-red-400"
+      />
+      <Field.Error className="text-xs text-red-500">
+        Please enter a valid email address.
+      </Field.Error>
+    </Field.Root>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <Field.Root invalid className="flex flex-col gap-1.5 w-64">
+          <Field.Label className="text-sm font-medium text-gray-700">Email</Field.Label>
+          <Field.Description className="text-xs text-gray-400">You will receive a confirmation email.</Field.Description>
+          <Field.Control type="email" defaultValue="not-an-email" className="rounded-md border border-red-300 px-3 py-2 text-sm outline-none" />
+          <Field.Error className="text-xs text-red-500">Please enter a valid email address.</Field.Error>
+        </Field.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 3 — Form with multiple fields
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+export default function MultiFieldForm() {
+  return (
+    <form className="w-72 space-y-4">
+      <Field.Root required className="flex flex-col gap-1">
+        <Field.Label className="text-sm font-medium text-gray-700">
+          Full name <span className="text-red-500">*</span>
+        </Field.Label>
+        <Field.Control
+          required
+          placeholder="Jane Doe"
+          className="rounded-md border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </Field.Root>
+
+      <Field.Root className="flex flex-col gap-1">
+        <Field.Label className="text-sm font-medium text-gray-700">Bio</Field.Label>
+        <Field.Description className="text-xs text-gray-400">Max 160 characters.</Field.Description>
+        <Field.Control
+          render={<textarea rows={3} />}
+          placeholder="Tell us about yourself..."
+          className="rounded-md border border-gray-200 px-3 py-2 text-sm outline-none resize-none focus:ring-2 focus:ring-blue-500"
+        />
+      </Field.Root>
+
+      <button type="submit" className="w-full rounded-md bg-blue-600 py-2 text-sm text-white font-medium hover:bg-blue-700">
+        Save
+      </button>
+    </form>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[200px] items-center justify-center p-6 outline-none" value="preview">
+        <div className="w-72 space-y-4">
+          <Field.Root required className="flex flex-col gap-1">
+            <Field.Label className="text-sm font-medium text-gray-700">Full name <span className="text-red-500">*</span></Field.Label>
+            <Field.Control required placeholder="Jane Doe" className="rounded-md border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500" />
+          </Field.Root>
+          <Field.Root className="flex flex-col gap-1">
+            <Field.Label className="text-sm font-medium text-gray-700">Bio</Field.Label>
+            <Field.Description className="text-xs text-gray-400">Max 160 characters.</Field.Description>
+            <textarea rows={3} placeholder="Tell us about yourself..." className="rounded-md border border-gray-200 px-3 py-2 text-sm outline-none resize-none focus:ring-2 focus:ring-blue-500" />
+          </Field.Root>
+          <button type="button" className="w-full rounded-md bg-blue-600 py-2 text-sm text-white font-medium hover:bg-blue-700">Save</button>
+        </div>
+    </Tabs.Panel>
+</Tabs.Root>
+
 ## FieldControl
 
 The form control to label and validate.

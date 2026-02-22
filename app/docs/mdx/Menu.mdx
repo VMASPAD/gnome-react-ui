@@ -4,6 +4,202 @@ title: Menu
 
 # Menu
 
+## Examples
+
+### Example 1 — Basic dropdown menu
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+import * as Menu from './menu/index.parts';
+
+export default function BasicMenu() {
+  return (
+    <Menu.Root>
+      <Menu.Trigger className="inline-flex items-center gap-1.5 px-3 py-2 rounded-md border border-gray-200 text-sm font-medium hover:bg-gray-50">
+        Options ▾
+      </Menu.Trigger>
+      <Menu.Portal>
+        <Menu.Positioner sideOffset={4}>
+          <Menu.Popup className="w-44 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
+            <Menu.Item className="flex items-center px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100">
+              Edit
+            </Menu.Item>
+            <Menu.Item className="flex items-center px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100">
+              Duplicate
+            </Menu.Item>
+            <Menu.Separator className="my-1 border-t border-gray-100" />
+            <Menu.Item className="flex items-center px-3 py-2 text-sm cursor-pointer text-red-500 hover:bg-red-50 data-[highlighted]:bg-red-50">
+              Delete
+            </Menu.Item>
+          </Menu.Popup>
+        </Menu.Positioner>
+      </Menu.Portal>
+    </Menu.Root>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <Menu.Root>
+          <Menu.Trigger className="inline-flex items-center gap-1.5 px-3 py-2 rounded-md border border-gray-200 text-sm font-medium hover:bg-gray-50">Options ▾</Menu.Trigger>
+          <Menu.Portal>
+            <Menu.Positioner sideOffset={4}>
+              <Menu.Popup className="w-44 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
+                <Menu.Item className="flex items-center px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100">Edit</Menu.Item>
+                <Menu.Item className="flex items-center px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100">Duplicate</Menu.Item>
+                <Menu.Separator className="my-1 border-t border-gray-100" />
+                <Menu.Item className="flex items-center px-3 py-2 text-sm cursor-pointer text-red-500 hover:bg-red-50 data-[highlighted]:bg-red-50">Delete</Menu.Item>
+              </Menu.Popup>
+            </Menu.Positioner>
+          </Menu.Portal>
+        </Menu.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 2 — Menu with groups and icons
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+import { Copy, Edit2, Trash2, Share2 } from 'lucide-react';
+
+export default function GroupedMenu() {
+  return (
+    <Menu.Root>
+      <Menu.Trigger className="p-2 rounded-md border border-gray-200 hover:bg-gray-50">
+        ⋯
+      </Menu.Trigger>
+      <Menu.Portal>
+        <Menu.Positioner sideOffset={4}>
+          <Menu.Popup className="w-48 rounded-xl border border-gray-200 bg-white py-1.5 shadow-lg">
+            <Menu.Group>
+              <Menu.GroupLabel className="px-3 py-1 text-[11px] uppercase font-semibold text-gray-400 tracking-wider">Actions</Menu.GroupLabel>
+              <Menu.Item className="flex items-center gap-2.5 px-3 py-1.5 text-sm cursor-pointer hover:bg-gray-100">
+                <Edit2 size={13} className="text-gray-500" /> Edit
+              </Menu.Item>
+              <Menu.Item className="flex items-center gap-2.5 px-3 py-1.5 text-sm cursor-pointer hover:bg-gray-100">
+                <Copy size={13} className="text-gray-500" /> Duplicate
+              </Menu.Item>
+              <Menu.Item className="flex items-center gap-2.5 px-3 py-1.5 text-sm cursor-pointer hover:bg-gray-100">
+                <Share2 size={13} className="text-gray-500" /> Share
+              </Menu.Item>
+            </Menu.Group>
+            <Menu.Separator className="my-1.5 border-t border-gray-100" />
+            <Menu.Item className="flex items-center gap-2.5 px-3 py-1.5 text-sm cursor-pointer text-red-500 hover:bg-red-50">
+              <Trash2 size={13} /> Delete
+            </Menu.Item>
+          </Menu.Popup>
+        </Menu.Positioner>
+      </Menu.Portal>
+    </Menu.Root>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <Menu.Root>
+          <Menu.Trigger className="p-2 rounded-md border border-gray-200 hover:bg-gray-50 text-lg leading-none">⋯</Menu.Trigger>
+          <Menu.Portal>
+            <Menu.Positioner sideOffset={4}>
+              <Menu.Popup className="w-48 rounded-xl border border-gray-200 bg-white py-1.5 shadow-lg">
+                <Menu.Group>
+                  <Menu.GroupLabel className="px-3 py-1 text-[11px] uppercase font-semibold text-gray-400 tracking-wider">Actions</Menu.GroupLabel>
+                  <Menu.Item className="flex items-center gap-2.5 px-3 py-1.5 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100"><Icons.Edit2 size={13} className="text-gray-500" /> Edit</Menu.Item>
+                  <Menu.Item className="flex items-center gap-2.5 px-3 py-1.5 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100"><Icons.Copy size={13} className="text-gray-500" /> Duplicate</Menu.Item>
+                  <Menu.Item className="flex items-center gap-2.5 px-3 py-1.5 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100"><Icons.Share2 size={13} className="text-gray-500" /> Share</Menu.Item>
+                </Menu.Group>
+                <Menu.Separator className="my-1.5 border-t border-gray-100" />
+                <Menu.Item className="flex items-center gap-2.5 px-3 py-1.5 text-sm cursor-pointer text-red-500 hover:bg-red-50 data-[highlighted]:bg-red-50"><Icons.Trash2 size={13} /> Delete</Menu.Item>
+              </Menu.Popup>
+            </Menu.Positioner>
+          </Menu.Portal>
+        </Menu.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+
+### Example 3 — Menu with checkbox items
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+export default function CheckboxMenu() {
+  return (
+    <Menu.Root>
+      <Menu.Trigger className="inline-flex items-center gap-1.5 px-3 py-2 rounded-md border border-gray-200 text-sm hover:bg-gray-50">
+        View settings ▾
+      </Menu.Trigger>
+      <Menu.Portal>
+        <Menu.Positioner sideOffset={4}>
+          <Menu.Popup className="w-48 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
+            <Menu.GroupLabel className="px-3 py-1.5 text-xs font-semibold text-gray-400">Display</Menu.GroupLabel>
+            <Menu.CheckboxItem defaultChecked className="flex items-center gap-2 px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">
+              <Menu.CheckboxItemIndicator className="size-3.5 rounded border border-gray-300 data-[checked]:bg-blue-600 data-[checked]:border-blue-600 flex items-center justify-center">
+                <span className="text-white text-[10px]">✓</span>
+              </Menu.CheckboxItemIndicator>
+              Show toolbar
+            </Menu.CheckboxItem>
+            <Menu.CheckboxItem className="flex items-center gap-2 px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">
+              <Menu.CheckboxItemIndicator className="size-3.5 rounded border border-gray-300 data-[checked]:bg-blue-600 data-[checked]:border-blue-600 flex items-center justify-center">
+                <span className="text-white text-[10px]">✓</span>
+              </Menu.CheckboxItemIndicator>
+              Show line numbers
+            </Menu.CheckboxItem>
+            <Menu.CheckboxItem defaultChecked className="flex items-center gap-2 px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">
+              <Menu.CheckboxItemIndicator className="size-3.5 rounded border border-gray-300 data-[checked]:bg-blue-600 data-[checked]:border-blue-600 flex items-center justify-center">
+                <span className="text-white text-[10px]">✓</span>
+              </Menu.CheckboxItemIndicator>
+              Word wrap
+            </Menu.CheckboxItem>
+          </Menu.Popup>
+        </Menu.Positioner>
+      </Menu.Portal>
+    </Menu.Root>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+        <Menu.Root>
+          <Menu.Trigger className="inline-flex items-center gap-1.5 px-3 py-2 rounded-md border border-gray-200 text-sm hover:bg-gray-50">View settings ▾</Menu.Trigger>
+          <Menu.Portal>
+            <Menu.Positioner sideOffset={4}>
+              <Menu.Popup className="w-48 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
+                <Menu.GroupLabel className="px-3 py-1.5 text-xs font-semibold text-gray-400">Display</Menu.GroupLabel>
+                <Menu.CheckboxItem defaultChecked className="flex items-center gap-2 px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">
+                  <Menu.CheckboxItemIndicator className="size-3.5 rounded border border-gray-300 data-[checked]:bg-blue-600 data-[checked]:border-blue-600 flex items-center justify-center"><span className="text-white text-[10px]">&#10003;</span></Menu.CheckboxItemIndicator>
+                  Show toolbar
+                </Menu.CheckboxItem>
+                <Menu.CheckboxItem className="flex items-center gap-2 px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">
+                  <Menu.CheckboxItemIndicator className="size-3.5 rounded border border-gray-300 data-[checked]:bg-blue-600 data-[checked]:border-blue-600 flex items-center justify-center"><span className="text-white text-[10px]">&#10003;</span></Menu.CheckboxItemIndicator>
+                  Show line numbers
+                </Menu.CheckboxItem>
+                <Menu.CheckboxItem defaultChecked className="flex items-center gap-2 px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">
+                  <Menu.CheckboxItemIndicator className="size-3.5 rounded border border-gray-300 data-[checked]:bg-blue-600 data-[checked]:border-blue-600 flex items-center justify-center"><span className="text-white text-[10px]">&#10003;</span></Menu.CheckboxItemIndicator>
+                  Word wrap
+                </Menu.CheckboxItem>
+              </Menu.Popup>
+            </Menu.Positioner>
+          </Menu.Portal>
+        </Menu.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+
 ## MenuArrow
 
 Displays an element positioned against the menu anchor.
