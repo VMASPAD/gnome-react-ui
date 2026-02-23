@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from "react";
 import { MDXRemote } from "next-mdx-remote";
 import * as Accordion from "../components/accordion/index.parts";

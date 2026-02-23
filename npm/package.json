@@ -1,6 +1,7 @@
 {
-  "name": "@gnome-ui/react",
-  "version": "0.1.0",
+  "name": "gnome-ui",
+    "publishConfig": {"access": "public"},
+  "version": "1.0.1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
