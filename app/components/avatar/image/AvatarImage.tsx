@@ -1,17 +1,23 @@
-'use client';
-import * as React from 'react';
-import { useStableCallback } from '@/lib/useStableCallback';
-import { useIsoLayoutEffect } from '@/lib/useIsoLayoutEffect';
-import { BaseUIComponentProps } from '../../utils/types';
-import type { StateAttributesMapping } from '../../utils/getStateAttributesProps';
-import { useRenderElement } from '../../utils/useRenderElement';
-import { useAvatarRootContext } from '../root/AvatarRootContext';
-import type { AvatarRoot } from '../root/AvatarRoot';
-import { avatarStateAttributesMapping } from '../root/stateAttributesMapping';
-import { useOpenChangeComplete } from '../../utils/useOpenChangeComplete';
-import { transitionStatusMapping } from '../../utils/stateAttributesMapping';
-import { type TransitionStatus, useTransitionStatus } from '../../utils/useTransitionStatus';
-import { useImageLoadingStatus, ImageLoadingStatus } from './useImageLoadingStatus';
+"use client";
+import * as React from "react";
+import { useStableCallback } from "@/lib/useStableCallback";
+import { useIsoLayoutEffect } from "@/lib/useIsoLayoutEffect";
+import { BaseUIComponentProps } from "../../utils/types";
+import type { StateAttributesMapping } from "../../utils/getStateAttributesProps";
+import { useRenderElement } from "../../utils/useRenderElement";
+import { useAvatarRootContext } from "../root/AvatarRootContext";
+import type { AvatarRoot } from "../root/AvatarRoot";
+import { avatarStateAttributesMapping } from "../root/stateAttributesMapping";
+import { useOpenChangeComplete } from "../../utils/useOpenChangeComplete";
+import { transitionStatusMapping } from "../../utils/stateAttributesMapping";
+import {
+  type TransitionStatus,
+  useTransitionStatus,
+} from "../../utils/useTransitionStatus";
+import {
+  useImageLoadingStatus,
+  ImageLoadingStatus,
+} from "./useImageLoadingStatus";
 
 const stateAttributesMapping: StateAttributesMapping<AvatarImage.State> = {
   ...avatarStateAttributesMapping,
@@ -38,23 +44,46 @@ export const AvatarImage = React.forwardRef(function AvatarImage(
   } = componentProps;
 
   const context = useAvatarRootContext();
-  const imageLoadingStatus = useImageLoadingStatus(componentProps.src || '', {
+  // Dentro del componente AvatarImage
+  const srcProp = componentProps.src;
+
+  // Creamos una URL estable si el src es un Blob
+  const srcString = React.useMemo(() => {
+    if (srcProp instanceof Blob) {
+      return URL.createObjectURL(srcProp);
+    }
+    return srcProp || "";
+  }, [srcProp]);
+
+  const imageLoadingStatus = useImageLoadingStatus(srcString, {
     referrerPolicy,
     crossOrigin,
   });
 
-  const isVisible = imageLoadingStatus === 'loaded';
-  const { mounted, transitionStatus, setMounted } = useTransitionStatus(isVisible);
+  // Importante: Si usas createObjectURL, deberías revocarlo
+  // en un useEffect para evitar fugas de memoria.
+  React.useEffect(() => {
+    return () => {
+      if (srcProp instanceof Blob) {
+        URL.revokeObjectURL(srcString);
+      }
+    };
+  }, [srcProp, srcString]);
+  const isVisible = imageLoadingStatus === "loaded";
+  const { mounted, transitionStatus, setMounted } =
+    useTransitionStatus(isVisible);
 
   const imageRef = React.useRef<HTMLImageElement | null>(null);
 
-  const handleLoadingStatusChange = useStableCallback((status: ImageLoadingStatus) => {
-    onLoadingStatusChangeProp?.(status);
-    context.setImageLoadingStatus(status);
-  });
+  const handleLoadingStatusChange = useStableCallback(
+    (status: ImageLoadingStatus) => {
+      onLoadingStatusChangeProp?.(status);
+      context.setImageLoadingStatus(status);
+    },
+  );
 
   useIsoLayoutEffect(() => {
-    if (imageLoadingStatus !== 'idle') {
+    if (imageLoadingStatus !== "idle") {
       handleLoadingStatusChange(imageLoadingStatus);
     }
   }, [imageLoadingStatus, handleLoadingStatusChange]);
@@ -74,7 +103,7 @@ export const AvatarImage = React.forwardRef(function AvatarImage(
     },
   });
 
-  const element = useRenderElement('img', componentProps, {
+  const element = useRenderElement("img", componentProps, {
     state,
     ref: [forwardedRef, imageRef],
     props: elementProps,
@@ -93,7 +122,10 @@ export interface AvatarImageState extends AvatarRoot.State {
   transitionStatus: TransitionStatus;
 }
 
-export interface AvatarImageProps extends BaseUIComponentProps<'img', AvatarImage.State> {
+export interface AvatarImageProps extends BaseUIComponentProps<
+  "img",
+  AvatarImage.State
+> {
   /**
    * Callback fired when the loading status changes.
    */
