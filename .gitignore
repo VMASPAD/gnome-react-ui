@@ -13,10 +13,12 @@
 # testing
 /coverage
 /npm
+npm
+npm/*
 # next.js
 /.next/
 /out/
-npm/*
+
 # production
 /build
 
