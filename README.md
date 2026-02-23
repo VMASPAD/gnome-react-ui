@@ -2,6 +2,7 @@
 
 <img src="https://gnome-react-ui.vercel.app/icon.svg" alt="GnomeUI" width="64" height="64" />
 
+
 # GnomeUI
 
 **Beautifully designed React components inspired by the GNOME Human Interface Guidelines.**
@@ -17,6 +18,7 @@ Copy and paste into your app. Accessible. Customizable. Open Source.
 
 </div>
 
+<img src="./image.png" alt="GnomeUI"  />
 ---
 
 ## What is GnomeUI?
