@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Toast } from @/lib/react/toast';
-import { Dialog } from @/lib/react/dialog';
+import { Toast } from ''@/lib/react/toast';
+import { Dialog } from ''@/lib/react/dialog';
 import { fireEvent, flushMicrotasks, screen } from '@mui/internal-test-utils';
 import { expect } from 'chai';
 import { spy } from 'sinon';

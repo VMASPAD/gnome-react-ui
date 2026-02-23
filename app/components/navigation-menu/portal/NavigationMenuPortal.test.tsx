@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavigationMenu } from @/lib/react/navigation-menu';
+import { NavigationMenu } from ''@/lib/react/navigation-menu';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<NavigationMenu.Portal />', () => {

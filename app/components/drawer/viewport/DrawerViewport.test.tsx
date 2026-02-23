@@ -1,5 +1,5 @@
-import { DrawerPreview as Drawer } from @/lib/react/drawer';
-import { Slider } from @/lib/react/slider';
+import { DrawerPreview as Drawer } from ''@/lib/react/drawer';
+import { Slider } from ''@/lib/react/slider';
 import { fireEvent, flushMicrotasks, screen } from '@mui/internal-test-utils';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
 import { createRenderer } from '#test-utils';

@@ -1,4 +1,4 @@
-import { Progress } from @/lib/react/progress';
+import { Progress } from ''@/lib/react/progress';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Progress.Label />', () => {

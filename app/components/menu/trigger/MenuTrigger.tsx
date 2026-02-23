@@ -116,7 +116,7 @@ export const MenuTrigger = fastComponentRef(function MenuTrigger(
   const isInMenubar = parent.type === 'menubar';
 
   const rootDisabled = store.useState('disabled');
-  const disabled = disabledProp || rootDisabled || (isInMenubar && parent.context.disabled);
+  const disabled = disabledProp || rootDisabled || (isInMenubar && (parent as any).context.disabled);
 
   const { getButtonProps, buttonRef } = useButton({
     disabled,
@@ -175,7 +175,7 @@ export const MenuTrigger = fastComponentRef(function MenuTrigger(
     }
   }, [isOpenedByThisTrigger, handleDocumentMouseUp, store]);
 
-  const parentMenubarHasSubmenuOpen = isInMenubar && parent.context.hasSubmenuOpen;
+  const parentMenubarHasSubmenuOpen = isInMenubar && (parent as any).context.hasSubmenuOpen;
   const openOnHover = openOnHoverProp ?? parentMenubarHasSubmenuOpen;
 
   const hoverProps = useHoverReferenceInteraction(floatingRootContext, {

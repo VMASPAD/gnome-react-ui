@@ -1,4 +1,4 @@
-import { Input } from @/lib/react/input';
+import { Input } from ''@/lib/react/input';
 import { createRenderer } from '@mui/internal-test-utils';
 import { describeConformance } from '../../test/describeConformance';
 

@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { spy } from 'sinon';
-import { Toolbar } from @/lib/react/toolbar';
-import { NumberField } from @/lib/react/number-field';
+import { Toolbar } from ''@/lib/react/toolbar';
+import { NumberField } from ''@/lib/react/number-field';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { NOOP } from '../../utils/noop';

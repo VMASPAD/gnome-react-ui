@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { createRenderer, screen, fireEvent } from '@mui/internal-test-utils';
-import { CheckboxGroup } from @/lib/react/checkbox-group';
-import { Checkbox } from @/lib/react/checkbox';
-import { Field } from @/lib/react/field';
-import { Form } from @/lib/react/form';
+import { CheckboxGroup } from ''@/lib/react/checkbox-group';
+import { Checkbox } from ''@/lib/react/checkbox';
+import { Field } from ''@/lib/react/field';
+import { Form } from ''@/lib/react/form';
 import { spy } from 'sinon';
 import { expect } from 'chai';
 import { describeConformance, isJSDOM } from '#test-utils';

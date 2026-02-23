@@ -47,7 +47,7 @@ const selectors = {
   ...popupStoreSelectors,
   disabled: createSelector((state: State<unknown>) =>
     state.parent.type === 'menubar'
-      ? state.parent.context.disabled || state.disabled
+      ? (state.parent as any).context.disabled || state.disabled
       : state.disabled,
   ),
 
@@ -62,10 +62,10 @@ const selectors = {
   parent: createSelector((state: State<unknown>) => state.parent),
   rootId: createSelector((state: State<unknown>): string | undefined => {
     if (state.parent.type === 'menu') {
-      return state.parent.store.select('rootId');
+      return (state.parent as any).store.select('rootId');
     }
 
-    return state.parent.type !== undefined ? state.parent.context.rootId : state.rootId;
+    return state.parent.type !== undefined ? (state.parent as any).context.rootId : state.rootId;
   }),
   activeIndex: createSelector((state: State<unknown>) => state.activeIndex),
   isActive: createSelector(
@@ -76,7 +76,7 @@ const selectors = {
   lastOpenChangeReason: createSelector((state: State<unknown>) => state.openChangeReason),
   floatingTreeRoot: createSelector((state: State<unknown>): FloatingTreeStore => {
     if (state.parent.type === 'menu') {
-      return state.parent.store.select('floatingTreeRoot');
+      return (state.parent as any).store.select('floatingTreeRoot');
     }
 
     return state.floatingTreeRoot;
@@ -92,7 +92,7 @@ const selectors = {
       }
 
       if (state.parent.type === 'menu') {
-        return state.parent.store.select('keyboardEventRelay');
+        return (state.parent as any).store.select('keyboardEventRelay');
       }
 
       return undefined;
@@ -128,16 +128,16 @@ export class MenuStore<Payload> extends ReactStore<
       this.unsubscribeParentListener?.();
 
       if (parent.type === 'menu') {
-        this.unsubscribeParentListener = parent.store.subscribe(() => {
+        this.unsubscribeParentListener = (parent as any).store.subscribe(() => {
           this.notifyAll();
         });
 
-        this.context.allowMouseUpTriggerRef = parent.store.context.allowMouseUpTriggerRef;
+        this.context.allowMouseUpTriggerRef = (parent as any).store.context.allowMouseUpTriggerRef;
         return;
       }
 
       if (parent.type !== undefined) {
-        this.context.allowMouseUpTriggerRef = parent.context.allowMouseUpTriggerRef;
+        this.context.allowMouseUpTriggerRef = (parent as any).context.allowMouseUpTriggerRef;
       }
 
       this.unsubscribeParentListener = null;

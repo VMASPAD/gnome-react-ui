@@ -1,4 +1,4 @@
-import { Switch } from @/lib/react/switch';
+import { Switch } from ''@/lib/react/switch';
 import { createRenderer, describeConformance } from '#test-utils';
 import { SwitchRootContext } from '../root/SwitchRootContext';
 

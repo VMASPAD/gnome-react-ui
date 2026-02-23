@@ -69,7 +69,8 @@ export const MenuPositioner = React.forwardRef(function MenuPositioner(
   let alignOffset = alignOffsetProp;
   let align = alignProp;
   let collisionAvoidance = collisionAvoidanceProp;
-  if (parent.type === 'context-menu') {
+  if (parent.type === 'context-menu' && 'context' in parent) {
+    // Type guard: parent is { type: "context-menu"; context: ContextMenuRootContext }
     anchor = anchorProp ?? parent.context?.anchor;
     align = align ?? 'start';
     if (!side && align !== 'center') {
@@ -219,7 +220,7 @@ export const MenuPositioner = React.forwardRef(function MenuPositioner(
       arrowRef: positioner.arrowRef,
       arrowUncentered: positioner.arrowUncentered,
       arrowStyles: positioner.arrowStyles,
-      nodeId: positioner.context.nodeId,
+      nodeId: positioner.context?.nodeId,
     }),
     [
       positioner.side,
@@ -227,7 +228,7 @@ export const MenuPositioner = React.forwardRef(function MenuPositioner(
       positioner.arrowRef,
       positioner.arrowUncentered,
       positioner.arrowStyles,
-      positioner.context.nodeId,
+      positioner.context?.nodeId,
     ],
   );
 
@@ -242,12 +243,13 @@ export const MenuPositioner = React.forwardRef(function MenuPositioner(
     mounted &&
     parent.type !== 'menu' &&
     ((parent.type !== 'menubar' && modal && lastOpenChangeReason !== REASONS.triggerHover) ||
-      (parent.type === 'menubar' && parent.context.modal));
+      (parent.type === 'menubar' && (parent as { type: 'menubar'; context: { modal: boolean } }).context.modal));
 
   // cuts a hole in the backdrop to allow pointer interaction with the menubar or dropdown menu trigger element
   let backdropCutout: HTMLElement | null = null;
   if (parent.type === 'menubar') {
-    backdropCutout = parent.context.contentElement;
+    // Type guard: parent is { type: "menubar"; context: ... }
+    backdropCutout = (parent as { type: 'menubar'; context: { contentElement: HTMLElement | null } }).context.contentElement;
   } else if (parent.type === undefined) {
     backdropCutout = triggerElement as HTMLElement | null;
   }
@@ -257,9 +259,11 @@ export const MenuPositioner = React.forwardRef(function MenuPositioner(
       {shouldRenderBackdrop && (
         <InternalBackdrop
           ref={
-            parent.type === 'context-menu' || parent.type === 'nested-context-menu'
-              ? parent.context.internalBackdropRef
-              : null
+            parent.type === 'context-menu'
+              ? ((parent as { type: 'context-menu'; context: { internalBackdropRef: React.Ref<HTMLDivElement> } }).context.internalBackdropRef as React.Ref<HTMLDivElement>)
+              : parent.type === 'nested-context-menu'
+                ? ((parent as { type: 'nested-context-menu'; context: { internalBackdropRef: React.Ref<HTMLDivElement> } }).context.internalBackdropRef as React.Ref<HTMLDivElement>)
+                : null
           }
           inert={inertValue(!open)}
           cutout={backdropCutout}

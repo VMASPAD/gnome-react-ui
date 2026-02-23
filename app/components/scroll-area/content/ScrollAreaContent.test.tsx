@@ -1,4 +1,4 @@
-import { ScrollArea } from @/lib/react/scroll-area';
+import { ScrollArea } from ''@/lib/react/scroll-area';
 import { createRenderer } from '#test-utils';
 import { describeConformance } from '../../../test/describeConformance';
 

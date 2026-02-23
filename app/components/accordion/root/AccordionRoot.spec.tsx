@@ -1,5 +1,5 @@
 import { expectType } from '#test-utils';
-import { Accordion } from @/lib/react/accordion';
+import { Accordion } from ''@/lib/react/accordion';
 
 const stringValues = ['a'];
 const nullableValues: (string | null)[] = ['a', null];

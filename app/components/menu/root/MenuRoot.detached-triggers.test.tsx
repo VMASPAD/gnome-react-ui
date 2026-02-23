@@ -2,7 +2,7 @@ import * as React from 'react';
 import { expect } from 'chai';
 import { act, fireEvent, ignoreActWarnings, screen, waitFor } from '@mui/internal-test-utils';
 import { spy } from 'sinon';
-import { Menu } from @/lib/react/menu';
+import { Menu } from ''@/lib/react/menu';
 import { createRenderer, isJSDOM, wait } from '#test-utils';
 
 describe('<MenuRoot />', () => {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { expect } from 'chai';
 import { screen } from '@mui/internal-test-utils';
-import { Combobox } from @/lib/react/combobox';
+import { Combobox } from ''@/lib/react/combobox';
 import { createRenderer } from '#test-utils';
 
 describe('<Combobox.Value />', () => {

@@ -8,7 +8,7 @@ import {
 } from '@mui/internal-test-utils';
 import { spy } from 'sinon';
 import { vi } from 'vitest';
-import { ContextMenu } from @/lib/react/context-menu';
+import { ContextMenu } from ''@/lib/react/context-menu';
 import { createRenderer } from '#test-utils';
 
 vi.mock('@/lib/detectBrowser', async () => {

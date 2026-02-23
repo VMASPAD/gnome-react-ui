@@ -24,10 +24,10 @@ export interface UseInteractionsReturn {
  * @see https://floating-ui.com/docs/useInteractions
  */
 export function useInteractions(propsList: Array<ElementProps | void> = []): UseInteractionsReturn {
-  const referenceDeps = propsList.map((key) => key?.reference);
-  const floatingDeps = propsList.map((key) => key?.floating);
-  const itemDeps = propsList.map((key) => key?.item);
-  const triggerDeps = propsList.map((key) => key?.trigger);
+  const referenceDeps = propsList.map((key) => key && 'reference' in key ? key.reference : undefined);
+  const floatingDeps = propsList.map((key) => key && 'floating' in key ? key.floating : undefined);
+  const itemDeps = propsList.map((key) => key && 'item' in key ? key.item : undefined);
+  const triggerDeps = propsList.map((key) => key && 'trigger' in key ? key.trigger : undefined);
 
   const getReferenceProps = React.useCallback(
     (userProps?: React.HTMLProps<Element>) => mergeProps(userProps, propsList, 'reference'),
@@ -89,7 +89,10 @@ function mergeProps<Key extends keyof ElementProps>(
   for (let i = 0; i < propsList.length; i += 1) {
     let props;
 
-    const propsOrGetProps = propsList[i]?.[elementKey];
+    let propsOrGetProps: any = undefined;
+    if (propsList[i] !== undefined) {
+      propsOrGetProps = (propsList[i] as ElementProps)[elementKey];
+    }
     if (typeof propsOrGetProps === 'function') {
       props = userProps ? propsOrGetProps(userProps) : null;
     } else {

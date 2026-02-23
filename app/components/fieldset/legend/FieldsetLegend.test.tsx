@@ -1,5 +1,5 @@
 import { createRenderer, screen } from '@mui/internal-test-utils';
-import { Fieldset } from @/lib/react/fieldset';
+import { Fieldset } from ''@/lib/react/fieldset';
 import { expect } from 'chai';
 import { describeConformance } from '../../../test/describeConformance';
 

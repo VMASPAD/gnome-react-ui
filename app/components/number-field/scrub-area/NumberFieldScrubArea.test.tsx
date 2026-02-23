@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { screen, act } from '@mui/internal-test-utils';
 import { spy } from 'sinon';
-import { NumberField } from @/lib/react/number-field';
+import { NumberField } from ''@/lib/react/number-field';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { isWebKit } from '@/lib/detectBrowser';
 

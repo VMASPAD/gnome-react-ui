@@ -1,4 +1,4 @@
-import { PreviewCard } from @/lib/react/preview-card';
+import { PreviewCard } from ''@/lib/react/preview-card';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<PreviewCard.Arrow />', () => {

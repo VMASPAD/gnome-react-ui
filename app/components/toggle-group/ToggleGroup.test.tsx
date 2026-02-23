@@ -1,9 +1,9 @@
 import { expect } from 'vitest';
 import { spy } from 'sinon';
 import { act, screen } from '@mui/internal-test-utils';
-import { DirectionProvider, type TextDirection } from @/lib/react/direction-provider';
-import { ToggleGroup } from @/lib/react/toggle-group';
-import { Toggle } from @/lib/react/toggle';
+import { DirectionProvider, type TextDirection } from ''@/lib/react/direction-provider';
+import { ToggleGroup } from ''@/lib/react/toggle-group';
+import { Toggle } from ''@/lib/react/toggle';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<ToggleGroup />', () => {

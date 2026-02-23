@@ -1,5 +1,5 @@
 import { createRenderer, fireEvent, screen } from '@mui/internal-test-utils';
-import { Field } from @/lib/react/field';
+import { Field } from ''@/lib/react/field';
 import { expect } from 'chai';
 import { describeConformance, isJSDOM } from '#test-utils';
 

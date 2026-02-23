@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Dialog } from @/lib/react/dialog';
+import { Dialog } from ''@/lib/react/dialog';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { expect } from 'chai';
 import { spy, stub } from 'sinon';
 import { fireEvent, screen } from '@mui/internal-test-utils';
-import { Slider } from @/lib/react/slider';
+import { Slider } from ''@/lib/react/slider';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { isWebKit } from '@/lib/detectBrowser';
 import { createTouches, getHorizontalSliderRect } from '../utils/test-utils';

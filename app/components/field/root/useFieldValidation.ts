@@ -182,7 +182,7 @@ export function useFieldValidation(
       ) {
         result = await resultOrPromise;
       } else {
-        result = resultOrPromise;
+        result = resultOrPromise as string | string[] | null;
       }
 
       if (result !== null) {

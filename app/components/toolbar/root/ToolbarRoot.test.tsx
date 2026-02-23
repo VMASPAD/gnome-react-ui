@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import { Toolbar } from @/lib/react/toolbar';
-import { DirectionProvider, type TextDirection } from @/lib/react/direction-provider';
+import { Toolbar } from ''@/lib/react/toolbar';
+import { DirectionProvider, type TextDirection } from ''@/lib/react/direction-provider';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { type Orientation } from '../../utils/types';

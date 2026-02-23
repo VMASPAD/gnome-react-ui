@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Tabs } from @/lib/react/tabs';
+import { Tabs } from ''@/lib/react/tabs';
 import { waitFor, screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { getCssDimensions } from '../../utils/getCssDimensions';

@@ -1,4 +1,4 @@
-import { Radio } from @/lib/react/radio';
+import { Radio } from ''@/lib/react/radio';
 
 const value = 'a';
 

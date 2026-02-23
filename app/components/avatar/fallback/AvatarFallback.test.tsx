@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Mock } from 'vitest';
-import { Avatar } from @/lib/react/avatar';
+import { Avatar } from ''@/lib/react/avatar';
 import { waitFor, screen } from '@mui/internal-test-utils';
 import { describeConformance, createRenderer, isJSDOM } from '#test-utils';
 import { useImageLoadingStatus } from '../image/useImageLoadingStatus';

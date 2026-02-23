@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Popover } from @/lib/react/popover';
+import { Popover } from ''@/lib/react/popover';
 import { act, fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { expect } from 'chai';
 import { createRenderer, describeConformance, isJSDOM, waitSingleFrame } from '#test-utils';

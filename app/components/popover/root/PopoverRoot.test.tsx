@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Popover } from @/lib/react/popover';
-import { Combobox } from @/lib/react/combobox';
-import { Menu } from @/lib/react/menu';
+import { Popover } from ''@/lib/react/popover';
+import { Combobox } from ''@/lib/react/combobox';
+import { Menu } from ''@/lib/react/menu';
 import { useRefWithInit } from '@/lib/useRefWithInit';
 import { act, fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { expect } from 'chai';

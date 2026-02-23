@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Combobox } from @/lib/react/combobox';
+import { Combobox } from ''@/lib/react/combobox';
 import { mergeProps } from '../../merge-props';
 
 const objectItems = [

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Form } from @/lib/react/form';
-import { Field } from @/lib/react/field';
-import { NumberField } from @/lib/react/number-field';
+import { Form } from ''@/lib/react/form';
+import { Field } from ''@/lib/react/field';
+import { NumberField } from ''@/lib/react/number-field';
 import { expect } from 'chai';
 import { spy } from 'sinon';
 import { createRenderer, fireEvent, screen } from '@mui/internal-test-utils';

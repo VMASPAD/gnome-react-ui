@@ -1,4 +1,4 @@
-import { Combobox } from @/lib/react/combobox';
+import { Combobox } from ''@/lib/react/combobox';
 import { fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { spy } from 'sinon';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';

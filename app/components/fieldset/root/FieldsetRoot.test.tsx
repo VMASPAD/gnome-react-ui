@@ -1,5 +1,5 @@
 import { createRenderer } from '@mui/internal-test-utils';
-import { Fieldset } from @/lib/react/fieldset';
+import { Fieldset } from ''@/lib/react/fieldset';
 import { describeConformance } from '../../../test/describeConformance';
 
 describe('<Fieldset.Root />', () => {

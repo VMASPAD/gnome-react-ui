@@ -1,4 +1,4 @@
-import { Menu } from @/lib/react/menu';
+import { Menu } from ''@/lib/react/menu';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Menu.Arrow />', () => {

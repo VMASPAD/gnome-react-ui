@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { spy } from 'sinon';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer } from '#test-utils';
-import { Autocomplete } from @/lib/react/autocomplete';
+import { Autocomplete } from ''@/lib/react/autocomplete';
 
 describe('<Autocomplete.Item />', () => {
   const { render } = createRenderer();

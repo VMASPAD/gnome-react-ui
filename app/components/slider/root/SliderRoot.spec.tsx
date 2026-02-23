@@ -1,5 +1,5 @@
 import { expectType } from '#test-utils';
-import { Slider } from @/lib/react/slider';
+import { Slider } from ''@/lib/react/slider';
 import { REASONS } from '../../utils/reasons';
 
 const value: number = 25;

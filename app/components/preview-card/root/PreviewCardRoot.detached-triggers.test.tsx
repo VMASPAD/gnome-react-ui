@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createRenderer, isJSDOM } from '#test-utils';
-import { PreviewCard } from @/lib/react/preview-card';
+import { PreviewCard } from ''@/lib/react/preview-card';
 import { screen, waitFor, randomStringValue, act, flushMicrotasks } from '@mui/internal-test-utils';
 
 describe('<PreviewCard.Root />', () => {

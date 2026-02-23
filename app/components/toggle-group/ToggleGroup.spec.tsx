@@ -1,5 +1,5 @@
 import { expectType } from '#test-utils';
-import { ToggleGroup } from @/lib/react/toggle-group';
+import { ToggleGroup } from ''@/lib/react/toggle-group';
 
 const toggleDefaultValueReadonly = (value: NonNullable<ToggleGroup.Props['defaultValue']>) =>
   expectType<readonly string[], typeof value>(value);

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { expect } from 'chai';
 import { spy } from 'sinon';
-import { Dialog } from @/lib/react/dialog';
-import { AlertDialog } from @/lib/react/alert-dialog';
+import { Dialog } from ''@/lib/react/dialog';
+import { AlertDialog } from ''@/lib/react/alert-dialog';
 import { act, waitFor, screen } from '@mui/internal-test-utils';
 import { describeConformance, createRenderer, isJSDOM, waitSingleFrame } from '#test-utils';
 

@@ -1,4 +1,4 @@
-import { PreviewCard } from @/lib/react/preview-card';
+import { PreviewCard } from ''@/lib/react/preview-card';
 import { screen } from '@mui/internal-test-utils';
 import { expect } from 'chai';
 import { createRenderer, describeConformance } from '#test-utils';

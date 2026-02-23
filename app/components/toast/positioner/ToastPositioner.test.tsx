@@ -1,4 +1,4 @@
-import { Toast } from @/lib/react/toast';
+import { Toast } from ''@/lib/react/toast';
 import { createRenderer, describeConformance } from '#test-utils';
 
 const toast: Toast.Root.ToastObject = {

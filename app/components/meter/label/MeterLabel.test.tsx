@@ -1,4 +1,4 @@
-import { Meter } from @/lib/react/meter';
+import { Meter } from ''@/lib/react/meter';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Meter.Label />', () => {

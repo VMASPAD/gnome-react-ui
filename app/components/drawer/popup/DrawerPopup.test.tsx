@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DrawerPreview as Drawer } from @/lib/react/drawer';
+import { DrawerPreview as Drawer } from ''@/lib/react/drawer';
 import { act, screen, waitFor } from '@mui/internal-test-utils';
 import { describe, expect, it } from 'vitest';
 import { createRenderer, describeConformance } from '#test-utils';

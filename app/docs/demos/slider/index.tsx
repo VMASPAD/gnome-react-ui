@@ -33,8 +33,9 @@ export function SliderRange() {
           <Monitor className="size-4 text-muted-foreground" />
           Espacio de trabajo (GB)
         </label>
-        <div className="flex gap-1 text-muted-foreground">
-          <Slider.Value index={0} /> - <Slider.Value index={1} />
+          <div className="flex gap-1 text-muted-foreground">
+          <Slider.Value>{(formatted) => formatted[0]}</Slider.Value> -{' '}
+          <Slider.Value>{(formatted) => formatted[1]}</Slider.Value>
         </div>
       </div>
       

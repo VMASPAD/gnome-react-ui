@@ -1,4 +1,4 @@
-import * as DrawerModule from @/lib/react/drawer';
+import * as DrawerModule from ''@/lib/react/drawer';
 import { describe, expect, it } from 'vitest';
 
 describe('<Drawer.SwipeArea />', () => {

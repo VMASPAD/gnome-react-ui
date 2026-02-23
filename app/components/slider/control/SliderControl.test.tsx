@@ -1,4 +1,4 @@
-import { Slider } from @/lib/react/slider';
+import { Slider } from ''@/lib/react/slider';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Slider.Control />', () => {

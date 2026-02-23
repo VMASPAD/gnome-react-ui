@@ -682,23 +682,31 @@ export function FloatingFocusManager(props: FloatingFocusManagerProps): React.JS
     queueMicrotask(() => {
       const focusableElements = getTabbableElements(floatingFocusElement);
       const initialFocusValueOrFn = initialFocusRef.current;
-      const resolvedInitialFocus =
-        typeof initialFocusValueOrFn === 'function'
-          ? initialFocusValueOrFn(openInteractionTypeRef.current || '')
-          : initialFocusValueOrFn;
+const resolvedInitialFocus =
+  typeof initialFocusValueOrFn === 'function'
+    ? initialFocusValueOrFn(openInteractionTypeRef.current || '')
+    : initialFocusValueOrFn;
 
-      // `null` should fallback to default behavior in case of an empty ref.
-      if (resolvedInitialFocus === undefined || resolvedInitialFocus === false) {
-        return;
-      }
+// `null` should fallback to default behavior in case of an empty ref.
+if (
+  resolvedInitialFocus === undefined ||
+  resolvedInitialFocus === false
+) {
+  return;
+}
 
-      let elToFocus: FocusableElement | null | undefined;
-      if (resolvedInitialFocus === true || resolvedInitialFocus === null) {
-        elToFocus = focusableElements[0] || floatingFocusElement;
-      } else {
-        elToFocus = resolveRef(resolvedInitialFocus);
-      }
-      elToFocus = elToFocus || focusableElements[0] || floatingFocusElement;
+let elToFocus: FocusableElement | null | undefined;
+if (resolvedInitialFocus === true || resolvedInitialFocus === null) {
+  elToFocus = focusableElements[0] || floatingFocusElement;
+} else if (
+  typeof resolvedInitialFocus === 'object' ||
+  typeof resolvedInitialFocus === 'function'
+) {
+  elToFocus = resolveRef(resolvedInitialFocus);
+} else {
+  elToFocus = focusableElements[0] || floatingFocusElement;
+}
+elToFocus = elToFocus || focusableElements[0] || floatingFocusElement;
 
       const focusAlreadyInsideFloatingEl = contains(floatingFocusElement, previouslyFocusedElement);
 
@@ -782,30 +790,33 @@ export function FloatingFocusManager(props: FloatingFocusManagerProps): React.JS
     }
 
     function getReturnElement() {
-      const returnFocusValueOrFn = returnFocusRef.current;
-      let resolvedReturnFocusValue =
-        typeof returnFocusValueOrFn === 'function'
-          ? returnFocusValueOrFn(closeTypeRef.current)
-          : returnFocusValueOrFn;
+  const returnFocusValueOrFn = returnFocusRef.current;
+  
+  // 1. Obtenemos el valor inicial
+  let resolvedReturnFocusValue =
+    typeof returnFocusValueOrFn === 'function'
+      ? returnFocusValueOrFn(closeTypeRef.current)
+      : returnFocusValueOrFn;
+ 
+  if (resolvedReturnFocusValue === undefined || resolvedReturnFocusValue === false) {
+    return null;
+  }
+ 
+  if (resolvedReturnFocusValue === null) {
+    resolvedReturnFocusValue = true;
+  }
+ 
+  if (typeof resolvedReturnFocusValue === 'boolean') {
+    const el = domReference || getPreviouslyFocusedElement();
+    return el && el.isConnected ? el : fallbackEl;
+  }
+ 
+  const fallback = domReference || getPreviouslyFocusedElement() || fallbackEl;
+ 
+  const resolved = resolveRef(resolvedReturnFocusValue as HTMLElement | React.RefObject<HTMLElement>);
 
-      // `null` should fallback to default behavior in case of an empty ref.
-      if (resolvedReturnFocusValue === undefined || resolvedReturnFocusValue === false) {
-        return null;
-      }
-
-      if (resolvedReturnFocusValue === null) {
-        resolvedReturnFocusValue = true;
-      }
-
-      if (typeof resolvedReturnFocusValue === 'boolean') {
-        const el = domReference || getPreviouslyFocusedElement();
-        return el && el.isConnected ? el : fallbackEl;
-      }
-
-      const fallback = domReference || getPreviouslyFocusedElement() || fallbackEl;
-
-      return resolveRef(resolvedReturnFocusValue) || fallback;
-    }
+  return resolved || fallback;
+}
 
     return () => {
       events.off('openchange', onOpenChangeLocal);

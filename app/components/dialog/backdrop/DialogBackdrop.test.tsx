@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { expect } from 'chai';
-import { Dialog } from @/lib/react/dialog';
+import { Dialog } from ''@/lib/react/dialog';
 import { createRenderer, describeConformance } from '#test-utils';
 import { screen } from '@mui/internal-test-utils';
 

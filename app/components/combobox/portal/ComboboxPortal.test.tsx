@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Combobox } from @/lib/react/combobox';
+import { Combobox } from ''@/lib/react/combobox';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Combobox.Portal />', () => {

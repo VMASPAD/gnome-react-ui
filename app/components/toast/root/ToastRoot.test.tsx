@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Toast } from @/lib/react/toast';
+import { Toast } from ''@/lib/react/toast';
 import { act, screen, fireEvent, waitFor } from '@mui/internal-test-utils';
 import { expect } from 'chai';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';

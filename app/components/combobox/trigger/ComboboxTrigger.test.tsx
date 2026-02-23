@@ -1,8 +1,8 @@
-import { Combobox } from @/lib/react/combobox';
+import { Combobox } from ''@/lib/react/combobox';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { expect } from 'chai';
-import { Field } from @/lib/react/field';
+import { Field } from ''@/lib/react/field';
 import { spy } from 'sinon';
 import { REASONS } from '../../utils/reasons';
 

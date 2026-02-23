@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { expect } from 'chai';
-import { Select } from @/lib/react/select';
+import { Select } from ''@/lib/react/select';
 import { act, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 

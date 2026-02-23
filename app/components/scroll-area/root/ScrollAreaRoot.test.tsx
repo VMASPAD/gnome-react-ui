@@ -1,4 +1,4 @@
-import { ScrollArea } from @/lib/react/scroll-area';
+import { ScrollArea } from ''@/lib/react/scroll-area';
 import { fireEvent, flushMicrotasks, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, isJSDOM } from '#test-utils';
 import { expect } from 'chai';

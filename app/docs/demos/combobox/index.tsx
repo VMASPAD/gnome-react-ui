@@ -6,7 +6,8 @@ const frameworks = ['React', 'Vue', 'Angular', 'Svelte', 'Ember', 'Solid', 'Next
 
 export function ComboboxDefault() {
   return (
-    <Combobox.Root className="relative w-72">
+    <div className="relative w-72">
+      <Combobox.Root>
       <div className="flex h-10 w-full items-center justify-between rounded-lg border border-input bg-card px-3 text-sm text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
         <Combobox.Input 
           className="flex-1 bg-transparent outline-none placeholder:text-muted-foreground" 
@@ -40,7 +41,8 @@ export function ComboboxDefault() {
           </Combobox.Popup>
         </Combobox.Positioner>
       </Combobox.Portal>
-    </Combobox.Root>
+      </Combobox.Root>
+    </div>
   );
 }
 
@@ -48,13 +50,13 @@ export function ComboboxMultiple() {
   const [value, setValue] = React.useState<string[]>(['React', 'Vue']);
 
   return (
-    <Combobox.Root multiple value={value} onValueChange={setValue} className="relative w-full max-w-md">
+    <div className="relative w-full max-w-md">
+      <Combobox.Root multiple value={value} onValueChange={setValue}>
       <div className="flex min-h-10 w-full flex-wrap items-center gap-1.5 rounded-lg border border-input bg-card p-1.5 text-sm text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
         <Combobox.Chips className="flex flex-wrap items-center gap-1.5">
           {value.map((val) => (
             <Combobox.Chip 
               key={val} 
-              value={val}
               className="flex items-center gap-1 rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground"
             >
               {val}
@@ -77,8 +79,8 @@ export function ComboboxMultiple() {
               <Combobox.Empty className="py-6 text-center text-sm text-muted-foreground">
                 No hay más opciones.
               </Combobox.Empty>
-              {frameworks.map((fw) => (
-                <Combobox.Item 
+                  {frameworks.map((fw) => (
+                    <Combobox.Item 
                   key={fw} 
                   value={fw} 
                   className="relative flex w-full cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[highlighted]:bg-primary data-[highlighted]:text-primary-foreground"
@@ -93,6 +95,7 @@ export function ComboboxMultiple() {
           </Combobox.Popup>
         </Combobox.Positioner>
       </Combobox.Portal>
-    </Combobox.Root>
+      </Combobox.Root>
+    </div>
   );
 }

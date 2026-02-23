@@ -380,7 +380,7 @@ export const MenuRoot = fastComponent(function MenuRoot<Payload>(props: MenuRoot
 
   let ctx: ContextMenuRootContext | undefined;
   if (parent.type === 'context-menu') {
-    ctx = parent.context;
+    ctx = (parent as { type: 'context-menu'; context: ContextMenuRootContext }).context;
   }
 
   React.useImperativeHandle<HTMLElement | null, HTMLElement | null>(
@@ -450,7 +450,10 @@ export const MenuRoot = fastComponent(function MenuRoot<Payload>(props: MenuRoot
     nested: parent.type !== undefined,
     loopFocus,
     orientation,
-    parentOrientation: parent.type === 'menubar' ? parent.context.orientation : undefined,
+    parentOrientation:
+      parent.type === 'menubar'
+        ? (parent as { type: 'menubar'; context: MenubarContext }).context.orientation
+        : undefined,
     rtl: direction === 'rtl',
     disabledIndices: EMPTY_ARRAY,
     onNavigate: setActiveIndex,

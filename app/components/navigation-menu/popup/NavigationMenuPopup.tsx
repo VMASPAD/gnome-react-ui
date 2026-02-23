@@ -56,7 +56,7 @@ export const NavigationMenuPopup = React.forwardRef(function NavigationMenuPopup
 
   const element = useRenderElement('nav', componentProps, {
     state,
-    ref: [forwardedRef, setPopupElement],
+    ref: [forwardedRef, (el: HTMLElement | null) => setPopupElement(el as HTMLElement | null)],
     props: [
       {
         id,

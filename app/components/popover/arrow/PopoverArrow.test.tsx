@@ -1,4 +1,4 @@
-import { Popover } from @/lib/react/popover';
+import { Popover } from ''@/lib/react/popover';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Popover.Arrow />', () => {

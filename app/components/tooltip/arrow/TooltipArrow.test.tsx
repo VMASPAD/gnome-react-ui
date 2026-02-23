@@ -1,4 +1,4 @@
-import { Tooltip } from @/lib/react/tooltip';
+import { Tooltip } from ''@/lib/react/tooltip';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Tooltip.Arrow />', () => {

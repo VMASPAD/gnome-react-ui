@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import { fireEvent, waitFor, screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
-import { DirectionProvider } from @/lib/react/direction-provider';
-import { Menu } from @/lib/react/menu';
+import { DirectionProvider } from ''@/lib/react/direction-provider';
+import { Menu } from ''@/lib/react/menu';
 
 type TextDirection = 'ltr' | 'rtl';
 

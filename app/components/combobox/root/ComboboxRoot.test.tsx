@@ -11,10 +11,10 @@ import {
 import { createRenderer, isJSDOM, popupConformanceTests } from '#test-utils';
 import { expect } from 'chai';
 import { spy } from 'sinon';
-import { Combobox } from @/lib/react/combobox';
-import { Dialog } from @/lib/react/dialog';
-import { Field } from @/lib/react/field';
-import { Form } from @/lib/react/form';
+import { Combobox } from ''@/lib/react/combobox';
+import { Dialog } from ''@/lib/react/dialog';
+import { Field } from ''@/lib/react/field';
+import { Form } from ''@/lib/react/form';
 import { useStore } from '@/lib/store';
 import { CompositeRoot } from '../../composite/root/CompositeRoot';
 import { CompositeItem } from '../../composite/item/CompositeItem';

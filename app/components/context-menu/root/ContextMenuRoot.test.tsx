@@ -9,7 +9,7 @@ import {
 } from '@mui/internal-test-utils';
 import { spy } from 'sinon';
 import { vi } from 'vitest';
-import { ContextMenu } from @/lib/react/context-menu';
+import { ContextMenu } from ''@/lib/react/context-menu';
 import { createRenderer, isJSDOM } from '#test-utils';
 import { REASONS } from '../../utils/reasons';
 

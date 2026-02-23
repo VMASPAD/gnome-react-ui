@@ -1,7 +1,7 @@
 import { expect } from 'vitest';
-import { ScrollArea } from @/lib/react/scroll-area';
-import { Select } from @/lib/react/select';
-import { CSPProvider } from @/lib/react/csp-provider';
+import { ScrollArea } from ''@/lib/react/scroll-area';
+import { Select } from ''@/lib/react/select';
+import { CSPProvider } from ''@/lib/react/csp-provider';
 import { createRenderer } from '#test-utils';
 
 function queryDisableScrollbarStyle() {

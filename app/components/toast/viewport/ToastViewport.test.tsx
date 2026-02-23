@@ -1,4 +1,4 @@
-import { Toast } from @/lib/react/toast';
+import { Toast } from ''@/lib/react/toast';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { act, fireEvent, screen } from '@mui/internal-test-utils';
 import { expect } from 'chai';

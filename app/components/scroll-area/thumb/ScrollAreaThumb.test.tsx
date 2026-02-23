@@ -1,5 +1,5 @@
 import { createRenderer } from '#test-utils';
-import { ScrollArea } from @/lib/react/scroll-area';
+import { ScrollArea } from ''@/lib/react/scroll-area';
 import { describeConformance } from '../../../test/describeConformance';
 
 describe('<ScrollArea.Thumb />', () => {

@@ -1,5 +1,5 @@
 import { expectType } from '#test-utils';
-import { RadioGroup } from @/lib/react/radio-group';
+import { RadioGroup } from ''@/lib/react/radio-group';
 
 const values = ['a', 'b', 'c'];
 

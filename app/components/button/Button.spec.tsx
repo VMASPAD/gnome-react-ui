@@ -1,4 +1,4 @@
-import { Button } from @/lib/react/button';
+import { Button } from ''@/lib/react/button';
 
 <Button />;
 <Button type="submit" form="form-id" name="action" />;

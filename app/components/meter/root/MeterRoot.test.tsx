@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Meter } from @/lib/react/meter';
+import { Meter } from ''@/lib/react/meter';
 import { screen } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance } from '#test-utils';
 

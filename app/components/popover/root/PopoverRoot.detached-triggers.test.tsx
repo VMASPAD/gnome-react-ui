@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createRenderer, isJSDOM } from '#test-utils';
 import { act, screen, waitFor } from '@mui/internal-test-utils';
-import { Popover } from @/lib/react/popover';
+import { Popover } from ''@/lib/react/popover';
 
 describe('<Popover.Root />', () => {
   beforeEach(() => {

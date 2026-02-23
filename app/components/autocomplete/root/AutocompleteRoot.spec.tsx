@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Autocomplete } from @/lib/react/autocomplete';
+import { Autocomplete } from ''@/lib/react/autocomplete';
 
 const objectItems = [
   { value: 'a', label: 'apple' },

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { expect } from 'chai';
-import { Checkbox } from @/lib/react/checkbox';
+import { Checkbox } from ''@/lib/react/checkbox';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { CheckboxRootContext } from '../root/CheckboxRootContext';

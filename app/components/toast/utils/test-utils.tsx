@@ -1,4 +1,4 @@
-import { Toast } from @/lib/react/toast';
+import * as Toast from '../index.parts';
 
 /**
  * @internal

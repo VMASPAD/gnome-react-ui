@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { expect } from 'chai';
-import { Field } from @/lib/react/field';
-import { Form } from @/lib/react/form';
+import { Field } from ''@/lib/react/field';
+import { Form } from ''@/lib/react/form';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<Field.Error />', () => {

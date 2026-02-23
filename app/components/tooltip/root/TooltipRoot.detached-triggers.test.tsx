@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createRenderer, isJSDOM } from '#test-utils';
-import { Tooltip } from @/lib/react/tooltip';
+import { Tooltip } from ''@/lib/react/tooltip';
 import { screen, waitFor, randomStringValue, act, flushMicrotasks } from '@mui/internal-test-utils';
 
 describe('<Tooltip.Root />', () => {

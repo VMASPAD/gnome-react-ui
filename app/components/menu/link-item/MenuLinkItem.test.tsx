@@ -2,7 +2,7 @@ import * as React from 'react';
 import { expect } from 'chai';
 import { MemoryRouter, Route, Routes, Link, useLocation } from 'react-router';
 import { act, screen, waitFor } from '@mui/internal-test-utils';
-import { Menu } from @/lib/react/menu';
+import { Menu } from ''@/lib/react/menu';
 import { describeConformance, createRenderer, isJSDOM } from '#test-utils';
 
 describe('<Menu.LinkItem />', () => {

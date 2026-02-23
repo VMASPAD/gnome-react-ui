@@ -1,4 +1,4 @@
-import { Combobox } from @/lib/react/combobox';
+import { Combobox } from ''@/lib/react/combobox';
 import { createRenderer, describeConformance } from '#test-utils';
 import { act, screen } from '@mui/internal-test-utils';
 import { expect } from 'chai';

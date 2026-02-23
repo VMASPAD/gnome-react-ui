@@ -1,4 +1,4 @@
-import { Tabs } from @/lib/react/tabs';
+import { Tabs } from ''@/lib/react/tabs';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { afterEach, expect } from 'vitest';

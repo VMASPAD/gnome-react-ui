@@ -1,7 +1,7 @@
 import { screen } from '@mui/internal-test-utils';
 import { expect } from 'chai';
 import { spy } from 'sinon';
-import { Slider } from @/lib/react/slider';
+import { Slider } from ''@/lib/react/slider';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Slider.Value />', () => {

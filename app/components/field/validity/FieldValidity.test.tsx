@@ -1,8 +1,8 @@
 import { createRenderer, fireEvent, screen } from '@mui/internal-test-utils';
 import { expect } from 'chai';
 import { spy } from 'sinon';
-import { Field } from @/lib/react/field';
-import { Form } from @/lib/react/form';
+import { Field } from ''@/lib/react/field';
+import { Form } from ''@/lib/react/form';
 
 describe('<Field.Validity />', () => {
   const { render } = createRenderer();

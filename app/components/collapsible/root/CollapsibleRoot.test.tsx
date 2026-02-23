@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { screen } from '@mui/internal-test-utils';
 import { expect } from 'chai';
-import { Collapsible } from @/lib/react/collapsible';
+import { Collapsible } from ''@/lib/react/collapsible';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { spy } from 'sinon';
 import { REASONS } from '../../utils/reasons';

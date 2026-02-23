@@ -1,4 +1,4 @@
-import { Combobox } from @/lib/react/combobox';
+import { Combobox } from ''@/lib/react/combobox';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Combobox.Positioner />', () => {

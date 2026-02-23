@@ -2,7 +2,7 @@ import * as React from 'react';
 import { expect } from 'chai';
 import { screen, act } from '@mui/internal-test-utils';
 import sinon from 'sinon';
-import { NumberField } from @/lib/react/number-field';
+import { NumberField } from ''@/lib/react/number-field';
 import { isWebKit } from '@/lib/detectBrowser';
 import { createRenderer, describeConformance } from '#test-utils';
 import { NumberFieldScrubAreaContext } from '../scrub-area/NumberFieldScrubAreaContext';

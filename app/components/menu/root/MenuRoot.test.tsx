@@ -8,10 +8,10 @@ import {
   screen,
   waitFor,
 } from '@mui/internal-test-utils';
-import { DirectionProvider } from @/lib/react/direction-provider';
+import { DirectionProvider } from ''@/lib/react/direction-provider';
 import { useRefWithInit } from '@/lib/useRefWithInit';
-import { Menu } from @/lib/react/menu';
-import { Dialog } from @/lib/react/dialog';
+import { Menu } from ''@/lib/react/menu';
+import { Dialog } from ''@/lib/react/dialog';
 import userEvent from '@testing-library/user-event';
 import { spy } from 'sinon';
 import { createRenderer, isJSDOM, popupConformanceTests, wait } from '#test-utils';

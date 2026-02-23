@@ -1,4 +1,4 @@
-import { Avatar } from @/lib/react/avatar';
+import { Avatar } from ''@/lib/react/avatar';
 import { describeConformance, createRenderer } from '#test-utils';
 
 describe('<Avatar.Root />', () => {

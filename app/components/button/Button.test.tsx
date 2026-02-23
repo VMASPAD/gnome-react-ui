@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { spy } from 'sinon';
-import { Button } from @/lib/react/button';
+import { Button } from ''@/lib/react/button';
 import { screen } from '@mui/internal-test-utils';
 import { describeConformance, createRenderer } from '#test-utils';
 

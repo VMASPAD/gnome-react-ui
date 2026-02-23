@@ -62,7 +62,7 @@ export function mergeProps<T extends ElementType>(
 export function mergeProps<T extends ElementType>(a: InputProps<T>, b: InputProps<T>): PropsOf<T>;
 export function mergeProps(a: any, b: any, c?: any, d?: any, e?: any) {
   // We need to mutably own `merged`
-  let merged = { ...resolvePropsGetter(a, EMPTY_PROPS) };
+  let merged = { ...resolvePropsGetter(a, EMPTY_PROPS) } as PropsOf<any>;
 
   if (b) {
     merged = mergeOne(merged, b);
@@ -103,7 +103,7 @@ export function mergePropsN<T extends ElementType>(props: InputProps<T>[]): Prop
   }
 
   // We need to mutably own `merged`
-  let merged = { ...resolvePropsGetter(props[0], EMPTY_PROPS) };
+  let merged = { ...resolvePropsGetter(props[0], EMPTY_PROPS) } as PropsOf<any>;
 
   for (let i = 1; i < props.length; i += 1) {
     merged = mergeOne(merged, props[i]);
@@ -112,18 +112,18 @@ export function mergePropsN<T extends ElementType>(props: InputProps<T>[]): Prop
   return merged as PropsOf<T>;
 }
 
-function mergeOne<T extends ElementType>(merged: Record<string, any>, inputProps: InputProps<T>) {
+function mergeOne<T extends ElementType>(merged: PropsOf<T>, inputProps: InputProps<T>) {
   if (isPropsGetter(inputProps)) {
     return inputProps(merged);
   }
-  return mutablyMergeInto(merged, inputProps);
+  return mutablyMergeInto<T>(merged, inputProps as React.ComponentPropsWithRef<T> | undefined);
 }
 
 /**
  * Merges two sets of props. In case of conflicts, the external props take precedence.
  */
 function mutablyMergeInto<T extends ElementType>(
-  mergedProps: Record<string, any>,
+  mergedProps: any,
   externalProps: React.ComponentPropsWithRef<T> | undefined,
 ) {
   if (!externalProps) {

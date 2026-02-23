@@ -1,6 +1,12 @@
 "use client";
 import { Button } from "./components/button";
-import { Card, CardDescription, CardHeader, CardTitle, CardFooter } from "@/app/ui/components/card";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  CardFooter,
+} from "@/app/ui/components/card";
 import { Badge } from "@/app/ui/components/badge";
 import { Input } from "./components/input";
 import {
@@ -17,7 +23,6 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
- 
 
 function Home() {
   const [mobileMenuOpen] = useState(false);
@@ -62,11 +67,23 @@ function Home() {
   ];
 
   const components = [
-    { name: "Button", description: "Versatile button system with multiple states." },
+    {
+      name: "Button",
+      description: "Versatile button system with multiple states.",
+    },
     { name: "Dialog", description: "Modal windows for focused interactions." },
-    { name: "Popover", description: "Contextual info that floats near its anchor." },
-    { name: "Forms", description: "Beautifully styled accessible input fields." },
-    { name: "Tabs", description: "Switch between views with elegant animations." },
+    {
+      name: "Popover",
+      description: "Contextual info that floats near its anchor.",
+    },
+    {
+      name: "Forms",
+      description: "Beautifully styled accessible input fields.",
+    },
+    {
+      name: "Tabs",
+      description: "Switch between views with elegant animations.",
+    },
     { name: "Toast", description: "Unobtrusive notifications for your users." },
   ];
 
@@ -110,12 +127,14 @@ function Home() {
                 v1.0.0
               </div>
             </div>
-            <Button className="inline-flex items-center justify-center h-8 w-8 p-0 rounded-lg border border-border bg-card text-foreground hover:bg-accent transition-colors duration-150">
-              <Github className="h-4 w-4" />
-            </Button>
-            <Button className="inline-flex items-center justify-center h-8 px-3 text-xs rounded-lg bg-primary text-primary-foreground hover:brightness-95 transition-colors duration-150 font-semibold">
+            <a href="https://github.com/VMASPAD/gnome-react-ui">
+              <Button className="inline-flex items-center justify-center h-8 w-8 p-0 rounded-lg border border-border bg-card text-foreground hover:bg-accent transition-colors duration-150">
+                <Github className="h-4 w-4" />
+              </Button>
+            </a>
+            {/* <Button className="inline-flex items-center justify-center h-8 px-3 text-xs rounded-lg bg-primary text-primary-foreground hover:brightness-95 transition-colors duration-150 font-semibold">
               Get Started
-            </Button>
+            </Button> */}
           </div>
         </div>
       </header>
@@ -134,14 +153,13 @@ function Home() {
           </Badge>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-foreground mb-6 leading-[1.1]">
-            Build your interface{" "}
-            <br className="hidden sm:block" />
+            Build your interface <br className="hidden sm:block" />
             <span className="text-primary">with Gnome React UI.</span>
           </h1>
 
           <p className="max-w-[42rem] mx-auto text-muted-foreground text-lg md:text-xl mb-10 leading-relaxed">
-            Beautifully designed components that you can copy and paste into your
-            apps. Accessible. Customizable. Open Source. Inspired by GNOME.
+            Beautifully designed components that you can copy and paste into
+            your apps. Accessible. Customizable. Open Source. Inspired by GNOME.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-20">
@@ -170,7 +188,9 @@ function Home() {
               <div className="p-5 font-mono text-sm sm:text-base bg-[oklch(0.18_0.02_330)]">
                 <div className="flex gap-3">
                   <span className="text-muted-foreground shrink-0">$</span>
-                  <span className="text-background">npx gnome-ui@latest init</span>
+                  <span className="text-background">
+                    npx gnome-ui@latest init
+                  </span>
                 </div>
                 <div className="mt-2 text-[oklch(0.65_0.18_150)]">
                   ✔ Success! Project initialized.
@@ -261,12 +281,13 @@ function Home() {
                 PREVIEW
               </Badge>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-foreground">
-                The full power of{" "}
-                <span className="text-primary">GNOME</span> in your React app.
+                The full power of <span className="text-primary">GNOME</span> in
+                your React app.
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We've spent thousands of hours refining the details. From the exact
-                shadow on our buttons to the accessibility of our dropdowns.
+                We've spent thousands of hours refining the details. From the
+                exact shadow on our buttons to the accessibility of our
+                dropdowns.
               </p>
 
               <div className="space-y-4">
@@ -360,10 +381,7 @@ function Home() {
       </section>
 
       {/* ── CTA ────────────────────────────────────────────────────────────── */}
-      <section
-        className="py-24"
-        style={{ background: "oklch(0.20 0.02 330)" }}
-      >
+      <section className="py-24" style={{ background: "oklch(0.20 0.02 330)" }}>
         {/* Orange glow on aubergine */}
         <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 h-64 w-96 bg-primary/20 blur-[100px] rounded-full" />
         <div className="relative container mx-auto max-w-4xl px-4 text-center">
@@ -371,8 +389,10 @@ function Home() {
             Start building your{" "}
             <span className="text-primary">next big idea</span> today.
           </h2>
-          <p className="text-lg mb-10 max-w-xl mx-auto leading-relaxed"
-            style={{ color: "oklch(0.72 0.02 330)" }}>
+          <p
+            className="text-lg mb-10 max-w-xl mx-auto leading-relaxed"
+            style={{ color: "oklch(0.72 0.02 330)" }}
+          >
             Stop worrying about the UI and focus on your business logic. GnomeUI
             gives you the foundations you need.
           </p>
@@ -411,9 +431,13 @@ function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
-                <Layout className="h-5 w-5 text-primary-foreground" />
-              </div>
+              <Image
+                  className="text-white"
+                  src="/icon.svg"
+                  alt="GnomeUI Logo"
+                  width={24}
+                  height={24}
+                /> 
               <span className="text-xl font-bold text-foreground">GnomeUI</span>
             </div>
 

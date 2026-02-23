@@ -1,4 +1,4 @@
-import { Dialog } from @/lib/react/dialog';
+import { Dialog } from ''@/lib/react/dialog';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Dialog.Title />', () => {

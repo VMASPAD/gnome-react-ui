@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { screen, waitFor } from '@mui/internal-test-utils';
-import { NavigationMenu } from @/lib/react/navigation-menu';
+import { NavigationMenu } from ''@/lib/react/navigation-menu';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<NavigationMenu.Link />', () => {

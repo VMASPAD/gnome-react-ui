@@ -7,7 +7,7 @@ import { describe, it } from 'vitest';
 import { isJSDOM } from '#test-utils';
 import * as BaseUI from './index';
 
-describe(@/lib/react', () => {
+describe('@/lib/react', () => {
   it('should have exports', () => {
     expect(typeof BaseUI).to.equal('object');
   });

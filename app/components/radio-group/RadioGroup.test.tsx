@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { RadioGroup } from @/lib/react/radio-group';
-import { Radio } from @/lib/react/radio';
-import { Field } from @/lib/react/field';
-import { Fieldset } from @/lib/react/fieldset';
-import { Form } from @/lib/react/form';
-import { DirectionProvider, type TextDirection } from @/lib/react/direction-provider';
+import { RadioGroup } from ''@/lib/react/radio-group';
+import { Radio } from ''@/lib/react/radio';
+import { Field } from ''@/lib/react/field';
+import { Fieldset } from ''@/lib/react/fieldset';
+import { Form } from ''@/lib/react/form';
+import { DirectionProvider, type TextDirection } from ''@/lib/react/direction-provider';
 import { expect } from 'chai';
 import { spy } from 'sinon';
 import { isJSDOM, createRenderer } from '#test-utils';

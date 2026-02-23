@@ -1,4 +1,4 @@
-import { Accordion } from @/lib/react/accordion';
+import { Accordion } from ''@/lib/react/accordion';
 import { describeConformance, createRenderer } from '#test-utils';
 
 describe('<Accordion.Header />', () => {

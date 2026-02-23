@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { expect } from 'chai';
 import { act, screen, waitFor } from '@mui/internal-test-utils';
-import { Dialog } from @/lib/react/dialog';
+import { Dialog } from ''@/lib/react/dialog';
 import { createRenderer, isJSDOM } from '#test-utils';
 
 describe('<Dialog.Root />', () => {

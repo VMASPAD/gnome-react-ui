@@ -2,10 +2,10 @@ import * as React from 'react';
 import { expect } from 'chai';
 import { spy } from 'sinon';
 import { act, fireEvent, screen } from '@mui/internal-test-utils';
-import { Checkbox } from @/lib/react/checkbox';
-import { CheckboxGroup } from @/lib/react/checkbox-group';
-import { Field } from @/lib/react/field';
-import { Form } from @/lib/react/form';
+import { Checkbox } from ''@/lib/react/checkbox';
+import { CheckboxGroup } from ''@/lib/react/checkbox-group';
+import { Field } from ''@/lib/react/field';
+import { Form } from ''@/lib/react/form';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<Checkbox.Root />', () => {

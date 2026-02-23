@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Tooltip } from @/lib/react/tooltip';
+import { Tooltip } from ''@/lib/react/tooltip';
 import { act, ignoreActWarnings, screen, waitFor } from '@mui/internal-test-utils';
 import { expect } from 'chai';
 import { createRenderer, describeConformance, isJSDOM, waitSingleFrame } from '#test-utils';

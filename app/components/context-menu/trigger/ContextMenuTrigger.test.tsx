@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { fireEvent, flushMicrotasks, screen } from '@mui/internal-test-utils';
 import { spy } from 'sinon';
-import { ContextMenu } from @/lib/react/context-menu';
+import { ContextMenu } from ''@/lib/react/context-menu';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 
 describe('<ContextMenu.Trigger />', () => {

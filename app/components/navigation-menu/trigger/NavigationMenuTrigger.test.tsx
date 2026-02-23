@@ -1,4 +1,4 @@
-import { NavigationMenu } from @/lib/react/navigation-menu';
+import { NavigationMenu } from ''@/lib/react/navigation-menu';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { screen, flushMicrotasks, waitFor, act } from '@mui/internal-test-utils';
 import userEvent from '@testing-library/user-event';

@@ -1,4 +1,4 @@
-import { Select } from @/lib/react/select';
+import { Select } from ''@/lib/react/select';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Select.ItemIndicator />', () => {

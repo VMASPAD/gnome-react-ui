@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Toast } from @/lib/react/toast';
+import { Toast } from ''@/lib/react/toast';
 import { fireEvent, flushMicrotasks, screen } from '@mui/internal-test-utils';
 import { expect } from 'chai';
 import { createRenderer, isJSDOM } from '#test-utils';

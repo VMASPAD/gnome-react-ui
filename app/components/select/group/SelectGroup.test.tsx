@@ -1,4 +1,4 @@
-import { Select } from @/lib/react/select';
+import { Select } from ''@/lib/react/select';
 import { createRenderer, describeConformance } from '#test-utils';
 import { screen } from '@mui/internal-test-utils';
 import { expect } from 'chai';

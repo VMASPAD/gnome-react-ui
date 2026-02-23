@@ -1,7 +1,7 @@
 import { screen } from '@mui/internal-test-utils';
 import { expect } from 'chai';
 import { spy } from 'sinon';
-import { Meter } from @/lib/react/meter';
+import { Meter } from ''@/lib/react/meter';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Meter.Value />', () => {

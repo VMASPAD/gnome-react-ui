@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Select } from @/lib/react/select';
-import { Popover } from @/lib/react/popover';
+import { Select } from ''@/lib/react/select';
+import { Popover } from ''@/lib/react/popover';
 import {
   act,
   fireEvent,
@@ -13,8 +13,8 @@ import {
 import { createRenderer, isJSDOM, popupConformanceTests, wait } from '#test-utils';
 import { expect } from 'vitest';
 import { spy } from 'sinon';
-import { Field } from @/lib/react/field';
-import { Form } from @/lib/react/form';
+import { Field } from ''@/lib/react/field';
+import { Form } from ''@/lib/react/form';
 
 describe('<Select.Root />', () => {
   beforeEach(() => {

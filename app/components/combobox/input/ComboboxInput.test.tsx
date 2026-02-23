@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Combobox } from @/lib/react/combobox';
+import { Combobox } from ''@/lib/react/combobox';
 import { createRenderer, describeConformance, isJSDOM } from '#test-utils';
 import { screen, waitFor } from '@mui/internal-test-utils';
 import { expect } from 'chai';
 import { spy } from 'sinon';
-import { Field } from @/lib/react/field';
+import { Field } from ''@/lib/react/field';
 import { REASONS } from '../../utils/reasons';
 
 describe('<Combobox.Input />', () => {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { expectType } from '#test-utils';
-import { Dialog } from @/lib/react/dialog';
+import { Dialog } from ''@/lib/react/dialog';
 
 const numberPayloadHandle = Dialog.createHandle<number>();
 

@@ -1,4 +1,4 @@
-import { Field } from @/lib/react/field';
+import { Field } from ''@/lib/react/field';
 import { screen } from '@mui/internal-test-utils';
 import { expect } from 'vitest';
 import { createRenderer, describeConformance } from '#test-utils';

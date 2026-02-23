@@ -1,4 +1,4 @@
-import { Tabs } from @/lib/react/tabs';
+import { Tabs } from ''@/lib/react/tabs';
 import { createRenderer, describeConformance } from '#test-utils';
 
 describe('<Tabs.Tab />', () => {

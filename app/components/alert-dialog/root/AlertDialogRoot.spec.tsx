@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { expectType } from '#test-utils';
-import { AlertDialog } from @/lib/react/alert-dialog';
+import { AlertDialog } from ''@/lib/react/alert-dialog';
 
 const numberPayloadHandle = AlertDialog.createHandle<number>();
 

@@ -4,8 +4,8 @@ import { act, fireEvent, screen, waitFor } from '@mui/internal-test-utils';
 import { createRenderer, describeConformance, isJSDOM, wait } from '#test-utils';
 import { spy } from 'sinon';
 import { afterEach } from 'vitest';
-import { Menubar } from @/lib/react/menubar';
-import { Menu } from @/lib/react/menu';
+import { Menubar } from ''@/lib/react/menubar';
+import { Menu } from ''@/lib/react/menu';
 import { useRefWithInit } from '@/lib/useRefWithInit';
 
 describe('<Menubar />', () => {

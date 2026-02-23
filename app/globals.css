@@ -50,7 +50,7 @@
 
 :root {
   /* Ubuntu/GNOME suele usar bordes más redondeados y suaves */
-  --radius: 1.5rem; 
+  --radius: 0.5rem; 
   
   /* Light Mode - Base clara neutral/cálida */
   --background: oklch(0.985 0.002 74); 

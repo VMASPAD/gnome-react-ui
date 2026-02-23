@@ -1,5 +1,5 @@
 import { expectType } from '#test-utils';
-import { PreviewCard } from @/lib/react/preview-card';
+import { PreviewCard } from ''@/lib/react/preview-card';
 
 const numberPayloadHandle = PreviewCard.createHandle<number>();
 
