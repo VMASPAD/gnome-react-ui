@@ -8,7 +8,7 @@ title: Toolbar
 
 ### Example 1 — Basic toolbar
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
     <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
         <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
         <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -51,7 +51,7 @@ export default function BasicToolbar() {
 
 ### Example 2 — Toolbar with toggle group
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
     <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
         <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
         <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -66,11 +66,11 @@ const itemClass = "flex h-7 w-7 items-center justify-center rounded text-gray-50
 export default function EditorToolbar() {
   return (
     <Toolbar.Root className="flex items-center gap-1 rounded-lg border border-gray-200 bg-white p-1.5">
-      <Toolbar.ToggleGroup type="multiple" className="flex gap-0.5">
-        <Toolbar.ToggleItem value="bold" aria-label="Bold" className={itemClass}><Bold size={13} /></Toolbar.ToggleItem>
-        <Toolbar.ToggleItem value="italic" aria-label="Italic" className={itemClass}><Italic size={13} /></Toolbar.ToggleItem>
-        <Toolbar.ToggleItem value="underline" aria-label="Underline" className={itemClass}><Underline size={13} /></Toolbar.ToggleItem>
-      </Toolbar.ToggleGroup>
+      <ToggleGroup type="multiple" className="flex gap-0.5">
+        <Toggle value="bold" aria-label="Bold" className={itemClass}><Bold size={13} /></Toggle>
+        <Toggle value="italic" aria-label="Italic" className={itemClass}><Italic size={13} /></Toggle>
+        <Toggle value="underline" aria-label="Underline" className={itemClass}><Underline size={13} /></Toggle>
+      </ToggleGroup>
       <Toolbar.Separator className="w-px h-5 bg-gray-200 mx-1" />
       <Toolbar.ToggleGroup type="single" defaultValue="left" className="flex gap-0.5">
         <Toolbar.ToggleItem value="left" aria-label="Left" className={itemClass}><AlignLeft size={13} /></Toolbar.ToggleItem>
@@ -81,14 +81,14 @@ export default function EditorToolbar() {
   );
 }
 ```
-    </Tabs.Panel>
+  </Tabs.Panel>
     <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
         <Toolbar.Root className="flex items-center gap-1 rounded-lg border border-gray-200 bg-white p-1.5">
-          <Toolbar.ToggleGroup type="multiple" className="flex gap-0.5">
-            <Toolbar.ToggleItem value="bold" aria-label="Bold" className="flex h-7 w-7 items-center justify-center rounded text-gray-500 hover:bg-gray-100 data-[state=on]:bg-blue-50 data-[state=on]:text-blue-600 outline-none"><Icons.Bold size={13} /></Toolbar.ToggleItem>
-            <Toolbar.ToggleItem value="italic" aria-label="Italic" className="flex h-7 w-7 items-center justify-center rounded text-gray-500 hover:bg-gray-100 data-[state=on]:bg-blue-50 data-[state=on]:text-blue-600 outline-none"><Icons.Italic size={13} /></Toolbar.ToggleItem>
-            <Toolbar.ToggleItem value="underline" aria-label="Underline" className="flex h-7 w-7 items-center justify-center rounded text-gray-500 hover:bg-gray-100 data-[state=on]:bg-blue-50 data-[state=on]:text-blue-600 outline-none"><Icons.Underline size={13} /></Toolbar.ToggleItem>
-          </Toolbar.ToggleGroup>
+          <ToggleGroup type="multiple" className="flex gap-0.5">
+            <Toggle value="bold" aria-label="Bold" className="flex h-7 w-7 items-center justify-center rounded text-gray-500 hover:bg-gray-100 data-[state=on]:bg-blue-50 data-[state=on]:text-blue-600 outline-none"><Icons.Bold size={13} /></Toggle>
+            <Toggle value="italic" aria-label="Italic" className="flex h-7 w-7 items-center justify-center rounded text-gray-500 hover:bg-gray-100 data-[state=on]:bg-blue-50 data-[state=on]:text-blue-600 outline-none"><Icons.Italic size={13} /></Toggle>
+            <Toggle value="underline" aria-label="Underline" className="flex h-7 w-7 items-center justify-center rounded text-gray-500 hover:bg-gray-100 data-[state=on]:bg-blue-50 data-[state=on]:text-blue-600 outline-none"><Icons.Underline size={13} /></Toggle>
+          </ToggleGroup>
           <Toolbar.Separator className="w-px h-5 bg-gray-200 mx-1" />
           <Toolbar.ToggleGroup type="single" defaultValue="left" className="flex gap-0.5">
             <Toolbar.ToggleItem value="left" aria-label="Left" className="flex h-7 w-7 items-center justify-center rounded text-gray-500 hover:bg-gray-100 data-[state=on]:bg-blue-50 data-[state=on]:text-blue-600 outline-none"><Icons.AlignLeft size={13} /></Toolbar.ToggleItem>
@@ -101,7 +101,7 @@ export default function EditorToolbar() {
 
 ### Example 3 — Toolbar with overflow link
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
     <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
         <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
         <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>

@@ -6,27 +6,13 @@ title: Accordion
 
 ## Examples
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="overview">
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
     <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab
-            className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold"
-            value="overview"
-        >
-            Overview
-        </Tabs.Tab>
-        <Tabs.Tab
-            className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold"
-            value="projects"
-        >
-            Projects
-        </Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
         <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
     </Tabs.List>
-
-    <Tabs.Panel
-        className="flex min-h-[120px] items-center justify-center p-6 text-sm text-gray-600 outline-none focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"
-        value="overview"
-    >
+    <Tabs.Panel value="code">
 ```tsx
 import * as React from 'react';
 import { Accordion } from '@base-ui/react/accordion';
@@ -92,14 +78,291 @@ function PlusIcon(props: React.ComponentProps<'svg'>) {
 
 ```
     </Tabs.Panel>
-
-    <Tabs.Panel
-        className="flex min-h-[120px] items-center justify-center p-6 text-sm text-gray-600 outline-none focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"
-        value="projects"
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+ <Accordion.Root
+      multiple
+      className="flex w-96 max-w-[calc(100vw-8rem)] flex-col justify-center text-gray-900"
     >
-            <Accordion.Root       multiple       className="flex w-96 max-w-[calc(100vw-8rem)] flex-col justify-center text-gray-900"     >       <Accordion.Item className="border-b border-gray-200">         <Accordion.Header>           <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">             What is Base UI?             <Icons.PlusIcon className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[panel-open]:scale-110 group-data-[panel-open]:rotate-45" />           </Accordion.Trigger>         </Accordion.Header>         <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">           <div className="p-3">             Base UI is a library of high-quality unstyled React components for design systems and             web apps.           </div>         </Accordion.Panel>       </Accordion.Item> 
-      <Accordion.Item className="border-b border-gray-200">         <Accordion.Header>           <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">             How do I get started?             <Icons.PlusIcon className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[panel-open]:scale-110 group-data-[panel-open]:rotate-45" />           </Accordion.Trigger>         </Accordion.Header>         <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">           <div className="p-3">             Head to the “Quick start” guide in the docs. If you’ve used unstyled libraries before,             you’ll feel at home.           </div>         </Accordion.Panel>       </Accordion.Item> 
-      <Accordion.Item className="border-b border-gray-200">         <Accordion.Header>           <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">             Can I use it for my project?             <Icons.PlusIcon className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[panel-open]:scale-110 group-data-[panel-open]:rotate-45" />           </Accordion.Trigger>         </Accordion.Header>         <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">           <div className="p-3">Of course! Base UI is free and open source.</div>         </Accordion.Panel>       </Accordion.Item>     </Accordion.Root>
+      <Accordion.Item className="border-b border-gray-200">
+        <Accordion.Header>
+          <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">
+            What is Base UI?
+            <Icons.PlusIcon className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[panel-open]:scale-110 group-data-[panel-open]:rotate-45" />
+          </Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+          <div className="p-3">
+            Base UI is a library of high-quality unstyled React components for design systems and
+            web apps.
+          </div>
+        </Accordion.Panel>
+      </Accordion.Item>
+
+      <Accordion.Item className="border-b border-gray-200">
+        <Accordion.Header>
+          <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">
+            How do I get started?
+            <Icons.PlusIcon className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[panel-open]:scale-110 group-data-[panel-open]:rotate-45" />
+          </Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+          <div className="p-3">
+            Head to the “Quick start” guide in the docs. If you’ve used unstyled libraries before,
+            you’ll feel at home.
+          </div>
+        </Accordion.Panel>
+      </Accordion.Item>
+
+      <Accordion.Item className="border-b border-gray-200">
+        <Accordion.Header>
+          <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">
+            Can I use it for my project?
+            <Icons.PlusIcon className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[panel-open]:scale-110 group-data-[panel-open]:rotate-45" />
+          </Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+          <div className="p-3">Of course! Base UI is free and open source.</div>
+        </Accordion.Panel>
+      </Accordion.Item>
+    </Accordion.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+ 
+ ## Variante Compact / Accent
+
+Triggers sólidos con el color primario (`--primary`). El panel emerge sobre fondo `--muted`. Ideal para paneles de configuración o sidebars compactas.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+import * as React from 'react';
+import { Accordion } from '@base-ui/react/accordion';
+
+export default function AccordionCompact() {
+  return (
+    <Accordion.Root
+      multiple
+      className="flex w-96 max-w-[calc(100vw-2rem)] flex-col gap-1"
+    >
+      <Accordion.Item className="overflow-hidden rounded-[var(--radius-sm)]">
+        <Accordion.Header>
+          <Accordion.Trigger className="group flex w-full items-center justify-between bg-[var(--primary)] px-4 py-3 text-sm font-semibold text-[var(--primary-foreground)] transition-[filter] duration-150 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)]">
+            ¿Qué es Base UI?
+            <PlusIcon className="size-4 shrink-0 transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180" />
+          </Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden bg-[var(--muted)] text-sm text-[var(--muted-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+          <div className="px-4 py-3 leading-relaxed">
+            Base UI es una librería de componentes React sin estilos de alta calidad para design systems y aplicaciones web.
+          </div>
+        </Accordion.Panel>
+      </Accordion.Item>
+
+      <Accordion.Item className="overflow-hidden rounded-[var(--radius-sm)]">
+        <Accordion.Header>
+          <Accordion.Trigger className="group flex w-full items-center justify-between bg-[var(--primary)] px-4 py-3 text-sm font-semibold text-[var(--primary-foreground)] transition-[filter] duration-150 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)]">
+            ¿Cómo empiezo?
+            <PlusIcon className="size-4 shrink-0 transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180" />
+          </Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden bg-[var(--muted)] text-sm text-[var(--muted-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+          <div className="px-4 py-3 leading-relaxed">
+            Consulta la guía de inicio rápido en la documentación. Si ya usaste librerías sin estilos, te sentirás como en casa.
+          </div>
+        </Accordion.Panel>
+      </Accordion.Item>
+
+      <Accordion.Item className="overflow-hidden rounded-[var(--radius-sm)]">
+        <Accordion.Header>
+          <Accordion.Trigger className="group flex w-full items-center justify-between bg-[var(--primary)] px-4 py-3 text-sm font-semibold text-[var(--primary-foreground)] transition-[filter] duration-150 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)]">
+            ¿Puedo usarlo en mi proyecto?
+            <PlusIcon className="size-4 shrink-0 transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180" />
+          </Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden bg-[var(--muted)] text-sm text-[var(--muted-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+          <div className="px-4 py-3 leading-relaxed">
+            Por supuesto. Base UI es gratuito y de código abierto bajo licencia MIT.
+          </div>
+        </Accordion.Panel>
+      </Accordion.Item>
+    </Accordion.Root>
+  );
+}
+
+function PlusIcon(props: React.ComponentProps<'svg'>) {
+  return (
+    <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth={2} {...props}>
+      <path d="M2 4l4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+      <Accordion.Root
+        multiple
+        className="flex w-96 max-w-[calc(100vw-2rem)] flex-col gap-1"
+      >
+        <Accordion.Item className="overflow-hidden rounded-[var(--radius-sm)]">
+          <Accordion.Header>
+            <Accordion.Trigger className="group flex w-full items-center justify-between bg-[var(--primary)] px-4 py-3 text-sm font-semibold text-[var(--primary-foreground)] transition-[filter] duration-150 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)]">
+              ¿Qué es Base UI?
+              <Icons.PlusIcon className="size-4 shrink-0 transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180" />
+            </Accordion.Trigger>
+          </Accordion.Header>
+          <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden bg-[var(--muted)] text-sm text-[var(--muted-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+            <div className="px-4 py-3 leading-relaxed">
+              Base UI es una librería de componentes React sin estilos de alta calidad para design systems y aplicaciones web.
+            </div>
+          </Accordion.Panel>
+        </Accordion.Item>
+
+        <Accordion.Item className="overflow-hidden rounded-[var(--radius-sm)]">
+          <Accordion.Header>
+            <Accordion.Trigger className="group flex w-full items-center justify-between bg-[var(--primary)] px-4 py-3 text-sm font-semibold text-[var(--primary-foreground)] transition-[filter] duration-150 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)]">
+              ¿Cómo empiezo?
+              <Icons.PlusIcon className="size-4 shrink-0 transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180" />
+            </Accordion.Trigger>
+          </Accordion.Header>
+          <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden bg-[var(--muted)] text-sm text-[var(--muted-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+            <div className="px-4 py-3 leading-relaxed">
+              Consulta la guía de inicio rápido en la documentación. Si ya usaste librerías sin estilos, te sentirás como en casa.
+            </div>
+          </Accordion.Panel>
+        </Accordion.Item>
+
+        <Accordion.Item className="overflow-hidden rounded-[var(--radius-sm)]">
+          <Accordion.Header>
+            <Accordion.Trigger className="group flex w-full items-center justify-between bg-[var(--primary)] px-4 py-3 text-sm font-semibold text-[var(--primary-foreground)] transition-[filter] duration-150 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)]">
+              ¿Puedo usarlo en mi proyecto?
+              <Icons.PlusIcon className="size-4 shrink-0 transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180" />
+            </Accordion.Trigger>
+          </Accordion.Header>
+          <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden bg-[var(--muted)] text-sm text-[var(--muted-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+            <div className="px-4 py-3 leading-relaxed">
+              Por supuesto. Base UI es gratuito y de código abierto bajo licencia MIT.
+            </div>
+          </Accordion.Panel>
+        </Accordion.Item>
+      </Accordion.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+
+---
+
+## Variante Sidebar / Lateral
+
+Layout en dos columnas: triggers a la izquierda con fondo `--sidebar` y el panel expandido a la derecha sobre `--card`. El trigger activo adopta `--sidebar-primary`. Ideal para navegación de documentación o configuración avanzada.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+import * as React from 'react';
+import { Accordion } from '@base-ui/react/accordion';
+
+export default function AccordionSidebar() {
+  return (
+    <Accordion.Root className="flex w-[480px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border)] shadow-md">
+      <Accordion.Item className="group/item flex flex-row border-b border-[var(--border)] last:border-b-0">
+        <Accordion.Header className="contents">
+          <Accordion.Trigger className="relative flex w-44 shrink-0 items-start gap-2 border-r border-[var(--sidebar-border)] bg-[var(--sidebar)] px-4 py-4 text-left text-sm font-medium text-[var(--sidebar-foreground)] transition-colors duration-150 hover:bg-[var(--sidebar-accent)] hover:text-[var(--sidebar-accent-foreground)] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)] group-data-[panel-open]/item:bg-[var(--sidebar-primary)] group-data-[panel-open]/item:text-[var(--sidebar-primary-foreground)]">
+            <span className="mt-[3px] size-2 shrink-0 rounded-full bg-current opacity-0 transition-opacity group-data-[panel-open]/item:opacity-100" />
+            ¿Qué es Base UI?
+          </Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Panel className="h-[var(--accordion-panel-height)] flex-1 overflow-hidden bg-[var(--card)] text-sm text-[var(--card-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+          <div className="px-5 py-4 leading-relaxed">
+            Base UI es una librería de componentes React sin estilos de alta calidad para design systems y aplicaciones web.
+          </div>
+        </Accordion.Panel>
+      </Accordion.Item>
+
+      <Accordion.Item className="group/item flex flex-row border-b border-[var(--border)] last:border-b-0">
+        <Accordion.Header className="contents">
+          <Accordion.Trigger className="relative flex w-44 shrink-0 items-start gap-2 border-r border-[var(--sidebar-border)] bg-[var(--sidebar)] px-4 py-4 text-left text-sm font-medium text-[var(--sidebar-foreground)] transition-colors duration-150 hover:bg-[var(--sidebar-accent)] hover:text-[var(--sidebar-accent-foreground)] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)] group-data-[panel-open]/item:bg-[var(--sidebar-primary)] group-data-[panel-open]/item:text-[var(--sidebar-primary-foreground)]">
+            <span className="mt-[3px] size-2 shrink-0 rounded-full bg-current opacity-0 transition-opacity group-data-[panel-open]/item:opacity-100" />
+            ¿Cómo empiezo?
+          </Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Panel className="h-[var(--accordion-panel-height)] flex-1 overflow-hidden bg-[var(--card)] text-sm text-[var(--card-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+          <div className="px-5 py-4 leading-relaxed">
+            Consulta la guía de inicio rápido en la documentación. Si ya usaste librerías sin estilos, te sentirás como en casa.
+          </div>
+        </Accordion.Panel>
+      </Accordion.Item>
+
+      <Accordion.Item className="group/item flex flex-row border-b border-[var(--border)] last:border-b-0">
+        <Accordion.Header className="contents">
+          <Accordion.Trigger className="relative flex w-44 shrink-0 items-start gap-2 border-r border-[var(--sidebar-border)] bg-[var(--sidebar)] px-4 py-4 text-left text-sm font-medium text-[var(--sidebar-foreground)] transition-colors duration-150 hover:bg-[var(--sidebar-accent)] hover:text-[var(--sidebar-accent-foreground)] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)] group-data-[panel-open]/item:bg-[var(--sidebar-primary)] group-data-[panel-open]/item:text-[var(--sidebar-primary-foreground)]">
+            <span className="mt-[3px] size-2 shrink-0 rounded-full bg-current opacity-0 transition-opacity group-data-[panel-open]/item:opacity-100" />
+            ¿Puedo usarlo en mi proyecto?
+          </Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Panel className="h-[var(--accordion-panel-height)] flex-1 overflow-hidden bg-[var(--card)] text-sm text-[var(--card-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+          <div className="px-5 py-4 leading-relaxed">
+            Por supuesto. Base UI es gratuito y de código abierto bajo licencia MIT.
+          </div>
+        </Accordion.Panel>
+      </Accordion.Item>
+    </Accordion.Root>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+      <Accordion.Root className="flex w-[480px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border)] shadow-md">
+        <Accordion.Item className="group/item flex flex-row border-b border-[var(--border)] last:border-b-0">
+          <Accordion.Header className="contents">
+            <Accordion.Trigger className="relative flex w-44 shrink-0 items-start gap-2 border-r border-[var(--sidebar-border)] bg-[var(--sidebar)] px-4 py-4 text-left text-sm font-medium text-[var(--sidebar-foreground)] transition-colors duration-150 hover:bg-[var(--sidebar-accent)] hover:text-[var(--sidebar-accent-foreground)] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)] group-data-[panel-open]/item:bg-[var(--sidebar-primary)] group-data-[panel-open]/item:text-[var(--sidebar-primary-foreground)]">
+              <span className="mt-[3px] size-2 shrink-0 rounded-full bg-current opacity-0 transition-opacity group-data-[panel-open]/item:opacity-100" />
+              ¿Qué es Base UI?
+            </Accordion.Trigger>
+          </Accordion.Header>
+          <Accordion.Panel className="h-[var(--accordion-panel-height)] flex-1 overflow-hidden bg-[var(--card)] text-sm text-[var(--card-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+            <div className="px-5 py-4 leading-relaxed">
+              Base UI es una librería de componentes React sin estilos de alta calidad para design systems y aplicaciones web.
+            </div>
+          </Accordion.Panel>
+        </Accordion.Item>
+
+        <Accordion.Item className="group/item flex flex-row border-b border-[var(--border)] last:border-b-0">
+          <Accordion.Header className="contents">
+            <Accordion.Trigger className="relative flex w-44 shrink-0 items-start gap-2 border-r border-[var(--sidebar-border)] bg-[var(--sidebar)] px-4 py-4 text-left text-sm font-medium text-[var(--sidebar-foreground)] transition-colors duration-150 hover:bg-[var(--sidebar-accent)] hover:text-[var(--sidebar-accent-foreground)] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)] group-data-[panel-open]/item:bg-[var(--sidebar-primary)] group-data-[panel-open]/item:text-[var(--sidebar-primary-foreground)]">
+              <span className="mt-[3px] size-2 shrink-0 rounded-full bg-current opacity-0 transition-opacity group-data-[panel-open]/item:opacity-100" />
+              ¿Cómo empiezo?
+            </Accordion.Trigger>
+          </Accordion.Header>
+          <Accordion.Panel className="h-[var(--accordion-panel-height)] flex-1 overflow-hidden bg-[var(--card)] text-sm text-[var(--card-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+            <div className="px-5 py-4 leading-relaxed">
+              Consulta la guía de inicio rápido en la documentación. Si ya usaste librerías sin estilos, te sentirás como en casa.
+            </div>
+          </Accordion.Panel>
+        </Accordion.Item>
+
+        <Accordion.Item className="group/item flex flex-row border-b border-[var(--border)] last:border-b-0">
+          <Accordion.Header className="contents">
+            <Accordion.Trigger className="relative flex w-44 shrink-0 items-start gap-2 border-r border-[var(--sidebar-border)] bg-[var(--sidebar)] px-4 py-4 text-left text-sm font-medium text-[var(--sidebar-foreground)] transition-colors duration-150 hover:bg-[var(--sidebar-accent)] hover:text-[var(--sidebar-accent-foreground)] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)] group-data-[panel-open]/item:bg-[var(--sidebar-primary)] group-data-[panel-open]/item:text-[var(--sidebar-primary-foreground)]">
+              <span className="mt-[3px] size-2 shrink-0 rounded-full bg-current opacity-0 transition-opacity group-data-[panel-open]/item:opacity-100" />
+              ¿Puedo usarlo en mi proyecto?
+            </Accordion.Trigger>
+          </Accordion.Header>
+          <Accordion.Panel className="h-[var(--accordion-panel-height)] flex-1 overflow-hidden bg-[var(--card)] text-sm text-[var(--card-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+            <div className="px-5 py-4 leading-relaxed">
+              Por supuesto. Base UI es gratuito y de código abierto bajo licencia MIT.
+            </div>
+          </Accordion.Panel>
+        </Accordion.Item>
+      </Accordion.Root>
     </Tabs.Panel>
 </Tabs.Root>
 
@@ -107,8 +370,7 @@ function PlusIcon(props: React.ComponentProps<'svg'>) {
 
 A heading that labels the corresponding panel.
 Renders an `&lt;h3&gt;` element.
-
-## Examples
+## AccordionHeader
 
 Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordion)
 

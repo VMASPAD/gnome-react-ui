@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import React from "react";
+import * as React from "react";
 import { MDXRemote } from "next-mdx-remote";
 import * as Accordion from "../components/accordion/index.parts";
 import * as AlertDialog from "../components/alert-dialog/index.parts";
@@ -71,14 +71,20 @@ interface Heading {
 /* ─── extract headings from markdown for table-of-contents ─────────────── */
 function extractHeadings(md: string): Heading[] {
   const headings: Heading[] = [];
+  const idCount = new Map<string, number>();
+  // Strip fenced code blocks before extracting headings to avoid false matches
+  const stripped = md.replace(/```[\s\S]*?```/g, "");
   const re = /^(#{1,3})\s+(.+)$/gm;
   let m: RegExpExecArray | null;
-  while ((m = re.exec(md)) !== null) {
+  while ((m = re.exec(stripped)) !== null) {
     const text = m[2].trim();
-    const id = text
+    const baseId = text
       .toLowerCase()
       .replace(/[^\w\s-]/g, "")
       .replace(/\s+/g, "-");
+    const count = idCount.get(baseId) ?? 0;
+    idCount.set(baseId, count + 1);
+    const id = count === 0 ? baseId : `${baseId}-${count + 1}`;
     headings.push({ id, text, level: m[1].length });
   }
   return headings;
@@ -157,8 +163,6 @@ function CodeBlock({ className, children }: { className?: string; children?: Rea
           lineHeight: "1.7",
           borderRadius: 0,
         }}
-        showLineNumbers={code.split("\n").length > 4}
-        lineNumberStyle={{ color: "#4a4b5a", fontSize: "0.7rem", minWidth: "2.5rem" }}
         wrapLongLines={false}
       >
         {code}
@@ -239,7 +243,7 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
         <div className="flex items-center justify-between px-4 h-14 border-b border-border shrink-0 bg-background/90 backdrop-blur">
           <span className="text-sm font-semibold tracking-tight flex items-center gap-2">
             <BookOpen size={14} className="text-primary" />
-            Docs
+            GNOME React UI
           </span>
           <button
             className="lg:hidden text-muted-foreground hover:text-foreground transition-colors"

@@ -8,7 +8,7 @@ title: Autocomplete
 
 ### Example 1 — Basic autocomplete
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
     <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
         <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
         <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -65,9 +65,11 @@ export default function BasicAutocomplete() {
     </Tabs.Panel>
 </Tabs.Root>
 
-### Example 2 — Autocomplete with item descriptions
+### Example 4 — Autocompletado con tema primario Ubuntu
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
+Input con borde `--primary` al foco y popup sobre `--card`. Los ítems resaltan con `--accent` al hacer hover. Ideal para buscadores dentro de dashboards o formularios de configuración.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
     <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
         <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
         <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -75,81 +77,31 @@ export default function BasicAutocomplete() {
     </Tabs.List>
     <Tabs.Panel value="code">
 ```tsx
-const commands = [
-  { id: 'new-file', label: 'New File', desc: 'Create a blank file' },
-  { id: 'open', label: 'Open…', desc: 'Open a project folder' },
-  { id: 'settings', label: 'Settings', desc: 'Configure preferences' },
-];
+import * as Autocomplete from './autocomplete/index.parts';
 
-export default function CommandPalette() {
+const settings = ['Appearance', 'Display', 'Keyboard', 'Network', 'Notifications', 'Privacy', 'Sound', 'Users'];
+
+export default function PrimaryAutocomplete() {
   return (
-    <Autocomplete.Root items={commands.map(c => c.id)} className="relative w-72">
+    <Autocomplete.Root items={settings} filterItems className="relative w-64">
       <Autocomplete.Input
-        placeholder="Search commands…"
-        className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="Buscar ajustes…"
+        className="w-full rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--foreground)] placeholder:text-[var(--muted-foreground)] outline-none transition-colors duration-150 focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--ring)]/30"
       />
       <Autocomplete.Portal>
         <Autocomplete.Positioner sideOffset={4}>
-          <Autocomplete.Popup className="w-72 rounded-xl border border-gray-200 bg-white py-1 shadow-lg">
-            {commands.map(({ id, label, desc }) => (
-              <Autocomplete.Item key={id} value={id} className="flex flex-col px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100">
-                <span className="font-medium text-gray-800">{label}</span>
-                <span className="text-xs text-gray-400">{desc}</span>
+          <Autocomplete.Popup className="w-64 rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--card)] py-1 shadow-lg">
+            {settings.map((item) => (
+              <Autocomplete.Item
+                key={item}
+                value={item}
+                className="px-3 py-2 text-sm text-[var(--card-foreground)] cursor-pointer transition-colors duration-100 data-[highlighted]:bg-[var(--accent)] data-[highlighted]:text-[var(--accent-foreground)]"
+              >
+                {item}
               </Autocomplete.Item>
             ))}
-          </Autocomplete.Popup>
-        </Autocomplete.Positioner>
-      </Autocomplete.Portal>
-    </Autocomplete.Root>
-  );
-}
-```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Autocomplete.Root items={['new-file','open','settings']} className="relative w-72">
-          <Autocomplete.Input placeholder="Search commands…" className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500" />
-          <Autocomplete.Portal>
-            <Autocomplete.Positioner sideOffset={4}>
-              <Autocomplete.Popup className="w-72 rounded-xl border border-gray-200 bg-white py-1 shadow-lg">
-                <Autocomplete.Item value="new-file" className="flex flex-col px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100"><span className="font-medium text-gray-800">New File</span><span className="text-xs text-gray-400">Create a blank file</span></Autocomplete.Item>
-                <Autocomplete.Item value="open" className="flex flex-col px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100"><span className="font-medium text-gray-800">Open…</span><span className="text-xs text-gray-400">Open a project folder</span></Autocomplete.Item>
-                <Autocomplete.Item value="settings" className="flex flex-col px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100"><span className="font-medium text-gray-800">Settings</span><span className="text-xs text-gray-400">Configure preferences</span></Autocomplete.Item>
-              </Autocomplete.Popup>
-            </Autocomplete.Positioner>
-          </Autocomplete.Portal>
-        </Autocomplete.Root>
-    </Tabs.Panel>
-</Tabs.Root>
-
-### Example 3 — Autocomplete with empty state
-
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="code">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
-```tsx
-const countries = ['Argentina', 'Australia', 'Brazil', 'Canada', 'France', 'Germany', 'Japan', 'Mexico'];
-
-export default function AutocompleteWithEmpty() {
-  return (
-    <Autocomplete.Root items={countries} filterItems className="relative w-64">
-      <Autocomplete.Input
-        placeholder="Search countries…"
-        className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500"
-      />
-      <Autocomplete.Portal>
-        <Autocomplete.Positioner sideOffset={4}>
-          <Autocomplete.Popup className="w-64 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
-            {countries.map((c) => (
-              <Autocomplete.Item key={c} value={c} className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100">
-                {c}
-              </Autocomplete.Item>
-            ))}
-            <Autocomplete.Empty className="px-3 py-4 text-center text-sm text-gray-400">
-              No countries found.
+            <Autocomplete.Empty className="px-3 py-4 text-center text-sm text-[var(--muted-foreground)]">
+              Sin resultados.
             </Autocomplete.Empty>
           </Autocomplete.Popup>
         </Autocomplete.Positioner>
@@ -160,32 +112,155 @@ export default function AutocompleteWithEmpty() {
 ```
     </Tabs.Panel>
     <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Autocomplete.Root items={['Argentina','Australia','Brazil','Canada','France','Germany','Japan','Mexico']} filterItems className="relative w-64">
-          <Autocomplete.Input placeholder="Search countries…" className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500" />
-          <Autocomplete.Portal>
-            <Autocomplete.Positioner sideOffset={4}>
-              <Autocomplete.Popup className="w-64 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
-                <Autocomplete.Item value="Argentina" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100">Argentina</Autocomplete.Item>
-                <Autocomplete.Item value="Australia" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100">Australia</Autocomplete.Item>
-                <Autocomplete.Item value="Brazil" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100">Brazil</Autocomplete.Item>
-                <Autocomplete.Item value="Canada" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100">Canada</Autocomplete.Item>
-                <Autocomplete.Item value="France" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100">France</Autocomplete.Item>
-                <Autocomplete.Item value="Germany" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100">Germany</Autocomplete.Item>
-                <Autocomplete.Item value="Japan" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100">Japan</Autocomplete.Item>
-                <Autocomplete.Item value="Mexico" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100">Mexico</Autocomplete.Item>
-                <Autocomplete.Empty className="px-3 py-4 text-center text-sm text-gray-400">No countries found.</Autocomplete.Empty>
-              </Autocomplete.Popup>
-            </Autocomplete.Positioner>
-          </Autocomplete.Portal>
-        </Autocomplete.Root>
+      <Autocomplete.Root items={['Appearance','Display','Keyboard','Network','Notifications','Privacy','Sound','Users']} filterItems className="relative w-64">
+        <Autocomplete.Input
+          placeholder="Buscar ajustes…"
+          className="w-full rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--foreground)] placeholder:text-[var(--muted-foreground)] outline-none transition-colors duration-150 focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--ring)]/30"
+        />
+        <Autocomplete.Portal>
+          <Autocomplete.Positioner sideOffset={4}>
+            <Autocomplete.Popup className="w-64 rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--card)] py-1 shadow-lg">
+              <Autocomplete.Item value="Appearance" className="px-3 py-2 text-sm text-[var(--card-foreground)] cursor-pointer transition-colors duration-100 data-[highlighted]:bg-[var(--accent)] data-[highlighted]:text-[var(--accent-foreground)]">Appearance</Autocomplete.Item>
+              <Autocomplete.Item value="Display" className="px-3 py-2 text-sm text-[var(--card-foreground)] cursor-pointer transition-colors duration-100 data-[highlighted]:bg-[var(--accent)] data-[highlighted]:text-[var(--accent-foreground)]">Display</Autocomplete.Item>
+              <Autocomplete.Item value="Keyboard" className="px-3 py-2 text-sm text-[var(--card-foreground)] cursor-pointer transition-colors duration-100 data-[highlighted]:bg-[var(--accent)] data-[highlighted]:text-[var(--accent-foreground)]">Keyboard</Autocomplete.Item>
+              <Autocomplete.Item value="Network" className="px-3 py-2 text-sm text-[var(--card-foreground)] cursor-pointer transition-colors duration-100 data-[highlighted]:bg-[var(--accent)] data-[highlighted]:text-[var(--accent-foreground)]">Network</Autocomplete.Item>
+              <Autocomplete.Item value="Notifications" className="px-3 py-2 text-sm text-[var(--card-foreground)] cursor-pointer transition-colors duration-100 data-[highlighted]:bg-[var(--accent)] data-[highlighted]:text-[var(--accent-foreground)]">Notifications</Autocomplete.Item>
+              <Autocomplete.Item value="Privacy" className="px-3 py-2 text-sm text-[var(--card-foreground)] cursor-pointer transition-colors duration-100 data-[highlighted]:bg-[var(--accent)] data-[highlighted]:text-[var(--accent-foreground)]">Privacy</Autocomplete.Item>
+              <Autocomplete.Item value="Sound" className="px-3 py-2 text-sm text-[var(--card-foreground)] cursor-pointer transition-colors duration-100 data-[highlighted]:bg-[var(--accent)] data-[highlighted]:text-[var(--accent-foreground)]">Sound</Autocomplete.Item>
+              <Autocomplete.Item value="Users" className="px-3 py-2 text-sm text-[var(--card-foreground)] cursor-pointer transition-colors duration-100 data-[highlighted]:bg-[var(--accent)] data-[highlighted]:text-[var(--accent-foreground)]">Users</Autocomplete.Item>
+              <Autocomplete.Empty className="px-3 py-4 text-center text-sm text-[var(--muted-foreground)]">Sin resultados.</Autocomplete.Empty>
+            </Autocomplete.Popup>
+          </Autocomplete.Positioner>
+        </Autocomplete.Portal>
+      </Autocomplete.Root>
     </Tabs.Panel>
 </Tabs.Root>
 
-## AutocompleteRoot
+---
 
-Groups all parts of the autocomplete.
-Doesn't render its own HTML element.
+### Example 5 — Autocompletado Sidebar con descripción e ícono de categoría
 
+Popup con fondo `--sidebar` y ítems de dos líneas: label en `--sidebar-foreground` y descripción en `--muted-foreground`. El ítem resaltado usa `--sidebar-primary` como fondo. Pensado para paletas de comandos o paneles de administración.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+    </Tabs.List>
+    <Tabs.Panel value="code">
+```tsx
+import * as Autocomplete from './autocomplete/index.parts';
+
+const actions = [
+  { id: 'new-project', value: 'Nuevo proyecto', desc: 'Crear un proyecto desde cero' },
+  { id: 'import', value: 'Importar…', desc: 'Importar desde archivo o URL' },
+  { id: 'settings', value: 'Preferencias', desc: 'Ajustes del sistema' },
+  { id: 'users', value: 'Gestión de usuarios', desc: 'Administrar cuentas' },
+];
+
+export default function SidebarCommandAutocomplete() {
+  return (
+    <Autocomplete.Root items={actions.map((a) => a.id)} filterItems className="relative w-72">
+      <Autocomplete.Input
+        placeholder="Buscar acción…"
+        className="w-full rounded-[var(--radius-md)] border border-[var(--sidebar-border)] bg-[var(--sidebar)] px-3 py-2 text-sm text-[var(--sidebar-foreground)] placeholder:text-[var(--muted-foreground)] outline-none transition-colors duration-150 focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--ring)]/30"
+      />
+      <Autocomplete.Portal>
+        <Autocomplete.Positioner sideOffset={4}>
+          <Autocomplete.Popup className="w-72 rounded-[var(--radius-lg)] border border-[var(--sidebar-border)] bg-[var(--sidebar)] py-1 shadow-xl">
+            {actions.map(({ id, value, desc }) => (
+              <Autocomplete.Item
+                key={id}
+                value={id}
+                className="flex flex-col gap-0.5 px-3 py-2.5 cursor-pointer transition-colors duration-100 data-[highlighted]:bg-[var(--sidebar-primary)] data-[highlighted]:text-[var(--sidebar-primary-foreground)]"
+              >
+                <span className="text-sm font-medium text-[var(--sidebar-foreground)] data-[highlighted]:text-[var(--sidebar-primary-foreground)]">
+                  {value}
+                </span>
+                <span className="text-xs text-[var(--muted-foreground)]">{desc}</span>
+              </Autocomplete.Item>
+            ))}
+            <Autocomplete.Empty className="px-3 py-4 text-center text-sm text-[var(--muted-foreground)]">
+              Sin acciones encontradas.
+            </Autocomplete.Empty>
+          </Autocomplete.Popup>
+        </Autocomplete.Positioner>
+      </Autocomplete.Portal>
+    </Autocomplete.Root>
+  );
+}
+```
+    </Tabs.Panel>
+    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+      <Autocomplete.Root items={['new-project','import','settings','users']} filterItems className="relative w-72">
+        <Autocomplete.Input
+          placeholder="Buscar acción…"
+          className="w-full rounded-[var(--radius-md)] border border-[var(--sidebar-border)] bg-[var(--sidebar)] px-3 py-2 text-sm text-[var(--sidebar-foreground)] placeholder:text-[var(--muted-foreground)] outline-none transition-colors duration-150 focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--ring)]/30"
+        />
+        <Autocomplete.Portal>
+          <Autocomplete.Positioner sideOffset={4}>
+            <Autocomplete.Popup className="w-72 rounded-[var(--radius-lg)] border border-[var(--sidebar-border)] bg-[var(--sidebar)] py-1 shadow-xl">
+              <Autocomplete.Item value="new-project" className="flex flex-col gap-0.5 px-3 py-2.5 cursor-pointer transition-colors duration-100 data-[highlighted]:bg-[var(--sidebar-primary)] data-[highlighted]:text-[var(--sidebar-primary-foreground)]">
+                <span className="text-sm font-medium text-[var(--sidebar-foreground)]">Nuevo proyecto</span>
+                <span className="text-xs text-[var(--muted-foreground)]">Crear un proyecto desde cero</span>
+              </Autocomplete.Item>
+              <Autocomplete.Item value="import" className="flex flex-col gap-0.5 px-3 py-2.5 cursor-pointer transition-colors duration-100 data-[highlighted]:bg-[var(--sidebar-primary)] data-[highlighted]:text-[var(--sidebar-primary-foreground)]">
+                <span className="text-sm font-medium text-[var(--sidebar-foreground)]">Importar…</span>
+                <span className="text-xs text-[var(--muted-foreground)]">Importar desde archivo o URL</span>
+              </Autocomplete.Item>
+              <Autocomplete.Item value="settings" className="flex flex-col gap-0.5 px-3 py-2.5 cursor-pointer transition-colors duration-100 data-[highlighted]:bg-[var(--sidebar-primary)] data-[highlighted]:text-[var(--sidebar-primary-foreground)]">
+                <span className="text-sm font-medium text-[var(--sidebar-foreground)]">Preferencias</span>
+                <span className="text-xs text-[var(--muted-foreground)]">Ajustes del sistema</span>
+              </Autocomplete.Item>
+              <Autocomplete.Item value="users" className="flex flex-col gap-0.5 px-3 py-2.5 cursor-pointer transition-colors duration-100 data-[highlighted]:bg-[var(--sidebar-primary)] data-[highlighted]:text-[var(--sidebar-primary-foreground)]">
+                <span className="text-sm font-medium text-[var(--sidebar-foreground)]">Gestión de usuarios</span>
+                <span className="text-xs text-[var(--muted-foreground)]">Administrar cuentas</span>
+              </Autocomplete.Item>
+              <Autocomplete.Empty className="px-3 py-4 text-center text-sm text-[var(--muted-foreground)]">Sin acciones encontradas.</Autocomplete.Empty>
+            </Autocomplete.Popup>
+          </Autocomplete.Positioner>
+        </Autocomplete.Portal>
+      </Autocomplete.Root>
+    </Tabs.Panel>
+</Tabs.Root>
+## AutocompleteRoot 
+import { Autocomplete } from '@base-ui/react/autocomplete';
+ 
+    <Autocomplete.Root items={tags}>
+      <label className="flex flex-col gap-1 text-sm leading-5 font-medium text-gray-900">
+        Search tags
+        <Autocomplete.Input
+          placeholder="e.g. feature"
+          className="bg-[canvas] h-10 w-[16rem] md:w-[20rem] font-normal rounded-md border border-gray-200 pl-3.5 text-base text-gray-900 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-blue-800"
+        />
+      </label>
+
+      <Autocomplete.Portal>
+        <Autocomplete.Positioner className="outline-none" sideOffset={4}>
+          <Autocomplete.Popup className="w-[var(--anchor-width)] max-h-[23rem] max-w-[var(--available-width)] rounded-md bg-[canvas] text-gray-900 shadow-lg shadow-gray-200 outline-1 outline-gray-200 dark:shadow-none dark:-outline-offset-1 dark:outline-gray-300">
+            <Autocomplete.Empty className="p-4 text-[0.925rem] leading-4 text-gray-600 empty:m-0 empty:p-0">
+              No tags found.
+            </Autocomplete.Empty>
+            <Autocomplete.List className="outline-0 overflow-y-auto scroll-py-[0.5rem] py-2 overscroll-contain max-h-[min(23rem,var(--available-height))] data-[empty]:p-0">
+              {(tag) => (
+                <Autocomplete.Item
+                  key={tag.id}
+                  className="flex cursor-default items-center gap-2 py-2 pr-8 pl-4 text-base leading-4 outline-none select-none data-[highlighted]:relative data-[highlighted]:z-0 data-[highlighted]:text-gray-50 data-[highlighted]:before:absolute data-[highlighted]:before:inset-x-2 data-[highlighted]:before:inset-y-0 data-[highlighted]:before:z-[-1] data-[highlighted]:before:rounded-sm data-[highlighted]:before:bg-gray-900"
+                  value={tag}
+                >
+                  {tag.value}
+                </Autocomplete.Item>
+              )}
+            </Autocomplete.List>
+          </Autocomplete.Popup>
+        </Autocomplete.Positioner>
+      </Autocomplete.Portal>
+    </Autocomplete.Root>
+ 
+
+
+ 
 Documentation: [Base UI Autocomplete](https://base-ui.com/react/components/autocomplete)
 
 ### Props

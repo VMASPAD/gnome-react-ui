@@ -151,3 +151,38 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  /* Accordion component helpers using theme CSS variables */
+  .accordion-border { border-color: var(--border); }
+
+  /* Compact / Accent variant */
+  .accordion-compact-trigger {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border-radius: var(--radius-sm);
+    transition: background .18s ease, transform .18s ease;
+  }
+  .accordion-compact-trigger:hover { filter: brightness(.95); }
+  .accordion-compact-icon { transition: transform .2s ease; }
+  .accordion-compact-panel {
+    color: var(--muted-foreground);
+    transition: opacity .25s ease, transform .25s ease;
+  }
+
+  /* Horizontal / Sidebar variant */
+  .accordion-side-trigger {
+    background: var(--sidebar);
+    color: var(--sidebar-foreground);
+    transition: background .18s ease, box-shadow .18s ease, transform .18s ease;
+  }
+  .accordion-side-trigger:hover { filter: brightness(.98); }
+  .accordion-side-panel {
+    background: var(--card);
+    color: var(--card-foreground);
+    border-radius: var(--radius-md);
+    transition: opacity .25s ease, transform .25s ease;
+  }
+
+  .accordion-sidebar-column { border-right: 1px solid var(--sidebar-border); }
+}
