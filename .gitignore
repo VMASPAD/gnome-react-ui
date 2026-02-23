@@ -15,6 +15,7 @@
 /npm
 npm
 npm/*
+package/
 # next.js
 /.next/
 /out/
