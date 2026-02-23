@@ -122,10 +122,16 @@ function Home() {
 
           <div className="flex items-center gap-2">
             <div className="hidden sm:flex items-center gap-2 mr-2">
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-border text-[11px] font-medium text-muted-foreground">
-                <div className="h-1.5 w-1.5 rounded-full bg-[oklch(0.65_0.18_150)]" />
-                v1.0.0
-              </div>
+              <a
+                href="http://npm.com/aspad89/gnome-ui"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-border text-[11px] font-medium text-muted-foreground">
+                  <div className="h-1.5 w-1.5 rounded-full bg-[oklch(0.65_0.18_150)]" />
+                  v1.0.2
+                </div>
+              </a>
             </div>
             <a href="https://github.com/VMASPAD/gnome-react-ui">
               <Button className="inline-flex items-center justify-center h-8 w-8 p-0 rounded-lg border border-border bg-card text-foreground hover:bg-accent transition-colors duration-150">
@@ -149,7 +155,7 @@ function Home() {
         <div className="relative container mx-auto max-w-5xl px-4 text-center">
           <Badge className="mb-6 inline-flex items-center gap-1.5 py-1 px-4 border border-primary/30 bg-primary/8 text-primary rounded-full text-xs font-semibold">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Introducing GnomeUI v2.0
+            Introducing GnomeUI v1.0
           </Badge>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-foreground mb-6 leading-[1.1]">
@@ -163,13 +169,16 @@ function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-20">
-            <Button className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 h-11 rounded-xl bg-primary text-primary-foreground font-semibold hover:brightness-95 transition-all duration-150 text-sm">
+{/*             <Button className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 h-11 rounded-xl bg-primary text-primary-foreground font-semibold hover:brightness-95 transition-all duration-150 text-sm">
               Read the docs
               <ArrowRight className="h-4 w-4" />
-            </Button>
+            </Button> */}
+
+<a href="/docs" target="_blank" rel="noopener noreferrer">
             <Button className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 h-11 rounded-xl border border-border bg-card text-foreground font-semibold hover:bg-accent transition-all duration-150 text-sm">
               Browse components
             </Button>
+            </a>
           </div>
 
           {/* Terminal card */}
@@ -189,18 +198,17 @@ function Home() {
                 <div className="flex gap-3">
                   <span className="text-muted-foreground shrink-0">$</span>
                   <span className="text-background">
-                    npx gnome-ui@latest init
+                    npm i gnome-ui
                   </span>
                 </div>
                 <div className="mt-2 text-[oklch(0.65_0.18_150)]">
-                  ✔ Success! Project initialized.
+                  ✔ Success! UI library initialized.
                 </div>
-                <div className="mt-1 flex gap-3">
+               {/*  <div className="mt-1 flex gap-3">
                   <span className="text-muted-foreground shrink-0">$</span>
-                  <span className="text-background">
-                    npx gnome-ui@latest add button card
+                  <span className="text-background"> 
                   </span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -380,64 +388,19 @@ function Home() {
         </div>
       </section>
 
-      {/* ── CTA ────────────────────────────────────────────────────────────── */}
-      <section className="py-24" style={{ background: "oklch(0.20 0.02 330)" }}>
-        {/* Orange glow on aubergine */}
-        <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 h-64 w-96 bg-primary/20 blur-[100px] rounded-full" />
-        <div className="relative container mx-auto max-w-4xl px-4 text-center">
-          <h2 className="text-3xl font-bold tracking-tighter text-white sm:text-5xl mb-6 leading-tight">
-            Start building your{" "}
-            <span className="text-primary">next big idea</span> today.
-          </h2>
-          <p
-            className="text-lg mb-10 max-w-xl mx-auto leading-relaxed"
-            style={{ color: "oklch(0.72 0.02 330)" }}
-          >
-            Stop worrying about the UI and focus on your business logic. GnomeUI
-            gives you the foundations you need.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Button className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-10 bg-primary text-primary-foreground font-semibold h-12 rounded-xl hover:brightness-95 transition-colors duration-150 text-sm">
-              Get Started for Free
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-            <Button
-              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-10 font-semibold h-12 rounded-xl transition-all duration-150 text-sm"
-              style={{
-                border: "1px solid oklch(0.32 0.02 330)",
-                background: "transparent",
-                color: "oklch(0.72 0.02 330)",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.background =
-                  "oklch(0.28 0.02 330)";
-                (e.currentTarget as HTMLButtonElement).style.color = "white";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.background =
-                  "transparent";
-                (e.currentTarget as HTMLButtonElement).style.color =
-                  "oklch(0.72 0.02 330)";
-              }}
-            >
-              <Github className="h-5 w-5" /> Star on GitHub
-            </Button>
-          </div>
-        </div>
-      </section>
-
+ 
       {/* ── Footer ─────────────────────────────────────────────────────────── */}
       <footer className="bg-background py-12 border-t border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
               <Image
-                  className="text-white"
-                  src="/icon.svg"
-                  alt="GnomeUI Logo"
-                  width={24}
-                  height={24}
-                /> 
+                className="text-white"
+                src="/icon.svg"
+                alt="GnomeUI Logo"
+                width={24}
+                height={24}
+              />
               <span className="text-xl font-bold text-foreground">GnomeUI</span>
             </div>
 
