@@ -5,41 +5,38 @@ import * as React from "react";
 import { MDXRemote } from "next-mdx-remote";
 import * as Accordion from "../components/accordion/index.parts";
 import * as AlertDialog from "../components/alert-dialog/index.parts";
-import * as Autocomplete from "../components/autocomplete/index.parts";
-import * as Avatar from "../components/avatar/index.parts";
-import { Button } from "../components/button";
-import * as Checkbox from "../components/checkbox/index.parts";
-import * as Collapsible from "../components/collapsible/index.parts";
-import * as Combobox from "../components/combobox/index.parts";
-import * as ContextMenu from "../components/context-menu/index.parts";
-import * as Dialog from "../components/dialog/index.parts";
-import * as Drawer from "../components/drawer/index.parts";
-import * as Field from "../components/field/index.parts";
-import * as Fieldset from "../components/fieldset/index.parts";
-import { Form } from "../components/form";
-import { Input } from "../components/input";
-import * as Menu from "../components/menu/index.parts";
-import { Menubar } from "../components/menubar";
-import * as Meter from "../components/meter/index.parts";
-import * as NavigationMenu from "../components/navigation-menu/index.parts";
-import * as NumberField from "../components/number-field/index.parts";
-import * as Popover from "../components/popover/index.parts";
-import * as PreviewCard from "../components/preview-card/index.parts";
-import * as Progress from "../components/progress/index.parts";
-import * as Radio from "../components/radio/index.parts";
-import { RadioGroup } from "../components/radio-group";
-import * as ScrollArea from "../components/scroll-area/index.parts";
-import * as Select from "../components/select/index.parts";
-import { Separator } from "../components/separator";
-import * as Slider from "../components/slider/index.parts";
-import * as Switch from "../components/switch/index.parts";
 import * as Tabs from "../components/tabs/index.parts";
-import * as Toast from "../components/toast/index.parts";
-import { Toggle } from "../components/toggle";
-import { ToggleGroup } from "../components/toggle-group";
-import * as Toolbar from "../components/toolbar/index.parts";
-import * as Tooltip from "../components/tooltip/index.parts";
-import * as Icons from "lucide-react";
+import * as Autocomplete from "@/app/docs/demos/autocomplete/index";
+import * as Avatar from "@/app/docs/demos/avatar/index";
+import * as Button from "@/app/docs/demos/button/index";
+import * as Checkbox from "@/app/docs/demos/checkbox/index";
+import * as Combobox from "@/app/docs/demos/combobox/index";
+import * as Collapsible from "@/app/docs/demos/collapsible/index";
+import * as Drawer from "@/app/docs/demos/drawer/index";
+import * as Dialog from "@/app/docs/demos/dialog/index";
+import * as Field from "@/app/docs/demos/field/index";
+import * as Form from "@/app/docs/demos/form/index";
+import * as Fieldset from "@/app/docs/demos/fieldset/index";
+import * as Input from "@/app/docs/demos/input/index";
+import * as Menu from "@/app/docs/demos/menu/index";
+import * as Menubar from "@/app/docs/demos/menubar/index";
+import * as Meter from "@/app/docs/demos/meter/index";
+import * as Navigation from "@/app/docs/demos/navigation/index";
+import * as Number from "@/app/docs/demos/number/index";
+import * as Popover from "@/app/docs/demos/popover/index";
+import * as PreviewCard from "@/app/docs/demos/preview/index";
+import * as Progress from "@/app/docs/demos/progress/index";
+import * as Radio from "@/app/docs/demos/radio/index";
+import * as ScrollArea from "@/app/docs/demos/scroll/index";
+import * as Select from "@/app/docs/demos/select/index";
+import * as Separator from "@/app/docs/demos/separator/index";
+import * as Toast from "@/app/docs/demos/toast/index";
+import * as Slider from "@/app/docs/demos/slider/index";
+import * as Switch from "@/app/docs/demos/switch/index";
+import * as Tab from "@/app/docs/demos/tabs/index";
+import * as Toggle from "@/app/docs/demos/toggle/index";
+import * as Toolbar from "@/app/docs/demos/toolbar/index";
+import * as Tooltip from "@/app/docs/demos/tooltip/index";
 import {
   ChevronRight,
   Menu as MenuIcon,
@@ -51,6 +48,7 @@ import {
   Check,
   Link as LinkIcon,
 } from "lucide-react";
+import * as Icons from "lucide-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
@@ -113,7 +111,7 @@ function decodeChildren(children: React.ReactNode): React.ReactNode {
     return React.cloneElement(
       children,
       {},
-      decodeChildren(childProps.children)
+      decodeChildren(childProps.children),
     );
   }
   if (Array.isArray(children)) {
@@ -125,7 +123,13 @@ function decodeChildren(children: React.ReactNode): React.ReactNode {
 }
 
 /* ─── code block with syntax highlighting + copy button ────────────────── */
-function CodeBlock({ className, children }: { className?: string; children?: React.ReactNode }) {
+function CodeBlock({
+  className,
+  children,
+}: {
+  className?: string;
+  children?: React.ReactNode;
+}) {
   const [copied, setCopied] = React.useState(false);
   const match = /language-(\w+)/.exec(className ?? "");
   const language = match ? match[1] : "text";
@@ -148,7 +152,11 @@ function CodeBlock({ className, children }: { className?: string; children?: Rea
           onClick={handleCopy}
           className="flex items-center gap-1.5 text-[11px] text-zinc-400 hover:text-zinc-100 transition-colors px-2 py-1 rounded hover:bg-white/10"
         >
-          {copied ? <Check size={12} className="text-green-400" /> : <Copy size={12} />}
+          {copied ? (
+            <Check size={12} className="text-green-400" />
+          ) : (
+            <Copy size={12} />
+          )}
           {copied ? "Copied!" : "Copy"}
         </button>
       </div>
@@ -214,7 +222,7 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
   const headings = activeDoc ? extractHeadings(activeDoc.raw) : [];
 
   const filteredDocs = docs.filter((d) =>
-    d.label.toLowerCase().includes(search.toLowerCase())
+    d.label.toLowerCase().includes(search.toLowerCase()),
   );
 
   function navigate(slug: string) {
@@ -323,14 +331,41 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
                 <MDXRemote
                   {...activeDoc.content}
                   components={{
-                    Accordion, AlertDialog, Autocomplete, Avatar, Button,
-                    Checkbox, Collapsible, Combobox, ContextMenu,
-                    Dialog, Drawer, Field, Fieldset, Form, Input,
-                    Menu, Menubar, Meter, NavigationMenu, NumberField,
-                    Popover, PreviewCard, Progress, Radio, RadioGroup,
-                    ScrollArea, Select, Separator, Slider, Switch,
-                    Tabs, Toast, Toggle, ToggleGroup, Toolbar, Tooltip,
+                    Accordion,
+                    AlertDialog,
+                    Autocomplete,
                     Icons,
+                    Tabs,
+                    Tab,
+                    Avatar,
+                    Button,
+                    Checkbox,
+                    Drawer,
+                    Dialog,
+                    Collapsible,
+                    Combobox,
+                    Field,
+                    Form,
+                    Fieldset,
+                    Input,
+                    Menu,
+                    Menubar,
+                    Meter,
+                    Navigation,
+                    Popover,
+                    Number,
+                    PreviewCard,
+                    Progress,
+                    Radio,
+                    ScrollArea,
+                    Select,
+                    Separator,
+                    Toast,
+                    Slider,
+                    Switch,
+                    Toggle,
+                    Toolbar,
+                    Tooltip,
                     Subtitle: ({ children }: any) => (
                       <p className="text-sm text-muted-foreground mt-0 mb-6 leading-relaxed">
                         {children}
@@ -378,24 +413,37 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
 
                     /* ── paragraph & inline ── */
                     p: (props: any) => (
-                      <p className="text-sm text-muted-foreground leading-7 mb-4" {...props} />
+                      <p
+                        className="text-sm text-muted-foreground leading-7"
+                        {...props}
+                      />
                     ),
                     strong: (props: any) => (
-                      <strong className="font-semibold text-foreground" {...props} />
+                      <strong
+                        className="font-semibold text-foreground"
+                        {...props}
+                      />
                     ),
                     em: (props: any) => (
                       <em className="italic text-muted-foreground" {...props} />
                     ),
                     // Soporte para tachado (GFM)
                     del: (props: any) => (
-                      <del className="line-through text-muted-foreground" {...props} />
+                      <del
+                        className="line-through text-muted-foreground"
+                        {...props}
+                      />
                     ),
                     a: ({ href, children, ...props }: any) => (
                       <a
                         href={href}
                         className="text-primary underline underline-offset-4 decoration-primary/40 hover:decoration-primary transition-colors duration-100"
                         target={href?.startsWith("http") ? "_blank" : undefined}
-                        rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
+                        rel={
+                          href?.startsWith("http")
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
                         {...props}
                       >
                         {children}
@@ -415,7 +463,9 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
                         {...props}
                       />
                     ),
-                    li: (props: any) => <li className="leading-7 pl-1" {...props} />,
+                    li: (props: any) => (
+                      <li className="leading-7 pl-1" {...props} />
+                    ),
 
                     /* ── blockquote ── */
                     blockquote: (props: any) => (
@@ -471,16 +521,16 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
 
                     /* ── table (GFM Support) ── */
                     table: (props: any) => {
-                      const isMetadataTable = props.children?.props?.children?.some(
-                        (child: any) => {
-                          const firstCell = child?.props?.children?.[0]?.props?.children;
+                      const isMetadataTable =
+                        props.children?.props?.children?.some((child: any) => {
+                          const firstCell =
+                            child?.props?.children?.[0]?.props?.children;
                           return (
                             typeof firstCell === "string" &&
                             (firstCell.toLowerCase() === "key" ||
                               firstCell.toLowerCase() === "tags")
                           );
-                        }
-                      );
+                        });
 
                       if (isMetadataTable) {
                         return null;
@@ -488,7 +538,10 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
 
                       return (
                         <div className="my-6 overflow-x-auto rounded-lg border-2 border-primary/20 shadow-sm">
-                          <table className="w-full border-collapse text-sm" {...props} />
+                          <table
+                            className="w-full border-collapse text-sm"
+                            {...props}
+                          />
                         </div>
                       );
                     },
@@ -503,13 +556,20 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
                       <tbody className="divide-y divide-border/30" {...props} />
                     ),
                     th: (props: any) => {
-                      const text = typeof props.children === "string" ? props.children : "";
+                      const text =
+                        typeof props.children === "string"
+                          ? props.children
+                          : "";
                       let colorClass = "text-foreground";
 
-                      if (text.toLowerCase() === "type") colorClass = "text-blue-600 dark:text-blue-400";
-                      else if (text.toLowerCase() === "required") colorClass = "text-orange-600 dark:text-orange-400";
-                      else if (text.toLowerCase() === "default") colorClass = "text-purple-600 dark:text-purple-400";
-                      else if (text.toLowerCase() === "prop") colorClass = "text-green-600 dark:text-green-400";
+                      if (text.toLowerCase() === "type")
+                        colorClass = "text-blue-600 dark:text-blue-400";
+                      else if (text.toLowerCase() === "required")
+                        colorClass = "text-orange-600 dark:text-orange-400";
+                      else if (text.toLowerCase() === "default")
+                        colorClass = "text-purple-600 dark:text-purple-400";
+                      else if (text.toLowerCase() === "prop")
+                        colorClass = "text-green-600 dark:text-green-400";
 
                       return (
                         <th
@@ -559,7 +619,10 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
                       `}
                     >
                       {h.level === 3 && (
-                        <ChevronRight size={10} className="inline-block mr-1 -mt-px opacity-40" />
+                        <ChevronRight
+                          size={10}
+                          className="inline-block mr-1 -mt-px opacity-40"
+                        />
                       )}
                       {h.text}
                     </a>

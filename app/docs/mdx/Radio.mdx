@@ -1,163 +1,149 @@
 ---
 title: Radio
+description: An easily stylable radio button component for selecting one option from a group.
 ---
 
 # Radio
 
-## Examples
-
-### Example 1 — Basic radio group
+Un radio button accesible y estilizable. `Radio.Root` renderiza un `<span>` con un `<input>` oculto a su lado — siempre se envuelve en un `<label>` para máxima accesibilidad. `RadioGroup` gestiona el estado compartido.
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
-```tsx
-import * as Radio from './radio/index.parts';
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+    <Radio.RadioGroupBasic />
+  </Tabs.Panel>
+  <Tabs.Panel className="p-0 outline-none" value="code">
+    ```tsx
+    import { Radio } from "@base-ui-components/react/radio";
+    import { RadioGroup } from "@base-ui-components/react/radio-group";
 
-export default function BasicRadioGroup() {
-  return (
-    <Radio.Group defaultValue="option1" className="flex flex-col gap-2">
-      {['Option A', 'Option B', 'Option C'].map((label, i) => (
-        <Radio.Root key={label} value={`option${i + 1}`} className="flex items-center gap-2 cursor-pointer">
-          <Radio.Indicator className="size-4 rounded-full border border-gray-300 flex items-center justify-center data-[checked]:border-blue-600">
-            <span className="size-2 rounded-full bg-blue-600 opacity-0 data-[checked]:opacity-100" />
-          </Radio.Indicator>
-          <span className="text-sm text-gray-700">{label}</span>
-        </Radio.Root>
-      ))}
-    </Radio.Group>
-  );
-}
-```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Radio.Group defaultValue="option1" className="flex flex-col gap-2">
-          <Radio.Root value="option1" className="flex items-center gap-2 cursor-pointer">
-            <Radio.Indicator className="size-4 rounded-full border border-gray-300 flex items-center justify-center data-[checked]:border-blue-600"><span className="size-2 rounded-full bg-blue-600 opacity-0 data-[checked]:opacity-100" /></Radio.Indicator>
-            <span className="text-sm text-gray-700">Option A</span>
-          </Radio.Root>
-          <Radio.Root value="option2" className="flex items-center gap-2 cursor-pointer">
-            <Radio.Indicator className="size-4 rounded-full border border-gray-300 flex items-center justify-center data-[checked]:border-blue-600"><span className="size-2 rounded-full bg-blue-600 opacity-0 data-[checked]:opacity-100" /></Radio.Indicator>
-            <span className="text-sm text-gray-700">Option B</span>
-          </Radio.Root>
-          <Radio.Root value="option3" className="flex items-center gap-2 cursor-pointer">
-            <Radio.Indicator className="size-4 rounded-full border border-gray-300 flex items-center justify-center data-[checked]:border-blue-600"><span className="size-2 rounded-full bg-blue-600 opacity-0 data-[checked]:opacity-100" /></Radio.Indicator>
-            <span className="text-sm text-gray-700">Option C</span>
-          </Radio.Root>
-        </Radio.Group>
-    </Tabs.Panel>
+    export function RadioGroupBasic() {
+      return (
+        <RadioGroup defaultValue="system" aria-label="Theme">
+          {["Light", "Dark", "System"].map((label) => (
+            <label key={label}>
+              <Radio.Root value={label.toLowerCase()}>
+                <Radio.Indicator />
+              </Radio.Root>
+              {label}
+            </label>
+          ))}
+        </RadioGroup>
+      );
+    }
+    ```
+  </Tabs.Panel>
 </Tabs.Root>
 
-### Example 2 — Card-style radio group
+# Anatomy
+
+```tsx
+import { Radio } from "@base-ui-components/react/radio";
+import { RadioGroup } from "@base-ui-components/react/radio-group";
+
+<RadioGroup>
+  <label>
+    <Radio.Root value="option">
+      <Radio.Indicator />
+    </Radio.Root>
+    Option label
+  </label>
+</RadioGroup>
+```
+
+# Examples
+
+## With Descriptions
+
+Cada opción puede incluir título y descripción. Usa `has-[span[data-checked]]` en el `<label>` para estilizar el contenedor según el estado del radio interior.
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
-```tsx
-const plans = [
-  { value: 'free', label: 'Free', description: 'Up to 3 projects' },
-  { value: 'pro', label: 'Pro', description: '$9/mo, unlimited' },
-  { value: 'team', label: 'Team', description: '$29/mo, 5 seats' },
-];
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[200px] items-center justify-center p-6 outline-none" value="preview">
+    <Radio.RadioGroupWithDescriptions />
+  </Tabs.Panel>
+  <Tabs.Panel className="p-0 outline-none" value="code">
+    ```tsx
+    const plans = [
+      { value: "free", label: "Free", description: "For personal projects." },
+      { value: "pro", label: "Pro", description: "For professionals." },
+      { value: "team", label: "Team", description: "For teams." },
+    ];
 
-export default function CardRadioGroup() {
-  return (
-    <Radio.Group defaultValue="pro" className="flex gap-2">
-      {plans.map(({ value, label, description }) => (
-        <Radio.Root key={value} value={value} className="flex-1 rounded-lg border p-3 cursor-pointer data-[checked]:border-blue-600 data-[checked]:bg-blue-50 border-gray-200">
-          <div className="flex items-center justify-between mb-1">
-            <span className="text-sm font-medium text-gray-800">{label}</span>
-            <Radio.Indicator className="size-4 rounded-full border border-gray-300 flex items-center justify-center data-[checked]:border-blue-600">
-              <span className="size-2 rounded-full bg-blue-600 opacity-0 data-[checked]:opacity-100" />
-            </Radio.Indicator>
-          </div>
-          <p className="text-xs text-gray-400">{description}</p>
-        </Radio.Root>
-      ))}
-    </Radio.Group>
-  );
-}
-```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Radio.Group defaultValue="pro" className="flex gap-2 w-full max-w-sm">
-          <Radio.Root value="free" className="flex-1 rounded-lg border p-3 cursor-pointer data-[checked]:border-blue-600 data-[checked]:bg-blue-50 border-gray-200">
-            <div className="flex items-center justify-between mb-1"><span className="text-sm font-medium text-gray-800">Free</span><Radio.Indicator className="size-4 rounded-full border border-gray-300 flex items-center justify-center data-[checked]:border-blue-600"><span className="size-2 rounded-full bg-blue-600 opacity-0 data-[checked]:opacity-100" /></Radio.Indicator></div>
-            <p className="text-xs text-gray-400">Up to 3 projects</p>
-          </Radio.Root>
-          <Radio.Root value="pro" className="flex-1 rounded-lg border p-3 cursor-pointer data-[checked]:border-blue-600 data-[checked]:bg-blue-50 border-gray-200">
-            <div className="flex items-center justify-between mb-1"><span className="text-sm font-medium text-gray-800">Pro</span><Radio.Indicator className="size-4 rounded-full border border-gray-300 flex items-center justify-center data-[checked]:border-blue-600"><span className="size-2 rounded-full bg-blue-600 opacity-0 data-[checked]:opacity-100" /></Radio.Indicator></div>
-            <p className="text-xs text-gray-400">$9/mo, unlimited</p>
-          </Radio.Root>
-          <Radio.Root value="team" className="flex-1 rounded-lg border p-3 cursor-pointer data-[checked]:border-blue-600 data-[checked]:bg-blue-50 border-gray-200">
-            <div className="flex items-center justify-between mb-1"><span className="text-sm font-medium text-gray-800">Team</span><Radio.Indicator className="size-4 rounded-full border border-gray-300 flex items-center justify-center data-[checked]:border-blue-600"><span className="size-2 rounded-full bg-blue-600 opacity-0 data-[checked]:opacity-100" /></Radio.Indicator></div>
-            <p className="text-xs text-gray-400">$29/mo, 5 seats</p>
-          </Radio.Root>
-        </Radio.Group>
-    </Tabs.Panel>
+    export function RadioGroupWithDescriptions() {
+      return (
+        <RadioGroup defaultValue="pro" aria-label="Billing plan">
+          {plans.map(({ value, label, description }) => (
+            <label
+              key={value}
+              className="has-[span[data-checked]]:border-primary has-[span[data-checked]]:bg-primary/5"
+            >
+              <Radio.Root value={value}>
+                <Radio.Indicator />
+              </Radio.Root>
+              <div>
+                <p>{label}</p>
+                <p>{description}</p>
+              </div>
+            </label>
+          ))}
+        </RadioGroup>
+      );
+    }
+    ```
+  </Tabs.Panel>
 </Tabs.Root>
 
-### Example 3 — Radio group with disabled option
+## Controlled
+
+Usa `value` + `onValueChange` para controlar el estado externamente. Las opciones individuales aceptan `disabled`.
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
-```tsx
-export default function DisabledRadio() {
-  return (
-    <Radio.Group defaultValue="email" className="flex flex-col gap-2">
-      <Radio.Root value="email" className="flex items-center gap-2 cursor-pointer">
-        <Radio.Indicator className="size-4 rounded-full border border-gray-300 data-[checked]:border-blue-600 flex items-center justify-center">
-          <span className="size-2 rounded-full bg-blue-600 opacity-0 data-[checked]:opacity-100" />
-        </Radio.Indicator>
-        <span className="text-sm text-gray-700">Email</span>
-      </Radio.Root>
-      <Radio.Root value="sms" className="flex items-center gap-2 cursor-pointer">
-        <Radio.Indicator className="size-4 rounded-full border border-gray-300 data-[checked]:border-blue-600 flex items-center justify-center">
-          <span className="size-2 rounded-full bg-blue-600 opacity-0 data-[checked]:opacity-100" />
-        </Radio.Indicator>
-        <span className="text-sm text-gray-700">SMS</span>
-      </Radio.Root>
-      <Radio.Root value="push" disabled className="flex items-center gap-2 cursor-not-allowed opacity-40">
-        <Radio.Indicator className="size-4 rounded-full border border-gray-300 flex items-center justify-center">
-          <span className="size-2 rounded-full bg-gray-400 opacity-0" />
-        </Radio.Indicator>
-        <span className="text-sm text-gray-400">Push (unavailable)</span>
-      </Radio.Root>
-    </Radio.Group>
-  );
-}
-```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Radio.Group defaultValue="email" className="flex flex-col gap-2">
-          <Radio.Root value="email" className="flex items-center gap-2 cursor-pointer">
-            <Radio.Indicator className="size-4 rounded-full border border-gray-300 data-[checked]:border-blue-600 flex items-center justify-center"><span className="size-2 rounded-full bg-blue-600 opacity-0 data-[checked]:opacity-100" /></Radio.Indicator>
-            <span className="text-sm text-gray-700">Email</span>
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[180px] items-center justify-center p-6 outline-none" value="preview">
+    <Radio.RadioGroupControlled />
+  </Tabs.Panel>
+  <Tabs.Panel className="p-0 outline-none" value="code">
+    ```tsx
+    export function RadioGroupControlled() {
+      const [value, setValue] = React.useState("mentions");
+
+      return (
+        <RadioGroup
+          value={value}
+          onValueChange={(v) => setValue(v as string)}
+          aria-label="Notifications"
+        >
+          <Radio.Root value="all">
+            <Radio.Indicator />
           </Radio.Root>
-          <Radio.Root value="sms" className="flex items-center gap-2 cursor-pointer">
-            <Radio.Indicator className="size-4 rounded-full border border-gray-300 data-[checked]:border-blue-600 flex items-center justify-center"><span className="size-2 rounded-full bg-blue-600 opacity-0 data-[checked]:opacity-100" /></Radio.Indicator>
-            <span className="text-sm text-gray-700">SMS</span>
+          All activity
+
+          <Radio.Root value="mentions">
+            <Radio.Indicator />
           </Radio.Root>
-          <Radio.Root value="push" disabled className="flex items-center gap-2 cursor-not-allowed opacity-40">
-            <Radio.Indicator className="size-4 rounded-full border border-gray-300 flex items-center justify-center"><span className="size-2 rounded-full bg-gray-400 opacity-0" /></Radio.Indicator>
-            <span className="text-sm text-gray-400">Push (unavailable)</span>
+          Mentions only
+
+          <Radio.Root value="none" disabled>
+            <Radio.Indicator />
           </Radio.Root>
-        </Radio.Group>
-    </Tabs.Panel>
+          None
+        </RadioGroup>
+      );
+    }
+    ```
+  </Tabs.Panel>
 </Tabs.Root>
+
 
 ## RadioIndicator
 

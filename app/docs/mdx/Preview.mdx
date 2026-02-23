@@ -1,8 +1,180 @@
 ---
-title: Preview
+title: Preview Card
+description: A popup that appears when a link is hovered, showing a preview for sighted users.
 ---
 
-# Preview
+# Preview Card
+
+Un popup que aparece al hacer hover sobre un link, mostrando una vista previa del contenido enlazado. El trigger renderiza un `<a>` nativo — está diseñado exclusivamente para hover, no para click.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+    <PreviewCard.PreviewCardBasic />
+  </Tabs.Panel>
+  <Tabs.Panel className="p-0 outline-none" value="code">
+    ```tsx
+    import { PreviewCard } from "@base-ui-components/react/preview-card";
+
+    export function PreviewCardBasic() {
+      return (
+        <p>
+          The principles of good{" "}
+          <PreviewCard.Root>
+            <PreviewCard.Trigger
+              href="https://en.wikipedia.org/wiki/Typography"
+              target="_blank"
+            >
+              typography
+            </PreviewCard.Trigger>
+            <PreviewCard.Portal>
+              <PreviewCard.Positioner sideOffset={8}>
+                <PreviewCard.Popup>
+                  <img src="..." alt="..." />
+                  <div>
+                    <p>Typography</p>
+                    <Icons.ExternalLink />
+                    <p>
+                      The art and science of arranging type to make written
+                      language legible, readable, and appealing.
+                    </p>
+                  </div>
+                </PreviewCard.Popup>
+              </PreviewCard.Positioner>
+            </PreviewCard.Portal>
+          </PreviewCard.Root>{" "}
+          remain essential in the digital age.
+        </p>
+      );
+    }
+    ```
+  </Tabs.Panel>
+</Tabs.Root>
+
+# Anatomy
+
+```tsx
+import { PreviewCard } from "@base-ui-components/react/preview-card";
+
+<PreviewCard.Root>
+  <PreviewCard.Trigger href="..." />
+  <PreviewCard.Portal>
+    <PreviewCard.Positioner>
+      <PreviewCard.Popup>
+        {/* free content */}
+      </PreviewCard.Popup>
+    </PreviewCard.Positioner>
+  </PreviewCard.Portal>
+</PreviewCard.Root>
+```
+
+# Examples
+
+## Multiple Triggers
+
+Usa `PreviewCard.createHandle()` y el prop `payload` para que múltiples links compartan un solo `PreviewCard.Root` mostrando contenido diferente según el trigger activo.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+    <PreviewCard.PreviewCardMultipleTriggers />
+  </Tabs.Panel>
+  <Tabs.Panel className="p-0 outline-none" value="code">
+    ```tsx
+    type RepoPayload = {
+      name: string;
+      description: string;
+      stars: string;
+      forks: string;
+      watchers: string;
+      language: string;
+      languageColor: string;
+    };
+
+    const repos: Record<string, RepoPayload> = {
+      react: {
+        name: "facebook/react",
+        description: "The library for web and native user interfaces.",
+        stars: "224k",
+        forks: "45.8k",
+        watchers: "6.7k",
+        language: "JavaScript",
+        languageColor: "#f1e05a",
+      },
+      // ...
+    };
+
+    // Handle creado fuera del componente — se comparte entre triggers
+    const multiHandle = PreviewCard.createHandle<RepoPayload>();
+
+    export function PreviewCardMultipleTriggers() {
+      return (
+        <p>
+          Popular projects include{" "}
+          <PreviewCard.Trigger
+            handle={multiHandle}
+            href="https://github.com/facebook/react"
+            target="_blank"
+            payload={repos.react}
+          >
+            React
+          </PreviewCard.Trigger>
+          ,{" "}
+          <PreviewCard.Trigger
+            handle={multiHandle}
+            href="https://github.com/tailwindlabs/tailwindcss"
+            target="_blank"
+            payload={repos.tailwind}
+          >
+            Tailwind CSS
+          </PreviewCard.Trigger>
+          , and{" "}
+          <PreviewCard.Trigger
+            handle={multiHandle}
+            href="https://github.com/mui/base-ui"
+            target="_blank"
+            payload={repos.baseui}
+          >
+            Base UI
+          </PreviewCard.Trigger>
+          .
+
+          {/* Un solo Root para todos los triggers */}
+          <PreviewCard.Root handle={multiHandle}>
+            {({ payload }) => (
+              <PreviewCard.Portal>
+                <PreviewCard.Positioner sideOffset={8}>
+                  <PreviewCard.Popup>
+                    {payload !== undefined && (
+                      <div>
+                        <p>{payload.name}</p>
+                        <p>{payload.description}</p>
+                        <div>
+                          <span style={{ backgroundColor: payload.languageColor }} />
+                          {payload.language}
+                          <Icons.Star /> {payload.stars}
+                          <Icons.GitFork /> {payload.forks}
+                          <Icons.Eye /> {payload.watchers}
+                        </div>
+                      </div>
+                    )}
+                  </PreviewCard.Popup>
+                </PreviewCard.Positioner>
+              </PreviewCard.Portal>
+            )}
+          </PreviewCard.Root>
+        </p>
+      );
+    }
+    ```
+  </Tabs.Panel>
+</Tabs.Root>
 
 ## PreviewCardArrow
 

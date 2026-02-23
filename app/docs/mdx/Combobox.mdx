@@ -4,37 +4,54 @@ title: Combobox
 
 # Combobox
 
-## Examples
+A text input that provides a list of suggested options, allowing users to select an existing value or type a new one.
 
-### Example 1 — Basic single-select combobox
+Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
 ```tsx
-import * as Combobox from './combobox/index.parts';
+import * as React from 'react';
+import { Combobox } from '@base-ui/react/combobox';
+import { ChevronDown, Check } from 'lucide-react';
 
-const fruits = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape'];
+const frameworks = ['React', 'Vue', 'Angular', 'Svelte', 'Ember', 'Solid', 'Next.js'];
 
-export default function BasicCombobox() {
+export function ComboboxDefault() {
   return (
-    <Combobox.Root items={fruits}>
-      <Combobox.Trigger className="flex h-9 w-56 items-center justify-between rounded-md border border-gray-200 bg-white px-3 text-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <Combobox.Value placeholder="Select a fruit..." />
-        <Combobox.Icon />
-      </Combobox.Trigger>
+    <Combobox.Root className="relative w-72">
+      <div className="flex h-10 w-full items-center justify-between rounded-lg border border-input bg-card px-3 text-sm text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
+        <Combobox.Input 
+          className="flex-1 bg-transparent outline-none placeholder:text-muted-foreground" 
+          placeholder="Selecciona un framework..." 
+        />
+        <Combobox.Trigger className="ml-2 shrink-0 text-muted-foreground hover:text-foreground">
+          <Icons.ChevronDown className="size-4" />
+        </Combobox.Trigger>
+      </div>
+      
       <Combobox.Portal>
-        <Combobox.Positioner sideOffset={4}>
-          <Combobox.Popup className="w-56 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
-            <Combobox.Input className="mx-2 my-1 w-[calc(100%-16px)] rounded border border-gray-200 px-3 py-1.5 text-sm outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search..." />
-            <Combobox.List className="max-h-48 overflow-y-auto">
-              {fruits.map((fruit) => (
-                <Combobox.Item key={fruit} value={fruit} className="flex cursor-pointer items-center px-3 py-2 text-sm hover:bg-gray-100 data-[highlighted]:bg-gray-100">
-                  {fruit}
+        <Combobox.Positioner className="z-50 w-[var(--anchor-width)]" sideOffset={4}>
+          <Combobox.Popup className="overflow-hidden rounded-lg border border-border bg-popover p-1 text-popover-foreground shadow-md outline-none">
+            <Combobox.List className="max-h-60 overflow-y-auto">
+              <Combobox.Empty className="py-6 text-center text-sm text-muted-foreground">
+                No se encontraron resultados.
+              </Combobox.Empty>
+              {frameworks.map((fw) => (
+                <Combobox.Item 
+                  key={fw} 
+                  value={fw} 
+                  className="relative flex w-full cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[highlighted]:bg-primary data-[highlighted]:text-primary-foreground"
+                >
+                  <Combobox.ItemIndicator className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+                    <Icons.Check className="size-4" strokeWidth={3} />
+                  </Combobox.ItemIndicator>
+                  {fw}
                 </Combobox.Item>
               ))}
             </Combobox.List>
@@ -44,171 +61,120 @@ export default function BasicCombobox() {
     </Combobox.Root>
   );
 }
+
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Combobox.Root items={["Apple","Banana","Cherry","Date","Elderberry","Fig","Grape"]}>
-          <Combobox.Trigger className="flex h-9 w-56 items-center justify-between rounded-md border border-gray-200 bg-white px-3 text-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <Combobox.Value placeholder="Select a fruit..." />
-            <Combobox.Icon />
-          </Combobox.Trigger>
-          <Combobox.Portal>
-            <Combobox.Positioner sideOffset={4}>
-              <Combobox.Popup className="w-56 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
-                <Combobox.Input className="mx-2 my-1 w-[calc(100%-16px)] rounded border border-gray-200 px-3 py-1.5 text-sm outline-none focus:ring-1 focus:ring-blue-500" placeholder="Search..." />
-                <Combobox.List className="max-h-48 overflow-y-auto">
-                  <Combobox.Item value="Apple" className="flex cursor-pointer items-center px-3 py-2 text-sm hover:bg-gray-100 data-[highlighted]:bg-gray-100">Apple</Combobox.Item>
-                  <Combobox.Item value="Banana" className="flex cursor-pointer items-center px-3 py-2 text-sm hover:bg-gray-100 data-[highlighted]:bg-gray-100">Banana</Combobox.Item>
-                  <Combobox.Item value="Cherry" className="flex cursor-pointer items-center px-3 py-2 text-sm hover:bg-gray-100 data-[highlighted]:bg-gray-100">Cherry</Combobox.Item>
-                  <Combobox.Item value="Date" className="flex cursor-pointer items-center px-3 py-2 text-sm hover:bg-gray-100 data-[highlighted]:bg-gray-100">Date</Combobox.Item>
-                  <Combobox.Item value="Grape" className="flex cursor-pointer items-center px-3 py-2 text-sm hover:bg-gray-100 data-[highlighted]:bg-gray-100">Grape</Combobox.Item>
-                </Combobox.List>
-              </Combobox.Popup>
-            </Combobox.Positioner>
-          </Combobox.Portal>
-        </Combobox.Root>
-    </Tabs.Panel>
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[250px] items-start justify-center p-6 pt-12 outline-none bg-background text-foreground" value="preview">
+<Combobox.ComboboxDefault />
+</Tabs.Panel>
 </Tabs.Root>
 
-### Example 2 — Combobox with grouped items
+# Anatomy
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
 ```tsx
-const items = ['React', 'Vue', 'Svelte', 'Python', 'Ruby', 'Go'];
+import { Combobox } from '@base-ui/react/combobox';
 
-export default function GroupedCombobox() {
-  return (
-    <Combobox.Root items={items}>
-      <Combobox.Trigger className="flex h-9 w-56 items-center justify-between rounded-md border border-gray-200 px-3 text-sm hover:bg-gray-50">
-        <Combobox.Value placeholder="Select technology..." />
-        <Combobox.Icon />
-      </Combobox.Trigger>
-      <Combobox.Portal>
-        <Combobox.Positioner sideOffset={4}>
-          <Combobox.Popup className="w-56 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
-            <Combobox.Input className="mx-2 my-1 w-[calc(100%-16px)] rounded border border-gray-200 px-3 py-1.5 text-sm outline-none" placeholder="Search..." />
-            <Combobox.List className="max-h-48 overflow-y-auto">
-              <Combobox.Group>
-                <Combobox.GroupLabel className="px-3 py-1 text-xs font-semibold uppercase text-gray-400">Frontend</Combobox.GroupLabel>
-                {['React', 'Vue', 'Svelte'].map(f => (
-                  <Combobox.Item key={f} value={f} className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100">{f}</Combobox.Item>
-                ))}
-              </Combobox.Group>
-              <Combobox.Separator className="my-1 border-t border-gray-100" />
-              <Combobox.Group>
-                <Combobox.GroupLabel className="px-3 py-1 text-xs font-semibold uppercase text-gray-400">Backend</Combobox.GroupLabel>
-                {['Python', 'Ruby', 'Go'].map(b => (
-                  <Combobox.Item key={b} value={b} className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100">{b}</Combobox.Item>
-                ))}
-              </Combobox.Group>
-            </Combobox.List>
-          </Combobox.Popup>
-        </Combobox.Positioner>
-      </Combobox.Portal>
-    </Combobox.Root>
-  );
-}
+<Combobox.Root>
+  <Combobox.Input />
+  <Combobox.Trigger>
+    <Combobox.Icon />
+  </Combobox.Trigger>
+  <Combobox.Portal>
+    <Combobox.Positioner>
+      <Combobox.Popup>
+        <Combobox.List>
+          <Combobox.Item>
+            <Combobox.ItemIndicator />
+          </Combobox.Item>
+        </Combobox.List>
+      </Combobox.Popup>
+    </Combobox.Positioner>
+  </Combobox.Portal>
+</Combobox.Root>
+
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Combobox.Root items={["React","Vue","Svelte","Python","Ruby","Go"]}>
-          <Combobox.Trigger className="flex h-9 w-56 items-center justify-between rounded-md border border-gray-200 px-3 text-sm hover:bg-gray-50">
-            <Combobox.Value placeholder="Select technology..." />
-            <Combobox.Icon />
-          </Combobox.Trigger>
-          <Combobox.Portal>
-            <Combobox.Positioner sideOffset={4}>
-              <Combobox.Popup className="w-56 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
-                <Combobox.Input className="mx-2 my-1 w-[calc(100%-16px)] rounded border border-gray-200 px-3 py-1.5 text-sm outline-none" placeholder="Search..." />
-                <Combobox.List className="max-h-48 overflow-y-auto">
-                  <Combobox.Group>
-                    <Combobox.GroupLabel className="px-3 py-1 text-xs font-semibold uppercase text-gray-400">Frontend</Combobox.GroupLabel>
-                    <Combobox.Item value="React" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">React</Combobox.Item>
-                    <Combobox.Item value="Vue" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Vue</Combobox.Item>
-                    <Combobox.Item value="Svelte" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Svelte</Combobox.Item>
-                  </Combobox.Group>
-                  <Combobox.Separator className="my-1 border-t border-gray-100" />
-                  <Combobox.Group>
-                    <Combobox.GroupLabel className="px-3 py-1 text-xs font-semibold uppercase text-gray-400">Backend</Combobox.GroupLabel>
-                    <Combobox.Item value="Python" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Python</Combobox.Item>
-                    <Combobox.Item value="Ruby" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Ruby</Combobox.Item>
-                    <Combobox.Item value="Go" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Go</Combobox.Item>
-                  </Combobox.Group>
-                </Combobox.List>
-              </Combobox.Popup>
-            </Combobox.Positioner>
-          </Combobox.Portal>
-        </Combobox.Root>
-    </Tabs.Panel>
-</Tabs.Root>
 
-### Example 3 — Custom empty state
+# Examples
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+## Multiple Selection with Chips
+
+Combobox supports multiple selections. You can use the `Combobox.Chips` and `Combobox.Chip` components to render the selected values inside the input area.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+<Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+</Tabs.List>
+<Tabs.Panel value="code">
+
 ```tsx
-const items = ['Design', 'Engineering', 'Marketing', 'Sales'];
+import * as React from 'react';
+import { Combobox } from '@base-ui/react/combobox';
+import { Check, X } from 'lucide-react';
 
-export default function ComboboxWithEmpty() {
+const frameworks = ['React', 'Vue', 'Angular', 'Svelte', 'Ember', 'Solid', 'Next.js'];
+
+export function ComboboxMultiple() {
+  const [value, setValue] = React.useState<string[]>(['React', 'Vue']);
+
   return (
-    <Combobox.Root items={items}>
-      <Combobox.Trigger className="flex h-9 w-56 items-center justify-between rounded-md border border-gray-200 px-3 text-sm hover:bg-gray-50">
-        <Combobox.Value placeholder="Choose department..." />
-        <Combobox.Icon />
-      </Combobox.Trigger>
+    <Combobox.Root multiple value={value} onValueChange={setValue} className="relative w-full max-w-md">
+      <div className="flex min-h-10 w-full flex-wrap items-center gap-1.5 rounded-lg border border-input bg-card p-1.5 text-sm text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
+        <Combobox.Chips className="flex flex-wrap items-center gap-1.5">
+          {value.map((val) => (
+            <Combobox.Chip 
+              key={val} 
+              value={val}
+              className="flex items-center gap-1 rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground"
+            >
+              {val}
+              <Combobox.ChipRemove className="ml-1 rounded-full text-muted-foreground hover:bg-muted-foreground/20 hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
+                <Icons.X className="size-3" />
+              </Combobox.ChipRemove>
+            </Combobox.Chip>
+          ))}
+        </Combobox.Chips>
+        <Combobox.Input 
+          className="flex-1 min-w-[120px] bg-transparent px-2 py-1 outline-none placeholder:text-muted-foreground" 
+          placeholder="Añadir más..." 
+        />
+      </div>
+      
       <Combobox.Portal>
-        <Combobox.Positioner sideOffset={4}>
-          <Combobox.Popup className="w-56 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
-            <Combobox.Input className="mx-2 my-1 w-[calc(100%-16px)] rounded border border-gray-200 px-3 py-1.5 text-sm outline-none" placeholder="Search departments..." />
-            <Combobox.List className="max-h-40 overflow-y-auto">
-              {items.map(item => (
-                <Combobox.Item key={item} value={item} className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">{item}</Combobox.Item>
+        <Combobox.Positioner className="z-50 w-[var(--anchor-width)]" sideOffset={4}>
+          <Combobox.Popup className="overflow-hidden rounded-lg border border-border bg-popover p-1 text-popover-foreground shadow-md outline-none">
+            <Combobox.List className="max-h-60 overflow-y-auto">
+              <Combobox.Empty className="py-6 text-center text-sm text-muted-foreground">
+                No hay más opciones.
+              </Combobox.Empty>
+              {frameworks.map((fw) => (
+                <Combobox.Item 
+                  key={fw} 
+                  value={fw} 
+                  className="relative flex w-full cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[highlighted]:bg-primary data-[highlighted]:text-primary-foreground"
+                >
+                  <Combobox.ItemIndicator className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+                    <Icons.Check className="size-4" strokeWidth={3} />
+                  </Combobox.ItemIndicator>
+                  {fw}
+                </Combobox.Item>
               ))}
             </Combobox.List>
-            <Combobox.Empty className="px-3 py-4 text-center text-sm text-gray-400">
-              No departments found.
-            </Combobox.Empty>
           </Combobox.Popup>
         </Combobox.Positioner>
       </Combobox.Portal>
     </Combobox.Root>
   );
 }
+
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Combobox.Root items={["Design","Engineering","Marketing","Sales"]}>
-          <Combobox.Trigger className="flex h-9 w-56 items-center justify-between rounded-md border border-gray-200 px-3 text-sm hover:bg-gray-50">
-            <Combobox.Value placeholder="Choose department..." />
-            <Combobox.Icon />
-          </Combobox.Trigger>
-          <Combobox.Portal>
-            <Combobox.Positioner sideOffset={4}>
-              <Combobox.Popup className="w-56 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
-                <Combobox.Input className="mx-2 my-1 w-[calc(100%-16px)] rounded border border-gray-200 px-3 py-1.5 text-sm outline-none" placeholder="Search departments..." />
-                <Combobox.List className="max-h-40 overflow-y-auto">
-                  <Combobox.Item value="Design" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Design</Combobox.Item>
-                  <Combobox.Item value="Engineering" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Engineering</Combobox.Item>
-                  <Combobox.Item value="Marketing" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Marketing</Combobox.Item>
-                  <Combobox.Item value="Sales" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100">Sales</Combobox.Item>
-                </Combobox.List>
-                <Combobox.Empty className="px-3 py-4 text-center text-sm text-gray-400">No departments found.</Combobox.Empty>
-              </Combobox.Popup>
-            </Combobox.Positioner>
-          </Combobox.Portal>
-        </Combobox.Root>
-    </Tabs.Panel>
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[300px] items-start justify-center p-6 pt-12 outline-none bg-background text-foreground" value="preview">
+<Combobox.ComboboxMultiple />
+</Tabs.Panel>
 </Tabs.Root>
 
 ## ComboboxArrow
@@ -682,7 +648,3 @@ Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
 | Prop | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
 | **placeholder** | `ReactNode` | — | The placeholder value to display when no value is selected.<br/>This is overridden by `children` if specified, or by a null item's label in `items`. |
-
-
----
-

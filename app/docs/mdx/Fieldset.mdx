@@ -4,6 +4,151 @@ title: Fieldset
 
 # Fieldset
 
+A component used to group related form controls and labels, making forms more accessible and easier to navigate.
+
+Documentation: [Base UI Fieldset](https://base-ui.com/react/components/fieldset)
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
+```tsx
+import * as React from 'react';
+import { Fieldset } from '@base-ui/react/fieldset';
+import { Field } from '@base-ui/react/field';
+import { Checkbox } from '@base-ui/react/checkbox';
+import { Check } from 'lucide-react';
+
+const checkboxBase =
+  'flex size-5 shrink-0 items-center justify-center rounded-md border border-input bg-card text-card-foreground shadow-sm transition-colors duration-150 hover:border-border focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring data-[checked]:border-primary data-[checked]:bg-primary data-[checked]:text-primary-foreground disabled:cursor-not-allowed disabled:opacity-50';
+
+export function FieldsetDefault() {
+  return (
+    <form className="w-full max-w-sm">
+      <Fieldset.Root className="flex flex-col gap-4 rounded-xl border border-border bg-card p-5 shadow-sm">
+        <div className="flex flex-col gap-1">
+          <Fieldset.Legend className="text-base font-semibold text-foreground">
+            Preferencias de Notificaciones
+          </Fieldset.Legend>
+          <p className="text-sm text-muted-foreground">
+            Elige cómo quieres recibir las actualizaciones.
+          </p>
+        </div>
+        
+        <div className="flex flex-col gap-3">
+          <Field.Root className="flex items-center gap-3">
+            <Checkbox.Root id="email-notif" defaultChecked className={checkboxBase}>
+              <Checkbox.Indicator className="flex items-center justify-center">
+                <Icons.Check className="size-3.5" strokeWidth={3} />
+              </Checkbox.Indicator>
+            </Checkbox.Root>
+            <Field.Label htmlFor="email-notif" className="text-sm font-medium text-foreground cursor-pointer select-none">
+              Correos electrónicos
+            </Field.Label>
+          </Field.Root>
+
+          <Field.Root className="flex items-center gap-3">
+            <Checkbox.Root id="sms-notif" className={checkboxBase}>
+              <Checkbox.Indicator className="flex items-center justify-center">
+                <Icons.Check className="size-3.5" strokeWidth={3} />
+              </Checkbox.Indicator>
+            </Checkbox.Root>
+            <Field.Label htmlFor="sms-notif" className="text-sm font-medium text-foreground cursor-pointer select-none">
+              Mensajes SMS
+            </Field.Label>
+          </Field.Root>
+        </div>
+      </Fieldset.Root>
+    </form>
+  );
+}
+
+```
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[200px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
+<Fieldset.FieldsetDefault />
+</Tabs.Panel>
+</Tabs.Root>
+
+# Anatomy
+
+```tsx
+import { Fieldset } from '@base-ui/react/fieldset';
+
+<Fieldset.Root>
+  <Fieldset.Legend />
+  {/* Form controls */}
+</Fieldset.Root>
+
+```
+
+# Examples
+
+## Disabled State
+
+When the `disabled` prop is applied to the `<Fieldset.Root>`, all form controls inside it are automatically disabled.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+<Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+</Tabs.List>
+<Tabs.Panel value="code">
+
+```tsx
+import * as React from 'react';
+import { Fieldset } from '@base-ui/react/fieldset';
+import { Field } from '@base-ui/react/field';
+
+const inputBase =
+  'flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm text-foreground shadow-sm transition-colors focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50';
+
+export function FieldsetDisabled() {
+  return (
+    <form className="w-full max-w-sm">
+      <Fieldset.Root disabled className="group flex flex-col gap-4 rounded-xl border border-border bg-card p-5 shadow-sm">
+        <div className="flex flex-col gap-1">
+          <Fieldset.Legend className="text-base font-semibold text-foreground group-disabled:text-muted-foreground">
+            Detalles de facturación
+          </Fieldset.Legend>
+          <p className="text-sm text-muted-foreground">
+            No tienes permisos para editar esta sección.
+          </p>
+        </div>
+        
+        <div className="flex flex-col gap-3">
+          <Field.Root className="flex flex-col gap-1.5">
+            <Field.Label className="text-sm font-medium text-muted-foreground">
+              Nombre en la tarjeta
+            </Field.Label>
+            <Field.Control className={inputBase} defaultValue="Jane Doe" />
+          </Field.Root>
+
+          <Field.Root className="flex flex-col gap-1.5">
+            <Field.Label className="text-sm font-medium text-muted-foreground">
+              Número de tarjeta
+            </Field.Label>
+            <Field.Control className={inputBase} defaultValue="**** **** **** 4242" />
+          </Field.Root>
+        </div>
+      </Fieldset.Root>
+    </form>
+  );
+}
+
+```
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[240px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
+<Fieldset.FieldsetDisabled />
+</Tabs.Panel>
+</Tabs.Root>
+ 
 ## FieldsetLegend
 
 An accessible label that is automatically associated with the fieldset.

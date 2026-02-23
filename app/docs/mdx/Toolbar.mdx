@@ -4,134 +4,189 @@ title: Toolbar
 
 # Toolbar
 
-## Examples
+A container for grouping a set of controls, such as buttons, toggle groups, or menus, often used for text editors or application toolbars.
 
-### Example 1 — Basic toolbar
+Documentation: [Base UI Toolbar](https://base-ui.com/react/components/toolbar)
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
 ```tsx
-import * as Toolbar from './toolbar/index.parts';
-import { Save, Share, Trash2 } from 'lucide-react';
+import * as React from 'react';
+import { Toolbar } from '@base-ui/react/toolbar';
+import { Toggle } from '@base-ui/react/toggle';
+import { ToggleGroup } from '@base-ui/react/toggle-group';
+import { Bold, Italic, Strikethrough, AlignLeft, AlignCenter, AlignRight, Link, Image } from 'lucide-react';
 
-export default function BasicToolbar() {
+const toolbarButtonBase =
+  'inline-flex h-9 w-9 items-center justify-center rounded-lg border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground';
+
+export function ToolbarDefault() {
+  const [format, setFormat] = React.useState<string[]>([]);
+  const [align, setAlign] = React.useState<string[]>(['left']);
+
   return (
-    <Toolbar.Root className="flex items-center gap-1 rounded-lg border border-gray-200 bg-white p-1">
-      <Toolbar.Button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-sm text-gray-600 hover:bg-gray-100 outline-none">
-        <Save size={14} /> Save
+    <Toolbar.Root className="flex w-full max-w-2xl flex-wrap items-center gap-2 rounded-xl border border-border bg-card p-2 shadow-sm">
+      <Toolbar.Group className="flex items-center gap-1">
+        <ToggleGroup multiple value={format} onValueChange={setFormat} className="flex gap-1">
+          <Toggle value="bold" className={toolbarButtonBase} aria-label="Bold">
+            <Icons.Bold className="size-4" />
+          </Toggle>
+          <Toggle value="italic" className={toolbarButtonBase} aria-label="Italic">
+            <Icons.Italic className="size-4" />
+          </Toggle>
+          <Toggle value="strikethrough" className={toolbarButtonBase} aria-label="Strikethrough">
+            <Icons.Strikethrough className="size-4" />
+          </Toggle>
+        </ToggleGroup>
+      </Toolbar.Group>
+
+      <Toolbar.Separator className="mx-2 h-5 w-px bg-border" />
+
+      <Toolbar.Group className="flex items-center gap-1">
+        <ToggleGroup value={align} onValueChange={setAlign} className="flex gap-1">
+          <Toggle value="left" className={toolbarButtonBase} aria-label="Align Left">
+            <Icons.AlignLeft className="size-4" />
+          </Toggle>
+          <Toggle value="center" className={toolbarButtonBase} aria-label="Align Center">
+            <Icons.AlignCenter className="size-4" />
+          </Toggle>
+          <Toggle value="right" className={toolbarButtonBase} aria-label="Align Right">
+            <Icons.AlignRight className="size-4" />
+          </Toggle>
+        </ToggleGroup>
+      </Toolbar.Group>
+
+      <Toolbar.Separator className="mx-2 h-5 w-px bg-border" />
+
+      <Toolbar.Group className="flex items-center gap-1">
+        <Toolbar.Button className={toolbarButtonBase} aria-label="Add Link">
+          <Icons.Link className="size-4" />
+        </Toolbar.Button>
+        <Toolbar.Button className={toolbarButtonBase} aria-label="Add Image">
+          <Icons.Image className="size-4" />
+        </Toolbar.Button>
+      </Toolbar.Group>
+    </Toolbar.Root>
+  );
+}
+
+```
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
+<Toolbar.ToolbarDefault />
+</Tabs.Panel>
+</Tabs.Root>
+
+# Anatomy
+
+```tsx
+import { Toolbar } from '@base-ui/react/toolbar';
+
+<Toolbar.Root>
+  <Toolbar.Group>
+    <Toolbar.Button />
+    <Toolbar.Button />
+  </Toolbar.Group>
+  <Toolbar.Separator />
+  <Toolbar.Link />
+</Toolbar.Root>
+
+```
+
+# Examples
+
+## Vertical Orientation
+
+Set `orientation="vertical"` to create a side toolbar.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+<Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+</Tabs.List>
+<Tabs.Panel value="code">
+
+```tsx
+import * as React from 'react';
+import { Toolbar } from '@base-ui/react/toolbar';
+import { Bold, Italic, AlignLeft } from 'lucide-react';
+
+// ... (toolbarButtonBase classes)
+
+export function ToolbarVertical() {
+  return (
+    <Toolbar.Root orientation="vertical" className="flex h-fit w-14 flex-col items-center gap-2 rounded-xl border border-border bg-card py-2 shadow-sm">
+      <Toolbar.Button className={toolbarButtonBase} aria-label="Bold">
+        <Icons.Bold className="size-4" />
       </Toolbar.Button>
-      <Toolbar.Separator className="w-px h-5 bg-gray-200 mx-0.5" />
-      <Toolbar.Button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-sm text-gray-600 hover:bg-gray-100 outline-none">
-        <Share size={14} /> Share
+      <Toolbar.Button className={toolbarButtonBase} aria-label="Italic">
+        <Icons.Italic className="size-4" />
       </Toolbar.Button>
-      <Toolbar.Separator className="w-px h-5 bg-gray-200 mx-0.5" />
-      <Toolbar.Button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-sm text-red-500 hover:bg-red-50 outline-none">
-        <Trash2 size={14} /> Delete
+      <Toolbar.Separator className="my-1 h-px w-5 bg-border" />
+      <Toolbar.Button className={toolbarButtonBase} aria-label="Align Left">
+        <Icons.AlignLeft className="size-4" />
       </Toolbar.Button>
     </Toolbar.Root>
   );
 }
+
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Toolbar.Root className="flex items-center gap-1 rounded-lg border border-gray-200 bg-white p-1">
-          <Toolbar.Button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-sm text-gray-600 hover:bg-gray-100 outline-none"><Icons.Save size={14} /> Save</Toolbar.Button>
-          <Toolbar.Separator className="w-px h-5 bg-gray-200 mx-0.5" />
-          <Toolbar.Button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-sm text-gray-600 hover:bg-gray-100 outline-none"><Icons.Share size={14} /> Share</Toolbar.Button>
-          <Toolbar.Separator className="w-px h-5 bg-gray-200 mx-0.5" />
-          <Toolbar.Button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-sm text-red-500 hover:bg-red-50 outline-none"><Icons.Trash2 size={14} /> Delete</Toolbar.Button>
-        </Toolbar.Root>
-    </Tabs.Panel>
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[220px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
+<Toolbar.ToolbarVertical />
+</Tabs.Panel>
 </Tabs.Root>
 
-### Example 2 — Toolbar with toggle group
+---
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+## With Input
+
+Toolbars can contain inputs for search or other controls, fully integrated with the toolbar's keyboard navigation.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+<Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+</Tabs.List>
+<Tabs.Panel value="code">
+
 ```tsx
-import { Bold, Italic, Underline, AlignLeft, AlignCenter, AlignRight } from 'lucide-react';
+import * as React from 'react';
+import { Toolbar } from '@base-ui/react/toolbar';
 
-const itemClass = "flex h-7 w-7 items-center justify-center rounded text-gray-500 hover:bg-gray-100 data-[state=on]:bg-blue-50 data-[state=on]:text-blue-600 outline-none";
+// ... (toolbarButtonBase classes)
 
-export default function EditorToolbar() {
+export function ToolbarWithInput() {
   return (
-    <Toolbar.Root className="flex items-center gap-1 rounded-lg border border-gray-200 bg-white p-1.5">
-      <ToggleGroup type="multiple" className="flex gap-0.5">
-        <Toggle value="bold" aria-label="Bold" className={itemClass}><Bold size={13} /></Toggle>
-        <Toggle value="italic" aria-label="Italic" className={itemClass}><Italic size={13} /></Toggle>
-        <Toggle value="underline" aria-label="Underline" className={itemClass}><Underline size={13} /></Toggle>
-      </ToggleGroup>
-      <Toolbar.Separator className="w-px h-5 bg-gray-200 mx-1" />
-      <Toolbar.ToggleGroup type="single" defaultValue="left" className="flex gap-0.5">
-        <Toolbar.ToggleItem value="left" aria-label="Left" className={itemClass}><AlignLeft size={13} /></Toolbar.ToggleItem>
-        <Toolbar.ToggleItem value="center" aria-label="Center" className={itemClass}><AlignCenter size={13} /></Toolbar.ToggleItem>
-        <Toolbar.ToggleItem value="right" aria-label="Right" className={itemClass}><AlignRight size={13} /></Toolbar.ToggleItem>
-      </Toolbar.ToggleGroup>
+    <Toolbar.Root className="flex w-full max-w-md items-center gap-2 rounded-xl border border-border bg-card p-2 shadow-sm">
+      <Toolbar.Input 
+        className="flex h-9 w-full rounded-lg border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring placeholder:text-muted-foreground" 
+        placeholder="Buscar herramienta..." 
+      />
+      <Toolbar.Button className={`${toolbarButtonBase} shrink-0 bg-primary text-primary-foreground hover:brightness-95 hover:bg-primary`}>
+        Ir
+      </Toolbar.Button>
     </Toolbar.Root>
   );
 }
-```
-  </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Toolbar.Root className="flex items-center gap-1 rounded-lg border border-gray-200 bg-white p-1.5">
-          <ToggleGroup type="multiple" className="flex gap-0.5">
-            <Toggle value="bold" aria-label="Bold" className="flex h-7 w-7 items-center justify-center rounded text-gray-500 hover:bg-gray-100 data-[state=on]:bg-blue-50 data-[state=on]:text-blue-600 outline-none"><Icons.Bold size={13} /></Toggle>
-            <Toggle value="italic" aria-label="Italic" className="flex h-7 w-7 items-center justify-center rounded text-gray-500 hover:bg-gray-100 data-[state=on]:bg-blue-50 data-[state=on]:text-blue-600 outline-none"><Icons.Italic size={13} /></Toggle>
-            <Toggle value="underline" aria-label="Underline" className="flex h-7 w-7 items-center justify-center rounded text-gray-500 hover:bg-gray-100 data-[state=on]:bg-blue-50 data-[state=on]:text-blue-600 outline-none"><Icons.Underline size={13} /></Toggle>
-          </ToggleGroup>
-          <Toolbar.Separator className="w-px h-5 bg-gray-200 mx-1" />
-          <Toolbar.ToggleGroup type="single" defaultValue="left" className="flex gap-0.5">
-            <Toolbar.ToggleItem value="left" aria-label="Left" className="flex h-7 w-7 items-center justify-center rounded text-gray-500 hover:bg-gray-100 data-[state=on]:bg-blue-50 data-[state=on]:text-blue-600 outline-none"><Icons.AlignLeft size={13} /></Toolbar.ToggleItem>
-            <Toolbar.ToggleItem value="center" aria-label="Center" className="flex h-7 w-7 items-center justify-center rounded text-gray-500 hover:bg-gray-100 data-[state=on]:bg-blue-50 data-[state=on]:text-blue-600 outline-none"><Icons.AlignCenter size={13} /></Toolbar.ToggleItem>
-            <Toolbar.ToggleItem value="right" aria-label="Right" className="flex h-7 w-7 items-center justify-center rounded text-gray-500 hover:bg-gray-100 data-[state=on]:bg-blue-50 data-[state=on]:text-blue-600 outline-none"><Icons.AlignRight size={13} /></Toolbar.ToggleItem>
-          </Toolbar.ToggleGroup>
-        </Toolbar.Root>
-    </Tabs.Panel>
-</Tabs.Root>
 
-### Example 3 — Toolbar with overflow link
-
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
-```tsx
-export default function ToolbarWithLink() {
-  return (
-    <Toolbar.Root className="flex items-center gap-0.5 rounded-full border border-gray-200 bg-white px-2 py-1">
-      <Toolbar.Button className="px-3 py-1 rounded-full text-xs text-gray-600 font-medium hover:bg-gray-100 outline-none">Cut</Toolbar.Button>
-      <Toolbar.Button className="px-3 py-1 rounded-full text-xs text-gray-600 font-medium hover:bg-gray-100 outline-none">Copy</Toolbar.Button>
-      <Toolbar.Button className="px-3 py-1 rounded-full text-xs text-gray-600 font-medium hover:bg-gray-100 outline-none">Paste</Toolbar.Button>
-      <Toolbar.Separator className="w-px h-4 bg-gray-200 mx-1" />
-      <Toolbar.Link href="#" className="px-3 py-1 rounded-full text-xs text-blue-600 font-medium hover:underline outline-none">Docs ↗</Toolbar.Link>
-    </Toolbar.Root>
-  );
-}
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Toolbar.Root className="flex items-center gap-0.5 rounded-full border border-gray-200 bg-white px-2 py-1">
-          <Toolbar.Button className="px-3 py-1 rounded-full text-xs text-gray-600 font-medium hover:bg-gray-100 outline-none">Cut</Toolbar.Button>
-          <Toolbar.Button className="px-3 py-1 rounded-full text-xs text-gray-600 font-medium hover:bg-gray-100 outline-none">Copy</Toolbar.Button>
-          <Toolbar.Button className="px-3 py-1 rounded-full text-xs text-gray-600 font-medium hover:bg-gray-100 outline-none">Paste</Toolbar.Button>
-          <Toolbar.Separator className="w-px h-4 bg-gray-200 mx-1" />
-          <Toolbar.Link href="#" className="px-3 py-1 rounded-full text-xs text-blue-600 font-medium hover:underline outline-none">Docs ↗</Toolbar.Link>
-        </Toolbar.Root>
-    </Tabs.Panel>
-</Tabs.Root>
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
+<Toolbar.ToolbarWithInput />
+</Tabs.Panel>
+</Tabs.Root> 
+
 
 ## ToolbarButton
 

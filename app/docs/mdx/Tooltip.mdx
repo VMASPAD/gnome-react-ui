@@ -4,125 +4,64 @@ title: Tooltip
 
 # Tooltip
 
-## Examples
-
-### Example 1 — Basic tooltip
+A popup that appears when an element is hovered or focused, showing a hint for sighted users.
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
 ```tsx
-import * as Tooltip from './tooltip/index.parts';
+import { Tooltip } from '@base-ui/react/tooltip';
+import { Bold, Italic, Underline, AlignLeft, AlignCenter, AlignRight } from 'lucide-react';
 
-export default function BasicTooltip() {
+function TooltipArrowSvg() {
   return (
-    <Tooltip.Provider>
-      <Tooltip.Root>
-        <Tooltip.Trigger className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:bg-gray-100">
-          ?
-        </Tooltip.Trigger>
-        <Tooltip.Portal>
-          <Tooltip.Positioner sideOffset={6}>
-            <Tooltip.Popup className="rounded-md bg-gray-900 px-2.5 py-1.5 text-xs text-white shadow-sm">
-              Click for more information
-            </Tooltip.Popup>
-          </Tooltip.Positioner>
-        </Tooltip.Portal>
-      </Tooltip.Root>
-    </Tooltip.Provider>
+    <svg width="20" height="10" viewBox="0 0 20 10" fill="none">
+      <path d="M0 0 L10 10 L20 0" className="fill-[oklch(0.25_0.02_330)] stroke-border stroke-[0.5]" />
+    </svg>
   );
 }
-```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Tooltip.Provider>
-          <Tooltip.Root>
-            <Tooltip.Trigger className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:bg-gray-100">?</Tooltip.Trigger>
-            <Tooltip.Portal>
-              <Tooltip.Positioner sideOffset={6}>
-                <Tooltip.Popup className="rounded-md bg-gray-900 px-2.5 py-1.5 text-xs text-white shadow-sm">Click for more information</Tooltip.Popup>
-              </Tooltip.Positioner>
-            </Tooltip.Portal>
-          </Tooltip.Root>
-        </Tooltip.Provider>
-    </Tabs.Panel>
-</Tabs.Root>
 
-### Example 2 — Tooltip with arrow
+const popupCls =
+  'rounded-lg bg-[oklch(0.25_0.02_330)] px-2.5 py-1.5 text-xs font-medium text-white shadow-lg outline-none transition-all duration-150 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0 origin-[var(--transform-origin)]';
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
-```tsx
-export default function TooltipWithArrow() {
+const tools = [
+  { icon: Icons.Bold,        label: 'Bold',        kbd: '⌘B'  },
+  { icon: Icons.Italic,      label: 'Italic',      kbd: '⌘I'  },
+  { icon: Icons.Underline,   label: 'Underline',   kbd: '⌘U'  },
+  { icon: Icons.AlignLeft,   label: 'Align left',  kbd: '⌘⇧L' },
+  { icon: Icons.AlignCenter, label: 'Align center',kbd: '⌘⇧E' },
+  { icon: Icons.AlignRight,  label: 'Align right', kbd: '⌘⇧R' },
+];
+
+export function TooltipDefault() {
   return (
-    <Tooltip.Provider>
-      <Tooltip.Root>
-        <Tooltip.Trigger className="px-3 py-1.5 rounded-md bg-blue-600 text-white text-sm hover:bg-blue-700">
-          Save
-        </Tooltip.Trigger>
-        <Tooltip.Portal>
-          <Tooltip.Positioner side="top" sideOffset={8}>
-            <Tooltip.Popup className="rounded-lg bg-gray-900 px-3 py-2 text-xs text-white shadow-md">
-              <Tooltip.Arrow className="fill-gray-900" />
-              ⌘ + S to save quickly
-            </Tooltip.Popup>
-          </Tooltip.Positioner>
-        </Tooltip.Portal>
-      </Tooltip.Root>
-    </Tooltip.Provider>
-  );
-}
-```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Tooltip.Provider>
-          <Tooltip.Root>
-            <Tooltip.Trigger className="px-3 py-1.5 rounded-md bg-blue-600 text-white text-sm hover:bg-blue-700">Save</Tooltip.Trigger>
-            <Tooltip.Portal>
-              <Tooltip.Positioner side="top" sideOffset={8}>
-                <Tooltip.Popup className="rounded-lg bg-gray-900 px-3 py-2 text-xs text-white shadow-md">
-                  <Tooltip.Arrow className="fill-gray-900" />
-                  ⌘ + S to save quickly
-                </Tooltip.Popup>
-              </Tooltip.Positioner>
-            </Tooltip.Portal>
-          </Tooltip.Root>
-        </Tooltip.Provider>
-    </Tabs.Panel>
-</Tabs.Root>
-
-### Example 3 — Tooltip with custom delay
-
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
-```tsx
-export default function DelayedTooltips() {
-  return (
-    <Tooltip.Provider delay={800} closeDelay={200}>
-      <div className="flex gap-3">
-        {['Cut', 'Copy', 'Paste'].map((action) => (
-          <Tooltip.Root key={action}>
-            <Tooltip.Trigger className="p-2 rounded border border-gray-200 text-gray-500 hover:bg-gray-100">
-              {action[0]}
+    <Tooltip.Provider delay={500} closeDelay={100}>
+      <div className="flex items-center gap-0.5 rounded-xl border border-border bg-card p-1.5 shadow-sm">
+        {tools.map(({ icon: Icon, label, kbd }) => (
+          <Tooltip.Root key={label}>
+            <Tooltip.Trigger
+              render={<button />}
+              className="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
+              aria-label={label}
+            >
+              <Icon className="size-4 shrink-0" />
             </Tooltip.Trigger>
             <Tooltip.Portal>
-              <Tooltip.Positioner side="bottom" sideOffset={6}>
-                <Tooltip.Popup className="rounded bg-gray-800 px-2 py-1 text-xs text-white">
-                  {action}
+              <Tooltip.Positioner sideOffset={8} side="bottom">
+                <Tooltip.Popup className={popupCls}>
+                  <Tooltip.Arrow className="flex">
+                    <TooltipArrowSvg />
+                  </Tooltip.Arrow>
+                  <span className="flex items-center gap-2">
+                    {label}
+                    <kbd className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-[10px] text-white/70">
+                      {kbd}
+                    </kbd>
+                  </span>
                 </Tooltip.Popup>
               </Tooltip.Positioner>
             </Tooltip.Portal>
@@ -133,27 +72,165 @@ export default function DelayedTooltips() {
   );
 }
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Tooltip.Provider delay={800} closeDelay={200}>
-          <div className="flex gap-3">
-            <Tooltip.Root>
-              <Tooltip.Trigger className="p-2 rounded border border-gray-200 text-gray-500 hover:bg-gray-100 text-sm">C</Tooltip.Trigger>
-              <Tooltip.Portal><Tooltip.Positioner side="bottom" sideOffset={6}><Tooltip.Popup className="rounded bg-gray-800 px-2 py-1 text-xs text-white">Cut</Tooltip.Popup></Tooltip.Positioner></Tooltip.Portal>
-            </Tooltip.Root>
-            <Tooltip.Root>
-              <Tooltip.Trigger className="p-2 rounded border border-gray-200 text-gray-500 hover:bg-gray-100 text-sm">C</Tooltip.Trigger>
-              <Tooltip.Portal><Tooltip.Positioner side="bottom" sideOffset={6}><Tooltip.Popup className="rounded bg-gray-800 px-2 py-1 text-xs text-white">Copy</Tooltip.Popup></Tooltip.Positioner></Tooltip.Portal>
-            </Tooltip.Root>
-            <Tooltip.Root>
-              <Tooltip.Trigger className="p-2 rounded border border-gray-200 text-gray-500 hover:bg-gray-100 text-sm">P</Tooltip.Trigger>
-              <Tooltip.Portal><Tooltip.Positioner side="bottom" sideOffset={6}><Tooltip.Popup className="rounded bg-gray-800 px-2 py-1 text-xs text-white">Paste</Tooltip.Popup></Tooltip.Positioner></Tooltip.Portal>
-            </Tooltip.Root>
-          </div>
-        </Tooltip.Provider>
-    </Tabs.Panel>
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+    <Tooltip.TooltipDefault />
+  </Tabs.Panel>
 </Tabs.Root>
 
+# Anatomy
+
+```tsx
+import { Tooltip } from '@base-ui/react/tooltip';
+
+<Tooltip.Provider delay={500}>
+  <Tooltip.Root>
+    <Tooltip.Trigger />
+    <Tooltip.Portal>
+      <Tooltip.Positioner side="top" sideOffset={8}>
+        <Tooltip.Popup>
+          <Tooltip.Arrow />
+        </Tooltip.Popup>
+      </Tooltip.Positioner>
+    </Tooltip.Portal>
+  </Tooltip.Root>
+</Tooltip.Provider>
+```
+
+# Examples
+
+## Sides
+
+The `side` prop on `Tooltip.Positioner` controls placement — top, right, bottom, or left — with automatic collision avoidance.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
+```tsx
+import { Tooltip } from '@base-ui/react/tooltip';
+import { Info } from 'lucide-react';
+
+const popupCls =
+  'rounded-lg bg-[oklch(0.25_0.02_330)] px-2.5 py-1.5 text-xs font-medium text-white shadow-lg outline-none transition-all duration-150 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0 origin-[var(--transform-origin)]';
+
+const sides = [
+  { side: 'top'    as const, label: 'Top'    },
+  { side: 'right'  as const, label: 'Right'  },
+  { side: 'bottom' as const, label: 'Bottom' },
+  { side: 'left'   as const, label: 'Left'   },
+];
+
+export function TooltipSides() {
+  return (
+    <Tooltip.Provider delay={300}>
+      <div className="grid grid-cols-2 gap-3">
+        {sides.map(({ side, label }) => (
+          <Tooltip.Root key={side}>
+            <Tooltip.Trigger
+              render={<button />}
+              className="flex h-10 items-center justify-center gap-2 rounded-lg border border-border bg-card px-4 text-sm text-foreground transition-colors duration-150 hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
+            >
+              <Icons.Info className="size-3.5 shrink-0 text-muted-foreground" />
+              {label}
+            </Tooltip.Trigger>
+            <Tooltip.Portal>
+              <Tooltip.Positioner sideOffset={8} side={side}>
+                <Tooltip.Popup className={popupCls}>
+                  Tooltip on the {label.toLowerCase()}
+                </Tooltip.Popup>
+              </Tooltip.Positioner>
+            </Tooltip.Portal>
+          </Tooltip.Root>
+        ))}
+      </div>
+    </Tooltip.Provider>
+  );
+}
+```
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[200px] items-center justify-center p-6 outline-none" value="preview">
+    <Tooltip.TooltipSides />
+  </Tabs.Panel>
+</Tabs.Root>
+
+---
+
+## Rich tooltip
+
+Tooltips with an icon badge and description text, inspired by GNOME Files action bar. Uses a card-style popup instead of the dark pill variant.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
+```tsx
+import { Tooltip } from '@base-ui/react/tooltip';
+import { Download, Trash2, Share2, Copy, Settings } from 'lucide-react';
+
+const actions = [
+  { icon: Icons.Download, label: 'Download',   desc: 'Save file to disk'            },
+  { icon: Icons.Copy,     label: 'Duplicate',  desc: 'Create a copy in same folder'  },
+  { icon: Icons.Share2,   label: 'Share',      desc: 'Share via link or email'       },
+  { icon: Icons.Settings, label: 'Properties', desc: 'View file metadata'            },
+  { icon: Icons.Trash2,   label: 'Delete',     desc: 'Move to trash', danger: true   },
+];
+
+export function TooltipRich() {
+  return (
+    <Tooltip.Provider delay={400} closeDelay={100}>
+      <div className="flex items-center gap-1 rounded-xl border border-border bg-card p-1.5 shadow-sm">
+        {actions.map(({ icon: Icon, label, desc, danger }) => (
+          <Tooltip.Root key={label}>
+            <Tooltip.Trigger
+              render={<button />}
+              className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring ${
+                danger
+                  ? 'text-destructive hover:bg-destructive/10'
+                  : 'text-muted-foreground hover:bg-accent hover:text-foreground'
+              }`}
+              aria-label={label}
+            >
+              <Icon className="size-4 shrink-0" />
+            </Tooltip.Trigger>
+            <Tooltip.Portal>
+              <Tooltip.Positioner sideOffset={10} side="top">
+                <Tooltip.Popup className="rounded-xl border border-border bg-card p-3 shadow-xl outline-none transition-all duration-150 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0 origin-[var(--transform-origin)]">
+                  <Tooltip.Arrow className="flex">
+                    <svg width="20" height="10" viewBox="0 0 20 10" fill="none">
+                      <path d="M0 0 L10 10 L20 0" className="fill-card stroke-border stroke-[0.5]" />
+                    </svg>
+                  </Tooltip.Arrow>
+                  <div className="flex items-start gap-2.5">
+                    <div className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg ${danger ? 'bg-destructive/10 text-destructive' : 'bg-primary/10 text-primary'}`}>
+                      <Icon className="size-3.5" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-foreground">{label}</p>
+                      <p className="mt-0.5 text-xs text-muted-foreground">{desc}</p>
+                    </div>
+                  </div>
+                </Tooltip.Popup>
+              </Tooltip.Positioner>
+            </Tooltip.Portal>
+          </Tooltip.Root>
+        ))}
+      </div>
+    </Tooltip.Provider>
+  );
+}
+```
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+    <Tooltip.TooltipRich />
+  </Tabs.Panel>
+</Tabs.Root>
 ## TooltipArrow
 
 Displays an element positioned against the tooltip anchor.

@@ -1,173 +1,146 @@
 ---
-title: Scroll
+title: Scroll Area
+description: A native scroll container with custom-styled scrollbars.
 ---
 
-# Scroll
+# Scroll Area
 
-## Examples
-
-### Example 1 — Vertical scroll area
+Un contenedor de scroll nativo con scrollbars estilizables. La estructura obligatoria es `Root > Viewport > Content` — las `Scrollbar` van **fuera** del `Viewport`, paralelas a él dentro del `Root`.
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
-```tsx
-import * as ScrollArea from './scroll-area/index.parts';
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[220px] items-center justify-center p-6 outline-none" value="preview">
+    <ScrollArea.ScrollAreaVertical />
+  </Tabs.Panel>
+  <Tabs.Panel className="p-0 outline-none" value="code">
+    ```tsx
+    import { ScrollArea } from "@base-ui-components/react/scroll-area";
 
-export default function VerticalScroll() {
-  return (
-    <ScrollArea.Root className="relative h-48 w-56 rounded-lg border border-gray-200 overflow-hidden">
-      <ScrollArea.Viewport className="h-full w-full">
-        <ScrollArea.Content className="px-4 py-3 space-y-2">
-          {Array.from({ length: 12 }, (_, i) => (
-            <div key={i} className="text-sm text-gray-600 py-1 border-b border-gray-50">Item {i + 1}</div>
-          ))}
-        </ScrollArea.Content>
-      </ScrollArea.Viewport>
-      <ScrollArea.Scrollbar orientation="vertical" className="absolute right-0.5 top-0.5 bottom-0.5 w-1.5">
-        <ScrollArea.Thumb className="rounded-full bg-gray-300 hover:bg-gray-400" />
-      </ScrollArea.Scrollbar>
-    </ScrollArea.Root>
-  );
-}
-```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <ScrollArea.Root className="relative h-48 w-56 rounded-lg border border-gray-200 overflow-hidden">
+    export function ScrollAreaVertical() {
+      return (
+        <ScrollArea.Root className="h-48 w-80 rounded-lg border border-border bg-card overflow-hidden">
           <ScrollArea.Viewport className="h-full w-full">
-            <ScrollArea.Content className="px-4 py-3 space-y-2">
-              <div className="text-sm text-gray-600 py-1 border-b border-gray-50">Item 1</div>
-              <div className="text-sm text-gray-600 py-1 border-b border-gray-50">Item 2</div>
-              <div className="text-sm text-gray-600 py-1 border-b border-gray-50">Item 3</div>
-              <div className="text-sm text-gray-600 py-1 border-b border-gray-50">Item 4</div>
-              <div className="text-sm text-gray-600 py-1 border-b border-gray-50">Item 5</div>
-              <div className="text-sm text-gray-600 py-1 border-b border-gray-50">Item 6</div>
-              <div className="text-sm text-gray-600 py-1 border-b border-gray-50">Item 7</div>
-              <div className="text-sm text-gray-600 py-1 border-b border-gray-50">Item 8</div>
-              <div className="text-sm text-gray-600 py-1 border-b border-gray-50">Item 9</div>
-              <div className="text-sm text-gray-600 py-1 border-b border-gray-50">Item 10</div>
-              <div className="text-sm text-gray-600 py-1 border-b border-gray-50">Item 11</div>
-              <div className="text-sm text-gray-600 py-1">Item 12</div>
+            <ScrollArea.Content className="px-4 py-3">
+              <p>Long content here...</p>
             </ScrollArea.Content>
           </ScrollArea.Viewport>
-          <ScrollArea.Scrollbar orientation="vertical" className="absolute right-0.5 top-0.5 bottom-0.5 w-1.5">
-            <ScrollArea.Thumb className="rounded-full bg-gray-300 hover:bg-gray-400" />
+          {/* Scrollbar va fuera del Viewport */}
+          <ScrollArea.Scrollbar orientation="vertical">
+            <ScrollArea.Thumb />
           </ScrollArea.Scrollbar>
         </ScrollArea.Root>
-    </Tabs.Panel>
+      );
+    }
+    ```
+  </Tabs.Panel>
 </Tabs.Root>
 
-### Example 2 — Horizontal scroll area
+# Anatomy
+
+```tsx
+import { ScrollArea } from "@base-ui-components/react/scroll-area";
+
+<ScrollArea.Root>
+  <ScrollArea.Viewport>
+    <ScrollArea.Content />
+  </ScrollArea.Viewport>
+  <ScrollArea.Scrollbar orientation="vertical">
+    <ScrollArea.Thumb />
+  </ScrollArea.Scrollbar>
+  <ScrollArea.Scrollbar orientation="horizontal">
+    <ScrollArea.Thumb />
+  </ScrollArea.Scrollbar>
+  <ScrollArea.Corner />
+</ScrollArea.Root>
+```
+
+# Examples
+
+## Both Axes
+
+Cuando hay scroll en ambas direcciones, agrega `<ScrollArea.Corner>` para cubrir el área donde se intersectan las dos scrollbars.
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
-```tsx
-export default function HorizontalScroll() {
-  return (
-    <ScrollArea.Root className="relative w-72 rounded-lg border border-gray-200 overflow-hidden">
-      <ScrollArea.Viewport className="w-full">
-        <ScrollArea.Content className="flex gap-3 px-4 py-4" style={{ width: 'max-content' }}>
-          {Array.from({ length: 8 }, (_, i) => (
-            <div key={i} className="shrink-0 w-24 h-20 rounded-lg bg-gradient-to-br from-blue-50 to-indigo-100 border border-indigo-100 flex items-center justify-center text-xs text-indigo-600 font-medium">
-              Card {i + 1}
-            </div>
-          ))}
-        </ScrollArea.Content>
-      </ScrollArea.Viewport>
-      <ScrollArea.Scrollbar orientation="horizontal" className="absolute left-0.5 right-0.5 bottom-0.5 h-1.5">
-        <ScrollArea.Thumb className="rounded-full bg-gray-300 hover:bg-gray-400" />
-      </ScrollArea.Scrollbar>
-    </ScrollArea.Root>
-  );
-}
-```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <ScrollArea.Root className="relative w-72 rounded-lg border border-gray-200 overflow-hidden">
-          <ScrollArea.Viewport className="w-full">
-            <ScrollArea.Content className="flex gap-3 px-4 py-4" style={{width:'max-content'}}>
-              <div className="shrink-0 w-24 h-20 rounded-lg bg-gradient-to-br from-blue-50 to-indigo-100 border border-indigo-100 flex items-center justify-center text-xs text-indigo-600 font-medium">Card 1</div>
-              <div className="shrink-0 w-24 h-20 rounded-lg bg-gradient-to-br from-blue-50 to-indigo-100 border border-indigo-100 flex items-center justify-center text-xs text-indigo-600 font-medium">Card 2</div>
-              <div className="shrink-0 w-24 h-20 rounded-lg bg-gradient-to-br from-blue-50 to-indigo-100 border border-indigo-100 flex items-center justify-center text-xs text-indigo-600 font-medium">Card 3</div>
-              <div className="shrink-0 w-24 h-20 rounded-lg bg-gradient-to-br from-blue-50 to-indigo-100 border border-indigo-100 flex items-center justify-center text-xs text-indigo-600 font-medium">Card 4</div>
-              <div className="shrink-0 w-24 h-20 rounded-lg bg-gradient-to-br from-blue-50 to-indigo-100 border border-indigo-100 flex items-center justify-center text-xs text-indigo-600 font-medium">Card 5</div>
-              <div className="shrink-0 w-24 h-20 rounded-lg bg-gradient-to-br from-blue-50 to-indigo-100 border border-indigo-100 flex items-center justify-center text-xs text-indigo-600 font-medium">Card 6</div>
-              <div className="shrink-0 w-24 h-20 rounded-lg bg-gradient-to-br from-blue-50 to-indigo-100 border border-indigo-100 flex items-center justify-center text-xs text-indigo-600 font-medium">Card 7</div>
-              <div className="shrink-0 w-24 h-20 rounded-lg bg-gradient-to-br from-blue-50 to-indigo-100 border border-indigo-100 flex items-center justify-center text-xs text-indigo-600 font-medium">Card 8</div>
-            </ScrollArea.Content>
-          </ScrollArea.Viewport>
-          <ScrollArea.Scrollbar orientation="horizontal" className="absolute left-0.5 right-0.5 bottom-0.5 h-1.5">
-            <ScrollArea.Thumb className="rounded-full bg-gray-300 hover:bg-gray-400" />
-          </ScrollArea.Scrollbar>
-        </ScrollArea.Root>
-    </Tabs.Panel>
-</Tabs.Root>
-
-### Example 3 — Scroll area with both scrollbars
-
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
-```tsx
-export default function BothScrollbars() {
-  return (
-    <ScrollArea.Root className="relative h-48 w-64 rounded-lg border border-gray-200 overflow-hidden">
-      <ScrollArea.Viewport className="h-full w-full">
-        <ScrollArea.Content className="p-4" style={{ width: '500px' }}>
-          {Array.from({ length: 15 }, (_, i) => (
-            <div key={i} className="flex gap-2 py-1 text-xs text-gray-600 whitespace-nowrap border-b border-gray-50">
-              <span className="w-6 text-gray-400">{i + 1}</span>
-              <span>Long content row with additional text to demonstrate horizontal scrolling</span>
-            </div>
-          ))}
-        </ScrollArea.Content>
-      </ScrollArea.Viewport>
-      <ScrollArea.Scrollbar orientation="vertical" className="absolute right-0.5 top-0.5 bottom-2.5 w-1.5">
-        <ScrollArea.Thumb className="rounded-full bg-gray-300" />
-      </ScrollArea.Scrollbar>
-      <ScrollArea.Scrollbar orientation="horizontal" className="absolute left-0.5 right-2.5 bottom-0.5 h-1.5">
-        <ScrollArea.Thumb className="rounded-full bg-gray-300" />
-      </ScrollArea.Scrollbar>
-    </ScrollArea.Root>
-  );
-}
-```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <ScrollArea.Root className="relative h-48 w-64 rounded-lg border border-gray-200 overflow-hidden">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[240px] items-center justify-center p-6 outline-none" value="preview">
+    <ScrollArea.ScrollAreaBothAxes />
+  </Tabs.Panel>
+  <Tabs.Panel className="p-0 outline-none" value="code">
+    ```tsx
+    export function ScrollAreaBothAxes() {
+      return (
+        <ScrollArea.Root className="h-52 w-96 rounded-lg border border-border overflow-hidden">
           <ScrollArea.Viewport className="h-full w-full">
-            <ScrollArea.Content className="p-4" style={{width:'500px'}}>
-              {['Row 1','Row 2','Row 3','Row 4','Row 5','Row 6','Row 7','Row 8','Row 9','Row 10','Row 11','Row 12','Row 13','Row 14','Row 15'].map((row, i) => (
-                <div key={i} className="flex gap-2 py-1 text-xs text-gray-600 whitespace-nowrap border-b border-gray-50">
-                  <span className="w-6 text-gray-400">{i + 1}</span>
-                  <span>Long content row with additional text to demonstrate horizontal scrolling</span>
-                </div>
-              ))}
+            <ScrollArea.Content className="min-w-max">
+              <table>{/* tabla ancha */}</table>
             </ScrollArea.Content>
           </ScrollArea.Viewport>
-          <ScrollArea.Scrollbar orientation="vertical" className="absolute right-0.5 top-0.5 bottom-2.5 w-1.5">
-            <ScrollArea.Thumb className="rounded-full bg-gray-300" />
+          <ScrollArea.Scrollbar orientation="vertical">
+            <ScrollArea.Thumb />
           </ScrollArea.Scrollbar>
-          <ScrollArea.Scrollbar orientation="horizontal" className="absolute left-0.5 right-2.5 bottom-0.5 h-1.5">
-            <ScrollArea.Thumb className="rounded-full bg-gray-300" />
+          <ScrollArea.Scrollbar orientation="horizontal">
+            <ScrollArea.Thumb />
           </ScrollArea.Scrollbar>
+          {/* Corner cubre la intersección de las dos scrollbars */}
+          <ScrollArea.Corner />
         </ScrollArea.Root>
-    </Tabs.Panel>
+      );
+    }
+    ```
+  </Tabs.Panel>
 </Tabs.Root>
 
+## Code Block
+
+Ideal para bloques de código con scroll horizontal. `min-w-max` en `Content` previene el wrapping del texto.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[240px] items-center justify-center p-6 outline-none" value="preview">
+    <ScrollArea.ScrollAreaCodeBlock />
+  </Tabs.Panel>
+  <Tabs.Panel className="p-0 outline-none" value="code">
+    ```tsx
+    export function ScrollAreaCodeBlock() {
+      return (
+        <ScrollArea.Root className="w-96 rounded-lg border border-border bg-[#1e1e2e] overflow-hidden">
+          <ScrollArea.Viewport className="h-full w-full max-h-52">
+            {/* min-w-max evita el wrapping del código */}
+            <ScrollArea.Content className="min-w-max">
+              <pre className="p-4 text-xs font-mono">
+                {codeLines.map((line, i) => (
+                  <div key={i} className="flex">
+                    <span className="mr-4 w-6 text-right text-[#6c7086] select-none">
+                      {i + 1}
+                    </span>
+                    <span className="text-[#cdd6f4]">{line}</span>
+                  </div>
+                ))}
+              </pre>
+            </ScrollArea.Content>
+          </ScrollArea.Viewport>
+          <ScrollArea.Scrollbar orientation="vertical">
+            <ScrollArea.Thumb />
+          </ScrollArea.Scrollbar>
+          <ScrollArea.Scrollbar orientation="horizontal">
+            <ScrollArea.Thumb />
+          </ScrollArea.Scrollbar>
+          <ScrollArea.Corner />
+        </ScrollArea.Root>
+      );
+    }
+    ```
+  </Tabs.Panel>
+</Tabs.Root>
 ## ScrollAreaContent
 
 A container for the content of the scroll area.

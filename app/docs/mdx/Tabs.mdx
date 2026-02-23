@@ -1,168 +1,151 @@
 ---
 title: Tabs
+description: A component for toggling between related panels on the same page.
 ---
 
 # Tabs
 
-## Examples
-
-### Example 1 — Basic tabs
+Un componente para alternar entre paneles relacionados. `Tabs.Indicator` se coloca **dentro** de `Tabs.List` y usa CSS variables (`--active-tab-left`, `--active-tab-width`, etc.) para posicionarse automáticamente sobre el tab activo.
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
-```tsx
-import * as Tabs from './tabs/index.parts';
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[180px] items-center justify-center p-6 outline-none" value="preview">
+    <Tab.TabsUnderline />
+  </Tabs.Panel>
+  <Tabs.Panel className="p-0 outline-none" value="code">
+    ```tsx
+    import { Tabs } from "@base-ui-components/react/tabs";
 
-export default function BasicTabs() {
-  return (
-    <Tabs.Root defaultValue="tab1" className="w-80">
-      <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab value="tab1" className="relative flex h-10 min-w-[80px] cursor-pointer items-center justify-center px-4 text-sm font-medium text-gray-500 hover:text-gray-800 data-[active]:text-gray-900 data-[active]:font-semibold outline-none">
-          Account
-        </Tabs.Tab>
-        <Tabs.Tab value="tab2" className="relative flex h-10 min-w-[80px] cursor-pointer items-center justify-center px-4 text-sm font-medium text-gray-500 hover:text-gray-800 data-[active]:text-gray-900 data-[active]:font-semibold outline-none">
-          Settings
-        </Tabs.Tab>
-        <Tabs.Tab value="tab3" className="relative flex h-10 min-w-[80px] cursor-pointer items-center justify-center px-4 text-sm font-medium text-gray-500 hover:text-gray-800 data-[active]:text-gray-900 data-[active]:font-semibold outline-none">
-          Billing
-        </Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200" />
-      </Tabs.List>
-      <Tabs.Panel value="tab1" className="p-4 text-sm text-gray-600">
-        Account settings and profile information.
-      </Tabs.Panel>
-      <Tabs.Panel value="tab2" className="p-4 text-sm text-gray-600">
-        Application and notification preferences.
-      </Tabs.Panel>
-      <Tabs.Panel value="tab3" className="p-4 text-sm text-gray-600">
-        Payment methods and invoices.
-      </Tabs.Panel>
-    </Tabs.Root>
-  );
-}
-```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Tabs.Root defaultValue="tab1" className="w-80 rounded-lg border border-gray-200 overflow-hidden">
-          <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-            <Tabs.Tab value="tab1" className="relative flex h-10 min-w-[80px] cursor-pointer items-center justify-center px-4 text-sm font-medium text-gray-500 hover:text-gray-800 data-[active]:text-gray-900 data-[active]:font-semibold outline-none">Account</Tabs.Tab>
-            <Tabs.Tab value="tab2" className="relative flex h-10 min-w-[80px] cursor-pointer items-center justify-center px-4 text-sm font-medium text-gray-500 hover:text-gray-800 data-[active]:text-gray-900 data-[active]:font-semibold outline-none">Settings</Tabs.Tab>
-            <Tabs.Tab value="tab3" className="relative flex h-10 min-w-[80px] cursor-pointer items-center justify-center px-4 text-sm font-medium text-gray-500 hover:text-gray-800 data-[active]:text-gray-900 data-[active]:font-semibold outline-none">Billing</Tabs.Tab>
-            <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200" />
+    export function TabsUnderline() {
+      return (
+        <Tabs.Root defaultValue="overview">
+          <Tabs.List className="relative flex border-b border-border">
+            <Tabs.Tab value="overview" className="data-[active]:text-foreground">
+              Overview
+            </Tabs.Tab>
+            <Tabs.Tab value="projects" className="data-[active]:text-foreground">
+              Projects
+            </Tabs.Tab>
+            {/* Indicator DENTRO de List, usa CSS variables del componente */}
+            <Tabs.Indicator
+              className="absolute bottom-0 h-0.5 rounded-full bg-primary transition-[left,width] duration-200"
+              style={{
+                left: "var(--active-tab-left)",
+                width: "var(--active-tab-width)",
+              }}
+            />
           </Tabs.List>
-          <Tabs.Panel value="tab1" className="p-4 text-sm text-gray-600">Account settings and profile information.</Tabs.Panel>
-          <Tabs.Panel value="tab2" className="p-4 text-sm text-gray-600">Application and notification preferences.</Tabs.Panel>
-          <Tabs.Panel value="tab3" className="p-4 text-sm text-gray-600">Payment methods and invoices.</Tabs.Panel>
+          <Tabs.Panel value="overview">...</Tabs.Panel>
+          <Tabs.Panel value="projects">...</Tabs.Panel>
         </Tabs.Root>
-    </Tabs.Panel>
+      );
+    }
+    ```
+  </Tabs.Panel>
 </Tabs.Root>
 
-### Example 2 — Tabs with icons
+# Anatomy
+
+```tsx
+import { Tabs } from "@base-ui-components/react/tabs";
+
+<Tabs.Root defaultValue="tab1">
+  <Tabs.List>
+    <Tabs.Tab value="tab1" />
+    <Tabs.Tab value="tab2" />
+    <Tabs.Indicator />  {/* dentro de List */}
+  </Tabs.List>
+  <Tabs.Panel value="tab1" />
+  <Tabs.Panel value="tab2" />
+</Tabs.Root>
+```
+
+# Examples
+
+## Pill / Badge
+
+Estilo de selector compacto. Sin `Tabs.Indicator` — el tab activo recibe `data-[active]:bg-card` directamente.
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
-```tsx
-import { LayoutGrid, FileText, Settings } from 'lucide-react';
-
-export default function IconTabs() {
-  return (
-    <Tabs.Root defaultValue="grid" className="w-80">
-      <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        {[['grid', LayoutGrid, 'Grid'], ['docs', FileText, 'Docs'], ['settings', Settings, 'Settings']].map(([value, Icon, label]) => (
-          <Tabs.Tab key={value} value={value} className="relative flex h-10 cursor-pointer items-center gap-1.5 px-4 text-sm font-medium text-gray-500 hover:text-gray-800 data-[active]:text-gray-900 outline-none whitespace-nowrap">
-            <Icon size={14} />{label}
-          </Tabs.Tab>
-        ))}
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200" />
-      </Tabs.List>
-      <Tabs.Panel value="grid" className="p-4 text-sm text-gray-600">Grid layout content</Tabs.Panel>
-      <Tabs.Panel value="docs" className="p-4 text-sm text-gray-600">Documentation content</Tabs.Panel>
-      <Tabs.Panel value="settings" className="p-4 text-sm text-gray-600">Settings content</Tabs.Panel>
-    </Tabs.Root>
-  );
-}
-```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Tabs.Root defaultValue="grid" className="w-80 rounded-lg border border-gray-200 overflow-hidden">
-          <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-            <Tabs.Tab value="grid" className="relative flex h-10 cursor-pointer items-center gap-1.5 px-4 text-sm font-medium text-gray-500 hover:text-gray-800 data-[active]:text-gray-900 outline-none whitespace-nowrap"><Icons.LayoutGrid size={14} />Grid</Tabs.Tab>
-            <Tabs.Tab value="docs" className="relative flex h-10 cursor-pointer items-center gap-1.5 px-4 text-sm font-medium text-gray-500 hover:text-gray-800 data-[active]:text-gray-900 outline-none whitespace-nowrap"><Icons.FileText size={14} />Docs</Tabs.Tab>
-            <Tabs.Tab value="settings" className="relative flex h-10 cursor-pointer items-center gap-1.5 px-4 text-sm font-medium text-gray-500 hover:text-gray-800 data-[active]:text-gray-900 outline-none whitespace-nowrap"><Icons.Settings size={14} />Settings</Tabs.Tab>
-            <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200" />
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[200px] items-center justify-center p-6 outline-none" value="preview">
+    <Tab.TabsPill />
+  </Tabs.Panel>
+  <Tabs.Panel className="p-0 outline-none" value="code">
+    ```tsx
+    export function TabsPill() {
+      return (
+        <Tabs.Root defaultValue="month">
+          <Tabs.List className="flex rounded-lg bg-muted p-1 gap-1">
+            {["Day", "Week", "Month", "Year"].map((label) => (
+              <Tabs.Tab
+                key={label}
+                value={label.toLowerCase()}
+                className={
+                  "flex-1 rounded-md px-3 py-1.5 text-muted-foreground " +
+                  "data-[active]:bg-card data-[active]:text-foreground data-[active]:shadow-sm"
+                }
+              >
+                {label}
+              </Tabs.Tab>
+            ))}
           </Tabs.List>
-          <Tabs.Panel value="grid" className="p-4 text-sm text-gray-600">Grid layout content</Tabs.Panel>
-          <Tabs.Panel value="docs" className="p-4 text-sm text-gray-600">Documentation content</Tabs.Panel>
-          <Tabs.Panel value="settings" className="p-4 text-sm text-gray-600">Settings content</Tabs.Panel>
+          <Tabs.Panel value="day">Day content</Tabs.Panel>
+          <Tabs.Panel value="month">Month content</Tabs.Panel>
         </Tabs.Root>
-    </Tabs.Panel>
+      );
+    }
+    ```
+  </Tabs.Panel>
 </Tabs.Root>
 
-### Example 3 — Pill-style tabs
+## Vertical
+
+`orientation="vertical"` activa la navegación con flechas arriba/abajo. El `Tabs.Indicator` usa `--active-tab-top` y `--active-tab-height`.
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
-```tsx
-export default function PillTabs() {
-  return (
-    <Tabs.Root defaultValue="all">
-      <Tabs.List className="flex gap-1 rounded-full bg-gray-100 p-1">
-        {['all', 'active', 'paused', 'archived'].map((tab) => (
-          <Tabs.Tab
-            key={tab}
-            value={tab}
-            className="px-4 py-1.5 rounded-full text-sm font-medium text-gray-500 capitalize cursor-pointer transition-colors hover:text-gray-800 data-[active]:bg-white data-[active]:text-gray-900 data-[active]:shadow-sm outline-none"
-          >
-            {tab}
-          </Tabs.Tab>
-        ))}
-      </Tabs.List>
-      <div className="mt-4 text-sm text-gray-600 px-1">
-        <Tabs.Panel value="all">All items listed here.</Tabs.Panel>
-        <Tabs.Panel value="active">Active items only.</Tabs.Panel>
-        <Tabs.Panel value="paused">Paused items.</Tabs.Panel>
-        <Tabs.Panel value="archived">Archived items.</Tabs.Panel>
-      </div>
-    </Tabs.Root>
-  );
-}
-```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <div>
-          <Tabs.Root defaultValue="all">
-            <Tabs.List className="flex gap-1 rounded-full bg-gray-100 p-1">
-              <Tabs.Tab value="all" className="px-4 py-1.5 rounded-full text-sm font-medium text-gray-500 capitalize cursor-pointer transition-colors hover:text-gray-800 data-[active]:bg-white data-[active]:text-gray-900 data-[active]:shadow-sm outline-none">All</Tabs.Tab>
-              <Tabs.Tab value="active" className="px-4 py-1.5 rounded-full text-sm font-medium text-gray-500 capitalize cursor-pointer transition-colors hover:text-gray-800 data-[active]:bg-white data-[active]:text-gray-900 data-[active]:shadow-sm outline-none">Active</Tabs.Tab>
-              <Tabs.Tab value="paused" className="px-4 py-1.5 rounded-full text-sm font-medium text-gray-500 capitalize cursor-pointer transition-colors hover:text-gray-800 data-[active]:bg-white data-[active]:text-gray-900 data-[active]:shadow-sm outline-none">Paused</Tabs.Tab>
-              <Tabs.Tab value="archived" className="px-4 py-1.5 rounded-full text-sm font-medium text-gray-500 capitalize cursor-pointer transition-colors hover:text-gray-800 data-[active]:bg-white data-[active]:text-gray-900 data-[active]:shadow-sm outline-none">Archived</Tabs.Tab>
-            </Tabs.List>
-            <div className="mt-4 text-sm text-gray-600 px-1">
-              <Tabs.Panel value="all">All items listed here.</Tabs.Panel>
-              <Tabs.Panel value="active">Active items only.</Tabs.Panel>
-              <Tabs.Panel value="paused">Paused items.</Tabs.Panel>
-              <Tabs.Panel value="archived">Archived items.</Tabs.Panel>
-            </div>
-          </Tabs.Root>
-        </div>
-    </Tabs.Panel>
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[220px] items-center justify-center p-6 outline-none" value="preview">
+    <Tab.TabsVertical />
+  </Tabs.Panel>
+  <Tabs.Panel className="p-0 outline-none" value="code">
+    ```tsx
+    export function TabsVertical() {
+      return (
+        <Tabs.Root defaultValue="general" orientation="vertical" className="flex">
+          <Tabs.List className="relative flex flex-col w-48 border-r border-border p-2 gap-0.5">
+            <Tabs.Tab value="general" className="data-[active]:bg-background">
+              <Icons.Settings className="size-4" /> General
+            </Tabs.Tab>
+            <Tabs.Tab value="security" className="data-[active]:bg-background">
+              <Icons.Shield className="size-4" /> Security
+            </Tabs.Tab>
+            {/* Vertical indicator — usa top/height en lugar de left/width */}
+            <Tabs.Indicator
+              className="absolute right-0 w-0.5 rounded-full bg-primary transition-[top,height] duration-200"
+              style={{
+                top: "var(--active-tab-top)",
+                height: "var(--active-tab-height)",
+              }}
+            />
+          </Tabs.List>
+          <Tabs.Panel value="general">...</Tabs.Panel>
+          <Tabs.Panel value="security">...</Tabs.Panel>
+        </Tabs.Root>
+      );
+    }
+    ```
+  </Tabs.Panel>
 </Tabs.Root>
-
 ## TabsIndicator
 
 A visual indicator that can be styled to match the position of the currently active tab.

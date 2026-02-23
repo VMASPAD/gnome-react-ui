@@ -4,124 +4,170 @@ title: Toggle
 
 # Toggle
 
-## Examples
+A two-state button that can be either on or off. Useful for switching between two states or modes.
 
-### Example 1 — Basic toggle button
+Documentation: [Base UI Toggle](https://base-ui.com/react/components/toggle)
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
 ```tsx
-import { Toggle } from './toggle';
-import { Bookmark } from 'lucide-react';
+import * as React from 'react';
+import { Toggle } from '@base-ui/react/toggle';
+import { Italic } from 'lucide-react';
 
-export default function BasicToggle() {
+const toggleBase =
+  'inline-flex h-9 w-9 items-center justify-center rounded-lg border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground';
+
+export function ToggleDefault() {
+  const [pressed, setPressed] = React.useState(false);
+  
   return (
-    <Toggle
-      aria-label="Bookmark"
-      className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-transparent text-gray-500 hover:bg-gray-100 data-[pressed]:bg-blue-50 data-[pressed]:text-blue-600 data-[pressed]:border-blue-200 outline-none transition-colors"
+    <Toggle 
+      pressed={pressed} 
+      onPressedChange={setPressed} 
+      className={toggleBase}
+      aria-label="Toggle italic"
     >
-      <Bookmark size={16} />
+      <Icons.Italic className="size-4" />
     </Toggle>
   );
 }
+
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Toggle aria-label="Bookmark" className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-transparent text-gray-500 hover:bg-gray-100 data-[pressed]:bg-blue-50 data-[pressed]:text-blue-600 data-[pressed]:border-blue-200 outline-none transition-colors">
-          <Icons.Bookmark size={16} />
-        </Toggle>
-    </Tabs.Panel>
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
+<Toggle.ToggleDefault />
+</Tabs.Panel>
 </Tabs.Root>
 
-### Example 2 — Toggle group (single selection)
+# Anatomy
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
 ```tsx
-import { ToggleGroup } from './toggle-group';
-import { Toggle } from './toggle';
+import { Toggle } from '@base-ui/react/toggle';
+import { ToggleGroup } from '@base-ui/react/toggle-group';
+
+<Toggle />
+
+// Or grouped
+<ToggleGroup>
+  <Toggle />
+  <Toggle />
+  <Toggle />
+</ToggleGroup>
+
+```
+
+# Examples
+
+## Toggle Group (Single Selection)
+
+By default, `ToggleGroup` allows only one item to be active at a time, acting like a set of radio buttons.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+<Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+</Tabs.List>
+<Tabs.Panel value="code">
+
+```tsx
+import * as React from 'react';
+import { Toggle } from '@base-ui/react/toggle';
+import { ToggleGroup } from '@base-ui/react/toggle-group';
 import { AlignLeft, AlignCenter, AlignRight } from 'lucide-react';
 
-const btnClass = "flex h-8 w-8 items-center justify-center rounded text-gray-500 hover:bg-gray-100 data-[pressed]:bg-blue-50 data-[pressed]:text-blue-600 outline-none";
+// ... (toggleBase classes)
 
-export default function AlignToggleGroup() {
+export function ToggleGroupSingle() {
+  const [value, setValue] = React.useState<string[]>(['left']);
+
   return (
-    <ToggleGroup
-      exclusive
-      defaultValue="left"
-      className="inline-flex rounded-md border border-gray-200 divide-x divide-gray-200 overflow-hidden"
+    <ToggleGroup 
+      value={value} 
+      onValueChange={setValue} 
+      className="inline-flex items-center gap-1 rounded-xl border border-border bg-card p-1 shadow-sm"
     >
-      <Toggle value="left" aria-label="Align left" className={btnClass}><AlignLeft size={14} /></Toggle>
-      <Toggle value="center" aria-label="Align center" className={btnClass}><AlignCenter size={14} /></Toggle>
-      <Toggle value="right" aria-label="Align right" className={btnClass}><AlignRight size={14} /></Toggle>
+      <Toggle value="left" className={toggleBase} aria-label="Align left">
+        <Icons.AlignLeft className="size-4" />
+      </Toggle>
+      <Toggle value="center" className={toggleBase} aria-label="Align center">
+        <Icons.AlignCenter className="size-4" />
+      </Toggle>
+      <Toggle value="right" className={toggleBase} aria-label="Align right">
+        <Icons.AlignRight className="size-4" />
+      </Toggle>
     </ToggleGroup>
   );
 }
+
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <ToggleGroup exclusive defaultValue="left" className="inline-flex rounded-md border border-gray-200 divide-x divide-gray-200 overflow-hidden">
-          <Toggle value="left" aria-label="Align left" className="flex h-8 w-8 items-center justify-center text-gray-500 hover:bg-gray-100 data-[pressed]:bg-blue-50 data-[pressed]:text-blue-600 outline-none"><Icons.AlignLeft size={14} /></Toggle>
-          <Toggle value="center" aria-label="Align center" className="flex h-8 w-8 items-center justify-center text-gray-500 hover:bg-gray-100 data-[pressed]:bg-blue-50 data-[pressed]:text-blue-600 outline-none"><Icons.AlignCenter size={14} /></Toggle>
-          <Toggle value="right" aria-label="Align right" className="flex h-8 w-8 items-center justify-center text-gray-500 hover:bg-gray-100 data-[pressed]:bg-blue-50 data-[pressed]:text-blue-600 outline-none"><Icons.AlignRight size={14} /></Toggle>
-        </ToggleGroup>
-    </Tabs.Panel>
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
+<Toggle.ToggleGroupSingle />
+</Tabs.Panel>
 </Tabs.Root>
 
-### Example 3 — Toggle group (multi-select)
+---
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+## Toggle Group (Multiple Selection)
+
+Add the `multiple` prop to allow selecting multiple items simultaneously.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+<Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+</Tabs.List>
+<Tabs.Panel value="code">
+
 ```tsx
+import * as React from 'react';
+import { Toggle } from '@base-ui/react/toggle';
+import { ToggleGroup } from '@base-ui/react/toggle-group';
 import { Bold, Italic, Underline } from 'lucide-react';
 
-export default function TextFormatToggle() {
+// ... (toggleBase classes)
+
+export function ToggleGroupMultiple() {
+  const [value, setValue] = React.useState<string[]>(['bold']);
+
   return (
-    <ToggleGroup className="inline-flex gap-0.5 rounded-lg border border-gray-200 p-0.5 bg-gray-50">
-      {[['Bold', Bold, 'B'], ['Italic', Italic, 'I'], ['Underline', Underline, 'U']].map(([label, Icon, key]) => (
-        <Toggle
-          key={key}
-          aria-label={label}
-          className="flex h-7 w-7 items-center justify-center rounded text-gray-500 text-xs hover:bg-white hover:shadow-sm data-[pressed]:bg-white data-[pressed]:text-gray-900 data-[pressed]:shadow-sm outline-none transition-all"
-        >
-          <Icon size={13} />
-        </Toggle>
-      ))}
+    <ToggleGroup 
+      multiple 
+      value={value} 
+      onValueChange={setValue} 
+      className="inline-flex items-center gap-1 rounded-xl border border-border bg-card p-1 shadow-sm"
+    >
+      <Toggle value="bold" className={toggleBase} aria-label="Bold">
+        <Icons.Bold className="size-4" />
+      </Toggle>
+      <Toggle value="italic" className={toggleBase} aria-label="Italic">
+        <Icons.Italic className="size-4" />
+      </Toggle>
+      <Toggle value="underline" className={toggleBase} aria-label="Underline">
+        <Icons.Underline className="size-4" />
+      </Toggle>
     </ToggleGroup>
   );
 }
+
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <ToggleGroup className="inline-flex gap-0.5 rounded-lg border border-gray-200 p-0.5 bg-gray-50">
-          <Toggle aria-label="Bold" className="flex h-7 w-7 items-center justify-center rounded text-gray-500 text-xs hover:bg-white hover:shadow-sm data-[pressed]:bg-white data-[pressed]:text-gray-900 data-[pressed]:shadow-sm outline-none transition-all"><Icons.Bold size={13} /></Toggle>
-          <Toggle aria-label="Italic" className="flex h-7 w-7 items-center justify-center rounded text-gray-500 text-xs hover:bg-white hover:shadow-sm data-[pressed]:bg-white data-[pressed]:text-gray-900 data-[pressed]:shadow-sm outline-none transition-all"><Icons.Italic size={13} /></Toggle>
-          <Toggle aria-label="Underline" className="flex h-7 w-7 items-center justify-center rounded text-gray-500 text-xs hover:bg-white hover:shadow-sm data-[pressed]:bg-white data-[pressed]:text-gray-900 data-[pressed]:shadow-sm outline-none transition-all"><Icons.Underline size={13} /></Toggle>
-        </ToggleGroup>
-    </Tabs.Panel>
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
+<Toggle.ToggleGroupMultiple />
+</Tabs.Panel>
 </Tabs.Root>
 
-## Toggle
-
-A two-state button that can be on or off.
-Renders a `&lt;button&gt;` element.
-
-Documentation: [Base UI Toggle](https://base-ui.com/react/components/toggle)
 
 ### Props
 

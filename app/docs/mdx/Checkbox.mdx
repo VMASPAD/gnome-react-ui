@@ -4,223 +4,205 @@ title: Checkbox
 
 # Checkbox
 
-## Examples
+A control that allows the user to toggle between checked and not checked.
+Renders a `<span>` element and a hidden `<input>` beside it.
 
-### Example 1 — Basic checkbox (uncontrolled)
+Documentation: [Base UI Checkbox](https://base-ui.com/react/components/checkbox)
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
 ```tsx
-import * as Checkbox from './checkbox/index.parts';
+import { Checkbox } from '@base-ui/react/checkbox';
+import { Check } from 'lucide-react';
 
-export default function BasicCheckbox() {
+const checkboxBase =
+  'flex size-5 shrink-0 items-center justify-center rounded-md border border-input bg-card text-card-foreground shadow-sm transition-colors duration-150 hover:border-border focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring data-[checked]:border-primary data-[checked]:bg-primary data-[checked]:text-primary-foreground disabled:cursor-not-allowed disabled:opacity-50';
+
+export function CheckboxDefault() {
   return (
-    <label className="flex items-center gap-2 cursor-pointer select-none">
-      <Checkbox.Root
-        defaultChecked
-        className="size-5 rounded border-2 border-gray-300 bg-white data-[checked]:bg-blue-600 data-[checked]:border-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 flex items-center justify-center"
-      >
-        <Checkbox.Indicator className="text-white">
-          <svg viewBox="0 0 10 8" className="size-3" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M1 4l3 3 5-6" />
-          </svg>
+    <label className="flex select-none items-center gap-3 text-sm font-medium text-foreground cursor-pointer">
+      <Checkbox.Root className={checkboxBase}>
+        <Checkbox.Indicator className="flex items-center justify-center">
+          <Icons.Check className="size-3.5" strokeWidth={3} />
         </Checkbox.Indicator>
       </Checkbox.Root>
-      <span className="text-sm text-gray-700">Accept terms and conditions</span>
+      Aceptar términos y condiciones
     </label>
   );
 }
+
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <label className="flex items-center gap-2 cursor-pointer select-none">
-          <Checkbox.Root defaultChecked className="size-5 rounded border-2 border-gray-300 bg-white data-[checked]:bg-blue-600 data-[checked]:border-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 flex items-center justify-center">
-            <Checkbox.Indicator className="text-white">
-              <Icons.Check size={10} strokeWidth={3} />
-            </Checkbox.Indicator>
-          </Checkbox.Root>
-          <span className="text-sm text-gray-700">Accept terms and conditions</span>
-        </label>
-    </Tabs.Panel>
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
+<Checkbox.CheckboxDefault />
+</Tabs.Panel>
 </Tabs.Root>
 
-### Example 2 — Multiple checkboxes list
+# Anatomy
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
 ```tsx
-const options = ['Notifications', 'Weekly digest', 'Product updates'];
+import { Checkbox } from '@base-ui/react/checkbox';
 
-export default function CheckboxList() {
-  return (
-    <div className="space-y-3">
-      {options.map((option, i) => (
-        <label key={option} className="flex items-center gap-3 cursor-pointer">
-          <Checkbox.Root
-            defaultChecked={i < 2}
-            name={option}
-            className="size-5 rounded border-2 border-gray-300 flex items-center justify-center data-[checked]:bg-blue-600 data-[checked]:border-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500"
-          >
-            <Checkbox.Indicator className="text-white">
-              <svg viewBox="0 0 10 8" className="size-3" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M1 4l3 3 5-6" />
-              </svg>
-            </Checkbox.Indicator>
-          </Checkbox.Root>
-          <span className="text-sm text-gray-700">{option}</span>
-        </label>
-      ))}
-    </div>
-  );
-}
+<Checkbox.Root>
+  <Checkbox.Indicator />
+</Checkbox.Root>
+
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <div className="space-y-3">
-          <label className="flex items-center gap-3 cursor-pointer">
-            <Checkbox.Root defaultChecked className="size-5 rounded border-2 border-gray-300 flex items-center justify-center data-[checked]:bg-blue-600 data-[checked]:border-blue-600"><Checkbox.Indicator className="text-white"><Icons.Check size={10} strokeWidth={3} /></Checkbox.Indicator></Checkbox.Root>
-            <span className="text-sm text-gray-700">Notifications</span>
-          </label>
-          <label className="flex items-center gap-3 cursor-pointer">
-            <Checkbox.Root defaultChecked className="size-5 rounded border-2 border-gray-300 flex items-center justify-center data-[checked]:bg-blue-600 data-[checked]:border-blue-600"><Checkbox.Indicator className="text-white"><Icons.Check size={10} strokeWidth={3} /></Checkbox.Indicator></Checkbox.Root>
-            <span className="text-sm text-gray-700">Weekly digest</span>
-          </label>
-          <label className="flex items-center gap-3 cursor-pointer">
-            <Checkbox.Root className="size-5 rounded border-2 border-gray-300 flex items-center justify-center data-[checked]:bg-blue-600 data-[checked]:border-blue-600"><Checkbox.Indicator className="text-white"><Icons.Check size={10} strokeWidth={3} /></Checkbox.Indicator></Checkbox.Root>
-            <span className="text-sm text-gray-700">Product updates</span>
-          </label>
-        </div>
-    </Tabs.Panel>
-</Tabs.Root>
 
-### Example 3 — Disabled checkbox
+# Examples
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+## Disabled
+
+The checkbox can be disabled to prevent user interaction.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+<Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+</Tabs.List>
+<Tabs.Panel value="code">
+
 ```tsx
-export default function DisabledCheckbox() {
+import { Checkbox } from '@base-ui/react/checkbox';
+import { Check } from 'lucide-react';
+
+// ... (checkboxBase classes)
+
+export function CheckboxDisabled() {
   return (
-    <div className="space-y-3">
-      <label className="flex items-center gap-2 opacity-50 cursor-not-allowed">
-        <Checkbox.Root
-          disabled
-          className="size-5 rounded border-2 border-gray-300 flex items-center justify-center"
-        >
-          <Checkbox.Indicator><svg viewBox="0 0 10 8" className="size-3" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 4l3 3 5-6" /></svg></Checkbox.Indicator>
+    <div className="flex flex-col gap-4">
+      <label className="flex select-none items-center gap-3 text-sm font-medium text-muted-foreground cursor-not-allowed">
+        <Checkbox.Root disabled className={checkboxBase}>
+          <Checkbox.Indicator className="flex items-center justify-center">
+            <Icons.Check className="size-3.5" strokeWidth={3} />
+          </Checkbox.Indicator>
         </Checkbox.Root>
-        <span className="text-sm">Unchecked disabled</span>
+        Opción deshabilitada
       </label>
-      <label className="flex items-center gap-2 opacity-50 cursor-not-allowed">
-        <Checkbox.Root
-          disabled
-          defaultChecked
-          className="size-5 rounded border-2 border-gray-300 flex items-center justify-center data-[checked]:bg-gray-400 data-[checked]:border-gray-400"
-        >
-          <Checkbox.Indicator className="text-white"><svg viewBox="0 0 10 8" className="size-3" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 4l3 3 5-6" /></svg></Checkbox.Indicator>
+
+      <label className="flex select-none items-center gap-3 text-sm font-medium text-muted-foreground cursor-not-allowed">
+        <Checkbox.Root disabled defaultChecked className={checkboxBase}>
+          <Checkbox.Indicator className="flex items-center justify-center">
+            <Icons.Check className="size-3.5" strokeWidth={3} />
+          </Checkbox.Indicator>
         </Checkbox.Root>
-        <span className="text-sm">Checked disabled</span>
+        Opción seleccionada y deshabilitada
       </label>
     </div>
   );
 }
+
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <div className="space-y-3">
-          <label className="flex items-center gap-2 opacity-50 cursor-not-allowed">
-            <Checkbox.Root disabled className="size-5 rounded border-2 border-gray-300 flex items-center justify-center"><Checkbox.Indicator><Icons.Check size={10} strokeWidth={3} /></Checkbox.Indicator></Checkbox.Root>
-            <span className="text-sm text-gray-700">Unchecked disabled</span>
-          </label>
-          <label className="flex items-center gap-2 opacity-50 cursor-not-allowed">
-            <Checkbox.Root disabled defaultChecked className="size-5 rounded border-2 border-gray-300 flex items-center justify-center data-[checked]:bg-gray-400 data-[checked]:border-gray-400"><Checkbox.Indicator className="text-white"><Icons.Check size={10} strokeWidth={3} /></Checkbox.Indicator></Checkbox.Root>
-            <span className="text-sm text-gray-700">Checked disabled</span>
-          </label>
-        </div>
-    </Tabs.Panel>
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
+<Checkbox.CheckboxDisabled />
+</Tabs.Panel>
 </Tabs.Root>
-
-## CheckboxIndicator
-
-Indicates whether the checkbox is ticked.
-Renders a `&lt;span&gt;` element.
-
-Documentation: [Base UI Checkbox](https://base-ui.com/react/components/checkbox)
-
-### Props
-
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
-| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
-| **keepMounted** | `boolean` | `false` | Whether to keep the element in the DOM when the checkbox is not checked. |
-
 
 ---
 
-## CheckboxRoot
+## Indeterminate
 
-Represents the checkbox itself.
-Renders a `&lt;span&gt;` element and a hidden `&lt;input&gt;` beside.
+The checkbox supports an indeterminate state for mixed selection scenarios.
 
-Documentation: [Base UI Checkbox](https://base-ui.com/react/components/checkbox)
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+<Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+</Tabs.List>
+<Tabs.Panel value="code">
 
-### Props
+```tsx
+import * as React from 'react';
+import { Checkbox } from '@base-ui/react/checkbox';
+import { Check, Minus } from 'lucide-react';
+
+// ... (checkboxBase classes included data-[indeterminate]:...)
+
+export function CheckboxIndeterminate() {
+  const [checked, setChecked] = React.useState<boolean | 'indeterminate'>('indeterminate');
+
+  return (
+    <label className="flex select-none items-center gap-3 text-sm font-medium text-foreground cursor-pointer">
+      <Checkbox.Root
+        checked={checked}
+        onCheckedChange={(c) => setChecked(c)}
+        className={checkboxBase}
+      >
+        <Checkbox.Indicator className="flex items-center justify-center">
+          {checked === 'indeterminate' ? (
+            <Icons.Minus className="size-3.5" strokeWidth={3} />
+          ) : (
+            <Icons.Check className="size-3.5" strokeWidth={3} />
+          )}
+        </Checkbox.Indicator>
+      </Checkbox.Root>
+      Selección parcial
+    </label>
+  );
+}
+
+```
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
+<Checkbox.CheckboxIndeterminate />
+</Tabs.Panel>
+</Tabs.Root>
+
+## Props
+
+### Checkbox.Root
 
 | Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
-| **defaultChecked** | `boolean` | `false` | Whether the checkbox is initially ticked.<br/><br/>To render a controlled checkbox, use the `checked` prop instead. |
+| --- | --- | --- | --- |
+| **className** | `string | (...) => string)` | — | CSS class applied to the element, or a function that returns a class based on the component’s state. |
+| **defaultChecked** | `boolean` | `false` | Whether the checkbox is initially ticked. To render a controlled checkbox, use the checked prop instead. |
 | **id** | `string` | — | The id of the input element. |
-| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **render** | `ReactElement> | ComponentRenderFn` | — | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Accepts a ReactElement or a function that returns the element to render. |
 | **value** | `string` | — | The value of the selected checkbox. |
 | **disabled** | `boolean` | `false` | Whether the component should ignore user interaction. |
 | **name** | `string` | `undefined` | Identifies the field when a form is submitted. |
-| **nativeButton** | `boolean` | `false` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `true` if the rendered element is a native button. |
+| **nativeButton** | `boolean` | `false` | Whether the component renders a native `<button>` element when replacing it via the render prop. Set to true if the rendered element is a native button. |
 | **required** | `boolean` | `false` | Whether the user must tick the checkbox before submitting a form. |
 | **readOnly** | `boolean` | `false` | Whether the user should be unable to tick or untick the checkbox. |
-| **inputRef** | `Ref<HTMLInputElement>` | — | A ref to access the hidden `&lt;input&gt;` element. |
-| **checked** | `boolean` | `undefined` | Whether the checkbox is currently ticked.<br/><br/>To render an uncontrolled checkbox, use the `defaultChecked` prop instead. |
+| **inputRef** | `Ref<HTMLInputElement>` | — | A ref to access the hidden `<input>` element. |
+| **checked** | `boolean` | `undefined` | Whether the checkbox is currently ticked. To render an uncontrolled checkbox, use the defaultChecked prop instead. |
 | **indeterminate** | `boolean` | `false` | Whether the checkbox is in a mixed state: neither ticked, nor unticked. |
 | **onCheckedChange** | `(...) => void` | — | Event handler called when the checkbox is ticked or unticked. |
-| **parent** | `boolean` | `false` | Whether the checkbox controls a group of child checkboxes.<br/><br/>Must be used in a [Checkbox Group](https://base-ui.com/react/components/checkbox-group). |
-| **uncheckedValue** | `string` | — | The value submitted with the form when the checkbox is unchecked.<br/>By default, unchecked checkboxes do not submit any value, matching native checkbox behavior. |
+| **parent** | `boolean` | `false` | Whether the checkbox controls a group of child checkboxes. Must be used in a Checkbox Group. |
+| **uncheckedValue** | `string` | — | The value submitted with the form when the checkbox is unchecked. By default, unchecked checkboxes do not submit any value, matching native checkbox behavior. |
 
-
----
-
-## CheckboxGroup
-
-Provides a shared state to a series of checkboxes.
-
-Documentation: [Base UI Checkbox Group](https://base-ui.com/react/components/checkbox-group)
-
-### Props
+### Checkbox.Indicator
 
 | Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
-| **defaultValue** | `string[]` | — | Names of the checkboxes in the group that should be initially ticked.<br/><br/>To render a controlled checkbox group, use the `value` prop instead. |
-| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
-| **value** | `string[]` | — | Names of the checkboxes in the group that should be ticked.<br/><br/>To render an uncontrolled checkbox group, use the `defaultValue` prop instead. |
+| --- | --- | --- | --- |
+| **className** | `string | (...) => string)` | — | CSS class applied to the element, or a function that returns a class based on the component’s state. |
+| **render** | `ReactElement> | ComponentRenderFn` | — | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Accepts a ReactElement or a function that returns the element to render. |
+| **keepMounted** | `boolean` | `false` | Whether to keep the element in the DOM when the checkbox is not checked. |
+
+### Checkbox.Group
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| **className** | `string | (...) => string)` | — | CSS class applied to the element, or a function that returns a class based on the component’s state. |
+| **defaultValue** | `string[]` | — | Names of the checkboxes in the group that should be initially ticked. To render a controlled checkbox group, use the value prop instead. |
+| **render** | `ReactElement> | ComponentRenderFn` | — | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Accepts a ReactElement or a function that returns the element to render. |
+| **value** | `string[]` | — | Names of the checkboxes in the group that should be ticked. To render an uncontrolled checkbox group, use the defaultValue prop instead. |
 | **disabled** | `boolean` | `false` | Whether the component should ignore user interaction. |
-| **onValueChange** | `(...) => void` | — | Event handler called when a checkbox in the group is ticked or unticked.<br/>Provides the new value as an argument. |
+| **onValueChange** | `(...) => void` | — | Event handler called when a checkbox in the group is ticked or unticked. Provides the new value as an argument. |
 | **allValues** | `string[]` | — | Names of all checkboxes in the group. Use this when creating a parent checkbox. |
 
+```
 
----
-
+```

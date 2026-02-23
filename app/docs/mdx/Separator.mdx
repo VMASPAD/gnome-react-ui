@@ -4,120 +4,164 @@ title: Separator
 
 # Separator
 
-## Examples
+Visually or semantically separates content. 
 
-### Example 1 — Horizontal separator
+Documentation: [Base UI Separator](https://base-ui.com/react/components/separator)
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
 ```tsx
-import { Separator } from './separator';
+import * as React from 'react';
+import { Separator } from '@base-ui/react/separator';
+import { Settings, User, LogOut } from 'lucide-react';
 
-export default function HorizontalSeparator() {
+export function SeparatorDefault() {
   return (
-    <div className="w-64 space-y-3">
-      <p className="text-sm font-medium text-gray-800">Section A</p>
-      <Separator className="border-t border-gray-200" />
-      <p className="text-sm font-medium text-gray-800">Section B</p>
-      <Separator className="border-t border-gray-200" />
-      <p className="text-sm font-medium text-gray-800">Section C</p>
+    <div className="flex w-full max-w-sm flex-col rounded-lg border border-border bg-card p-4 shadow-sm">
+      <h3 className="text-lg font-medium text-foreground">PanOS Settings</h3>
+      <p className="text-sm text-muted-foreground">Gestiona la configuración de tu sistema.</p>
+      
+      <Separator className="my-4 h-px w-full bg-border" />
+      
+      <div className="flex flex-col gap-3">
+        <button className="flex items-center gap-2 text-sm text-foreground hover:text-primary">
+          <Icons.User className="size-4" /> Perfil de Usuario
+        </button>
+        <button className="flex items-center gap-2 text-sm text-foreground hover:text-primary">
+          <Icons.Settings className="size-4" /> Preferencias
+        </button>
+      </div>
+      
+      <Separator className="my-4 h-px w-full bg-border" />
+      
+      <button className="flex items-center gap-2 text-sm text-destructive hover:brightness-110">
+        <Icons.LogOut className="size-4" /> Cerrar sesión
+      </button>
     </div>
   );
 }
+
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <div className="w-64 space-y-3">
-          <p className="text-sm font-medium text-gray-800">Section A</p>
-          <Separator className="border-t border-gray-200" />
-          <p className="text-sm font-medium text-gray-800">Section B</p>
-          <Separator className="border-t border-gray-200" />
-          <p className="text-sm font-medium text-gray-800">Section C</p>
-        </div>
-    </Tabs.Panel>
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[200px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
+<Separator.SeparatorDefault />
+</Tabs.Panel>
 </Tabs.Root>
 
-### Example 2 — Vertical separator
+# Anatomy
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
 ```tsx
-export default function VerticalSeparator() {
+import { Separator } from '@base-ui/react/separator';
+
+<Separator orientation="horizontal" />
+
+```
+
+# Examples
+
+## Vertical Orientation
+
+By setting `orientation="vertical"`, you can create vertical dividers. This is particularly useful in toolbars or horizontal menus.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+<Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+</Tabs.List>
+<Tabs.Panel value="code">
+
+```tsx
+import * as React from 'react';
+import { Separator } from '@base-ui/react/separator';
+import { Terminal, Package, Monitor } from 'lucide-react';
+
+export function SeparatorVertical() {
   return (
-    <div className="flex items-center gap-3 text-sm text-gray-600">
-      <span>Home</span>
-      <Separator orientation="vertical" className="h-4 w-px bg-gray-300" />
-      <span>Products</span>
-      <Separator orientation="vertical" className="h-4 w-px bg-gray-300" />
-      <span>Contact</span>
+    <div className="flex h-12 w-fit items-center gap-4 rounded-lg border border-border bg-card px-4 shadow-sm text-foreground">
+      <button className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors">
+        <Icons.Terminal className="size-4" /> Terminal
+      </button>
+      
+      <Separator orientation="vertical" className="h-6 w-px bg-border" />
+      
+      <button className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors">
+        <Icons.Package className="size-4" /> Software
+      </button>
+
+      <Separator orientation="vertical" className="h-6 w-px bg-border" />
+      
+      <button className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors">
+        <Icons.Monitor className="size-4" /> Pantalla
+      </button>
     </div>
   );
 }
+
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <div className="flex items-center gap-3 text-sm text-gray-600">
-          <span>Home</span>
-          <Separator orientation="vertical" className="h-4 w-px bg-gray-300" />
-          <span>Products</span>
-          <Separator orientation="vertical" className="h-4 w-px bg-gray-300" />
-          <span>Contact</span>
-        </div>
-    </Tabs.Panel>
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
+<Separator.SeparatorVertical />
+</Tabs.Panel>
 </Tabs.Root>
 
-### Example 3 — Separator in a card layout
+---
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+## With Embedded Content
+
+Separators can be combined with flexbox layouts to create dividers with text in the middle. Since the `Separator` component renders a `<div role="separator">` by default, it works seamlessly alongside text spans.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+<Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+</Tabs.List>
+<Tabs.Panel value="code">
+
 ```tsx
-export default function SeparatorInCard() {
+import * as React from 'react';
+import { Separator } from '@base-ui/react/separator';
+
+export function SeparatorWithContent() {
   return (
-    <div className="w-64 rounded-xl border border-gray-200 bg-white overflow-hidden">
-      <div className="px-4 py-3">
-        <p className="text-sm font-semibold text-gray-800">Account</p>
-        <p className="text-xs text-gray-400">Manage your settings</p>
+    <div className="flex w-full max-w-md flex-col">
+      <div className="flex items-center text-sm text-muted-foreground">
+        <Separator className="flex-1 h-px bg-border" />
+        <span className="px-3 font-medium">O continúa con</span>
+        <Separator className="flex-1 h-px bg-border" />
       </div>
-      <Separator className="border-t border-gray-100" />
-      <div className="px-4 py-3 space-y-2">
-        <p className="text-sm text-gray-600">Profile</p>
-        <p className="text-sm text-gray-600">Billing</p>
-        <p className="text-sm text-gray-600">Security</p>
-      </div>
-      <Separator className="border-t border-gray-100" />
-      <div className="px-4 py-3">
-        <p className="text-sm text-red-500">Sign out</p>
+      
+      <div className="mt-4 flex gap-3">
+        <button className="flex h-10 flex-1 items-center justify-center rounded-lg border border-border bg-card text-sm font-medium text-foreground hover:bg-accent transition-colors">
+          Cuenta Local
+        </button>
+        <button className="flex h-10 flex-1 items-center justify-center rounded-lg border border-border bg-card text-sm font-medium text-foreground hover:bg-accent transition-colors">
+          LDAP / Directorio
+        </button>
       </div>
     </div>
   );
 }
+
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <div className="w-56 rounded-xl border border-gray-200 bg-white overflow-hidden">
-          <div className="px-4 py-3"><p className="text-sm font-semibold text-gray-800">Account</p><p className="text-xs text-gray-400">Manage your settings</p></div>
-          <Separator className="border-t border-gray-100" />
-          <div className="px-4 py-3 space-y-2"><p className="text-sm text-gray-600">Profile</p><p className="text-sm text-gray-600">Billing</p><p className="text-sm text-gray-600">Security</p></div>
-          <Separator className="border-t border-gray-100" />
-          <div className="px-4 py-3"><p className="text-sm text-red-500">Sign out</p></div>
-        </div>
-    </Tabs.Panel>
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
+<Separator.SeparatorWithContent />
+</Tabs.Panel>
 </Tabs.Root>
+
+```
+
+```
 
 ## Separator
 

@@ -4,183 +4,300 @@ title: Drawer
 
 # Drawer
 
-## Examples
-
-### Example 1 — Basic bottom drawer
+A panel that slides in from the edge of the screen.
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
 ```tsx
-import * as Drawer from './drawer/index.parts';
+import { DrawerPreview as Drawer } from '@base-ui/react/drawer';
+import { PanelRight, Settings, Bell, User, Lock, Wifi, ChevronRight, X, SlidersHorizontal, Moon, Shield } from 'lucide-react';
 
-export default function BasicDrawer() {
+const btnBase =
+  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+
+export function DrawerDefault() {
   return (
-    <Drawer.Root>
-      <Drawer.Trigger className="px-4 py-2 rounded-md bg-blue-600 text-white text-sm font-medium hover:bg-blue-700">
+    <Drawer.Root swipeDirection="right">
+      <Drawer.Trigger className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}>
+        <Icons.PanelRight className="size-4 shrink-0" />
         Open drawer
       </Drawer.Trigger>
+
       <Drawer.Portal>
-        <Drawer.Backdrop className="fixed inset-0 bg-black/40" />
-        <Drawer.Popup className="fixed bottom-0 left-0 right-0 max-h-[90dvh] rounded-t-2xl bg-white shadow-2xl">
-          <Drawer.Content>
-            <div className="mx-auto mt-3 h-1 w-10 rounded-full bg-gray-300" />
-            <div className="px-6 pb-6 pt-4">
-              <Drawer.Title className="text-lg font-semibold text-gray-900">Drawer title</Drawer.Title>
-              <p className="mt-2 text-sm text-gray-500">Swipe down or click the backdrop to close this drawer.</p>
-            </div>
-          </Drawer.Content>
-        </Drawer.Popup>
-      </Drawer.Portal>
-    </Drawer.Root>
-  );
-}
-```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Drawer.Root>
-          <Drawer.Trigger className="px-4 py-2 rounded-md bg-blue-600 text-white text-sm font-medium hover:bg-blue-700">Open drawer</Drawer.Trigger>
-          <Drawer.Portal>
-            <Drawer.Backdrop className="fixed inset-0 bg-black/40" />
-            <Drawer.Popup className="fixed bottom-0 left-0 right-0 max-h-[90dvh] rounded-t-2xl bg-white shadow-2xl">
-              <Drawer.Content>
-                <div className="mx-auto mt-3 h-1 w-10 rounded-full bg-gray-300" />
-                <div className="px-6 pb-6 pt-4">
-                  <Drawer.Title className="text-lg font-semibold text-gray-900">Drawer title</Drawer.Title>
-                  <p className="mt-2 text-sm text-gray-500">Swipe down or click the backdrop to close this drawer.</p>
-                </div>
-              </Drawer.Content>
-            </Drawer.Popup>
-          </Drawer.Portal>
-        </Drawer.Root>
-    </Tabs.Panel>
-</Tabs.Root>
-
-### Example 2 — Drawer with menu items
-
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
-```tsx
-export default function MenuDrawer() {
-  const menuItems = [
-    { icon: '🏠', label: 'Home' },
-    { icon: '👤', label: 'Profile' },
-    { icon: '⚙️', label: 'Settings' },
-    { icon: '🚪', label: 'Log out', danger: true },
-  ];
-
-  return (
-    <Drawer.Root>
-      <Drawer.Trigger className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-gray-200 text-sm hover:bg-gray-50">
-        ☰ Menu
-      </Drawer.Trigger>
-      <Drawer.Portal>
-        <Drawer.Backdrop className="fixed inset-0 bg-black/30" />
-        <Drawer.Popup className="fixed bottom-0 left-0 right-0 rounded-t-2xl bg-white shadow-2xl">
-          <Drawer.Content>
-            <div className="mx-auto mt-3 h-1 w-10 rounded-full bg-gray-300" />
-            <div className="px-2 py-3">
-              {menuItems.map(({ icon, label, danger }) => (
-                <Drawer.Close key={label} className={`flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium hover:bg-gray-50 ${danger ? 'text-red-500' : 'text-gray-700'}`}>
-                  <span>{icon}</span> {label}
+        <Drawer.Backdrop className="fixed inset-0 min-h-dvh bg-black/40 backdrop-blur-sm transition-all duration-300 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 supports-[-webkit-touch-callout:none]:absolute" />
+        <Drawer.Viewport className="fixed inset-0 flex justify-end">
+          <Drawer.Popup className="flex h-full w-80 flex-col border-l border-border bg-card shadow-2xl outline-none transition-transform duration-300 ease-out data-[ending-style]:translate-x-full data-[starting-style]:translate-x-full">
+            <Drawer.Content className="flex flex-1 flex-col overflow-y-auto">
+              <div className="flex items-center gap-3 border-b border-border px-5 py-4">
+                <Icons.Settings className="size-4 shrink-0 text-primary" />
+                <Drawer.Title className="flex-1 text-base font-semibold text-foreground">
+                  Quick settings
+                </Drawer.Title>
+                <Drawer.Close className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
+                  <Icons.X className="size-4" />
                 </Drawer.Close>
-              ))}
+              </div>
+
+              <nav className="flex flex-col divide-y divide-border">
+                {[
+                  { icon: Icons.Wifi,              label: 'Network',    value: 'Connected' },
+                  { icon: Icons.Bell,              label: 'Notifications', value: 'On'     },
+                  { icon: Icons.Moon,              label: 'Night Light',value: 'Off'       },
+                  { icon: Icons.Shield,            label: 'Privacy',    value: 'Managed'   },
+                  { icon: Icons.SlidersHorizontal, label: 'Display',    value: 'Auto'      },
+                  { icon: Icons.User,              label: 'Accounts',   value: '2 linked'  },
+                  { icon: Icons.Lock,              label: 'Security',   value: 'Active'    },
+                ].map(({ icon: Icon, label, value }) => (
+                  <button
+                    key={label}
+                    className="flex w-full items-center gap-3 px-5 py-3 text-left transition-colors duration-150 hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
+                  >
+                    <Icon className="size-4 shrink-0 text-muted-foreground" />
+                    <span className="flex-1 text-sm text-foreground">{label}</span>
+                    <span className="text-xs text-muted-foreground">{value}</span>
+                    <Icons.ChevronRight className="size-3.5 shrink-0 text-muted-foreground" />
+                  </button>
+                ))}
+              </nav>
+            </Drawer.Content>
+
+            <div className="border-t border-border px-5 py-3">
+              <Drawer.Close className={`${btnBase} h-9 w-full bg-primary text-primary-foreground hover:brightness-95`}>
+                Close
+              </Drawer.Close>
             </div>
-          </Drawer.Content>
-        </Drawer.Popup>
+          </Drawer.Popup>
+        </Drawer.Viewport>
       </Drawer.Portal>
     </Drawer.Root>
   );
 }
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Drawer.Root>
-          <Drawer.Trigger className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-gray-200 text-sm hover:bg-gray-50">☰ Menu</Drawer.Trigger>
-          <Drawer.Portal>
-            <Drawer.Backdrop className="fixed inset-0 bg-black/30" />
-            <Drawer.Popup className="fixed bottom-0 left-0 right-0 rounded-t-2xl bg-white shadow-2xl">
-              <Drawer.Content>
-                <div className="mx-auto mt-3 h-1 w-10 rounded-full bg-gray-300" />
-                <div className="px-2 py-3">
-                  <Drawer.Close className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium hover:bg-gray-50 text-gray-700">🏠 Home</Drawer.Close>
-                  <Drawer.Close className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium hover:bg-gray-50 text-gray-700">👤 Profile</Drawer.Close>
-                  <Drawer.Close className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium hover:bg-gray-50 text-gray-700">⚙️ Settings</Drawer.Close>
-                  <Drawer.Close className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium hover:bg-gray-50 text-red-500">🚪 Log out</Drawer.Close>
-                </div>
-              </Drawer.Content>
-            </Drawer.Popup>
-          </Drawer.Portal>
-        </Drawer.Root>
-    </Tabs.Panel>
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+    <Drawer.DrawerDefault />
+  </Tabs.Panel>
 </Tabs.Root>
 
-### Example 3 — Snap points drawer
+# Anatomy
+
+```tsx
+import { DrawerPreview as Drawer } from '@base-ui/react/drawer';
+
+<Drawer.Provider>
+  <Drawer.IndentBackground />
+  <Drawer.Indent>
+    <Drawer.Root>
+      <Drawer.Trigger />
+      <Drawer.Portal>
+        <Drawer.Backdrop />
+        <Drawer.Viewport>
+          <Drawer.Popup>
+            <Drawer.Content>
+              <Drawer.Title />
+              <Drawer.Description />
+              <Drawer.Close />
+            </Drawer.Content>
+          </Drawer.Popup>
+        </Drawer.Viewport>
+      </Drawer.Portal>
+    </Drawer.Root>
+  </Drawer.Indent>
+</Drawer.Provider>
+```
+
+# Examples
+
+## Snap points
+
+A bottom drawer that snaps to 40% or full height, inspired by GNOME Mobile action sheets. Drag up to reveal all filter options.
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
 ```tsx
-// Snap points allow the drawer to rest at different heights
-export default function SnapDrawer() {
+import { DrawerPreview as Drawer } from '@base-ui/react/drawer';
+import { SlidersHorizontal, X } from 'lucide-react';
+
+const btnBase =
+  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+
+const filterGroups = [
+  { label: 'Type',     options: ['All', 'Documents', 'Images', 'Videos', 'Audio'] },
+  { label: 'Modified', options: ['Any time', 'Today', 'This week', 'This month']  },
+  { label: 'Owner',    options: ['Anyone', 'Me', 'Others']                        },
+];
+
+export function DrawerSnapPoints() {
   return (
-    <Drawer.Root snapPoints={[0.4, 1]}>
-      <Drawer.Trigger className="px-4 py-2 rounded-md bg-gray-900 text-white text-sm font-medium hover:bg-gray-800">
-        Snap drawer
+    <Drawer.Root snapPoints={[0.4, 1]} defaultSnapPoint={0.4} swipeDirection="down">
+      <Drawer.Trigger className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}>
+        <Icons.SlidersHorizontal className="size-4 shrink-0" />
+        Filter results
       </Drawer.Trigger>
+
       <Drawer.Portal>
-        <Drawer.Backdrop className="fixed inset-0 bg-black/40" />
-        <Drawer.Popup className="fixed bottom-0 left-0 right-0 max-h-[calc(100dvh-2rem)] rounded-t-2xl bg-white shadow-2xl">
-          <Drawer.Content className="overflow-y-auto">
-            <div className="sticky top-0 mx-auto pt-3 pb-2 bg-white">
-              <div className="mx-auto h-1 w-10 rounded-full bg-gray-300" />
+        <Drawer.Backdrop className="fixed inset-0 min-h-dvh bg-black/40 backdrop-blur-sm transition-all duration-300 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 supports-[-webkit-touch-callout:none]:absolute" />
+        <Drawer.Viewport className="fixed inset-0 flex items-end">
+          <Drawer.Popup className="flex max-h-full w-full flex-col rounded-t-2xl border-t border-border bg-card shadow-2xl outline-none transition-transform duration-300 ease-out data-[ending-style]:translate-y-full data-[starting-style]:translate-y-full">
+            <div className="flex justify-center pb-1 pt-3">
+              <div className="h-1 w-10 rounded-full bg-border" />
             </div>
-            <div className="px-6 pb-8 pt-2">
-              <Drawer.Title className="text-lg font-semibold">Snap points demo</Drawer.Title>
-              <p className="mt-2 text-sm text-gray-500">Drag to snap to 40% or 100% height.</p>
-              <div className="mt-4 space-y-2">{Array.from({length:6}).map((_,i) => (
-                <div key={i} className="h-10 rounded bg-gray-100" />
-              ))}</div>
-            </div>
-          </Drawer.Content>
-        </Drawer.Popup>
+
+            <Drawer.Content className="flex flex-1 flex-col overflow-y-auto px-5 pb-6">
+              <div className="flex items-center gap-3 py-4">
+                <Icons.SlidersHorizontal className="size-4 shrink-0 text-primary" />
+                <Drawer.Title className="flex-1 text-base font-semibold text-foreground">
+                  Filter results
+                </Drawer.Title>
+                <Drawer.Close className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
+                  <Icons.X className="size-4" />
+                </Drawer.Close>
+              </div>
+
+              <Drawer.Description className="mb-5 text-sm leading-relaxed text-muted-foreground">
+                Drag up to see all filter options. Swipe down to dismiss.
+              </Drawer.Description>
+
+              {filterGroups.map(({ label, options }) => (
+                <div key={label} className="mb-5">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                    {label}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {options.map((opt, i) => (
+                      <button
+                        key={opt}
+                        className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring ${
+                          i === 0
+                            ? 'border-primary bg-primary/10 text-primary'
+                            : 'border-border bg-card text-foreground hover:bg-accent'
+                        }`}
+                      >
+                        {opt}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+
+              <Drawer.Close className={`${btnBase} mt-2 h-10 w-full bg-primary text-primary-foreground hover:brightness-95`}>
+                Apply filters
+              </Drawer.Close>
+            </Drawer.Content>
+          </Drawer.Popup>
+        </Drawer.Viewport>
       </Drawer.Portal>
     </Drawer.Root>
   );
 }
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Drawer.Root snapPoints={[0.4, 1]}>
-          <Drawer.Trigger className="px-4 py-2 rounded-md bg-gray-900 text-white text-sm font-medium hover:bg-gray-800">Snap drawer</Drawer.Trigger>
-          <Drawer.Portal>
-            <Drawer.Backdrop className="fixed inset-0 bg-black/40" />
-            <Drawer.Popup className="fixed bottom-0 left-0 right-0 max-h-[calc(100dvh-2rem)] rounded-t-2xl bg-white shadow-2xl">
-              <Drawer.Content className="overflow-y-auto">
-                <div className="mx-auto mt-3 h-1 w-10 rounded-full bg-gray-300" />
-                <div className="px-6 pb-8 pt-2">
-                  <Drawer.Title className="text-lg font-semibold">Snap points demo</Drawer.Title>
-                  <p className="mt-2 text-sm text-gray-500">Drag to snap to 40% or 100% height.</p>
-                </div>
-              </Drawer.Content>
-            </Drawer.Popup>
-          </Drawer.Portal>
-        </Drawer.Root>
-    </Tabs.Panel>
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+    <Drawer.DrawerSnapPoints />
+  </Tabs.Panel>
 </Tabs.Root>
+
+---
+
+## Navigation sidebar
+
+A left-side navigation drawer using `swipeDirection="left"`, inspired by GNOME Files places panel.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
+```tsx
+import { DrawerPreview as Drawer } from '@base-ui/react/drawer';
+import { PanelRight, User, Lock, Bell, Shield, Moon, X } from 'lucide-react';
+
+const btnBase =
+  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+
+const navItems = [
+  { icon: Icons.User,   label: 'Home',      active: true  },
+  { icon: Icons.Lock,   label: 'Documents', active: false },
+  { icon: Icons.Bell,   label: 'Downloads', active: false },
+  { icon: Icons.Shield, label: 'Pictures',  active: false },
+  { icon: Icons.Moon,   label: 'Music',     active: false },
+];
+
+export function DrawerNavigation() {
+  return (
+    <Drawer.Root swipeDirection="left">
+      <Drawer.Trigger className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}>
+        <Icons.PanelRight className="size-4 shrink-0 scale-x-[-1]" />
+        Navigation
+      </Drawer.Trigger>
+
+      <Drawer.Portal>
+        <Drawer.Backdrop className="fixed inset-0 min-h-dvh bg-black/40 backdrop-blur-sm transition-all duration-300 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 supports-[-webkit-touch-callout:none]:absolute" />
+        <Drawer.Viewport className="fixed inset-0 flex justify-start">
+          <Drawer.Popup className="flex h-full w-72 flex-col border-r border-border bg-sidebar shadow-2xl outline-none transition-transform duration-300 ease-out data-[ending-style]:-translate-x-full data-[starting-style]:-translate-x-full">
+            <Drawer.Content className="flex flex-1 flex-col overflow-y-auto">
+              <div className="flex items-center gap-3 border-b border-sidebar-border px-4 py-4">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-semibold">
+                  U
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-semibold text-sidebar-foreground truncate">ubuntu</p>
+                  <p className="text-xs text-muted-foreground truncate">/home/ubuntu</p>
+                </div>
+                <Drawer.Close className="flex h-6 w-6 items-center justify-center rounded-md text-muted-foreground transition-colors duration-150 hover:bg-sidebar-accent hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
+                  <Icons.X className="size-3.5" />
+                </Drawer.Close>
+              </div>
+
+              <div className="px-3 pb-1 pt-3">
+                <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">Places</p>
+              </div>
+
+              <nav className="flex flex-col px-2">
+                {navItems.map(({ icon: Icon, label, active }) => (
+                  <button
+                    key={label}
+                    className={`flex w-full items-center gap-2.5 rounded-lg px-3 py-2.5 text-left text-sm transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring ${
+                      active
+                        ? 'bg-sidebar-accent font-semibold text-sidebar-primary'
+                        : 'text-sidebar-foreground hover:bg-sidebar-accent'
+                    }`}
+                  >
+                    <Icon className={`size-4 shrink-0 ${active ? 'text-sidebar-primary' : 'text-muted-foreground'}`} />
+                    {label}
+                  </button>
+                ))}
+              </nav>
+            </Drawer.Content>
+
+            <Drawer.Description className="border-t border-sidebar-border px-4 py-3 text-xs text-muted-foreground">
+              Swipe left to close.
+            </Drawer.Description>
+          </Drawer.Popup>
+        </Drawer.Viewport>
+      </Drawer.Portal>
+    </Drawer.Root>
+  );
+}
+```
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+    <Drawer.DrawerNavigation />
+  </Tabs.Panel>
+</Tabs.Root>
+
 
 ## DrawerBackdrop
 

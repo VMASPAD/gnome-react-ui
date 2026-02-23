@@ -4,36 +4,66 @@ title: Dialog
 
 # Dialog
 
-## Examples
-
-### Example 1 — Basic dialog
+A popup that opens on top of the entire page.
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
 ```tsx
-import * as Dialog from './dialog/index.parts';
+import { Dialog } from '@base-ui/react/dialog';
+import { Bell, User, Mail, Lock, ExternalLink, X } from 'lucide-react';
 
-export default function BasicDialog() {
+const btnBase =
+  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+
+export function DialogDefault() {
   return (
     <Dialog.Root>
-      <Dialog.Trigger className="px-4 py-2 rounded-md bg-blue-600 text-white text-sm font-medium hover:bg-blue-700">
-        Open dialog
+      <Dialog.Trigger className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}>
+        <Icons.Bell className="size-4 shrink-0" />
+        View notifications
       </Dialog.Trigger>
+
       <Dialog.Portal>
-        <Dialog.Backdrop className="fixed inset-0 bg-black/40 backdrop-blur-sm" />
-        <Dialog.Popup className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(400px,calc(100vw-2rem))] rounded-xl bg-white p-6 shadow-2xl">
-          <Dialog.Title className="text-lg font-semibold text-gray-900">Dialog title</Dialog.Title>
-          <Dialog.Description className="mt-2 text-sm text-gray-500">
-            This is a basic dialog. Click outside or press Escape to close.
-          </Dialog.Description>
-          <div className="mt-5 flex justify-end">
-            <Dialog.Close className="px-4 py-2 rounded-md bg-gray-900 text-white text-sm font-medium hover:bg-gray-800">
-              Close
+        <Dialog.Backdrop className="fixed inset-0 min-h-dvh bg-black/40 backdrop-blur-sm transition-all duration-200 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 supports-[-webkit-touch-callout:none]:absolute" />
+        <Dialog.Popup className="fixed top-1/2 left-1/2 w-[400px] max-w-[calc(100vw-2rem)] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl border border-border bg-card shadow-xl outline-none transition-all duration-200 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0">
+          <div className="flex items-center gap-3 border-b border-border px-5 py-4">
+            <Icons.Bell className="size-4 shrink-0 text-primary" />
+            <Dialog.Title className="flex-1 text-base font-semibold text-foreground">
+              Notifications
+            </Dialog.Title>
+            <Dialog.Close className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
+              <Icons.X className="size-4" />
+            </Dialog.Close>
+          </div>
+
+          <div className="flex flex-col divide-y divide-border">
+            {[
+              { icon: Icons.User,         label: 'Marco joined your workspace',  time: '2m ago',  read: false },
+              { icon: Icons.Mail,         label: 'New message from Sara',         time: '14m ago', read: false },
+              { icon: Icons.ExternalLink, label: 'Build pipeline completed',      time: '1h ago',  read: true  },
+              { icon: Icons.Lock,         label: 'Password changed successfully', time: '3h ago',  read: true  },
+            ].map(({ icon: Icon, label, time, read }) => (
+              <div key={label} className={`flex items-start gap-3 px-5 py-3.5 ${read ? 'opacity-60' : ''}`}>
+                <div className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${read ? 'bg-muted text-muted-foreground' : 'bg-primary/10 text-primary'}`}>
+                  <Icon className="size-3.5" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm text-foreground">{label}</p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">{time}</p>
+                </div>
+                {!read && <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />}
+              </div>
+            ))}
+          </div>
+
+          <div className="flex justify-end border-t border-border px-5 py-3">
+            <Dialog.Close className={`${btnBase} h-9 bg-primary px-4 text-primary-foreground hover:brightness-95`}>
+              Mark all as read
             </Dialog.Close>
           </div>
         </Dialog.Popup>
@@ -42,60 +72,104 @@ export default function BasicDialog() {
   );
 }
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Dialog.Root>
-          <Dialog.Trigger className="px-4 py-2 rounded-md bg-blue-600 text-white text-sm font-medium hover:bg-blue-700">Open dialog</Dialog.Trigger>
-          <Dialog.Portal>
-            <Dialog.Backdrop className="fixed inset-0 bg-black/40 backdrop-blur-sm" />
-            <Dialog.Popup className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(400px,calc(100vw-2rem))] rounded-xl bg-white p-6 shadow-2xl">
-              <Dialog.Title className="text-lg font-semibold text-gray-900">Dialog title</Dialog.Title>
-              <Dialog.Description className="mt-2 text-sm text-gray-500">This is a basic dialog. Click outside or press Escape to close.</Dialog.Description>
-              <div className="mt-5 flex justify-end">
-                <Dialog.Close className="px-4 py-2 rounded-md bg-gray-900 text-white text-sm font-medium hover:bg-gray-800">Close</Dialog.Close>
-              </div>
-            </Dialog.Popup>
-          </Dialog.Portal>
-        </Dialog.Root>
-    </Tabs.Panel>
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+    <Dialog.DialogDefault />
+  </Tabs.Panel>
 </Tabs.Root>
 
-### Example 2 — Dialog with form
+# Anatomy
+
+```tsx
+import { Dialog } from '@base-ui/react/dialog';
+
+<Dialog.Root>
+  <Dialog.Trigger />
+  <Dialog.Portal>
+    <Dialog.Backdrop />
+    <Dialog.Viewport>
+      <Dialog.Popup>
+        <Dialog.Title />
+        <Dialog.Description />
+        <Dialog.Close />
+      </Dialog.Popup>
+    </Dialog.Viewport>
+  </Dialog.Portal>
+</Dialog.Root>
+```
+
+# Examples
+
+## Settings / Form
+
+A dialog with form inputs for editing user profile data, inspired by GNOME Settings modals.
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
 ```tsx
-export default function DialogWithForm() {
+import { Dialog } from '@base-ui/react/dialog';
+import { Settings, User, Mail, X, Pencil } from 'lucide-react';
+
+const btnBase =
+  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+
+export function DialogSettings() {
   return (
     <Dialog.Root>
-      <Dialog.Trigger className="px-4 py-2 rounded-md border border-gray-200 text-sm font-medium hover:bg-gray-50">
+      <Dialog.Trigger className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}>
+        <Icons.Settings className="size-4 shrink-0" />
         Edit profile
       </Dialog.Trigger>
+
       <Dialog.Portal>
-        <Dialog.Backdrop className="fixed inset-0 bg-black/40" />
-        <Dialog.Popup className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(440px,calc(100vw-2rem))] rounded-xl bg-white shadow-2xl">
-          <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
-            <Dialog.Title className="font-semibold text-gray-900">Edit profile</Dialog.Title>
-            <Dialog.Close className="rounded-md p-1 hover:bg-gray-100 text-gray-500">✕</Dialog.Close>
+        <Dialog.Backdrop className="fixed inset-0 min-h-dvh bg-black/40 backdrop-blur-sm transition-all duration-200 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 supports-[-webkit-touch-callout:none]:absolute" />
+        <Dialog.Popup className="fixed top-1/2 left-1/2 w-[440px] max-w-[calc(100vw-2rem)] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl border border-border bg-card shadow-xl outline-none transition-all duration-200 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0">
+          <div className="flex items-center gap-3 border-b border-border px-5 py-4">
+            <Icons.Pencil className="size-4 shrink-0 text-primary" />
+            <Dialog.Title className="flex-1 text-base font-semibold text-foreground">
+              Edit profile
+            </Dialog.Title>
+            <Dialog.Close className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
+              <Icons.X className="size-4" />
+            </Dialog.Close>
           </div>
-          <div className="px-6 py-4 space-y-4">
-            <label className="block">
-              <span className="text-xs font-medium text-gray-600">Display name</span>
-              <input className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500" defaultValue="Jane Doe" />
-            </label>
-            <label className="block">
-              <span className="text-xs font-medium text-gray-600">Email</span>
-              <input type="email" className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500" defaultValue="jane@example.com" />
-            </label>
+
+          <div className="flex flex-col gap-4 px-5 py-5">
+            <Dialog.Description className="text-sm leading-relaxed text-muted-foreground">
+              Update your public profile information. Changes will be visible to all workspace members.
+            </Dialog.Description>
+
+            {[
+              { label: 'Full name', placeholder: 'Elena Larsson', icon: Icons.User },
+              { label: 'Email address', placeholder: 'elena@example.com', icon: Icons.Mail },
+            ].map(({ label, placeholder, icon: Icon }) => (
+              <div key={label} className="flex flex-col gap-1.5">
+                <label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  {label}
+                </label>
+                <div className="relative flex items-center">
+                  <Icon className="pointer-events-none absolute left-3 size-4 text-muted-foreground" />
+                  <input
+                    placeholder={placeholder}
+                    className="h-10 w-full rounded-lg border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="flex justify-end gap-2 px-6 py-4 border-t border-gray-100">
-            <Dialog.Close className="px-4 py-2 rounded-md border border-gray-200 text-sm hover:bg-gray-50">Cancel</Dialog.Close>
-            <Dialog.Close className="px-4 py-2 rounded-md bg-blue-600 text-white text-sm hover:bg-blue-700">Save changes</Dialog.Close>
+
+          <div className="flex justify-end gap-2 border-t border-border px-5 py-3">
+            <Dialog.Close className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}>
+              Cancel
+            </Dialog.Close>
+            <Dialog.Close className={`${btnBase} h-9 bg-primary px-4 text-primary-foreground hover:brightness-95`}>
+              Save changes
+            </Dialog.Close>
           </div>
         </Dialog.Popup>
       </Dialog.Portal>
@@ -103,56 +177,73 @@ export default function DialogWithForm() {
   );
 }
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Dialog.Root>
-          <Dialog.Trigger className="px-4 py-2 rounded-md border border-gray-200 text-sm font-medium hover:bg-gray-50">Edit profile</Dialog.Trigger>
-          <Dialog.Portal>
-            <Dialog.Backdrop className="fixed inset-0 bg-black/40" />
-            <Dialog.Popup className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(440px,calc(100vw-2rem))] rounded-xl bg-white shadow-2xl">
-              <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
-                <Dialog.Title className="font-semibold text-gray-900">Edit profile</Dialog.Title>
-                <Dialog.Close className="rounded-md p-1 hover:bg-gray-100 text-gray-500">✕</Dialog.Close>
-              </div>
-              <div className="px-6 py-4 space-y-4">
-                <label className="block"><span className="text-xs font-medium text-gray-600">Display name</span><input className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm outline-none" defaultValue="Jane Doe" /></label>
-                <label className="block"><span className="text-xs font-medium text-gray-600">Email</span><input type="email" className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm outline-none" defaultValue="jane@example.com" /></label>
-              </div>
-              <div className="flex justify-end gap-2 px-6 py-4 border-t border-gray-100">
-                <Dialog.Close className="px-4 py-2 rounded-md border border-gray-200 text-sm hover:bg-gray-50">Cancel</Dialog.Close>
-                <Dialog.Close className="px-4 py-2 rounded-md bg-blue-600 text-white text-sm hover:bg-blue-700">Save changes</Dialog.Close>
-              </div>
-            </Dialog.Popup>
-          </Dialog.Portal>
-        </Dialog.Root>
-    </Tabs.Panel>
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+    <Dialog.DialogSettings />
+  </Tabs.Panel>
 </Tabs.Root>
 
-### Example 3 — Non-modal dialog (no backdrop)
+---
+
+## Non-modal panel
+
+Uses `modal={false}` so the rest of the page stays interactive. The panel slides in from the right, inspired by GNOME Files properties sidebar.
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
 ```tsx
-// modal=false allows background interaction while the dialog is open
-export default function NonModalDialog() {
+import { Dialog } from '@base-ui/react/dialog';
+import { ExternalLink, Lock, X } from 'lucide-react';
+
+const btnBase =
+  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+
+const rows = [
+  { label: 'Type',     value: 'Markdown document' },
+  { label: 'Size',     value: '4.2 KB' },
+  { label: 'Modified', value: 'Feb 23, 2026' },
+  { label: 'Owner',    value: 'ubuntu' },
+  { label: 'Location', value: '~/Documents' },
+];
+
+export function DialogNonModal() {
   return (
     <Dialog.Root modal={false}>
-      <Dialog.Trigger className="px-4 py-2 rounded-md border border-dashed border-gray-300 text-sm text-gray-600 hover:border-gray-400">
-        Open non-modal
+      <Dialog.Trigger className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}>
+        <Icons.ExternalLink className="size-4 shrink-0" />
+        File details
       </Dialog.Trigger>
+
       <Dialog.Portal>
-        <Dialog.Popup className="fixed bottom-4 right-4 w-72 rounded-xl bg-white border border-gray-200 p-4 shadow-xl">
-          <div className="flex items-start justify-between">
-            <Dialog.Title className="text-sm font-semibold text-gray-900">System notification</Dialog.Title>
-            <Dialog.Close className="ml-2 rounded p-0.5 hover:bg-gray-100 text-gray-400">✕</Dialog.Close>
+        <Dialog.Popup className="fixed top-4 right-4 w-72 overflow-hidden rounded-xl border border-border bg-card shadow-xl outline-none transition-all duration-200 data-[ending-style]:translate-x-4 data-[ending-style]:opacity-0 data-[starting-style]:translate-x-4 data-[starting-style]:opacity-0">
+          <div className="flex items-center gap-3 border-b border-border px-4 py-3">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+              <Icons.Lock className="size-4" />
+            </div>
+            <Dialog.Title className="flex-1 text-sm font-semibold text-foreground">
+              project-notes.md
+            </Dialog.Title>
+            <Dialog.Close className="flex h-6 w-6 items-center justify-center rounded-md text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
+              <Icons.X className="size-3.5" />
+            </Dialog.Close>
           </div>
-          <Dialog.Description className="mt-1 text-xs text-gray-500">
-            Background interaction is still possible while this is open.
+
+          <div className="flex flex-col divide-y divide-border">
+            {rows.map(({ label, value }) => (
+              <div key={label} className="flex items-center justify-between px-4 py-2.5">
+                <span className="text-xs text-muted-foreground">{label}</span>
+                <span className="font-mono text-xs text-foreground">{value}</span>
+              </div>
+            ))}
+          </div>
+
+          <Dialog.Description className="border-t border-border px-4 py-3 text-xs leading-relaxed text-muted-foreground">
+            Page is still interactive while this panel is open.
           </Dialog.Description>
         </Dialog.Popup>
       </Dialog.Portal>
@@ -160,22 +251,12 @@ export default function NonModalDialog() {
   );
 }
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Dialog.Root modal={false}>
-          <Dialog.Trigger className="px-4 py-2 rounded-md border border-dashed border-gray-300 text-sm text-gray-600 hover:border-gray-400">Open non-modal</Dialog.Trigger>
-          <Dialog.Portal>
-            <Dialog.Popup className="fixed bottom-4 right-4 w-72 rounded-xl bg-white border border-gray-200 p-4 shadow-xl">
-              <div className="flex items-start justify-between">
-                <Dialog.Title className="text-sm font-semibold text-gray-900">System notification</Dialog.Title>
-                <Dialog.Close className="ml-2 rounded p-0.5 hover:bg-gray-100 text-gray-400">✕</Dialog.Close>
-              </div>
-              <Dialog.Description className="mt-1 text-xs text-gray-500">Background interaction is still possible while this is open.</Dialog.Description>
-            </Dialog.Popup>
-          </Dialog.Portal>
-        </Dialog.Root>
-    </Tabs.Panel>
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+    <Dialog.DialogNonModal />
+  </Tabs.Panel>
 </Tabs.Root>
+
 
 ## DialogBackdrop
 

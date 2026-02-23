@@ -4,7 +4,247 @@ title: Form
 
 # Form
 
-## Form
+A native form element with consolidated error handling.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
+```tsx
+'use client';
+import * as React from 'react';
+import { Form } from '@base-ui/react/form';
+import { Field } from '@base-ui/react/field';
+import { Button } from '@base-ui/react/button';
+import { User, Mail, Lock, Loader2, Check, AlertCircle } from 'lucide-react';
+
+const inputCls =
+  'h-10 w-full rounded-lg border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring data-[field-invalid]:border-destructive data-[field-invalid]:focus:outline-destructive';
+
+const btnBase =
+  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+
+export function FormDefault() {
+  const [errors, setErrors] = React.useState<Record<string, string>>({});
+  const [loading, setLoading] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(false);
+    const data = new FormData(e.currentTarget);
+    const email = data.get('email') as string;
+
+    await new Promise((r) => setTimeout(r, 1200));
+
+    if (!email.includes('@ubuntu')) {
+      setErrors({ email: 'Only @ubuntu.com accounts are allowed.' });
+    } else {
+      setErrors({});
+      setSuccess(true);
+    }
+    setLoading(false);
+  }
+
+  return (
+    <div className="w-80 overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+      <div className="border-b border-border px-5 py-4">
+        <p className="text-base font-semibold text-foreground">Sign in</p>
+        <p className="mt-0.5 text-xs text-muted-foreground">Use your Ubuntu account</p>
+      </div>
+
+      <Form errors={errors} onFormSubmit={handleSubmit} className="flex flex-col gap-4 px-5 py-5">
+        <Field.Root name="email">
+          <Field.Label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            Email
+          </Field.Label>
+          <div className="relative mt-1.5 flex items-center">
+            <Icons.Mail className="pointer-events-none absolute left-3 size-4 text-muted-foreground" />
+            <Field.Control type="email" required placeholder="you@ubuntu.com" className={inputCls} />
+          </div>
+          <Field.Error className="mt-1.5 flex items-center gap-1.5 text-xs text-destructive">
+            <Icons.AlertCircle className="size-3.5 shrink-0" />
+            <Field.Error match="valueMissing">Email is required.</Field.Error>
+            <Field.Error match="typeMismatch">Enter a valid email address.</Field.Error>
+          </Field.Error>
+        </Field.Root>
+
+        <Field.Root name="password">
+          <Field.Label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            Password
+          </Field.Label>
+          <div className="relative mt-1.5 flex items-center">
+            <Icons.Lock className="pointer-events-none absolute left-3 size-4 text-muted-foreground" />
+            <Field.Control type="password" required placeholder="••••••••" className={inputCls} />
+          </div>
+          <Field.Error className="mt-1.5 flex items-center gap-1.5 text-xs text-destructive">
+            <Icons.AlertCircle className="size-3.5 shrink-0" />
+            <Field.Error match="valueMissing">Password is required.</Field.Error>
+          </Field.Error>
+        </Field.Root>
+
+        <Button
+          type="submit"
+          disabled={loading}
+          focusableWhenDisabled
+          className={`${btnBase} mt-1 h-10 w-full ${success ? 'bg-[oklch(0.55_0.15_150)] text-white' : 'bg-primary text-primary-foreground hover:brightness-95'} disabled:opacity-100 disabled:brightness-90`}
+        >
+          {loading && <Icons.Loader2 className="size-4 shrink-0 animate-spin" />}
+          {success && <Icons.Check className="size-4 shrink-0" />}
+          {!loading && !success && <Icons.User className="size-4 shrink-0" />}
+          {loading ? 'Signing in…' : success ? 'Signed in!' : 'Sign in'}
+        </Button>
+      </Form>
+    </div>
+  );
+}
+```
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+    <Form.FormDefault />
+  </Tabs.Panel>
+</Tabs.Root>
+
+# Anatomy
+
+```tsx
+import { Form } from '@base-ui/react/form';
+import { Field } from '@base-ui/react/field';
+
+<Form errors={errors} onFormSubmit={handleSubmit}>
+  <Field.Root name="fieldName">
+    <Field.Label />
+    <Field.Control />
+    <Field.Error />
+  </Field.Root>
+</Form>
+```
+
+# Examples
+
+## On-blur validation
+
+Uses `validationMode="onBlur"` to validate each field as the user tabs through the form, inspired by GNOME Settings profile editor.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
+```tsx
+'use client';
+import * as React from 'react';
+import { Form } from '@base-ui/react/form';
+import { Field } from '@base-ui/react/field';
+import { Button } from '@base-ui/react/button';
+import { User, Mail, Globe, Loader2, Check, AlertCircle } from 'lucide-react';
+
+const inputCls =
+  'h-10 w-full rounded-lg border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring data-[field-invalid]:border-destructive data-[field-invalid]:focus:outline-destructive';
+
+const btnBase =
+  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+
+export function FormOnBlur() {
+  const [errors, setErrors] = React.useState<Record<string, string>>({});
+  const [loading, setLoading] = React.useState(false);
+  const [saved, setSaved] = React.useState(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setLoading(true);
+    await new Promise((r) => setTimeout(r, 1000));
+    setLoading(false);
+    setSaved(true);
+    setTimeout(() => setSaved(false), 2000);
+  }
+
+  return (
+    <div className="w-96 overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+      <div className="border-b border-border px-5 py-4">
+        <p className="text-base font-semibold text-foreground">Profile settings</p>
+        <p className="mt-0.5 text-xs text-muted-foreground">Validates when you leave each field</p>
+      </div>
+
+      <Form errors={errors} validationMode="onBlur" onFormSubmit={handleSubmit} className="flex flex-col gap-4 px-5 py-5">
+        <div className="flex gap-3">
+          <Field.Root name="firstname" className="flex-1">
+            <Field.Label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">First name</Field.Label>
+            <div className="relative mt-1.5 flex items-center">
+              <Icons.User className="pointer-events-none absolute left-3 size-4 text-muted-foreground" />
+              <Field.Control required placeholder="Elena" className={inputCls} />
+            </div>
+            <Field.Error className="mt-1.5 flex items-center gap-1.5 text-xs text-destructive">
+              <Icons.AlertCircle className="size-3.5 shrink-0" />
+              <Field.Error match="valueMissing">Required.</Field.Error>
+            </Field.Error>
+          </Field.Root>
+
+          <Field.Root name="lastname" className="flex-1">
+            <Field.Label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Last name</Field.Label>
+            <div className="relative mt-1.5 flex items-center">
+              <Icons.User className="pointer-events-none absolute left-3 size-4 text-muted-foreground" />
+              <Field.Control required placeholder="Larsson" className={inputCls} />
+            </div>
+            <Field.Error className="mt-1.5 flex items-center gap-1.5 text-xs text-destructive">
+              <Icons.AlertCircle className="size-3.5 shrink-0" />
+              <Field.Error match="valueMissing">Required.</Field.Error>
+            </Field.Error>
+          </Field.Root>
+        </div>
+
+        <Field.Root name="email">
+          <Field.Label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Email address</Field.Label>
+          <div className="relative mt-1.5 flex items-center">
+            <Icons.Mail className="pointer-events-none absolute left-3 size-4 text-muted-foreground" />
+            <Field.Control type="email" required placeholder="elena@example.com" className={inputCls} />
+          </div>
+          <Field.Error className="mt-1.5 flex items-center gap-1.5 text-xs text-destructive">
+            <Icons.AlertCircle className="size-3.5 shrink-0" />
+            <Field.Error match="valueMissing">Email is required.</Field.Error>
+            <Field.Error match="typeMismatch">Enter a valid email.</Field.Error>
+          </Field.Error>
+        </Field.Root>
+
+        <Field.Root name="website">
+          <Field.Label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Website</Field.Label>
+          <div className="relative mt-1.5 flex items-center">
+            <Icons.Globe className="pointer-events-none absolute left-3 size-4 text-muted-foreground" />
+            <Field.Control type="url" placeholder="https://example.com" pattern="https?://.*" className={inputCls} />
+          </div>
+          <Field.Error className="mt-1.5 flex items-center gap-1.5 text-xs text-destructive">
+            <Icons.AlertCircle className="size-3.5 shrink-0" />
+            <Field.Error match="patternMismatch">Must start with http:// or https://</Field.Error>
+          </Field.Error>
+        </Field.Root>
+
+        <Button
+          type="submit"
+          disabled={loading}
+          focusableWhenDisabled
+          className={`${btnBase} mt-1 h-10 w-full ${saved ? 'bg-[oklch(0.55_0.15_150)] text-white' : 'bg-primary text-primary-foreground hover:brightness-95'} disabled:opacity-100 disabled:brightness-90`}
+        >
+          {loading && <Icons.Loader2 className="size-4 shrink-0 animate-spin" />}
+          {saved && <Icons.Check className="size-4 shrink-0" />}
+          {!loading && !saved && <Icons.Check className="size-4 shrink-0" />}
+          {loading ? 'Saving…' : saved ? 'Saved!' : 'Save changes'}
+        </Button>
+      </Form>
+    </div>
+  );
+}
+```
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+    <Form.FormOnBlur />
+  </Tabs.Panel>
+</Tabs.Root>
 
 A native form element with consolidated error handling.
 Renders a `&lt;form&gt;` element.

@@ -1,8 +1,132 @@
 ---
-title: Navigation
+title: Navigation Menu
 ---
 
-# Navigation
+# Navigation Menu
+
+A collection of links for navigating websites. The navigation menu provides a container for linking to different sections or pages, with support for nested popups and smooth sizing transitions.
+
+Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
+```tsx
+import * as React from 'react';
+import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { ChevronDown, Box, Layout, Code, Settings } from 'lucide-react';
+
+export function NavigationDefault() {
+  return (
+    <NavigationMenu.Root className="relative z-10 flex w-full justify-center">
+      <NavigationMenu.List className="flex items-center justify-center gap-1 rounded-xl border border-border bg-card p-1.5 shadow-sm">
+        
+        <NavigationMenu.Item>
+          <NavigationMenu.Trigger className="group flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[active]:bg-accent/60">
+            Productos
+            <NavigationMenu.Icon className="transition-transform duration-200 group-data-[active]:rotate-180">
+              <Icons.ChevronDown className="size-4 text-muted-foreground" />
+            </NavigationMenu.Icon>
+          </NavigationMenu.Trigger>
+          <NavigationMenu.Content className="absolute left-0 top-0 w-full p-4 md:w-[400px]">
+            <div className="grid grid-cols-2 gap-3">
+              <a href="#" className="flex flex-col gap-1.5 rounded-md p-3 transition-colors hover:bg-secondary">
+                <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                  <Icons.Box className="size-4 text-primary" /> Componentes
+                </div>
+                <p className="text-xs text-muted-foreground">Bloques de construcción accesibles para tu UI.</p>
+              </a>
+              <a href="#" className="flex flex-col gap-1.5 rounded-md p-3 transition-colors hover:bg-secondary">
+                <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                  <Icons.Layout className="size-4 text-primary" /> Plantillas
+                </div>
+                <p className="text-xs text-muted-foreground">Diseños pre-armados listos para integrarse.</p>
+              </a>
+            </div>
+          </NavigationMenu.Content>
+        </NavigationMenu.Item>
+
+        <NavigationMenu.Item>
+          <NavigationMenu.Trigger className="group flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[active]:bg-accent/60">
+            Desarrollo
+            <NavigationMenu.Icon className="transition-transform duration-200 group-data-[active]:rotate-180">
+              <Icons.ChevronDown className="size-4 text-muted-foreground" />
+            </NavigationMenu.Icon>
+          </NavigationMenu.Trigger>
+          <NavigationMenu.Content className="absolute left-0 top-0 w-full p-4 md:w-[250px]">
+            <div className="flex flex-col gap-2">
+                <a href="#" className="flex items-center gap-2 rounded-md p-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary">
+                  <Icons.Code className="size-4 text-muted-foreground" /> Documentación API
+                </a>
+                <a href="#" className="flex items-center gap-2 rounded-md p-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary">
+                  <Icons.Settings className="size-4 text-muted-foreground" /> Configuración
+                </a>
+            </div>
+          </NavigationMenu.Content>
+        </NavigationMenu.Item>
+
+        <NavigationMenu.Item>
+          <NavigationMenu.Link href="#" className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
+            Comunidad
+          </NavigationMenu.Link>
+        </NavigationMenu.Item>
+
+      </NavigationMenu.List>
+
+      <NavigationMenu.Portal>
+        <NavigationMenu.Positioner className="z-50 pt-2" sideOffset={8}>
+          <NavigationMenu.Popup className="origin-[var(--transform-origin)] rounded-xl border border-border bg-popover text-popover-foreground shadow-lg outline-none transition-[opacity,transform] duration-200 data-[starting-style]:scale-95 data-[starting-style]:opacity-0 data-[ending-style]:scale-95 data-[ending-style]:opacity-0">
+            <NavigationMenu.Arrow className="fill-border" />
+            <NavigationMenu.Viewport className="relative overflow-hidden rounded-xl bg-popover transition-[width,height] duration-200" />
+          </NavigationMenu.Popup>
+        </NavigationMenu.Positioner>
+      </NavigationMenu.Portal>
+    </NavigationMenu.Root>
+  );
+}
+
+```
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[350px] items-start justify-center p-6 pt-12 outline-none bg-background text-foreground" value="preview">
+<Navigation.NavigationDefault />
+</Tabs.Panel>
+</Tabs.Root>
+
+# Anatomy
+
+```tsx
+import { NavigationMenu } from '@base-ui/react/navigation-menu';
+
+<NavigationMenu.Root>
+  <NavigationMenu.List>
+    <NavigationMenu.Item>
+      {/* Opción 1: Elemento con submenú (Popup) */}
+      <NavigationMenu.Trigger>
+        <NavigationMenu.Icon />
+      </NavigationMenu.Trigger>
+      <NavigationMenu.Content />
+      
+      {/* Opción 2: Enlace directo */}
+      <NavigationMenu.Link />
+    </NavigationMenu.Item>
+  </NavigationMenu.List>
+
+  {/* Portal que maneja la ubicación del Popup */}
+  <NavigationMenu.Portal>
+    <NavigationMenu.Positioner>
+      <NavigationMenu.Popup>
+        <NavigationMenu.Arrow />
+        <NavigationMenu.Viewport />
+      </NavigationMenu.Popup>
+    </NavigationMenu.Positioner>
+  </NavigationMenu.Portal>
+</NavigationMenu.Root>
+ ```
 
 ## NavigationMenuArrow
 

@@ -4,186 +4,247 @@ title: Select
 
 # Select
 
-## Examples
+Displays a list of options for the user to pick from—triggered by a button.
 
-### Example 1 — Basic select
+Documentation: [Base UI Select](https://base-ui.com/react/components/select)
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
 ```tsx
-import * as Select from './select/index.parts';
+import * as React from 'react';
+import { Select } from '@base-ui/react/select';
+import { ChevronDown, ChevronUp, Check } from 'lucide-react';
 
-export default function BasicSelect() {
-  return (
-    <Select.Root defaultValue="react">
-      <Select.Trigger className="inline-flex items-center justify-between gap-2 px-3 py-2 rounded-md border border-gray-200 text-sm bg-white w-40 hover:bg-gray-50">
-        <Select.Value placeholder="Choose…" />
-        <Select.Icon className="text-gray-400">▾</Select.Icon>
-      </Select.Trigger>
-      <Select.Portal>
-        <Select.Positioner sideOffset={4}>
-          <Select.Popup className="w-40 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
-            <Select.Item value="react" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100">
-              <Select.ItemText>React</Select.ItemText>
-            </Select.Item>
-            <Select.Item value="vue" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100">
-              <Select.ItemText>Vue</Select.ItemText>
-            </Select.Item>
-            <Select.Item value="svelte" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100">
-              <Select.ItemText>Svelte</Select.ItemText>
-            </Select.Item>
-          </Select.Popup>
-        </Select.Positioner>
-      </Select.Portal>
-    </Select.Root>
-  );
-}
-```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Select.Root defaultValue="react">
-          <Select.Trigger className="inline-flex items-center justify-between gap-2 px-3 py-2 rounded-md border border-gray-200 text-sm bg-white w-40 hover:bg-gray-50">
-            <Select.Value placeholder="Choose…" />
-            <Select.Icon className="text-gray-400">▾</Select.Icon>
-          </Select.Trigger>
-          <Select.Portal>
-            <Select.Positioner sideOffset={4}>
-              <Select.Popup className="w-40 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
-                <Select.Item value="react" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100"><Select.ItemText>React</Select.ItemText></Select.Item>
-                <Select.Item value="vue" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100"><Select.ItemText>Vue</Select.ItemText></Select.Item>
-                <Select.Item value="svelte" className="px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 data-[highlighted]:bg-gray-100"><Select.ItemText>Svelte</Select.ItemText></Select.Item>
-              </Select.Popup>
-            </Select.Positioner>
-          </Select.Portal>
-        </Select.Root>
-    </Tabs.Panel>
-</Tabs.Root>
-
-### Example 2 — Select with groups
-
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
-```tsx
-export default function GroupedSelect() {
+export function SelectDefault() {
   return (
     <Select.Root>
-      <Select.Trigger className="inline-flex items-center justify-between gap-2 px-3 py-2 rounded-md border border-gray-200 text-sm bg-white w-48 hover:bg-gray-50">
-        <Select.Value placeholder="Select country…" />
-        <Select.Icon className="text-gray-400">▾</Select.Icon>
+      <Select.Trigger className="flex h-10 w-full max-w-xs items-center justify-between rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring data-[placeholder]:text-muted-foreground">
+        <Select.Value placeholder="Selecciona un entorno..." />
+        <Select.Icon>
+          <Icons.ChevronDown className="size-4 opacity-50" />
+        </Select.Icon>
       </Select.Trigger>
+      
       <Select.Portal>
-        <Select.Positioner sideOffset={4}>
-          <Select.Popup className="w-48 rounded-lg border border-gray-200 bg-white py-1 shadow-lg max-h-60 overflow-auto">
-            <Select.Group>
-              <Select.GroupLabel className="px-3 py-1.5 text-[11px] font-semibold uppercase text-gray-400 tracking-wider">Europe</Select.GroupLabel>
-              <Select.Item value="de" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100"><Select.ItemText>Germany</Select.ItemText></Select.Item>
-              <Select.Item value="fr" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100"><Select.ItemText>France</Select.ItemText></Select.Item>
-              <Select.Item value="es" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100"><Select.ItemText>Spain</Select.ItemText></Select.Item>
-            </Select.Group>
-            <Select.Separator className="my-1 border-t border-gray-100" />
-            <Select.Group>
-              <Select.GroupLabel className="px-3 py-1.5 text-[11px] font-semibold uppercase text-gray-400 tracking-wider">Americas</Select.GroupLabel>
-              <Select.Item value="us" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100"><Select.ItemText>United States</Select.ItemText></Select.Item>
-              <Select.Item value="ca" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100"><Select.ItemText>Canada</Select.ItemText></Select.Item>
-            </Select.Group>
+        <Select.Positioner sideOffset={4} className="z-50 w-[var(--anchor-width)]">
+          <Select.Popup className="relative max-h-96 overflow-hidden rounded-xl border border-border bg-popover text-popover-foreground shadow-md outline-none">
+            <Select.ScrollUpArrow className="flex cursor-default items-center justify-center py-1 text-muted-foreground">
+              <Icons.ChevronUp className="size-4" />
+            </Select.ScrollUpArrow>
+            
+            <Select.List className="p-1">
+              {['GNOME', 'KDE Plasma', 'XFCE', 'Cinnamon', 'Mate'].map((item) => (
+                <Select.Item 
+                  key={item} 
+                  value={item}
+                  className="relative flex w-full cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[highlighted]:bg-primary data-[highlighted]:text-primary-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
+                >
+                  <Select.ItemIndicator className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+                    <Icons.Check className="size-4" strokeWidth={3} />
+                  </Select.ItemIndicator>
+                  <Select.ItemText>{item}</Select.ItemText>
+                </Select.Item>
+              ))}
+            </Select.List>
+
+            <Select.ScrollDownArrow className="flex cursor-default items-center justify-center py-1 text-muted-foreground">
+              <Icons.ChevronDown className="size-4" />
+            </Select.ScrollDownArrow>
           </Select.Popup>
         </Select.Positioner>
       </Select.Portal>
     </Select.Root>
   );
 }
+
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Select.Root>
-          <Select.Trigger className="inline-flex items-center justify-between gap-2 px-3 py-2 rounded-md border border-gray-200 text-sm bg-white w-48 hover:bg-gray-50">
-            <Select.Value placeholder="Select country…" />
-            <Select.Icon className="text-gray-400">▾</Select.Icon>
-          </Select.Trigger>
-          <Select.Portal>
-            <Select.Positioner sideOffset={4}>
-              <Select.Popup className="w-48 rounded-lg border border-gray-200 bg-white py-1 shadow-lg max-h-60 overflow-auto">
-                <Select.Group>
-                  <Select.GroupLabel className="px-3 py-1.5 text-[11px] font-semibold uppercase text-gray-400 tracking-wider">Europe</Select.GroupLabel>
-                  <Select.Item value="de" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100"><Select.ItemText>Germany</Select.ItemText></Select.Item>
-                  <Select.Item value="fr" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100"><Select.ItemText>France</Select.ItemText></Select.Item>
-                  <Select.Item value="es" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100"><Select.ItemText>Spain</Select.ItemText></Select.Item>
-                </Select.Group>
-                <Select.Separator className="my-1 border-t border-gray-100" />
-                <Select.Group>
-                  <Select.GroupLabel className="px-3 py-1.5 text-[11px] font-semibold uppercase text-gray-400 tracking-wider">Americas</Select.GroupLabel>
-                  <Select.Item value="us" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100"><Select.ItemText>United States</Select.ItemText></Select.Item>
-                  <Select.Item value="ca" className="px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100"><Select.ItemText>Canada</Select.ItemText></Select.Item>
-                </Select.Group>
-              </Select.Popup>
-            </Select.Positioner>
-          </Select.Portal>
-        </Select.Root>
-    </Tabs.Panel>
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[350px] items-start justify-center p-6 pt-12 outline-none bg-background text-foreground" value="preview">
+<Select.SelectDefault />
+</Tabs.Panel>
 </Tabs.Root>
 
-### Example 3 — Select with item indicator
+# Anatomy
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
 ```tsx
-export default function SelectWithIndicator() {
+import { Select } from '@base-ui/react/select';
+
+<Select.Root>
+  <Select.Trigger>
+    <Select.Value />
+    <Select.Icon />
+  </Select.Trigger>
+  <Select.Portal>
+    <Select.Positioner>
+      <Select.Popup>
+        <Select.ScrollUpArrow />
+        <Select.List>
+          <Select.Item>
+            <Select.ItemIndicator />
+            <Select.ItemText />
+          </Select.Item>
+        </Select.List>
+        <Select.ScrollDownArrow />
+      </Select.Popup>
+    </Select.Positioner>
+  </Select.Portal>
+</Select.Root>
+
+```
+
+# Examples
+
+## Grouped Items
+
+You can group related options using `<Select.Group>` and provide accessible labels using `<Select.GroupLabel>`.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+<Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+</Tabs.List>
+<Tabs.Panel value="code">
+
+```tsx
+import * as React from 'react';
+import { Select } from '@base-ui/react/select';
+import { ChevronDown, Check } from 'lucide-react';
+
+export function SelectGrouped() {
   return (
-    <Select.Root defaultValue="dark">
-      <Select.Trigger className="inline-flex items-center justify-between gap-2 px-3 py-2 rounded-md border border-gray-200 text-sm bg-white w-40 hover:bg-gray-50">
-        <Select.Value />
-        <Select.Icon className="text-gray-400">▾</Select.Icon>
+    <Select.Root>
+      <Select.Trigger className="flex h-10 w-full max-w-xs items-center justify-between rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
+        <Select.Value placeholder="Selecciona tu distribución..." />
+        <Select.Icon>
+          <Icons.ChevronDown className="size-4 opacity-50" />
+        </Select.Icon>
       </Select.Trigger>
+      
       <Select.Portal>
-        <Select.Positioner sideOffset={4}>
-          <Select.Popup className="w-40 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
-            {['Light', 'Dark', 'System'].map((theme) => (
-              <Select.Item key={theme} value={theme.toLowerCase()} className="flex items-center justify-between px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100">
-                <Select.ItemText>{theme}</Select.ItemText>
-                <Select.ItemIndicator className="text-blue-600 text-xs">✓</Select.ItemIndicator>
-              </Select.Item>
-            ))}
+        <Select.Positioner sideOffset={4} className="z-50 w-[var(--anchor-width)]">
+          <Select.Popup className="relative max-h-96 overflow-hidden rounded-xl border border-border bg-popover text-popover-foreground shadow-md outline-none">
+            <Select.List className="p-1">
+              <Select.Group>
+                <Select.GroupLabel className="px-8 py-1.5 text-xs font-semibold text-muted-foreground">
+                  Basadas en Debian
+                </Select.GroupLabel>
+                {['Ubuntu', 'Linux Mint', 'Pop!_OS'].map((item) => (
+                  <Select.Item key={item} value={item} className="relative flex w-full cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none data-[highlighted]:bg-primary data-[highlighted]:text-primary-foreground">
+                    <Select.ItemIndicator className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+                      <Icons.Check className="size-4" strokeWidth={3} />
+                    </Select.ItemIndicator>
+                    <Select.ItemText>{item}</Select.ItemText>
+                  </Select.Item>
+                ))}
+              </Select.Group>
+              
+              <div className="my-1 h-px bg-border" />
+              
+              <Select.Group>
+                <Select.GroupLabel className="px-8 py-1.5 text-xs font-semibold text-muted-foreground">
+                  Basadas en Arch
+                </Select.GroupLabel>
+                {['Arch Linux', 'Manjaro', 'EndeavourOS'].map((item) => (
+                  <Select.Item key={item} value={item} className="relative flex w-full cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none data-[highlighted]:bg-primary data-[highlighted]:text-primary-foreground">
+                    <Select.ItemIndicator className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+                      <Icons.Check className="size-4" strokeWidth={3} />
+                    </Select.ItemIndicator>
+                    <Select.ItemText>{item}</Select.ItemText>
+                  </Select.Item>
+                ))}
+              </Select.Group>
+            </Select.List>
           </Select.Popup>
         </Select.Positioner>
       </Select.Portal>
     </Select.Root>
   );
 }
+
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-        <Select.Root defaultValue="dark">
-          <Select.Trigger className="inline-flex items-center justify-between gap-2 px-3 py-2 rounded-md border border-gray-200 text-sm bg-white w-40 hover:bg-gray-50">
-            <Select.Value />
-            <Select.Icon className="text-gray-400">▾</Select.Icon>
-          </Select.Trigger>
-          <Select.Portal>
-            <Select.Positioner sideOffset={4}>
-              <Select.Popup className="w-40 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
-                <Select.Item value="light" className="flex items-center justify-between px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100"><Select.ItemText>Light</Select.ItemText><Select.ItemIndicator className="text-blue-600 text-xs">✓</Select.ItemIndicator></Select.Item>
-                <Select.Item value="dark" className="flex items-center justify-between px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100"><Select.ItemText>Dark</Select.ItemText><Select.ItemIndicator className="text-blue-600 text-xs">✓</Select.ItemIndicator></Select.Item>
-                <Select.Item value="system" className="flex items-center justify-between px-3 py-2 text-sm cursor-pointer data-[highlighted]:bg-gray-100"><Select.ItemText>System</Select.ItemText><Select.ItemIndicator className="text-blue-600 text-xs">✓</Select.ItemIndicator></Select.Item>
-              </Select.Popup>
-            </Select.Positioner>
-          </Select.Portal>
-        </Select.Root>
-    </Tabs.Panel>
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[400px] items-start justify-center p-6 pt-12 outline-none bg-background text-foreground" value="preview">
+<Select.SelectGrouped />
+</Tabs.Panel>
 </Tabs.Root>
+
+---
+
+## Multiple Selection
+
+Pass the `multiple` prop to allow selecting multiple options simultaneously. The `value` prop will be an array of the selected items.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+<Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+<Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+</Tabs.List>
+<Tabs.Panel value="code">
+
+```tsx
+import * as React from 'react';
+import { Select } from '@base-ui/react/select';
+import { ChevronDown, Check } from 'lucide-react';
+
+export function SelectMultiple() {
+  const [value, setValue] = React.useState<string[]>(['git']);
+
+  return (
+    <div className="flex w-full max-w-xs flex-col gap-2">
+      <Select.Root multiple value={value} onValueChange={setValue}>
+        <Select.Trigger className="flex min-h-10 w-full items-center justify-between rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
+          <div className="flex flex-wrap gap-1">
+            {value.length === 0 && <span className="text-muted-foreground">Selecciona paquetes...</span>}
+            {value.length > 0 && <span className="truncate">{value.join(', ')}</span>}
+          </div>
+          <Select.Icon className="shrink-0 ml-2">
+            <Icons.ChevronDown className="size-4 opacity-50" />
+          </Select.Icon>
+        </Select.Trigger>
+        
+        <Select.Portal>
+          <Select.Positioner sideOffset={4} className="z-50 w-[var(--anchor-width)]">
+            <Select.Popup className="relative max-h-96 overflow-hidden rounded-xl border border-border bg-popover text-popover-foreground shadow-md outline-none">
+              <Select.List className="p-1">
+                {['git', 'curl', 'wget', 'htop', 'vim', 'neofetch'].map((item) => (
+                  <Select.Item 
+                    key={item} 
+                    value={item}
+                    className="relative flex w-full cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none data-[highlighted]:bg-primary data-[highlighted]:text-primary-foreground"
+                  >
+                    <Select.ItemIndicator className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+                      <Icons.Check className="size-4" strokeWidth={3} />
+                    </Select.ItemIndicator>
+                    <Select.ItemText>{item}</Select.ItemText>
+                  </Select.Item>
+                ))}
+              </Select.List>
+            </Select.Popup>
+          </Select.Positioner>
+        </Select.Portal>
+      </Select.Root>
+      <p className="text-xs text-muted-foreground">Paquetes a instalar: {value.length}</p>
+    </div>
+  );
+}
+
+```
+
+</Tabs.Panel>
+<Tabs.Panel className="flex min-h-[350px] items-start justify-center p-6 pt-12 outline-none bg-background text-foreground" value="preview">
+<Select.SelectMultiple />
+</Tabs.Panel>
+</Tabs.Root>
+
 
 ## SelectArrow
 

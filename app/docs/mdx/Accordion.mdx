@@ -4,14 +4,15 @@ title: Accordion
 
 # Accordion
 
-## Examples
+A set of collapsible panels with headings.
+
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
     <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
         <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
         <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
         <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
+      </Tabs.List>
     <Tabs.Panel value="code">
 ```tsx
 import * as React from 'react';
@@ -23,363 +24,470 @@ export default function ExampleAccordion() {
       multiple
       className="flex w-96 max-w-[calc(100vw-8rem)] flex-col justify-center text-gray-900"
     >
-      <Accordion.Item className="border-b border-gray-200">
-        <Accordion.Header>
-          <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">
+          <Accordion.Item className="border-b border-gray-200">
+            <Accordion.Header>
+              <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">
             What is Base UI?
             <PlusIcon className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[panel-open]:scale-110 group-data-[panel-open]:rotate-45" />
           </Accordion.Trigger>
         </Accordion.Header>
-        <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
-          <div className="p-3">
+            <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+              <div className="p-3">
             Base UI is a library of high-quality unstyled React components for design systems and
             web apps.
           </div>
         </Accordion.Panel>
-      </Accordion.Item>
+          </Accordion.Item>
 
-      <Accordion.Item className="border-b border-gray-200">
-        <Accordion.Header>
-          <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">
+          <Accordion.Item className="border-b border-gray-200">
+            <Accordion.Header>
+              <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">
             How do I get started?
             <PlusIcon className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[panel-open]:scale-110 group-data-[panel-open]:rotate-45" />
           </Accordion.Trigger>
         </Accordion.Header>
-        <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
-          <div className="p-3">
+            <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+              <div className="p-3">
             Head to the “Quick start” guide in the docs. If you’ve used unstyled libraries before,
             you’ll feel at home.
           </div>
         </Accordion.Panel>
-      </Accordion.Item>
+          </Accordion.Item>
 
-      <Accordion.Item className="border-b border-gray-200">
-        <Accordion.Header>
-          <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">
+          <Accordion.Item className="border-b border-gray-200">
+            <Accordion.Header>
+              <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">
             Can I use it for my project?
             <PlusIcon className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[panel-open]:scale-110 group-data-[panel-open]:rotate-45" />
           </Accordion.Trigger>
         </Accordion.Header>
-        <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+            <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
           <div className="p-3">Of course! Base UI is free and open source.</div>
         </Accordion.Panel>
       </Accordion.Item>
-    </Accordion.Root>
-  );
+        </Accordion.Root>
+
+);
 }
 
 function PlusIcon(props: React.ComponentProps<'svg'>) {
-  return (
-    <svg viewBox="0 0 12 12" fill="currentcolor" {...props}>
-      <path d="M6.75 0H5.25V5.25H0V6.75L5.25 6.75V12H6.75V6.75L12 6.75V5.25H6.75V0Z" />
-    </svg>
-  );
+return (
+<svg viewBox="0 0 12 12" fill="currentcolor" {...props}>
+<path d="M6.75 0H5.25V5.25H0V6.75L5.25 6.75V12H6.75V6.75L12 6.75V5.25H6.75V0Z" />
+</svg>
+);
 }
 
 ```
-    </Tabs.Panel>
+      </Tabs.Panel>
     <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
  <Accordion.Root
       multiple
       className="flex w-96 max-w-[calc(100vw-8rem)] flex-col justify-center text-gray-900"
     >
-      <Accordion.Item className="border-b border-gray-200">
-        <Accordion.Header>
-          <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">
+          <Accordion.Item className="border-b border-gray-200">
+            <Accordion.Header>
+              <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">
             What is Base UI?
             <Icons.PlusIcon className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[panel-open]:scale-110 group-data-[panel-open]:rotate-45" />
           </Accordion.Trigger>
         </Accordion.Header>
-        <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
-          <div className="p-3">
+            <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+              <div className="p-3">
             Base UI is a library of high-quality unstyled React components for design systems and
             web apps.
           </div>
         </Accordion.Panel>
-      </Accordion.Item>
+          </Accordion.Item>
 
-      <Accordion.Item className="border-b border-gray-200">
-        <Accordion.Header>
-          <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">
+          <Accordion.Item className="border-b border-gray-200">
+            <Accordion.Header>
+              <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">
             How do I get started?
             <Icons.PlusIcon className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[panel-open]:scale-110 group-data-[panel-open]:rotate-45" />
           </Accordion.Trigger>
         </Accordion.Header>
-        <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
-          <div className="p-3">
+            <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+              <div className="p-3">
             Head to the “Quick start” guide in the docs. If you’ve used unstyled libraries before,
             you’ll feel at home.
           </div>
         </Accordion.Panel>
-      </Accordion.Item>
+          </Accordion.Item>
 
-      <Accordion.Item className="border-b border-gray-200">
-        <Accordion.Header>
-          <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">
+          <Accordion.Item className="border-b border-gray-200">
+            <Accordion.Header>
+              <Accordion.Trigger className="group relative flex w-full items-baseline justify-between gap-4 bg-gray-50 py-2 pr-1 pl-3 text-left font-medium hover:bg-gray-100 focus-visible:z-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800">
             Can I use it for my project?
             <Icons.PlusIcon className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[panel-open]:scale-110 group-data-[panel-open]:rotate-45" />
           </Accordion.Trigger>
         </Accordion.Header>
-        <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
+            <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden text-base text-gray-600 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
           <div className="p-3">Of course! Base UI is free and open source.</div>
         </Accordion.Panel>
       </Accordion.Item>
-    </Accordion.Root>
-    </Tabs.Panel>
-</Tabs.Root>
- 
- ## Variante Compact / Accent
+        </Accordion.Root>
+      </Tabs.Panel>
+    </Tabs.Root>
 
-Triggers sólidos con el color primario (`--primary`). El panel emerge sobre fondo `--muted`. Ideal para paneles de configuración o sidebars compactas.
+# Anatomy
+
+```tsx
+import { Accordion } from '@base-ui/react/accordion';
+
+<Accordion.Root>
+  <Accordion.Item>
+    <Accordion.Header>
+      <Accordion.Trigger />
+    </Accordion.Header>
+    <Accordion.Panel />
+  </Accordion.Item>
+</Accordion.Root>
+```
+
+# Examples
+
+## Compact / Accent
+
+Single-open accordion inspired by GNOME Settings preference rows.
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
 ```tsx
 import * as React from 'react';
 import { Accordion } from '@base-ui/react/accordion';
 
 export default function AccordionCompact() {
   return (
-    <Accordion.Root
-      multiple
-      className="flex w-96 max-w-[calc(100vw-2rem)] flex-col gap-1"
-    >
-      <Accordion.Item className="overflow-hidden rounded-[var(--radius-sm)]">
-        <Accordion.Header>
-          <Accordion.Trigger className="group flex w-full items-center justify-between bg-[var(--primary)] px-4 py-3 text-sm font-semibold text-[var(--primary-foreground)] transition-[filter] duration-150 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)]">
-            ¿Qué es Base UI?
-            <PlusIcon className="size-4 shrink-0 transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180" />
-          </Accordion.Trigger>
-        </Accordion.Header>
-        <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden bg-[var(--muted)] text-sm text-[var(--muted-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
-          <div className="px-4 py-3 leading-relaxed">
-            Base UI es una librería de componentes React sin estilos de alta calidad para design systems y aplicaciones web.
-          </div>
-        </Accordion.Panel>
-      </Accordion.Item>
+    <div className="w-[420px] max-w-[calc(100vw-2rem)] rounded-xl overflow-hidden border border-border bg-card shadow-sm">
 
-      <Accordion.Item className="overflow-hidden rounded-[var(--radius-sm)]">
-        <Accordion.Header>
-          <Accordion.Trigger className="group flex w-full items-center justify-between bg-[var(--primary)] px-4 py-3 text-sm font-semibold text-[var(--primary-foreground)] transition-[filter] duration-150 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)]">
-            ¿Cómo empiezo?
-            <PlusIcon className="size-4 shrink-0 transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180" />
-          </Accordion.Trigger>
-        </Accordion.Header>
-        <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden bg-[var(--muted)] text-sm text-[var(--muted-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
-          <div className="px-4 py-3 leading-relaxed">
-            Consulta la guía de inicio rápido en la documentación. Si ya usaste librerías sin estilos, te sentirás como en casa.
-          </div>
-        </Accordion.Panel>
-      </Accordion.Item>
+      <div className="px-4 py-3 border-b border-border bg-muted/40">
+        <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          System Preferences
+        </p>
+      </div>
 
-      <Accordion.Item className="overflow-hidden rounded-[var(--radius-sm)]">
-        <Accordion.Header>
-          <Accordion.Trigger className="group flex w-full items-center justify-between bg-[var(--primary)] px-4 py-3 text-sm font-semibold text-[var(--primary-foreground)] transition-[filter] duration-150 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)]">
-            ¿Puedo usarlo en mi proyecto?
-            <PlusIcon className="size-4 shrink-0 transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180" />
-          </Accordion.Trigger>
-        </Accordion.Header>
-        <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden bg-[var(--muted)] text-sm text-[var(--muted-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
-          <div className="px-4 py-3 leading-relaxed">
-            Por supuesto. Base UI es gratuito y de código abierto bajo licencia MIT.
-          </div>
-        </Accordion.Panel>
-      </Accordion.Item>
-    </Accordion.Root>
+      <Accordion.Root defaultValue="appearance" className="flex flex-col divide-y divide-border">
+
+        <Accordion.Item value="appearance">
+          <Accordion.Header>
+            <Accordion.Trigger className="group relative flex w-full items-center gap-3 px-4 py-3 text-left bg-card text-foreground hover:bg-accent transition-colors duration-150 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[panel-open]:bg-primary/8">
+              <span className="absolute left-0 top-2 bottom-2 w-0.5 rounded-full bg-primary scale-y-0 group-data-[panel-open]:scale-y-100 transition-transform duration-200 ease-out origin-center" />
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-secondary text-base leading-none">🎨</span>
+              <span className="flex-1 text-sm font-medium">Appearance</span>
+              <Icons.ChevronUpIcon className="mr-1 size-4 shrink-0 text-muted-foreground transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180 group-data-[panel-open]:text-primary" />
+            </Accordion.Trigger>
+          </Accordion.Header>
+          <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden transition-[height] ease-out data-[starting-style]:h-0 data-[ending-style]:h-0">
+            <div className="px-4 pb-4 pt-2 pl-[3.75rem] text-sm leading-relaxed text-muted-foreground">
+              Choose between Light, Dark, and High-Contrast themes.
+            </div>
+          </Accordion.Panel>
+        </Accordion.Item>
+
+        <Accordion.Item value="display">
+          <Accordion.Header>
+            <Accordion.Trigger className="group relative flex w-full items-center gap-3 px-4 py-3 text-left bg-card text-foreground hover:bg-accent transition-colors duration-150 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[panel-open]:bg-primary/8">
+              <span className="absolute left-0 top-2 bottom-2 w-0.5 rounded-full bg-primary scale-y-0 group-data-[panel-open]:scale-y-100 transition-transform duration-200 ease-out origin-center" />
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-secondary text-base leading-none">🖥️</span>
+              <span className="flex-1 text-sm font-medium">Displays</span>
+              <Icons.ChevronUpIcon className="mr-1 size-4 shrink-0 text-muted-foreground transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180 group-data-[panel-open]:text-primary" />
+            </Accordion.Trigger>
+          </Accordion.Header>
+          <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden transition-[height] ease-out data-[starting-style]:h-0 data-[ending-style]:h-0">
+            <div className="px-4 pb-4 pt-2 pl-[3.75rem] text-sm leading-relaxed text-muted-foreground">
+              Configure resolution, refresh rate, and multi-monitor layout.
+            </div>
+          </Accordion.Panel>
+        </Accordion.Item>
+
+        <Accordion.Item value="sound">
+          <Accordion.Header>
+            <Accordion.Trigger className="group relative flex w-full items-center gap-3 px-4 py-3 text-left bg-card text-foreground hover:bg-accent transition-colors duration-150 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[panel-open]:bg-primary/8">
+              <span className="absolute left-0 top-2 bottom-2 w-0.5 rounded-full bg-primary scale-y-0 group-data-[panel-open]:scale-y-100 transition-transform duration-200 ease-out origin-center" />
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-secondary text-base leading-none">🔊</span>
+              <span className="flex-1 text-sm font-medium">Sound</span>
+              <Icons.ChevronUpIcon className="mr-1 size-4 shrink-0 text-muted-foreground transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180 group-data-[panel-open]:text-primary" />
+            </Accordion.Trigger>
+          </Accordion.Header>
+          <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden transition-[height] ease-out data-[starting-style]:h-0 data-[ending-style]:h-0">
+            <div className="px-4 pb-4 pt-2 pl-[3.75rem] text-sm leading-relaxed text-muted-foreground">
+              Adjust output volume and choose audio devices.
+            </div>
+          </Accordion.Panel>
+        </Accordion.Item>
+
+      </Accordion.Root>
+    </div>
   );
 }
 
-function PlusIcon(props: React.ComponentProps<'svg'>) {
+function ChevronIcon(props: React.ComponentProps<'svg'>) {
   return (
-    <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth={2} {...props}>
-      <path d="M2 4l4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />
+    <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
+      <path d="M4.47 6.47a.75.75 0 0 1 1.06 0L8 8.94l2.47-2.47a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 0 1 0-1.06Z" />
     </svg>
   );
 }
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-      <Accordion.Root
-        multiple
-        className="flex w-96 max-w-[calc(100vw-2rem)] flex-col gap-1"
-      >
-        <Accordion.Item className="overflow-hidden rounded-[var(--radius-sm)]">
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+     <Accordion.Root defaultValue="appearance" className="flex flex-col divide-y divide-border">
+
+        <Accordion.Item value="appearance">
           <Accordion.Header>
-            <Accordion.Trigger className="group flex w-full items-center justify-between bg-[var(--primary)] px-4 py-3 text-sm font-semibold text-[var(--primary-foreground)] transition-[filter] duration-150 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)]">
-              ¿Qué es Base UI?
-              <Icons.PlusIcon className="size-4 shrink-0 transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180" />
+            <Accordion.Trigger className="group relative flex w-full items-center gap-3 px-4 py-3 text-left bg-card text-foreground hover:bg-accent transition-colors duration-150 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[panel-open]:bg-primary/8">
+              <span className="absolute left-0 top-2 bottom-2 w-0.5 rounded-full bg-primary scale-y-0 group-data-[panel-open]:scale-y-100 transition-transform duration-200 ease-out origin-center" />
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-secondary text-base leading-none">🎨</span>
+              <span className="flex-1 text-sm font-medium">Appearance</span>
+              <Icons.ChevronUpIcon className="mr-1 size-4 shrink-0 text-muted-foreground transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180 group-data-[panel-open]:text-primary" />
             </Accordion.Trigger>
           </Accordion.Header>
-          <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden bg-[var(--muted)] text-sm text-[var(--muted-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
-            <div className="px-4 py-3 leading-relaxed">
-              Base UI es una librería de componentes React sin estilos de alta calidad para design systems y aplicaciones web.
+          <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden transition-[height] ease-out data-[starting-style]:h-0 data-[ending-style]:h-0">
+            <div className="px-4 pb-4 pt-2 pl-[3.75rem] text-sm leading-relaxed text-muted-foreground">
+              Choose between Light, Dark, and High-Contrast themes.
             </div>
           </Accordion.Panel>
         </Accordion.Item>
 
-        <Accordion.Item className="overflow-hidden rounded-[var(--radius-sm)]">
+        <Accordion.Item value="display">
           <Accordion.Header>
-            <Accordion.Trigger className="group flex w-full items-center justify-between bg-[var(--primary)] px-4 py-3 text-sm font-semibold text-[var(--primary-foreground)] transition-[filter] duration-150 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)]">
-              ¿Cómo empiezo?
-              <Icons.PlusIcon className="size-4 shrink-0 transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180" />
+            <Accordion.Trigger className="group relative flex w-full items-center gap-3 px-4 py-3 text-left bg-card text-foreground hover:bg-accent transition-colors duration-150 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[panel-open]:bg-primary/8">
+              <span className="absolute left-0 top-2 bottom-2 w-0.5 rounded-full bg-primary scale-y-0 group-data-[panel-open]:scale-y-100 transition-transform duration-200 ease-out origin-center" />
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-secondary text-base leading-none">🖥️</span>
+              <span className="flex-1 text-sm font-medium">Displays</span>
+              <Icons.ChevronUpIcon className="mr-1 size-4 shrink-0 text-muted-foreground transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180 group-data-[panel-open]:text-primary" />
             </Accordion.Trigger>
           </Accordion.Header>
-          <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden bg-[var(--muted)] text-sm text-[var(--muted-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
-            <div className="px-4 py-3 leading-relaxed">
-              Consulta la guía de inicio rápido en la documentación. Si ya usaste librerías sin estilos, te sentirás como en casa.
+          <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden transition-[height] ease-out data-[starting-style]:h-0 data-[ending-style]:h-0">
+            <div className="px-4 pb-4 pt-2 pl-[3.75rem] text-sm leading-relaxed text-muted-foreground">
+              Configure resolution, refresh rate, and multi-monitor layout.
             </div>
           </Accordion.Panel>
         </Accordion.Item>
 
-        <Accordion.Item className="overflow-hidden rounded-[var(--radius-sm)]">
+        <Accordion.Item value="sound">
           <Accordion.Header>
-            <Accordion.Trigger className="group flex w-full items-center justify-between bg-[var(--primary)] px-4 py-3 text-sm font-semibold text-[var(--primary-foreground)] transition-[filter] duration-150 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)]">
-              ¿Puedo usarlo en mi proyecto?
-              <Icons.PlusIcon className="size-4 shrink-0 transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180" />
+            <Accordion.Trigger className="group relative flex w-full items-center gap-3 px-4 py-3 text-left bg-card text-foreground hover:bg-accent transition-colors duration-150 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[panel-open]:bg-primary/8">
+              <span className="absolute left-0 top-2 bottom-2 w-0.5 rounded-full bg-primary scale-y-0 group-data-[panel-open]:scale-y-100 transition-transform duration-200 ease-out origin-center" />
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-secondary text-base leading-none">🔊</span>
+              <span className="flex-1 text-sm font-medium">Sound</span>
+              <Icons.ChevronUpIcon className="mr-1 size-4 shrink-0 text-muted-foreground transition-transform duration-200 ease-out group-data-[panel-open]:rotate-180 group-data-[panel-open]:text-primary" />
             </Accordion.Trigger>
           </Accordion.Header>
-          <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden bg-[var(--muted)] text-sm text-[var(--muted-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
-            <div className="px-4 py-3 leading-relaxed">
-              Por supuesto. Base UI es gratuito y de código abierto bajo licencia MIT.
+          <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden transition-[height] ease-out data-[starting-style]:h-0 data-[ending-style]:h-0">
+            <div className="px-4 pb-4 pt-2 pl-[3.75rem] text-sm leading-relaxed text-muted-foreground">
+              Adjust output volume and choose audio devices.
             </div>
           </Accordion.Panel>
         </Accordion.Item>
+
       </Accordion.Root>
-    </Tabs.Panel>
+  </Tabs.Panel>
 </Tabs.Root>
 
 ---
 
-## Variante Sidebar / Lateral
+## Sidebar / Detail
 
-Layout en dos columnas: triggers a la izquierda con fondo `--sidebar` y el panel expandido a la derecha sobre `--card`. El trigger activo adopta `--sidebar-primary`. Ideal para navegación de documentación o configuración avanzada.
+Multiple-open accordion inspired by GNOME Files (Nautilus). The sidebar trigger and detail panel sit side by side inside each item.
 
 <Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
-    <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
-        <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
-        <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
-    </Tabs.List>
-    <Tabs.Panel value="code">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-blue-600 transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
 ```tsx
 import * as React from 'react';
 import { Accordion } from '@base-ui/react/accordion';
 
 export default function AccordionSidebar() {
   return (
-    <Accordion.Root className="flex w-[480px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border)] shadow-md">
-      <Accordion.Item className="group/item flex flex-row border-b border-[var(--border)] last:border-b-0">
-        <Accordion.Header className="contents">
-          <Accordion.Trigger className="relative flex w-44 shrink-0 items-start gap-2 border-r border-[var(--sidebar-border)] bg-[var(--sidebar)] px-4 py-4 text-left text-sm font-medium text-[var(--sidebar-foreground)] transition-colors duration-150 hover:bg-[var(--sidebar-accent)] hover:text-[var(--sidebar-accent-foreground)] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)] group-data-[panel-open]/item:bg-[var(--sidebar-primary)] group-data-[panel-open]/item:text-[var(--sidebar-primary-foreground)]">
-            <span className="mt-[3px] size-2 shrink-0 rounded-full bg-current opacity-0 transition-opacity group-data-[panel-open]/item:opacity-100" />
-            ¿Qué es Base UI?
+    <Accordion.Root
+      multiple
+      defaultValue={['home', 'documents']}
+      orientation="horizontal"
+      className="w-[520px] max-w-[calc(100vw-2rem)] rounded-xl overflow-hidden border border-border bg-card shadow-sm"
+    >
+
+      <Accordion.Item value="home" className="flex border-b border-border last:border-b-0">
+        <Accordion.Header className="w-44 shrink-0 border-r border-sidebar-border bg-sidebar">
+          <Accordion.Trigger className="group flex w-full items-center gap-2.5 px-3 py-3 text-left text-sidebar-foreground hover:bg-sidebar-accent transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[panel-open]:bg-sidebar-accent">
+            <Icons.FolderIcon className="size-4 shrink-0 text-muted-foreground group-data-[panel-open]:text-sidebar-primary transition-colors duration-150" />
+            <span className="flex-1 text-sm font-medium truncate">Home</span>
+            <span className="mr-1 size-1.5 rounded-full bg-primary opacity-0 group-data-[panel-open]:opacity-100 transition-opacity duration-150" />
           </Accordion.Trigger>
         </Accordion.Header>
-        <Accordion.Panel className="h-[var(--accordion-panel-height)] flex-1 overflow-hidden bg-[var(--card)] text-sm text-[var(--card-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
-          <div className="px-5 py-4 leading-relaxed">
-            Base UI es una librería de componentes React sin estilos de alta calidad para design systems y aplicaciones web.
+        <Accordion.Panel keepMounted className="flex-1 h-[var(--accordion-panel-height)] overflow-hidden transition-[height] ease-out data-[starting-style]:h-0 data-[ending-style]:h-0">
+          <div className="mx-3 my-3 rounded-md border border-border bg-muted/30 p-3">
+            <p className="text-xs font-semibold text-foreground mb-1">Home Folder</p>
+            <p className="text-xs text-muted-foreground leading-relaxed">Your personal home directory.</p>
+            <div className="mt-2 grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5">
+              <span className="text-[11px] text-muted-foreground">Path</span>
+              <span className="text-[11px] font-mono text-foreground">/home/ubuntu</span>
+              <span className="text-[11px] text-muted-foreground">Free</span>
+              <span className="text-[11px] font-mono text-foreground">68.4 GB</span>
+            </div>
           </div>
         </Accordion.Panel>
       </Accordion.Item>
 
-      <Accordion.Item className="group/item flex flex-row border-b border-[var(--border)] last:border-b-0">
-        <Accordion.Header className="contents">
-          <Accordion.Trigger className="relative flex w-44 shrink-0 items-start gap-2 border-r border-[var(--sidebar-border)] bg-[var(--sidebar)] px-4 py-4 text-left text-sm font-medium text-[var(--sidebar-foreground)] transition-colors duration-150 hover:bg-[var(--sidebar-accent)] hover:text-[var(--sidebar-accent-foreground)] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)] group-data-[panel-open]/item:bg-[var(--sidebar-primary)] group-data-[panel-open]/item:text-[var(--sidebar-primary-foreground)]">
-            <span className="mt-[3px] size-2 shrink-0 rounded-full bg-current opacity-0 transition-opacity group-data-[panel-open]/item:opacity-100" />
-            ¿Cómo empiezo?
+      <Accordion.Item value="documents" className="flex border-b border-border last:border-b-0">
+        <Accordion.Header className="w-44 shrink-0 border-r border-sidebar-border bg-sidebar">
+          <Accordion.Trigger className="group flex w-full items-center gap-2.5 px-3 py-3 text-left text-sidebar-foreground hover:bg-sidebar-accent transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[panel-open]:bg-sidebar-accent">
+            <Icons.FolderIcon className="size-4 shrink-0 text-muted-foreground group-data-[panel-open]:text-sidebar-primary transition-colors duration-150" />
+            <span className="flex-1 text-sm font-medium truncate">Documents</span>
+            <span className="mr-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-primary/15 px-1 text-[10px] font-medium text-primary">3</span>
           </Accordion.Trigger>
         </Accordion.Header>
-        <Accordion.Panel className="h-[var(--accordion-panel-height)] flex-1 overflow-hidden bg-[var(--card)] text-sm text-[var(--card-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
-          <div className="px-5 py-4 leading-relaxed">
-            Consulta la guía de inicio rápido en la documentación. Si ya usaste librerías sin estilos, te sentirás como en casa.
+        <Accordion.Panel keepMounted className="flex-1 h-[var(--accordion-panel-height)] overflow-hidden transition-[height] ease-out data-[starting-style]:h-0 data-[ending-style]:h-0">
+          <div className="mx-3 my-3 rounded-md border border-border bg-muted/30 p-3">
+            <p className="text-xs font-semibold text-foreground mb-1">Documents</p>
+            <p className="text-xs text-muted-foreground leading-relaxed">Store your personal files and PDFs.</p>
+            <div className="mt-2 grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5">
+              <span className="text-[11px] text-muted-foreground">Items</span>
+              <span className="text-[11px] font-mono text-foreground">3</span>
+              <span className="text-[11px] text-muted-foreground">Size</span>
+              <span className="text-[11px] font-mono text-foreground">2.1 MB</span>
+            </div>
           </div>
         </Accordion.Panel>
       </Accordion.Item>
 
-      <Accordion.Item className="group/item flex flex-row border-b border-[var(--border)] last:border-b-0">
-        <Accordion.Header className="contents">
-          <Accordion.Trigger className="relative flex w-44 shrink-0 items-start gap-2 border-r border-[var(--sidebar-border)] bg-[var(--sidebar)] px-4 py-4 text-left text-sm font-medium text-[var(--sidebar-foreground)] transition-colors duration-150 hover:bg-[var(--sidebar-accent)] hover:text-[var(--sidebar-accent-foreground)] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)] group-data-[panel-open]/item:bg-[var(--sidebar-primary)] group-data-[panel-open]/item:text-[var(--sidebar-primary-foreground)]">
-            <span className="mt-[3px] size-2 shrink-0 rounded-full bg-current opacity-0 transition-opacity group-data-[panel-open]/item:opacity-100" />
-            ¿Puedo usarlo en mi proyecto?
+      <Accordion.Item value="trash" className="flex border-b border-border last:border-b-0">
+        <Accordion.Header className="w-44 shrink-0 border-r border-sidebar-border bg-sidebar">
+          <Accordion.Trigger className="group flex w-full items-center gap-2.5 px-3 py-3 text-left text-sidebar-foreground hover:bg-sidebar-accent transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[panel-open]:bg-sidebar-accent">
+            <Icons.FolderIcon className="size-4 shrink-0 text-muted-foreground group-data-[panel-open]:text-sidebar-primary transition-colors duration-150" />
+            <span className="flex-1 text-sm font-medium truncate">Trash</span>
+            <span className="mr-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-primary/15 px-1 text-[10px] font-medium text-primary">12</span>
           </Accordion.Trigger>
         </Accordion.Header>
-        <Accordion.Panel className="h-[var(--accordion-panel-height)] flex-1 overflow-hidden bg-[var(--card)] text-sm text-[var(--card-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
-          <div className="px-5 py-4 leading-relaxed">
-            Por supuesto. Base UI es gratuito y de código abierto bajo licencia MIT.
+        <Accordion.Panel keepMounted className="flex-1 h-[var(--accordion-panel-height)] overflow-hidden transition-[height] ease-out data-[starting-style]:h-0 data-[ending-style]:h-0">
+          <div className="mx-3 my-3 rounded-md border border-border bg-muted/30 p-3">
+            <p className="text-xs font-semibold text-foreground mb-1">Trash</p>
+            <p className="text-xs text-muted-foreground leading-relaxed">Files remain here until you empty the trash.</p>
+            <div className="mt-2 grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5">
+              <span className="text-[11px] text-muted-foreground">Items</span>
+              <span className="text-[11px] font-mono text-foreground">12 files</span>
+              <span className="text-[11px] text-muted-foreground">Size</span>
+              <span className="text-[11px] font-mono text-foreground">84.7 MB</span>
+            </div>
           </div>
         </Accordion.Panel>
       </Accordion.Item>
+
     </Accordion.Root>
   );
 }
+
+function FolderIcon(props: React.ComponentProps<'svg'>) {
+  return (
+    <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
+      <path d="M1.75 3A1.75 1.75 0 0 0 0 4.75v7.5C0 13.216.784 14 1.75 14h12.5A1.75 1.75 0 0 0 16 12.25v-7a1.75 1.75 0 0 0-1.75-1.75H7.06l-.85-1.27A.75.75 0 0 0 5.6 2H1.75Z" />
+    </svg>
+  );
+}
 ```
-    </Tabs.Panel>
-    <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
-      <Accordion.Root className="flex w-[480px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-[var(--radius-lg)] border border-[var(--border)] shadow-md">
-        <Accordion.Item className="group/item flex flex-row border-b border-[var(--border)] last:border-b-0">
-          <Accordion.Header className="contents">
-            <Accordion.Trigger className="relative flex w-44 shrink-0 items-start gap-2 border-r border-[var(--sidebar-border)] bg-[var(--sidebar)] px-4 py-4 text-left text-sm font-medium text-[var(--sidebar-foreground)] transition-colors duration-150 hover:bg-[var(--sidebar-accent)] hover:text-[var(--sidebar-accent-foreground)] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)] group-data-[panel-open]/item:bg-[var(--sidebar-primary)] group-data-[panel-open]/item:text-[var(--sidebar-primary-foreground)]">
-              <span className="mt-[3px] size-2 shrink-0 rounded-full bg-current opacity-0 transition-opacity group-data-[panel-open]/item:opacity-100" />
-              ¿Qué es Base UI?
-            </Accordion.Trigger>
-          </Accordion.Header>
-          <Accordion.Panel className="h-[var(--accordion-panel-height)] flex-1 overflow-hidden bg-[var(--card)] text-sm text-[var(--card-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
-            <div className="px-5 py-4 leading-relaxed">
-              Base UI es una librería de componentes React sin estilos de alta calidad para design systems y aplicaciones web.
-            </div>
-          </Accordion.Panel>
-        </Accordion.Item>
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+    <Accordion.Root
+      multiple
+      defaultValue={['home', 'documents']}
+      orientation="horizontal"
+      className="w-[520px] max-w-[calc(100vw-2rem)] rounded-xl overflow-hidden border border-border bg-card shadow-sm"
+    >
 
-        <Accordion.Item className="group/item flex flex-row border-b border-[var(--border)] last:border-b-0">
-          <Accordion.Header className="contents">
-            <Accordion.Trigger className="relative flex w-44 shrink-0 items-start gap-2 border-r border-[var(--sidebar-border)] bg-[var(--sidebar)] px-4 py-4 text-left text-sm font-medium text-[var(--sidebar-foreground)] transition-colors duration-150 hover:bg-[var(--sidebar-accent)] hover:text-[var(--sidebar-accent-foreground)] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)] group-data-[panel-open]/item:bg-[var(--sidebar-primary)] group-data-[panel-open]/item:text-[var(--sidebar-primary-foreground)]">
-              <span className="mt-[3px] size-2 shrink-0 rounded-full bg-current opacity-0 transition-opacity group-data-[panel-open]/item:opacity-100" />
-              ¿Cómo empiezo?
-            </Accordion.Trigger>
-          </Accordion.Header>
-          <Accordion.Panel className="h-[var(--accordion-panel-height)] flex-1 overflow-hidden bg-[var(--card)] text-sm text-[var(--card-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
-            <div className="px-5 py-4 leading-relaxed">
-              Consulta la guía de inicio rápido en la documentación. Si ya usaste librerías sin estilos, te sentirás como en casa.
+      <Accordion.Item value="home" className="flex border-b border-border last:border-b-0">
+        <Accordion.Header className="w-44 shrink-0 border-r border-sidebar-border bg-sidebar">
+          <Accordion.Trigger className="group flex w-full items-center gap-2.5 px-3 py-3 text-left text-sidebar-foreground hover:bg-sidebar-accent transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[panel-open]:bg-sidebar-accent">
+            <Icons.FolderIcon className="size-4 shrink-0 text-muted-foreground group-data-[panel-open]:text-sidebar-primary transition-colors duration-150" />
+            <span className="flex-1 text-sm font-medium truncate">Home</span>
+            <span className="mr-1 size-1.5 rounded-full bg-primary opacity-0 group-data-[panel-open]:opacity-100 transition-opacity duration-150" />
+          </Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Panel keepMounted className="flex-1 h-[var(--accordion-panel-height)] overflow-hidden transition-[height] ease-out data-[starting-style]:h-0 data-[ending-style]:h-0">
+          <div className="mx-3 my-3 rounded-md border border-border bg-muted/30 p-3">
+            <p className="text-xs font-semibold text-foreground mb-1">Home Folder</p>
+            <p className="text-xs text-muted-foreground leading-relaxed">Your personal home directory.</p>
+            <div className="mt-2 grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5">
+              <span className="text-[11px] text-muted-foreground">Path</span>
+              <span className="text-[11px] font-mono text-foreground">/home/ubuntu</span>
+              <span className="text-[11px] text-muted-foreground">Free</span>
+              <span className="text-[11px] font-mono text-foreground">68.4 GB</span>
             </div>
-          </Accordion.Panel>
-        </Accordion.Item>
+          </div>
+        </Accordion.Panel>
+      </Accordion.Item>
 
-        <Accordion.Item className="group/item flex flex-row border-b border-[var(--border)] last:border-b-0">
-          <Accordion.Header className="contents">
-            <Accordion.Trigger className="relative flex w-44 shrink-0 items-start gap-2 border-r border-[var(--sidebar-border)] bg-[var(--sidebar)] px-4 py-4 text-left text-sm font-medium text-[var(--sidebar-foreground)] transition-colors duration-150 hover:bg-[var(--sidebar-accent)] hover:text-[var(--sidebar-accent-foreground)] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--ring)] group-data-[panel-open]/item:bg-[var(--sidebar-primary)] group-data-[panel-open]/item:text-[var(--sidebar-primary-foreground)]">
-              <span className="mt-[3px] size-2 shrink-0 rounded-full bg-current opacity-0 transition-opacity group-data-[panel-open]/item:opacity-100" />
-              ¿Puedo usarlo en mi proyecto?
-            </Accordion.Trigger>
-          </Accordion.Header>
-          <Accordion.Panel className="h-[var(--accordion-panel-height)] flex-1 overflow-hidden bg-[var(--card)] text-sm text-[var(--card-foreground)] transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0">
-            <div className="px-5 py-4 leading-relaxed">
-              Por supuesto. Base UI es gratuito y de código abierto bajo licencia MIT.
+      <Accordion.Item value="documents" className="flex border-b border-border last:border-b-0">
+        <Accordion.Header className="w-44 shrink-0 border-r border-sidebar-border bg-sidebar">
+          <Accordion.Trigger className="group flex w-full items-center gap-2.5 px-3 py-3 text-left text-sidebar-foreground hover:bg-sidebar-accent transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[panel-open]:bg-sidebar-accent">
+            <Icons.FolderIcon className="size-4 shrink-0 text-muted-foreground group-data-[panel-open]:text-sidebar-primary transition-colors duration-150" />
+            <span className="flex-1 text-sm font-medium truncate">Documents</span>
+            <span className="mr-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-primary/15 px-1 text-[10px] font-medium text-primary">3</span>
+          </Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Panel keepMounted className="flex-1 h-[var(--accordion-panel-height)] overflow-hidden transition-[height] ease-out data-[starting-style]:h-0 data-[ending-style]:h-0">
+          <div className="mx-3 my-3 rounded-md border border-border bg-muted/30 p-3">
+            <p className="text-xs font-semibold text-foreground mb-1">Documents</p>
+            <p className="text-xs text-muted-foreground leading-relaxed">Store your personal files and PDFs.</p>
+            <div className="mt-2 grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5">
+              <span className="text-[11px] text-muted-foreground">Items</span>
+              <span className="text-[11px] font-mono text-foreground">3</span>
+              <span className="text-[11px] text-muted-foreground">Size</span>
+              <span className="text-[11px] font-mono text-foreground">2.1 MB</span>
             </div>
-          </Accordion.Panel>
-        </Accordion.Item>
-      </Accordion.Root>
-    </Tabs.Panel>
+          </div>
+        </Accordion.Panel>
+      </Accordion.Item>
+
+      <Accordion.Item value="trash" className="flex border-b border-border last:border-b-0">
+        <Accordion.Header className="w-44 shrink-0 border-r border-sidebar-border bg-sidebar">
+          <Accordion.Trigger className="group flex w-full items-center gap-2.5 px-3 py-3 text-left text-sidebar-foreground hover:bg-sidebar-accent transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[panel-open]:bg-sidebar-accent">
+            <Icons.FolderIcon className="size-4 shrink-0 text-muted-foreground group-data-[panel-open]:text-sidebar-primary transition-colors duration-150" />
+            <span className="flex-1 text-sm font-medium truncate">Trash</span>
+            <span className="mr-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-primary/15 px-1 text-[10px] font-medium text-primary">12</span>
+          </Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Panel keepMounted className="flex-1 h-[var(--accordion-panel-height)] overflow-hidden transition-[height] ease-out data-[starting-style]:h-0 data-[ending-style]:h-0">
+          <div className="mx-3 my-3 rounded-md border border-border bg-muted/30 p-3">
+            <p className="text-xs font-semibold text-foreground mb-1">Trash</p>
+            <p className="text-xs text-muted-foreground leading-relaxed">Files remain here until you empty the trash.</p>
+            <div className="mt-2 grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5">
+              <span className="text-[11px] text-muted-foreground">Items</span>
+              <span className="text-[11px] font-mono text-foreground">12 files</span>
+              <span className="text-[11px] text-muted-foreground">Size</span>
+              <span className="text-[11px] font-mono text-foreground">84.7 MB</span>
+            </div>
+          </div>
+        </Accordion.Panel>
+      </Accordion.Item>
+
+    </Accordion.Root>
+  </Tabs.Panel>
 </Tabs.Root>
 
 ## AccordionHeader
 
 A heading that labels the corresponding panel.
 Renders an `&lt;h3&gt;` element.
-## AccordionHeader
 
 Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordion)
 
 ### Props
 
-| Prop          | Type                                 | Default | Description                                                                                                                                                                                            |
-| :------------ | :----------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **className** | `string \| (...) => string)`         | —       | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state.                                                                                               |
-| **render**    | `ReactElement> \| ComponentRenderFn` | —       | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
 
 ---
 
@@ -392,13 +500,14 @@ Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordio
 
 ### Props
 
-| Prop             | Type                                 | Default | Description                                                                                                                                                                                                                              |
-| :--------------- | :----------------------------------- | :------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **className**    | `string \| (...) => string)`         | —       | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state.                                                                                                                                 |
-| **render**       | `ReactElement> \| ComponentRenderFn` | —       | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render.                                   |
-| **value**        | `any`                                | —       | A unique value that identifies this accordion item.<br/>If no value is provided, a unique ID will be generated automatically.<br/>Use when controlling the accordion programmatically, or to set an initial<br/>open state.<br/>@example |
-| **disabled**     | `boolean`                            | `false` | Whether the component should ignore user interaction.                                                                                                                                                                                    |
-| **onOpenChange** | `(...) => void`                      | —       | Event handler called when the panel is opened or closed.                                                                                                                                                                                 |
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **value** | `any` | — | A unique value that identifies this accordion item.<br/>If no value is provided, a unique ID will be generated automatically.<br/>Use when controlling the accordion programmatically, or to set an initial<br/>open state.<br/>@example  |
+| **disabled** | `boolean` | `false` | Whether the component should ignore user interaction. |
+| **onOpenChange** | `(...) => void` | — | Event handler called when the panel is opened or closed. |
+
 
 ---
 
@@ -411,12 +520,13 @@ Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordio
 
 ### Props
 
-| Prop                 | Type                                 | Default | Description                                                                                                                                                                                                          |
-| :------------------- | :----------------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **className**        | `string \| (...) => string)`         | —       | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state.                                                                                                             |
-| **render**           | `ReactElement> \| ComponentRenderFn` | —       | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render.               |
-| **hiddenUntilFound** | `boolean`                            | `false` | Allows the browser’s built-in page search to find and expand the panel contents.<br/><br/>Overrides the `keepMounted` prop and uses `hidden="until-found"`<br/>to hide the element without removing it from the DOM. |
-| **keepMounted**      | `boolean`                            | `false` | Whether to keep the element in the DOM while the panel is closed.<br/>This prop is ignored when `hiddenUntilFound` is used.                                                                                          |
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **hiddenUntilFound** | `boolean` | `false` | Allows the browser’s built-in page search to find and expand the panel contents.<br/><br/>Overrides the `keepMounted` prop and uses `hidden="until-found"`<br/>to hide the element without removing it from the DOM. |
+| **keepMounted** | `boolean` | `false` | Whether to keep the element in the DOM while the panel is closed.<br/>This prop is ignored when `hiddenUntilFound` is used. |
+
 
 ---
 
@@ -429,19 +539,20 @@ Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordio
 
 ### Props
 
-| Prop                 | Type                                  | Default      | Description                                                                                                                                                                                                          |
-| :------------------- | :------------------------------------ | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **value**            | `AccordionValue<Value>`               | —            | The controlled value of the item(s) that should be expanded.<br/><br/>To render an uncontrolled accordion, use the `defaultValue` prop instead.                                                                      |
-| **defaultValue**     | `AccordionValue<Value>`               | —            | The uncontrolled value of the item(s) that should be initially expanded.<br/><br/>To render a controlled accordion, use the `value` prop instead.                                                                    |
-| **disabled**         | `boolean`                             | `false`      | Whether the component should ignore user interaction.                                                                                                                                                                |
-| **hiddenUntilFound** | `boolean`                             | `false`      | Allows the browser’s built-in page search to find and expand the panel contents.<br/><br/>Overrides the `keepMounted` prop and uses `hidden="until-found"`<br/>to hide the element without removing it from the DOM. |
-| **keepMounted**      | `boolean`                             | `false`      | Whether to keep the element in the DOM while the panel is closed.<br/>This prop is ignored when `hiddenUntilFound` is used.                                                                                          |
-| **loopFocus**        | `boolean`                             | `true`       | Whether to loop keyboard focus back to the first item<br/>when the end of the list is reached while using the arrow keys.                                                                                            |
-| **onValueChange**    | `(...) => void`                       | —            | Event handler called when an accordion item is expanded or collapsed.<br/>Provides the new value as an argument.                                                                                                     |
-| **multiple**         | `boolean`                             | `false`      | Whether multiple items can be open at the same time.                                                                                                                                                                 |
-| **orientation**      | `Orientation`                         | `'vertical'` | The visual orientation of the accordion.<br/>Controls whether roving focus uses left/right or up/down arrow keys.                                                                                                    |
-| **className**        | `string \| (...) => string)`          | —            | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state.                                                                                                             |
-| **render**           | `ReactElement> \| ComponentRenderFn>` | —            | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render.               |
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **value** | `AccordionValue<Value>` | — | The controlled value of the item(s) that should be expanded.<br/><br/>To render an uncontrolled accordion, use the `defaultValue` prop instead. |
+| **defaultValue** | `AccordionValue<Value>` | — | The uncontrolled value of the item(s) that should be initially expanded.<br/><br/>To render a controlled accordion, use the `value` prop instead. |
+| **disabled** | `boolean` | `false` | Whether the component should ignore user interaction. |
+| **hiddenUntilFound** | `boolean` | `false` | Allows the browser’s built-in page search to find and expand the panel contents.<br/><br/>Overrides the `keepMounted` prop and uses `hidden="until-found"`<br/>to hide the element without removing it from the DOM. |
+| **keepMounted** | `boolean` | `false` | Whether to keep the element in the DOM while the panel is closed.<br/>This prop is ignored when `hiddenUntilFound` is used. |
+| **loopFocus** | `boolean` | `true` | Whether to loop keyboard focus back to the first item<br/>when the end of the list is reached while using the arrow keys. |
+| **onValueChange** | `(...) => void` | — | Event handler called when an accordion item is expanded or collapsed.<br/>Provides the new value as an argument. |
+| **multiple** | `boolean` | `false` | Whether multiple items can be open at the same time. |
+| **orientation** | `Orientation` | `'vertical'` | The visual orientation of the accordion.<br/>Controls whether roving focus uses left/right or up/down arrow keys. |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn>` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+
 
 ---
 
@@ -454,10 +565,13 @@ Documentation: [Base UI Accordion](https://base-ui.com/react/components/accordio
 
 ### Props
 
-| Prop             | Type                                 | Default | Description                                                                                                                                                                                            |
-| :--------------- | :----------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **className**    | `string \| (...) => string)`         | —       | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state.                                                                                               |
-| **render**       | `ReactElement> \| ComponentRenderFn` | —       | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
-| **nativeButton** | `boolean`                            | `true`  | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`).          |
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
+| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+| **nativeButton** | `boolean` | `true` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`). |
+
 
 ---
+
+```

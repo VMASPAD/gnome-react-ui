@@ -1,14 +1,211 @@
 ---
 title: Menubar
+description: A menu bar providing commands and options for your application.
 ---
 
 # Menubar
 
-## Menubar
+Una barra de menús para aplicaciones. Combina `Menubar` de Base UI con `Menu.Root` y sus sub-componentes para crear menús desplegables con soporte completo de teclado.
 
-The container for menus.
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+    <Menubar.MenubarApp />
+  </Tabs.Panel>
+  <Tabs.Panel className="p-0 outline-none" value="code">
+    ```tsx
+    import { Menubar } from "@base-ui-components/react/menubar";
+    import { Menu } from "@base-ui-components/react/menu";
 
-Documentation: [Base UI Menubar](https://base-ui.com/react/components/menubar)
+    export function MenubarApp() {
+      return (
+        <Menubar>
+          <Menu.Root>
+            <Menu.Trigger>File</Menu.Trigger>
+            <Menu.Portal>
+              <Menu.Positioner sideOffset={6} alignOffset={-2} align="start">
+                <Menu.Popup>
+                  <Menu.Item><Icons.FilePlus /> New file <span>⌘N</span></Menu.Item>
+                  <Menu.Item><Icons.FolderOpen /> Open… <span>⌘O</span></Menu.Item>
+                  <Menu.Item><Icons.Save /> Save <span>⌘S</span></Menu.Item>
+                  <Menu.SubmenuRoot>
+                    <Menu.SubmenuTrigger>
+                      <Icons.FileOutput /> Export
+                      <Icons.ChevronRight className="ml-auto" />
+                    </Menu.SubmenuTrigger>
+                    <Menu.Portal>
+                      <Menu.Positioner sideOffset={4} side="right" alignOffset={-4} align="start">
+                        <Menu.Popup>
+                          <Menu.Item>PDF</Menu.Item>
+                          <Menu.Item>PNG</Menu.Item>
+                          <Menu.Item>SVG</Menu.Item>
+                        </Menu.Popup>
+                      </Menu.Positioner>
+                    </Menu.Portal>
+                  </Menu.SubmenuRoot>
+                  <Menu.Separator />
+                  <Menu.Item><Icons.Printer /> Print… <span>⌘P</span></Menu.Item>
+                </Menu.Popup>
+              </Menu.Positioner>
+            </Menu.Portal>
+          </Menu.Root>
+
+          <Menu.Root>
+            <Menu.Trigger>Edit</Menu.Trigger>
+            <Menu.Portal>
+              <Menu.Positioner sideOffset={6} align="start">
+                <Menu.Popup>
+                  <Menu.Item><Icons.Undo2 /> Undo <span>⌘Z</span></Menu.Item>
+                  <Menu.Item><Icons.Redo2 /> Redo <span>⇧⌘Z</span></Menu.Item>
+                  <Menu.Separator />
+                  <Menu.Item><Icons.Scissors /> Cut <span>⌘X</span></Menu.Item>
+                  <Menu.Item><Icons.Copy /> Copy <span>⌘C</span></Menu.Item>
+                  <Menu.Item><Icons.Clipboard /> Paste <span>⌘V</span></Menu.Item>
+                </Menu.Popup>
+              </Menu.Positioner>
+            </Menu.Portal>
+          </Menu.Root>
+
+          <Menu.Root>
+            <Menu.Trigger>View</Menu.Trigger>
+            {/* ... */}
+          </Menu.Root>
+
+          <Menu.Root disabled>
+            <Menu.Trigger>Help</Menu.Trigger>
+          </Menu.Root>
+        </Menubar>
+      );
+    }
+    ```
+  </Tabs.Panel>
+</Tabs.Root>
+
+# Anatomy
+
+```tsx
+import { Menubar } from "@base-ui-components/react/menubar";
+import { Menu } from "@base-ui-components/react/menu";
+
+<Menubar>
+  <Menu.Root>
+    <Menu.Trigger />
+    <Menu.Portal>
+      <Menu.Positioner>
+        <Menu.Popup>
+          <Menu.Item />
+          <Menu.Separator />
+          <Menu.Group>
+            <Menu.GroupLabel />
+          </Menu.Group>
+          <Menu.SubmenuRoot>
+            <Menu.SubmenuTrigger />
+          </Menu.SubmenuRoot>
+        </Menu.Popup>
+      </Menu.Positioner>
+    </Menu.Portal>
+  </Menu.Root>
+</Menubar>
+```
+
+# Examples
+
+## Editor Menubar
+
+Combina `Menu.CheckboxItem` y `Menu.RadioGroup` dentro de un Menubar para construir una barra de formato de texto estilo editor rico.
+
+<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
+    <Menubar.MenubarEditor />
+  </Tabs.Panel>
+  <Tabs.Panel className="p-0 outline-none" value="code">
+    ```tsx
+    const alignOptions = [
+      { value: "left", label: "Left", icon: Icons.AlignLeft },
+      { value: "center", label: "Center", icon: Icons.AlignCenter },
+      { value: "right", label: "Right", icon: Icons.AlignRight },
+    ];
+
+    export function MenubarEditor() {
+      return (
+        <Menubar>
+          <Menu.Root>
+            <Menu.Trigger>Format</Menu.Trigger>
+            <Menu.Portal>
+              <Menu.Positioner sideOffset={6} alignOffset={-2} align="start">
+                <Menu.Popup>
+                  <Menu.Group>
+                    <Menu.GroupLabel>Style</Menu.GroupLabel>
+                    <Menu.CheckboxItem defaultChecked>
+                      <Menu.CheckboxItemIndicator><Icons.Check /></Menu.CheckboxItemIndicator>
+                      <Icons.Bold /> Bold <span>⌘B</span>
+                    </Menu.CheckboxItem>
+                    <Menu.CheckboxItem>
+                      <Menu.CheckboxItemIndicator><Icons.Check /></Menu.CheckboxItemIndicator>
+                      <Icons.Italic /> Italic <span>⌘I</span>
+                    </Menu.CheckboxItem>
+                    <Menu.CheckboxItem>
+                      <Menu.CheckboxItemIndicator><Icons.Check /></Menu.CheckboxItemIndicator>
+                      <Icons.Underline /> Underline <span>⌘U</span>
+                    </Menu.CheckboxItem>
+                  </Menu.Group>
+                  <Menu.Separator />
+                  <Menu.Group>
+                    <Menu.GroupLabel>Alignment</Menu.GroupLabel>
+                    <Menu.RadioGroup defaultValue="left">
+                      {alignOptions.map(({ value, label, icon: Icon }) => (
+                        <Menu.RadioItem key={value} value={value}>
+                          <Menu.RadioItemIndicator><Icons.Circle /></Menu.RadioItemIndicator>
+                          <Icon /> {label}
+                        </Menu.RadioItem>
+                      ))}
+                    </Menu.RadioGroup>
+                  </Menu.Group>
+                </Menu.Popup>
+              </Menu.Positioner>
+            </Menu.Portal>
+          </Menu.Root>
+
+          <Menu.Root>
+            <Menu.Trigger>Insert</Menu.Trigger>
+            <Menu.Portal>
+              <Menu.Positioner sideOffset={6} align="start">
+                <Menu.Popup>
+                  <Menu.Item><Icons.List /> List</Menu.Item>
+                  <Menu.Item><Icons.LayoutTemplate /> Table</Menu.Item>
+                  <Menu.Separator />
+                  <Menu.Item><Icons.MessageSquare /> Comment <span>⌘⌥M</span></Menu.Item>
+                </Menu.Popup>
+              </Menu.Positioner>
+            </Menu.Portal>
+          </Menu.Root>
+
+          <Menu.Root>
+            <Menu.Trigger>Help</Menu.Trigger>
+            <Menu.Portal>
+              <Menu.Positioner sideOffset={6} align="start">
+                <Menu.Popup>
+                  <Menu.Item><Icons.BookOpen /> Documentation</Menu.Item>
+                  <Menu.Item><Icons.HelpCircle /> Keyboard shortcuts</Menu.Item>
+                  <Menu.Separator />
+                  <Menu.Item><Icons.Info /> About</Menu.Item>
+                </Menu.Popup>
+              </Menu.Positioner>
+            </Menu.Portal>
+          </Menu.Root>
+        </Menubar>
+      );
+    }
+    ```
+  </Tabs.Panel>
+</Tabs.Root> 
 
 ### Props
 
