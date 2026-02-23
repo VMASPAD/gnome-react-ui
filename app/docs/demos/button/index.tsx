@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import { Button } from '@/app/components/button';
 import { Download, Send, Trash2, Plus, Loader2, Check, ArrowRight } from 'lucide-react';

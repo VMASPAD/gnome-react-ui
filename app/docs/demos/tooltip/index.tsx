@@ -1,3 +1,4 @@
+"use client";
 import { Tooltip } from '@/app/components/tooltip';
 import {
   Bold, Italic, Underline, AlignLeft, AlignCenter, AlignRight,

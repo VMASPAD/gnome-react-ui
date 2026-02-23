@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import { Field } from '@/app/components/field';
 import { AlertCircle } from 'lucide-react';

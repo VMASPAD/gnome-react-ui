@@ -1,3 +1,4 @@
+"use client";
 import { DrawerPreview as Drawer } from '@/app/components/drawer';
 import { PanelRight, Settings, Bell, User, Lock, Wifi, ChevronRight, X, SlidersHorizontal, Moon, Shield } from 'lucide-react';
 

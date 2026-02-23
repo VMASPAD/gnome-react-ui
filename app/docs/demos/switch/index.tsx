@@ -1,4 +1,4 @@
-
+"use client";
 import * as React from 'react';
 import { Switch } from '@/app/components/switch';
 import { Field } from '@/app/components/field';

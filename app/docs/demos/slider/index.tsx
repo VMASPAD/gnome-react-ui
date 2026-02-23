@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import { Slider } from '@/app/components/slider';
 import { Volume2, Sun, Monitor } from 'lucide-react';

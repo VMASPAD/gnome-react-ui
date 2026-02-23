@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import { Meter } from '@/app/components/meter';
 import { HardDrive, Activity } from 'lucide-react';

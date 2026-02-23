@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import { Separator } from '@/app/components/separator';
 import { Settings, User, LogOut, Terminal, Package, Monitor } from 'lucide-react';

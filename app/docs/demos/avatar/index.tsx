@@ -1,3 +1,4 @@
+"use client";
 import { Avatar } from '@/app/components/avatar/index';
 import { User, Bot, Shield } from 'lucide-react';
 

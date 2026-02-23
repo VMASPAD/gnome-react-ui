@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import { Progress } from '@/app/components/progress';
 import { Download, RefreshCw, UploadCloud } from 'lucide-react';

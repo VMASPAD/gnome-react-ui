@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import { Combobox } from '@/app/components/combobox';
 import { ChevronDown, Check, X } from 'lucide-react';

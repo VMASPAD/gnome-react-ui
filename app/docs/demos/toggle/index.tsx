@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import { Toggle } from '@/app/components/toggle';
 import { ToggleGroup } from '@/app/components/toggle-group';

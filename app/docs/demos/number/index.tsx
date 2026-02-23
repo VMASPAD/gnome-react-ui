@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import { NumberField } from '@/app/components/number-field';
 import { ChevronUp, ChevronDown, Minus, Plus, ArrowRightLeft } from 'lucide-react';

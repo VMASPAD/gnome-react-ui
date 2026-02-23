@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import { Checkbox } from '@/app/components/checkbox';
 import { Check, Minus } from 'lucide-react';

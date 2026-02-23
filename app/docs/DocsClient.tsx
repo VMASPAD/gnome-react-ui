@@ -21,7 +21,7 @@ import * as Menu from "@/app/docs/demos/menu/index";
 import * as Menubar from "@/app/docs/demos/menubar/index";
 import * as Meter from "@/app/docs/demos/meter/index";
 import * as Navigation from "@/app/docs/demos/navigation/index";
-import * as Number from "@/app/docs/demos/number/index";
+import * as NumberInput from "@/app/docs/demos/number/index";
 import * as Popover from "@/app/docs/demos/popover/index";
 import * as PreviewCard from "@/app/docs/demos/preview/index";
 import * as Progress from "@/app/docs/demos/progress/index";
@@ -109,7 +109,7 @@ function decodeChildren(children: React.ReactNode): React.ReactNode {
     const childProps = children.props as { children?: React.ReactNode };
     return React.cloneElement(
       children,
-      {},
+      { ...(typeof children.props === "object" ? children.props : {}) },
       decodeChildren(childProps.children),
     );
   }
@@ -352,7 +352,7 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
                     Meter,
                     Navigation,
                     Popover,
-                    Number,
+                    NumberInput,
                     PreviewCard,
                     Progress,
                     Radio,

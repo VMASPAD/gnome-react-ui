@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import { Select } from '@/app/components/select';
 import { ChevronDown, ChevronUp, Check } from 'lucide-react';

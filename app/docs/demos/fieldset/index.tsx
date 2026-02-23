@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import { Fieldset } from '@/app/components/fieldset';
 import { Field } from '@/app/components/field';

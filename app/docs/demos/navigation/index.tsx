@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import { NavigationMenu } from '@/app/components/navigation-menu';
 import { ChevronDown, Box, Layout, Code, Settings } from 'lucide-react';

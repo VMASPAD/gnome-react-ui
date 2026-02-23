@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import { Toolbar } from '@/app/components/toolbar';
 import { Toggle } from '@/app/components/toggle';

@@ -1,3 +1,4 @@
+"use client";
 import { Dialog } from '@/app/components/dialog';
 import { Bell, Settings, X, User, Mail, Lock, ExternalLink, Pencil } from 'lucide-react';
 
