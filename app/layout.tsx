@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Ubuntu, Ubuntu_Mono } from "next/font/google";
 import "./globals.css";
-
+import { Analytics } from "@vercel/analytics/next"
 const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
   subsets: ["latin"],
@@ -26,6 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Analytics />
       <body className={`${ubuntu.variable} ${ubuntuMono.variable} antialiased`}>
         {children}
       </body>
