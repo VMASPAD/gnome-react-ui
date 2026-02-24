@@ -8,7 +8,7 @@ A text input that provides a list of suggested options, allowing users to select
 
 Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -17,7 +17,7 @@ Documentation: [Base UI Combobox](https://base-ui.com/react/components/combobox)
   <Tabs.Panel value="code">
 ```tsx
 import * as React from 'react';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from 'gnome-ui/combobox';
 import { ChevronDown, Check } from 'lucide-react';
 
 const frameworks = ['React', 'Vue', 'Angular', 'Svelte', 'Ember', 'Solid', 'Next.js'];
@@ -25,7 +25,7 @@ const frameworks = ['React', 'Vue', 'Angular', 'Svelte', 'Ember', 'Solid', 'Next
 export function ComboboxDefault() {
   return (
     <Combobox.Root className="relative w-72">
-      <div className="flex h-10 w-full items-center justify-between rounded-lg border border-input bg-card px-3 text-sm text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
+      <div className="flex h-10 w-full items-center justify-between rounded-xl border border-input bg-card px-3 text-sm text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
         <Combobox.Input 
           className="flex-1 bg-transparent outline-none placeholder:text-muted-foreground" 
           placeholder="Selecciona un framework..." 
@@ -37,7 +37,7 @@ export function ComboboxDefault() {
       
       <Combobox.Portal>
         <Combobox.Positioner className="z-50 w-[var(--anchor-width)]" sideOffset={4}>
-          <Combobox.Popup className="overflow-hidden rounded-lg border border-border bg-popover p-1 text-popover-foreground shadow-md outline-none">
+          <Combobox.Popup className="overflow-hidden rounded-xl border border-border bg-popover p-1 text-popover-foreground shadow-md outline-none">
             <Combobox.List className="max-h-60 overflow-y-auto">
               <Combobox.Empty className="py-6 text-center text-sm text-muted-foreground">
                 No se encontraron resultados.
@@ -73,7 +73,7 @@ export function ComboboxDefault() {
 # Anatomy
 
 ```tsx
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from 'gnome-ui/combobox';
 
 <Combobox.Root>
   <Combobox.Input />
@@ -101,7 +101,7 @@ import { Combobox } from '@base-ui/react/combobox';
 
 Combobox supports multiple selections. You can use the `Combobox.Chips` and `Combobox.Chip` components to render the selected values inside the input area.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -111,7 +111,7 @@ Combobox supports multiple selections. You can use the `Combobox.Chips` and `Com
 
 ```tsx
 import * as React from 'react';
-import { Combobox } from '@base-ui/react/combobox';
+import { Combobox } from 'gnome-ui/combobox';
 import { Check, X } from 'lucide-react';
 
 const frameworks = ['React', 'Vue', 'Angular', 'Svelte', 'Ember', 'Solid', 'Next.js'];
@@ -121,7 +121,7 @@ export function ComboboxMultiple() {
 
   return (
     <Combobox.Root multiple value={value} onValueChange={setValue} className="relative w-full max-w-md">
-      <div className="flex min-h-10 w-full flex-wrap items-center gap-1.5 rounded-lg border border-input bg-card p-1.5 text-sm text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
+      <div className="flex min-h-10 w-full flex-wrap items-center gap-1.5 rounded-xl border border-input bg-card p-1.5 text-sm text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
         <Combobox.Chips className="flex flex-wrap items-center gap-1.5">
           {value.map((val) => (
             <Combobox.Chip 
@@ -144,7 +144,7 @@ export function ComboboxMultiple() {
       
       <Combobox.Portal>
         <Combobox.Positioner className="z-50 w-[var(--anchor-width)]" sideOffset={4}>
-          <Combobox.Popup className="overflow-hidden rounded-lg border border-border bg-popover p-1 text-popover-foreground shadow-md outline-none">
+          <Combobox.Popup className="overflow-hidden rounded-xl border border-border bg-popover p-1 text-popover-foreground shadow-md outline-none">
             <Combobox.List className="max-h-60 overflow-y-auto">
               <Combobox.Empty className="py-6 text-center text-sm text-muted-foreground">
                 No hay más opciones.

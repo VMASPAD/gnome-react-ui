@@ -90,7 +90,7 @@ export function TabsUnderline() {
 export function TabsPill() {
   return (
     <Tabs.Root defaultValue="month" className="w-72">
-      <Tabs.List className="flex rounded-lg bg-muted p-1 gap-1">
+      <Tabs.List className="flex rounded-xl bg-muted p-1 gap-1">
         {[
           { value: "day", label: "Day" },
           { value: "week", label: "Week" },
@@ -114,7 +114,7 @@ export function TabsPill() {
 
       {["day", "week", "month", "year"].map((v) => (
         <Tabs.Panel key={v} value={v} className="mt-4 outline-none">
-          <div className="rounded-lg border border-border bg-card p-4">
+          <div className="rounded-xl border border-border bg-card p-4">
             <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">
               Revenue ({v})
             </p>

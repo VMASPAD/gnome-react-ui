@@ -8,10 +8,10 @@ import { User, Mail, Lock, Globe, Loader2, Check, AlertCircle } from 'lucide-rea
 // ─── Shared ───────────────────────────────────────────────────────────────────
 
 const inputCls =
-  'h-10 w-full rounded-lg border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring data-[field-invalid]:border-destructive data-[field-invalid]:focus:outline-destructive';
+  'h-10 w-full rounded-xl border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring data-[field-invalid]:border-destructive data-[field-invalid]:focus:outline-destructive';
 
 const btnBase =
-  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
 
 const labelCls =
   'text-xs font-semibold uppercase tracking-widest text-muted-foreground';

@@ -85,7 +85,7 @@ export function RadioGroupWithDescriptions() {
         <label
           key={value}
           className={
-            "flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-card p-3 " +
+            "flex cursor-pointer items-start gap-3 rounded-xl border border-border bg-card p-3 " +
             "transition-colors duration-150 hover:bg-accent " +
             "has-[span[data-checked]]:border-primary has-[span[data-checked]]:bg-primary/5"
           }

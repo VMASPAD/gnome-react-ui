@@ -8,7 +8,7 @@ A component used to group related form controls and labels, making forms more ac
 
 Documentation: [Base UI Fieldset](https://base-ui.com/react/components/fieldset)
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -17,9 +17,9 @@ Documentation: [Base UI Fieldset](https://base-ui.com/react/components/fieldset)
   <Tabs.Panel value="code">
 ```tsx
 import * as React from 'react';
-import { Fieldset } from '@base-ui/react/fieldset';
-import { Field } from '@base-ui/react/field';
-import { Checkbox } from '@base-ui/react/checkbox';
+import { Fieldset } from 'gnome-ui/fieldset';
+import { Field } from 'gnome-ui/field';
+import { Checkbox } from 'gnome-ui/checkbox';
 import { Check } from 'lucide-react';
 
 const checkboxBase =
@@ -77,7 +77,7 @@ export function FieldsetDefault() {
 # Anatomy
 
 ```tsx
-import { Fieldset } from '@base-ui/react/fieldset';
+import { Fieldset } from 'gnome-ui/fieldset';
 
 <Fieldset.Root>
   <Fieldset.Legend />
@@ -92,7 +92,7 @@ import { Fieldset } from '@base-ui/react/fieldset';
 
 When the `disabled` prop is applied to the `<Fieldset.Root>`, all form controls inside it are automatically disabled.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -102,8 +102,8 @@ When the `disabled` prop is applied to the `<Fieldset.Root>`, all form controls 
 
 ```tsx
 import * as React from 'react';
-import { Fieldset } from '@base-ui/react/fieldset';
-import { Field } from '@base-ui/react/field';
+import { Fieldset } from 'gnome-ui/fieldset';
+import { Field } from 'gnome-ui/field';
 
 const inputBase =
   'flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm text-foreground shadow-sm transition-colors focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50';

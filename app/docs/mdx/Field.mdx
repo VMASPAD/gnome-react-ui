@@ -8,7 +8,7 @@ A set of components to build accessible form fields with labels, descriptions, a
 
 Documentation: [Base UI Field](https://base-ui.com/react/components/field)
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -17,11 +17,11 @@ Documentation: [Base UI Field](https://base-ui.com/react/components/field)
   <Tabs.Panel value="code">
 ```tsx
 import * as React from 'react';
-import { Field } from '@base-ui/react/field';
-import { Input } from '@base-ui/react/input';
+import { Field } from 'gnome-ui/field';
+import { Input } from 'gnome-ui/input';
 
 const inputBase =
-  'flex h-10 w-full rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-[invalid]:border-destructive data-[invalid]:focus-visible:outline-destructive';
+  'flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-[invalid]:border-destructive data-[invalid]:focus-visible:outline-destructive';
 
 export function FieldDefault() {
   return (
@@ -54,7 +54,7 @@ export function FieldDefault() {
 # Anatomy
 
 ```tsx
-import { Field } from '@base-ui/react/field';
+import { Field } from 'gnome-ui/field';
 
 <Field.Root>
   <Field.Label />
@@ -73,7 +73,7 @@ import { Field } from '@base-ui/react/field';
 
 The Field component handles form validation automatically. It manages the validity state and shows the `Field.Error` component when the validation fails. Try submitting the form below with an empty or short value.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -83,8 +83,8 @@ The Field component handles form validation automatically. It manages the validi
 
 ```tsx
 import * as React from 'react';
-import { Field } from '@base-ui/react/field';
-import { Input } from '@base-ui/react/input';
+import { Field } from 'gnome-ui/field';
+import { Input } from 'gnome-ui/input';
 import { AlertCircle } from 'lucide-react';
 
 // ... (inputBase classes)
@@ -125,7 +125,7 @@ export function FieldWithError() {
         
         <button 
           type="submit" 
-          className="mt-2 inline-flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring active:brightness-90"
+          className="mt-2 inline-flex h-9 items-center justify-center rounded-xl bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring active:brightness-90"
         >
           Guardar
         </button>

@@ -10,7 +10,7 @@ Renders a `<span>` element and a hidden `<input>` beside it.
 Documentation: [Base UI Checkbox](https://base-ui.com/react/components/checkbox)
 
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -18,7 +18,7 @@ Documentation: [Base UI Checkbox](https://base-ui.com/react/components/checkbox)
   </Tabs.List>
   <Tabs.Panel value="code">
 ```tsx
-import { Checkbox } from '@base-ui/react/checkbox';
+import { Checkbox } from 'gnome-ui/checkbox';
 import { Check } from 'lucide-react';
 
 const checkboxBase =
@@ -48,7 +48,7 @@ export function CheckboxDefault() {
 # Anatomy
 
 ```tsx
-import { Checkbox } from '@base-ui/react/checkbox';
+import { Checkbox } from 'gnome-ui/checkbox';
 
 <Checkbox.Root>
   <Checkbox.Indicator />
@@ -62,7 +62,7 @@ import { Checkbox } from '@base-ui/react/checkbox';
 
 The checkbox can be disabled to prevent user interaction.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -71,7 +71,7 @@ The checkbox can be disabled to prevent user interaction.
 <Tabs.Panel value="code">
 
 ```tsx
-import { Checkbox } from '@base-ui/react/checkbox';
+import { Checkbox } from 'gnome-ui/checkbox';
 import { Check } from 'lucide-react';
 
 // ... (checkboxBase classes)
@@ -114,7 +114,7 @@ export function CheckboxDisabled() {
 
 The checkbox supports an indeterminate state for mixed selection scenarios.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -124,7 +124,7 @@ The checkbox supports an indeterminate state for mixed selection scenarios.
 
 ```tsx
 import * as React from 'react';
-import { Checkbox } from '@base-ui/react/checkbox';
+import { Checkbox } from 'gnome-ui/checkbox';
 import { Check, Minus } from 'lucide-react';
 
 // ... (checkboxBase classes included data-[indeterminate]:...)

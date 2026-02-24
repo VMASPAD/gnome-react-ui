@@ -7,7 +7,7 @@ description: A native scroll container with custom-styled scrollbars.
 
 Un contenedor de scroll nativo con scrollbars estilizables. La estructura obligatoria es `Root > Viewport > Content` — las `Scrollbar` van **fuera** del `Viewport`, paralelas a él dentro del `Root`.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
@@ -17,11 +17,11 @@ Un contenedor de scroll nativo con scrollbars estilizables. La estructura obliga
   </Tabs.Panel>
   <Tabs.Panel className="p-0 outline-none" value="code">
     ```tsx
-    import { ScrollArea } from "@base-ui-components/react/scroll-area";
+    import { ScrollArea } from "gnome-ui/scroll-area";
 
     export function ScrollAreaVertical() {
       return (
-        <ScrollArea.Root className="h-48 w-80 rounded-lg border border-border bg-card overflow-hidden">
+        <ScrollArea.Root className="h-48 w-80 rounded-xl border border-border bg-card overflow-hidden">
           <ScrollArea.Viewport className="h-full w-full">
             <ScrollArea.Content className="px-4 py-3">
               <p>Long content here...</p>
@@ -41,7 +41,7 @@ Un contenedor de scroll nativo con scrollbars estilizables. La estructura obliga
 # Anatomy
 
 ```tsx
-import { ScrollArea } from "@base-ui-components/react/scroll-area";
+import { ScrollArea } from "gnome-ui/scroll-area";
 
 <ScrollArea.Root>
   <ScrollArea.Viewport>
@@ -63,7 +63,7 @@ import { ScrollArea } from "@base-ui-components/react/scroll-area";
 
 Cuando hay scroll en ambas direcciones, agrega `<ScrollArea.Corner>` para cubrir el área donde se intersectan las dos scrollbars.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
@@ -75,7 +75,7 @@ Cuando hay scroll en ambas direcciones, agrega `<ScrollArea.Corner>` para cubrir
     ```tsx
     export function ScrollAreaBothAxes() {
       return (
-        <ScrollArea.Root className="h-52 w-96 rounded-lg border border-border overflow-hidden">
+        <ScrollArea.Root className="h-52 w-96 rounded-xl border border-border overflow-hidden">
           <ScrollArea.Viewport className="h-full w-full">
             <ScrollArea.Content className="min-w-max">
               <table>{/* tabla ancha */}</table>
@@ -100,7 +100,7 @@ Cuando hay scroll en ambas direcciones, agrega `<ScrollArea.Corner>` para cubrir
 
 Ideal para bloques de código con scroll horizontal. `min-w-max` en `Content` previene el wrapping del texto.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
@@ -112,7 +112,7 @@ Ideal para bloques de código con scroll horizontal. `min-w-max` en `Content` pr
     ```tsx
     export function ScrollAreaCodeBlock() {
       return (
-        <ScrollArea.Root className="w-96 rounded-lg border border-border bg-[#1e1e2e] overflow-hidden">
+        <ScrollArea.Root className="w-96 rounded-xl border border-border bg-[#1e1e2e] overflow-hidden">
           <ScrollArea.Viewport className="h-full w-full max-h-52">
             {/* min-w-max evita el wrapping del código */}
             <ScrollArea.Content className="min-w-max">

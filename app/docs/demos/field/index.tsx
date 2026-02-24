@@ -4,7 +4,7 @@ import { Field } from '@/app/components/field';
 import { AlertCircle } from 'lucide-react';
 
 const inputBase =
-  'flex h-10 w-full rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-[invalid]:border-destructive data-[invalid]:focus-visible:outline-destructive';
+  'flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-[invalid]:border-destructive data-[invalid]:focus-visible:outline-destructive';
 
 export function FieldDefault() {
   return (
@@ -58,7 +58,7 @@ export function FieldWithError() {
         
         <button 
           type="submit" 
-          className="mt-2 inline-flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring active:brightness-90"
+          className="mt-2 inline-flex h-9 items-center justify-center rounded-xl bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring active:brightness-90"
         >
           Guardar
         </button>

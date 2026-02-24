@@ -30,7 +30,7 @@ import { Button } from "@/app/components/button";
 // ─── Shared styles ────────────────────────────────────────────────────────────
 
 const popupCls =
-  "z-50 min-w-[200px] overflow-hidden rounded-lg border border-border bg-card text-card-foreground shadow-md " +
+  "z-50 min-w-[200px] overflow-hidden rounded-xl border border-border bg-card text-card-foreground shadow-md " +
   "origin-[var(--transform-origin)] transition-[transform,opacity] duration-150 ease-out " +
   "data-[ending-style]:opacity-0 data-[ending-style]:scale-95 " +
   "data-[starting-style]:opacity-0 data-[starting-style]:scale-95 " +

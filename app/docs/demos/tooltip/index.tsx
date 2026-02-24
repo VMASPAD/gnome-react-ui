@@ -21,7 +21,7 @@ function TooltipArrowSvg() {
 // ─── Shared popup style ───────────────────────────────────────────────────────
 
 const popupCls =
-  'rounded-lg bg-[oklch(0.25_0.02_330)] px-2.5 py-1.5 text-xs font-medium text-white shadow-lg outline-none transition-all duration-150 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0 origin-[var(--transform-origin)]';
+  'rounded-xl bg-[oklch(0.25_0.02_330)] px-2.5 py-1.5 text-xs font-medium text-white shadow-lg outline-none transition-all duration-150 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0 origin-[var(--transform-origin)]';
 
 // ─── Default — toolbar with grouped tooltips ──────────────────────────────────
 // Inspired by GNOME Text Editor toolbar — instant switch between adjacent tooltips
@@ -43,7 +43,7 @@ export function TooltipDefault() {
           <Tooltip.Root key={label}>
             <Tooltip.Trigger
               render={<button />}
-              className="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
+              className="flex h-8 w-8 items-center justify-center rounded-xl text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
               aria-label={label}
             >
               <Icon className="size-4 shrink-0" />
@@ -88,7 +88,7 @@ export function TooltipSides() {
           <Tooltip.Root key={side}>
             <Tooltip.Trigger
               render={<button />}
-              className="flex h-10 items-center justify-center gap-2 rounded-lg border border-border bg-card px-4 text-sm text-foreground transition-colors duration-150 hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
+              className="flex h-10 items-center justify-center gap-2 rounded-xl border border-border bg-card px-4 text-sm text-foreground transition-colors duration-150 hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
             >
               <Icon className="size-3.5 shrink-0 text-muted-foreground" />
               {label}
@@ -126,7 +126,7 @@ export function TooltipRich() {
           <Tooltip.Root key={label}>
             <Tooltip.Trigger
               render={<button />}
-              className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring ${
+              className={`flex h-9 w-9 items-center justify-center rounded-xl transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring ${
                 danger
                   ? 'text-destructive hover:bg-destructive/10'
                   : 'text-muted-foreground hover:bg-accent hover:text-foreground'
@@ -147,7 +147,7 @@ export function TooltipRich() {
                     </svg>
                   </Tooltip.Arrow>
                   <div className="flex items-start gap-2.5">
-                    <div className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg ${danger ? 'bg-destructive/10 text-destructive' : 'bg-primary/10 text-primary'}`}>
+                    <div className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-xl ${danger ? 'bg-destructive/10 text-destructive' : 'bg-primary/10 text-primary'}`}>
                       <Icon className="size-3.5" />
                     </div>
                     <div>

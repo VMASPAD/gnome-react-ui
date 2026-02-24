@@ -6,7 +6,7 @@ title: Form
 
 A native form element with consolidated error handling.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -16,16 +16,16 @@ A native form element with consolidated error handling.
 ```tsx
 'use client';
 import * as React from 'react';
-import { Form } from '@base-ui/react/form';
-import { Field } from '@base-ui/react/field';
-import { Button } from '@base-ui/react/button';
+import { Form } from 'gnome-ui/form';
+import { Field } from 'gnome-ui/field';
+import { Button } from 'gnome-ui/button';
 import { User, Mail, Lock, Loader2, Check, AlertCircle } from 'lucide-react';
 
 const inputCls =
-  'h-10 w-full rounded-lg border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring data-[field-invalid]:border-destructive data-[field-invalid]:focus:outline-destructive';
+  'h-10 w-full rounded-xl border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring data-[field-invalid]:border-destructive data-[field-invalid]:focus:outline-destructive';
 
 const btnBase =
-  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
 
 export function FormDefault() {
   const [errors, setErrors] = React.useState<Record<string, string>>({});
@@ -112,8 +112,8 @@ export function FormDefault() {
 # Anatomy
 
 ```tsx
-import { Form } from '@base-ui/react/form';
-import { Field } from '@base-ui/react/field';
+import { Form } from 'gnome-ui/form';
+import { Field } from 'gnome-ui/field';
 
 <Form errors={errors} onFormSubmit={handleSubmit}>
   <Field.Root name="fieldName">
@@ -130,7 +130,7 @@ import { Field } from '@base-ui/react/field';
 
 Uses `validationMode="onBlur"` to validate each field as the user tabs through the form, inspired by GNOME Settings profile editor.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -140,16 +140,16 @@ Uses `validationMode="onBlur"` to validate each field as the user tabs through t
 ```tsx
 'use client';
 import * as React from 'react';
-import { Form } from '@base-ui/react/form';
-import { Field } from '@base-ui/react/field';
-import { Button } from '@base-ui/react/button';
+import { Form } from 'gnome-ui/form';
+import { Field } from 'gnome-ui/field';
+import { Button } from 'gnome-ui/button';
 import { User, Mail, Globe, Loader2, Check, AlertCircle } from 'lucide-react';
 
 const inputCls =
-  'h-10 w-full rounded-lg border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring data-[field-invalid]:border-destructive data-[field-invalid]:focus:outline-destructive';
+  'h-10 w-full rounded-xl border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring data-[field-invalid]:border-destructive data-[field-invalid]:focus:outline-destructive';
 
 const btnBase =
-  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
 
 export function FormOnBlur() {
   const [errors, setErrors] = React.useState<Record<string, string>>({});

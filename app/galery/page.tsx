@@ -130,7 +130,7 @@ export default function Page() {
 
       {/* ── ACCORDION ─────────────────────────────────────────────────── */}
       <Section title="Accordion">
-        <Accordion.Root className="w-full max-w-sm border border-border rounded-lg overflow-hidden" multiple>
+        <Accordion.Root className="w-full max-w-sm border border-border rounded-xl overflow-hidden" multiple>
           {["Item one", "Item two", "Item three"].map((label, i) => (
             <Accordion.Item key={i} value={`item${i + 1}`}>
               <Accordion.Header>
@@ -217,7 +217,7 @@ export default function Page() {
           />
           <AlertDialog.Portal>
             <AlertDialog.Backdrop className="fixed inset-0 bg-foreground/40 animate-in fade-in duration-200" />
-            <AlertDialog.Popup className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-card text-card-foreground rounded-lg shadow-xl p-6 w-80 animate-in fade-in zoom-in-95 duration-200">
+            <AlertDialog.Popup className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-card text-card-foreground rounded-xl shadow-xl p-6 w-80 animate-in fade-in zoom-in-95 duration-200">
               <AlertDialog.Title className="text-lg font-semibold mb-2">
                 Are you sure?
               </AlertDialog.Title>
@@ -321,7 +321,7 @@ export default function Page() {
 
       {/* ── COLLAPSIBLE ──────────────────────────────────────────────── */}
       <Section title="Collapsible">
-        <Collapsible.Root className="w-full max-w-sm border border-border rounded-lg">
+        <Collapsible.Root className="w-full max-w-sm border border-border rounded-xl">
           <Collapsible.Trigger className="w-full flex justify-between px-4 py-3 font-medium text-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-150">
             Toggle details <span>▾</span>
           </Collapsible.Trigger>
@@ -341,7 +341,7 @@ export default function Page() {
             />
             <Combobox.Portal>
               <Combobox.Positioner sideOffset={4}>
-                <Combobox.Popup className="bg-popover text-popover-foreground border border-border rounded-lg shadow-md py-1 min-w-56 animate-in fade-in zoom-in-95 duration-150">
+                <Combobox.Popup className="bg-popover text-popover-foreground border border-border rounded-xl shadow-md py-1 min-w-56 animate-in fade-in zoom-in-95 duration-150">
                   <Combobox.List>
                     {["Apple", "Banana", "Cherry", "Date", "Elderberry"].map(
                       (fruit) => (
@@ -367,14 +367,14 @@ export default function Page() {
         <ContextMenu.Root>
           <ContextMenu.Trigger
             render={
-              <div className="border-2 border-dashed border-border rounded-lg px-10 py-6 text-sm text-muted-foreground cursor-context-menu select-none hover:bg-accent transition-colors duration-150">
+              <div className="border-2 border-dashed border-border rounded-xl px-10 py-6 text-sm text-muted-foreground cursor-context-menu select-none hover:bg-accent transition-colors duration-150">
                 Right-click here
               </div>
             }
           />
           <ContextMenu.Portal>
             <ContextMenu.Positioner>
-              <ContextMenu.Popup className="bg-popover text-popover-foreground border border-border rounded-lg shadow-xl py-1 min-w-40 animate-in fade-in zoom-in-95 duration-150">
+              <ContextMenu.Popup className="bg-popover text-popover-foreground border border-border rounded-xl shadow-xl py-1 min-w-40 animate-in fade-in zoom-in-95 duration-150">
                 <Menu.Item className="px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground cursor-pointer transition-colors duration-100">
                   Open
                 </Menu.Item>
@@ -525,7 +525,7 @@ export default function Page() {
 
       {/* ── FIELDSET ─────────────────────────────────────────────────── */}
       <Section title="Fieldset">
-        <Fieldset.Root className="border border-border rounded-lg p-4 w-56">
+        <Fieldset.Root className="border border-border rounded-xl p-4 w-56">
           <Fieldset.Legend className="text-sm font-semibold px-1 text-foreground">
             Personal info
           </Fieldset.Legend>
@@ -591,7 +591,7 @@ export default function Page() {
           />
           <Menu.Portal>
             <Menu.Positioner sideOffset={4}>
-              <Menu.Popup className="bg-popover text-popover-foreground border border-border rounded-lg shadow-xl py-1 min-w-40 animate-in fade-in zoom-in-95 duration-150">
+              <Menu.Popup className="bg-popover text-popover-foreground border border-border rounded-xl shadow-xl py-1 min-w-40 animate-in fade-in zoom-in-95 duration-150">
                 <Menu.Item className="px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground cursor-pointer transition-colors duration-100">
                   Profile
                 </Menu.Item>
@@ -631,7 +631,7 @@ export default function Page() {
       {/* ── NAVIGATION MENU ──────────────────────────────────────────── */}
       <Section title="Navigation Menu">
         <NavigationMenu.Root className="relative">
-          <NavigationMenu.List className="flex gap-1 list-none p-1 rounded-lg bg-muted border border-border">
+          <NavigationMenu.List className="flex gap-1 list-none p-1 rounded-xl bg-muted border border-border">
             {["Home", "About", "Blog"].map((label) => (
               <NavigationMenu.Item key={label}>
                 <NavigationMenu.Link
@@ -648,7 +648,7 @@ export default function Page() {
               </NavigationMenu.Trigger>
               <NavigationMenu.Portal>
                 <NavigationMenu.Positioner>
-                  <NavigationMenu.Content className="bg-popover text-popover-foreground border border-border rounded-lg shadow-xl p-4 w-48 animate-in fade-in zoom-in-95 duration-150">
+                  <NavigationMenu.Content className="bg-popover text-popover-foreground border border-border rounded-xl shadow-xl p-4 w-48 animate-in fade-in zoom-in-95 duration-150">
                     <ul className="flex flex-col gap-1 text-sm">
                       <li>
                         <a
@@ -770,7 +770,7 @@ export default function Page() {
 
       {/* ── SCROLL AREA ──────────────────────────────────────────────── */}
       <Section title="Scroll Area">
-        <ScrollArea.Root className="h-32 w-48 border border-border rounded-lg">
+        <ScrollArea.Root className="h-32 w-48 border border-border rounded-xl">
           <ScrollArea.Viewport className="h-full w-full p-3 overflow-hidden">
             <ScrollArea.Content>
               {Array.from({ length: 20 }, (_, i) => (
@@ -798,7 +798,7 @@ export default function Page() {
           </Select.Trigger>
           <Select.Portal>
             <Select.Positioner sideOffset={4}>
-              <Select.Popup className="bg-popover text-popover-foreground border border-border rounded-lg shadow-xl py-1 min-w-48 animate-in fade-in zoom-in-95 duration-150">
+              <Select.Popup className="bg-popover text-popover-foreground border border-border rounded-xl shadow-xl py-1 min-w-48 animate-in fade-in zoom-in-95 duration-150">
                 <Select.List>
                   {["Red", "Green", "Blue", "Yellow"].map((color) => (
                     <Select.Item
@@ -952,7 +952,7 @@ export default function Page() {
 
       {/* ── TOOLBAR ──────────────────────────────────────────────────── */}
       <Section title="Toolbar">
-        <Toolbar.Root className="flex items-center gap-1 p-1 border border-border rounded-lg bg-muted">
+        <Toolbar.Root className="flex items-center gap-1 p-1 border border-border rounded-xl bg-muted">
           <Toolbar.Button className="px-3 py-1.5 text-sm text-foreground rounded-md hover:bg-background hover:shadow-sm transition-all duration-150 font-bold">
             B
           </Toolbar.Button>

@@ -35,6 +35,7 @@ Components are **not installed as a black-box package** — they are copied dire
 - [] Card component
 - [] Badge component
 - [] RTL support
+- [] CLI
 
 ## Features
 

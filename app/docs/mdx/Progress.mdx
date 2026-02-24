@@ -8,7 +8,7 @@ A component that displays an indicator showing the completion progress of a task
 
 Documentation: [Base UI Progress](https://base-ui.com/react/components/progress)
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -17,7 +17,7 @@ Documentation: [Base UI Progress](https://base-ui.com/react/components/progress)
   <Tabs.Panel value="code">
 ```tsx
 import * as React from 'react';
-import { Progress } from '@base-ui/react/progress';
+import { Progress } from 'gnome-ui/progress';
 import { Download } from 'lucide-react';
 
 export function ProgressDefault() {
@@ -55,7 +55,7 @@ export function ProgressDefault() {
 # Anatomy
 
 ```tsx
-import { Progress } from '@base-ui/react/progress';
+import { Progress } from 'gnome-ui/progress';
 
 <Progress.Root>
   <Progress.Label />
@@ -73,7 +73,7 @@ import { Progress } from '@base-ui/react/progress';
 
 When the exact progress is unknown, pass `value={null}` to the root component. This activates the `data-[state="indeterminate"]` attribute, which you can use to apply custom pulsing or sliding animations.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -83,7 +83,7 @@ When the exact progress is unknown, pass `value={null}` to the root component. T
 
 ```tsx
 import * as React from 'react';
-import { Progress } from '@base-ui/react/progress';
+import { Progress } from 'gnome-ui/progress';
 import { RefreshCw } from 'lucide-react';
 
 export function ProgressIndeterminate() {
@@ -116,7 +116,7 @@ export function ProgressIndeterminate() {
 
 You can change the `max` value for use cases like step tracking. If you want custom text instead of percentages, you can omit `<Progress.Value>` and render your own string.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -126,7 +126,7 @@ You can change the `max` value for use cases like step tracking. If you want cus
 
 ```tsx
 import * as React from 'react';
-import { Progress } from '@base-ui/react/progress';
+import { Progress } from 'gnome-ui/progress';
 import { UploadCloud } from 'lucide-react';
 
 export function ProgressSteps() {

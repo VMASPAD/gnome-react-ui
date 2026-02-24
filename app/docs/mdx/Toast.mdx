@@ -7,7 +7,7 @@ description: Generates toast notifications with stacking, swipe-to-dismiss, and 
 
 Sistema de notificaciones. La arquitectura requiere `Toast.Provider` wrapeando la app, `Toast.Portal > Toast.Viewport` para el contenedor, y `Toast.useToastManager()` para crear toasts. `Toast.Title` y `Toast.Description` renderizan el contenido del toast object automáticamente — **sin `children`**.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
@@ -17,7 +17,7 @@ Sistema de notificaciones. La arquitectura requiere `Toast.Provider` wrapeando l
   </Tabs.Panel>
   <Tabs.Panel className="p-0 outline-none" value="code">
     ```tsx
-    import { Toast } from "@base-ui-components/react/toast";
+    import { Toast } from "gnome-ui/toast";
 
     // Función auxiliar — accede a useToastManager() DENTRO del Provider
     function ToastList() {
@@ -67,7 +67,7 @@ Sistema de notificaciones. La arquitectura requiere `Toast.Provider` wrapeando l
 # Anatomy
 
 ```tsx
-import { Toast } from "@base-ui-components/react/toast";
+import { Toast } from "gnome-ui/toast";
 
 // Provider wrappea la app (o el árbol que necesite toasts)
 <Toast.Provider timeout={5000} limit={3}>
@@ -95,7 +95,7 @@ import { Toast } from "@base-ui-components/react/toast";
 
 Usa el campo `type` del toast para renderizar iconos condicionales. `actionProps` en `toastManager.add()` pasa props directamente a `Toast.Action`.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
@@ -142,7 +142,7 @@ Usa el campo `type` del toast para renderizar iconos condicionales. `actionProps
 
 `toastManager.promise()` gestiona automáticamente los estados `loading → success / error`. Cada estado acepta `title`, `description`, y el resto de las opciones. El estado `success` recibe el valor resuelto como argumento.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>

@@ -8,7 +8,7 @@ An input where the user selects a value from within a given range.
 
 Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -17,7 +17,7 @@ Documentation: [Base UI Slider](https://base-ui.com/react/components/slider)
   <Tabs.Panel value="code">
 ```tsx
 import * as React from 'react';
-import { Slider } from '@base-ui/react/slider';
+import { Slider } from 'gnome-ui/slider';
 import { Volume2 } from 'lucide-react';
 
 export function SliderDefault() {
@@ -54,7 +54,7 @@ export function SliderDefault() {
 # Anatomy
 
 ```tsx
-import { Slider } from '@base-ui/react/slider';
+import { Slider } from 'gnome-ui/slider';
 
 <Slider.Root>
   <Slider.Value />
@@ -74,7 +74,7 @@ import { Slider } from '@base-ui/react/slider';
 
 Provide an array to the `defaultValue` or `value` prop to create a range slider with multiple thumbs. When doing this, ensure you pass an `index` to `<Slider.Thumb>` and `<Slider.Value>` if you want to display individual thumb values.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -84,7 +84,7 @@ Provide an array to the `defaultValue` or `value` prop to create a range slider 
 
 ```tsx
 import * as React from 'react';
-import { Slider } from '@base-ui/react/slider';
+import { Slider } from 'gnome-ui/slider';
 import { Monitor } from 'lucide-react';
 
 export function SliderRange() {
@@ -127,7 +127,7 @@ export function SliderRange() {
 
 Use `orientation="vertical"` on the root component to create a vertical slider. Make sure to adjust the width and height of the track, indicator, and control accordingly.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -137,7 +137,7 @@ Use `orientation="vertical"` on the root component to create a vertical slider. 
 
 ```tsx
 import * as React from 'react';
-import { Slider } from '@base-ui/react/slider';
+import { Slider } from 'gnome-ui/slider';
 import { Sun } from 'lucide-react';
 
 export function SliderVertical() {

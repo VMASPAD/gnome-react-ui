@@ -5,7 +5,7 @@ import { PanelRight, Settings, Bell, User, Lock, Wifi, ChevronRight, X, SlidersH
 // ─── Shared ───────────────────────────────────────────────────────────────────
 
 const btnBase =
-  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
 
 // ─── Default — Right side navigation drawer ───────────────────────────────────
 // Inspired by GNOME Shell's quick settings panel sliding from the right
@@ -120,7 +120,7 @@ export function DrawerSnapPoints() {
                     {options.map((opt, i) => (
                       <button
                         key={opt}
-                        className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring ${
+                        className={`rounded-xl border px-3 py-1.5 text-xs font-medium transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring ${
                           i === 0
                             ? 'border-primary bg-primary/10 text-primary'
                             : 'border-border bg-card text-foreground hover:bg-accent'
@@ -190,7 +190,7 @@ export function DrawerNavigation() {
                 ].map(({ icon: Icon, label, active }) => (
                   <button
                     key={label}
-                    className={`flex w-full items-center gap-2.5 rounded-lg px-3 py-2.5 text-left text-sm transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring ${
+                    className={`flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-left text-sm transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring ${
                       active
                         ? 'bg-sidebar-accent font-semibold text-sidebar-primary'
                         : 'text-sidebar-foreground hover:bg-sidebar-accent'

@@ -10,7 +10,7 @@ export function NavigationDefault() {
         
         {/* Item 1: Productos */}
         <NavigationMenu.Item>
-          <NavigationMenu.Trigger className="group flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[active]:bg-accent/60">
+          <NavigationMenu.Trigger className="group flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[active]:bg-accent/60">
             Productos
             <NavigationMenu.Icon className="transition-transform duration-200 group-data-[active]:rotate-180">
               <ChevronDown className="size-4 text-muted-foreground" />
@@ -36,7 +36,7 @@ export function NavigationDefault() {
 
         {/* Item 2: Desarrollo */}
         <NavigationMenu.Item>
-          <NavigationMenu.Trigger className="group flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[active]:bg-accent/60">
+          <NavigationMenu.Trigger className="group flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[active]:bg-accent/60">
             Desarrollo
             <NavigationMenu.Icon className="transition-transform duration-200 group-data-[active]:rotate-180">
               <ChevronDown className="size-4 text-muted-foreground" />
@@ -56,7 +56,7 @@ export function NavigationDefault() {
 
         {/* Item 3: Enlace directo */}
         <NavigationMenu.Item>
-          <NavigationMenu.Link href="#" className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
+          <NavigationMenu.Link href="#" className="block rounded-xl px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
             Comunidad
           </NavigationMenu.Link>
         </NavigationMenu.Item>

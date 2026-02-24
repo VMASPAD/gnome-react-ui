@@ -9,7 +9,7 @@ export function ComboboxDefault() {
   return (
     <div className="relative w-72">
       <Combobox.Root>
-      <div className="flex h-10 w-full items-center justify-between rounded-lg border border-input bg-card px-3 text-sm text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
+      <div className="flex h-10 w-full items-center justify-between rounded-xl border border-input bg-card px-3 text-sm text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
         <Combobox.Input 
           className="flex-1 bg-transparent outline-none placeholder:text-muted-foreground" 
           placeholder="Selecciona un framework..." 
@@ -21,7 +21,7 @@ export function ComboboxDefault() {
       
       <Combobox.Portal>
         <Combobox.Positioner className="z-50 w-[var(--anchor-width)]" sideOffset={4}>
-          <Combobox.Popup className="overflow-hidden rounded-lg border border-border bg-popover p-1 text-popover-foreground shadow-md outline-none">
+          <Combobox.Popup className="overflow-hidden rounded-xl border border-border bg-popover p-1 text-popover-foreground shadow-md outline-none">
             <Combobox.List className="max-h-60 overflow-y-auto">
               <Combobox.Empty className="py-6 text-center text-sm text-muted-foreground">
                 No se encontraron resultados.
@@ -53,7 +53,7 @@ export function ComboboxMultiple() {
   return (
     <div className="relative w-full max-w-md">
       <Combobox.Root multiple value={value} onValueChange={setValue}>
-      <div className="flex min-h-10 w-full flex-wrap items-center gap-1.5 rounded-lg border border-input bg-card p-1.5 text-sm text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
+      <div className="flex min-h-10 w-full flex-wrap items-center gap-1.5 rounded-xl border border-input bg-card p-1.5 text-sm text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
         <Combobox.Chips className="flex flex-wrap items-center gap-1.5">
           {value.map((val) => (
             <Combobox.Chip 
@@ -75,7 +75,7 @@ export function ComboboxMultiple() {
       
       <Combobox.Portal>
         <Combobox.Positioner className="z-50 w-[var(--anchor-width)]" sideOffset={4}>
-          <Combobox.Popup className="overflow-hidden rounded-lg border border-border bg-popover p-1 text-popover-foreground shadow-md outline-none">
+          <Combobox.Popup className="overflow-hidden rounded-xl border border-border bg-popover p-1 text-popover-foreground shadow-md outline-none">
             <Combobox.List className="max-h-60 overflow-y-auto">
               <Combobox.Empty className="py-6 text-center text-sm text-muted-foreground">
                 No hay más opciones.

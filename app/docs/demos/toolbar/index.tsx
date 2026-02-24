@@ -6,7 +6,7 @@ import { ToggleGroup } from '@/app/components/toggle-group';
 import { Bold, Italic, Strikethrough, AlignLeft, AlignCenter, AlignRight, Link, Image } from 'lucide-react';
 
 const toolbarButtonBase =
-  'inline-flex h-9 w-9 items-center justify-center rounded-lg border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground';
+  'inline-flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground';
 
 export function ToolbarDefault() {
   const [format, setFormat] = React.useState<string[]>([]);
@@ -79,7 +79,7 @@ export function ToolbarWithInput() {
   return (
     <Toolbar.Root className="flex w-full max-w-md items-center gap-2 rounded-xl border border-border bg-card p-2 shadow-sm">
       <Toolbar.Input 
-        className="flex h-9 w-full rounded-lg border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring placeholder:text-muted-foreground" 
+        className="flex h-9 w-full rounded-xl border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring placeholder:text-muted-foreground" 
         placeholder="Buscar herramienta..." 
       />
       <Toolbar.Button className={`${toolbarButtonBase} shrink-0 bg-primary text-primary-foreground hover:brightness-95 hover:bg-primary`}>

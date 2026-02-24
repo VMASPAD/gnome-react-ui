@@ -5,7 +5,7 @@ import { Bell, Settings, X, User, Mail, Lock, ExternalLink, Pencil } from 'lucid
 // ─── Shared ───────────────────────────────────────────────────────────────────
 
 const btnBase =
-  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
 
 // ─── Default ──────────────────────────────────────────────────────────────────
 // Notifications dialog inspired by GNOME Shell notification center
@@ -113,7 +113,7 @@ export function DialogSettings() {
                   <Icon className="pointer-events-none absolute left-3 size-4 text-muted-foreground" />
                   <input
                     placeholder={placeholder}
-                    className="h-10 w-full rounded-lg border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring"
+                    className="h-10 w-full rounded-xl border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring"
                   />
                 </div>
               </div>
@@ -151,7 +151,7 @@ export function DialogNonModal() {
         <Dialog.Popup className="fixed top-4 right-4 w-72 overflow-hidden rounded-xl border border-border bg-card shadow-xl outline-none transition-all duration-200 data-[ending-style]:translate-x-4 data-[ending-style]:opacity-0 data-[starting-style]:translate-x-4 data-[starting-style]:opacity-0">
           {/* Header */}
           <div className="flex items-center gap-3 border-b border-border px-4 py-3">
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
               <Lock className="size-4" />
             </div>
             <Dialog.Title className="flex-1 text-sm font-semibold text-foreground">

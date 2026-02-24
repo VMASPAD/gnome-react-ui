@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
+import { AnimatedThemeToggler } from "./ui/AnimatedThemeToggler";
 
 function Home() {
   const [mobileMenuOpen] = useState(false);
@@ -86,7 +87,8 @@ function Home() {
     },
     { name: "Toast", description: "Unobtrusive notifications for your users." },
   ];
-
+const inputBase =
+  'flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50';
   return (
     <div
       className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary"
@@ -134,11 +136,12 @@ function Home() {
               </a>
             </div>
             <a href="https://github.com/VMASPAD/gnome-react-ui">
-              <Button className="inline-flex items-center justify-center h-8 w-8 p-0 rounded-lg border border-border bg-card text-foreground hover:bg-accent transition-colors duration-150">
+              <Button className="inline-flex items-center justify-center h-8 w-8 p-0 rounded-xl border border-border bg-card text-foreground hover:bg-accent transition-colors duration-150">
                 <Github className="h-4 w-4" />
               </Button>
             </a>
-            {/* <Button className="inline-flex items-center justify-center h-8 px-3 text-xs rounded-lg bg-primary text-primary-foreground hover:brightness-95 transition-colors duration-150 font-semibold">
+            <AnimatedThemeToggler />
+            {/* <Button className="inline-flex items-center justify-center h-8 px-3 text-xs rounded-xl bg-primary text-primary-foreground hover:brightness-95 transition-colors duration-150 font-semibold">
               Get Started
             </Button> */}
           </div>
@@ -222,7 +225,7 @@ function Home() {
             {features.map((feature, i) => (
               <div key={i} className="group relative">
                 <div className="flex flex-col space-y-3">
-                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20 transition-colors duration-150 group-hover:bg-primary/15">
+                  <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20 transition-colors duration-150 group-hover:bg-primary/15">
                     <feature.icon className="h-5 w-5 text-primary" />
                   </div>
                   <h3 className="text-base font-bold text-foreground">
@@ -269,9 +272,9 @@ function Home() {
                   </CardDescription>
                 </CardHeader>
                 <CardFooter className="px-6 pb-6 pt-0">
-                  <span className="text-xs font-semibold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-150">
-                    View Demo <ArrowRight className="h-3 w-3" />
-                  </span>
+                  <a href="/docs" className="text-xs font-semibold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-150">
+                    See Documentation <ArrowRight className="h-3 w-3" />
+                  </a>
                 </CardFooter>
               </Card>
             ))}
@@ -336,10 +339,10 @@ function Home() {
 
                   <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-3">
-                      <Button className="inline-flex items-center justify-center gap-2 h-10 text-xs font-semibold rounded-lg border border-border bg-card text-foreground hover:bg-accent transition-colors duration-150">
+                      <Button className="inline-flex items-center justify-center gap-2 h-10 text-xs font-semibold rounded-xl border border-border bg-card text-foreground hover:bg-accent transition-colors duration-150">
                         <Github className="h-4 w-4" /> GitHub
                       </Button>
-                      <Button className="inline-flex items-center justify-center gap-2 h-10 text-xs font-semibold rounded-lg border border-border bg-card text-foreground hover:bg-accent transition-colors duration-150">
+                      <Button className="inline-flex items-center justify-center gap-2 h-10 text-xs font-semibold rounded-xl border border-border bg-card text-foreground hover:bg-accent transition-colors duration-150">
                         <Layout className="h-4 w-4" /> Google
                       </Button>
                     </div>
@@ -354,19 +357,18 @@ function Home() {
                       </div>
                     </div>
                     <div className="space-y-3">
-                      <Input
-                        placeholder="m@example.com"
-                        className="h-10 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring transition-colors duration-150 hover:border-ring/50"
-                      />
-                      <Input
-                        type="password"
-                        placeholder="Password"
-                        className="h-10 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring transition-colors duration-150 hover:border-ring/50"
-                      />
+                      <Input 
+        className={inputBase} 
+        placeholder="Email address" 
+      />
+                      <Input 
+        className={inputBase} 
+        placeholder="Password" 
+      />
                     </div>
                   </div>
 
-                  <Button className="inline-flex items-center justify-center w-full h-10 bg-primary text-primary-foreground font-semibold rounded-lg hover:brightness-95 transition-all duration-150">
+                  <Button className="inline-flex items-center justify-center w-full h-10 bg-primary text-primary-foreground font-semibold rounded-xl hover:brightness-95 transition-all duration-150">
                     Create account
                   </Button>
 
@@ -405,19 +407,19 @@ function Home() {
             </div>
 
             <nav className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-muted-foreground">
-              {["GitHub", "Documentation", "NPM", "License"].map((link) => (
+              {[{"GitHub":"https://github.com/vmaspad/gnome-react-ui"}, {"Documentation": "/docs"}, {"NPM":"https://npmx.dev/package/gnome-ui"}, {"License": "https://github.com/vmaspad/gnome-react-ui/blob/main/LICENSE"}].map((link, index) => (
                 <a
                   key={link}
-                  href="#"
+                  href={typeof link === "object" ? Object.values(link)[0] : link}
                   className="hover:text-foreground hover:text-primary transition-colors duration-150"
                 >
-                  {link}
+                  {typeof link === "object" ? Object.keys(link)[0] :  link}
                 </a>
               ))}
             </nav>
 
             <p className="text-sm text-muted-foreground font-medium">
-              Built by the community. Open source.
+              Built for community. Open source.
             </p>
           </div>
         </div>

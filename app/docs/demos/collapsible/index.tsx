@@ -9,7 +9,7 @@ export function CollapsibleDefault() {
   return (
     <Collapsible.Root className="w-80 overflow-hidden rounded-xl border border-border bg-card shadow-sm">
       <Collapsible.Trigger className="group flex w-full items-center gap-3 px-4 py-3 text-left transition-colors duration-150 hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
           <Key className="size-4" />
         </div>
         <span className="flex-1 text-sm font-medium text-foreground">Recovery keys</span>

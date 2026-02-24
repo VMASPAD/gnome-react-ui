@@ -6,7 +6,7 @@ import { Download, Send, Trash2, Plus, Loader2, Check, ArrowRight } from 'lucide
 // ─── Shared base classes ──────────────────────────────────────────────────────
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
 
 // ─── Default ──────────────────────────────────────────────────────────────────
 // Four semantic variants side by side: primary, secondary, ghost, destructive

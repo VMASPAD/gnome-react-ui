@@ -5,7 +5,7 @@ import { Settings, User, LogOut, Terminal, Package, Monitor } from 'lucide-react
 
 export function SeparatorDefault() {
   return (
-    <div className="flex w-full max-w-sm flex-col rounded-lg border border-border bg-card p-4 shadow-sm">
+    <div className="flex w-full max-w-sm flex-col rounded-xl border border-border bg-card p-4 shadow-sm">
       <h3 className="text-lg font-medium text-foreground">PanOS Settings</h3>
       <p className="text-sm text-muted-foreground">Gestiona la configuración de tu sistema.</p>
       
@@ -31,7 +31,7 @@ export function SeparatorDefault() {
 
 export function SeparatorVertical() {
   return (
-    <div className="flex h-12 w-fit items-center gap-4 rounded-lg border border-border bg-card px-4 shadow-sm text-foreground">
+    <div className="flex h-12 w-fit items-center gap-4 rounded-xl border border-border bg-card px-4 shadow-sm text-foreground">
       <button className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors">
         <Terminal className="size-4" /> Terminal
       </button>
@@ -61,10 +61,10 @@ export function SeparatorWithContent() {
       </div>
       
       <div className="mt-4 flex gap-3">
-        <button className="flex h-10 flex-1 items-center justify-center rounded-lg border border-border bg-card text-sm font-medium text-foreground hover:bg-accent transition-colors">
+        <button className="flex h-10 flex-1 items-center justify-center rounded-xl border border-border bg-card text-sm font-medium text-foreground hover:bg-accent transition-colors">
           Cuenta Local
         </button>
-        <button className="flex h-10 flex-1 items-center justify-center rounded-lg border border-border bg-card text-sm font-medium text-foreground hover:bg-accent transition-colors">
+        <button className="flex h-10 flex-1 items-center justify-center rounded-xl border border-border bg-card text-sm font-medium text-foreground hover:bg-accent transition-colors">
           LDAP / Directorio
         </button>
       </div>

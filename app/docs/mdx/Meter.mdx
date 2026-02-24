@@ -8,7 +8,7 @@ A component that represents a scalar value within a known range, or a fractional
 
 Documentation: [Base UI Meter](https://base-ui.com/react/components/meter)
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -17,7 +17,7 @@ Documentation: [Base UI Meter](https://base-ui.com/react/components/meter)
   <Tabs.Panel value="code">
 ```tsx
 import * as React from 'react';
-import { Meter } from '@base-ui/react/meter';
+import { Meter } from 'gnome-ui/meter';
 import { HardDrive } from 'lucide-react';
 
 export function MeterDefault() {
@@ -48,7 +48,7 @@ export function MeterDefault() {
 # Anatomy
 
 ```tsx
-import { Meter } from '@base-ui/react/meter';
+import { Meter } from 'gnome-ui/meter';
 
 <Meter.Root>
   <Meter.Label />
@@ -66,7 +66,7 @@ import { Meter } from '@base-ui/react/meter';
 
 You can format the displayed value using the `format` prop, which accepts options from `Intl.NumberFormatOptions`. Base UI automatically calculates the formatted string based on the `value`, `min`, and `max`.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -76,7 +76,7 @@ You can format the displayed value using the `format` prop, which accepts option
 
 ```tsx
 import * as React from 'react';
-import { Meter } from '@base-ui/react/meter';
+import { Meter } from 'gnome-ui/meter';
 import { Activity } from 'lucide-react';
 
 export function MeterFormatted() {

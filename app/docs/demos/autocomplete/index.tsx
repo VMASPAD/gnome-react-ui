@@ -99,7 +99,7 @@ export function AutocompleteDefault() {
           <Tag className="pointer-events-none absolute left-3 size-4 text-muted-foreground" />
           <Autocomplete.Input
             placeholder="Search labels…"
-            className="h-10 w-72 rounded-lg border border-input bg-card pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring"
+            className="h-10 w-72 rounded-xl border border-input bg-card pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring"
           />
         </div>
       </label>
@@ -140,7 +140,7 @@ export function AutocompleteGrouped() {
           <Search className="pointer-events-none absolute left-3 size-4 text-muted-foreground" />
           <Autocomplete.Input
             placeholder="Search settings…"
-            className="h-10 w-72 rounded-lg border border-input bg-card pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring"
+            className="h-10 w-72 rounded-xl border border-input bg-card pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring"
           />
         </div>
       </label>
@@ -189,7 +189,7 @@ export function AutocompleteClear() {
           <Globe className="pointer-events-none absolute left-3 size-4 shrink-0 text-muted-foreground" />
           <Autocomplete.Input
             placeholder="Select a timezone…"
-            className="h-10 w-72 rounded-lg border border-input bg-card pl-9 pr-16 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring"
+            className="h-10 w-72 rounded-xl border border-input bg-card pl-9 pr-16 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring"
           />
           <Autocomplete.Clear className="absolute right-8 flex h-5 w-5 items-center justify-center rounded-full bg-muted text-muted-foreground opacity-0 transition-opacity duration-150 hover:bg-accent hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring [[data-has-value]_&]:opacity-100">
             <X className="size-3" />

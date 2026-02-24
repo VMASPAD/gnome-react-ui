@@ -6,7 +6,7 @@ title: Drawer
 
 A panel that slides in from the edge of the screen.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -14,11 +14,11 @@ A panel that slides in from the edge of the screen.
   </Tabs.List>
   <Tabs.Panel value="code">
 ```tsx
-import { DrawerPreview as Drawer } from '@base-ui/react/drawer';
+import { DrawerPreview as Drawer } from 'gnome-ui/drawer';
 import { PanelRight, Settings, Bell, User, Lock, Wifi, ChevronRight, X, SlidersHorizontal, Moon, Shield } from 'lucide-react';
 
 const btnBase =
-  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
 
 export function DrawerDefault() {
   return (
@@ -87,7 +87,7 @@ export function DrawerDefault() {
 # Anatomy
 
 ```tsx
-import { DrawerPreview as Drawer } from '@base-ui/react/drawer';
+import { DrawerPreview as Drawer } from 'gnome-ui/drawer';
 
 <Drawer.Provider>
   <Drawer.IndentBackground />
@@ -117,7 +117,7 @@ import { DrawerPreview as Drawer } from '@base-ui/react/drawer';
 
 A bottom drawer that snaps to 40% or full height, inspired by GNOME Mobile action sheets. Drag up to reveal all filter options.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -125,11 +125,11 @@ A bottom drawer that snaps to 40% or full height, inspired by GNOME Mobile actio
   </Tabs.List>
   <Tabs.Panel value="code">
 ```tsx
-import { DrawerPreview as Drawer } from '@base-ui/react/drawer';
+import { DrawerPreview as Drawer } from 'gnome-ui/drawer';
 import { SlidersHorizontal, X } from 'lucide-react';
 
 const btnBase =
-  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
 
 const filterGroups = [
   { label: 'Type',     options: ['All', 'Documents', 'Images', 'Videos', 'Audio'] },
@@ -177,7 +177,7 @@ export function DrawerSnapPoints() {
                     {options.map((opt, i) => (
                       <button
                         key={opt}
-                        className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring ${
+                        className={`rounded-xl border px-3 py-1.5 text-xs font-medium transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring ${
                           i === 0
                             ? 'border-primary bg-primary/10 text-primary'
                             : 'border-border bg-card text-foreground hover:bg-accent'
@@ -213,7 +213,7 @@ export function DrawerSnapPoints() {
 
 A left-side navigation drawer using `swipeDirection="left"`, inspired by GNOME Files places panel.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -221,11 +221,11 @@ A left-side navigation drawer using `swipeDirection="left"`, inspired by GNOME F
   </Tabs.List>
   <Tabs.Panel value="code">
 ```tsx
-import { DrawerPreview as Drawer } from '@base-ui/react/drawer';
+import { DrawerPreview as Drawer } from 'gnome-ui/drawer';
 import { PanelRight, User, Lock, Bell, Shield, Moon, X } from 'lucide-react';
 
 const btnBase =
-  'inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
+  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
 
 const navItems = [
   { icon: Icons.User,   label: 'Home',      active: true  },
@@ -269,7 +269,7 @@ export function DrawerNavigation() {
                 {navItems.map(({ icon: Icon, label, active }) => (
                   <button
                     key={label}
-                    className={`flex w-full items-center gap-2.5 rounded-lg px-3 py-2.5 text-left text-sm transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring ${
+                    className={`flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-left text-sm transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring ${
                       active
                         ? 'bg-sidebar-accent font-semibold text-sidebar-primary'
                         : 'text-sidebar-foreground hover:bg-sidebar-accent'

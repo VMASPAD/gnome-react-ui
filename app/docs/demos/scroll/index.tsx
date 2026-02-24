@@ -29,7 +29,7 @@ const loremParagraphs = [
 
 export function ScrollAreaVertical() {
   return (
-    <ScrollArea.Root className="relative h-48 w-80 rounded-lg border border-border bg-card overflow-hidden">
+    <ScrollArea.Root className="relative h-48 w-80 rounded-xl border border-border bg-card overflow-hidden">
       <ScrollArea.Viewport className="h-full w-full">
         <ScrollArea.Content className="px-4 py-3">
           {loremParagraphs.map((text, i) => (
@@ -65,7 +65,7 @@ const tableRows = [
 
 export function ScrollAreaBothAxes() {
   return (
-    <ScrollArea.Root className="relative h-52 w-96 rounded-lg border border-border bg-card overflow-hidden">
+    <ScrollArea.Root className="relative h-52 w-96 rounded-xl border border-border bg-card overflow-hidden">
       <ScrollArea.Viewport className="h-full w-full">
         <ScrollArea.Content className="min-w-max">
           <table className="text-sm border-collapse">
@@ -135,7 +135,7 @@ const codeLines = [
   ``,
   `export function ScrollAreaExample() {`,
   `  return (`,
-  `    <ScrollArea.Root className="h-48 w-full rounded-lg border border-border">`,
+  `    <ScrollArea.Root className="h-48 w-full rounded-xl border border-border">`,
   `      <ScrollArea.Viewport className="h-full w-full">`,
   `        <ScrollArea.Content className="min-w-max p-4">`,
   `          {/* Your content here */}`,
@@ -155,7 +155,7 @@ const codeLines = [
 
 export function ScrollAreaCodeBlock() {
   return (
-    <ScrollArea.Root className="relative w-96 rounded-lg border border-border bg-[#1e1e2e] overflow-hidden">
+    <ScrollArea.Root className="relative w-96 rounded-xl border border-border bg-[#1e1e2e] overflow-hidden">
       <ScrollArea.Viewport className="h-full w-full max-h-52">
         <ScrollArea.Content className="min-w-max">
           <pre className="p-4 text-xs font-mono leading-relaxed">

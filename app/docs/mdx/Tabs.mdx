@@ -7,7 +7,7 @@ description: A component for toggling between related panels on the same page.
 
 Un componente para alternar entre paneles relacionados. `Tabs.Indicator` se coloca **dentro** de `Tabs.List` y usa CSS variables (`--active-tab-left`, `--active-tab-width`, etc.) para posicionarse automáticamente sobre el tab activo.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
@@ -17,7 +17,7 @@ Un componente para alternar entre paneles relacionados. `Tabs.Indicator` se colo
   </Tabs.Panel>
   <Tabs.Panel className="p-0 outline-none" value="code">
     ```tsx
-    import { Tabs } from "@base-ui-components/react/tabs";
+    import { Tabs } from "gnome-ui/tabs";
 
     export function TabsUnderline() {
       return (
@@ -50,7 +50,7 @@ Un componente para alternar entre paneles relacionados. `Tabs.Indicator` se colo
 # Anatomy
 
 ```tsx
-import { Tabs } from "@base-ui-components/react/tabs";
+import { Tabs } from "gnome-ui/tabs";
 
 <Tabs.Root defaultValue="tab1">
   <Tabs.List>
@@ -69,7 +69,7 @@ import { Tabs } from "@base-ui-components/react/tabs";
 
 Estilo de selector compacto. Sin `Tabs.Indicator` — el tab activo recibe `data-[active]:bg-card` directamente.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
@@ -82,7 +82,7 @@ Estilo de selector compacto. Sin `Tabs.Indicator` — el tab activo recibe `data
     export function TabsPill() {
       return (
         <Tabs.Root defaultValue="month">
-          <Tabs.List className="flex rounded-lg bg-muted p-1 gap-1">
+          <Tabs.List className="flex rounded-xl bg-muted p-1 gap-1">
             {["Day", "Week", "Month", "Year"].map((label) => (
               <Tabs.Tab
                 key={label}
@@ -109,7 +109,7 @@ Estilo de selector compacto. Sin `Tabs.Indicator` — el tab activo recibe `data
 
 `orientation="vertical"` activa la navegación con flechas arriba/abajo. El `Tabs.Indicator` usa `--active-tab-top` y `--active-tab-height`.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>

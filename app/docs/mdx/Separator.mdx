@@ -8,7 +8,7 @@ Visually or semantically separates content.
 
 Documentation: [Base UI Separator](https://base-ui.com/react/components/separator)
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -17,12 +17,12 @@ Documentation: [Base UI Separator](https://base-ui.com/react/components/separato
   <Tabs.Panel value="code">
 ```tsx
 import * as React from 'react';
-import { Separator } from '@base-ui/react/separator';
+import { Separator } from 'gnome-ui/separator';
 import { Settings, User, LogOut } from 'lucide-react';
 
 export function SeparatorDefault() {
   return (
-    <div className="flex w-full max-w-sm flex-col rounded-lg border border-border bg-card p-4 shadow-sm">
+    <div className="flex w-full max-w-sm flex-col rounded-xl border border-border bg-card p-4 shadow-sm">
       <h3 className="text-lg font-medium text-foreground">PanOS Settings</h3>
       <p className="text-sm text-muted-foreground">Gestiona la configuración de tu sistema.</p>
       
@@ -57,7 +57,7 @@ export function SeparatorDefault() {
 # Anatomy
 
 ```tsx
-import { Separator } from '@base-ui/react/separator';
+import { Separator } from 'gnome-ui/separator';
 
 <Separator orientation="horizontal" />
 
@@ -69,7 +69,7 @@ import { Separator } from '@base-ui/react/separator';
 
 By setting `orientation="vertical"`, you can create vertical dividers. This is particularly useful in toolbars or horizontal menus.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -79,12 +79,12 @@ By setting `orientation="vertical"`, you can create vertical dividers. This is p
 
 ```tsx
 import * as React from 'react';
-import { Separator } from '@base-ui/react/separator';
+import { Separator } from 'gnome-ui/separator';
 import { Terminal, Package, Monitor } from 'lucide-react';
 
 export function SeparatorVertical() {
   return (
-    <div className="flex h-12 w-fit items-center gap-4 rounded-lg border border-border bg-card px-4 shadow-sm text-foreground">
+    <div className="flex h-12 w-fit items-center gap-4 rounded-xl border border-border bg-card px-4 shadow-sm text-foreground">
       <button className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors">
         <Icons.Terminal className="size-4" /> Terminal
       </button>
@@ -118,7 +118,7 @@ export function SeparatorVertical() {
 
 Separators can be combined with flexbox layouts to create dividers with text in the middle. Since the `Separator` component renders a `<div role="separator">` by default, it works seamlessly alongside text spans.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -128,7 +128,7 @@ Separators can be combined with flexbox layouts to create dividers with text in 
 
 ```tsx
 import * as React from 'react';
-import { Separator } from '@base-ui/react/separator';
+import { Separator } from 'gnome-ui/separator';
 
 export function SeparatorWithContent() {
   return (
@@ -140,10 +140,10 @@ export function SeparatorWithContent() {
       </div>
       
       <div className="mt-4 flex gap-3">
-        <button className="flex h-10 flex-1 items-center justify-center rounded-lg border border-border bg-card text-sm font-medium text-foreground hover:bg-accent transition-colors">
+        <button className="flex h-10 flex-1 items-center justify-center rounded-xl border border-border bg-card text-sm font-medium text-foreground hover:bg-accent transition-colors">
           Cuenta Local
         </button>
-        <button className="flex h-10 flex-1 items-center justify-center rounded-lg border border-border bg-card text-sm font-medium text-foreground hover:bg-accent transition-colors">
+        <button className="flex h-10 flex-1 items-center justify-center rounded-xl border border-border bg-card text-sm font-medium text-foreground hover:bg-accent transition-colors">
           LDAP / Directorio
         </button>
       </div>

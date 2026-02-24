@@ -6,7 +6,7 @@ import { ChevronDown, ChevronUp, Check } from 'lucide-react';
 export function SelectDefault() {
   return (
     <Select.Root>
-      <Select.Trigger className="flex h-10 w-full max-w-xs items-center justify-between rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring data-[placeholder]:text-muted-foreground">
+      <Select.Trigger className="flex h-10 w-full max-w-xs items-center justify-between rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring data-[placeholder]:text-muted-foreground">
         <Select.Value placeholder="Selecciona un entorno..." />
         <Select.Icon>
           <ChevronDown className="size-4 opacity-50" />
@@ -48,7 +48,7 @@ export function SelectDefault() {
 export function SelectGrouped() {
   return (
     <Select.Root>
-      <Select.Trigger className="flex h-10 w-full max-w-xs items-center justify-between rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
+      <Select.Trigger className="flex h-10 w-full max-w-xs items-center justify-between rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
         <Select.Value placeholder="Selecciona tu distribución..." />
         <Select.Icon>
           <ChevronDown className="size-4 opacity-50" />
@@ -102,7 +102,7 @@ export function SelectMultiple() {
   return (
     <div className="flex w-full max-w-xs flex-col gap-2">
       <Select.Root multiple value={value} onValueChange={setValue}>
-        <Select.Trigger className="flex min-h-10 w-full items-center justify-between rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
+        <Select.Trigger className="flex min-h-10 w-full items-center justify-between rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
           <div className="flex flex-wrap gap-1">
             {value.length === 0 && <span className="text-muted-foreground">Selecciona paquetes...</span>}
             {value.length > 0 && <span className="truncate">{value.join(', ')}</span>}

@@ -8,7 +8,7 @@ An input specifically designed for numbers, complete with increment/decrement st
 
 Documentation: [Base UI Number Field](https://base-ui.com/react/components/number-field)
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -17,13 +17,13 @@ Documentation: [Base UI Number Field](https://base-ui.com/react/components/numbe
   <Tabs.Panel value="code">
 ```tsx
 import * as React from 'react';
-import { NumberField } from '@base-ui/react/number-field';
+import { NumberField } from 'gnome-ui/number-field';
 import { ChevronUp, ChevronDown } from 'lucide-react';
 
 export function NumberFieldDefault() {
   return (
     <NumberField.Root defaultValue={10} className="flex flex-col gap-1.5 w-32">
-      <NumberField.Group className="flex h-10 w-full overflow-hidden rounded-lg border border-input bg-card text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
+      <NumberField.Group className="flex h-10 w-full overflow-hidden rounded-xl border border-input bg-card text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
         <NumberField.Input className="w-full bg-transparent px-3 py-2 text-sm outline-none placeholder:text-muted-foreground" />
         <div className="flex flex-col border-l border-input">
           <NumberField.Increment className="flex flex-1 items-center justify-center px-2 hover:bg-accent hover:text-accent-foreground disabled:opacity-50">
@@ -49,7 +49,7 @@ export function NumberFieldDefault() {
 # Anatomy
 
 ```tsx
-import { NumberField } from '@base-ui/react/number-field';
+import { NumberField } from 'gnome-ui/number-field';
 
 <NumberField.Root>
   <NumberField.ScrubArea>
@@ -70,7 +70,7 @@ import { NumberField } from '@base-ui/react/number-field';
 
 You can pass `Intl.NumberFormatOptions` to the `format` prop to automatically format the input value. The steppers can also be placed side-by-side for a more horizontal layout.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -80,7 +80,7 @@ You can pass `Intl.NumberFormatOptions` to the `format` prop to automatically fo
 
 ```tsx
 import * as React from 'react';
-import { NumberField } from '@base-ui/react/number-field';
+import { NumberField } from 'gnome-ui/number-field';
 import { Minus, Plus } from 'lucide-react';
 
 export function NumberFieldFormatting() {
@@ -90,7 +90,7 @@ export function NumberFieldFormatting() {
       format={{ style: 'currency', currency: 'USD' }}
       className="flex flex-col gap-1.5 w-48"
     >
-      <NumberField.Group className="flex h-10 w-full items-center overflow-hidden rounded-lg border border-input bg-card text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
+      <NumberField.Group className="flex h-10 w-full items-center overflow-hidden rounded-xl border border-input bg-card text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
         <NumberField.Decrement className="flex h-full items-center justify-center border-r border-input px-3 hover:bg-accent hover:text-accent-foreground disabled:opacity-50">
           <Icons.Minus className="size-4" strokeWidth={2.5} />
         </NumberField.Decrement>
@@ -117,7 +117,7 @@ export function NumberFieldFormatting() {
 
 The `ScrubArea` component provides a label that users can click and drag horizontally or vertically to change the value smoothly without typing.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -127,7 +127,7 @@ The `ScrubArea` component provides a label that users can click and drag horizon
 
 ```tsx
 import * as React from 'react';
-import { NumberField } from '@base-ui/react/number-field';
+import { NumberField } from 'gnome-ui/number-field';
 import { ArrowsRightLeft } from 'lucide-react';
 
 export function NumberFieldScrub() {
@@ -139,7 +139,7 @@ export function NumberFieldScrub() {
         <NumberField.ScrubAreaCursor className="rounded-full bg-primary/20 backdrop-blur-sm" />
       </NumberField.ScrubArea>
       
-      <NumberField.Group className="flex h-10 w-full overflow-hidden rounded-lg border border-input bg-card text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
+      <NumberField.Group className="flex h-10 w-full overflow-hidden rounded-xl border border-input bg-card text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
         <NumberField.Input className="w-full bg-transparent px-3 py-2 text-sm outline-none placeholder:text-muted-foreground" />
       </NumberField.Group>
     </NumberField.Root>

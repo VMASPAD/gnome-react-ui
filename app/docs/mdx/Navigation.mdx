@@ -8,7 +8,7 @@ A collection of links for navigating websites. The navigation menu provides a co
 
 Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -17,7 +17,7 @@ Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/na
   <Tabs.Panel value="code">
 ```tsx
 import * as React from 'react';
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from 'gnome-ui/navigation-menu';
 import { ChevronDown, Box, Layout, Code, Settings } from 'lucide-react';
 
 export function NavigationDefault() {
@@ -26,7 +26,7 @@ export function NavigationDefault() {
       <NavigationMenu.List className="flex items-center justify-center gap-1 rounded-xl border border-border bg-card p-1.5 shadow-sm">
         
         <NavigationMenu.Item>
-          <NavigationMenu.Trigger className="group flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[active]:bg-accent/60">
+          <NavigationMenu.Trigger className="group flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[active]:bg-accent/60">
             Productos
             <NavigationMenu.Icon className="transition-transform duration-200 group-data-[active]:rotate-180">
               <Icons.ChevronDown className="size-4 text-muted-foreground" />
@@ -51,7 +51,7 @@ export function NavigationDefault() {
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
-          <NavigationMenu.Trigger className="group flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[active]:bg-accent/60">
+          <NavigationMenu.Trigger className="group flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[active]:bg-accent/60">
             Desarrollo
             <NavigationMenu.Icon className="transition-transform duration-200 group-data-[active]:rotate-180">
               <Icons.ChevronDown className="size-4 text-muted-foreground" />
@@ -70,7 +70,7 @@ export function NavigationDefault() {
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
-          <NavigationMenu.Link href="#" className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
+          <NavigationMenu.Link href="#" className="block rounded-xl px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
             Comunidad
           </NavigationMenu.Link>
         </NavigationMenu.Item>
@@ -100,7 +100,7 @@ export function NavigationDefault() {
 # Anatomy
 
 ```tsx
-import { NavigationMenu } from '@base-ui/react/navigation-menu';
+import { NavigationMenu } from 'gnome-ui/navigation-menu';
 
 <NavigationMenu.Root>
   <NavigationMenu.List>

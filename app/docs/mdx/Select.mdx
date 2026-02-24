@@ -8,7 +8,7 @@ Displays a list of options for the user to pick from—triggered by a button.
 
 Documentation: [Base UI Select](https://base-ui.com/react/components/select)
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -17,13 +17,13 @@ Documentation: [Base UI Select](https://base-ui.com/react/components/select)
   <Tabs.Panel value="code">
 ```tsx
 import * as React from 'react';
-import { Select } from '@base-ui/react/select';
+import { Select } from 'gnome-ui/select';
 import { ChevronDown, ChevronUp, Check } from 'lucide-react';
 
 export function SelectDefault() {
   return (
     <Select.Root>
-      <Select.Trigger className="flex h-10 w-full max-w-xs items-center justify-between rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring data-[placeholder]:text-muted-foreground">
+      <Select.Trigger className="flex h-10 w-full max-w-xs items-center justify-between rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring data-[placeholder]:text-muted-foreground">
         <Select.Value placeholder="Selecciona un entorno..." />
         <Select.Icon>
           <Icons.ChevronDown className="size-4 opacity-50" />
@@ -73,7 +73,7 @@ export function SelectDefault() {
 # Anatomy
 
 ```tsx
-import { Select } from '@base-ui/react/select';
+import { Select } from 'gnome-ui/select';
 
 <Select.Root>
   <Select.Trigger>
@@ -104,7 +104,7 @@ import { Select } from '@base-ui/react/select';
 
 You can group related options using `<Select.Group>` and provide accessible labels using `<Select.GroupLabel>`.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -114,13 +114,13 @@ You can group related options using `<Select.Group>` and provide accessible labe
 
 ```tsx
 import * as React from 'react';
-import { Select } from '@base-ui/react/select';
+import { Select } from 'gnome-ui/select';
 import { ChevronDown, Check } from 'lucide-react';
 
 export function SelectGrouped() {
   return (
     <Select.Root>
-      <Select.Trigger className="flex h-10 w-full max-w-xs items-center justify-between rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
+      <Select.Trigger className="flex h-10 w-full max-w-xs items-center justify-between rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
         <Select.Value placeholder="Selecciona tu distribución..." />
         <Select.Icon>
           <Icons.ChevronDown className="size-4 opacity-50" />
@@ -182,7 +182,7 @@ export function SelectGrouped() {
 
 Pass the `multiple` prop to allow selecting multiple options simultaneously. The `value` prop will be an array of the selected items.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="code">Code</Tabs.Tab>
 <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-muted-foreground outline-none select-none transition-colors duration-150 hover:text-foreground focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:rounded data-[active]:text-foreground data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -192,7 +192,7 @@ Pass the `multiple` prop to allow selecting multiple options simultaneously. The
 
 ```tsx
 import * as React from 'react';
-import { Select } from '@base-ui/react/select';
+import { Select } from 'gnome-ui/select';
 import { ChevronDown, Check } from 'lucide-react';
 
 export function SelectMultiple() {
@@ -201,7 +201,7 @@ export function SelectMultiple() {
   return (
     <div className="flex w-full max-w-xs flex-col gap-2">
       <Select.Root multiple value={value} onValueChange={setValue}>
-        <Select.Trigger className="flex min-h-10 w-full items-center justify-between rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
+        <Select.Trigger className="flex min-h-10 w-full items-center justify-between rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
           <div className="flex flex-wrap gap-1">
             {value.length === 0 && <span className="text-muted-foreground">Selecciona paquetes...</span>}
             {value.length > 0 && <span className="truncate">{value.join(', ')}</span>}

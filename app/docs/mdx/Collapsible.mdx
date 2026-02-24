@@ -6,7 +6,7 @@ title: Collapsible
 
 A collapsible panel controlled by a button.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -14,14 +14,14 @@ A collapsible panel controlled by a button.
   </Tabs.List>
   <Tabs.Panel value="code">
 ```tsx
-import { Collapsible } from '@base-ui/react/collapsible';
+import { Collapsible } from 'gnome-ui/collapsible';
 import { ChevronDown, Key } from 'lucide-react';
 
 export function CollapsibleDefault() {
   return (
     <Collapsible.Root className="w-80 overflow-hidden rounded-xl border border-border bg-card shadow-sm">
       <Collapsible.Trigger className="group flex w-full items-center gap-3 px-4 py-3 text-left transition-colors duration-150 hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
           <Icons.Key className="size-4" />
         </div>
         <span className="flex-1 text-sm font-medium text-foreground">Recovery keys</span>
@@ -51,7 +51,7 @@ export function CollapsibleDefault() {
 # Anatomy
 
 ```tsx
-import { Collapsible } from '@base-ui/react/collapsible';
+import { Collapsible } from 'gnome-ui/collapsible';
 
 <Collapsible.Root>
   <Collapsible.Trigger />
@@ -65,7 +65,7 @@ import { Collapsible } from '@base-ui/react/collapsible';
 
 Collapsible build output panel inspired by GNOME Builder, open by default with a status badge.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -73,7 +73,7 @@ Collapsible build output panel inspired by GNOME Builder, open by default with a
   </Tabs.List>
   <Tabs.Panel value="code">
 ```tsx
-import { Collapsible } from '@base-ui/react/collapsible';
+import { Collapsible } from 'gnome-ui/collapsible';
 import { ChevronDown, Terminal, FileCode2, GitBranch, Wifi } from 'lucide-react';
 
 export function CollapsibleTerminal() {
@@ -119,7 +119,7 @@ export function CollapsibleTerminal() {
 
 Multiple independent collapsible rows stacked together, inspired by GNOME Files properties panel.
 
-<Tabs.Root className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
@@ -127,7 +127,7 @@ Multiple independent collapsible rows stacked together, inspired by GNOME Files 
   </Tabs.List>
   <Tabs.Panel value="code">
 ```tsx
-import { Collapsible } from '@base-ui/react/collapsible';
+import { Collapsible } from 'gnome-ui/collapsible';
 import { ChevronDown, Wifi, Key, Info } from 'lucide-react';
 
 const rows = [
