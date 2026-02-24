@@ -1,6 +1,6 @@
 "use client";
 
-import { Accordion } from '@/package/src/components/accordion';
+import { Accordion } from '@/app/components/accordion';
 import { ChevronUpIcon, FolderIcon, PlusIcon } from 'lucide-react';
 import React from 'react'
 

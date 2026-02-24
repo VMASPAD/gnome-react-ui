@@ -30,12 +30,12 @@ Components are **not installed as a black-box package** — they are copied dire
 ---
 ## Roadmap Page
 
-- [] Page Blocks
-- [] Page Themes
-- [] Card component
-- [] Badge component
-- [] RTL support
-- [] CLI
+- [ ] Page Blocks
+- [ ] Page Themes
+- [ ] Card component
+- [ ] Badge component
+- [ ] RTL support
+- [ ] CLI
 
 ## Features
 
