@@ -200,7 +200,7 @@ const inputBase =
               <div className="p-5 font-mono text-sm sm:text-base bg-[oklch(0.18_0.02_330)]">
                 <div className="flex gap-3">
                   <span className="text-muted-foreground shrink-0">$</span>
-                  <span className="text-background">
+                  <span className="text-background dark:text-foreground">
                     npm i gnome-ui
                   </span>
                 </div>
@@ -221,9 +221,9 @@ const inputBase =
       {/* ── Features grid ──────────────────────────────────────────────────── */}
       <section className="py-24 border-t border-border">
         <div className="container mx-auto max-w-7xl px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
             {features.map((feature, i) => (
-              <div key={i} className="group relative">
+              <div key={i} className="group relative dark:bg-card dark:p-5 rounded-xl">
                 <div className="flex flex-col space-y-3">
                   <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20 transition-colors duration-150 group-hover:bg-primary/15">
                     <feature.icon className="h-5 w-5 text-primary" />
@@ -245,7 +245,6 @@ const inputBase =
       <section
         id="components"
         className="py-24"
-        style={{ background: "oklch(0.96 0.004 330)" }}
       >
         <div className="container mx-auto max-w-7xl px-4">
           <div className="flex flex-col space-y-4 mb-16">
