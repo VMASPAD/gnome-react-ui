@@ -86,7 +86,7 @@ export function SideBarAccordion() {
 
 export function CompactAccordion() {
   return (
-    <Accordion.Root defaultValue="appearance" className="flex flex-col divide-y divide-border">
+    <Accordion.Root defaultValue={['appearance']} className="flex flex-col divide-y divide-border">
 
         <Accordion.Item value="appearance">
           <Accordion.Header>
