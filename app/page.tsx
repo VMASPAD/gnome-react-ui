@@ -125,13 +125,13 @@ const inputBase =
           <div className="flex items-center gap-2">
             <div className="hidden sm:flex items-center gap-2 mr-2">
               <a
-                href="http://npm.com/aspad89/gnome-ui"
+                href="https://npmx.dev/package/gnome-ui"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-border text-[11px] font-medium text-muted-foreground">
                   <div className="h-1.5 w-1.5 rounded-full bg-[oklch(0.65_0.18_150)]" />
-                  v1.0.2
+                  v1.1.5
                 </div>
               </a>
             </div>
