@@ -408,7 +408,7 @@ const inputBase =
             <nav className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-muted-foreground">
               {[{"GitHub":"https://github.com/vmaspad/gnome-react-ui"}, {"Documentation": "/docs"}, {"NPM":"https://npmx.dev/package/gnome-ui"}, {"License": "https://github.com/vmaspad/gnome-react-ui/blob/main/LICENSE"}].map((link, index) => (
                 <a
-                  key={link}
+                  key={index}
                   href={typeof link === "object" ? Object.values(link)[0] : link}
                   className="hover:text-foreground hover:text-primary transition-colors duration-150"
                 >
