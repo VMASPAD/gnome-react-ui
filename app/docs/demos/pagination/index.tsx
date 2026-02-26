@@ -8,7 +8,7 @@ import {
   PaginationPrevious,
   PaginationNext,
   PaginationEllipsis,
-} from "@/app/ui/components/pagination";
+} from "@/app/components/pagination";
 
 // ─── Default ───────────────────────────────────────────────────────────────
 

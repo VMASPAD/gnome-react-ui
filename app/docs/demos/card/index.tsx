@@ -7,7 +7,7 @@ import {
   CardDescription,
   CardContent,
   CardFooter,
-} from "@/app/ui/components/card";
+} from "@/app/components/card";
 import { ArrowRight, Star, FileText, Settings } from "lucide-react";
 
 // ─── Default ───────────────────────────────────────────────────────────────

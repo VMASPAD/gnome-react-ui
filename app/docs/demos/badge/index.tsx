@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { Badge } from "@/app/ui/components/badge";
+import { Badge } from "@/app/components/badge";
 import { CheckCircle2, AlertTriangle, Info, Zap, Star } from "lucide-react";
 
 // ─── Default ───────────────────────────────────────────────────────────────

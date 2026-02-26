@@ -6,8 +6,8 @@ import {
   CardHeader,
   CardTitle,
   CardFooter,
-} from "@/app/ui/components/card";
-import { Badge } from "@/app/ui/components/badge";
+} from "@/app/components/card";
+import { Badge } from "@/app/components/badge";
 import { Input } from "./components/input";
 import {
   Layout,
@@ -138,7 +138,7 @@ const inputBase =
               >
                 <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-border text-[11px] font-medium text-muted-foreground">
                   <div className="h-1.5 w-1.5 rounded-full bg-[oklch(0.65_0.18_150)]" />
-                  v1.1.5
+                  v1.9.0
                 </div>
               </a>
             </div>

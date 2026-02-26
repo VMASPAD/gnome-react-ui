@@ -7,7 +7,7 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
   BreadcrumbEllipsis,
-} from "@/app/ui/components/breadcrumb";
+} from "@/app/components/breadcrumb";
 import { Home, FolderOpen, FileText } from "lucide-react";
 
 // ─── Default ───────────────────────────────────────────────────────────────
