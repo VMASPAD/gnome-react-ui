@@ -20,6 +20,7 @@ import {
   Monitor,
   ArrowRight,
   Code2,
+  Linkedin,
 } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
@@ -118,6 +119,12 @@ const inputBase =
                 className="hover:text-foreground transition-colors duration-150"
               >
                 Documentation
+              </a>
+              <a
+                href="/themes"
+                className="hover:text-foreground transition-colors duration-150"
+              >
+                Themes
               </a>
             </nav>
           </div>
@@ -241,6 +248,61 @@ const inputBase =
         </div>
       </section>
 
+      {/* ── New Components Announcement ─────────────────────────────────────── */}
+      <section className="py-12 border-t border-border bg-primary/4">
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 rounded-2xl border border-primary/20 bg-card p-6 shadow-sm relative overflow-hidden">
+            {/* Glow accent */}
+            <div className="pointer-events-none absolute -top-8 -right-8 h-32 w-32 rounded-full bg-primary/15 blur-2xl" />
+
+            {/* Left: Label + text */}
+            <div className="flex-1 min-w-0 relative z-10">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="inline-flex h-5 items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2 text-[10px] font-bold uppercase tracking-widest text-primary">
+                  ✦ New
+                </span>
+                <span className="text-xs text-muted-foreground font-medium">Just shipped</span>
+              </div>
+              <h2 className="text-lg font-bold text-foreground mb-1">
+                5 new components are available
+              </h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                We&apos;ve added <strong className="text-foreground">Card</strong>, <strong className="text-foreground">Badge</strong>, <strong className="text-foreground">Breadcrumb</strong>, <strong className="text-foreground">Pagination</strong>, and a global <strong className="text-foreground">RTL</strong> CSS utility — all built on the GNOME design tokens.
+              </p>
+            </div>
+
+            {/* Middle: Component chips */}
+            <div className="flex flex-wrap gap-2 relative z-10 shrink-0">
+              {[
+                { label: "Card", desc: "4 variants", color: "bg-primary/10 border-primary/20 text-primary" },
+                { label: "Badge", desc: "7 variants · 3 sizes", color: "bg-[oklch(0.45_0.15_150)]/10 border-[oklch(0.45_0.15_150)]/20 text-[oklch(0.45_0.15_150)] dark:text-[oklch(0.65_0.18_150)]" },
+                { label: "Breadcrumb", desc: "File explorer nav", color: "bg-[oklch(0.55_0.12_250)]/10 border-[oklch(0.55_0.12_250)]/20 text-[oklch(0.55_0.12_250)] dark:text-[oklch(0.65_0.15_250)]" },
+                { label: "Pagination", desc: "Page navigation", color: "bg-[oklch(0.45_0.12_330)]/10 border-[oklch(0.45_0.12_330)]/20 text-[oklch(0.45_0.12_330)] dark:text-[oklch(0.65_0.15_330)]" },
+                { label: "RTL", desc: "Global CSS class", color: "bg-muted border-border text-muted-foreground" },
+              ].map(({ label, desc, color }) => (
+                <div
+                  key={label}
+                  className={`flex flex-col rounded-xl border px-3 py-2 text-left ${color}`}
+                >
+                  <span className="text-xs font-bold">{label}</span>
+                  <span className="text-[10px] opacity-70 font-medium">{desc}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Right: CTA */}
+            <div className="relative z-10 shrink-0">
+              <a
+                href="/docs"
+                className="inline-flex items-center gap-1.5 rounded-xl border border-primary/30 bg-primary/10 px-4 py-2 text-xs font-semibold text-primary hover:bg-primary/15 transition-colors duration-150"
+              >
+                Browse docs <ArrowRight className="h-3 w-3" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Components showcase ────────────────────────────────────────────── */}
       <section
         id="components"
@@ -342,7 +404,7 @@ const inputBase =
                         <Github className="h-4 w-4" /> GitHub
                       </Button>
                       <Button className="inline-flex items-center justify-center gap-2 h-10 text-xs font-semibold rounded-xl border border-border bg-card text-foreground hover:bg-accent transition-colors duration-150">
-                        <Layout className="h-4 w-4" /> Google
+                        <Linkedin className="h-4 w-4" /> Linkedin
                       </Button>
                     </div>
                     <div className="relative">

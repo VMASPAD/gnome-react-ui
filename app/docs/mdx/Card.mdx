@@ -1,0 +1,196 @@
+---
+title: Card
+---
+
+# Card
+
+A flexible surface component for grouping related content. Composed of `Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, and `CardFooter`.
+
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
+```tsx
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from 'gnome-ui/card';
+import { ArrowRight } from 'lucide-react';
+
+export function CardDefault() {
+  return (
+    <Card className="w-72">
+      <CardHeader>
+        <CardTitle>File Manager</CardTitle>
+        <CardDescription>
+          Browse and manage your local files with a familiar GNOME interface.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Drag and drop files, create archives, and connect to remote servers.
+        </p>
+      </CardContent>
+      <CardFooter>
+        <a href="#" className="text-xs font-semibold text-primary flex items-center gap-1">
+          Open Files <ArrowRight className="h-3 w-3" />
+        </a>
+      </CardFooter>
+    </Card>
+  );
+}
+```
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[200px] items-center justify-center p-6 outline-none" value="preview">
+    <Card.CardDefault />
+  </Tabs.Panel>
+</Tabs.Root>
+
+# Anatomy
+
+```tsx
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from 'gnome-ui/card';
+
+<Card>
+  <CardHeader>
+    <CardTitle />
+    <CardDescription />
+  </CardHeader>
+  <CardContent />
+  <CardFooter />
+</Card>
+```
+
+# Examples
+
+## Variants
+
+Four variants designed to fit different layout contexts — from elevated surfaces to subtle filled accents.
+
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
+```tsx
+import { Card } from 'gnome-ui/card';
+import { FileText, Star, Settings } from 'lucide-react';
+
+export function CardVariants() {
+  return (
+    <div className="grid grid-cols-2 gap-4">
+      <Card variant="default" className="p-5">Default</Card>
+      <Card variant="ghost" className="p-5">Ghost</Card>
+      <Card variant="outlined" className="p-5">Outlined</Card>
+      <Card variant="filled" className="p-5">Filled</Card>
+    </div>
+  );
+}
+```
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[200px] items-center justify-center p-6 outline-none" value="preview">
+    <Card.CardVariants />
+  </Tabs.Panel>
+</Tabs.Root>
+
+---
+
+## With Footer
+
+Add a `CardFooter` with actions or metadata at the bottom of the card.
+
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
+```tsx
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from 'gnome-ui/card';
+import { ArrowRight } from 'lucide-react';
+
+export function CardWithFooter() {
+  return (
+    <Card className="w-72 overflow-hidden">
+      <div className="h-1 bg-primary w-full" />
+      <CardHeader>
+        <CardTitle>GNOME Settings</CardTitle>
+        <CardDescription>Personalise your desktop experience.</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-2">
+        {["Appearance", "Privacy", "Network"].map((item) => (
+          <div key={item} className="flex items-center justify-between rounded-lg px-3 py-2 bg-muted/50 hover:bg-accent/50 transition-colors cursor-pointer">
+            <span className="text-sm font-medium text-foreground">{item}</span>
+            <ArrowRight className="h-3.5 w-3.5 text-muted-foreground" />
+          </div>
+        ))}
+      </CardContent>
+      <CardFooter className="border-t border-border justify-end">
+        <span className="text-xs text-muted-foreground">3 sections</span>
+      </CardFooter>
+    </Card>
+  );
+}
+```
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[200px] items-center justify-center p-6 outline-none" value="preview">
+    <Card.CardWithFooter />
+  </Tabs.Panel>
+</Tabs.Root>
+
+---
+
+### Props — Card
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **variant** | `"default" \| "ghost" \| "outlined" \| "filled"` | `"default"` | Visual style of the card surface. |
+| **className** | `string` | — | Additional CSS classes merged via `cn()`. |
+| **children** | `ReactNode` | — | Card content. |
+
+### Props — CardHeader
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string` | — | Additional CSS classes. |
+
+### Props — CardTitle
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string` | — | Additional CSS classes. |
+
+### Props — CardDescription
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string` | — | Additional CSS classes. |
+
+### Props — CardContent
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string` | — | Additional CSS classes. |
+
+### Props — CardFooter
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string` | — | Additional CSS classes. |

@@ -5,7 +5,7 @@ description: A popup that appears when a link is hovered, showing a preview for 
 
 # Preview Card
 
-Un popup que aparece al hacer hover sobre un link, mostrando una vista previa del contenido enlazado. El trigger renderiza un `<a>` nativo — está diseñado exclusivamente para hover, no para click.
+A popup that appears on hovering over a link, showing a preview of the linked content. The trigger renders a native `<a>` — designed exclusively for hover, not click.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
@@ -75,7 +75,7 @@ import { PreviewCard } from "gnome-ui/preview-card";
 
 ## Multiple Triggers
 
-Usa `PreviewCard.createHandle()` y el prop `payload` para que múltiples links compartan un solo `PreviewCard.Root` mostrando contenido diferente según el trigger activo.
+Use `PreviewCard.createHandle()` and the `payload` prop so multiple links can share a single `PreviewCard.Root` showing different content based on the active trigger.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">

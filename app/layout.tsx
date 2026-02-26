@@ -25,7 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("gnome-ui-theme");if(t&&t!=="default")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();`,
+          }}
+        />
+      </head>
       <Analytics />
       <body className={`${ubuntu.variable} ${ubuntuMono.variable} antialiased`}>
         {children}

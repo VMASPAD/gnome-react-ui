@@ -14,7 +14,7 @@ export function CheckboxDefault() {
           <Check className="size-3.5" strokeWidth={3} />
         </Checkbox.Indicator>
       </Checkbox.Root>
-      Aceptar términos y condiciones
+      Accept terms and conditions
     </label>
   );
 }
@@ -28,7 +28,7 @@ export function CheckboxDisabled() {
             <Check className="size-3.5" strokeWidth={3} />
           </Checkbox.Indicator>
         </Checkbox.Root>
-        Opción deshabilitada
+        Disabled option
       </label>
 
       <label className="flex select-none items-center gap-3 text-sm font-medium text-muted-foreground cursor-not-allowed">
@@ -37,7 +37,7 @@ export function CheckboxDisabled() {
             <Check className="size-3.5" strokeWidth={3} />
           </Checkbox.Indicator>
         </Checkbox.Root>
-        Opción seleccionada y deshabilitada
+        Checked and disabled option
       </label>
     </div>
   );
@@ -61,7 +61,7 @@ export function CheckboxIndeterminate() {
           )}
         </Checkbox.Indicator>
       </Checkbox.Root>
-      Selección parcial
+      Partial selection
     </label>
   );
 }

@@ -7,7 +7,7 @@ export function SelectDefault() {
   return (
     <Select.Root>
       <Select.Trigger className="flex h-10 w-full max-w-xs items-center justify-between rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring data-[placeholder]:text-muted-foreground">
-        <Select.Value placeholder="Selecciona un entorno..." />
+        <Select.Value placeholder="Select an environment..." />
         <Select.Icon>
           <ChevronDown className="size-4 opacity-50" />
         </Select.Icon>
@@ -49,7 +49,7 @@ export function SelectGrouped() {
   return (
     <Select.Root>
       <Select.Trigger className="flex h-10 w-full max-w-xs items-center justify-between rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
-        <Select.Value placeholder="Selecciona tu distribución..." />
+        <Select.Value placeholder="Select your distribution..." />
         <Select.Icon>
           <ChevronDown className="size-4 opacity-50" />
         </Select.Icon>
@@ -61,7 +61,7 @@ export function SelectGrouped() {
             <Select.List className="p-1">
               <Select.Group>
                 <Select.GroupLabel className="px-8 py-1.5 text-xs font-semibold text-muted-foreground">
-                  Basadas en Debian
+                  Debian-based
                 </Select.GroupLabel>
                 {['Ubuntu', 'Linux Mint', 'Pop!_OS'].map((item) => (
                   <Select.Item key={item} value={item} className="relative flex w-full cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none data-[highlighted]:bg-primary data-[highlighted]:text-primary-foreground">
@@ -77,7 +77,7 @@ export function SelectGrouped() {
               
               <Select.Group>
                 <Select.GroupLabel className="px-8 py-1.5 text-xs font-semibold text-muted-foreground">
-                  Basadas en Arch
+                  Arch-based
                 </Select.GroupLabel>
                 {['Arch Linux', 'Manjaro', 'EndeavourOS'].map((item) => (
                   <Select.Item key={item} value={item} className="relative flex w-full cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none data-[highlighted]:bg-primary data-[highlighted]:text-primary-foreground">
@@ -104,7 +104,7 @@ export function SelectMultiple() {
       <Select.Root multiple value={value} onValueChange={setValue}>
         <Select.Trigger className="flex min-h-10 w-full items-center justify-between rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:bg-accent focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
           <div className="flex flex-wrap gap-1">
-            {value.length === 0 && <span className="text-muted-foreground">Selecciona paquetes...</span>}
+            {value.length === 0 && <span className="text-muted-foreground">Select packages...</span>}
             {value.length > 0 && <span className="truncate">{value.join(', ')}</span>}
           </div>
           <Select.Icon className="shrink-0 ml-2">
@@ -133,7 +133,7 @@ export function SelectMultiple() {
           </Select.Positioner>
         </Select.Portal>
       </Select.Root>
-      <p className="text-xs text-muted-foreground">Paquetes a instalar: {value.length}</p>
+      <p className="text-xs text-muted-foreground">Packages to install: {value.length}</p>
     </div>
   );
 }

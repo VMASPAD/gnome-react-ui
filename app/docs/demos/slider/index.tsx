@@ -6,15 +6,15 @@ import { Volume2, Sun, Monitor } from 'lucide-react';
 export function SliderDefault() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-4">
-      <div className="flex items-center justify-between text-sm font-medium text-foreground">
-        <label className="flex items-center gap-2">
-          <Volume2 className="size-4 text-muted-foreground" />
-          Volumen del sistema
-        </label>
-        <Slider.Value />
-      </div>
-      
-      <Slider.Root defaultValue={75} className="flex w-full items-center">
+      <Slider.Root defaultValue={75} className="flex w-full flex-col gap-2">
+        <div className="flex items-center justify-between text-sm font-medium text-foreground">
+          <label className="flex items-center gap-2">
+            <Volume2 className="size-4 text-muted-foreground" />
+            System volume
+          </label>
+          <Slider.Value />
+        </div>
+
         <Slider.Control className="relative flex w-full items-center py-2">
           <Slider.Track className="h-1.5 w-full overflow-hidden rounded-full bg-secondary">
             <Slider.Indicator className="h-full bg-primary" />
@@ -29,18 +29,18 @@ export function SliderDefault() {
 export function SliderRange() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-4">
-      <div className="flex items-center justify-between text-sm font-medium text-foreground">
-        <label className="flex items-center gap-2">
-          <Monitor className="size-4 text-muted-foreground" />
-          Espacio de trabajo (GB)
-        </label>
+      <Slider.Root defaultValue={[20, 80]} className="flex w-full flex-col gap-2">
+        <div className="flex items-center justify-between text-sm font-medium text-foreground">
+          <label className="flex items-center gap-2">
+            <Monitor className="size-4 text-muted-foreground" />
+            Workspace (GB)
+          </label>
           <div className="flex gap-1 text-muted-foreground">
-          <Slider.Value>{(formatted) => formatted[0]}</Slider.Value> -{' '}
-          <Slider.Value>{(formatted) => formatted[1]}</Slider.Value>
+            <Slider.Value>{(formatted) => formatted[0]}</Slider.Value> –{' '}
+            <Slider.Value>{(formatted) => formatted[1]}</Slider.Value>
+          </div>
         </div>
-      </div>
-      
-      <Slider.Root defaultValue={[20, 80]} className="flex w-full items-center">
+
         <Slider.Control className="relative flex w-full items-center py-2">
           <Slider.Track className="h-1.5 w-full overflow-hidden rounded-full bg-secondary">
             <Slider.Indicator className="h-full bg-[oklch(0.55_0.12_250)]" />

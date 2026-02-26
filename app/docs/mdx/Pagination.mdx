@@ -1,0 +1,93 @@
+---
+title: Pagination
+---
+
+# Pagination
+
+A pagination component for navigating between pages of content. Composed of `Pagination`, `PaginationContent`, `PaginationItem`, `PaginationButton`, `PaginationPrevious`, `PaginationNext`, and `PaginationEllipsis`.
+
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[100px] items-center justify-center p-6 outline-none" value="preview">
+    <PaginationDemo.PaginationDefault />
+  </Tabs.Panel>
+</Tabs.Root>
+
+# Anatomy
+
+```tsx
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationButton,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+} from 'gnome-ui/pagination';
+
+<Pagination>
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationButton active>1</PaginationButton>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext />
+    </PaginationItem>
+  </PaginationContent>
+</Pagination>
+```
+
+# Examples
+
+## Compact
+
+Minimal previous/next layout with a page counter — useful for mobile or narrow spaces.
+
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[100px] items-center justify-center p-6 outline-none" value="preview">
+    <PaginationDemo.PaginationCompact />
+  </Tabs.Panel>
+</Tabs.Root>
+
+---
+
+## Full with Smart Ellipsis
+
+Automatically shows a window of pages around the current one, with ellipsis for hidden ranges.
+
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[100px] items-center justify-center p-6 outline-none" value="preview">
+    <PaginationDemo.PaginationFull />
+  </Tabs.Panel>
+</Tabs.Root>
+
+---
+
+### Props — PaginationButton
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **active** | `boolean` | `false` | Highlights the button as the current page. |
+| **disabled** | `boolean` | `false` | Disables interaction. |
+| **onClick** | `() => void` | — | Click handler. |
+| **className** | `string` | — | Additional CSS classes. |
+| **children** | `ReactNode` | — | Page number or label. |
+
+### Props — PaginationPrevious / PaginationNext
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **disabled** | `boolean` | `false` | Disables the button when at the boundary. |
+| **onClick** | `() => void` | — | Click handler. |

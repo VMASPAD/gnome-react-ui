@@ -31,10 +31,10 @@ Components are **not installed as a black-box package** — they are copied dire
 ## Roadmap Page
 
 - [ ] Page Blocks
-- [ ] Page Themes
-- [ ] Card component
-- [ ] Badge component
-- [ ] RTL support
+- [x] Page Themes
+- [x] Card component
+- [x] Badge component
+- [x] RTL support
 - [ ] CLI
 
 ## Features

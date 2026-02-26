@@ -1,0 +1,159 @@
+---
+title: Badge
+---
+
+# Badge
+
+A small labeling component for statuses, categories, and counts. Supports 7 variants and 3 sizes.
+
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
+```tsx
+import { Badge } from 'gnome-ui/badge';
+import { CheckCircle2, AlertTriangle, Zap } from 'lucide-react';
+
+export function BadgeDefault() {
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      <Badge>Default</Badge>
+      <Badge variant="primary"><Zap className="h-2.5 w-2.5" /> Primary</Badge>
+      <Badge variant="secondary">Secondary</Badge>
+      <Badge variant="success"><CheckCircle2 className="h-2.5 w-2.5" /> Success</Badge>
+      <Badge variant="warning"><AlertTriangle className="h-2.5 w-2.5" /> Warning</Badge>
+      <Badge variant="destructive">Destructive</Badge>
+      <Badge variant="outline">Outline</Badge>
+    </div>
+  );
+}
+```
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[100px] items-center justify-center p-6 outline-none" value="preview">
+    <Badge.BadgeDefault />
+  </Tabs.Panel>
+</Tabs.Root>
+
+# Anatomy
+
+```tsx
+import { Badge } from 'gnome-ui/badge';
+
+<Badge variant="primary" size="md">
+  Label
+</Badge>
+```
+
+# Examples
+
+## All Variants
+
+Seven semantic variants covering the full range of contextual states.
+
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
+```tsx
+import { Badge } from 'gnome-ui/badge';
+
+export function BadgeVariants() {
+  const variants = ["default", "primary", "secondary", "success", "warning", "destructive", "outline"];
+  return (
+    <div className="flex flex-wrap gap-2">
+      {variants.map((v) => (
+        <Badge key={v} variant={v as any}>{v}</Badge>
+      ))}
+    </div>
+  );
+}
+```
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[100px] items-center justify-center p-6 outline-none" value="preview">
+    <Badge.BadgeVariants />
+  </Tabs.Panel>
+</Tabs.Root>
+
+---
+
+## Sizes
+
+Three sizes — use `sm` for dense UIs, `md` (default) for standard use, and `lg` for prominent labels.
+
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
+```tsx
+import { Badge } from 'gnome-ui/badge';
+import { Star } from 'lucide-react';
+
+export function BadgeSizes() {
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      <Badge variant="primary" size="sm"><Star className="h-2 w-2" /> Small</Badge>
+      <Badge variant="primary" size="md"><Star className="h-2.5 w-2.5" /> Medium</Badge>
+      <Badge variant="primary" size="lg"><Star className="h-3 w-3" /> Large</Badge>
+    </div>
+  );
+}
+```
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[100px] items-center justify-center p-6 outline-none" value="preview">
+    <Badge.BadgeSizes />
+  </Tabs.Panel>
+</Tabs.Root>
+
+---
+
+## With Icons
+
+Prefix the label with a small icon using Lucide React for contextual meaning.
+
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
+  </Tabs.List>
+  <Tabs.Panel value="code">
+```tsx
+import { Badge } from 'gnome-ui/badge';
+import { CheckCircle2, AlertTriangle, Info, Zap } from 'lucide-react';
+
+export function BadgeWithIcons() {
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      <Badge variant="success"><CheckCircle2 className="h-2.5 w-2.5" /> Verified</Badge>
+      <Badge variant="warning"><AlertTriangle className="h-2.5 w-2.5" /> Review</Badge>
+      <Badge variant="primary"><Info className="h-2.5 w-2.5" /> New</Badge>
+      <Badge variant="destructive"><Zap className="h-2.5 w-2.5" /> Urgent</Badge>
+    </div>
+  );
+}
+```
+  </Tabs.Panel>
+  <Tabs.Panel className="flex min-h-[100px] items-center justify-center p-6 outline-none" value="preview">
+    <Badge.BadgeWithIcons />
+  </Tabs.Panel>
+</Tabs.Root>
+
+---
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **variant** | `"default" \| "primary" \| "secondary" \| "success" \| "warning" \| "destructive" \| "outline"` | `"default"` | Color/semantic variant of the badge. |
+| **size** | `"sm" \| "md" \| "lg"` | `"md"` | Controls padding and font size. |
+| **className** | `string` | — | Additional CSS classes merged via `cn()`. |
+| **children** | `ReactNode` | — | Badge content — text and/or icons. |

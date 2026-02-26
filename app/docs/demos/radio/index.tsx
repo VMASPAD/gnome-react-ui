@@ -51,7 +51,7 @@ export function RadioGroupBasic() {
 }
 
 // ─── 2. RadioGroupWithDescriptions ───────────────────────────────────────────
-// Cada opción tiene título + descripción — patrón tipo "plan selector"
+// Each option has title + description — "plan selector" pattern
 
 const plans = [
   {
@@ -108,7 +108,7 @@ export function RadioGroupWithDescriptions() {
 }
 
 // ─── 3. RadioGroupControlled ──────────────────────────────────────────────────
-// Controlled con value/onValueChange + opción disabled
+// Controlled with value/onValueChange + disabled option
 
 const notifications = [
   { value: "all", label: "All activity" },

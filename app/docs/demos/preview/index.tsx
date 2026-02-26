@@ -20,7 +20,7 @@ const linkCls =
   "focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 rounded-sm";
 
 // ─── 1. Basic Preview Card ────────────────────────────────────────────────────
-// Link inline dentro de un párrafo — caso de uso canónico
+// Inline link within a paragraph — canonical use case
 
 export function PreviewCardBasic() {
   return (
@@ -68,8 +68,8 @@ export function PreviewCardBasic() {
 }
 
 // ─── 2. Multiple Triggers with Payload ───────────────────────────────────────
-// Un solo PreviewCard.Root con handle, múltiples triggers en el texto
-// Cada trigger pasa su propio payload — patrón recomendado por la doc
+// A single PreviewCard.Root with handle, multiple triggers in the text
+// Each trigger passes its own payload — recommended pattern from docs
 
 type RepoPayload = {
   name: string;

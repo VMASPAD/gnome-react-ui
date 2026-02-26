@@ -107,9 +107,9 @@ export function AutocompleteDefault() {
       <Autocomplete.Portal>
         <Autocomplete.Positioner sideOffset={6} className="outline-none">
           <Autocomplete.Popup className="w-[var(--anchor-width)] overflow-hidden rounded-xl border border-border bg-card shadow-lg outline-none">
-            <Autocomplete.Empty className="px-4 py-3 text-sm text-muted-foreground">
-              No labels found.
-            </Autocomplete.Empty>
+            
+              
+            
             <Autocomplete.List className="max-h-[min(15rem,var(--available-height))] overflow-y-auto py-1.5 outline-none">
               {(label: LabelItem) => (
                 <Autocomplete.Item
@@ -148,9 +148,9 @@ export function AutocompleteGrouped() {
       <Autocomplete.Portal>
         <Autocomplete.Positioner sideOffset={6} className="outline-none">
           <Autocomplete.Popup className="w-[var(--anchor-width)] overflow-hidden rounded-xl border border-border bg-card shadow-lg outline-none">
-            <Autocomplete.Empty className="px-4 py-3 text-sm text-muted-foreground">
+            
               No settings found.
-            </Autocomplete.Empty>
+            
             <Autocomplete.List className="max-h-[min(18rem,var(--available-height))] overflow-y-auto py-1.5 outline-none">
               {(group: SettingGroup) => (
                 <Autocomplete.Group key={group.value}>
@@ -203,9 +203,9 @@ export function AutocompleteClear() {
       <Autocomplete.Portal>
         <Autocomplete.Positioner sideOffset={6} className="outline-none">
           <Autocomplete.Popup className="w-[var(--anchor-width)] overflow-hidden rounded-xl border border-border bg-card shadow-lg outline-none">
-            <Autocomplete.Empty className="px-4 py-3 text-sm text-muted-foreground">
+            
               No timezones found.
-            </Autocomplete.Empty>
+            
             <Autocomplete.List className="max-h-[min(15rem,var(--available-height))] overflow-y-auto py-1.5 outline-none">
               {(tz: TimezoneItem) => (
                 <Autocomplete.Item

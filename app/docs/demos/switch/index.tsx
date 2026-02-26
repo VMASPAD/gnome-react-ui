@@ -16,7 +16,7 @@ export function SwitchDefault() {
         <Switch.Thumb className={switchThumbBase} />
       </Switch.Root>
       <Field.Label htmlFor="airplane-mode" className="text-sm font-medium text-foreground cursor-pointer select-none">
-        Modo avión
+        Airplane mode
       </Field.Label>
     </Field.Root>
   );
@@ -30,7 +30,7 @@ export function SwitchDisabled() {
           <Switch.Thumb className={switchThumbBase} />
         </Switch.Root>
         <Field.Label className="text-sm font-medium text-muted-foreground select-none cursor-not-allowed">
-          Deshabilitado (Off)
+          Disabled (Off)
         </Field.Label>
       </Field.Root>
 
@@ -39,7 +39,7 @@ export function SwitchDisabled() {
           <Switch.Thumb className={switchThumbBase} />
         </Switch.Root>
         <Field.Label className="text-sm font-medium text-muted-foreground select-none cursor-not-allowed">
-          Deshabilitado (On)
+          Disabled (On)
         </Field.Label>
       </Field.Root>
     </div>
@@ -50,14 +50,14 @@ export function SwitchWithIcons() {
   return (
     <div className="flex flex-col gap-4 w-full max-w-sm rounded-xl border border-border bg-card p-5 shadow-sm">
       <div className="flex flex-col gap-1 mb-2">
-        <h3 className="text-base font-semibold text-foreground">Conectividad</h3>
-        <p className="text-sm text-muted-foreground">Gestiona tus redes y notificaciones.</p>
+        <h3 className="text-base font-semibold text-foreground">Connectivity</h3>
+        <p className="text-sm text-muted-foreground">Manage your networks and notifications.</p>
       </div>
 
       <Field.Root className="flex items-center justify-between">
         <Field.Label className="flex items-center gap-2 text-sm font-medium text-foreground cursor-pointer select-none">
           <Wifi className="size-4 text-muted-foreground" />
-          Red Inalámbrica
+          Wireless Network
         </Field.Label>
         <Switch.Root defaultChecked className={switchRootBase}>
           <Switch.Thumb className={switchThumbBase} />
@@ -67,7 +67,7 @@ export function SwitchWithIcons() {
       <Field.Root className="flex items-center justify-between">
         <Field.Label className="flex items-center gap-2 text-sm font-medium text-foreground cursor-pointer select-none">
           <Bell className="size-4 text-muted-foreground" />
-          Notificaciones Push
+          Push Notifications
         </Field.Label>
         <Switch.Root defaultChecked className={switchRootBase}>
           <Switch.Thumb className={switchThumbBase} />
@@ -77,7 +77,7 @@ export function SwitchWithIcons() {
       <Field.Root className="flex items-center justify-between mt-2 pt-4 border-t border-border">
         <Field.Label className="flex items-center gap-2 text-sm font-medium text-foreground cursor-pointer select-none">
           <Shield className="size-4 text-[oklch(0.55_0.12_250)]" />
-          Cortafuegos (Firewall)
+          Firewall
         </Field.Label>
         <Switch.Root defaultChecked className={`${switchRootBase} data-[checked]:bg-[oklch(0.55_0.12_250)]`}>
           <Switch.Thumb className={switchThumbBase} />

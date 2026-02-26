@@ -10,7 +10,7 @@ export function FieldDefault() {
   return (
     <Field.Root className="flex w-full max-w-sm flex-col gap-2">
       <Field.Label className="text-sm font-medium text-foreground">
-        Correo electrónico
+        Email
       </Field.Label>
       <Field.Control 
         className={inputBase} 
@@ -29,7 +29,7 @@ export function FieldWithError() {
     <form 
       onSubmit={(e) => {
         e.preventDefault();
-        // Lógica de envío
+        // Submit logic
       }}
       className="w-full max-w-sm"
     >
@@ -52,7 +52,7 @@ export function FieldWithError() {
         <Field.Error className="flex items-center gap-1.5 text-sm font-medium text-destructive">
           <AlertCircle className="size-4 shrink-0" />
           <Field.Validity>
-            {(state) => state.error || 'Entrada inválida'}
+            {(state) => state.error || 'Invalid input'}
           </Field.Validity>
         </Field.Error>
         

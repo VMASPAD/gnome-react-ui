@@ -7,7 +7,7 @@ export function SeparatorDefault() {
   return (
     <div className="flex w-full max-w-sm flex-col rounded-xl border border-border bg-card p-4 shadow-sm">
       <h3 className="text-lg font-medium text-foreground">PanOS Settings</h3>
-      <p className="text-sm text-muted-foreground">Gestiona la configuración de tu sistema.</p>
+      <p className="text-sm text-muted-foreground">Manage your system settings.</p>
       
       <Separator className="my-4 h-px w-full bg-border" />
       
@@ -23,7 +23,7 @@ export function SeparatorDefault() {
       <Separator className="my-4 h-px w-full bg-border" />
       
       <button className="flex items-center gap-2 text-sm text-destructive hover:brightness-110">
-        <LogOut className="size-4" /> Cerrar sesión
+        <LogOut className="size-4" /> Log out
       </button>
     </div>
   );
@@ -56,7 +56,7 @@ export function SeparatorWithContent() {
     <div className="flex w-full max-w-md flex-col">
       <div className="flex items-center text-sm text-muted-foreground">
         <Separator className="flex-1 h-px bg-border" />
-        <span className="px-3 font-medium">O continúa con</span>
+        <span className="px-3 font-medium">Or continue with</span>
         <Separator className="flex-1 h-px bg-border" />
       </div>
       

@@ -5,7 +5,7 @@ description: A component for toggling between related panels on the same page.
 
 # Tabs
 
-Un componente para alternar entre paneles relacionados. `Tabs.Indicator` se coloca **dentro** de `Tabs.List` y usa CSS variables (`--active-tab-left`, `--active-tab-width`, etc.) para posicionarse automáticamente sobre el tab activo.
+A component for toggling between related panels. `Tabs.Indicator` is placed **inside** `Tabs.List` and uses CSS variables (`--active-tab-left`, `--active-tab-width`, etc.) to automatically position itself over the active tab.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
@@ -29,7 +29,7 @@ Un componente para alternar entre paneles relacionados. `Tabs.Indicator` se colo
             <Tabs.Tab value="projects" className="data-[active]:text-foreground">
               Projects
             </Tabs.Tab>
-            {/* Indicator DENTRO de List, usa CSS variables del componente */}
+            {/* Indicator INSIDE List, uses component CSS variables */}
             <Tabs.Indicator
               className="absolute bottom-0 h-0.5 rounded-full bg-primary transition-[left,width] duration-200"
               style={{
@@ -67,7 +67,7 @@ import { Tabs } from "gnome-ui/tabs";
 
 ## Pill / Badge
 
-Estilo de selector compacto. Sin `Tabs.Indicator` — el tab activo recibe `data-[active]:bg-card` directamente.
+Compact selector style. No `Tabs.Indicator` — the active tab gets `data-[active]:bg-card` directly.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
@@ -107,7 +107,7 @@ Estilo de selector compacto. Sin `Tabs.Indicator` — el tab activo recibe `data
 
 ## Vertical
 
-`orientation="vertical"` activa la navegación con flechas arriba/abajo. El `Tabs.Indicator` usa `--active-tab-top` y `--active-tab-height`.
+`orientation="vertical"` enables up/down arrow navigation. The `Tabs.Indicator` uses `--active-tab-top` and `--active-tab-height`.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
@@ -129,7 +129,7 @@ Estilo de selector compacto. Sin `Tabs.Indicator` — el tab activo recibe `data
             <Tabs.Tab value="security" className="data-[active]:bg-background">
               <Icons.Shield className="size-4" /> Security
             </Tabs.Tab>
-            {/* Vertical indicator — usa top/height en lugar de left/width */}
+            {/* Vertical indicator — uses top/height instead of left/width */}
             <Tabs.Indicator
               className="absolute right-0 w-0.5 rounded-full bg-primary transition-[top,height] duration-200"
               style={{

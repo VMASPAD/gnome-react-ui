@@ -5,7 +5,7 @@ description: A native scroll container with custom-styled scrollbars.
 
 # Scroll Area
 
-Un contenedor de scroll nativo con scrollbars estilizables. La estructura obligatoria es `Root > Viewport > Content` — las `Scrollbar` van **fuera** del `Viewport`, paralelas a él dentro del `Root`.
+A native scroll container with stylable scrollbars. The required structure is `Root > Viewport > Content` — the `Scrollbar`s go **outside** the `Viewport`, as siblings within `Root`.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
@@ -61,7 +61,7 @@ import { ScrollArea } from "gnome-ui/scroll-area";
 
 ## Both Axes
 
-Cuando hay scroll en ambas direcciones, agrega `<ScrollArea.Corner>` para cubrir el área donde se intersectan las dos scrollbars.
+When scrolling in both directions, add `<ScrollArea.Corner>` to cover the area where the two scrollbars intersect.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
@@ -87,7 +87,7 @@ Cuando hay scroll en ambas direcciones, agrega `<ScrollArea.Corner>` para cubrir
           <ScrollArea.Scrollbar orientation="horizontal">
             <ScrollArea.Thumb />
           </ScrollArea.Scrollbar>
-          {/* Corner cubre la intersección de las dos scrollbars */}
+          {/* Corner covers the intersection of the two scrollbars */}
           <ScrollArea.Corner />
         </ScrollArea.Root>
       );
@@ -98,7 +98,7 @@ Cuando hay scroll en ambas direcciones, agrega `<ScrollArea.Corner>` para cubrir
 
 ## Code Block
 
-Ideal para bloques de código con scroll horizontal. `min-w-max` en `Content` previene el wrapping del texto.
+Ideal for code blocks with horizontal scroll. `min-w-max` on `Content` prevents text wrapping.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
@@ -114,7 +114,7 @@ Ideal para bloques de código con scroll horizontal. `min-w-max` en `Content` pr
       return (
         <ScrollArea.Root className="w-96 rounded-xl border border-border bg-[#1e1e2e] overflow-hidden">
           <ScrollArea.Viewport className="h-full w-full max-h-52">
-            {/* min-w-max evita el wrapping del código */}
+            {/* min-w-max prevents code wrapping */}
             <ScrollArea.Content className="min-w-max">
               <pre className="p-4 text-xs font-mono">
                 {codeLines.map((line, i) => (

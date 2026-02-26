@@ -5,7 +5,7 @@ description: Generates toast notifications with stacking, swipe-to-dismiss, and 
 
 # Toast
 
-Sistema de notificaciones. La arquitectura requiere `Toast.Provider` wrapeando la app, `Toast.Portal > Toast.Viewport` para el contenedor, y `Toast.useToastManager()` para crear toasts. `Toast.Title` y `Toast.Description` renderizan el contenido del toast object automáticamente — **sin `children`**.
+Notification system. The architecture requires `Toast.Provider` wrapping the app, `Toast.Portal > Toast.Viewport` for the container, and `Toast.useToastManager()` for creating toasts. `Toast.Title` and `Toast.Description` render the toast object content automatically — **no `children`**.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
@@ -19,13 +19,13 @@ Sistema de notificaciones. La arquitectura requiere `Toast.Provider` wrapeando l
     ```tsx
     import { Toast } from "gnome-ui/toast";
 
-    // Función auxiliar — accede a useToastManager() DENTRO del Provider
+    // Helper function — accesses useToastManager() INSIDE the Provider
     function ToastList() {
       const { toasts } = Toast.useToastManager();
       return toasts.map((toast) => (
         <Toast.Root key={toast.id} toast={toast}>
           <Toast.Content>
-            {/* Title y Description sin children — renderizan automáticamente */}
+            {/* Title and Description without children — render automatically */}
             <Toast.Title />
             <Toast.Description />
             <Toast.Close aria-label="Close">
@@ -69,9 +69,9 @@ Sistema de notificaciones. La arquitectura requiere `Toast.Provider` wrapeando l
 ```tsx
 import { Toast } from "gnome-ui/toast";
 
-// Provider wrappea la app (o el árbol que necesite toasts)
+// Provider wraps the app (or the subtree that needs toasts)
 <Toast.Provider timeout={5000} limit={3}>
-  {/* Trigger usa useToastManager() — debe estar DENTRO del Provider */}
+  {/* Trigger uses useToastManager() — must be INSIDE the Provider */}
   <Toast.Portal>
     <Toast.Viewport>
       {toasts.map((toast) => (
@@ -93,7 +93,7 @@ import { Toast } from "gnome-ui/toast";
 
 ## With Types & Actions
 
-Usa el campo `type` del toast para renderizar iconos condicionales. `actionProps` en `toastManager.add()` pasa props directamente a `Toast.Action`.
+Use the `type` field of the toast to render conditional icons. `actionProps` in `toastManager.add()` passes props directly to `Toast.Action`.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
@@ -140,7 +140,7 @@ Usa el campo `type` del toast para renderizar iconos condicionales. `actionProps
 
 ## Promise
 
-`toastManager.promise()` gestiona automáticamente los estados `loading → success / error`. Cada estado acepta `title`, `description`, y el resto de las opciones. El estado `success` recibe el valor resuelto como argumento.
+`toastManager.promise()` automatically manages the `loading → success / error` states. Each state accepts `title`, `description`, and the rest of the options. The `success` state receives the resolved value as an argument.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
@@ -157,7 +157,7 @@ Usa el campo `type` del toast para renderizar iconos condicionales. `actionProps
     await toastManager.promise(
       fetch("/api/export").then((r) => r.json()),
       {
-        // Cada estado acepta title, description, y más opciones
+        // Each state accepts title, description, and more options
         loading: {
           title: "Exporting…",
           description: "Preparing your data export.",

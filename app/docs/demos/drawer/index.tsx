@@ -1,4 +1,5 @@
 "use client";
+import * as React from 'react';
 import { DrawerPreview as Drawer } from '@/app/components/drawer';
 import { PanelRight, Settings, Bell, User, Lock, Wifi, ChevronRight, X, SlidersHorizontal, Moon, Shield } from 'lucide-react';
 
@@ -8,7 +9,6 @@ const btnBase =
   'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
 
 // ─── Default — Right side navigation drawer ───────────────────────────────────
-// Inspired by GNOME Shell's quick settings panel sliding from the right
 
 export function DrawerDefault() {
   return (
@@ -71,40 +71,98 @@ export function DrawerDefault() {
   );
 }
 
-// ─── Bottom drawer with snap points ──────────────────────────────────────────
-// Inspired by GNOME Mobile action sheet — snaps to half or full height
+// ─── Bottom drawer with drag handle ──────────────────────────────────────────
+// The drag handle allows the user to pull the drawer up or down with the mouse.
 
 export function DrawerSnapPoints() {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [height, setHeight] = React.useState(40); // percentage of viewport
+  const isDragging = React.useRef(false);
+  const startY = React.useRef(0);
+  const startHeight = React.useRef(40);
+
+  const handleMouseDown = React.useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    isDragging.current = true;
+    startY.current = e.clientY;
+    startHeight.current = height;
+    document.body.style.cursor = 'grabbing';
+    document.body.style.userSelect = 'none';
+
+    const handleMouseMove = (ev: MouseEvent) => {
+      if (!isDragging.current) return;
+      const delta = startY.current - ev.clientY;
+      const vh = window.innerHeight;
+      const pctDelta = (delta / vh) * 100;
+      const newH = Math.min(95, Math.max(15, startHeight.current + pctDelta));
+      setHeight(newH);
+    };
+
+    const handleMouseUp = () => {
+      isDragging.current = false;
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+  }, [height]);
+
   return (
-    <Drawer.Root snapPoints={[0.4, 1]} defaultSnapPoint={0.4} swipeDirection="down">
-      <Drawer.Trigger className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}>
+    <>
+      <button
+        type="button"
+        onClick={() => { setIsOpen(true); setHeight(40); }}
+        className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}
+      >
         <SlidersHorizontal className="size-4 shrink-0" />
         Filter results
-      </Drawer.Trigger>
+      </button>
 
-      <Drawer.Portal>
-        <Drawer.Backdrop className="fixed inset-0 min-h-dvh bg-black/40 backdrop-blur-sm transition-all duration-300 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 supports-[-webkit-touch-callout:none]:absolute" />
-        <Drawer.Viewport className="fixed inset-0 flex items-end">
-          <Drawer.Popup className="flex max-h-full w-full flex-col rounded-t-2xl border-t border-border bg-card shadow-2xl outline-none transition-transform duration-300 ease-out data-[ending-style]:translate-y-full data-[starting-style]:translate-y-full">
+      {isOpen && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300"
+            onClick={() => setIsOpen(false)}
+          />
+
+          {/* Bottom sheet */}
+          <div
+            className="fixed inset-x-0 bottom-0 z-50 flex flex-col rounded-t-2xl border-t border-border bg-card shadow-2xl"
+            style={{
+              height: `${height}vh`,
+              transition: isDragging.current ? 'none' : 'height 0.3s ease-out',
+            }}
+          >
             {/* Drag handle */}
-            <div className="flex justify-center pb-1 pt-3">
-              <div className="h-1 w-10 rounded-full bg-border" />
+            <div
+              className="flex justify-center pb-1 pt-3 cursor-grab active:cursor-grabbing select-none"
+              onMouseDown={handleMouseDown}
+            >
+              <div className="h-1.5 w-12 rounded-full bg-border hover:bg-muted-foreground/40 transition-colors" />
             </div>
 
-            <Drawer.Content className="flex flex-1 flex-col overflow-y-auto px-5 pb-6">
+            {/* Content */}
+            <div className="flex flex-1 flex-col overflow-y-auto px-5 pb-6">
               <div className="flex items-center gap-3 py-4">
                 <SlidersHorizontal className="size-4 shrink-0 text-primary" />
-                <Drawer.Title className="flex-1 text-base font-semibold text-foreground">
+                <h2 className="flex-1 text-base font-semibold text-foreground">
                   Filter results
-                </Drawer.Title>
-                <Drawer.Close className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
+                </h2>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
+                >
                   <X className="size-4" />
-                </Drawer.Close>
+                </button>
               </div>
 
-              <Drawer.Description className="mb-5 text-sm leading-relaxed text-muted-foreground">
-                Drag up to see all filter options. Swipe down to dismiss.
-              </Drawer.Description>
+              <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
+                Drag the handle up or down to resize. Swipe down to dismiss.
+              </p>
 
               {/* Filter groups */}
               {[
@@ -133,19 +191,21 @@ export function DrawerSnapPoints() {
                 </div>
               ))}
 
-              <Drawer.Close className={`${btnBase} mt-2 h-10 w-full bg-primary text-primary-foreground hover:brightness-95`}>
+              <button
+                onClick={() => setIsOpen(false)}
+                className={`${btnBase} mt-2 h-10 w-full bg-primary text-primary-foreground hover:brightness-95`}
+              >
                 Apply filters
-              </Drawer.Close>
-            </Drawer.Content>
-          </Drawer.Popup>
-        </Drawer.Viewport>
-      </Drawer.Portal>
-    </Drawer.Root>
+              </button>
+            </div>
+          </div>
+        </>
+      )}
+    </>
   );
 }
 
 // ─── Left sidebar / navigation drawer ────────────────────────────────────────
-// Inspired by GNOME Files side panel — left-to-right swipe open
 
 export function DrawerNavigation() {
   return (

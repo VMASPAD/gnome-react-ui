@@ -20,7 +20,7 @@ export function FieldsetDefault() {
             Preferencias de Notificaciones
           </Fieldset.Legend>
           <p className="text-sm text-muted-foreground">
-            Elige cómo quieres recibir las actualizaciones.
+            Choose how you want to receive updates.
           </p>
         </div>
         
@@ -32,7 +32,7 @@ export function FieldsetDefault() {
               </Checkbox.Indicator>
             </Checkbox.Root>
             <Field.Label htmlFor="email-notif" className="text-sm font-medium text-foreground cursor-pointer select-none">
-              Correos electrónicos
+              Email notifications
             </Field.Label>
           </Field.Root>
 
@@ -58,10 +58,10 @@ export function FieldsetDisabled() {
       <Fieldset.Root disabled className="group flex flex-col gap-4 rounded-xl border border-border bg-card p-5 shadow-sm">
         <div className="flex flex-col gap-1">
           <Fieldset.Legend className="text-base font-semibold text-foreground group-disabled:text-muted-foreground">
-            Detalles de facturación
+            Billing details
           </Fieldset.Legend>
           <p className="text-sm text-muted-foreground">
-            No tienes permisos para editar esta sección.
+            You do not have permission to edit this section.
           </p>
         </div>
         
@@ -75,7 +75,7 @@ export function FieldsetDisabled() {
 
           <Field.Root className="flex flex-col gap-1.5">
             <Field.Label className="text-sm font-medium text-muted-foreground">
-              Número de tarjeta
+              Card number
             </Field.Label>
             <Field.Control className={inputBase} defaultValue="**** **** **** 4242" />
           </Field.Root>

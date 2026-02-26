@@ -21,7 +21,7 @@ const tabBaseCls =
   "disabled:cursor-not-allowed disabled:opacity-40";
 
 // ─── 1. TabsUnderline ─────────────────────────────────────────────────────────
-// Tabs con indicador animado de subrayado — el patrón más común.
+// Tabs with animated underline indicator — the most common pattern.
 // Tabs.Indicator va DENTRO de Tabs.List y usa CSS variables del componente.
 
 export function TabsUnderline() {
@@ -85,7 +85,7 @@ export function TabsUnderline() {
 }
 
 // ─── 2. TabsPill ─────────────────────────────────────────────────────────────
-// Tabs estilo pill/badge — fondo sólido en el tab activo, sin Indicator
+// Pill/badge style tabs — solid background on active tab, no Indicator
 
 export function TabsPill() {
   return (
@@ -138,7 +138,7 @@ export function TabsPill() {
 }
 
 // ─── 3. TabsVertical ─────────────────────────────────────────────────────────
-// Tabs con orientación vertical — sidebar de configuración
+// Tabs with vertical orientation — settings sidebar
 
 const settingsTabs = [
   { value: "general", label: "General", icon: Settings },

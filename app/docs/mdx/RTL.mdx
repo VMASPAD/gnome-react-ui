@@ -1,0 +1,100 @@
+---
+title: RTL
+---
+
+# RTL
+
+A global CSS utility that enables **right-to-left** text direction across an entire page or a scoped subtree. No JavaScript required — a single class on any element is all it takes.
+
+# Usage
+
+## Global (entire page)
+
+Add the `rtl` class to the `<html>` element and every element on the page will automatically render text right-to-left:
+
+```html
+<!-- _document.tsx / layout.tsx -->
+<html lang="ar" class="rtl">
+  ...
+</html>
+```
+
+In Next.js `app/layout.tsx`:
+
+```tsx
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="ar" className="rtl">
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+---
+
+## Scoped (subtree only)
+
+Wrap any element with the `rtl` class to flip direction only for that portion of the UI:
+
+```tsx
+<div className="rtl">
+  <p>هذا النص يُعرض من اليمين إلى اليسار</p>
+  <p>This text is also RTL inside this container.</p>
+</div>
+```
+
+---
+
+## Switching direction dynamically
+
+You can toggle RTL at runtime with a simple state variable:
+
+```tsx
+"use client";
+import { useState } from "react";
+
+export function DirectionToggle() {
+  const [rtl, setRtl] = useState(false);
+
+  return (
+    <div className={rtl ? "rtl" : ""}>
+      <p>مرحباً بالعالم — Hello World</p>
+      <button onClick={() => setRtl((v) => !v)}>
+        Toggle direction
+      </button>
+    </div>
+  );
+}
+```
+
+---
+
+# CSS definition
+
+The `.rtl` class is defined in `globals.css` inside `@layer components`:
+
+```css
+@layer components {
+  /* Right-to-left global layout utility */
+  .rtl {
+    direction: rtl;
+    text-align: start;
+  }
+
+  .rtl * {
+    direction: rtl;
+    unicode-bidi: inherit;
+  }
+}
+```
+
+Applying it to `<html>` propagates `direction: rtl` down the entire document, including flex/grid layouts, so lists, navigation, and form elements all mirror automatically.
+
+---
+
+### Notes
+
+- `text-align: start` is RTL-aware — it resolves to `right` when `direction: rtl` is active.
+- Tailwind's logical properties (`ms-*`, `me-*`, `ps-*`, `pe-*`, `start-*`, `end-*`) automatically respect the current direction, so your spacing stays correct without any changes.
+- For mixed-direction content (e.g. Arabic text with English code snippets), wrap the LTR section with `dir="ltr"` or Tailwind's `[dir=ltr]` variant.

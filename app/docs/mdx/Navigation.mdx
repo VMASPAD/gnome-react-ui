@@ -38,13 +38,13 @@ export function NavigationDefault() {
                 <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
                   <Icons.Box className="size-4 text-primary" /> Componentes
                 </div>
-                <p className="text-xs text-muted-foreground">Bloques de construcción accesibles para tu UI.</p>
+                <p className="text-xs text-muted-foreground">Accessible building blocks for your UI.</p>
               </a>
               <a href="#" className="flex flex-col gap-1.5 rounded-md p-3 transition-colors hover:bg-secondary">
                 <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
                   <Icons.Layout className="size-4 text-primary" /> Plantillas
                 </div>
-                <p className="text-xs text-muted-foreground">Diseños pre-armados listos para integrarse.</p>
+                <p className="text-xs text-muted-foreground">Pre-built layouts ready to integrate.</p>
               </a>
             </div>
           </NavigationMenu.Content>
@@ -60,10 +60,10 @@ export function NavigationDefault() {
           <NavigationMenu.Content className="absolute left-0 top-0 w-full p-4 md:w-[250px]">
             <div className="flex flex-col gap-2">
                 <a href="#" className="flex items-center gap-2 rounded-md p-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary">
-                  <Icons.Code className="size-4 text-muted-foreground" /> Documentación API
+                  <Icons.Code className="size-4 text-muted-foreground" /> API Documentation
                 </a>
                 <a href="#" className="flex items-center gap-2 rounded-md p-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary">
-                  <Icons.Settings className="size-4 text-muted-foreground" /> Configuración
+                  <Icons.Settings className="size-4 text-muted-foreground" /> Settings
                 </a>
             </div>
           </NavigationMenu.Content>
@@ -105,18 +105,18 @@ import { NavigationMenu } from 'gnome-ui/navigation-menu';
 <NavigationMenu.Root>
   <NavigationMenu.List>
     <NavigationMenu.Item>
-      {/* Opción 1: Elemento con submenú (Popup) */}
+      {/* Option 1: Element with submenu (Popup) */}
       <NavigationMenu.Trigger>
         <NavigationMenu.Icon />
       </NavigationMenu.Trigger>
       <NavigationMenu.Content />
       
-      {/* Opción 2: Enlace directo */}
+      {/* Option 2: Direct link */}
       <NavigationMenu.Link />
     </NavigationMenu.Item>
   </NavigationMenu.List>
 
-  {/* Portal que maneja la ubicación del Popup */}
+  {/* Portal that manages the Popup placement */}
   <NavigationMenu.Portal>
     <NavigationMenu.Positioner>
       <NavigationMenu.Popup>

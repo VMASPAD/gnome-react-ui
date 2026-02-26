@@ -6,6 +6,7 @@ import * as Accordion from "@/app/docs/demos/accordion/index";
 import * as AccordionParts from "@/app/components/accordion/index.parts";
 import * as AlertDialog from "../components/alert-dialog/index.parts";
 import * as Tabs from "../components/tabs/index.parts";
+import * as Alert from "@/app/docs/demos/alert/index";
 import * as Autocomplete from "@/app/docs/demos/autocomplete/index";
 import * as Avatar from "@/app/docs/demos/avatar/index";
 import * as Button from "@/app/docs/demos/button/index";
@@ -22,7 +23,7 @@ import * as Menu from "@/app/docs/demos/menu/index";
 import * as Menubar from "@/app/docs/demos/menubar/index";
 import * as Meter from "@/app/docs/demos/meter/index";
 import * as Navigation from "@/app/docs/demos/navigation/index";
-import * as NumberInput from "@/app/docs/demos/number/index";
+import * as Number from "@/app/docs/demos/number/index";
 import * as Popover from "@/app/docs/demos/popover/index";
 import * as PreviewCard from "@/app/docs/demos/preview/index";
 import * as Progress from "@/app/docs/demos/progress/index";
@@ -37,6 +38,10 @@ import * as Tab from "@/app/docs/demos/tabs/index";
 import * as Toggle from "@/app/docs/demos/toggle/index";
 import * as Toolbar from "@/app/docs/demos/toolbar/index";
 import * as Tooltip from "@/app/docs/demos/tooltip/index";
+import * as Card from "@/app/docs/demos/card/index";
+import * as Badge from "@/app/docs/demos/badge/index";
+import * as BreadcrumbDemo from "@/app/docs/demos/breadcrumb/index";
+import * as PaginationDemo from "@/app/docs/demos/pagination/index";
 import {
   ChevronRight,
   Menu as MenuIcon,
@@ -52,6 +57,7 @@ import * as Icons from "lucide-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Image from "next/image";
+import { AnimatedThemeToggler } from "../ui/AnimatedThemeToggler";
 
 /* ─── types ──────────────────────────────────────────────────────────────── */
 interface DocEntry {
@@ -353,7 +359,12 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
         <div className="flex h-14 shrink-0 items-center justify-between border-b border-sidebar-border px-4">
           <a href="/" className="flex items-center gap-2.5">
             <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary">
-              <span className="text-[10px] font-bold text-primary-foreground">G</span>
+              <Image
+                src="/icon.svg"
+                alt="GnomeUI Logo"
+                width={24}
+                height={24}
+              />
             </div>
             <span className="text-sm font-semibold tracking-tight text-sidebar-foreground">GnomeUI</span>
           </a>
@@ -420,14 +431,16 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
               <span className="font-medium text-foreground">{activeDoc?.label}</span>
             </nav>
           </div>
+<div className="flex items-center gap-2">
+          <AnimatedThemeToggler />
           <a
-            href="https://github.com"
+            href="https://github.com/VMASPAD/gnome-react-ui"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-md border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
           >
             GitHub
-          </a>
+          </a></div>
         </header>
 
         <div className="flex flex-1 overflow-hidden">
@@ -439,7 +452,7 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
                   {...activeDoc.content}
                   components={{
                     Accordion,
-                    AlertDialog,
+                    Alert,
                     Autocomplete,
                     Icons,
                     Tabs,
@@ -460,7 +473,7 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
                     Meter,
                     Navigation,
                     Popover,
-                    NumberInput,
+                    Number,
                     PreviewCard,
                     Progress,
                     Radio,
@@ -473,6 +486,10 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
                     Toggle,
                     Toolbar,
                     Tooltip,
+                    Card,
+                    Badge,
+                    BreadcrumbDemo,
+                    PaginationDemo,
 
                     Subtitle: ({ children }: any) => (
                       <p className="mb-8 mt-1 text-base leading-relaxed text-muted-foreground">{children}</p>
@@ -535,7 +552,7 @@ export default function DocsClient({ docs }: { docs: DocEntry[] }) {
                     thead: (props: any) => <thead className="border-b border-border bg-muted/50" {...props} />,
                     tbody: (props: any) => <tbody className="divide-y divide-border/60" {...props} />,
                     th:    (props: any) => <th className="px-4 py-2.5 text-left text-[11px] font-semibold uppercase tracking-wide text-foreground" {...props} />,
-                    td:    (props: any) => <td className="px-4 py-3 align-top text-sm text-muted-foreground">{decodeChildren(props.children)}</td>,
+                    td:    (props: any) => <td className="px-4 py-3 align-top text-sm text-muted-foreground">{props.children}</td>,
                     tr:    ({ children, ...props }: any) => <tr className="transition-colors hover:bg-muted/40" {...props}>{children}</tr>,
                   }}
                 />

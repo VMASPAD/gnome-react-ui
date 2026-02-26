@@ -1,0 +1,87 @@
+---
+title: Breadcrumb
+---
+
+# Breadcrumb
+
+A file-explorer-style navigation trail showing the current location within a hierarchy. Composed of `Breadcrumb`, `BreadcrumbList`, `BreadcrumbItem`, `BreadcrumbLink`, `BreadcrumbSeparator`, and `BreadcrumbEllipsis`.
+
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[80px] items-center justify-center p-6 outline-none" value="preview">
+    <BreadcrumbDemo.BreadcrumbDefault />
+  </Tabs.Panel>
+</Tabs.Root>
+
+# Anatomy
+
+```tsx
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+} from 'gnome-ui/breadcrumb';
+
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbLink active>Current</BreadcrumbLink>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
+```
+
+# Examples
+
+## With Ellipsis
+
+Deep paths can be collapsed with `BreadcrumbEllipsis` to keep the trail compact.
+
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[80px] items-center justify-center p-6 outline-none" value="preview">
+    <BreadcrumbDemo.BreadcrumbWithEllipsis />
+  </Tabs.Panel>
+</Tabs.Root>
+
+---
+
+## Custom Separator
+
+Use a custom character like `/` instead of the default chevron icon.
+
+<Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
+  <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel className="flex min-h-[80px] items-center justify-center p-6 outline-none" value="preview">
+    <BreadcrumbDemo.BreadcrumbCustomSeparator />
+  </Tabs.Panel>
+</Tabs.Root>
+
+---
+
+### Props — BreadcrumbLink
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **active** | `boolean` | `false` | Marks the current page. Disables pointer events and applies bold text. |
+| **href** | `string` | — | The URL the link navigates to. |
+| **className** | `string` | — | Additional CSS classes. |
+
+### Props — BreadcrumbSeparator
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **children** | `ReactNode` | Chevron icon | Custom separator character or icon. |
+| **className** | `string` | — | Additional CSS classes. |

@@ -5,7 +5,7 @@ description: An easily stylable radio button component for selecting one option 
 
 # Radio
 
-Un radio button accesible y estilizable. `Radio.Root` renderiza un `<span>` con un `<input>` oculto a su lado — siempre se envuelve en un `<label>` para máxima accesibilidad. `RadioGroup` gestiona el estado compartido.
+An accessible and stylable radio button. `Radio.Root` renders a `<span>` with a hidden `<input>` next to it — always wrapped in a `<label>` for maximum accessibility. `RadioGroup` manages shared state.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
@@ -58,7 +58,7 @@ import { RadioGroup } from "gnome-ui/radio-group";
 
 ## With Descriptions
 
-Cada opción puede incluir título y descripción. Usa `has-[span[data-checked]]` en el `<label>` para estilizar el contenedor según el estado del radio interior.
+Each option can include a title and description. Use `has-[span[data-checked]]` on the `<label>` to style the container based on the inner radio state.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
@@ -102,7 +102,7 @@ Cada opción puede incluir título y descripción. Usa `has-[span[data-checked]]
 
 ## Controlled
 
-Usa `value` + `onValueChange` para controlar el estado externamente. Las opciones individuales aceptan `disabled`.
+Use `value` + `onValueChange` to control state externally. Individual options accept `disabled`.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">

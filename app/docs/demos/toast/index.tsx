@@ -22,9 +22,9 @@ const toastRootCls =
   "data-[starting-style]:opacity-0 data-[starting-style]:translate-y-4 " +
   "data-[ending-style]:opacity-0 data-[ending-style]:translate-x-full";
 
+// Fixed: removed data-[behind]:opacity-0 so stacked toasts always show their content
 const toastContentCls =
-  "overflow-hidden transition-opacity duration-200 " +
-  "data-[behind]:opacity-0 data-[expanded]:opacity-100";
+  "overflow-hidden transition-opacity duration-200 opacity-100";
 
 const toastCloseCls =
   "flex size-6 shrink-0 items-center justify-center rounded-md text-muted-foreground " +
@@ -37,7 +37,6 @@ const viewportCls =
   "data-[expanded]:gap-0";
 
 // ─── 1. ToastBasic ────────────────────────────────────────────────────────────
-// Toasts informativos básicos — título + descripción + close
 
 function ToastListBasic() {
   const { toasts } = Toast.useToastManager();
@@ -101,7 +100,6 @@ function ToastBasicTrigger() {
 }
 
 // ─── 2. ToastWithTypes ────────────────────────────────────────────────────────
-// Variantes success / error / warning con icono y acción "Undo"
 
 type ToastType = "success" | "error" | "warning" | "info";
 
@@ -235,7 +233,6 @@ function ToastTypeTriggers() {
 }
 
 // ─── 3. ToastPromise ──────────────────────────────────────────────────────────
-// toastManager.promise() — loading → success / error con transición de estado
 
 function ToastListPromise() {
   const { toasts } = Toast.useToastManager();

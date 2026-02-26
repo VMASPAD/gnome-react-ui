@@ -1,10 +1,9 @@
 "use client";
-"use client";
 import * as React from 'react';
 import { AlertDialog } from '@/app/components/alert-dialog';
 import { Trash2, LogOut, TriangleAlert, HardDriveUpload, CircleAlert } from 'lucide-react';
 
-export function Alert() {
+export function AlertNormal() {
   return (
     <AlertDialog.Root>
       <AlertDialog.Trigger className="inline-flex items-center gap-2 rounded-xl border border-destructive/30 bg-destructive/8 px-4 py-2 text-sm font-medium leading-none text-destructive transition-colors duration-150 hover:bg-destructive/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">

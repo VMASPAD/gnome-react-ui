@@ -16,7 +16,7 @@ export function ProgressDefault() {
       <div className="flex w-full items-center justify-between">
         <Progress.Label className="flex items-center gap-2 text-sm font-medium text-foreground">
           <Download className="size-4 text-muted-foreground" />
-          Descargando Ubuntu 24.04 LTS
+          Downloading Ubuntu 24.04 LTS
         </Progress.Label>
         <Progress.Value className="text-sm font-medium text-muted-foreground" />
       </div>
@@ -33,11 +33,11 @@ export function ProgressIndeterminate() {
       <div className="flex w-full items-center justify-between">
         <Progress.Label className="flex items-center gap-2 text-sm font-medium text-foreground">
           <RefreshCw className="size-4 animate-spin text-muted-foreground" />
-          Sincronizando repositorios...
+          Syncing repositories...
         </Progress.Label>
       </div>
       <Progress.Track className="h-1.5 w-full overflow-hidden rounded-full bg-secondary">
-        {/* Utilizamos animate-pulse y ancho completo para el estado indeterminado si no hay keyframes personalizados */}
+        {/* Use animate-pulse and full width for indeterminate state if no custom keyframes */}
         <Progress.Indicator className="h-full bg-primary transition-all duration-500 ease-in-out data-[state=indeterminate]:w-full data-[state=indeterminate]:animate-pulse" />
       </Progress.Track>
     </Progress.Root>
@@ -53,10 +53,10 @@ export function ProgressSteps() {
       <div className="flex w-full items-center justify-between">
         <Progress.Label className="flex items-center gap-2 text-sm font-medium text-foreground">
           <UploadCloud className="size-4 text-muted-foreground" />
-          Subiendo archivos
+          Uploading files
         </Progress.Label>
         <span className="text-sm font-medium text-muted-foreground">
-          Paso {step} de {totalSteps}
+          Step {step} of {totalSteps}
         </span>
       </div>
       <Progress.Track className="h-1.5 w-full overflow-hidden rounded-full bg-secondary">

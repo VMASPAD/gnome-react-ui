@@ -12,7 +12,7 @@ export function ComboboxDefault() {
       <div className="flex h-10 w-full items-center justify-between rounded-xl border border-input bg-card px-3 text-sm text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
         <Combobox.Input 
           className="flex-1 bg-transparent outline-none placeholder:text-muted-foreground" 
-          placeholder="Selecciona un framework..." 
+          placeholder="Select a framework..." 
         />
         <Combobox.Trigger className="ml-2 shrink-0 text-muted-foreground hover:text-foreground">
           <ChevronDown className="size-4" />
@@ -24,7 +24,7 @@ export function ComboboxDefault() {
           <Combobox.Popup className="overflow-hidden rounded-xl border border-border bg-popover p-1 text-popover-foreground shadow-md outline-none">
             <Combobox.List className="max-h-60 overflow-y-auto">
               <Combobox.Empty className="py-6 text-center text-sm text-muted-foreground">
-                No se encontraron resultados.
+                No results found.
               </Combobox.Empty>
               {frameworks.map((fw) => (
                 <Combobox.Item 
@@ -69,7 +69,7 @@ export function ComboboxMultiple() {
         </Combobox.Chips>
         <Combobox.Input 
           className="flex-1 min-w-[120px] bg-transparent px-2 py-1 outline-none placeholder:text-muted-foreground" 
-          placeholder="Añadir más..." 
+          placeholder="Add more..." 
         />
       </div>
       
@@ -78,10 +78,10 @@ export function ComboboxMultiple() {
           <Combobox.Popup className="overflow-hidden rounded-xl border border-border bg-popover p-1 text-popover-foreground shadow-md outline-none">
             <Combobox.List className="max-h-60 overflow-y-auto">
               <Combobox.Empty className="py-6 text-center text-sm text-muted-foreground">
-                No hay más opciones.
+                No more options.
               </Combobox.Empty>
-                  {frameworks.map((fw) => (
-                    <Combobox.Item 
+              {frameworks.map((fw) => (
+                <Combobox.Item 
                   key={fw} 
                   value={fw} 
                   className="relative flex w-full cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[highlighted]:bg-primary data-[highlighted]:text-primary-foreground"

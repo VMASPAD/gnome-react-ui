@@ -17,7 +17,7 @@ const thumbCls =
 const cornerCls = "bg-muted";
 
 // ─── 1. ScrollAreaVertical ────────────────────────────────────────────────────
-// Caso básico — texto largo con scrollbar vertical
+// Basic case — long text with vertical scrollbar
 
 const loremParagraphs = [
   "Vernacular architecture is building done outside any academic tradition, and without professional guidance. It is not a particular architectural movement or style, but rather a broad category, encompassing a wide range and variety of building types.",
@@ -50,7 +50,7 @@ export function ScrollAreaVertical() {
 }
 
 // ─── 2. ScrollAreaBothAxes ────────────────────────────────────────────────────
-// Horizontal + vertical con Corner — tabla ancha como caso de uso real
+// Horizontal + vertical with Corner — wide table as a real use case
 
 const tableHeaders = ["Name", "Role", "Department", "Location", "Status", "Joined", "Manager"];
 const tableRows = [
@@ -128,7 +128,7 @@ export function ScrollAreaBothAxes() {
 }
 
 // ─── 3. ScrollAreaCodeBlock ───────────────────────────────────────────────────
-// Scroll horizontal en bloque de código — uso real muy frecuente
+// Horizontal scroll in code block — very common use case
 
 const codeLines = [
   `import { ScrollArea } from "@base-ui-components/react/scroll-area";`,
