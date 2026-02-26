@@ -165,7 +165,7 @@ const inputBase =
         <div className="relative container mx-auto max-w-5xl px-4 text-center">
           <Badge className="mb-6 inline-flex items-center gap-1.5 py-1 px-4 border border-primary/30 bg-primary/8 text-primary rounded-full text-xs font-semibold">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Introducing GnomeUI v1.0
+            Introducing GnomeUI v1.9
           </Badge>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-foreground mb-6 leading-[1.1]">
