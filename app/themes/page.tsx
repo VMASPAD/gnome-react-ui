@@ -105,7 +105,6 @@ export default function ThemesPage() {
           <h2 className="text-2xl font-bold tracking-tight">Color Themes</h2>
           <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-xl">
             Choose a primary accent color that applies globally to every component.
-            Your preference is saved in <code className="rounded border border-border/60 bg-muted px-1 py-0.5 text-[0.8em] font-mono">localStorage</code> and loaded automatically.
           </p>
         </div>
 
