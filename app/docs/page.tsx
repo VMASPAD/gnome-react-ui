@@ -1,10 +1,9 @@
-// app/docs/page.tsx
-import { getAllDocs } from './getDocs';
-import DocsClient from './DocsClient';
+// app/docs/page.tsx – redirect to the first doc
+import { redirect } from "next/navigation";
+import { getDocSlugs } from "./lib/docs";
 
-export const dynamic = 'force-dynamic';
-
-export default async function page() {
-  const docs = await getAllDocs();
-  return <DocsClient docs={docs} />;
+export default function DocsIndexPage() {
+  const slugs = getDocSlugs();
+  const first = slugs[0] ?? "Accordion";
+  redirect(`/docs/${first}`);
 }
