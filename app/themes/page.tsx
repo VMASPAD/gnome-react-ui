@@ -1,4 +1,4 @@
-"use client";
+
 import { useState, useEffect } from "react";
 import { Palette, Check, ArrowLeft } from "lucide-react";
 import Link from "next/link";

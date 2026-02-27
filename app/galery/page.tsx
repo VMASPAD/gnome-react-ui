@@ -1,4 +1,4 @@
-"use client";
+
 import { ComponentProps, ReactNode, useState } from "react";
 import {
   Accordion,

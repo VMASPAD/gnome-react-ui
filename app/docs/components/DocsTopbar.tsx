@@ -1,4 +1,5 @@
 "use client";
+
 import * as React from "react";
 import { usePathname } from "next/navigation";
 import { ChevronRight, Menu as MenuIcon } from "lucide-react";

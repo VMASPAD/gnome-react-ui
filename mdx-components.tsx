@@ -1,3 +1,4 @@
+
 // mdx-components.tsx  — Global MDX component registry for @next/mdx
 // This file is required by Next.js App Router for MDX file-based routing.
 import type { MDXComponents } from "mdx/types";
