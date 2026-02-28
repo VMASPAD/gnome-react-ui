@@ -1,4 +1,4 @@
-"use client";
+
 import { Collapsible } from '@/app/components/collapsible';
 import { ChevronDown, Key, Terminal, Info, FileCode2, GitBranch, Wifi } from 'lucide-react';
 

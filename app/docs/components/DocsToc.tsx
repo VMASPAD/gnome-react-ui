@@ -1,49 +1,19 @@
 "use client";
 
 import * as React from "react";
-import * as Icons from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import type { Heading } from "../lib/docs";
 
-interface Heading {
-  id: string;
-  text: string;
-  level: number;
-}
-
-export function extractHeadings(md: string): Heading[] {
-  const headings: Heading[] = [];
-  const idCount = new Map<string, number>();
-  // Strip code blocks so fenced headers aren't extracted
-  const stripped = md.replace(/```[\s\S]*?```/g, "");
-  const re = /^(#{1,3})\s+(.+)$/gm;
-  let m: RegExpExecArray | null;
-  while ((m = re.exec(stripped)) !== null) {
-    const text = m[2].trim();
-    const baseId = text
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, "")
-      .replace(/\s+/g, "-");
-    const count = idCount.get(baseId) ?? 0;
-    idCount.set(baseId, count + 1);
-    headings.push({
-      id: count === 0 ? baseId : `${baseId}-${count + 1}`,
-      text,
-      level: m[1].length,
-    });
-  }
-  return headings;
-}
-
-export function DocsToc({ raw }: { raw: string }) {
-  const headings = React.useMemo(() => extractHeadings(raw), [raw]);
-  const [activeHeading, setActiveHeading] = React.useState("");
-  const { ChevronRight } = Icons;
+/** Client island — only the IntersectionObserver scroll tracking needs the browser. */
+export function DocsToc({ headings }: { headings: Heading[] }) {
+  const [activeId, setActiveId] = React.useState("");
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
           if (e.isIntersecting) {
-            setActiveHeading(e.target.id);
+            setActiveId(e.target.id);
             break;
           }
         }
@@ -54,7 +24,7 @@ export function DocsToc({ raw }: { raw: string }) {
       .querySelectorAll("h1[id],h2[id],h3[id],h4[id]")
       .forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, [raw]);
+  }, [headings]);
 
   if (headings.length === 0) return null;
 
@@ -66,7 +36,7 @@ export function DocsToc({ raw }: { raw: string }) {
       <nav>
         <ul className="space-y-0.5">
           {headings.map((h) => {
-            const isActive = activeHeading === h.id;
+            const isActive = activeId === h.id;
             return (
               <li key={h.id}>
                 <a

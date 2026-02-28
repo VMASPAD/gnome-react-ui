@@ -2,15 +2,19 @@
 
 import * as React from "react";
 import { DocsSidebar } from "./DocsSidebar";
+import { DocsTopbar } from "./DocsTopbar";
 import type { DocMeta } from "../lib/docs";
 
+/**
+ * Client island — manages sidebar open/close state only.
+ * DocsTopbar is rendered here directly so we can pass onOpenSidebar
+ * as a regular prop (no cloneElement needed).
+ */
 export function DocsShell({
   docs,
-  topbar,
   children,
 }: {
   docs: DocMeta[];
-  topbar: React.ReactNode;
   children: React.ReactNode;
 }) {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
@@ -23,12 +27,7 @@ export function DocsShell({
         onClose={() => setSidebarOpen(false)}
       />
       <div className="flex flex-1 flex-col overflow-hidden">
-        {/* Topbar receives a setter so the hamburger can open the sidebar */}
-        {React.isValidElement(topbar)
-          ? React.cloneElement(topbar as React.ReactElement<{ onOpenSidebar?: () => void }>, {
-              onOpenSidebar: () => setSidebarOpen(true),
-            })
-          : topbar}
+        <DocsTopbar onOpenSidebar={() => setSidebarOpen(true)} />
         {children}
       </div>
     </div>

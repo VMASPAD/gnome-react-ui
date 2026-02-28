@@ -1,4 +1,3 @@
-"use client";
 
 import { Accordion } from '@/app/components/accordion';
 import { ChevronUpIcon, FolderIcon, PlusIcon } from 'lucide-react';
