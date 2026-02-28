@@ -1,4 +1,4 @@
-
+"use client";
 import { Autocomplete } from '@/app/components/autocomplete';
 import { Tag, Search, Settings, Globe, ChevronDown, X } from 'lucide-react';
 

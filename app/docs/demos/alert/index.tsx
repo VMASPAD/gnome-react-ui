@@ -1,4 +1,4 @@
-
+"use client";
 
 import * as React from 'react';
 import { AlertDialog } from '@/app/components/alert-dialog';
