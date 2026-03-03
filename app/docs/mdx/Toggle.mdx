@@ -17,9 +17,6 @@ import * as React from 'react';
 import { Toggle } from 'gnome-ui/toggle';
 import { Italic } from 'lucide-react';
 
-const toggleBase =
-  'inline-flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground';
-
 export function ToggleDefault() {
   const [pressed, setPressed] = React.useState(false);
   
@@ -27,7 +24,7 @@ export function ToggleDefault() {
     <Toggle 
       pressed={pressed} 
       onPressedChange={setPressed} 
-      className={toggleBase}
+      className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground"
       aria-label="Toggle italic"
     >
       <Icons.Italic className="size-4" />
@@ -80,8 +77,6 @@ import { Toggle } from 'gnome-ui/toggle';
 import { ToggleGroup } from 'gnome-ui/toggle-group';
 import { AlignLeft, AlignCenter, AlignRight } from 'lucide-react';
 
-// ... (toggleBase classes)
-
 export function ToggleGroupSingle() {
   const [value, setValue] = React.useState<string[]>(['left']);
 
@@ -91,13 +86,13 @@ export function ToggleGroupSingle() {
       onValueChange={setValue} 
       className="inline-flex items-center gap-1 rounded-xl border border-border bg-card p-1 shadow-sm"
     >
-      <Toggle value="left" className={toggleBase} aria-label="Align left">
+      <Toggle value="left" className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground" aria-label="Align left">
         <Icons.AlignLeft className="size-4" />
       </Toggle>
-      <Toggle value="center" className={toggleBase} aria-label="Align center">
+      <Toggle value="center" className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground" aria-label="Align center">
         <Icons.AlignCenter className="size-4" />
       </Toggle>
-      <Toggle value="right" className={toggleBase} aria-label="Align right">
+      <Toggle value="right" className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground" aria-label="Align right">
         <Icons.AlignRight className="size-4" />
       </Toggle>
     </ToggleGroup>
@@ -132,8 +127,6 @@ import { Toggle } from 'gnome-ui/toggle';
 import { ToggleGroup } from 'gnome-ui/toggle-group';
 import { Bold, Italic, Underline } from 'lucide-react';
 
-// ... (toggleBase classes)
-
 export function ToggleGroupMultiple() {
   const [value, setValue] = React.useState<string[]>(['bold']);
 
@@ -144,13 +137,13 @@ export function ToggleGroupMultiple() {
       onValueChange={setValue} 
       className="inline-flex items-center gap-1 rounded-xl border border-border bg-card p-1 shadow-sm"
     >
-      <Toggle value="bold" className={toggleBase} aria-label="Bold">
+      <Toggle value="bold" className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground" aria-label="Bold">
         <Icons.Bold className="size-4" />
       </Toggle>
-      <Toggle value="italic" className={toggleBase} aria-label="Italic">
+      <Toggle value="italic" className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground" aria-label="Italic">
         <Icons.Italic className="size-4" />
       </Toggle>
-      <Toggle value="underline" className={toggleBase} aria-label="Underline">
+      <Toggle value="underline" className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground" aria-label="Underline">
         <Icons.Underline className="size-4" />
       </Toggle>
     </ToggleGroup>

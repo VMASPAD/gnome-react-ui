@@ -264,21 +264,18 @@ const inputBase =
                 <span className="text-xs text-muted-foreground font-medium">Just shipped</span>
               </div>
               <h2 className="text-lg font-bold text-foreground mb-1">
-                5 new components are available
+                2 new components are available
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                We&apos;ve added <strong className="text-foreground">Card</strong>, <strong className="text-foreground">Badge</strong>, <strong className="text-foreground">Breadcrumb</strong>, <strong className="text-foreground">Pagination</strong>, and a global <strong className="text-foreground">RTL</strong> CSS utility — all built on the GNOME design tokens.
+                We&apos;ve added <strong className="text-foreground">Textarea</strong> and <strong className="text-foreground">Label</strong> — all built on the GNOME design tokens.
               </p>
             </div>
 
             {/* Middle: Component chips */}
             <div className="flex flex-wrap gap-2 relative z-10 shrink-0">
               {[
-                { label: "Card", desc: "4 variants", color: "bg-primary/10 border-primary/20 text-primary" },
-                { label: "Badge", desc: "7 variants · 3 sizes", color: "bg-[oklch(0.45_0.15_150)]/10 border-[oklch(0.45_0.15_150)]/20 text-[oklch(0.45_0.15_150)] dark:text-[oklch(0.65_0.18_150)]" },
-                { label: "Breadcrumb", desc: "File explorer nav", color: "bg-[oklch(0.55_0.12_250)]/10 border-[oklch(0.55_0.12_250)]/20 text-[oklch(0.55_0.12_250)] dark:text-[oklch(0.65_0.15_250)]" },
-                { label: "Pagination", desc: "Page navigation", color: "bg-[oklch(0.45_0.12_330)]/10 border-[oklch(0.45_0.12_330)]/20 text-[oklch(0.45_0.12_330)] dark:text-[oklch(0.65_0.15_330)]" },
-                { label: "RTL", desc: "Global CSS class", color: "bg-muted border-border text-muted-foreground" },
+                { label: "Textarea", desc: "3 variants", color: "bg-primary/10 border-primary/20 text-primary" },
+                { label: "Label", desc: "3 variants", color: "bg-[oklch(0.45_0.15_150)]/10 border-[oklch(0.45_0.15_150)]/20 text-[oklch(0.45_0.15_150)] dark:text-[oklch(0.65_0.18_150)]" },
               ].map(({ label, desc, color }) => (
                 <div
                   key={label}
@@ -333,7 +330,7 @@ const inputBase =
                   </CardDescription>
                 </CardHeader>
                 <CardFooter className="px-6 pb-6 pt-0">
-                  <a href="/docs" className="text-xs font-semibold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-150">
+                  <a href={`/docs/${component.name}`} className="text-xs font-semibold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-150">
                     See Documentation <ArrowRight className="h-3 w-3" />
                   </a>
                 </CardFooter>

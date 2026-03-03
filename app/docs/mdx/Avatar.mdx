@@ -5,8 +5,52 @@ An easily stylable avatar component.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
   </Tabs.List>
+  <Tabs.Panel value="code">
+
+```tsx
+import { Avatar } from 'gnome-ui/avatar';
+import { User } from 'lucide-react';
+
+function AvatarDefault() {
+  return (
+    <div className="flex items-center gap-4">
+      {/* With image */}
+      <Avatar.Root className="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full ring-2 ring-border">
+        <Avatar.Image
+          src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=128&h=128&dpr=2&q=80"
+          className="h-full w-full object-cover"
+        />
+        <Avatar.Fallback
+          delay={300}
+          className="flex h-full w-full items-center justify-center bg-muted text-xs font-semibold uppercase text-muted-foreground"
+        >
+          LT
+        </Avatar.Fallback>
+      </Avatar.Root>
+
+      {/* Initials fallback */}
+      <Avatar.Root className="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full ring-2 ring-border">
+        <Avatar.Fallback className="flex h-full w-full items-center justify-center bg-primary/10 text-xs font-semibold uppercase text-primary">
+          AB
+        </Avatar.Fallback>
+      </Avatar.Root>
+
+      {/* Icon fallback */}
+      <Avatar.Root className="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full ring-2 ring-border">
+        <Avatar.Fallback className="flex h-full w-full items-center justify-center bg-muted text-muted-foreground">
+          <User className="size-5" />
+        </Avatar.Fallback>
+      </Avatar.Root>
+    </div>
+  );
+}
+```
+
+  </Tabs.Panel>
   <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
     <Avatar.AvatarDefault />
   </Tabs.Panel>
@@ -31,8 +75,49 @@ Avatar rendered at multiple sizes, useful for different layout contexts such as 
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
   </Tabs.List>
+  <Tabs.Panel value="code">
+
+```tsx
+import { Avatar } from 'gnome-ui/avatar';
+
+const sizes = [
+  { cls: 'h-7 w-7', text: 'text-[10px]', initials: 'JD' },
+  { cls: 'h-9 w-9', text: 'text-xs', initials: 'JD' },
+  { cls: 'h-11 w-11', text: 'text-sm', initials: 'JD' },
+  { cls: 'h-14 w-14', text: 'text-base', initials: 'JD' },
+  { cls: 'h-20 w-20', text: 'text-xl', initials: 'JD' },
+];
+
+function AvatarSizes() {
+  return (
+    <div className="flex items-center gap-4">
+      {sizes.map(({ cls, text, initials }, i) => (
+        <Avatar.Root
+          key={i}
+          className={`relative flex shrink-0 overflow-hidden rounded-full ring-2 ring-border ${cls}`}
+        >
+          <Avatar.Image
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=128&h=128&dpr=2&q=80"
+            className="h-full w-full object-cover"
+          />
+          <Avatar.Fallback
+            delay={300}
+            className={`flex h-full w-full items-center justify-center bg-primary/10 font-semibold uppercase text-primary ${text}`}
+          >
+            {initials}
+          </Avatar.Fallback>
+        </Avatar.Root>
+      ))}
+    </div>
+  );
+}
+```
+
+  </Tabs.Panel>
   <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
     <Avatar.AvatarSizes />
   </Tabs.Panel>
@@ -46,8 +131,109 @@ Overlapping avatar stack with an overflow badge and a collaborator list, inspire
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2">
+    <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="code">Code</Tabs.Tab>
     <Tabs.Tab className="relative flex h-10 min-w-[96px] cursor-pointer items-center justify-center px-4 text-center text-sm font-medium whitespace-nowrap text-gray-500 outline-none select-none transition-colors duration-150 hover:text-gray-800 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded data-[active]:text-gray-900 data-[active]:font-semibold" value="preview">Preview</Tabs.Tab>
+    <Tabs.Indicator className="absolute bottom-0 left-0 h-0.5 w-[var(--active-tab-width)] translate-x-[var(--active-tab-left)] rounded-full bg-primary transition-all duration-200 ease-in-out" />
   </Tabs.List>
+  <Tabs.Panel value="code">
+
+```tsx
+import { Avatar } from 'gnome-ui/avatar';
+import { User, Bot, Shield } from 'lucide-react';
+
+const users = [
+  {
+    src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=128&h=128&dpr=2&q=80',
+    initials: 'SA',
+    bg: 'bg-[oklch(0.88_0.08_35)]',
+    text: 'text-[oklch(0.45_0.15_35)]',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=128&h=128&dpr=2&q=80',
+    initials: 'MK',
+    bg: 'bg-[oklch(0.88_0.06_250)]',
+    text: 'text-[oklch(0.4_0.12_250)]',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=128&h=128&dpr=2&q=80',
+    initials: 'EL',
+    bg: 'bg-[oklch(0.88_0.07_150)]',
+    text: 'text-[oklch(0.4_0.12_150)]',
+  },
+  {
+    src: '',
+    initials: 'RB',
+    bg: 'bg-[oklch(0.88_0.07_330)]',
+    text: 'text-[oklch(0.4_0.12_330)]',
+  },
+];
+
+function AvatarGroup() {
+  return (
+    <div className="flex flex-col gap-3">
+      {/* Stack */}
+      <div className="flex items-center">
+        <div className="flex -space-x-2.5">
+          {users.map(({ src, initials, bg, text }, i) => (
+            <Avatar.Root
+              key={i}
+              className="relative flex h-9 w-9 shrink-0 overflow-hidden rounded-full ring-2 ring-card"
+              style={{ zIndex: users.length - i }}
+            >
+              <Avatar.Image src={src} className="h-full w-full object-cover" />
+              <Avatar.Fallback
+                delay={300}
+                className={`flex h-full w-full items-center justify-center text-xs font-semibold uppercase ${bg} ${text}`}
+              >
+                {initials}
+              </Avatar.Fallback>
+            </Avatar.Root>
+          ))}
+          {/* Overflow badge */}
+          <span
+            className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted ring-2 ring-card text-xs font-semibold text-muted-foreground"
+            style={{ zIndex: 0 }}
+          >
+            +8
+          </span>
+        </div>
+        <span className="ml-3 text-sm text-muted-foreground">12 members</span>
+      </div>
+
+      {/* List with meta */}
+      <div className="flex flex-col divide-y divide-border rounded-xl border border-border bg-card overflow-hidden">
+        {users.slice(0, 3).map(({ src, initials, bg, text }, i) => {
+          const names = ['Sara A.', 'Marco K.', 'Elena L.'];
+          const roles = ['Owner', 'Editor', 'Viewer'];
+          const RoleIcon = i === 0 ? Shield : i === 1 ? Bot : User;
+          return (
+            <div key={i} className="flex items-center gap-3 px-4 py-2.5">
+              <Avatar.Root className="relative flex h-8 w-8 shrink-0 overflow-hidden rounded-full">
+                <Avatar.Image src={src} className="h-full w-full object-cover" />
+                <Avatar.Fallback
+                  delay={300}
+                  className={`flex h-full w-full items-center justify-center text-[10px] font-semibold uppercase ${bg} ${text}`}
+                >
+                  {initials}
+                </Avatar.Fallback>
+              </Avatar.Root>
+              <span className="flex-1 text-sm font-medium text-foreground">
+                {names[i]}
+              </span>
+              <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-[11px] text-muted-foreground">
+                <RoleIcon className="size-3 shrink-0" />
+                {roles[i]}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+```
+
+  </Tabs.Panel>
   <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none" value="preview">
     <Avatar.AvatarGroup />
   </Tabs.Panel>

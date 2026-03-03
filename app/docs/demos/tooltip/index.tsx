@@ -11,8 +11,8 @@ function TooltipArrowSvg() {
   return (
     <svg width="20" height="10" viewBox="0 0 20 10" fill="none">
       <path
-        d="M0 0 L10 10 L20 0"
-        className="fill-[oklch(0.25_0.02_330)] stroke-border stroke-[0.5]"
+        d="M9.66437 2.60207L4.2318 8.60207C3.7616 9.13191 4.14083 10 4.83073 10H15.6959C16.3858 10 16.765 9.13191 16.2948 8.60207L10.8622 2.60207C10.4883 2.17746 10.0383 2.17746 9.66437 2.60207Z"
+        className="fill-sidebar stroke-border stroke-[0.5]"
       />
     </svg>
   );
@@ -21,7 +21,7 @@ function TooltipArrowSvg() {
 // ─── Shared popup style ───────────────────────────────────────────────────────
 
 const popupCls =
-  'rounded-xl bg-[oklch(0.25_0.02_330)] px-2.5 py-1.5 text-xs font-medium text-white shadow-lg outline-none transition-all duration-150 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0 origin-[var(--transform-origin)]';
+  'rounded-xl bg-sidebar px-2.5 py-1.5 text-xs font-medium text-white shadow-lg outline-none transition-all duration-150 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0 origin-[var(--transform-origin)]';
 
 // ─── Default — toolbar with grouped tooltips ──────────────────────────────────
 // Inspired by GNOME Text Editor toolbar — instant switch between adjacent tooltips
@@ -51,7 +51,7 @@ export function TooltipDefault() {
             <Tooltip.Portal>
               <Tooltip.Positioner sideOffset={8} side="bottom">
                 <Tooltip.Popup className={popupCls}>
-                  <Tooltip.Arrow className="flex">
+                  <Tooltip.Arrow className="flex data-[side=bottom]:-translate-y-[1px] data-[side=top]:translate-y-[1px] data-[side=left]:-translate-x-[1px] data-[side=right]:translate-x-[1px]">
                     <TooltipArrowSvg />
                   </Tooltip.Arrow>
                   <span className="flex items-center gap-2">
@@ -77,8 +77,8 @@ export function TooltipSides() {
   const sides = [
     { side: 'top'    as const, label: 'Top',    icon: Info },
     { side: 'right'  as const, label: 'Right',  icon: Info },
-    { side: 'bottom' as const, label: 'Bottom', icon: Info },
-    { side: 'left'   as const, label: 'Left',   icon: Info },
+    { side: 'left' as const, label: 'Left', icon: Info },
+    { side: 'bottom'   as const, label: 'Bottom',   icon: Info },
   ];
 
   return (
@@ -138,10 +138,10 @@ export function TooltipRich() {
             <Tooltip.Portal>
               <Tooltip.Positioner sideOffset={10} side="top">
                 <Tooltip.Popup className="rounded-xl border border-border bg-card p-3 shadow-xl outline-none transition-all duration-150 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0 origin-[var(--transform-origin)]">
-                  <Tooltip.Arrow className="flex">
+                  <Tooltip.Arrow className="flex data-[side=bottom]:-translate-y-[1px] data-[side=top]:translate-y-[1px] data-[side=left]:-translate-x-[1px] data-[side=right]:translate-x-[1px]">
                     <svg width="20" height="10" viewBox="0 0 20 10" fill="none">
                       <path
-                        d="M0 0 L10 10 L20 0"
+                        d="M9.66437 2.60207L4.2318 8.60207C3.7616 9.13191 4.14083 10 4.83073 10H15.6959C16.3858 10 16.765 9.13191 16.2948 8.60207L10.8622 2.60207C10.4883 2.17746 10.0383 2.17746 9.66437 2.60207Z"
                         className="fill-card stroke-border stroke-[0.5]"
                       />
                     </svg>

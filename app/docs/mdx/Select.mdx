@@ -130,7 +130,7 @@ export function SelectGrouped() {
             <Select.List className="p-1">
               <Select.Group>
                 <Select.GroupLabel className="px-8 py-1.5 text-xs font-semibold text-muted-foreground">
-                  Basadas en Debian
+                  Debian-based
                 </Select.GroupLabel>
                 {['Ubuntu', 'Linux Mint', 'Pop!_OS'].map((item) => (
                   <Select.Item key={item} value={item} className="relative flex w-full cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none data-[highlighted]:bg-primary data-[highlighted]:text-primary-foreground">
@@ -146,7 +146,7 @@ export function SelectGrouped() {
               
               <Select.Group>
                 <Select.GroupLabel className="px-8 py-1.5 text-xs font-semibold text-muted-foreground">
-                  Basadas en Arch
+                  Arch-based
                 </Select.GroupLabel>
                 {['Arch Linux', 'Manjaro', 'EndeavourOS'].map((item) => (
                   <Select.Item key={item} value={item} className="relative flex w-full cursor-default select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none data-[highlighted]:bg-primary data-[highlighted]:text-primary-foreground">
@@ -229,7 +229,7 @@ export function SelectMultiple() {
           </Select.Positioner>
         </Select.Portal>
       </Select.Root>
-      <p className="text-xs text-muted-foreground">Paquetes a instalar: {value.length}</p>
+      <p className="text-xs text-muted-foreground">Packages to install: {value.length}</p>
     </div>
   );
 }

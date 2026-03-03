@@ -38,7 +38,7 @@ export function MeterFormatted() {
       </div>
       <Meter.Track className="h-2.5 w-full overflow-hidden rounded-full bg-secondary">
         {/* Usando el azul de GNOME/Yaru para diferenciarlo */}
-        <Meter.Indicator className="h-full bg-[oklch(0.55_0.12_250)] transition-all duration-500 ease-in-out" />
+        <Meter.Indicator className="h-full bg-chart-3 transition-all duration-500 ease-in-out" />
       </Meter.Track>
       <div className="flex justify-between text-xs text-muted-foreground">
         <span>$0</span>

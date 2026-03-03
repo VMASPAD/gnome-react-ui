@@ -87,7 +87,7 @@ export function ButtonLoading() {
         base,
         'h-9 px-5 min-w-[130px]',
         status === 'done'
-          ? 'bg-[oklch(0.55_0.15_150)] text-white'
+          ? 'bg-success text-white'
           : 'bg-primary text-primary-foreground hover:brightness-95 active:brightness-90',
         'disabled:opacity-100 disabled:brightness-90',
       ].join(' ')}

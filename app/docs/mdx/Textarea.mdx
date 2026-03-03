@@ -1,9 +1,8 @@
+# Textarea
 
-# Input
+A multi-line text input component for longer form content. Built with consistent GNOME-style theming.
 
-A basic native input element that automatically integrates with Field components for accessibility and validation.
-
-Documentation: [Base UI Input](https://base-ui.com/react/components/input)
+Documentation: [Base UI Textarea](https://base-ui.com/react/components/textarea)
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
@@ -14,14 +13,15 @@ Documentation: [Base UI Input](https://base-ui.com/react/components/input)
   <Tabs.Panel value="code">
 ```tsx
 import * as React from 'react';
-import { Input } from 'gnome-ui/input';
+import { Textarea } from 'gnome-ui/textarea';
 
-export function InputDefault() {
+export function TextareaDefault() {
   return (
     <div className="w-full max-w-sm">
-      <Input 
-        className="flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50" 
-        placeholder="Type something here..." 
+      <Textarea 
+        className="flex min-h-[80px] w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 resize-y"
+        placeholder="Write your message..." 
+        rows={4}
       />
     </div>
   );
@@ -31,16 +31,16 @@ export function InputDefault() {
 
 </Tabs.Panel>
 <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
-<Input.InputDefault />
+<Textarea.TextareaDefault />
 </Tabs.Panel>
 </Tabs.Root>
 
 # Anatomy
 
 ```tsx
-import { Input } from 'gnome-ui/input';
+import { Textarea } from 'gnome-ui/textarea';
 
-<Input />
+<Textarea />
 
 ```
 
@@ -48,7 +48,7 @@ import { Input } from 'gnome-ui/input';
 
 ## Disabled
 
-The input can be disabled to prevent user interaction. It styles automatically based on the disabled state.
+The textarea can be disabled to prevent user interaction. It styles automatically based on the disabled state.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
@@ -60,20 +60,22 @@ The input can be disabled to prevent user interaction. It styles automatically b
 
 ```tsx
 import * as React from 'react';
-import { Input } from 'gnome-ui/input';
+import { Textarea } from 'gnome-ui/textarea';
 
-export function InputDisabled() {
+export function TextareaDisabled() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-4">
-      <Input 
+      <Textarea 
         disabled 
-        className="flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50" 
-        placeholder="Disabled input" 
+        className="flex min-h-[80px] w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 resize-y"
+        placeholder="Disabled textarea" 
+        rows={3}
       />
-      <Input 
+      <Textarea 
         disabled 
-        className="flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50" 
-        defaultValue="ubuntu-admin@local" 
+        className="flex min-h-[80px] w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 resize-y"
+        defaultValue="This textarea is disabled and cannot be edited."
+        rows={3}
       />
     </div>
   );
@@ -83,15 +85,15 @@ export function InputDisabled() {
 
 </Tabs.Panel>
 <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
-<Input.InputDisabled />
+<Textarea.TextareaDisabled />
 </Tabs.Panel>
 </Tabs.Root>
 
 ---
 
-## File Input
+## With Label
 
-The standard Input component can also handle `type="file"` cleanly using Tailwind's `file:` modifiers to style the file picker button.
+Pair a Textarea with a label and helper text for complete form fields.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
@@ -103,15 +105,23 @@ The standard Input component can also handle `type="file"` cleanly using Tailwin
 
 ```tsx
 import * as React from 'react';
-import { Input } from 'gnome-ui/input';
+import { Textarea } from 'gnome-ui/textarea';
 
-export function InputFile() {
+export function TextareaWithLabel() {
   return (
-    <div className="w-full max-w-sm">
-      <Input 
-        type="file" 
-        className="flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer file:mr-4 file:cursor-pointer file:font-semibold file:text-primary hover:file:text-primary/80" 
+    <div className="flex w-full max-w-sm flex-col gap-2">
+      <label className="text-sm font-medium text-foreground" htmlFor="bio">
+        Bio
+      </label>
+      <Textarea 
+        id="bio"
+        className="flex min-h-[80px] w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 resize-y"
+        placeholder="Tell us about yourself..."
+        rows={4}
       />
+      <p className="text-xs text-muted-foreground">
+        Write a short description about yourself.
+      </p>
     </div>
   );
 }
@@ -120,28 +130,26 @@ export function InputFile() {
 
 </Tabs.Panel>
 <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
-<Input.InputFile />
+<Textarea.TextareaWithLabel />
 </Tabs.Panel>
 </Tabs.Root>
-
-```
-
-```
-
-A native input element that automatically works with [Field](https://base-ui.com/react/components/field).
-Renders an `&lt;input&gt;` element.
-
-Documentation: [Base UI Input](https://base-ui.com/react/components/input)
+ 
+ 
+A multi-line text input element for longer form content.
+Renders a `<textarea>` element.
 
 ### Props
 
 | Prop | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
-| **defaultValue** | `string \| number \| readonly string[]` | — | The default value of the input. Use when uncontrolled. |
-| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
-| **value** | `string \| number \| readonly string[]` | — | The value of the input. Use when controlled. |
-| **onValueChange** | `(...) => void` | — | Callback fired when the `value` changes. Use when controlled. |
+| **className** | string | — | CSS class applied to the element, or a function that returns a class based on the component's state. |
+| **defaultValue** | string | — | The default value of the textarea. Use when uncontrolled. |
+| **rows** | number | — | The number of visible text lines for the textarea. |
+| **placeholder** | string | — | Placeholder text shown when the textarea is empty. |
+| **disabled** | boolean | false | Whether the textarea is disabled. |
+| **render** | ReactElement | ComponentRenderFn | — | Allows you to replace the component's HTML element with a different tag, or compose it with another component. |
+| **value** | string | — | The value of the textarea. Use when controlled. |
+| **onValueChange** | function | — | Callback fired when the value changes. Use when controlled. |
 
 
 ---

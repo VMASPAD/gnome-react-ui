@@ -72,136 +72,79 @@ export function DrawerDefault() {
 }
 
 // ─── Bottom drawer with drag handle ──────────────────────────────────────────
-// The drag handle allows the user to pull the drawer up or down with the mouse.
 
 export function DrawerSnapPoints() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [height, setHeight] = React.useState(40); // percentage of viewport
-  const isDragging = React.useRef(false);
-  const startY = React.useRef(0);
-  const startHeight = React.useRef(40);
-
-  const handleMouseDown = React.useCallback((e: React.MouseEvent) => {
-    e.preventDefault();
-    isDragging.current = true;
-    startY.current = e.clientY;
-    startHeight.current = height;
-    document.body.style.cursor = 'grabbing';
-    document.body.style.userSelect = 'none';
-
-    const handleMouseMove = (ev: MouseEvent) => {
-      if (!isDragging.current) return;
-      const delta = startY.current - ev.clientY;
-      const vh = window.innerHeight;
-      const pctDelta = (delta / vh) * 100;
-      const newH = Math.min(95, Math.max(15, startHeight.current + pctDelta));
-      setHeight(newH);
-    };
-
-    const handleMouseUp = () => {
-      isDragging.current = false;
-      document.body.style.cursor = '';
-      document.body.style.userSelect = '';
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseup', handleMouseUp);
-    };
-
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseup', handleMouseUp);
-  }, [height]);
-
   return (
-    <>
-      <button
-        type="button"
-        onClick={() => { setIsOpen(true); setHeight(40); }}
-        className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}
-      >
+    <Drawer.Root swipeDirection="down">
+      <Drawer.Trigger className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}>
         <SlidersHorizontal className="size-4 shrink-0" />
         Filter results
-      </button>
+      </Drawer.Trigger>
 
-      {isOpen && (
-        <>
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300"
-            onClick={() => setIsOpen(false)}
-          />
-
-          {/* Bottom sheet */}
-          <div
-            className="fixed inset-x-0 bottom-0 z-50 flex flex-col rounded-t-2xl border-t border-border bg-card shadow-2xl"
-            style={{
-              height: `${height}vh`,
-              transition: isDragging.current ? 'none' : 'height 0.3s ease-out',
-            }}
+      <Drawer.Portal>
+        <Drawer.Backdrop className="fixed inset-0 min-h-dvh bg-black/40 backdrop-blur-sm transition-all duration-300 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0" />
+        <Drawer.Viewport className="fixed inset-0 flex items-end justify-center">
+          <Drawer.Popup 
+            className="flex w-full max-w-lg flex-col rounded-t-2xl border-t border-border bg-card shadow-2xl outline-none transition-transform duration-300 ease-out data-[ending-style]:translate-y-full data-[starting-style]:translate-y-full"
+            style={{ transform: 'translateY(calc(var(--drawer-snap-point-offset, 0px) + var(--drawer-swipe-movement-y, 0px)))' }}
           >
-            {/* Drag handle */}
-            <div
-              className="flex justify-center pb-1 pt-3 cursor-grab active:cursor-grabbing select-none"
-              onMouseDown={handleMouseDown}
-            >
-              <div className="h-1.5 w-12 rounded-full bg-border hover:bg-muted-foreground/40 transition-colors" />
-            </div>
-
-            {/* Content */}
-            <div className="flex flex-1 flex-col overflow-y-auto px-5 pb-6">
-              <div className="flex items-center gap-3 py-4">
-                <SlidersHorizontal className="size-4 shrink-0 text-primary" />
-                <h2 className="flex-1 text-base font-semibold text-foreground">
-                  Filter results
-                </h2>
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
-                >
-                  <X className="size-4" />
-                </button>
+            <Drawer.Content className="flex flex-col overflow-y-auto max-h-[80vh]">
+              {/* Drag handle */}
+              <div className="flex justify-center pb-1 pt-3">
+                <div className="h-1.5 w-12 rounded-full bg-border" />
               </div>
 
-              <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
-                Drag the handle up or down to resize. Swipe down to dismiss.
-              </p>
-
-              {/* Filter groups */}
-              {[
-                { label: 'Type',     options: ['All', 'Documents', 'Images', 'Videos', 'Audio'] },
-                { label: 'Modified', options: ['Any time', 'Today', 'This week', 'This month'] },
-                { label: 'Owner',    options: ['Anyone', 'Me', 'Others'] },
-              ].map(({ label, options }) => (
-                <div key={label} className="mb-5">
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                    {label}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {options.map((opt, i) => (
-                      <button
-                        key={opt}
-                        className={`rounded-xl border px-3 py-1.5 text-xs font-medium transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring ${
-                          i === 0
-                            ? 'border-primary bg-primary/10 text-primary'
-                            : 'border-border bg-card text-foreground hover:bg-accent'
-                        }`}
-                      >
-                        {opt}
-                      </button>
-                    ))}
-                  </div>
+              <div className="flex flex-1 flex-col px-5 pb-6">
+                <div className="flex items-center gap-3 py-4">
+                  <SlidersHorizontal className="size-4 shrink-0 text-primary" />
+                  <Drawer.Title className="flex-1 text-base font-semibold text-foreground">
+                    Filter results
+                  </Drawer.Title>
+                  <Drawer.Close className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
+                    <X className="size-4" />
+                  </Drawer.Close>
                 </div>
-              ))}
 
-              <button
-                onClick={() => setIsOpen(false)}
-                className={`${btnBase} mt-2 h-10 w-full bg-primary text-primary-foreground hover:brightness-95`}
-              >
-                Apply filters
-              </button>
-            </div>
-          </div>
-        </>
-      )}
-    </>
+                <Drawer.Description className="mb-5 text-sm leading-relaxed text-muted-foreground">
+                  Swipe down to dismiss. Select your filters below.
+                </Drawer.Description>
+
+                {/* Filter groups */}
+                {[
+                  { label: 'Type',     options: ['All', 'Documents', 'Images', 'Videos', 'Audio'] },
+                  { label: 'Modified', options: ['Any time', 'Today', 'This week', 'This month'] },
+                  { label: 'Owner',    options: ['Anyone', 'Me', 'Others'] },
+                ].map(({ label, options }) => (
+                  <div key={label} className="mb-5">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                      {label}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {options.map((opt, i) => (
+                        <button
+                          key={opt}
+                          className={`rounded-xl border px-3 py-1.5 text-xs font-medium transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring ${
+                            i === 0
+                              ? 'border-primary bg-primary/10 text-primary'
+                              : 'border-border bg-card text-foreground hover:bg-accent'
+                          }`}
+                        >
+                          {opt}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+
+                <Drawer.Close className={`${btnBase} mt-2 h-10 w-full bg-primary text-primary-foreground hover:brightness-95`}>
+                  Apply filters
+                </Drawer.Close>
+              </div>
+            </Drawer.Content>
+          </Drawer.Popup>
+        </Drawer.Viewport>
+      </Drawer.Portal>
+    </Drawer.Root>
   );
 }
 

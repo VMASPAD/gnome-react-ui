@@ -22,7 +22,7 @@ const tabBaseCls =
 
 // ─── 1. TabsUnderline ─────────────────────────────────────────────────────────
 // Tabs with animated underline indicator — the most common pattern.
-// Tabs.Indicator va DENTRO de Tabs.List y usa CSS variables del componente.
+// Tabs.Indicator goes INSIDE Tabs.List and uses the component's CSS variables.
 
 export function TabsUnderline() {
   return (
@@ -53,10 +53,6 @@ export function TabsUnderline() {
             "absolute bottom-0 h-0.5 rounded-full bg-primary " +
             "transition-[left,width] duration-200 ease-out"
           }
-          style={{
-            left: "var(--active-tab-left)",
-            width: "var(--active-tab-width)",
-          }}
         />
       </Tabs.List>
 
@@ -201,10 +197,6 @@ export function TabsVertical() {
             "absolute right-0 w-0.5 rounded-full bg-primary " +
             "transition-[top,height] duration-200 ease-out"
           }
-          style={{
-            top: "var(--active-tab-top)",
-            height: "var(--active-tab-height)",
-          }}
         />
       </Tabs.List>
 

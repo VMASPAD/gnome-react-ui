@@ -21,28 +21,25 @@ A button component that can be rendered as another tag or focusable when disable
 import { Button } from 'gnome-ui/button';
 import { Send, Download, Plus, Trash2 } from 'lucide-react';
 
-const base =
-  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
-
 export function ButtonDefault() {
   return (
     <div className="flex flex-wrap items-center gap-3">
-      <Button className={`${base} h-9 bg-primary px-4 text-primary-foreground hover:brightness-95 active:brightness-90`}>
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 bg-primary px-4 text-primary-foreground hover:brightness-95 active:brightness-90">
         <Icons.Send className="size-4 shrink-0" />
         Send
       </Button>
 
-      <Button className={`${base} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent active:bg-accent/80`}>
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 border border-border bg-card px-4 text-foreground hover:bg-accent active:bg-accent/80">
         <Icons.Download className="size-4 shrink-0" />
         Download
       </Button>
 
-      <Button className={`${base} h-9 px-4 text-foreground hover:bg-accent active:bg-accent/80`}>
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 px-4 text-foreground hover:bg-accent active:bg-accent/80">
         <Icons.Plus className="size-4 shrink-0" />
         New file
       </Button>
 
-      <Button className={`${base} h-9 border border-destructive/30 bg-destructive/8 px-4 text-destructive hover:bg-destructive/15 active:bg-destructive/20`}>
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 border border-destructive/30 bg-destructive/8 px-4 text-destructive hover:bg-destructive/15 active:bg-destructive/20">
         <Icons.Trash2 className="size-4 shrink-0" />
         Delete
       </Button>
@@ -81,33 +78,30 @@ Five sizes from compact toolbar buttons to large call-to-action buttons.
 import { Button } from 'gnome-ui/button';
 import { ArrowRight } from 'lucide-react';
 
-const base =
-  'inline-flex items-center justify-center gap-2 rounded-xl font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring';
-
 export function ButtonSizes() {
   return (
     <div className="flex flex-wrap items-center gap-3">
-      <Button className={`${base} h-7 px-3 text-xs bg-primary text-primary-foreground hover:brightness-95`}>
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring h-7 px-3 text-xs bg-primary text-primary-foreground hover:brightness-95">
         <Icons.ArrowRight className="size-3 shrink-0" />
         Open
       </Button>
 
-      <Button className={`${base} h-8 px-3.5 text-xs bg-primary text-primary-foreground hover:brightness-95`}>
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring h-8 px-3.5 text-xs bg-primary text-primary-foreground hover:brightness-95">
         <Icons.ArrowRight className="size-3.5 shrink-0" />
         Open
       </Button>
 
-      <Button className={`${base} h-9 px-4 text-sm bg-primary text-primary-foreground hover:brightness-95`}>
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring h-9 px-4 text-sm bg-primary text-primary-foreground hover:brightness-95">
         <Icons.ArrowRight className="size-4 shrink-0" />
         Open
       </Button>
 
-      <Button className={`${base} h-10 px-5 text-sm bg-primary text-primary-foreground hover:brightness-95`}>
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring h-10 px-5 text-sm bg-primary text-primary-foreground hover:brightness-95">
         <Icons.ArrowRight className="size-4 shrink-0" />
         Open
       </Button>
 
-      <Button className={`${base} h-12 px-6 text-base bg-primary text-primary-foreground hover:brightness-95`}>
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring h-12 px-6 text-base bg-primary text-primary-foreground hover:brightness-95">
         <Icons.ArrowRight className="size-5 shrink-0" />
         Open
       </Button>
@@ -139,9 +133,6 @@ import * as React from 'react';
 import { Button } from 'gnome-ui/button';
 import { Send, Loader2, Check } from 'lucide-react';
 
-const base =
-  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring';
-
 export function ButtonLoading() {
   const [status, setStatus] = React.useState<'idle' | 'loading' | 'done'>('idle');
 
@@ -159,7 +150,7 @@ export function ButtonLoading() {
       focusableWhenDisabled
       onClick={handleClick}
       className={[
-        base,
+        'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring',
         'h-9 px-5 min-w-[130px]',
         status === 'done'
           ? 'bg-[oklch(0.55_0.15_150)] text-white'

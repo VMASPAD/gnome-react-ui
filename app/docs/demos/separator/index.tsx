@@ -13,10 +13,10 @@ export function SeparatorDefault() {
       
       <div className="flex flex-col gap-3">
         <button className="flex items-center gap-2 text-sm text-foreground hover:text-primary">
-          <User className="size-4" /> Perfil de Usuario
+          <User className="size-4" /> User Profile
         </button>
         <button className="flex items-center gap-2 text-sm text-foreground hover:text-primary">
-          <Settings className="size-4" /> Preferencias
+          <Settings className="size-4" /> Preferences
         </button>
       </div>
       

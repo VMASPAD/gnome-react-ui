@@ -57,7 +57,7 @@ export function SelectGrouped() {
       
       <Select.Portal>
         <Select.Positioner sideOffset={4} className="z-50 w-[var(--anchor-width)]">
-          <Select.Popup className="relative max-h-96 overflow-hidden rounded-xl border border-border bg-popover text-popover-foreground shadow-md outline-none">
+          <Select.Popup className="relative max-h-96 overflow-hidden rounded-xl border border-border bg-popover text-popover-foreground shadow-md outline-none transition-[opacity,transform] duration-150 data-[starting-style]:scale-95 data-[starting-style]:opacity-0 data-[ending-style]:scale-95 data-[ending-style]:opacity-0">
             <Select.List className="p-1">
               <Select.Group>
                 <Select.GroupLabel className="px-8 py-1.5 text-xs font-semibold text-muted-foreground">
@@ -114,7 +114,7 @@ export function SelectMultiple() {
         
         <Select.Portal>
           <Select.Positioner sideOffset={4} className="z-50 w-[var(--anchor-width)]">
-            <Select.Popup className="relative max-h-96 overflow-hidden rounded-xl border border-border bg-popover text-popover-foreground shadow-md outline-none">
+            <Select.Popup className="relative max-h-96 overflow-hidden rounded-xl border border-border bg-popover text-popover-foreground shadow-md outline-none transition-[opacity,transform] duration-150 data-[starting-style]:scale-95 data-[starting-style]:opacity-0 data-[ending-style]:scale-95 data-[ending-style]:opacity-0">
               <Select.List className="p-1">
                 {['git', 'curl', 'wget', 'htop', 'vim', 'neofetch'].map((item) => (
                   <Select.Item 

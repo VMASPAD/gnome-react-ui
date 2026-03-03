@@ -106,7 +106,7 @@ Use `PreviewCard.createHandle()` and the `payload` prop so multiple links can sh
       // ...
     };
 
-    // Handle creado fuera del componente — se comparte entre triggers
+    // Handle created outside the component — shared between triggers
     const multiHandle = PreviewCard.createHandle<RepoPayload>();
 
     export function PreviewCardMultipleTriggers() {
@@ -141,7 +141,7 @@ Use `PreviewCard.createHandle()` and the `payload` prop so multiple links can sh
           </PreviewCard.Trigger>
           .
 
-          {/* Un solo Root para todos los triggers */}
+          {/* A single Root for all triggers */}
           <PreviewCard.Root handle={multiHandle}>
             {({ payload }) => (
               <PreviewCard.Portal>

@@ -39,8 +39,8 @@ const variantStyles: Record<BadgeVariant, string> = {
   default:     'bg-muted text-muted-foreground border-border',
   primary:     'bg-primary/10 text-primary border-primary/25',
   secondary:   'bg-secondary text-secondary-foreground border-border',
-  success:     'bg-[oklch(0.65_0.18_150)]/10 text-[oklch(0.45_0.15_150)] border-[oklch(0.65_0.18_150)]/20 dark:text-[oklch(0.65_0.18_150)]',
-  warning:     'bg-[oklch(0.75_0.18_80)]/10 text-[oklch(0.5_0.15_80)] border-[oklch(0.75_0.18_80)]/20 dark:text-[oklch(0.75_0.18_80)]',
+  success:     'bg-success/10 text-success-foreground border-success/20 dark:text-success',
+  warning:     'bg-warning/10 text-warning-foreground border-warning/20 dark:text-warning',
   destructive: 'bg-destructive/10 text-destructive border-destructive/25',
   outline:     'bg-transparent text-foreground border-border',
 };

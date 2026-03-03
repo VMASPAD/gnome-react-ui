@@ -17,7 +17,7 @@ export function FieldsetDefault() {
       <Fieldset.Root className="flex flex-col gap-4 rounded-xl border border-border bg-card p-5 shadow-sm">
         <div className="flex flex-col gap-1">
           <Fieldset.Legend className="text-base font-semibold text-foreground">
-            Preferencias de Notificaciones
+            Notification Preferences
           </Fieldset.Legend>
           <p className="text-sm text-muted-foreground">
             Choose how you want to receive updates.

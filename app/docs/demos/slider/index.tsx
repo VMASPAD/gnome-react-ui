@@ -43,10 +43,10 @@ export function SliderRange() {
 
         <Slider.Control className="relative flex w-full items-center py-2">
           <Slider.Track className="h-1.5 w-full overflow-hidden rounded-full bg-secondary">
-            <Slider.Indicator className="h-full bg-[oklch(0.55_0.12_250)]" />
+            <Slider.Indicator className="h-full bg-chart-3" />
           </Slider.Track>
-          <Slider.Thumb index={0} className="block size-4 rounded-full border border-[oklch(0.55_0.12_250)] bg-background shadow-sm transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[oklch(0.55_0.12_250)]" />
-          <Slider.Thumb index={1} className="block size-4 rounded-full border border-[oklch(0.55_0.12_250)] bg-background shadow-sm transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[oklch(0.55_0.12_250)]" />
+          <Slider.Thumb index={0} className="block size-4 rounded-full border border-chart-3 bg-background shadow-sm transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-chart-3" />
+          <Slider.Thumb index={1} className="block size-4 rounded-full border border-chart-3 bg-background shadow-sm transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-chart-3" />
         </Slider.Control>
       </Slider.Root>
     </div>
@@ -60,9 +60,9 @@ export function SliderVertical() {
       <Slider.Root orientation="vertical" defaultValue={60} className="flex h-full items-center">
         <Slider.Control className="relative flex h-full items-center px-2">
           <Slider.Track className="w-1.5 h-full overflow-hidden rounded-full bg-secondary">
-            <Slider.Indicator className="w-full bg-[oklch(0.75_0.15_50)]" />
+            <Slider.Indicator className="w-full bg-chart-5" />
           </Slider.Track>
-          <Slider.Thumb className="block size-4 rounded-full border border-[oklch(0.75_0.15_50)] bg-background shadow-sm transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[oklch(0.75_0.15_50)]" />
+          <Slider.Thumb className="block size-4 rounded-full border border-chart-5 bg-background shadow-sm transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-chart-5" />
         </Slider.Control>
       </Slider.Root>
     </div>

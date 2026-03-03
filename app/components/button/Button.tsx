@@ -10,16 +10,14 @@ import type { BaseUIComponentProps, NativeButtonProps } from '../utils/types';
  *
  * Documentation: [Base UI Button](https://base-ui.com/react/components/button)
  */
-export const Button = React.forwardRef(function Button(
-  componentProps: Button.Props,
-  forwardedRef: React.ForwardedRef<HTMLElement>,
-) {
+export function Button(componentProps: Button.Props) {
   const {
     render,
     className,
     disabled = false,
     focusableWhenDisabled = false,
     nativeButton = true,
+    ref,
     ...elementProps
   } = componentProps;
 
@@ -35,10 +33,10 @@ export const Button = React.forwardRef(function Button(
 
   return useRenderElement('button', componentProps, {
     state,
-    ref: [forwardedRef, buttonRef],
+    ref: [ref, buttonRef],
     props: [elementProps, getButtonProps],
   });
-});
+}
 
 export interface ButtonState {
   /**

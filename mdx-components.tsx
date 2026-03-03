@@ -45,6 +45,8 @@ import * as Card from "@/app/docs/demos/card/index";
 import * as Badge from "@/app/docs/demos/badge/index";
 import * as BreadcrumbDemo from "@/app/docs/demos/breadcrumb/index";
 import * as PaginationDemo from "@/app/docs/demos/pagination/index";
+import * as Textarea from "@/app/docs/demos/textarea/index";
+import * as Label from "@/app/docs/demos/label/index";
 
 // ── Client islands ─────────────────────────────────────────────────────────
 import { CodeBlock, InlineCode } from "@/app/docs/components/CodeBlock";
@@ -305,6 +307,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Toggle: Toggle as unknown as MDXComponents[string],
     Toolbar: Toolbar as unknown as MDXComponents[string],
     Tooltip: Tooltip as unknown as MDXComponents[string],
+    Textarea: Textarea as unknown as MDXComponents[string],
+    Label: Label as unknown as MDXComponents[string],
 
     // ── Custom MDX elements ──
     Subtitle: ({ children }: { children?: React.ReactNode }) => (

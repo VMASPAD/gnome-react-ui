@@ -16,6 +16,22 @@ export function PaginationDefault() {
   const [page, setPage] = React.useState(1);
   const total = 10;
 
+  const getVisiblePages = (): (number | "ellipsis")[] => {
+    const pages: (number | "ellipsis")[] = [];
+    pages.push(1);
+    if (page > 3) pages.push("ellipsis");
+    for (
+      let i = Math.max(2, page - 1);
+      i <= Math.min(total - 1, page + 1);
+      i++
+    ) {
+      pages.push(i);
+    }
+    if (page < total - 2) pages.push("ellipsis");
+    if (total > 1) pages.push(total);
+    return pages;
+  };
+
   return (
     <Pagination>
       <PaginationContent>
@@ -26,26 +42,19 @@ export function PaginationDefault() {
           />
         </PaginationItem>
 
-        {[1, 2, 3].map((p) => (
-          <PaginationItem key={p}>
-            <PaginationButton active={page === p} onClick={() => setPage(p)}>
-              {p}
-            </PaginationButton>
-          </PaginationItem>
-        ))}
-
-        <PaginationItem>
-          <PaginationEllipsis />
-        </PaginationItem>
-
-        <PaginationItem>
-          <PaginationButton
-            active={page === total}
-            onClick={() => setPage(total)}
-          >
-            {total}
-          </PaginationButton>
-        </PaginationItem>
+        {getVisiblePages().map((p, i) =>
+          p === "ellipsis" ? (
+            <PaginationItem key={`e-${i}`}>
+              <PaginationEllipsis />
+            </PaginationItem>
+          ) : (
+            <PaginationItem key={p}>
+              <PaginationButton active={page === p} onClick={() => setPage(p)}>
+                {p}
+              </PaginationButton>
+            </PaginationItem>
+          )
+        )}
 
         <PaginationItem>
           <PaginationNext

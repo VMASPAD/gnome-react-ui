@@ -8,25 +8,25 @@ export function NavigationDefault() {
     <NavigationMenu.Root className="relative z-10 flex w-full justify-center">
       <NavigationMenu.List className="flex items-center justify-center gap-1 rounded-xl border border-border bg-card p-1.5 shadow-sm">
         
-        {/* Item 1: Productos */}
+        {/* Item 1: Products */}
         <NavigationMenu.Item>
           <NavigationMenu.Trigger className="group flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[active]:bg-accent/60">
-            Productos
+            Products
             <NavigationMenu.Icon className="transition-transform duration-200 group-data-[active]:rotate-180">
               <ChevronDown className="size-4 text-muted-foreground" />
             </NavigationMenu.Icon>
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="absolute left-0 top-0 w-full p-4 md:w-[400px]">
+          <NavigationMenu.Content className="w-full p-4 md:w-[400px] data-[starting-style]:opacity-0 data-[ending-style]:opacity-0 data-[open]:opacity-100 transition-opacity duration-200">
             <div className="grid grid-cols-2 gap-3">
               <a href="#" className="flex flex-col gap-1.5 rounded-md p-3 transition-colors hover:bg-secondary">
                 <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
-                  <Box className="size-4 text-primary" /> Componentes
+                  <Box className="size-4 text-primary" /> Components
                 </div>
                 <p className="text-xs text-muted-foreground">Accessible building blocks for your UI.</p>
               </a>
               <a href="#" className="flex flex-col gap-1.5 rounded-md p-3 transition-colors hover:bg-secondary">
                 <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
-                  <Layout className="size-4 text-primary" /> Plantillas
+                  <Layout className="size-4 text-primary" /> Templates
                 </div>
                 <p className="text-xs text-muted-foreground">Pre-built layouts ready to integrate.</p>
               </a>
@@ -34,15 +34,15 @@ export function NavigationDefault() {
           </NavigationMenu.Content>
         </NavigationMenu.Item>
 
-        {/* Item 2: Desarrollo */}
+        {/* Item 2: Development */}
         <NavigationMenu.Item>
           <NavigationMenu.Trigger className="group flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring data-[active]:bg-accent/60">
-            Desarrollo
+            Development
             <NavigationMenu.Icon className="transition-transform duration-200 group-data-[active]:rotate-180">
               <ChevronDown className="size-4 text-muted-foreground" />
             </NavigationMenu.Icon>
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="absolute left-0 top-0 w-full p-4 md:w-[250px]">
+          <NavigationMenu.Content className="w-full p-4 md:w-[250px] data-[starting-style]:opacity-0 data-[ending-style]:opacity-0 data-[open]:opacity-100 transition-opacity duration-200">
             <div className="flex flex-col gap-2">
                 <a href="#" className="flex items-center gap-2 rounded-md p-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary">
                   <Code className="size-4 text-muted-foreground" /> API Documentation
@@ -57,14 +57,14 @@ export function NavigationDefault() {
         {/* Item 3: Enlace directo */}
         <NavigationMenu.Item>
           <NavigationMenu.Link href="#" className="block rounded-xl px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
-            Comunidad
+            Community
           </NavigationMenu.Link>
         </NavigationMenu.Item>
 
       </NavigationMenu.List>
 
       {/* Portal and Menu Popup */}
-      <NavigationMenu.Portal>
+      <NavigationMenu.Portal keepMounted>
         <NavigationMenu.Positioner className="z-50 pt-2" sideOffset={8}>
           <NavigationMenu.Popup className="origin-[var(--transform-origin)] rounded-xl border border-border bg-popover text-popover-foreground shadow-lg outline-none transition-[opacity,transform] duration-200 data-[starting-style]:scale-95 data-[starting-style]:opacity-0 data-[ending-style]:scale-95 data-[ending-style]:opacity-0">
             <NavigationMenu.Arrow className="fill-border" />

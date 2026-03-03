@@ -1,9 +1,8 @@
 
-# Input
 
-A basic native input element that automatically integrates with Field components for accessibility and validation.
+# Label
 
-Documentation: [Base UI Input](https://base-ui.com/react/components/input)
+A styled label component for form controls. Pairs with Input, Textarea, Select, and other form elements.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
   <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
@@ -14,14 +13,17 @@ Documentation: [Base UI Input](https://base-ui.com/react/components/input)
   <Tabs.Panel value="code">
 ```tsx
 import * as React from 'react';
+import { Label } from 'gnome-ui/label';
 import { Input } from 'gnome-ui/input';
 
-export function InputDefault() {
+export function LabelDefault() {
   return (
-    <div className="w-full max-w-sm">
+    <div className="flex w-full max-w-sm flex-col gap-2">
+      <Label htmlFor="email">Email</Label>
       <Input 
-        className="flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50" 
-        placeholder="Type something here..." 
+        id="email" 
+        className="flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50"
+        placeholder="you@example.com" 
       />
     </div>
   );
@@ -31,16 +33,16 @@ export function InputDefault() {
 
 </Tabs.Panel>
 <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
-<Input.InputDefault />
+<Label.LabelDefault />
 </Tabs.Panel>
 </Tabs.Root>
 
 # Anatomy
 
 ```tsx
-import { Input } from 'gnome-ui/input';
+import { Label } from 'gnome-ui/label';
 
-<Input />
+<Label htmlFor="field-id">Label text</Label>
 
 ```
 
@@ -48,7 +50,7 @@ import { Input } from 'gnome-ui/input';
 
 ## Disabled
 
-The input can be disabled to prevent user interaction. It styles automatically based on the disabled state.
+The label adjusts its styling when paired with a disabled input using Tailwind's `peer` modifier.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
@@ -60,20 +62,20 @@ The input can be disabled to prevent user interaction. It styles automatically b
 
 ```tsx
 import * as React from 'react';
+import { Label } from 'gnome-ui/label';
 import { Input } from 'gnome-ui/input';
 
-export function InputDisabled() {
+export function LabelDisabled() {
   return (
-    <div className="flex w-full max-w-sm flex-col gap-4">
+    <div className="flex w-full max-w-sm flex-col gap-2">
+      <Label htmlFor="disabled-input" className="peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+        Disabled field
+      </Label>
       <Input 
-        disabled 
-        className="flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50" 
-        placeholder="Disabled input" 
-      />
-      <Input 
-        disabled 
-        className="flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50" 
-        defaultValue="ubuntu-admin@local" 
+        id="disabled-input"
+        disabled
+        className="peer flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50"
+        placeholder="Cannot be edited" 
       />
     </div>
   );
@@ -83,15 +85,15 @@ export function InputDisabled() {
 
 </Tabs.Panel>
 <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
-<Input.InputDisabled />
+<Label.LabelDisabled />
 </Tabs.Panel>
 </Tabs.Root>
 
 ---
 
-## File Input
+## Required field
 
-The standard Input component can also handle `type="file"` cleanly using Tailwind's `file:` modifiers to style the file picker button.
+Add a visual indicator for required fields using a styled asterisk alongside the label text.
 
 <Tabs.Root className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-border dark:bg-card" defaultValue="preview">
 <Tabs.List className="relative z-0 flex border-b border-gray-200 bg-gray-50 px-2 dark:border-border dark:bg-sidebar">
@@ -103,14 +105,20 @@ The standard Input component can also handle `type="file"` cleanly using Tailwin
 
 ```tsx
 import * as React from 'react';
+import { Label } from 'gnome-ui/label';
 import { Input } from 'gnome-ui/input';
 
-export function InputFile() {
+export function LabelRequired() {
   return (
-    <div className="w-full max-w-sm">
+    <div className="flex w-full max-w-sm flex-col gap-2">
+      <Label htmlFor="username">
+        Username <span className="text-destructive">*</span>
+      </Label>
       <Input 
-        type="file" 
-        className="flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer file:mr-4 file:cursor-pointer file:font-semibold file:text-primary hover:file:text-primary/80" 
+        id="username"
+        required
+        className="flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50"
+        placeholder="Enter your username" 
       />
     </div>
   );
@@ -120,29 +128,19 @@ export function InputFile() {
 
 </Tabs.Panel>
 <Tabs.Panel className="flex min-h-[160px] items-center justify-center p-6 outline-none bg-background text-foreground" value="preview">
-<Input.InputFile />
+<Label.LabelRequired />
 </Tabs.Panel>
 </Tabs.Root>
 
-```
 
-```
-
-A native input element that automatically works with [Field](https://base-ui.com/react/components/field).
-Renders an `&lt;input&gt;` element.
-
-Documentation: [Base UI Input](https://base-ui.com/react/components/input)
+A styled label element for form controls.
+Renders a `<label>` element.
 
 ### Props
 
 | Prop | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
-| **defaultValue** | `string \| number \| readonly string[]` | — | The default value of the input. Use when uncontrolled. |
-| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
-| **value** | `string \| number \| readonly string[]` | — | The value of the input. Use when controlled. |
-| **onValueChange** | `(...) => void` | — | Callback fired when the `value` changes. Use when controlled. |
-
-
----
+| **className** | string | — | CSS class applied to the element, or a function that returns a class based on the component's state. |
+| **htmlFor** | string | — | The id of the form element the label is associated with. |
+| **render** | ReactElement \| ComponentRenderFn | — | Allows you to replace the component's HTML element with a different tag, or compose it with another component. |
 

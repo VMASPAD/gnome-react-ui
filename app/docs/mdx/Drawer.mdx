@@ -14,13 +14,10 @@ A panel that slides in from the edge of the screen.
 import { DrawerPreview as Drawer } from 'gnome-ui/drawer';
 import { PanelRight, Settings, Bell, User, Lock, Wifi, ChevronRight, X, SlidersHorizontal, Moon, Shield } from 'lucide-react';
 
-const btnBase =
-  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
-
 export function DrawerDefault() {
   return (
     <Drawer.Root swipeDirection="right">
-      <Drawer.Trigger className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}>
+      <Drawer.Trigger className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 border border-border bg-card px-4 text-foreground hover:bg-accent">
         <Icons.PanelRight className="size-4 shrink-0" />
         Open drawer
       </Drawer.Trigger>
@@ -64,7 +61,7 @@ export function DrawerDefault() {
             </Drawer.Content>
 
             <div className="border-t border-border px-5 py-3">
-              <Drawer.Close className={`${btnBase} h-9 w-full bg-primary text-primary-foreground hover:brightness-95`}>
+              <Drawer.Close className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 w-full bg-primary text-primary-foreground hover:brightness-95">
                 Close
               </Drawer.Close>
             </div>
@@ -125,9 +122,6 @@ A bottom drawer that snaps to 40% or full height, inspired by GNOME Mobile actio
 import { DrawerPreview as Drawer } from 'gnome-ui/drawer';
 import { SlidersHorizontal, X } from 'lucide-react';
 
-const btnBase =
-  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
-
 const filterGroups = [
   { label: 'Type',     options: ['All', 'Documents', 'Images', 'Videos', 'Audio'] },
   { label: 'Modified', options: ['Any time', 'Today', 'This week', 'This month']  },
@@ -137,7 +131,7 @@ const filterGroups = [
 export function DrawerSnapPoints() {
   return (
     <Drawer.Root snapPoints={[0.4, 1]} defaultSnapPoint={0.4} swipeDirection="down">
-      <Drawer.Trigger className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}>
+      <Drawer.Trigger className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 border border-border bg-card px-4 text-foreground hover:bg-accent">
         <Icons.SlidersHorizontal className="size-4 shrink-0" />
         Filter results
       </Drawer.Trigger>
@@ -187,7 +181,7 @@ export function DrawerSnapPoints() {
                 </div>
               ))}
 
-              <Drawer.Close className={`${btnBase} mt-2 h-10 w-full bg-primary text-primary-foreground hover:brightness-95`}>
+              <Drawer.Close className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 mt-2 h-10 w-full bg-primary text-primary-foreground hover:brightness-95">
                 Apply filters
               </Drawer.Close>
             </Drawer.Content>
@@ -221,9 +215,6 @@ A left-side navigation drawer using `swipeDirection="left"`, inspired by GNOME F
 import { DrawerPreview as Drawer } from 'gnome-ui/drawer';
 import { PanelRight, User, Lock, Bell, Shield, Moon, X } from 'lucide-react';
 
-const btnBase =
-  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
-
 const navItems = [
   { icon: Icons.User,   label: 'Home',      active: true  },
   { icon: Icons.Lock,   label: 'Documents', active: false },
@@ -235,7 +226,7 @@ const navItems = [
 export function DrawerNavigation() {
   return (
     <Drawer.Root swipeDirection="left">
-      <Drawer.Trigger className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}>
+      <Drawer.Trigger className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 border border-border bg-card px-4 text-foreground hover:bg-accent">
         <Icons.PanelRight className="size-4 shrink-0 scale-x-[-1]" />
         Navigation
       </Drawer.Trigger>

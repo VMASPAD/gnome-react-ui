@@ -22,7 +22,7 @@ export function InputDisabled() {
       <Input 
         disabled 
         className={inputBase} 
-        placeholder="Entrada deshabilitada" 
+        placeholder="Disabled input" 
       />
       <Input 
         disabled 

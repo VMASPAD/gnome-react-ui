@@ -46,8 +46,8 @@ export function NumberFieldScrub() {
     <NumberField.Root defaultValue={50} className="flex flex-col gap-1.5 w-32">
       <NumberField.ScrubArea className="group flex w-fit cursor-ew-resize select-none items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
         <ArrowRightLeft className="size-3.5" />
-        <label className="cursor-ew-resize">Ajustar</label>
-        {/* El cursor personalizado que aparece al arrastrar */}
+        <label className="cursor-ew-resize">Adjust</label>
+        {/* The custom cursor that appears when dragging */}
         <NumberField.ScrubAreaCursor className="rounded-full bg-primary/20 backdrop-blur-sm" />
       </NumberField.ScrubArea>
       

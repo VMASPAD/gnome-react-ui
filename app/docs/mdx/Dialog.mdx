@@ -14,13 +14,10 @@ A popup that opens on top of the entire page.
 import { Dialog } from 'gnome-ui/dialog';
 import { Bell, User, Mail, Lock, ExternalLink, X } from 'lucide-react';
 
-const btnBase =
-  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
-
 export function DialogDefault() {
   return (
     <Dialog.Root>
-      <Dialog.Trigger className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}>
+      <Dialog.Trigger className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 border border-border bg-card px-4 text-foreground hover:bg-accent">
         <Icons.Bell className="size-4 shrink-0" />
         View notifications
       </Dialog.Trigger>
@@ -59,7 +56,7 @@ export function DialogDefault() {
           </div>
 
           <div className="flex justify-end border-t border-border px-5 py-3">
-            <Dialog.Close className={`${btnBase} h-9 bg-primary px-4 text-primary-foreground hover:brightness-95`}>
+            <Dialog.Close className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 bg-primary px-4 text-primary-foreground hover:brightness-95">
               Mark all as read
             </Dialog.Close>
           </div>
@@ -112,13 +109,10 @@ A dialog with form inputs for editing user profile data, inspired by GNOME Setti
 import { Dialog } from 'gnome-ui/dialog';
 import { Settings, User, Mail, X, Pencil } from 'lucide-react';
 
-const btnBase =
-  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
-
 export function DialogSettings() {
   return (
     <Dialog.Root>
-      <Dialog.Trigger className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}>
+      <Dialog.Trigger className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 border border-border bg-card px-4 text-foreground hover:bg-accent">
         <Icons.Settings className="size-4 shrink-0" />
         Edit profile
       </Dialog.Trigger>
@@ -161,10 +155,10 @@ export function DialogSettings() {
           </div>
 
           <div className="flex justify-end gap-2 border-t border-border px-5 py-3">
-            <Dialog.Close className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}>
+            <Dialog.Close className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 border border-border bg-card px-4 text-foreground hover:bg-accent">
               Cancel
             </Dialog.Close>
-            <Dialog.Close className={`${btnBase} h-9 bg-primary px-4 text-primary-foreground hover:brightness-95`}>
+            <Dialog.Close className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 bg-primary px-4 text-primary-foreground hover:brightness-95">
               Save changes
             </Dialog.Close>
           </div>
@@ -197,9 +191,6 @@ Uses `modal={false}` so the rest of the page stays interactive. The panel slides
 import { Dialog } from 'gnome-ui/dialog';
 import { ExternalLink, Lock, X } from 'lucide-react';
 
-const btnBase =
-  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
-
 const rows = [
   { label: 'Type',     value: 'Markdown document' },
   { label: 'Size',     value: '4.2 KB' },
@@ -211,7 +202,7 @@ const rows = [
 export function DialogNonModal() {
   return (
     <Dialog.Root modal={false}>
-      <Dialog.Trigger className={`${btnBase} h-9 border border-border bg-card px-4 text-foreground hover:bg-accent`}>
+      <Dialog.Trigger className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 border border-border bg-card px-4 text-foreground hover:bg-accent">
         <Icons.ExternalLink className="size-4 shrink-0" />
         File details
       </Dialog.Trigger>

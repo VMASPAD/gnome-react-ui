@@ -18,12 +18,6 @@ import { Field } from 'gnome-ui/field';
 import { Button } from 'gnome-ui/button';
 import { User, Mail, Lock, Loader2, Check, AlertCircle } from 'lucide-react';
 
-const inputCls =
-  'h-10 w-full rounded-xl border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring data-[field-invalid]:border-destructive data-[field-invalid]:focus:outline-destructive';
-
-const btnBase =
-  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
-
 export function FormDefault() {
   const [errors, setErrors] = React.useState<Record<string, string>>({});
   const [loading, setLoading] = React.useState(false);
@@ -61,7 +55,7 @@ export function FormDefault() {
           </Field.Label>
           <div className="relative mt-1.5 flex items-center">
             <Icons.Mail className="pointer-events-none absolute left-3 size-4 text-muted-foreground" />
-            <Field.Control type="email" required placeholder="you@ubuntu.com" className={inputCls} />
+            <Field.Control type="email" required placeholder="you@ubuntu.com" className="h-10 w-full rounded-xl border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring data-[field-invalid]:border-destructive data-[field-invalid]:focus:outline-destructive" />
           </div>
           <Field.Error className="mt-1.5 flex items-center gap-1.5 text-xs text-destructive">
             <Icons.AlertCircle className="size-3.5 shrink-0" />
@@ -76,7 +70,7 @@ export function FormDefault() {
           </Field.Label>
           <div className="relative mt-1.5 flex items-center">
             <Icons.Lock className="pointer-events-none absolute left-3 size-4 text-muted-foreground" />
-            <Field.Control type="password" required placeholder="••••••••" className={inputCls} />
+            <Field.Control type="password" required placeholder="••••••••" className="h-10 w-full rounded-xl border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring data-[field-invalid]:border-destructive data-[field-invalid]:focus:outline-destructive" />
           </div>
           <Field.Error className="mt-1.5 flex items-center gap-1.5 text-xs text-destructive">
             <Icons.AlertCircle className="size-3.5 shrink-0" />
@@ -88,7 +82,7 @@ export function FormDefault() {
           type="submit"
           disabled={loading}
           focusableWhenDisabled
-          className={`${btnBase} mt-1 h-10 w-full ${success ? 'bg-[oklch(0.55_0.15_150)] text-white' : 'bg-primary text-primary-foreground hover:brightness-95'} disabled:opacity-100 disabled:brightness-90`}
+          className={`inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 mt-1 h-10 w-full ${success ? 'bg-[oklch(0.55_0.15_150)] text-white' : 'bg-primary text-primary-foreground hover:brightness-95'} disabled:opacity-100 disabled:brightness-90`}
         >
           {loading && <Icons.Loader2 className="size-4 shrink-0 animate-spin" />}
           {success && <Icons.Check className="size-4 shrink-0" />}
@@ -142,12 +136,6 @@ import { Field } from 'gnome-ui/field';
 import { Button } from 'gnome-ui/button';
 import { User, Mail, Globe, Loader2, Check, AlertCircle } from 'lucide-react';
 
-const inputCls =
-  'h-10 w-full rounded-xl border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring data-[field-invalid]:border-destructive data-[field-invalid]:focus:outline-destructive';
-
-const btnBase =
-  'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50';
-
 export function FormOnBlur() {
   const [errors, setErrors] = React.useState<Record<string, string>>({});
   const [loading, setLoading] = React.useState(false);
@@ -175,7 +163,7 @@ export function FormOnBlur() {
             <Field.Label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">First name</Field.Label>
             <div className="relative mt-1.5 flex items-center">
               <Icons.User className="pointer-events-none absolute left-3 size-4 text-muted-foreground" />
-              <Field.Control required placeholder="Elena" className={inputCls} />
+              <Field.Control required placeholder="Elena" className="h-10 w-full rounded-xl border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring data-[field-invalid]:border-destructive data-[field-invalid]:focus:outline-destructive" />
             </div>
             <Field.Error className="mt-1.5 flex items-center gap-1.5 text-xs text-destructive">
               <Icons.AlertCircle className="size-3.5 shrink-0" />
@@ -187,7 +175,7 @@ export function FormOnBlur() {
             <Field.Label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Last name</Field.Label>
             <div className="relative mt-1.5 flex items-center">
               <Icons.User className="pointer-events-none absolute left-3 size-4 text-muted-foreground" />
-              <Field.Control required placeholder="Larsson" className={inputCls} />
+              <Field.Control required placeholder="Larsson" className="h-10 w-full rounded-xl border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring data-[field-invalid]:border-destructive data-[field-invalid]:focus:outline-destructive" />
             </div>
             <Field.Error className="mt-1.5 flex items-center gap-1.5 text-xs text-destructive">
               <Icons.AlertCircle className="size-3.5 shrink-0" />
@@ -200,7 +188,7 @@ export function FormOnBlur() {
           <Field.Label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Email address</Field.Label>
           <div className="relative mt-1.5 flex items-center">
             <Icons.Mail className="pointer-events-none absolute left-3 size-4 text-muted-foreground" />
-            <Field.Control type="email" required placeholder="elena@example.com" className={inputCls} />
+            <Field.Control type="email" required placeholder="elena@example.com" className="h-10 w-full rounded-xl border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring data-[field-invalid]:border-destructive data-[field-invalid]:focus:outline-destructive" />
           </div>
           <Field.Error className="mt-1.5 flex items-center gap-1.5 text-xs text-destructive">
             <Icons.AlertCircle className="size-3.5 shrink-0" />
@@ -213,7 +201,7 @@ export function FormOnBlur() {
           <Field.Label className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Website</Field.Label>
           <div className="relative mt-1.5 flex items-center">
             <Icons.Globe className="pointer-events-none absolute left-3 size-4 text-muted-foreground" />
-            <Field.Control type="url" placeholder="https://example.com" pattern="https?://.*" className={inputCls} />
+            <Field.Control type="url" placeholder="https://example.com" pattern="https?://.*" className="h-10 w-full rounded-xl border border-input bg-background pl-9 pr-3.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors duration-150 hover:border-ring/50 focus:outline focus:outline-2 focus:-outline-offset-1 focus:outline-ring data-[field-invalid]:border-destructive data-[field-invalid]:focus:outline-destructive" />
           </div>
           <Field.Error className="mt-1.5 flex items-center gap-1.5 text-xs text-destructive">
             <Icons.AlertCircle className="size-3.5 shrink-0" />
@@ -225,7 +213,7 @@ export function FormOnBlur() {
           type="submit"
           disabled={loading}
           focusableWhenDisabled
-          className={`${btnBase} mt-1 h-10 w-full ${saved ? 'bg-[oklch(0.55_0.15_150)] text-white' : 'bg-primary text-primary-foreground hover:brightness-95'} disabled:opacity-100 disabled:brightness-90`}
+          className={`inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 mt-1 h-10 w-full ${saved ? 'bg-[oklch(0.55_0.15_150)] text-white' : 'bg-primary text-primary-foreground hover:brightness-95'} disabled:opacity-100 disabled:brightness-90`}
         >
           {loading && <Icons.Loader2 className="size-4 shrink-0 animate-spin" />}
           {saved && <Icons.Check className="size-4 shrink-0" />}

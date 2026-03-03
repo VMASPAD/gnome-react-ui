@@ -8,7 +8,7 @@ const frameworks = ['React', 'Vue', 'Angular', 'Svelte', 'Ember', 'Solid', 'Next
 export function ComboboxDefault() {
   return (
     <div className="relative w-72">
-      <Combobox.Root>
+      <Combobox.Root items={frameworks}>
       <div className="flex h-10 w-full items-center justify-between rounded-xl border border-input bg-card px-3 text-sm text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
         <Combobox.Input 
           className="flex-1 bg-transparent outline-none placeholder:text-muted-foreground" 
@@ -26,7 +26,7 @@ export function ComboboxDefault() {
               <Combobox.Empty className="py-6 text-center text-sm text-muted-foreground">
                 No results found.
               </Combobox.Empty>
-              {frameworks.map((fw) => (
+              {(fw: string) => (
                 <Combobox.Item 
                   key={fw} 
                   value={fw} 
@@ -37,7 +37,7 @@ export function ComboboxDefault() {
                   </Combobox.ItemIndicator>
                   {fw}
                 </Combobox.Item>
-              ))}
+              )}
             </Combobox.List>
           </Combobox.Popup>
         </Combobox.Positioner>
@@ -52,7 +52,7 @@ export function ComboboxMultiple() {
 
   return (
     <div className="relative w-full max-w-md">
-      <Combobox.Root multiple value={value} onValueChange={setValue}>
+      <Combobox.Root multiple items={frameworks} value={value} onValueChange={setValue}>
       <div className="flex min-h-10 w-full flex-wrap items-center gap-1.5 rounded-xl border border-input bg-card p-1.5 text-sm text-foreground shadow-sm transition-colors focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
         <Combobox.Chips className="flex flex-wrap items-center gap-1.5">
           {value.map((val) => (
@@ -80,7 +80,7 @@ export function ComboboxMultiple() {
               <Combobox.Empty className="py-6 text-center text-sm text-muted-foreground">
                 No more options.
               </Combobox.Empty>
-              {frameworks.map((fw) => (
+              {(fw: string) => (
                 <Combobox.Item 
                   key={fw} 
                   value={fw} 
@@ -91,7 +91,7 @@ export function ComboboxMultiple() {
                   </Combobox.ItemIndicator>
                   {fw}
                 </Combobox.Item>
-              ))}
+              )}
             </Combobox.List>
           </Combobox.Popup>
         </Combobox.Positioner>

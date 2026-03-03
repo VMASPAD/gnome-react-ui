@@ -44,10 +44,10 @@ export const AvatarImage = React.forwardRef(function AvatarImage(
   } = componentProps;
 
   const context = useAvatarRootContext();
-  // Dentro del componente AvatarImage
+  // Inside the AvatarImage component
   const srcProp = componentProps.src;
 
-  // Creamos una URL estable si el src es un Blob
+  // Create a stable URL if src is a Blob
   const srcString = React.useMemo(() => {
     if (srcProp instanceof Blob) {
       return URL.createObjectURL(srcProp);
@@ -60,8 +60,8 @@ export const AvatarImage = React.forwardRef(function AvatarImage(
     crossOrigin,
   });
 
-  // Importante: Si usas createObjectURL, deberías revocarlo
-  // en un useEffect para evitar fugas de memoria.
+  // Important: If you use createObjectURL, you should revoke it
+  // in a useEffect to avoid memory leaks.
   React.useEffect(() => {
     return () => {
       if (srcProp instanceof Blob) {

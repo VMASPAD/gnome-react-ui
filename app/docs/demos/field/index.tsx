@@ -14,11 +14,11 @@ export function FieldDefault() {
       </Field.Label>
       <Field.Control 
         className={inputBase} 
-        placeholder="tu@ejemplo.com" 
+        placeholder="you@example.com" 
         type="email" 
       />
       <Field.Description className="text-xs text-muted-foreground">
-        Usaremos este correo para enviarte notificaciones del sistema.
+        We'll use this email to send you system notifications.
       </Field.Description>
     </Field.Root>
   );

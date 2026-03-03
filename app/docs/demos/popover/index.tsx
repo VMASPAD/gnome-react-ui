@@ -14,7 +14,7 @@ import {
   ExternalLink,
   Info,
 } from "lucide-react";
-import { Button } from "@/app/components/button";
+
 
 // ─── Shared styles ────────────────────────────────────────────────────────────
 
@@ -32,7 +32,11 @@ export function PopoverBasic() {
   return (
     <Popover.Root>
       <Popover.Trigger
-        render={<Button><Bell className="size-4" />Notifications</Button>}
+        render={
+          <button className="inline-flex items-center justify-center gap-2 h-9 rounded-xl border border-border bg-card px-4 text-sm font-medium text-foreground transition-colors hover:bg-accent focus-visible:outline-2 focus-visible:outline-ring">
+            <Bell className="size-4" />Notifications
+          </button>
+        }
       />
       <Popover.Portal>
         <Popover.Positioner className={positionerCls} sideOffset={8}>
@@ -58,7 +62,11 @@ export function PopoverWithClose() {
   return (
     <Popover.Root>
       <Popover.Trigger
-        render={<Button><Info className="size-4" />What's new</Button>}
+        render={
+          <button className="inline-flex items-center justify-center gap-2 h-9 rounded-xl border border-border bg-card px-4 text-sm font-medium text-foreground transition-colors hover:bg-accent focus-visible:outline-2 focus-visible:outline-ring">
+            <Info className="size-4" />What&apos;s new
+          </button>
+        }
       />
       <Popover.Portal>
         <Popover.Positioner className={positionerCls} sideOffset={8}>

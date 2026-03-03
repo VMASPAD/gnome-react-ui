@@ -60,7 +60,7 @@ export function ProgressSteps() {
         </span>
       </div>
       <Progress.Track className="h-1.5 w-full overflow-hidden rounded-full bg-secondary">
-        <Progress.Indicator className="h-full bg-[oklch(0.55_0.12_250)] transition-all duration-500 ease-in-out" />
+        <Progress.Indicator className="h-full bg-chart-3 transition-all duration-500 ease-in-out" />
       </Progress.Track>
     </Progress.Root>
   );

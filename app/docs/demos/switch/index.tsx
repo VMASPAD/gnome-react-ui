@@ -11,7 +11,7 @@ const switchThumbBase =
 
 export function SwitchDefault() {
   return (
-    <Field.Root className="flex items-center gap-3 w-full max-w-xs">
+    <Field.Root className="flex items-center gap-3 w-fit mx-auto">
       <Switch.Root id="airplane-mode" className={switchRootBase}>
         <Switch.Thumb className={switchThumbBase} />
       </Switch.Root>
@@ -24,7 +24,7 @@ export function SwitchDefault() {
 
 export function SwitchDisabled() {
   return (
-    <div className="flex flex-col gap-4 w-full max-w-xs">
+    <div className="flex flex-col gap-4 w-fit mx-auto">
       <Field.Root className="flex items-center gap-3">
         <Switch.Root disabled className={switchRootBase}>
           <Switch.Thumb className={switchThumbBase} />
@@ -76,10 +76,10 @@ export function SwitchWithIcons() {
       
       <Field.Root className="flex items-center justify-between mt-2 pt-4 border-t border-border">
         <Field.Label className="flex items-center gap-2 text-sm font-medium text-foreground cursor-pointer select-none">
-          <Shield className="size-4 text-[oklch(0.55_0.12_250)]" />
+          <Shield className="size-4 text-chart-3" />
           Firewall
         </Field.Label>
-        <Switch.Root defaultChecked className={`${switchRootBase} data-[checked]:bg-[oklch(0.55_0.12_250)]`}>
+        <Switch.Root defaultChecked className={`${switchRootBase} data-[checked]:bg-chart-3`}>
           <Switch.Thumb className={switchThumbBase} />
         </Switch.Root>
       </Field.Root>

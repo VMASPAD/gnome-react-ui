@@ -96,7 +96,7 @@ export function FormDefault() {
           type="submit"
           disabled={loading}
           focusableWhenDisabled
-          className={`${btnBase} mt-1 h-10 w-full ${success ? 'bg-[oklch(0.55_0.15_150)] text-white' : 'bg-primary text-primary-foreground hover:brightness-95'} disabled:opacity-100 disabled:brightness-90`}
+          className={`${btnBase} mt-1 h-10 w-full ${success ? 'bg-success text-white' : 'bg-primary text-primary-foreground hover:brightness-95'} disabled:opacity-100 disabled:brightness-90`}
         >
           {loading && <Loader2 className="size-4 shrink-0 animate-spin" />}
           {success && <Check className="size-4 shrink-0" />}
@@ -211,7 +211,7 @@ export function FormOnBlur() {
           type="submit"
           disabled={loading}
           focusableWhenDisabled
-          className={`${btnBase} mt-1 h-10 w-full ${saved ? 'bg-[oklch(0.55_0.15_150)] text-white' : 'bg-primary text-primary-foreground hover:brightness-95'} disabled:opacity-100 disabled:brightness-90`}
+          className={`${btnBase} mt-1 h-10 w-full ${saved ? 'bg-success text-white' : 'bg-primary text-primary-foreground hover:brightness-95'} disabled:opacity-100 disabled:brightness-90`}
         >
           {loading && <Loader2 className="size-4 shrink-0 animate-spin" />}
           {saved && <Check className="size-4 shrink-0" />}

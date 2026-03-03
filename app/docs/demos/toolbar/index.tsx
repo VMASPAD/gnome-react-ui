@@ -80,7 +80,7 @@ export function ToolbarWithInput() {
     <Toolbar.Root className="flex w-full max-w-md items-center gap-2 rounded-xl border border-border bg-card p-2 shadow-sm">
       <Toolbar.Input 
         className="flex h-9 w-full rounded-xl border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring placeholder:text-muted-foreground" 
-        placeholder="Buscar herramienta..." 
+        placeholder="Search tool..." 
       />
       <Toolbar.Button className={`${toolbarButtonBase} shrink-0 bg-primary text-primary-foreground hover:brightness-95 hover:bg-primary`}>
         Ir

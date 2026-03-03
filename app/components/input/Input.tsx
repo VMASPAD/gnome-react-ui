@@ -9,12 +9,10 @@ import { Field } from '../field';
  *
  * Documentation: [Base UI Input](https://base-ui.com/react/components/input)
  */
-export const Input = React.forwardRef(function Input(
-  props: Input.Props,
-  forwardedRef: React.ForwardedRef<HTMLElement>,
-) {
-  return <Field.Control ref={forwardedRef} {...props} />;
-});
+export function Input(props: Input.Props) {
+  const { ref, ...restProps } = props;
+  return <Field.Control ref={ref} {...restProps} />;
+}
 
 export interface InputProps extends BaseUIComponentProps<'input', Input.State> {
   /**

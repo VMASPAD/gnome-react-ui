@@ -10,7 +10,7 @@ const toastRootCls =
   "relative flex w-80 flex-col rounded-xl border border-border bg-card text-card-foreground shadow-lg " +
   "outline-none overflow-hidden cursor-default select-none " +
   // Stacking
-  "transition-[transform,opacity,height] duration-200 ease-out " +
+  "transition-[transform,opacity,translate] duration-200 ease-out " +
   "[--offset-y:calc(var(--toast-offset-y,0px))] " +
   // Collapsed: scale by index
   "[transform:translateY(calc(var(--toast-index)*-6px))_scale(calc(1-var(--toast-index)*0.04))] " +
@@ -18,9 +18,13 @@ const toastRootCls =
   "data-[expanded]:[transform:translateY(var(--toast-offset-y))] " +
   // Swipe
   "data-[swiping]:[transform:translateX(var(--toast-swipe-movement-x))_translateY(calc(var(--toast-swipe-movement-y)+var(--toast-offset-y)))] " +
-  // Enter/Exit animations
+  // Enter animation
   "data-[starting-style]:opacity-0 data-[starting-style]:translate-y-4 " +
-  "data-[ending-style]:opacity-0 data-[ending-style]:translate-x-full";
+  // Exit animation
+  "data-[ending-style]:opacity-0 data-[ending-style]:translate-x-[150%] " +
+  // Swipe-direction-aware exit animations
+  "data-[swipe-direction='right']:data-[ending-style]:translate-x-[150%] " +
+  "data-[swipe-direction='down']:data-[ending-style]:translate-y-[150%] data-[swipe-direction='down']:data-[ending-style]:translate-x-0";
 
 // Fixed: removed data-[behind]:opacity-0 so stacked toasts always show their content
 const toastContentCls =
