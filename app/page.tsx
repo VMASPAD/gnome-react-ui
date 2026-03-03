@@ -25,6 +25,7 @@ import {
 import { useState } from "react";
 import Image from "next/image";
 import { AnimatedThemeToggler } from "./ui/AnimatedThemeToggler";
+import Link from "next/link";
 
 function Home() {
   const [mobileMenuOpen] = useState(false);
@@ -289,12 +290,12 @@ const inputBase =
 
             {/* Right: CTA */}
             <div className="relative z-10 shrink-0">
-              <a
+              <Link
                 href="/docs"
                 className="inline-flex items-center gap-1.5 rounded-xl border border-primary/30 bg-primary/10 px-4 py-2 text-xs font-semibold text-primary hover:bg-primary/15 transition-colors duration-150"
               >
                 Browse docs <ArrowRight className="h-3 w-3" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

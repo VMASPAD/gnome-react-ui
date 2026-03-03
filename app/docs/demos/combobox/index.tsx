@@ -26,7 +26,7 @@ export function ComboboxDefault() {
               <Combobox.Empty className="py-6 text-center text-sm text-muted-foreground">
                 No results found.
               </Combobox.Empty>
-              {(fw: string) => (
+              {frameworks.map((fw) => (
                 <Combobox.Item 
                   key={fw} 
                   value={fw} 
@@ -37,7 +37,7 @@ export function ComboboxDefault() {
                   </Combobox.ItemIndicator>
                   {fw}
                 </Combobox.Item>
-              )}
+              ))}
             </Combobox.List>
           </Combobox.Popup>
         </Combobox.Positioner>
@@ -80,7 +80,7 @@ export function ComboboxMultiple() {
               <Combobox.Empty className="py-6 text-center text-sm text-muted-foreground">
                 No more options.
               </Combobox.Empty>
-              {(fw: string) => (
+              {frameworks.map((fw) => (
                 <Combobox.Item 
                   key={fw} 
                   value={fw} 
@@ -91,7 +91,7 @@ export function ComboboxMultiple() {
                   </Combobox.ItemIndicator>
                   {fw}
                 </Combobox.Item>
-              )}
+              ))}
             </Combobox.List>
           </Combobox.Popup>
         </Combobox.Positioner>
