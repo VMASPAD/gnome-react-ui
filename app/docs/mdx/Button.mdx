@@ -172,25 +172,24 @@ export function ButtonLoading() {
   </Tabs.Panel>
 </Tabs.Root>
 
-### Props
 
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
-| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
-| **nativeButton** | `boolean` | `true` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`). |
-| **focusableWhenDisabled** | `boolean` | `false` | Whether the button should be focusable when disabled. |
+## API reference
 
+A button component that can be used to trigger actions.
+Renders a `<button>` element.
 
----
+**Button Props:**
 
-## ButtonDataAttributes.disabled
+| Prop                  | Type                                                                        | Default | Description                                                                                                                                                                                  |
+| :-------------------- | :-------------------------------------------------------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| focusableWhenDisabled | `boolean`                                                                   | `false` | Whether the button should be focusable when disabled.                                                                                                                                        |
+| nativeButton          | `boolean`                                                                   | `true`  | Whether the component renders a native `<button>` element when replacing it&#xA;via the `render` prop.&#xA;Set to `false` if the rendered element is not a button (e.g. `<div>`).            |
+| className             | `string \| ((state: Button.State) => string \| undefined)`                  | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style                 | `CSSProperties \| ((state: Button.State) => CSSProperties \| undefined)`    | -       | -                                                                                                                                                                                            |
+| render                | `ReactElement \| ((props: HTMLProps, state: Button.State) => ReactElement)` | -       | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |
 
-Present when the button is disabled.
+**Button Data Attributes:**
 
-### Props
-
-No props available.
-
----
-
+| Attribute     | Type | Description                          |
+| :------------ | :--- | :----------------------------------- |
+| data-disabled | -    | Present when the button is disabled. |

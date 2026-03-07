@@ -2,15 +2,15 @@
 
 import * as React from "react";
 import { Toast } from "@/app/components/toast";
-import { X, CheckCircle, AlertCircle, Info, Loader2, Undo2 } from "lucide-react";
+import { X, CheckCircle, AlertCircle, Info, Loader2 } from "lucide-react";
 
 // ─── Shared styles ────────────────────────────────────────────────────────────
 
 const toastRootCls =
   "relative flex w-80 flex-col rounded-xl border border-border bg-card text-card-foreground shadow-lg " +
   "outline-none overflow-hidden cursor-default select-none " +
-  // Stacking
-  "transition-[transform,opacity,translate] duration-200 ease-out " +
+  // Animation / performance
+  "will-change-transform transition-[transform,opacity] duration-250 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none " +
   "[--offset-y:calc(var(--toast-offset-y,0px))] " +
   // Collapsed: scale by index
   "[transform:translateY(calc(var(--toast-index)*-6px))_scale(calc(1-var(--toast-index)*0.04))] " +
@@ -18,12 +18,13 @@ const toastRootCls =
   "data-[expanded]:[transform:translateY(var(--toast-offset-y))] " +
   // Swipe
   "data-[swiping]:[transform:translateX(var(--toast-swipe-movement-x))_translateY(calc(var(--toast-swipe-movement-y)+var(--toast-offset-y)))] " +
+  "data-[swiping]:transition-none " +
   // Enter animation
-  "data-[starting-style]:opacity-0 data-[starting-style]:translate-y-4 " +
+  "data-[starting-style]:opacity-0 data-[starting-style]:translate-y-3 " +
   // Exit animation
-  "data-[ending-style]:opacity-0 data-[ending-style]:translate-x-[150%] " +
+  "data-[ending-style]:opacity-0 data-[ending-style]:translate-x-[120%] " +
   // Swipe-direction-aware exit animations
-  "data-[swipe-direction='right']:data-[ending-style]:translate-x-[150%] " +
+  "data-[swipe-direction='right']:data-[ending-style]:translate-x-[120%] " +
   "data-[swipe-direction='down']:data-[ending-style]:translate-y-[150%] data-[swipe-direction='down']:data-[ending-style]:translate-x-0";
 
 // Fixed: removed data-[behind]:opacity-0 so stacked toasts always show their content
@@ -37,6 +38,7 @@ const toastCloseCls =
 
 const viewportCls =
   "fixed bottom-4 right-4 z-50 flex flex-col-reverse items-end gap-2 " +
+  "pointer-events-none [&>*]:pointer-events-auto " +
   // When expanded, toasts stack with offset
   "data-[expanded]:gap-0";
 
@@ -298,7 +300,11 @@ function ToastPromiseTrigger() {
       await toastManager.promise(
         new Promise<string>((resolve, reject) => {
           setTimeout(() => {
-            Math.random() > 0.3 ? resolve("data-export.csv") : reject(new Error("Server timeout"));
+            if (Math.random() > 0.3) {
+              resolve("data-export.csv");
+            } else {
+              reject(new Error("Server timeout"));
+            }
           }, 2000);
         }),
         {

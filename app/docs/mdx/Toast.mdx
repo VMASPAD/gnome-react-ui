@@ -178,203 +178,408 @@ Renders a `&lt;button&gt;` element.
 
 Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
 
-### Props
 
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
-| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
-| **nativeButton** | `boolean` | `true` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`). |
+## API reference
 
-
----
-
-## ToastArrow
-
-Displays an element positioned against the toast anchor.
-Renders a `&lt;div&gt;` element.
-
-Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
-
-### Props
-
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
-| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
-
-
----
-
-## ToastClose
-
-Closes the toast when clicked.
-Renders a `&lt;button&gt;` element.
-
-Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
-
-### Props
-
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
-| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
-| **nativeButton** | `boolean` | `true` | Whether the component renders a native `&lt;button&gt;` element when replacing it<br/>via the `render` prop.<br/>Set to `false` if the rendered element is not a button (e.g. `&lt;div&gt;`). |
-
-
----
-
-## ToastContent
-
-A container for the contents of a toast.
-Renders a `&lt;div&gt;` element.
-
-Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
-
-### Props
-
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
-| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
-
-
----
-
-## ToastDescription
-
-A description that describes the toast.
-Can be used as the default message for the toast when no title is provided.
-Renders a `&lt;p&gt;` element.
-
-Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
-
-### Props
-
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
-| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
-
-
----
-
-## ToastPortal
-
-A portal element that moves the viewport to a different part of the DOM.
-By default, the portal element is appended to `&lt;body&gt;`.
-Renders a `&lt;div&gt;` element.
-
-Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
-
-### Props
-
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
-| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
-| **container** | `HTMLElement \| ShadowRoot \| RefObject<HTMLElement \| ShadowRoot>` | — | A parent element to render the portal element into. |
-
-
----
-
-## ToastPositioner
-
-Positions the toast against the anchor.
-Renders a `&lt;div&gt;` element.
-
-Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
-
-### Props
-
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **anchor** | `Element` | — | An element to position the toast against. |
-| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
-| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
-| **sticky** | `boolean` | `false` | Whether to maintain the popup in the viewport after<br/>the anchor element was scrolled out of view. |
-| **side** | `Side` | `'top'` | Which side of the anchor element to align the toast against.<br/>May automatically change to avoid collisions. |
-| **align** | `Align` | `'center'` | How to align the popup relative to the specified side. |
-| **positionMethod** | `"fixed" \| "absolute"` | `'absolute'` | Determines which CSS `position` property to use. |
-| **sideOffset** | `number \| OffsetFunction` | `0` | Distance between the anchor and the popup in pixels.<br/>Also accepts a function that returns the distance to read the dimensions of the anchor<br/>and positioner elements, along with its side and alignment.<br/><br/>The function takes a `data` object parameter with the following properties:<br/>- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.<br/>- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.<br/>- `data.side`: which side of the anchor element the positioner is aligned against.<br/>- `data.align`: how the positioner is aligned relative to the specified side.<br/>@example  |
-| **alignOffset** | `number \| OffsetFunction` | `0` | Additional offset along the alignment axis in pixels.<br/>Also accepts a function that returns the offset to read the dimensions of the anchor<br/>and positioner elements, along with its side and alignment.<br/><br/>The function takes a `data` object parameter with the following properties:<br/>- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.<br/>- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.<br/>- `data.side`: which side of the anchor element the positioner is aligned against.<br/>- `data.align`: how the positioner is aligned relative to the specified side.<br/>@example  |
-| **collisionBoundary** | `Boundary` | `'clipping-ancestors'` | An element or a rectangle that delimits the area that the popup is confined to. |
-| **collisionPadding** | `Padding` | `5` | Additional space to maintain from the edge of the collision boundary. |
-| **arrowPadding** | `number` | `5` | Minimum distance to maintain between the arrow and the edges of the popup.<br/><br/>Use it to prevent the arrow element from hanging out of the rounded corners of a popup. |
-| **disableAnchorTracking** | `boolean` | `false` | Whether to disable the popup from tracking any layout shift of its positioning anchor. |
-| **collisionAvoidance** | `CollisionAvoidance` | — | Determines how to handle collisions when positioning the popup.<br/>@example  |
-| **toast*** | `ToastObject<any>` | — | The toast object associated with the positioner. |
-
-
----
-
-## ToastProvider
+### Provider
 
 Provides a context for creating and managing toasts.
 
-Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+**Provider Props:**
 
-### Props
+| Prop         | Type           | Default | Description                                                                                                                                               |
+| :----------- | :------------- | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| limit        | `number`       | `3`     | The maximum number of toasts that can be displayed at once.&#xA;When the limit is reached, the oldest toast will be removed to make room for the new one. |
+| toastManager | `ToastManager` | -       | A global manager for toasts to use outside of a React component.                                                                                          |
+| timeout      | `number`       | `5000`  | The default amount of time (in ms) before a toast is auto dismissed.&#xA;A value of `0` will prevent the toast from being dismissed automatically.        |
+| children     | `ReactNode`    | -       | -                                                                                                                                                         |
 
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **timeout** | `number` | `5000` | The default amount of time (in ms) before a toast is auto dismissed.<br/>A value of `0` will prevent the toast from being dismissed automatically. |
-| **limit** | `number` | `3` | The maximum number of toasts that can be displayed at once.<br/>When the limit is reached, the oldest toast will be removed to make room for the new one. |
-| **toastManager** | `ToastManager<any>` | — | A global manager for toasts to use outside of a React component. |
-
-
----
-
-## ToastRoot
-
-Groups all parts of an individual toast.
-Renders a `&lt;div&gt;` element.
-
-Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
-
-### Props
-
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
-| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
-| **swipeDirection** | `"left" \| "right" \| "up" \| "down" \| ("left" \| "right" \| "up" \| "down")[]` | `['down', 'right']` | Direction(s) in which the toast can be swiped to dismiss. |
-| **toast*** | `ToastRootToastObject<any>` | — | The toast to render. |
-
-
----
-
-## ToastTitle
-
-A title that labels the toast.
-Renders an `&lt;h2&gt;` element.
-
-Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
-
-### Props
-
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
-| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
-
-
----
-
-## ToastViewport
+### Viewport
 
 A container viewport for toasts.
-Renders a `&lt;div&gt;` element.
+Renders a `<div>` element.
 
-Documentation: [Base UI Toast](https://base-ui.com/react/components/toast)
+**Viewport Props:**
 
-### Props
+| Prop      | Type                                                                                | Default | Description                                                                                                                                                                                  |
+| :-------- | :---------------------------------------------------------------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| className | `string \| ((state: Toast.Viewport.State) => string \| undefined)`                  | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style     | `CSSProperties \| ((state: Toast.Viewport.State) => CSSProperties \| undefined)`    | -       | -                                                                                                                                                                                            |
+| render    | `ReactElement \| ((props: HTMLProps, state: Toast.Viewport.State) => ReactElement)` | -       | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |
 
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **className** | `string \| (...) => string)` | — | CSS class applied to the element, or a function that<br/>returns a class based on the component’s state. |
-| **render** | `ReactElement> \| ComponentRenderFn` | — | Allows you to replace the component’s HTML element<br/>with a different tag, or compose it with another component.<br/><br/>Accepts a `ReactElement` or a function that returns the element to render. |
+**Viewport Data Attributes:**
 
+| Attribute     | Type      | Description                                    |
+| :------------ | :-------- | :--------------------------------------------- |
+| data-expanded | `boolean` | Indicates toasts are expanded in the viewport. |
 
----
+**Viewport CSS Variables:**
 
+| Variable                 | Type     | Default | Description                                  |
+| :----------------------- | :------- | :------ | :------------------------------------------- |
+| --toast-frontmost-height | `number` | -       | Indicates the height of the frontmost toast. |
+
+### Portal
+
+A portal element that moves the viewport to a different part of the DOM.
+By default, the portal element is appended to `<body>`.
+Renders a `<div>` element.
+
+**Portal Props:**
+
+| Prop      | Type                                                                                | Default | Description                                                                                                                                                                                  |
+| :-------- | :---------------------------------------------------------------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| container | `HTMLElement \| ShadowRoot \| RefObject<HTMLElement \| ShadowRoot \| null> \| null` | -       | A parent element to render the portal element into.                                                                                                                                          |
+| className | `string \| ((state: any) => string \| undefined)`                                   | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style     | `CSSProperties \| ((state: any) => CSSProperties \| undefined)`                     | -       | -                                                                                                                                                                                            |
+| render    | `ReactElement \| ((props: HTMLProps, state: any) => ReactElement)`                  | -       | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |
+
+### Root
+
+Groups all parts of an individual toast.
+Renders a `<div>` element.
+
+**Root Props:**
+
+| Prop           | Type                                                                             | Default             | Description                                                                                                                                                                                  |
+| :------------- | :------------------------------------------------------------------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| swipeDirection | `'up' \| 'down' \| 'left' \| 'right' \| ('left' \| 'right' \| 'up' \| 'down')[]` | `['down', 'right']` | Direction(s) in which the toast can be swiped to dismiss.                                                                                                                                    |
+| toast          | `Toast.Root.ToastObject<any>`                                                    | -                   | The toast to render.                                                                                                                                                                         |
+| className      | `string \| ((state: Toast.Root.State) => string \| undefined)`                   | -                   | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style          | `CSSProperties \| ((state: Toast.Root.State) => CSSProperties \| undefined)`     | -                   | -                                                                                                                                                                                            |
+| render         | `ReactElement \| ((props: HTMLProps, state: Toast.Root.State) => ReactElement)`  | -                   | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |
+
+**Root Data Attributes:**
+
+| Attribute            | Type                                  | Description                                                    |
+| :------------------- | :------------------------------------ | :------------------------------------------------------------- |
+| data-expanded        | `boolean`                             | Present when the toast is expanded in the viewport.            |
+| data-limited         | `boolean`                             | Present when the toast was removed due to exceeding the limit. |
+| data-swipe-direction | `'up' \| 'down' \| 'left' \| 'right'` | The direction the toast was swiped.                            |
+| data-swiping         | `boolean`                             | Present when the toast is being swiped.                        |
+| data-type            | `string`                              | The type of the toast.                                         |
+| data-starting-style  | -                                     | Present when the toast is animating in.                        |
+| data-ending-style    | -                                     | Present when the toast is animating out.                       |
+
+**Root CSS Variables:**
+
+| Variable                 | Type     | Default | Description                                                                  |
+| :----------------------- | :------- | :------ | :--------------------------------------------------------------------------- |
+| --toast-height           | `number` | -       | Indicates the measured natural height of the toast in pixels.                |
+| --toast-index            | `number` | -       | Indicates the index of the toast in the list.                                |
+| --toast-offset-y         | `number` | -       | Indicates the vertical pixels offset of the toast in the list when expanded. |
+| --toast-swipe-movement-x | `number` | -       | Indicates the horizontal swipe movement of the toast.                        |
+| --toast-swipe-movement-y | `number` | -       | Indicates the vertical swipe movement of the toast.                          |
+
+### Content
+
+A container for the contents of a toast.
+Renders a `<div>` element.
+
+**Content Props:**
+
+| Prop      | Type                                                                               | Default | Description                                                                                                                                                                                  |
+| :-------- | :--------------------------------------------------------------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| className | `string \| ((state: Toast.Content.State) => string \| undefined)`                  | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style     | `CSSProperties \| ((state: Toast.Content.State) => CSSProperties \| undefined)`    | -       | -                                                                                                                                                                                            |
+| render    | `ReactElement \| ((props: HTMLProps, state: Toast.Content.State) => ReactElement)` | -       | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |
+
+**Content Data Attributes:**
+
+| Attribute     | Type      | Description                                                        |
+| :------------ | :-------- | :----------------------------------------------------------------- |
+| data-behind   | `boolean` | Present when the toast is behind the frontmost toast in the stack. |
+| data-expanded | `boolean` | Present when the toast viewport is expanded.                       |
+
+### Title
+
+A title that labels the toast.
+Renders an `<h2>` element.
+
+**Title Props:**
+
+| Prop      | Type                                                                             | Default | Description                                                                                                                                                                                  |
+| :-------- | :------------------------------------------------------------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| className | `string \| ((state: Toast.Title.State) => string \| undefined)`                  | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style     | `CSSProperties \| ((state: Toast.Title.State) => CSSProperties \| undefined)`    | -       | -                                                                                                                                                                                            |
+| render    | `ReactElement \| ((props: HTMLProps, state: Toast.Title.State) => ReactElement)` | -       | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |
+
+**Title Data Attributes:**
+
+| Attribute | Type     | Description            |
+| :-------- | :------- | :--------------------- |
+| data-type | `string` | The type of the toast. |
+
+### Description
+
+A description that describes the toast.
+Can be used as the default message for the toast when no title is provided.
+Renders a `<p>` element.
+
+**Description Props:**
+
+| Prop      | Type                                                                                   | Default | Description                                                                                                                                                                                  |
+| :-------- | :------------------------------------------------------------------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| className | `string \| ((state: Toast.Description.State) => string \| undefined)`                  | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style     | `CSSProperties \| ((state: Toast.Description.State) => CSSProperties \| undefined)`    | -       | -                                                                                                                                                                                            |
+| render    | `ReactElement \| ((props: HTMLProps, state: Toast.Description.State) => ReactElement)` | -       | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |
+
+**Description Data Attributes:**
+
+| Attribute | Type     | Description            |
+| :-------- | :------- | :--------------------- |
+| data-type | `string` | The type of the toast. |
+
+### Action
+
+Performs an action when clicked.
+Renders a `<button>` element.
+
+**Action Props:**
+
+| Prop         | Type                                                                              | Default | Description                                                                                                                                                                                  |
+| :----------- | :-------------------------------------------------------------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| nativeButton | `boolean`                                                                         | `true`  | Whether the component renders a native `<button>` element when replacing it&#xA;via the `render` prop.&#xA;Set to `false` if the rendered element is not a button (e.g. `<div>`).            |
+| className    | `string \| ((state: Toast.Action.State) => string \| undefined)`                  | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style        | `CSSProperties \| ((state: Toast.Action.State) => CSSProperties \| undefined)`    | -       | -                                                                                                                                                                                            |
+| render       | `ReactElement \| ((props: HTMLProps, state: Toast.Action.State) => ReactElement)` | -       | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |
+
+**Action Data Attributes:**
+
+| Attribute | Type     | Description            |
+| :-------- | :------- | :--------------------- |
+| data-type | `string` | The type of the toast. |
+
+### Close
+
+Closes the toast when clicked.
+Renders a `<button>` element.
+
+**Close Props:**
+
+| Prop         | Type                                                                             | Default | Description                                                                                                                                                                                  |
+| :----------- | :------------------------------------------------------------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| nativeButton | `boolean`                                                                        | `true`  | Whether the component renders a native `<button>` element when replacing it&#xA;via the `render` prop.&#xA;Set to `false` if the rendered element is not a button (e.g. `<div>`).            |
+| className    | `string \| ((state: Toast.Close.State) => string \| undefined)`                  | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style        | `CSSProperties \| ((state: Toast.Close.State) => CSSProperties \| undefined)`    | -       | -                                                                                                                                                                                            |
+| render       | `ReactElement \| ((props: HTMLProps, state: Toast.Close.State) => ReactElement)` | -       | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |
+
+**Close Data Attributes:**
+
+| Attribute | Type     | Description            |
+| :-------- | :------- | :--------------------- |
+| data-type | `string` | The type of the toast. |
+
+### Positioner
+
+Positions the toast against the anchor.
+Renders a `<div>` element.
+
+**Positioner Props:**
+
+| Prop                  | Type                       | Default    | Description                                                                                                                                                                                                                                                                                                                                                                           |
+| :-------------------- | :------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| disableAnchorTracking | `boolean`                  | `false`    | Whether to disable the popup from tracking any layout shift of its positioning anchor.                                                                                                                                                                                                                                                                                                |
+| toast                 | `ToastObject<any>`         | -          | The toast object associated with the positioner.                                                                                                                                                                                                                                                                                                                                      |
+| align                 | `Align`                    | `'center'` | How to align the popup relative to the specified side.                                                                                                                                                                                                                                                                                                                                |
+| alignOffset           | `number \| OffsetFunction` | `0`        | Additional offset along the alignment axis in pixels.&#xA;Also accepts a function that returns the offset to read the dimensions of the anchor&#xA;and positioner elements, along with its side and alignment.The function takes a `data` object parameter with the following properties:\* `data.anchor`: the dimensions of the anchor element with properties `width` and `height`. |
+
+- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.
+- `data.side`: which side of the anchor element the positioner is aligned against.
+- `data.align`: how the positioner is aligned relative to the specified side. |
+  | side | `Side` | `'top'` | Which side of the anchor element to align the toast against.&#xA;May automatically change to avoid collisions. |
+  | sideOffset | `number \| OffsetFunction` | `0` | Distance between the anchor and the popup in pixels.&#xA;Also accepts a function that returns the distance to read the dimensions of the anchor&#xA;and positioner elements, along with its side and alignment.The function takes a `data` object parameter with the following properties:\* `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.
+- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.
+- `data.side`: which side of the anchor element the positioner is aligned against.
+- `data.align`: how the positioner is aligned relative to the specified side. |
+  | arrowPadding | `number` | `5` | Minimum distance to maintain between the arrow and the edges of the popup.Use it to prevent the arrow element from hanging out of the rounded corners of a popup. |
+  | anchor | `Element \| null` | - | An element to position the toast against. |
+  | collisionAvoidance | `CollisionAvoidance` | - | Determines how to handle collisions when positioning the popup. |
+  | collisionBoundary | `Boundary` | `'clipping-ancestors'` | An element or a rectangle that delimits the area that the popup is confined to. |
+  | collisionPadding | `Padding` | `5` | Additional space to maintain from the edge of the collision boundary. |
+  | sticky | `boolean` | `false` | Whether to maintain the popup in the viewport after&#xA;the anchor element was scrolled out of view. |
+  | positionMethod | `'absolute' \| 'fixed'` | `'absolute'` | Determines which CSS `position` property to use. |
+  | className | `string \| ((state: Toast.Positioner.State) => string \| undefined)` | - | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state. |
+  | style | `CSSProperties \| ((state: Toast.Positioner.State) => CSSProperties \| undefined)` | - | - |
+  | render | `ReactElement \| ((props: HTMLProps, state: Toast.Positioner.State) => ReactElement)` | - | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |
+
+**Positioner Data Attributes:**
+
+| Attribute          | Type                                                                       | Description                                                           |
+| :----------------- | :------------------------------------------------------------------------- | :-------------------------------------------------------------------- |
+| data-anchor-hidden | -                                                                          | Present when the anchor is hidden.                                    |
+| data-align         | `'start' \| 'center' \| 'end'`                                             | Indicates how the toast is aligned relative to specified side.        |
+| data-side          | `'top' \| 'bottom' \| 'left' \| 'right' \| 'inline-end' \| 'inline-start'` | Indicates which side the toast is positioned relative to the trigger. |
+
+**Positioner CSS Variables:**
+
+| Variable           | Type     | Default | Description                                                                            |
+| :----------------- | :------- | :------ | :------------------------------------------------------------------------------------- |
+| --anchor-height    | `number` | -       | The anchor's height.                                                                   |
+| --anchor-width     | `number` | -       | The anchor's width.                                                                    |
+| --available-height | `number` | -       | The available height between the anchor and the edge of the viewport.                  |
+| --available-width  | `number` | -       | The available width between the anchor and the edge of the viewport.                   |
+| --transform-origin | `string` | -       | The coordinates that this element is anchored to. Used for animations and transitions. |
+
+### Arrow
+
+Displays an element positioned against the toast anchor.
+Renders a `<div>` element.
+
+**Arrow Props:**
+
+| Prop      | Type                                                                             | Default | Description                                                                                                                                                                                  |
+| :-------- | :------------------------------------------------------------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| className | `string \| ((state: Toast.Arrow.State) => string \| undefined)`                  | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style     | `CSSProperties \| ((state: Toast.Arrow.State) => CSSProperties \| undefined)`    | -       | -                                                                                                                                                                                            |
+| render    | `ReactElement \| ((props: HTMLProps, state: Toast.Arrow.State) => ReactElement)` | -       | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |
+
+**Arrow Data Attributes:**
+
+| Attribute       | Type                                                                       | Description                                                          |
+| :-------------- | :------------------------------------------------------------------------- | :------------------------------------------------------------------- |
+| data-uncentered | -                                                                          | Present when the toast arrow is uncentered.                          |
+| data-align      | `'start' \| 'center' \| 'end'`                                             | Indicates how the toast is aligned relative to specified side.       |
+| data-side       | `'top' \| 'bottom' \| 'left' \| 'right' \| 'inline-end' \| 'inline-start'` | Indicates which side the toast is positioned relative to the anchor. |
+
+## useToastManager
+
+Manages toasts, called inside of a `<Toast.Provider>`.
+
+```tsx title="Usage"
+const toastManager = Toast.useToastManager();
+```
+
+### Return value
+
+**Return Value:**
+
+| Property | Type                                                                                      | Description                                                                                                             |
+| :------- | :---------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- |
+| toasts   | `Toast.Root.ToastObject[]`                                                                | The array of toast objects.                                                                                             |
+| add      | `(options: ToastManagerAddOptions) => string`                                             | Add a toast to the toast list.                                                                                          |
+| close    | `(toastId: string) => void`                                                               | Closes and removes a toast from the toast list.                                                                         |
+| update   | `(toastId: string, options: ToastManagerUpdateOptions) => void`                           | Update a toast in the toast list.                                                                                       |
+| promise  | `<Value>(promise: Promise<Value>, options: ToastManagerPromiseOptions) => Promise<Value>` | Create a toast that resolves with a value, with three possible states for the toast: `loading`, `success`, and `error`. |
+
+### Method options
+
+**Props:**
+
+| Prop        | Type              | Default | Description                                                                                |
+| :---------- | :---------------- | :------ | :----------------------------------------------------------------------------------------- |
+| title       | `React.ReactNode` | -       | The title of the toast.                                                                    |
+| description | `React.ReactNode` | -       | The description of the toast.                                                              |
+| type        | `string`          | -       | The type of the toast. Used to conditionally style the toast or render different elements. |
+| timeout     | `number`          | -       | The amount of time (in ms) before the toast is auto dismissed.                             |
+| priority    | `'low' \| 'high'` | `'low'` | ```                                                                                        |
+
+The priority of the toast.
+
+- \`low\` - The toast will be announced politely.
+- \`high\` - The toast will be announced urgently.
+
+````|
+| onClose     | `() => void`                            | -       | A callback invoked when the toast is closed.                                                                                                  |
+| onRemove    | `() => void`                            | -       | A callback invoked when the toast is removed from the list after animations complete when closed.                                             |
+| actionProps | `React.ComponentPropsWithRef<'button'>` | -       | The props of the action button.                                                                                                               |
+| data        | `Record<string, unknown>`               | -       | The data of the toast.                                                                                                                        |
+
+### `add` method
+
+Creates a toast by adding it to the toast list.
+
+Returns a `toastId` that can be used to update or close the toast later.
+
+```jsx title="Usage"
+const toastId = toastManager.add({
+  description: 'Hello, world!',
+});
+````
+
+```jsx title="Example" {2,7-9}
+function App() {
+  const toastManager = Toast.useToastManager();
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        toastManager.add({
+          description: 'Hello, world!',
+        });
+      }}
+    >
+      Add toast
+    </button>
+  );
+}
+```
+
+For high priority toasts, the `title` and `description` strings are what are used to announce the toast to screen readers.
+Screen readers do not announce any extra content rendered inside `<Toast.Root>`, including the `<Toast.Title>` or `<Toast.Description>` components, unless they intentionally navigate to the toast viewport.
+
+### `update` method
+
+Updates the toast with new options.
+
+```jsx title="Usage"
+toastManager.update(toastId, {
+  description: 'New description',
+});
+```
+
+### `close` method
+
+Closes the toast, removing it from the toast list after any animations complete.
+
+```jsx title="Usage"
+toastManager.close(toastId);
+```
+
+### `promise` method
+
+Creates an asynchronous toast with three possible states: `loading`, `success`, and `error`.
+
+```tsx title="Description configuration"
+const promise = toastManager.promise(
+  new Promise((resolve) => {
+    setTimeout(() => resolve('world!'), 1000);
+  }),
+  {
+    // Each are a shortcut for the `description` option
+    loading: 'Loading…',
+    success: (data) => `Hello ${data}`,
+    error: (err) => `Error: ${err}`,
+  },
+);
+```
+
+Each state also accepts the [method options](/react/components/toast.md) object to granularly control the toast for each state:
+
+```tsx title="Method options configuration"
+const promise = toastManager.promise(
+  new Promise((resolve) => {
+    setTimeout(() => resolve('world!'), 1000);
+  }),
+  {
+    loading: {
+      title: 'Loading…',
+      description: 'The promise is loading.',
+    },
+    success: {
+      title: 'Success',
+      description: 'The promise resolved successfully.',
+    },
+    error: {
+      title: 'Error',
+      description: 'The promise rejected.',
+      actionProps: {
+        children: 'Contact support',
+        onClick() {
+          // Redirect to support page
+        },
+      },
+    },
+  },
+);
+```

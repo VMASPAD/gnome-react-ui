@@ -21,9 +21,6 @@ export function CodeBlock({
     <div className="my-5 overflow-hidden rounded-lg border border-border bg-[oklch(0.16_0.02_330)]">
       <div className="flex items-center justify-between border-b border-white/8 bg-[oklch(0.19_0.02_330)] px-4 py-2">
         <div className="flex items-center gap-2">
-          <span className="h-2 w-2 rounded-full bg-[oklch(0.65_0.18_20)]" />
-          <span className="h-2 w-2 rounded-full bg-[oklch(0.72_0.18_80)]" />
-          <span className="h-2 w-2 rounded-full bg-[oklch(0.65_0.18_150)]" />
           <span className="ml-2 font-mono text-[10px] font-medium uppercase tracking-widest text-white/30">
             {language}
           </span>
