@@ -47,10 +47,16 @@ import * as BreadcrumbDemo from "@/app/docs/demos/breadcrumb/index";
 import * as PaginationDemo from "@/app/docs/demos/pagination/index";
 import * as Textarea from "@/app/docs/demos/textarea/index";
 import * as Label from "@/app/docs/demos/label/index";
-
+import * as ContextMenuDemo from "@/app/docs/demos/contextMenu";
+import * as ContextMenuParts from "@/app/components/context-menu/index.parts";
 // ── Client islands ─────────────────────────────────────────────────────────
 import { CodeBlock, InlineCode } from "@/app/docs/components/CodeBlock";
 import { CopyLinkButton } from "@/app/docs/components/CopyLinkButton";
+
+const ContextMenu = {
+  ...ContextMenuParts,
+  ...ContextMenuDemo,
+};
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function extractText(node: React.ReactNode): string {
@@ -165,18 +171,37 @@ function ApiTable({ children }: { children: React.ReactNode }) {
   const typeIdx = headerCells.indexOf("type");
   const defaultIdx = headerCells.indexOf("default");
   const descIdx = headerCells.indexOf("description");
+  const attrIdx = headerCells.indexOf("attribute");
+  const varIdx = headerCells.indexOf("variable");
 
   const rows = React.Children.toArray(
     (tbodyNode.props as { children: React.ReactNode }).children
   );
 
-  const getCell = (cells: React.ReactNode[], idx: number) =>
-    idx >= 0
-      ? decodeChildren(
-          (cells[idx] as React.ReactElement<{ children?: React.ReactNode }>)
-            ?.props?.children
-        )
-      : null;
+  const getCell = (cells: React.ReactNode[], idx: number): React.ReactNode => {
+    if (idx < 0) return null;
+
+    const raw = (cells[idx] as React.ReactElement<{ children?: React.ReactNode }>)
+      ?.props?.children;
+    const decoded = decodeChildren(raw);
+
+    // Keep rich content only for description; all other cols extract plain text
+    // (this also strips backtick <code> wrappers: `foo` → foo)
+    if (idx === descIdx) return decoded;
+
+    const text = extractText(decoded).trim();
+
+    if (idx === typeIdx) {
+      const cleaned = text
+        .replace(/,\s*any\[\]/g, "")   // foo, any[] → foo
+        .replace(/any\[\]\s*,\s*/g, "") // any[], foo → foo
+        .replace(/any\[\]/g, "")        // standalone any[]
+        .trim();
+      return cleaned || null;
+    }
+
+    return text || null;
+  };
 
   return (
     <AccordionParts.Root
@@ -192,6 +217,8 @@ function ApiTable({ children }: { children: React.ReactNode }) {
         const typeCell = getCell(cells, typeIdx);
         const defaultCell = getCell(cells, defaultIdx);
         const descCell = getCell(cells, descIdx);
+        const attrCell = getCell(cells, attrIdx);
+        const varCell = getCell(cells, varIdx);
         const defaultText = extractText(defaultCell ?? null);
         const hasDefault =
           defaultText && defaultText !== "—" && defaultText !== "";
@@ -205,9 +232,35 @@ function ApiTable({ children }: { children: React.ReactNode }) {
           >
             <AccordionParts.Header>
               <AccordionParts.Trigger className="group flex w-full items-center gap-3 bg-background px-4 py-3 text-left transition-colors hover:bg-muted/40 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
+                {
+                  propCell && (
+
                 <span className="min-w-[8rem] shrink-0 font-mono text-[13px] font-semibold text-foreground">
                   {propCell}
                 </span>
+                  )
+                }
+                
+{
+  varCell && (
+    <span className="hidden shrink-0 rounded-md border border-yellow-500/20 bg-yellow-500/8 px-1.5 py-0.5 font-mono text-[11px] text-yellow-600 dark:text-yellow-400 sm:inline-block">
+      {varCell}
+    </span>
+  )
+}
+
+                {
+                  attrCell && (
+                    <div className="flex items-start gap-3">
+                      <span className="w-14 shrink-0 pt-0.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground/50">
+                        Attribute
+                      </span>
+                      <code className="rounded border border-green-500/20 bg-green-500/8 px-1.5 py-0.5 font-mono text-[11px] text-green-600 dark:text-green-400">
+                        {attrCell}
+                      </code>
+                    </div>
+                  )
+                }
                 {typeCell && (
                   <span className="hidden shrink-0 truncate rounded-md border border-blue-500/20 bg-blue-500/8 px-1.5 py-0.5 font-mono text-[11px] text-blue-600 dark:text-blue-400 sm:inline-block max-w-[14rem]">
                     {typeCell}
@@ -231,6 +284,18 @@ function ApiTable({ children }: { children: React.ReactNode }) {
                     {descCell}
                   </p>
                 )}
+                {
+                  attrCell && (
+                    <div className="flex items-start gap-3">
+                      <span className="w-14 shrink-0 pt-0.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground/50">
+                        Attribute
+                      </span>
+                      <code className="rounded border border-green-500/20 bg-green-500/8 px-1.5 py-0.5 font-mono text-[11px] text-green-600 dark:text-green-400">
+                        {attrCell}
+                      </code>
+                    </div>
+                  )
+                }
                 {typeCell && (
                   <div className="flex items-start gap-3">
                     <span className="w-14 shrink-0 pt-0.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground/50">
@@ -279,6 +344,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Checkbox: Checkbox as unknown as MDXComponents[string],
     Collapsible: Collapsible as unknown as MDXComponents[string],
     Combobox: Combobox as unknown as MDXComponents[string],
+    ContextMenu: ContextMenu as unknown as MDXComponents[string],
     Drawer: Drawer as unknown as MDXComponents[string],
     Dialog: Dialog as unknown as MDXComponents[string],
     Field: Field as unknown as MDXComponents[string],

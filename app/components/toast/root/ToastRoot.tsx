@@ -516,6 +516,7 @@ export const ToastRoot = React.forwardRef(function ToastRoot(
     inert: inertValue(toast.limited),
     style: {
       ...getDragStyles(),
+      zIndex: Math.max(1, 1000 - domIndex),
       [ToastRootCssVars.index as string]:
         toast.transitionStatus === 'ending' ? domIndex : visibleIndex,
       [ToastRootCssVars.offsetY as string]: `${offsetY}px`,

@@ -9,7 +9,7 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
-
+app/docs/mdx.sh
 app/galery
 # testing
 /coverage
