@@ -1,0 +1,258 @@
+---
+title: Pagination
+description: A pagination component for navigating between pages of content. Composed of `Pagination`, `PaginationContent`, `PaginationItem`, `PaginationButton`, `PaginationPrevious`, `PaginationNext`, and `PaginationEllipsis`.
+---
+
+import ComponentPreview from "@/components/component-preview";
+
+<ComponentPreview title="Pagination component" name="pagination">
+  <PaginationDemo.PaginationDefault />
+</ComponentPreview>
+
+```tsx
+import * as React from 'react';
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationButton,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+} from 'gnome-ui/pagination';
+
+function PaginationDefault() {
+  const [page, setPage] = React.useState(1);
+  const total = 10;
+
+  const getVisiblePages = (): (number | 'ellipsis')[] => {
+    const pages: (number | 'ellipsis')[] = [];
+    pages.push(1);
+    if (page > 3) pages.push('ellipsis');
+    for (
+      let i = Math.max(2, page - 1);
+      i <= Math.min(total - 1, page + 1);
+      i++
+    ) {
+      pages.push(i);
+    }
+    if (page < total - 2) pages.push('ellipsis');
+    if (total > 1) pages.push(total);
+    return pages;
+  };
+
+  return (
+    <Pagination>
+      <PaginationContent>
+        <PaginationItem>
+          <PaginationPrevious
+            onClick={() => setPage((p) => Math.max(1, p - 1))}
+            disabled={page === 1}
+          />
+        </PaginationItem>
+
+        {getVisiblePages().map((p, i) =>
+          p === 'ellipsis' ? (
+            <PaginationItem key={`e-${i}`}>
+              <PaginationEllipsis />
+            </PaginationItem>
+          ) : (
+            <PaginationItem key={p}>
+              <PaginationButton active={page === p} onClick={() => setPage(p)}>
+                {p}
+              </PaginationButton>
+            </PaginationItem>
+          )
+        )}
+
+        <PaginationItem>
+          <PaginationNext
+            onClick={() => setPage((p) => Math.min(total, p + 1))}
+            disabled={page === total}
+          />
+        </PaginationItem>
+      </PaginationContent>
+    </Pagination>
+  );
+}
+```
+
+
+# Anatomy
+
+```tsx
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationButton,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+} from 'gnome-ui/pagination';
+
+<Pagination>
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationButton active>1</PaginationButton>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext />
+    </PaginationItem>
+  </PaginationContent>
+</Pagination>
+```
+
+# Examples
+
+## Compact
+
+Minimal previous/next layout with a page counter — useful for mobile or narrow spaces.
+
+<ComponentPreview title="Pagination component" name="pagination">
+  <PaginationDemo.PaginationCompact />
+</ComponentPreview>
+
+```tsx
+import * as React from 'react';
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationPrevious,
+  PaginationNext,
+} from 'gnome-ui/pagination';
+
+function PaginationCompact() {
+  const [page, setPage] = React.useState(3);
+  const total = 20;
+
+  return (
+    <div className="flex items-center gap-4">
+      <Pagination>
+        <PaginationContent>
+          <PaginationItem>
+            <PaginationPrevious
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+              disabled={page === 1}
+            />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationNext
+              onClick={() => setPage((p) => Math.min(total, p + 1))}
+              disabled={page === total}
+            />
+          </PaginationItem>
+        </PaginationContent>
+      </Pagination>
+      <span className="text-sm text-muted-foreground">
+        Page {page} of {total}
+      </span>
+    </div>
+  );
+}
+```
+
+
+---
+
+## Full with Smart Ellipsis
+
+Automatically shows a window of pages around the current one, with ellipsis for hidden ranges.
+
+<ComponentPreview title="Pagination component" name="pagination">
+  <PaginationDemo.PaginationFull />
+</ComponentPreview>
+
+```tsx
+import * as React from 'react';
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationButton,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+} from 'gnome-ui/pagination';
+
+function PaginationFull() {
+  const [page, setPage] = React.useState(5);
+  const total = 20;
+
+  const getVisiblePages = () => {
+    const pages: (number | 'ellipsis')[] = [];
+    pages.push(1);
+    if (page > 3) pages.push('ellipsis');
+    for (
+      let i = Math.max(2, page - 1);
+      i <= Math.min(total - 1, page + 1);
+      i++
+    ) {
+      pages.push(i);
+    }
+    if (page < total - 2) pages.push('ellipsis');
+    if (total > 1) pages.push(total);
+    return pages;
+  };
+
+  return (
+    <Pagination>
+      <PaginationContent>
+        <PaginationItem>
+          <PaginationPrevious
+            onClick={() => setPage((p) => Math.max(1, p - 1))}
+            disabled={page === 1}
+          />
+        </PaginationItem>
+
+        {getVisiblePages().map((p, i) =>
+          p === 'ellipsis' ? (
+            <PaginationItem key={`e-${i}`}>
+              <PaginationEllipsis />
+            </PaginationItem>
+          ) : (
+            <PaginationItem key={p}>
+              <PaginationButton active={page === p} onClick={() => setPage(p)}>
+                {p}
+              </PaginationButton>
+            </PaginationItem>
+          )
+        )}
+
+        <PaginationItem>
+          <PaginationNext
+            onClick={() => setPage((p) => Math.min(total, p + 1))}
+            disabled={page === total}
+          />
+        </PaginationItem>
+      </PaginationContent>
+    </Pagination>
+  );
+}
+```
+
+
+---
+
+### Props — PaginationButton
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **active** | `boolean` | `false` | Highlights the button as the current page. |
+| **disabled** | `boolean` | `false` | Disables interaction. |
+| **onClick** | `() => void` | — | Click handler. |
+| **className** | `string` | — | Additional CSS classes. |
+| **children** | `ReactNode` | — | Page number or label. |
+
+### Props — PaginationPrevious / PaginationNext
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **disabled** | `boolean` | `false` | Disables the button when at the boundary. |
+| **onClick** | `() => void` | — | Click handler. |
+
+

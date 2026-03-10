@@ -1,0 +1,901 @@
+@import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+@plugin "tailwindcss-animate";
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-ubuntu), "Ubuntu", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-ubuntu-mono), "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root {
+  /* Ubuntu/GNOME uses more rounded and soft borders */
+  --radius: 0.5rem;
+
+  /* Light Mode - Neutral/warm light base */
+  --background: oklch(0.985 0.002 74);
+  --foreground: oklch(0.25 0.01 300);
+  /* Very dark gray, not pure black */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.25 0.01 300);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.25 0.01 300);
+
+  /* UBUNTU ORANGE (#E95420) */
+  --primary: oklch(0.61 0.18 35);
+  --primary-foreground: oklch(0.98 0 0);
+
+  /* Light grays from Yaru Light theme */
+  --secondary: oklch(0.94 0.005 300);
+  --secondary-foreground: oklch(0.25 0.01 300);
+  --muted: oklch(0.94 0.005 300);
+  --muted-foreground: oklch(0.5 0.01 300);
+
+  /* Hover states */
+  --accent: oklch(0.94 0.005 300);
+  --accent-foreground: oklch(0.61 0.18 35);
+  /* Orange text on hover */
+
+  /* Destructive - Yaru Red */
+  --destructive: oklch(0.55 0.18 25);
+  --success: oklch(0.55 0.15 150);
+  --success-foreground: oklch(0.45 0.15 150);
+  --warning: oklch(0.75 0.18 80);
+  --warning-foreground: oklch(0.5 0.15 80);
+  --border: oklch(0.85 0.01 300);
+  --input: oklch(0.85 0.01 300);
+
+  /* Orange Ring */
+  --ring: oklch(0.61 0.18 35);
+
+  --chart-1: oklch(0.61 0.18 35);
+  /* Orange */
+  --chart-2: oklch(0.45 0.12 330);
+  /* Aubergine/Purple */
+  --chart-3: oklch(0.55 0.12 250);
+  /* GNOME Blue */
+  --chart-4: oklch(0.7 0.15 80);
+  /* Warm Green */
+  --chart-5: oklch(0.75 0.15 50);
+  /* Warm Yellow */
+
+  --sidebar: oklch(0.96 0.005 300);
+  --sidebar-foreground: oklch(0.25 0.01 300);
+  --sidebar-primary: oklch(0.61 0.18 35);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.92 0.005 300);
+  --sidebar-accent-foreground: oklch(0.61 0.18 35);
+  --sidebar-border: oklch(0.85 0.01 300);
+  --sidebar-ring: oklch(0.61 0.18 35);
+}
+
+.dark {
+  /* Dark Mode - Inspired by Yaru Dark (deep Aubergine) */
+  --background: oklch(0.17 0.02 330);
+  /* Dark background with subtle purple tint */
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.22 0.02 330);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.22 0.02 330);
+  --popover-foreground: oklch(0.95 0 0);
+
+  /* UBUNTU ORANGE - Slightly brighter in dark mode for contrast */
+  --primary: oklch(0.65 0.18 35);
+  --primary-foreground: oklch(0.98 0 0);
+
+  /* Yaru dark grays */
+  --secondary: oklch(0.28 0.02 330);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.28 0.02 330);
+  --muted-foreground: oklch(0.74 0.01 330);
+
+  /* Hover states */
+  --accent: oklch(0.28 0.02 330);
+  --accent-foreground: oklch(0.65 0.18 35);
+  /* Orange on hover */
+
+  --destructive: oklch(0.6 0.18 25);
+  --success: oklch(0.55 0.15 150);
+  --success-foreground: oklch(0.65 0.18 150);
+  --warning: oklch(0.75 0.18 80);
+  --warning-foreground: oklch(0.7 0.15 80);
+  --border: oklch(0.38 0.02 330);
+  --input: oklch(0.36 0.02 330);
+  --ring: oklch(0.65 0.18 35);
+
+  --chart-1: oklch(0.65 0.18 35);
+  /* Orange */
+  --chart-2: oklch(0.5 0.15 330);
+  /* Purple */
+  --chart-3: oklch(0.6 0.15 250);
+  /* Blue */
+  --chart-4: oklch(0.65 0.15 150);
+  /* Green */
+  --chart-5: oklch(0.7 0.15 80);
+  /* Yellow/Green */
+
+  /* Sidebar in dark mode is typically deeper */
+  --sidebar: oklch(0.18 0.02 330);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.65 0.18 35);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.25 0.02 330);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.28 0.02 330);
+  --sidebar-ring: oklch(0.65 0.18 35);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   FUMADOCS TOKEN BRIDGE — keep docs colors synced with app theme tokens
+   (fixes dark mode heading/body colors in h1/h2/h3 and prose content)
+   ══════════════════════════════════════════════════════════════════════════════ */
+:root,
+.dark {
+  --color-fd-background: var(--background);
+  --color-fd-foreground: var(--foreground);
+  --color-fd-muted: var(--muted);
+  --color-fd-muted-foreground: var(--muted-foreground);
+  --color-fd-popover: var(--popover);
+  --color-fd-popover-foreground: var(--popover-foreground);
+  --color-fd-card: var(--card);
+  --color-fd-card-foreground: var(--card-foreground);
+  --color-fd-border: var(--border);
+  --color-fd-primary: var(--primary);
+  --color-fd-primary-foreground: var(--primary-foreground);
+  --color-fd-secondary: var(--secondary);
+  --color-fd-secondary-foreground: var(--secondary-foreground);
+  --color-fd-accent: var(--accent);
+  --color-fd-accent-foreground: var(--accent-foreground);
+  --color-fd-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  code,
+  pre,
+  kbd,
+  samp {
+    font-family: var(--font-mono);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-foreground);
+  }
+
+  ::selection {
+    background: oklch(0.61 0.18 35 / 0.2);
+    color: oklch(0.61 0.18 35);
+  }
+}
+
+/* ── Utility: dot grid pattern background ──────────────────────────────────── */
+.bg-dot-pattern {
+  background-image: radial-gradient(
+    circle,
+    oklch(0.5 0.01 300 / 0.18) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+
+.dark .bg-dot-pattern {
+  background-image: radial-gradient(
+    circle,
+    oklch(0.6 0.01 330 / 0.12) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+
+/* ── Utility: gradient text ────────────────────────────────────────────────── */
+@layer utilities {
+  .text-gradient {
+    @apply inline bg-linear-to-t from-primary to-orange-400 bg-clip-text text-transparent;
+    /* Prevent gradient from leaking outside the text bounding box */
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+}
+/* ── Utility: glow effects ─────────────────────────────────────────────────── */
+.glow-primary {
+  box-shadow: 0 0 20px oklch(0.61 0.18 35 / 0.25), 0 0 60px oklch(0.61 0.18 35 / 0.1);
+}
+
+.hover\:glow-primary:hover {
+  box-shadow: 0 0 20px oklch(0.61 0.18 35 / 0.25), 0 0 60px oklch(0.61 0.18 35 / 0.1);
+}
+
+/* ── Utility: card lift hover ──────────────────────────────────────────────── */
+.card-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px oklch(0 0 0 / 0.12), 0 0 0 1px oklch(0.61 0.18 35 / 0.15);
+}
+.dark .card-lift:hover {
+  box-shadow: 0 12px 40px oklch(0 0 0 / 0.4), 0 0 0 1px oklch(0.61 0.18 35 / 0.25);
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   GLOBAL COLOR THEMES — add data-theme="<name>" to <html> to override primary
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Cyan / Sky ────────────────────────────────────────────────────────────── */
+:root[data-theme="cyan"] {
+  --primary: oklch(0.58 0.16 230);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.58 0.16 230);
+  --accent-foreground: oklch(0.58 0.16 230);
+  --sidebar-primary: oklch(0.58 0.16 230);
+  --sidebar-accent-foreground: oklch(0.58 0.16 230);
+  --sidebar-ring: oklch(0.58 0.16 230);
+  --chart-1: oklch(0.58 0.16 230);
+}
+
+.dark[data-theme="cyan"] {
+  --primary: oklch(0.65 0.16 230);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.65 0.16 230);
+  --accent-foreground: oklch(0.65 0.16 230);
+  --sidebar-primary: oklch(0.65 0.16 230);
+  --sidebar-accent-foreground: oklch(0.65 0.16 230);
+  --sidebar-ring: oklch(0.65 0.16 230);
+  --chart-1: oklch(0.65 0.16 230);
+}
+
+/* ── Green ─────────────────────────────────────────────────────────────────── */
+:root[data-theme="green"] {
+  --primary: oklch(0.55 0.16 150);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.55 0.16 150);
+  --accent-foreground: oklch(0.55 0.16 150);
+  --sidebar-primary: oklch(0.55 0.16 150);
+  --sidebar-accent-foreground: oklch(0.55 0.16 150);
+  --sidebar-ring: oklch(0.55 0.16 150);
+  --chart-1: oklch(0.55 0.16 150);
+}
+
+.dark[data-theme="green"] {
+  --primary: oklch(0.62 0.16 150);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.62 0.16 150);
+  --accent-foreground: oklch(0.62 0.16 150);
+  --sidebar-primary: oklch(0.62 0.16 150);
+  --sidebar-accent-foreground: oklch(0.62 0.16 150);
+  --sidebar-ring: oklch(0.62 0.16 150);
+  --chart-1: oklch(0.62 0.16 150);
+}
+
+/* ── Red ───────────────────────────────────────────────────────────────────── */
+:root[data-theme="red"] {
+  --primary: oklch(0.55 0.22 25);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.55 0.22 25);
+  --accent-foreground: oklch(0.55 0.22 25);
+  --sidebar-primary: oklch(0.55 0.22 25);
+  --sidebar-accent-foreground: oklch(0.55 0.22 25);
+  --sidebar-ring: oklch(0.55 0.22 25);
+  --chart-1: oklch(0.55 0.22 25);
+}
+
+.dark[data-theme="red"] {
+  --primary: oklch(0.62 0.22 25);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.62 0.22 25);
+  --accent-foreground: oklch(0.62 0.22 25);
+  --sidebar-primary: oklch(0.62 0.22 25);
+  --sidebar-accent-foreground: oklch(0.62 0.22 25);
+  --sidebar-ring: oklch(0.62 0.22 25);
+  --chart-1: oklch(0.62 0.22 25);
+}
+
+/* ── Black ─────────────────────────────────────────────────────────────────── */
+:root[data-theme="black"] {
+  --primary: oklch(0.25 0 0);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.25 0 0);
+  --accent-foreground: oklch(0.25 0 0);
+  --sidebar-primary: oklch(0.25 0 0);
+  --sidebar-accent-foreground: oklch(0.25 0 0);
+  --sidebar-ring: oklch(0.25 0 0);
+  --chart-1: oklch(0.25 0 0);
+}
+
+.dark[data-theme="black"] {
+  --primary: oklch(0.9 0 0);
+  --primary-foreground: oklch(0.15 0 0);
+  --ring: oklch(0.9 0 0);
+  --accent-foreground: oklch(0.9 0 0);
+  --sidebar-primary: oklch(0.9 0 0);
+  --sidebar-accent-foreground: oklch(0.9 0 0);
+  --sidebar-ring: oklch(0.9 0 0);
+  --chart-1: oklch(0.9 0 0);
+}
+
+/* ── White ─────────────────────────────────────────────────────────────────── */
+:root[data-theme="white"] {
+  --primary: oklch(0.7 0 0);
+  --primary-foreground: oklch(0.15 0 0);
+  --ring: oklch(0.7 0 0);
+  --accent-foreground: oklch(0.35 0 0);
+  --sidebar-primary: oklch(0.7 0 0);
+  --sidebar-accent-foreground: oklch(0.35 0 0);
+  --sidebar-ring: oklch(0.7 0 0);
+  --chart-1: oklch(0.7 0 0);
+}
+
+.dark[data-theme="white"] {
+  --primary: oklch(0.85 0 0);
+  --primary-foreground: oklch(0.15 0 0);
+  --ring: oklch(0.85 0 0);
+  --accent-foreground: oklch(0.85 0 0);
+  --sidebar-primary: oklch(0.85 0 0);
+  --sidebar-accent-foreground: oklch(0.85 0 0);
+  --sidebar-ring: oklch(0.85 0 0);
+  --chart-1: oklch(0.85 0 0);
+}
+
+/* ── Violet ────────────────────────────────────────────────────────────────── */
+:root[data-theme="violet"] {
+  --primary: oklch(0.5 0.2 300);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.5 0.2 300);
+  --accent-foreground: oklch(0.5 0.2 300);
+  --sidebar-primary: oklch(0.5 0.2 300);
+  --sidebar-accent-foreground: oklch(0.5 0.2 300);
+  --sidebar-ring: oklch(0.5 0.2 300);
+  --chart-1: oklch(0.5 0.2 300);
+}
+
+.dark[data-theme="violet"] {
+  --primary: oklch(0.6 0.2 300);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.6 0.2 300);
+  --accent-foreground: oklch(0.6 0.2 300);
+  --sidebar-primary: oklch(0.6 0.2 300);
+  --sidebar-accent-foreground: oklch(0.6 0.2 300);
+  --sidebar-ring: oklch(0.6 0.2 300);
+  --chart-1: oklch(0.6 0.2 300);
+}
+
+/* ── Yellow ────────────────────────────────────────────────────────────────── */
+:root[data-theme="yellow"] {
+  --primary: oklch(0.72 0.17 80);
+  --primary-foreground: oklch(0.18 0.02 80);
+  --ring: oklch(0.72 0.17 80);
+  --accent-foreground: oklch(0.55 0.14 80);
+  --sidebar-primary: oklch(0.72 0.17 80);
+  --sidebar-accent-foreground: oklch(0.55 0.14 80);
+  --sidebar-ring: oklch(0.72 0.17 80);
+  --chart-1: oklch(0.72 0.17 80);
+}
+
+.dark[data-theme="yellow"] {
+  --primary: oklch(0.78 0.17 80);
+  --primary-foreground: oklch(0.18 0.02 80);
+  --ring: oklch(0.78 0.17 80);
+  --accent-foreground: oklch(0.78 0.17 80);
+  --sidebar-primary: oklch(0.78 0.17 80);
+  --sidebar-accent-foreground: oklch(0.78 0.17 80);
+  --sidebar-ring: oklch(0.78 0.17 80);
+  --chart-1: oklch(0.78 0.17 80);
+}
+
+/* ── Gray ──────────────────────────────────────────────────────────────────── */
+:root[data-theme="gray"] {
+  --primary: oklch(0.5 0.01 260);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.5 0.01 260);
+  --accent-foreground: oklch(0.5 0.01 260);
+  --sidebar-primary: oklch(0.5 0.01 260);
+  --sidebar-accent-foreground: oklch(0.5 0.01 260);
+  --sidebar-ring: oklch(0.5 0.01 260);
+  --chart-1: oklch(0.5 0.01 260);
+}
+
+.dark[data-theme="gray"] {
+  --primary: oklch(0.6 0.01 260);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.6 0.01 260);
+  --accent-foreground: oklch(0.6 0.01 260);
+  --sidebar-primary: oklch(0.6 0.01 260);
+  --sidebar-accent-foreground: oklch(0.6 0.01 260);
+  --sidebar-ring: oklch(0.6 0.01 260);
+  --chart-1: oklch(0.6 0.01 260);
+}
+
+/* ── Rose ──────────────────────────────────────────────────────────────────── */
+:root[data-theme="rose"] {
+  --primary: oklch(0.62 0.19 10);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.62 0.19 10);
+  --accent-foreground: oklch(0.62 0.19 10);
+  --sidebar-primary: oklch(0.62 0.19 10);
+  --sidebar-accent-foreground: oklch(0.62 0.19 10);
+  --sidebar-ring: oklch(0.62 0.19 10);
+  --chart-1: oklch(0.62 0.19 10);
+}
+
+.dark[data-theme="rose"] {
+  --primary: oklch(0.68 0.19 10);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.68 0.19 10);
+  --accent-foreground: oklch(0.68 0.19 10);
+  --sidebar-primary: oklch(0.68 0.19 10);
+  --sidebar-accent-foreground: oklch(0.68 0.19 10);
+  --sidebar-ring: oklch(0.68 0.19 10);
+  --chart-1: oklch(0.68 0.19 10);
+}
+
+/* ── Indigo ────────────────────────────────────────────────────────────────── */
+:root[data-theme="indigo"] {
+  --primary: oklch(0.56 0.17 275);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.56 0.17 275);
+  --accent-foreground: oklch(0.56 0.17 275);
+  --sidebar-primary: oklch(0.56 0.17 275);
+  --sidebar-accent-foreground: oklch(0.56 0.17 275);
+  --sidebar-ring: oklch(0.56 0.17 275);
+  --chart-1: oklch(0.56 0.17 275);
+}
+
+.dark[data-theme="indigo"] {
+  --primary: oklch(0.63 0.17 275);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.63 0.17 275);
+  --accent-foreground: oklch(0.63 0.17 275);
+  --sidebar-primary: oklch(0.63 0.17 275);
+  --sidebar-accent-foreground: oklch(0.63 0.17 275);
+  --sidebar-ring: oklch(0.63 0.17 275);
+  --chart-1: oklch(0.63 0.17 275);
+}
+
+/* ── Teal ──────────────────────────────────────────────────────────────────── */
+:root[data-theme="teal"] {
+  --primary: oklch(0.6 0.14 195);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.6 0.14 195);
+  --accent-foreground: oklch(0.6 0.14 195);
+  --sidebar-primary: oklch(0.6 0.14 195);
+  --sidebar-accent-foreground: oklch(0.6 0.14 195);
+  --sidebar-ring: oklch(0.6 0.14 195);
+  --chart-1: oklch(0.6 0.14 195);
+}
+
+.dark[data-theme="teal"] {
+  --primary: oklch(0.67 0.14 195);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.67 0.14 195);
+  --accent-foreground: oklch(0.67 0.14 195);
+  --sidebar-primary: oklch(0.67 0.14 195);
+  --sidebar-accent-foreground: oklch(0.67 0.14 195);
+  --sidebar-ring: oklch(0.67 0.14 195);
+  --chart-1: oklch(0.67 0.14 195);
+}
+
+/* ── Emerald ───────────────────────────────────────────────────────────────── */
+:root[data-theme="emerald"] {
+  --primary: oklch(0.58 0.16 165);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.58 0.16 165);
+  --accent-foreground: oklch(0.58 0.16 165);
+  --sidebar-primary: oklch(0.58 0.16 165);
+  --sidebar-accent-foreground: oklch(0.58 0.16 165);
+  --sidebar-ring: oklch(0.58 0.16 165);
+  --chart-1: oklch(0.58 0.16 165);
+}
+
+.dark[data-theme="emerald"] {
+  --primary: oklch(0.65 0.16 165);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.65 0.16 165);
+  --accent-foreground: oklch(0.65 0.16 165);
+  --sidebar-primary: oklch(0.65 0.16 165);
+  --sidebar-accent-foreground: oklch(0.65 0.16 165);
+  --sidebar-ring: oklch(0.65 0.16 165);
+  --chart-1: oklch(0.65 0.16 165);
+}
+
+/* ── Amber ─────────────────────────────────────────────────────────────────── */
+:root[data-theme="amber"] {
+  --primary: oklch(0.76 0.18 75);
+  --primary-foreground: oklch(0.2 0.02 75);
+  --ring: oklch(0.76 0.18 75);
+  --accent-foreground: oklch(0.6 0.15 75);
+  --sidebar-primary: oklch(0.76 0.18 75);
+  --sidebar-accent-foreground: oklch(0.6 0.15 75);
+  --sidebar-ring: oklch(0.76 0.18 75);
+  --chart-1: oklch(0.76 0.18 75);
+}
+
+.dark[data-theme="amber"] {
+  --primary: oklch(0.82 0.18 75);
+  --primary-foreground: oklch(0.2 0.02 75);
+  --ring: oklch(0.82 0.18 75);
+  --accent-foreground: oklch(0.82 0.18 75);
+  --sidebar-primary: oklch(0.82 0.18 75);
+  --sidebar-accent-foreground: oklch(0.82 0.18 75);
+  --sidebar-ring: oklch(0.82 0.18 75);
+  --chart-1: oklch(0.82 0.18 75);
+}
+
+/* ── Fuchsia ───────────────────────────────────────────────────────────────── */
+:root[data-theme="fuchsia"] {
+  --primary: oklch(0.63 0.22 330);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.63 0.22 330);
+  --accent-foreground: oklch(0.63 0.22 330);
+  --sidebar-primary: oklch(0.63 0.22 330);
+  --sidebar-accent-foreground: oklch(0.63 0.22 330);
+  --sidebar-ring: oklch(0.63 0.22 330);
+  --chart-1: oklch(0.63 0.22 330);
+}
+
+.dark[data-theme="fuchsia"] {
+  --primary: oklch(0.69 0.22 330);
+  --primary-foreground: oklch(0.98 0 0);
+  --ring: oklch(0.69 0.22 330);
+  --accent-foreground: oklch(0.69 0.22 330);
+  --sidebar-primary: oklch(0.69 0.22 330);
+  --sidebar-accent-foreground: oklch(0.69 0.22 330);
+  --sidebar-ring: oklch(0.69 0.22 330);
+  --chart-1: oklch(0.69 0.22 330);
+}
+
+/* ── Docs container ────────────────────────────────────────────────────────── */
+.gnome-docs-container {
+  --fd-sidebar-width: 260px;
+}
+
+/* Remove fumadocs built-in max-width cap on the page article */
+article#nd-page,
+.gnome-docs-page {
+  max-width: 100% !important;
+  width: 100% !important;
+  min-width: 0;
+}
+
+/* Docs page headings */
+.gnome-docs-page h1,
+.gnome-docs-page h2,
+.gnome-docs-page h3,
+.gnome-docs-page h4 {
+  scroll-margin-top: 4rem;
+  letter-spacing: -0.025em;
+  color: var(--foreground);
+}
+
+.dark .gnome-docs-page h1,
+.dark .gnome-docs-page h2,
+.dark .gnome-docs-page h3,
+.dark .gnome-docs-page h4 {
+  color: var(--foreground) !important;
+}
+
+/* ── Docs dark contrast fixes (text + component previews) ─────────────────── */
+.dark .gnome-docs-page,
+.dark .gnome-docs-body {
+  color: var(--foreground);
+}
+
+.dark .gnome-docs-body :where(h1, h2, h3, h4, h5, h6, strong) {
+  color: var(--foreground);
+}
+
+.dark .gnome-docs-body :where(p, li, dd, dt, blockquote) {
+  color: var(--muted-foreground);
+}
+
+/* Ensure Tailwind Typography/Fumadocs prose variables stay dark-mode safe */
+.dark .gnome-docs-body {
+  --tw-prose-body: color-mix(in oklab, var(--foreground) 90%, transparent);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-lead: var(--foreground);
+  --tw-prose-links: var(--primary);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-quotes: var(--foreground);
+  --tw-prose-code: var(--foreground);
+}
+
+/* Keep heading text and heading anchors readable in dark mode */
+.dark .gnome-docs-page :is(h1, h2, h3) {
+  color: var(--foreground) !important;
+}
+
+.dark .gnome-docs-page :is(h1, h2, h3) a {
+  color: inherit !important;
+  text-decoration-color: color-mix(in oklab, var(--foreground) 35%, transparent);
+}
+
+/* Links in prose should also adapt in dark mode */
+.dark .gnome-docs-body a {
+  color: var(--primary);
+  text-decoration-color: color-mix(in oklab, var(--primary) 45%, transparent);
+}
+
+.dark .gnome-docs-body a:hover {
+  color: color-mix(in oklab, var(--primary) 85%, var(--foreground));
+}
+
+.dark .gnome-docs-body :is(h1, h2, h3) a:hover {
+  color: inherit !important;
+}
+
+.dark .gnome-component-preview-surface {
+  background: var(--card);
+  border-color: var(--border);
+  color: var(--foreground);
+}
+
+.dark .gnome-component-preview-surface [class*='text-gray-'],
+.dark .gnome-component-preview-surface [class*='text-slate-'],
+.dark .gnome-component-preview-surface [class*='text-zinc-'],
+.dark .gnome-component-preview-surface [class*='text-neutral-'],
+.dark .gnome-component-preview-surface [class*='text-black'] {
+  color: var(--foreground) !important;
+}
+
+.dark .gnome-component-preview-surface [class*='border-gray-'],
+.dark .gnome-component-preview-surface [class*='border-slate-'],
+.dark .gnome-component-preview-surface [class*='border-zinc-'],
+.dark .gnome-component-preview-surface [class*='border-neutral-'] {
+  border-color: var(--border) !important;
+}
+
+.dark .gnome-component-preview-surface [class*='bg-gray-'],
+.dark .gnome-component-preview-surface [class*='bg-slate-'],
+.dark .gnome-component-preview-surface [class*='bg-zinc-'],
+.dark .gnome-component-preview-surface [class*='bg-neutral-'],
+.dark .gnome-component-preview-surface [class*='bg-white'] {
+  background: color-mix(in oklab, var(--muted) 55%, var(--card)) !important;
+}
+
+/* Prevent prose/shiki styles from leaking into interactive component demos */
+.gnome-component-preview,
+.gnome-component-preview-surface {
+  isolation: isolate;
+}
+
+.gnome-component-preview-surface :where(ul, ol) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gnome-component-preview-surface :where(li) {
+  margin: 0;
+}
+
+/* ── Docs tables redesign ──────────────────────────────────────────────────── */
+.gnome-docs-body table {
+  width: 100%;
+  margin: 1.4rem 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  overflow: hidden;
+  background: var(--card);
+  box-shadow: 0 8px 24px color-mix(in oklab, var(--foreground) 8%, transparent);
+}
+
+.gnome-docs-body thead th {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklab, var(--muted) 78%, var(--card));
+  color: var(--muted-foreground);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.gnome-docs-body tbody td {
+  padding: 0.85rem 1rem;
+  color: var(--foreground);
+  border-top: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.gnome-docs-body tbody tr:nth-child(even) td {
+  background: color-mix(in oklab, var(--muted) 38%, var(--card));
+}
+
+.gnome-docs-body tbody tr:hover td {
+  background: color-mix(in oklab, var(--primary) 12%, var(--card));
+}
+
+/* ── Code block: override shiki outer <pre> ────────────────────────────────── */
+/*
+ * Fumadocs/shiki wraps everything in: <pre class="shiki …" style="--shiki-dark-bg:#24292e">
+ * Our .gnome-code-block div is INSIDE it, so the card styling must live here.
+ */
+pre.shiki:has(.gnome-code-block) {
+  /* Override the inline shiki background variables */
+  --shiki-light-bg: var(--card) !important;
+  --shiki-dark-bg: oklch(0.22 0.02 330) !important;
+  background: var(--card) !important;
+  /* Card look */
+  margin: 1.5rem 0 !important;
+  padding: 0 !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 0.75rem !important;
+  overflow: hidden !important;
+  box-shadow: 0 1px 4px oklch(0 0 0 / 0.06) !important;
+  font-size: 0.875rem !important;
+}
+
+.dark pre.shiki:has(.gnome-code-block) {
+  background: oklch(0.22 0.02 330) !important;
+  box-shadow: 0 2px 8px oklch(0 0 0 / 0.25) !important;
+}
+
+/* .gnome-code-block is now just a position container inside pre.shiki */
+.gnome-code-block {
+  position: relative;
+  width: 100%;
+}
+
+/* Absolute copy button — top right corner */
+.gnome-code-copy {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.75rem;
+  z-index: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--muted-foreground);
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.gnome-code-copy:hover {
+  background: oklch(0.61 0.18 35 / 0.1);
+  border-color: oklch(0.61 0.18 35 / 0.5);
+  color: oklch(0.61 0.18 35);
+}
+
+/* Pre / code area */
+.gnome-code-pre {
+  margin: 0;
+  padding: 1rem 0rem 1.5rem 0rem;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  background: transparent;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+/* Shiki span colors — use the CSS custom props shiki injects per-token */
+pre.shiki:has(.gnome-code-block) span {
+  color: var(--shiki-light);
+}
+
+.dark pre.shiki:has(.gnome-code-block) span {
+  color: var(--shiki-dark);
+}
+
+.gnome-code-pre code {
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* Inline code in docs prose */
+.gnome-docs-body :not(pre) > code {
+  font-family: var(--font-mono);
+  background: oklch(0.61 0.18 35 / 0.1);
+  color: oklch(0.61 0.18 35);
+  border: 1px solid oklch(0.61 0.18 35 / 0.2);
+  border-radius: 0.35rem;
+  padding: 0.1em 0.45em;
+  font-size: 0.82em;
+  font-weight: 500;
+}
+
+.dark .gnome-docs-body :not(pre) > code {
+  background: oklch(0.65 0.18 35 / 0.12);
+  color: oklch(0.65 0.18 35);
+  border-color: oklch(0.65 0.18 35 / 0.25);
+}
+
+/* ── Lime ──────────────────────────────────────────────────────────────────── */
+:root[data-theme="lime"] {
+  --primary: oklch(0.78 0.17 135);
+  --primary-foreground: oklch(0.2 0.02 135);
+  --ring: oklch(0.78 0.17 135);
+  --accent-foreground: oklch(0.6 0.14 135);
+  --sidebar-primary: oklch(0.78 0.17 135);
+  --sidebar-accent-foreground: oklch(0.6 0.14 135);
+  --sidebar-ring: oklch(0.78 0.17 135);
+  --chart-1: oklch(0.78 0.17 135);
+}
+
+.dark[data-theme="lime"] {
+  --primary: oklch(0.84 0.17 135);
+  --primary-foreground: oklch(0.2 0.02 135);
+  --ring: oklch(0.84 0.17 135);
+  --accent-foreground: oklch(0.84 0.17 135);
+  --sidebar-primary: oklch(0.84 0.17 135);
+  --sidebar-accent-foreground: oklch(0.84 0.17 135);
+  --sidebar-ring: oklch(0.84 0.17 135);
+  --chart-1: oklch(0.84 0.17 135);
+}

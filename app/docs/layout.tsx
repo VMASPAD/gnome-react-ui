@@ -1,17 +1,26 @@
-// app/docs/layout.tsx  — Server Component (no "use client")
-import { getAllDocMetas } from "./lib/docs";
-import { DocsShell } from "./components/DocsShell";
+import { source } from '@/lib/source';
+import { DocsLayout } from 'fumadocs-ui/layouts/docs';
+import { baseOptions } from '@/lib/layout.shared';
 
-export default async function DocsLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const docs = getAllDocMetas();
+export default function Layout({ children }: LayoutProps<'/docs'>) {
+  const options = baseOptions();
 
   return (
-    <DocsShell docs={docs}>
+    <DocsLayout
+      tree={source.getPageTree()}
+      {...options}
+      nav={{
+        ...options.nav,
+        transparentMode: 'top',
+      }}
+      containerProps={{
+        className: 'gnome-docs-container',
+      }}
+      sidebar={{
+        defaultOpenLevel: 1, 
+      }}
+    >
       {children}
-    </DocsShell>
+    </DocsLayout>
   );
 }

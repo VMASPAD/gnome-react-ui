@@ -1,0 +1,99 @@
+---
+title: Theming and Tokens
+description: Orange-theme guide, Ubuntu typography, and CSS token usage rules for gnome-ui.
+---
+
+# Theming and Orange Tokens
+
+gnome-ui centralizes visual identity through CSS variables. This keeps the UI consistent and makes light/dark support maintainable.
+
+## 1) Core tokens
+
+The main system tokens are:
+
+| Token | Purpose |
+| :--- | :--- |
+| `--primary` | Primary system color (orange) |
+| `--primary-foreground` | Contrast text over primary |
+| `--background` / `--foreground` | Surface and text baseline |
+| `--card`, `--muted`, `--border`, `--ring` | Surface variants, separators, and focus |
+| `--radius-*` | Corner radius scale |
+| `--font-sans`, `--font-mono` | Global typography |
+
+## 2) System typography
+
+- **Sans**: Ubuntu for general UI.
+- **Mono**: Ubuntu Mono for code, technical labels, and terminal blocks.
+
+```tsx
+import { Ubuntu, Ubuntu_Mono } from "next/font/google";
+
+const ubuntu = Ubuntu({
+  variable: "--font-ubuntu",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+});
+
+const ubuntuMono = Ubuntu_Mono({
+  variable: "--font-ubuntu-mono",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+```
+
+```css
+:root {
+  --font-sans: var(--font-ubuntu), "Ubuntu", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-ubuntu-mono), "Ubuntu Mono", ui-monospace, monospace;
+}
+```
+
+## 3) Color usage rules
+
+### Do
+
+- Use token-based utilities: `bg-primary`, `text-foreground`, `border-border`.
+- Keep interaction states (hover/focus/disabled) derived from the same system.
+- Reuse `--ring` for accessible focus.
+
+### Avoid
+
+- Hardcoded component colors.
+- Mixing ad-hoc palettes outside token definitions.
+- Introducing undocumented local variants.
+
+## 4) Recommended component pattern
+
+```tsx
+<button
+  className="rounded-lg border border-border bg-card text-foreground
+             hover:bg-muted focus-visible:outline-2 focus-visible:outline-ring"
+>
+  Action
+</button>
+```
+
+## 5) Dark mode
+
+Dark mode should override the same tokens, not create parallel per-component color systems.
+
+```css
+.dark {
+  --background: oklch(0.2 0.02 330);
+  --foreground: oklch(0.95 0 0);
+  --primary: oklch(0.65 0.18 35);
+}
+```
+
+## 6) Quick consistency audit
+
+Before merging visual changes:
+
+1. Confirm there are no hardcoded colors outside theme definitions.
+2. Verify typography usage (`sans` for UI, `mono` for code).
+3. Validate contrast and focus in both light and dark modes.
+4. Ensure components inherit global tokens correctly.
+
+---
+
+For architecture, API contracts, and quality gates, read [Technical Guide](/docs/technical-guide).

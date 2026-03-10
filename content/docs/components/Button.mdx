@@ -1,0 +1,175 @@
+---
+title: Button
+description: A button component that can be used to trigger actions.
+---
+
+import ComponentPreview from "@/components/component-preview";
+
+# Button
+
+A button component that can be rendered as another tag or focusable when disabled.
+
+<ComponentPreview title="Button component" name="button">
+  <Button.ButtonDefault />
+</ComponentPreview>
+
+```tsx
+import { Button } from 'gnome-ui/button';
+import { Send, Download, Plus, Trash2 } from 'lucide-react';
+
+export function ButtonDefault() {
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 bg-primary px-4 text-primary-foreground hover:brightness-95 active:brightness-90">
+        <Icons.Send className="size-4 shrink-0" />
+        Send
+      </Button>
+
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 border border-border bg-card px-4 text-foreground hover:bg-accent active:bg-accent/80">
+        <Icons.Download className="size-4 shrink-0" />
+        Download
+      </Button>
+
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 px-4 text-foreground hover:bg-accent active:bg-accent/80">
+        <Icons.Plus className="size-4 shrink-0" />
+        New file
+      </Button>
+
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 h-9 border border-destructive/30 bg-destructive/8 px-4 text-destructive hover:bg-destructive/15 active:bg-destructive/20">
+        <Icons.Trash2 className="size-4 shrink-0" />
+        Delete
+      </Button>
+    </div>
+  );
+}
+```
+
+
+# Anatomy
+
+```tsx
+import { Button } from 'gnome-ui/button';
+
+<Button />
+```
+
+# Examples
+
+## Sizes
+
+Five sizes from compact toolbar buttons to large call-to-action buttons.
+
+<ComponentPreview title="Button component" name="button">
+  <Button.ButtonSizes />
+</ComponentPreview>
+
+```tsx
+import { Button } from 'gnome-ui/button';
+import { ArrowRight } from 'lucide-react';
+
+export function ButtonSizes() {
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring h-7 px-3 text-xs bg-primary text-primary-foreground hover:brightness-95">
+        <Icons.ArrowRight className="size-3 shrink-0" />
+        Open
+      </Button>
+
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring h-8 px-3.5 text-xs bg-primary text-primary-foreground hover:brightness-95">
+        <Icons.ArrowRight className="size-3.5 shrink-0" />
+        Open
+      </Button>
+
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring h-9 px-4 text-sm bg-primary text-primary-foreground hover:brightness-95">
+        <Icons.ArrowRight className="size-4 shrink-0" />
+        Open
+      </Button>
+
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring h-10 px-5 text-sm bg-primary text-primary-foreground hover:brightness-95">
+        <Icons.ArrowRight className="size-4 shrink-0" />
+        Open
+      </Button>
+
+      <Button className="inline-flex items-center justify-center gap-2 rounded-xl font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring h-12 px-6 text-base bg-primary text-primary-foreground hover:brightness-95">
+        <Icons.ArrowRight className="size-5 shrink-0" />
+        Open
+      </Button>
+    </div>
+  );
+}
+```
+
+
+---
+
+## Loading state
+
+Uses `focusableWhenDisabled` so keyboard focus stays on the button while the action is in progress.
+
+<ComponentPreview title="Button component" name="button">
+  <Button.ButtonLoading />
+</ComponentPreview>
+
+```tsx
+import * as React from 'react';
+import { Button } from 'gnome-ui/button';
+import { Send, Loader2, Check } from 'lucide-react';
+
+export function ButtonLoading() {
+  const [status, setStatus] = React.useState<'idle' | 'loading' | 'done'>('idle');
+
+  function handleClick() {
+    setStatus('loading');
+    setTimeout(() => {
+      setStatus('done');
+      setTimeout(() => setStatus('idle'), 1800);
+    }, 2000);
+  }
+
+  return (
+    <Button
+      disabled={status === 'loading'}
+      focusableWhenDisabled
+      onClick={handleClick}
+      className={[
+        'inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium leading-none transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring',
+        'h-9 px-5 min-w-[130px]',
+        status === 'done'
+          ? 'bg-[oklch(0.55_0.15_150)] text-white'
+          : 'bg-primary text-primary-foreground hover:brightness-95 active:brightness-90',
+        'disabled:opacity-100 disabled:brightness-90',
+      ].join(' ')}
+    >
+      {status === 'loading' && <Icons.Loader2 className="size-4 shrink-0 animate-spin" />}
+      {status === 'done'    && <Icons.Check className="size-4 shrink-0" />}
+      {status === 'idle'    && <Icons.Send className="size-4 shrink-0" />}
+      {status === 'loading' ? 'Sending…' : status === 'done' ? 'Sent!' : 'Send message'}
+    </Button>
+  );
+}
+```
+
+
+
+
+
+## API reference
+
+A button component that can be used to trigger actions.
+Renders a `<button>` element.
+
+**Button Props:**
+
+| Prop                  | Type                                                                        | Default | Description                                                                                                                                                                                  |
+| :-------------------- | :-------------------------------------------------------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| focusableWhenDisabled | `boolean`                                                                   | `false` | Whether the button should be focusable when disabled.                                                                                                                                        |
+| nativeButton          | `boolean`                                                                   | `true`  | Whether the component renders a native `<button>` element when replacing it&#xA;via the `render` prop.&#xA;Set to `false` if the rendered element is not a button (e.g. `<div>`).            |
+| className             | `string \| ((state: Button.State) => string \| undefined)`                  | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style                 | `CSSProperties \| ((state: Button.State) => CSSProperties \| undefined)`    | -       | -                                                                                                                                                                                            |
+| render                | `ReactElement \| ((props: HTMLProps, state: Button.State) => ReactElement)` | -       | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |
+
+**Button Data Attributes:**
+
+| Attribute     | Type | Description                          |
+| :------------ | :--- | :----------------------------------- |
+| data-disabled | -    | Present when the button is disabled. |

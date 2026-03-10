@@ -1,0 +1,177 @@
+---
+title: Card
+description: A flexible surface component for grouping related content. Composed of `Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, and `CardFooter`.
+---
+
+import ComponentPreview from "@/components/component-preview";
+
+
+<ComponentPreview title="Card component" name="card">
+  <CardDemo.CardDefault />
+</ComponentPreview>
+
+```tsx
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from 'gnome-ui/card';
+import { ArrowRight } from 'lucide-react';
+
+export function CardDefault() {
+  return (
+    <Card className="w-72">
+      <CardHeader>
+        <CardTitle>File Manager</CardTitle>
+        <CardDescription>
+          Browse and manage your local files with a familiar GNOME interface.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Drag and drop files, create archives, and connect to remote servers.
+        </p>
+      </CardContent>
+      <CardFooter>
+        <a href="#" className="text-xs font-semibold text-primary flex items-center gap-1">
+          Open Files <ArrowRight className="h-3 w-3" />
+        </a>
+      </CardFooter>
+    </Card>
+  );
+}
+```
+
+
+# Anatomy
+
+```tsx
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from 'gnome-ui/card';
+
+<Card>
+  <CardHeader>
+    <CardTitle />
+    <CardDescription />
+  </CardHeader>
+  <CardContent />
+  <CardFooter />
+</Card>
+```
+
+# Examples
+
+## Variants
+
+Four variants designed to fit different layout contexts — from elevated surfaces to subtle filled accents.
+
+<ComponentPreview title="Card component" name="card">
+  <CardDemo.CardVariants />
+</ComponentPreview>
+
+```tsx
+import { Card } from 'gnome-ui/card';
+import { FileText, Star, Settings } from 'lucide-react';
+
+export function CardVariants() {
+  return (
+    <div className="grid grid-cols-2 gap-4">
+      <Card variant="default" className="p-5">Default</Card>
+      <Card variant="ghost" className="p-5">Ghost</Card>
+      <Card variant="outlined" className="p-5">Outlined</Card>
+      <Card variant="filled" className="p-5">Filled</Card>
+    </div>
+  );
+}
+```
+
+
+---
+
+## With Footer
+
+Add a `CardFooter` with actions or metadata at the bottom of the card.
+
+<ComponentPreview title="Card component" name="card">
+  <CardDemo.CardWithFooter />
+</ComponentPreview>
+
+```tsx
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from 'gnome-ui/card';
+import { ArrowRight } from 'lucide-react';
+
+export function CardWithFooter() {
+  return (
+    <Card className="w-72 overflow-hidden">
+      <div className="h-1 bg-primary w-full" />
+      <CardHeader>
+        <CardTitle>GNOME Settings</CardTitle>
+        <CardDescription>Personalise your desktop experience.</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-2">
+        {["Appearance", "Privacy", "Network"].map((item) => (
+          <div key={item} className="flex items-center justify-between rounded-lg px-3 py-2 bg-muted/50 hover:bg-accent/50 transition-colors cursor-pointer">
+            <span className="text-sm font-medium text-foreground">{item}</span>
+            <ArrowRight className="h-3.5 w-3.5 text-muted-foreground" />
+          </div>
+        ))}
+      </CardContent>
+      <CardFooter className="border-t border-border justify-end">
+        <span className="text-xs text-muted-foreground">3 sections</span>
+      </CardFooter>
+    </Card>
+  );
+}
+```
+
+
+---
+
+### Props — Card
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **variant** | `"default" \| "ghost" \| "outlined" \| "filled"` | `"default"` | Visual style of the card surface. |
+| **className** | `string` | — | Additional CSS classes merged via `cn()`. |
+| **children** | `ReactNode` | — | Card content. |
+
+### Props — CardHeader
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string` | — | Additional CSS classes. |
+
+### Props — CardTitle
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string` | — | Additional CSS classes. |
+
+### Props — CardDescription
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string` | — | Additional CSS classes. |
+
+### Props — CardContent
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string` | — | Additional CSS classes. |
+
+### Props — CardFooter
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | `string` | — | Additional CSS classes. |
+
+

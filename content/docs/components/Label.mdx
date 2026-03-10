@@ -1,0 +1,123 @@
+---
+title: Label
+description: A styled label component for form controls. Pairs with Input, Textarea, Select, and other form elements.
+---
+
+import ComponentPreview from "@/components/component-preview";
+
+<ComponentPreview title="Label component" name="label">
+  <Label.LabelDefault />
+</ComponentPreview>
+
+```tsx
+import * as React from 'react';
+import { Label } from 'gnome-ui/label';
+import { Input } from 'gnome-ui/input';
+
+export function LabelDefault() {
+  return (
+    <div className="flex w-full max-w-sm flex-col gap-2">
+      <Label htmlFor="email">Email</Label>
+      <Input 
+        id="email" 
+        className="flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50"
+        placeholder="you@example.com" 
+      />
+    </div>
+  );
+}
+
+```
+
+
+# Anatomy
+
+```tsx
+import { Label } from 'gnome-ui/label';
+
+<Label htmlFor="field-id">Label text</Label>
+
+```
+
+# Examples
+
+## Disabled
+
+The label adjusts its styling when paired with a disabled input using Tailwind's `peer` modifier.
+
+<ComponentPreview title="Label component" name="label">
+  <Label.LabelDisabled />
+</ComponentPreview>
+
+```tsx
+import * as React from 'react';
+import { Label } from 'gnome-ui/label';
+import { Input } from 'gnome-ui/input';
+
+export function LabelDisabled() {
+  return (
+    <div className="flex w-full max-w-sm flex-col gap-2">
+      <Label htmlFor="disabled-input" className="peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+        Disabled field
+      </Label>
+      <Input 
+        id="disabled-input"
+        disabled
+        className="peer flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50"
+        placeholder="Cannot be edited" 
+      />
+    </div>
+  );
+}
+
+```
+
+
+---
+
+## Required field
+
+Add a visual indicator for required fields using a styled asterisk alongside the label text.
+
+<ComponentPreview title="Label component" name="label">
+  <Label.LabelRequired />
+</ComponentPreview>
+
+```tsx
+import * as React from 'react';
+import { Label } from 'gnome-ui/label';
+import { Input } from 'gnome-ui/input';
+
+export function LabelRequired() {
+  return (
+    <div className="flex w-full max-w-sm flex-col gap-2">
+      <Label htmlFor="username">
+        Username <span className="text-destructive">*</span>
+      </Label>
+      <Input 
+        id="username"
+        required
+        className="flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50"
+        placeholder="Enter your username" 
+      />
+    </div>
+  );
+}
+
+```
+
+
+
+A styled label element for form controls.
+Renders a `<label>` element.
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **className** | string | — | CSS class applied to the element, or a function that returns a class based on the component's state. |
+| **htmlFor** | string | — | The id of the form element the label is associated with. |
+| **render** | ReactElement \| ComponentRenderFn | — | Allows you to replace the component's HTML element with a different tag, or compose it with another component. |
+
+
+

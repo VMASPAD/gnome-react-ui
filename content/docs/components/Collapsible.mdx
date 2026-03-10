@@ -1,0 +1,248 @@
+---
+title: Collapsible
+description: A collapsible panel controlled by a button.
+---
+
+import ComponentPreview from "@/components/component-preview";
+
+
+<ComponentPreview title="Collapsible component" name="collapsible">
+  <Collapsible.CollapsibleDefault />
+</ComponentPreview>
+
+```tsx
+import { Collapsible } from 'gnome-ui/collapsible';
+import { ChevronDown, Key } from 'lucide-react';
+
+export function CollapsibleDefault() {
+  return (
+    <Collapsible.Root className="w-80 overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+      <Collapsible.Trigger className="group flex w-full items-center gap-3 px-4 py-3 text-left transition-colors duration-150 hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+          <Icons.Key className="size-4" />
+        </div>
+        <span className="flex-1 text-sm font-medium text-foreground">Recovery keys</span>
+        <Icons.ChevronDown className="size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-data-[panel-open]:rotate-180" />
+      </Collapsible.Trigger>
+
+      <Collapsible.Panel className="h-[var(--collapsible-panel-height)] overflow-hidden transition-[height] duration-250 ease-out data-[starting-style]:h-0 data-[ending-style]:h-0">
+        <div className="flex flex-col divide-y divide-border border-t border-border">
+          {['alien-bean-pasta', 'wild-irish-burrito', 'horse-battery-staple'].map((key) => (
+            <div key={key} className="flex items-center gap-2 px-4 py-2.5">
+              <Icons.Key className="size-3.5 shrink-0 text-muted-foreground" />
+              <span className="font-mono text-xs text-foreground">{key}</span>
+            </div>
+          ))}
+        </div>
+      </Collapsible.Panel>
+    </Collapsible.Root>
+  );
+}
+```
+
+
+# Anatomy
+
+```tsx
+import { Collapsible } from 'gnome-ui/collapsible';
+
+<Collapsible.Root>
+  <Collapsible.Trigger />
+  <Collapsible.Panel />
+</Collapsible.Root>
+```
+
+# Examples
+
+## Terminal output
+
+Collapsible build output panel inspired by GNOME Builder, open by default with a status badge.
+
+<ComponentPreview title="Collapsible component" name="collapsible">
+  <Collapsible.CollapsibleTerminal />
+</ComponentPreview>
+
+```tsx
+import { Collapsible } from 'gnome-ui/collapsible';
+import { ChevronDown, Terminal, FileCode2, GitBranch, Wifi } from 'lucide-react';
+
+export function CollapsibleTerminal() {
+  return (
+    <Collapsible.Root defaultOpen className="w-[420px] overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+      <Collapsible.Trigger className="group flex w-full items-center gap-3 border-b border-border px-4 py-3 text-left transition-colors duration-150 hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
+        <Icons.Terminal className="size-4 shrink-0 text-primary" />
+        <span className="flex-1 text-sm font-medium text-foreground">Build output</span>
+        <span className="mr-1 rounded-full bg-[oklch(0.88_0.08_150)] px-2 py-0.5 text-[10px] font-semibold text-[oklch(0.4_0.12_150)]">
+          Done
+        </span>
+        <Icons.ChevronDown className="size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-data-[panel-open]:rotate-180" />
+      </Collapsible.Trigger>
+
+      <Collapsible.Panel className="h-[var(--collapsible-panel-height)] overflow-hidden transition-[height] duration-250 ease-out data-[starting-style]:h-0 data-[ending-style]:h-0">
+        <div className="bg-[oklch(0.18_0.02_330)] px-4 py-3">
+          {[
+            { icon: Icons.GitBranch, text: 'Cloning repository…', color: 'text-muted-foreground' },
+            { icon: Icons.FileCode2, text: 'Compiling src/index.tsx', color: 'text-muted-foreground' },
+            { icon: Icons.Wifi,      text: 'Bundling assets…', color: 'text-muted-foreground' },
+            { icon: Icons.Terminal,  text: '✓ Build finished in 1.24s', color: 'text-[oklch(0.7_0.15_150)]' },
+          ].map(({ icon: Icon, text, color }, i) => (
+            <div key={i} className={`flex items-center gap-2.5 py-1 font-mono text-xs ${color}`}>
+              <Icon className="size-3.5 shrink-0" />
+              {text}
+            </div>
+          ))}
+        </div>
+      </Collapsible.Panel>
+    </Collapsible.Root>
+  );
+}
+```
+
+
+---
+
+## Info rows
+
+Multiple independent collapsible rows stacked together, inspired by GNOME Files properties panel.
+
+<ComponentPreview title="Collapsible component" name="collapsible">
+  <Collapsible.CollapsibleInfo />
+</ComponentPreview>
+
+```tsx
+import { Collapsible } from 'gnome-ui/collapsible';
+import { ChevronDown, Wifi, Key, Info } from 'lucide-react';
+
+const rows = [
+  {
+    label: 'Wi-Fi',
+    value: 'Connected',
+    detail: ['Network: Ubuntu-Home', 'IP: 192.168.1.42', 'Channel: 6 (2.4 GHz)', 'Signal: Excellent'],
+    icon: Icons.Wifi,
+    badge: 'bg-[oklch(0.88_0.08_150)] text-[oklch(0.4_0.12_150)]',
+  },
+  {
+    label: 'SSH Keys',
+    value: '3 active',
+    detail: ['id_ed25519 — added 3 days ago', 'id_rsa — added 2 months ago', 'work_key — added 6 months ago'],
+    icon: Icons.Key,
+    badge: 'bg-primary/10 text-primary',
+  },
+  {
+    label: 'Build info',
+    value: 'v2.4.1',
+    detail: ['Commit: a3f9c12', 'Branch: main', 'Built: Feb 23 2026 at 09:14'],
+    icon: Icons.Info,
+    badge: 'bg-muted text-muted-foreground',
+  },
+];
+
+export function CollapsibleInfo() {
+  return (
+    <div className="flex w-80 flex-col gap-px overflow-hidden rounded-xl border border-border bg-border shadow-sm">
+      {rows.map(({ label, value, detail, icon: Icon, badge }) => (
+        <Collapsible.Root key={label} className="bg-card">
+          <Collapsible.Trigger className="group flex w-full items-center gap-3 px-4 py-3 text-left transition-colors duration-150 hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">
+            <Icon className="size-4 shrink-0 text-muted-foreground transition-colors duration-150 group-data-[panel-open]:text-primary" />
+            <span className="flex-1 text-sm font-medium text-foreground">{label}</span>
+            <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold ${badge}`}>
+              {value}
+            </span>
+            <Icons.ChevronDown className="size-3.5 shrink-0 text-muted-foreground transition-transform duration-200 group-data-[panel-open]:rotate-180" />
+          </Collapsible.Trigger>
+          <Collapsible.Panel className="h-[var(--collapsible-panel-height)] overflow-hidden transition-[height] duration-250 ease-out data-[starting-style]:h-0 data-[ending-style]:h-0">
+            <div className="border-t border-border px-4 py-3">
+              {detail.map((line, i) => (
+                <p key={i} className="font-mono text-xs leading-relaxed text-muted-foreground">
+                  {line}
+                </p>
+              ))}
+            </div>
+          </Collapsible.Panel>
+        </Collapsible.Root>
+      ))}
+    </div>
+  );
+}
+```
+
+
+## CollapsiblePanel
+
+A panel with the collapsible contents.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Collapsible](https://base-ui.com/react/components/collapsible)
+
+
+
+
+## API reference
+
+### Root
+
+Groups all parts of the collapsible.
+Renders a `<div>` element.
+
+**Root Props:**
+
+| Prop         | Type                                                                                  | Default | Description                                                                                                                                                                                  |
+| :----------- | :------------------------------------------------------------------------------------ | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| defaultOpen  | `boolean`                                                                             | `false` | Whether the collapsible panel is initially open.To render a controlled collapsible, use the `open` prop instead.                                                                             |
+| open         | `boolean`                                                                             | -       | Whether the collapsible panel is currently open.To render an uncontrolled collapsible, use the `defaultOpen` prop instead.                                                                   |
+| onOpenChange | `((open: boolean, eventDetails: Collapsible.Root.ChangeEventDetails) => void)`        | -       | Event handler called when the panel is opened or closed.                                                                                                                                     |
+| disabled     | `boolean`                                                                             | `false` | Whether the component should ignore user interaction.                                                                                                                                        |
+| className    | `string \| ((state: Collapsible.Root.State) => string \| undefined)`                  | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style        | `CSSProperties \| ((state: Collapsible.Root.State) => CSSProperties \| undefined)`    | -       | -                                                                                                                                                                                            |
+| render       | `ReactElement \| ((props: HTMLProps, state: Collapsible.Root.State) => ReactElement)` | -       | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |
+
+### Trigger
+
+A button that opens and closes the collapsible panel.
+Renders a `<button>` element.
+
+**Trigger Props:**
+
+| Prop         | Type                                                                                  | Default | Description                                                                                                                                                                                  |
+| :----------- | :------------------------------------------------------------------------------------ | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| nativeButton | `boolean`                                                                             | `true`  | Whether the component renders a native `<button>` element when replacing it&#xA;via the `render` prop.&#xA;Set to `false` if the rendered element is not a button (e.g. `<div>`).            |
+| className    | `string \| ((state: Collapsible.Root.State) => string \| undefined)`                  | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style        | `CSSProperties \| ((state: Collapsible.Root.State) => CSSProperties \| undefined)`    | -       | -                                                                                                                                                                                            |
+| render       | `ReactElement \| ((props: HTMLProps, state: Collapsible.Root.State) => ReactElement)` | -       | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |
+
+**Trigger Data Attributes:**
+
+| Attribute       | Type | Description                                 |
+| :-------------- | :--- | :------------------------------------------ |
+| data-panel-open | -    | Present when the collapsible panel is open. |
+
+### Panel
+
+A panel with the collapsible contents.
+Renders a `<div>` element.
+
+**Panel Props:**
+
+| Prop             | Type                                                                                   | Default | Description                                                                                                                                                                                                |
+| :--------------- | :------------------------------------------------------------------------------------- | :------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hiddenUntilFound | `boolean`                                                                              | `false` | Allows the browser’s built-in page search to find and expand the panel contents.Overrides the `keepMounted` prop and uses `hidden="until-found"`&#xA;to hide the element without removing it from the DOM. |
+| className        | `string \| ((state: Collapsible.Panel.State) => string \| undefined)`                  | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                                   |
+| style            | `CSSProperties \| ((state: Collapsible.Panel.State) => CSSProperties \| undefined)`    | -       | -                                                                                                                                                                                                          |
+| keepMounted      | `boolean`                                                                              | `false` | Whether to keep the element in the DOM while the panel is hidden.&#xA;This prop is ignored when `hiddenUntilFound` is used.                                                                                |
+| render           | `ReactElement \| ((props: HTMLProps, state: Collapsible.Panel.State) => ReactElement)` | -       | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render.               |
+
+**Panel Data Attributes:**
+
+| Attribute           | Type | Description                                   |
+| :------------------ | :--- | :-------------------------------------------- |
+| data-open           | -    | Present when the collapsible panel is open.   |
+| data-closed         | -    | Present when the collapsible panel is closed. |
+| data-starting-style | -    | Present when the panel is animating in.       |
+| data-ending-style   | -    | Present when the panel is animating out.      |
+
+**Panel CSS Variables:**
+
+| Variable                   | Type     | Default | Description                     |
+| :------------------------- | :------- | :------ | :------------------------------ |
+| --collapsible-panel-height | `number` | -       | The collapsible panel's height. |
+| --collapsible-panel-width  | `number` | -       | The collapsible panel's width.  |

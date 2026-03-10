@@ -1,46 +1,29 @@
-"use client"
-import { useState, useEffect, useSyncExternalStore } from "react";
-import { Palette, Check, ArrowLeft, Copy, ChevronDown } from "lucide-react";
-import Link from "next/link";
-import { AnimatedThemeToggler } from "../ui/AnimatedThemeToggler";
-import { Accordion } from "@/app/components/accordion";
+'use client';
 
-/* ── Demo components (real UI library components) ──────────────────────── */
-import { ButtonDefault, ButtonSizes } from "@/app/docs/demos/button/index";
-import { SliderDefault } from "@/app/docs/demos/slider/index";
-import { CheckboxDefault } from "@/app/docs/demos/checkbox/index";
-import { SwitchDefault, SwitchWithIcons } from "@/app/docs/demos/switch/index";
-import { SelectDefault } from "@/app/docs/demos/select/index";
-import { CardDefault } from "@/app/docs/demos/card/index";
-import { BadgeDefault, BadgeVariants } from "@/app/docs/demos/badge/index";
-import { InputDefault } from "@/app/docs/demos/input/index";
-import { ProgressDefault } from "@/app/docs/demos/progress/index";
-import { RadioGroupBasic } from "@/app/docs/demos/radio/index";
-import { TabsPill } from "@/app/docs/demos/tabs/index";
-import { ToggleGroupSingle } from "@/app/docs/demos/toggle/index";
-import { AlertNormal } from "@/app/docs/demos/alert/index";
-import { BreadcrumbDefault } from "@/app/docs/demos/breadcrumb/index";
-import { PaginationDefault } from "@/app/docs/demos/pagination/index";
+import Link from 'next/link';
+import { useEffect, useMemo, useState } from 'react';
+import { ArrowLeft, Check, ChevronDown, Copy, Palette, Sparkles, SwatchBook, Wand2 } from 'lucide-react';
+import { AnimatedThemeToggler } from '@/components/animated-theme-toggler';
+import { Accordion } from '@/data/components/accordion';
 
-/* ─── Theme definitions ──────────────────────────────────────────────────── */
 const THEMES = [
-  { id: "default", label: "Ubuntu Orange", swatch: "oklch(0.61 0.18 35)" },
-  { id: "cyan",    label: "Cyan / Sky",    swatch: "oklch(0.58 0.16 230)" },
-  { id: "green",   label: "Green",         swatch: "oklch(0.55 0.16 150)" },
-  { id: "red",     label: "Red",           swatch: "oklch(0.55 0.22 25)" },
-  { id: "black",   label: "Black",         swatch: "oklch(0.25 0 0)" },
-  { id: "white",   label: "White",         swatch: "oklch(0.7 0 0)" },
-  { id: "violet",  label: "Violet",        swatch: "oklch(0.5 0.2 300)" },
-  { id: "yellow",  label: "Yellow",        swatch: "oklch(0.72 0.17 80)" },
-  { id: "gray",    label: "Gray",          swatch: "oklch(0.5 0.01 260)" },
+  { id: 'default', label: 'Ubuntu Orange', swatch: 'oklch(0.61 0.18 35)' },
+  { id: 'cyan', label: 'Cyan / Sky', swatch: 'oklch(0.58 0.16 230)' },
+  { id: 'green', label: 'Green', swatch: 'oklch(0.55 0.16 150)' },
+  { id: 'red', label: 'Red', swatch: 'oklch(0.55 0.22 25)' },
+  { id: 'black', label: 'Black', swatch: 'oklch(0.25 0 0)' },
+  { id: 'white', label: 'White', swatch: 'oklch(0.7 0 0)' },
+  { id: 'violet', label: 'Violet', swatch: 'oklch(0.5 0.2 300)' },
+  { id: 'yellow', label: 'Yellow', swatch: 'oklch(0.72 0.17 80)' },
+  { id: 'gray', label: 'Gray', swatch: 'oklch(0.5 0.01 260)' },
+  { id: 'rose', label: 'Rose', swatch: 'oklch(0.62 0.19 10)' },
+  { id: 'indigo', label: 'Indigo', swatch: 'oklch(0.56 0.17 275)' },
+  { id: 'teal', label: 'Teal', swatch: 'oklch(0.6 0.14 195)' },
+  { id: 'emerald', label: 'Emerald', swatch: 'oklch(0.58 0.16 165)' },
+  { id: 'amber', label: 'Amber', swatch: 'oklch(0.76 0.18 75)' },
+  { id: 'fuchsia', label: 'Fuchsia', swatch: 'oklch(0.63 0.22 330)' },
+  { id: 'lime', label: 'Lime', swatch: 'oklch(0.78 0.17 135)' },
 ] as const;
-
-const THEME_COLORS_CODE = [
-  "const themeColors = {",
-  ...THEMES.map((t) => `  ${t.id}: \"${t.swatch}\",`),
-  "} as const"
-].join("\n")
-
 const DOC_STYLE_SNIPPETS = [
   {
     id: "button",
@@ -205,70 +188,48 @@ const DOC_STYLE_SNIPPETS = [
     ].join("\n")
   }
 ] as const
+type ThemeId = (typeof THEMES)[number]['id'];
 
-type ThemeId = (typeof THEMES)[number]["id"];
+const STORAGE_KEY = 'gnome-ui-theme';
 
-const LS_KEY = "gnome-ui-theme";
-
-const subscribeHydration = () => () => {};
-
-function getStoredTheme(): ThemeId {
-  if (typeof window === "undefined") {
-    return "default";
+function applyTheme(theme: ThemeId) {
+  if (theme === 'default') {
+    document.documentElement.removeAttribute('data-theme');
+    return;
   }
 
-  const stored = localStorage.getItem(LS_KEY) as ThemeId | null;
-  if (stored && THEMES.some((t) => t.id === stored)) {
-    return stored;
-  }
-
-  return "default";
+  document.documentElement.setAttribute('data-theme', theme);
 }
 
-function useHydrated() {
-  return useSyncExternalStore(subscribeHydration, () => true, () => false);
+function resolveThemeId(value: string | null): ThemeId {
+  if (!value) return 'default';
+  return THEMES.some((theme) => theme.id === value) ? (value as ThemeId) : 'default';
 }
 
-function useTheme() {
-  const [theme, setThemeState] = useState<ThemeId>(() => getStoredTheme());
-
-  useEffect(() => {
-    applyTheme(theme);
-    localStorage.setItem(LS_KEY, theme);
-  }, [theme]);
-
-  const setTheme = (id: ThemeId) => {
-    setThemeState(id);
-  };
-
-  return { theme, setTheme };
-}
-
-function applyTheme(id: ThemeId) {
-  const html = document.documentElement;
-  if (id === "default") {
-    html.removeAttribute("data-theme");
-  } else {
-    html.setAttribute("data-theme", id);
-  }
-}
-
-/* ─── Page ────────────────────────────────────────────────────────────────── */
 export default function ThemesPage() {
-  const { theme, setTheme } = useTheme();
-  const hydrated = useHydrated();
+  const [currentTheme, setCurrentTheme] = useState<ThemeId>('default');
   const [copiedKey, setCopiedKey] = useState<string | null>(null)
 
-  const activeTheme = THEMES.find((t) => t.id === theme) ?? THEMES[0]
-  const activeThemeCode = [
-    "const activeTheme = {",
-    `  id: \"${activeTheme.id}\",`,
-    `  label: \"${activeTheme.label}\",`,
-    `  primary: \"${activeTheme.swatch}\",`,
-    "}"
-  ].join("\n")
+  useEffect(() => {
+    const htmlTheme = resolveThemeId(document.documentElement.getAttribute('data-theme'));
+    const storedTheme = resolveThemeId(localStorage.getItem(STORAGE_KEY));
+    const initialTheme = htmlTheme !== 'default' ? htmlTheme : storedTheme;
 
-  const copyText = async (key: string, text: string) => {
+    setCurrentTheme(initialTheme);
+    applyTheme(initialTheme);
+  }, []);
+
+  const activeTheme = useMemo(
+    () => THEMES.find((theme) => theme.id === currentTheme) ?? THEMES[0],
+    [currentTheme],
+  );
+
+  const updateTheme = (theme: ThemeId) => {
+    setCurrentTheme(theme);
+    applyTheme(theme);
+    localStorage.setItem(STORAGE_KEY, theme);
+  };
+const copyText = async (key: string, text: string) => {
     try {
       if (navigator.clipboard?.writeText) {
         await navigator.clipboard.writeText(text)
@@ -292,208 +253,187 @@ export default function ThemesPage() {
       setCopiedKey(null)
     }
   }
-
-  if (!hydrated) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-background">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* ── Header ──────────────────────────────────────────────────────── */}
-      <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
-        <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4">
-          <div className="flex items-center gap-3">
-            <Link href="/" className="rounded-md p-1.5 text-muted-foreground transition-colors hover:text-foreground">
-              <ArrowLeft className="h-4 w-4" />
-            </Link>
-            <div className="flex items-center gap-2">
-              <Palette className="h-4 w-4 text-primary" />
-              <h1 className="text-sm font-semibold">Themes</h1>
-            </div>
-          </div>
+    <main className="mx-auto min-h-[calc(100vh-3.5rem)] w-full max-w-[1200px] px-4 py-10 md:px-8">
+      <header className="mb-8 flex flex-wrap items-center justify-between gap-3">
+        <div className="space-y-2">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to home
+          </Link>
+          <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+            Theme Playground
+          </h1>
+          <p className="max-w-2xl text-sm text-muted-foreground md:text-base">
+            Choose a preset and inspect how gnome-ui tokens behave across light and dark mode with
+            real UI examples.
+          </p>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <Link
+            href="/docs/theming-and-tokens"
+            className="inline-flex h-9 items-center rounded-lg border border-border bg-card px-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+          >
+            Theming docs
+          </Link>
           <AnimatedThemeToggler />
         </div>
       </header>
 
-      <main className="mx-auto max-w-7xl px-4 py-10">
-        {/* ── Intro ──────────────────────────────────────────────────── */}
-        <div className="mb-10">
-          <h2 className="text-2xl font-bold tracking-tight">Color Themes</h2>
-          <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-xl">
-            Choose a primary accent color that applies globally to every component.
-          </p>
-        </div>
+      <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {THEMES.map((theme) => {
+          const isActive = currentTheme === theme.id;
 
-        {/* ── Theme picker ──────────────────────────────────────────── */}
-        <section className="mb-14">
-          <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Select a theme</h3>
-          <div className="grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-9">
-            {THEMES.map((t) => {
-              const active = theme === t.id;
-              return (
-                <button
-                  key={t.id}
-                  onClick={() => setTheme(t.id)}
-                  className={`group relative flex flex-col items-center gap-2 rounded-xl border p-4 transition-all duration-200 ${
-                    active
-                      ? "border-primary bg-primary/5 shadow-sm shadow-primary/10 ring-2 ring-primary/20"
-                      : "border-border bg-card hover:border-primary/40 hover:bg-primary/3"
-                  }`}
-                >
-                  <span
-                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full shadow-inner transition-transform group-hover:scale-110"
-                    style={{ background: t.swatch }}
-                  >
-                    {active && <Check className="h-3.5 w-3.5 text-white drop-shadow" strokeWidth={3} />}
+          return (
+            <button
+              key={theme.id}
+              type="button"
+              onClick={() => updateTheme(theme.id)}
+              className="group rounded-xl border border-border bg-card p-4 text-left transition-all duration-150 hover:border-primary/30 hover:bg-muted"
+            >
+              <div className="mb-3 flex items-center justify-between">
+                <span
+                  className="h-6 w-6 rounded-full border border-border"
+                  style={{ background: theme.swatch }}
+                  aria-hidden
+                />
+
+                {isActive ? (
+                  <span className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
+                    <Check className="h-3 w-3" />
+                    Active
                   </span>
-                  <span className="text-[11px] font-medium text-muted-foreground group-hover:text-foreground">{t.label}</span>
-                </button>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* ── Theme color code (copy) ─────────────────────────────── */}
-        <section className="mb-14">
-          <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Copy color code</h3>
-          <PreviewCard title="Theme tokens (copy ready)">
-            <p className="mb-4 text-sm text-muted-foreground leading-relaxed">
-              Copy the active theme token or the full map to reuse the same palette in docs, demos, or app pages.
-            </p>
-
-            <div className="w-full space-y-4">
-              <div className="overflow-hidden rounded-xl border border-border bg-background">
-                <div className="flex items-center justify-between border-b border-border px-3 py-2">
-                  <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Active theme</span>
-                  <button
-                    type="button"
-                    onClick={() => copyText("active-theme", activeThemeCode)}
-                    className="inline-flex items-center gap-1.5 rounded-md border border-border px-2 py-1 text-xs font-medium text-foreground transition-colors hover:bg-accent"
-                  >
-                    <Copy className="h-3.5 w-3.5" />
-                    {copiedKey === "active-theme" ? "Copied" : "Copy"}
-                  </button>
-                </div>
-                <pre className="overflow-x-auto px-3 py-3 font-mono text-[12px] leading-relaxed text-muted-foreground">
-                  {activeThemeCode}
-                </pre>
+                ) : null}
               </div>
 
-              <div className="overflow-hidden rounded-xl border border-border bg-background">
-                <div className="flex items-center justify-between border-b border-border px-3 py-2">
-                  <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">All themes map</span>
-                  <button
-                    type="button"
-                    onClick={() => copyText("all-themes", THEME_COLORS_CODE)}
-                    className="inline-flex items-center gap-1.5 rounded-md border border-border px-2 py-1 text-xs font-medium text-foreground transition-colors hover:bg-accent"
-                  >
-                    <Copy className="h-3.5 w-3.5" />
-                    {copiedKey === "all-themes" ? "Copied" : "Copy"}
-                  </button>
-                </div>
-                <pre className="overflow-x-auto px-3 py-3 font-mono text-[12px] leading-relaxed text-muted-foreground">
-                  {THEME_COLORS_CODE}
-                </pre>
-              </div>
+              <p className="text-sm font-semibold text-foreground">{theme.label}</p>
+              <p className="mt-1 font-mono text-xs text-muted-foreground">{theme.swatch}</p>
+            </button>
+          );
+        })}
+      </section>
+
+      <section className="mt-8 grid gap-6 xl:grid-cols-3">
+        <article className="rounded-2xl border border-border bg-card p-6">
+          <h2 className="mb-2 flex items-center gap-2 text-lg font-semibold text-foreground">
+            <Palette className="h-4 w-4 text-primary" />
+            Active Token Preview
+          </h2>
+          <p className="mb-4 text-sm text-muted-foreground">
+            The selected theme updates <code className="font-mono">--primary</code> and related semantic
+            tokens globally.
+          </p>
+
+          <div className="rounded-xl border border-border bg-background p-4">
+            <div className="mb-3 h-2 rounded-full bg-muted">
+              <div className="h-2 w-2/3 rounded-full bg-primary" />
             </div>
-          </PreviewCard>
-        </section>
-
-        {/* ── Live Component Previews ───────────────────────────────── */}
-        <section>
-          <h3 className="mb-6 text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Live component preview</h3>
-
-          <div className="grid gap-6 lg:grid-cols-2">
-            {/* ── Buttons ──────────────────────────────────────────── */}
-            <PreviewCard title="Buttons">
-              <ButtonDefault />
-              <div className="mt-4">
-                <ButtonSizes />
-              </div>
-            </PreviewCard>
-
-            {/* ── Badges ───────────────────────────────────────────── */}
-            <PreviewCard title="Badges">
-              <BadgeDefault />
-              <div className="mt-3">
-                <BadgeVariants />
-              </div>
-            </PreviewCard>
-
-            {/* ── Input ────────────────────────────────────────────── */}
-            <PreviewCard title="Input">
-              <InputDefault />
-            </PreviewCard>
-
-            {/* ── Card ─────────────────────────────────────────────── */}
-            <PreviewCard title="Card">
-              <CardDefault />
-            </PreviewCard>
-
-            {/* ── Slider ───────────────────────────────────────────── */}
-            <PreviewCard title="Slider">
-              <SliderDefault />
-            </PreviewCard>
-
-            {/* ── Progress ─────────────────────────────────────────── */}
-            <PreviewCard title="Progress">
-              <ProgressDefault />
-            </PreviewCard>
-
-            {/* ── Checkbox & Switch ─────────────────────────────────── */}
-            <PreviewCard title="Checkbox & Switch">
-              <div className="flex flex-col gap-5">
-                <CheckboxDefault />
-                <SwitchDefault />
-                <SwitchWithIcons />
-              </div>
-            </PreviewCard>
-
-            {/* ── Select ───────────────────────────────────────────── */}
-            <PreviewCard title="Select">
-              <SelectDefault />
-            </PreviewCard>
-
-            {/* ── Radio ────────────────────────────────────────────── */}
-            <PreviewCard title="Radio Group">
-              <RadioGroupBasic />
-            </PreviewCard>
-
-            {/* ── Tabs ─────────────────────────────────────────────── */}
-            <PreviewCard title="Tabs">
-              <TabsPill />
-            </PreviewCard>
-
-            {/* ── Toggle ───────────────────────────────────────────── */}
-            <PreviewCard title="Toggle Group">
-              <ToggleGroupSingle />
-            </PreviewCard>
-
-            {/* ── Alert ────────────────────────────────────────────── */}
-            <PreviewCard title="Alert Dialog">
-              <AlertNormal />
-            </PreviewCard>
-
-            {/* ── Breadcrumb ───────────────────────────────────────── */}
-            <PreviewCard title="Breadcrumb">
-              <BreadcrumbDefault />
-            </PreviewCard>
-
-            {/* ── Pagination ───────────────────────────────────────── */}
-            <PreviewCard title="Pagination">
-              <PaginationDefault />
-            </PreviewCard>
+            <button className="rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground">
+              Primary Action
+            </button>
+            <p className="mt-3 text-sm text-foreground">
+              Active preset: <span className="font-semibold">{activeTheme.label}</span>
+            </p>
           </div>
-        </section>
+        </article>
 
-        {/* ── Docs style snippets ───────────────────────────────────── */}
-        <section className="mt-14">
-          <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Docs style snippets</h3>
-          <PreviewCard title="All components style constants">
+        <article className="rounded-2xl border border-border bg-card p-6">
+          <h2 className="mb-2 flex items-center gap-2 text-lg font-semibold text-foreground">
+            <Sparkles className="h-4 w-4 text-primary" />
+            Component Examples
+          </h2>
+          <p className="mb-4 text-sm text-muted-foreground">Buttons, badges, cards, alerts, and links powered only by semantic tokens.</p>
+
+          <div className="space-y-4">
+            <div className="flex flex-wrap gap-2">
+              <button className="rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground">Primary</button>
+              <button className="rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-semibold text-foreground">Secondary</button>
+              <button className="rounded-lg bg-muted px-3 py-1.5 text-xs font-semibold text-muted-foreground">Muted</button>
+            </div>
+
+            <div className="flex flex-wrap gap-2 text-[11px] font-medium">
+              <span className="rounded-full border border-primary/35 bg-primary/10 px-2 py-0.5 text-primary">primary</span>
+              <span className="rounded-full border border-border bg-muted px-2 py-0.5 text-foreground">neutral</span>
+              <span className="rounded-full border border-[oklch(0.55_0.18_25)]/25 bg-[oklch(0.55_0.18_25)]/15 text-[oklch(0.65_0.18_25)]">destructive</span>
+              <span className="rounded-full border border-[oklch(0.55_0.16_150)]/25 bg-[oklch(0.55_0.16_150)]/15 text-[oklch(0.65_0.18_150)]">success</span>
+            </div>
+
+            <div className="rounded-xl border border-border bg-background p-3">
+              <p className="text-xs font-semibold text-foreground">Tokenized Card</p>
+              <p className="mt-1 text-xs text-muted-foreground">This surface inherits border, muted text, and focus ring from global token variables.</p>
+              <a href="#" className="mt-2 inline-flex text-xs font-semibold text-primary hover:underline">Read docs</a>
+            </div>
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-border bg-card p-6">
+          <h2 className="mb-2 flex items-center gap-2 text-lg font-semibold text-foreground">
+            <SwatchBook className="h-4 w-4 text-primary" />
+            Token Ramp
+          </h2>
+          <p className="mb-4 text-sm text-muted-foreground">Quick visual pass of your active semantic colors.</p>
+
+          <div className="space-y-3 text-xs">
+            <div>
+              <p className="mb-1 text-muted-foreground">primary</p>
+              <div className="h-8 rounded-lg border border-border bg-primary" />
+            </div>
+            <div>
+              <p className="mb-1 text-muted-foreground">accent</p>
+              <div className="h-8 rounded-lg border border-border bg-accent" />
+            </div>
+            <div>
+              <p className="mb-1 text-muted-foreground">muted</p>
+              <div className="h-8 rounded-lg border border-border bg-muted" />
+            </div>
+            <div>
+              <p className="mb-1 text-muted-foreground">card</p>
+              <div className="h-8 rounded-lg border border-border bg-card" />
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section className="mt-6 grid gap-6 lg:grid-cols-2">
+        <article className="rounded-2xl border border-border bg-card p-6">
+          <h2 className="mb-2 text-lg font-semibold text-foreground">Quick Apply Snippet</h2>
+          <p className="mb-4 text-sm text-muted-foreground">
+            Store and re-apply the chosen preset with <code className="font-mono">data-theme</code>.
+          </p>
+
+          <pre className="overflow-x-auto rounded-xl border border-border bg-[oklch(0.18_0.02_330)] p-4 text-xs text-white/90">
+            <code>{`const selected = "${activeTheme.id}";
+document.documentElement.setAttribute("data-theme", selected);
+localStorage.setItem("gnome-ui-theme", selected);`}</code>
+          </pre>
+        </article>
+
+        <article className="rounded-2xl border border-border bg-card p-6">
+          <h2 className="mb-2 flex items-center gap-2 text-lg font-semibold text-foreground">
+            <Wand2 className="h-4 w-4 text-primary" />
+            Theme Usage Examples
+          </h2>
+          <p className="mb-4 text-sm text-muted-foreground">Reference snippets for app shell, callouts, and code surfaces.</p>
+
+          <div className="space-y-3 text-xs font-mono">
+            <div className="rounded-lg border border-border bg-background p-3 text-muted-foreground">
+              {`<main className="bg-background text-foreground" />`}
+            </div>
+            <div className="rounded-lg border border-border bg-background p-3 text-muted-foreground">
+              {`<button className="bg-primary text-primary-foreground" />`}
+            </div>
+            <div className="rounded-lg border border-border bg-background p-3 text-muted-foreground">
+              {`<div className="border border-border bg-card" />`}
+            </div>
+          </div>
+        </article>
+        
+      </section>
+        <PreviewCard title="All components style constants">
             <p className="mb-4 text-sm text-muted-foreground leading-relaxed">
               Copy-ready snippets for all components in this page, focused on tokenized colors and key interaction/animation classes.
             </p>
@@ -541,16 +481,12 @@ export default function ThemesPage() {
               ))}
             </Accordion.Root>
           </PreviewCard>
-        </section>
-      </main>
-    </div>
+    </main>
   );
 }
-
-/* ─── PreviewCard ─────────────────────────────────────────────────────────── */
 function PreviewCard({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+    <div className="mt-5 rounded-2xl border border-border bg-card p-6 shadow-sm">
       <h4 className="mb-5 text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">{title}</h4>
       <div className="flex flex-col items-start">{children}</div>
     </div>

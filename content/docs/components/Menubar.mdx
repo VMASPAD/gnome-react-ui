@@ -1,0 +1,96 @@
+---
+title: Menubar
+description: An application menu bar. Combines Base UI's `Menubar` with `Menu.Root` and its sub-components to create dropdown menus with full keyboard support.
+---
+
+import ComponentPreview from "@/components/component-preview";
+
+<ComponentPreview title="Menubar component" name="menubar">
+  <Menubar.MenubarEditor />
+</ComponentPreview>
+
+```tsx
+    import { Menubar } from "gnome-ui/menubar";
+    import { Menu } from "gnome-ui/menu";
+
+    export function MenubarApp() {
+      return (
+        <Menubar>
+          <Menu.Root>
+            <Menu.Trigger>File</Menu.Trigger>
+            <Menu.Portal>
+              <Menu.Positioner sideOffset={6} alignOffset={-2} align="start">
+                <Menu.Popup>
+                  <Menu.Item><Icons.FilePlus /> New file <span>⌘N</span></Menu.Item>
+                  <Menu.Item><Icons.FolderOpen /> Open… <span>⌘O</span></Menu.Item>
+                  <Menu.Item><Icons.Save /> Save <span>⌘S</span></Menu.Item>
+                  <Menu.SubmenuRoot>
+                    <Menu.SubmenuTrigger>
+                      <Icons.FileOutput /> Export
+                      <Icons.ChevronRight className="ml-auto" />
+                    </Menu.SubmenuTrigger>
+                    <Menu.Portal>
+                      <Menu.Positioner sideOffset={4} side="right" alignOffset={-4} align="start">
+                        <Menu.Popup>
+                          <Menu.Item>PDF</Menu.Item>
+                          <Menu.Item>PNG</Menu.Item>
+                          <Menu.Item>SVG</Menu.Item>
+                        </Menu.Popup>
+                      </Menu.Positioner>
+                    </Menu.Portal>
+                  </Menu.SubmenuRoot>
+                  <Menu.Separator />
+                  <Menu.Item><Icons.Printer /> Print… <span>⌘P</span></Menu.Item>
+                </Menu.Popup>
+              </Menu.Positioner>
+            </Menu.Portal>
+          </Menu.Root>
+
+          <Menu.Root>
+            <Menu.Trigger>Edit</Menu.Trigger>
+            <Menu.Portal>
+              <Menu.Positioner sideOffset={6} align="start">
+                <Menu.Popup>
+                  <Menu.Item><Icons.Undo2 /> Undo <span>⌘Z</span></Menu.Item>
+                  <Menu.Item><Icons.Redo2 /> Redo <span>⇧⌘Z</span></Menu.Item>
+                  <Menu.Separator />
+                  <Menu.Item><Icons.Scissors /> Cut <span>⌘X</span></Menu.Item>
+                  <Menu.Item><Icons.Copy /> Copy <span>⌘C</span></Menu.Item>
+                  <Menu.Item><Icons.Clipboard /> Paste <span>⌘V</span></Menu.Item>
+                </Menu.Popup>
+              </Menu.Positioner>
+            </Menu.Portal>
+          </Menu.Root>
+
+          <Menu.Root>
+            <Menu.Trigger>View</Menu.Trigger>
+            {/* ... */}
+          </Menu.Root>
+
+          <Menu.Root disabled>
+            <Menu.Trigger>Help</Menu.Trigger>
+          </Menu.Root>
+        </Menubar>
+      );
+    }
+    ```
+ 
+
+
+
+
+## API reference
+
+The container for menus.
+
+**Menubar Props:**
+
+| Prop        | Type                                                                         | Default        | Description                                                                                                                                                                                  |
+| :---------- | :--------------------------------------------------------------------------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| loopFocus   | `boolean`                                                                    | `true`         | Whether to loop keyboard focus back to the first item&#xA;when the end of the list is reached while using the arrow keys.                                                                    |
+| modal       | `boolean`                                                                    | `true`         | Whether the menubar is modal.                                                                                                                                                                |
+| disabled    | `boolean`                                                                    | `false`        | Whether the whole menubar is disabled.                                                                                                                                                       |
+| orientation | `Menu.Root.Orientation`                                                      | `'horizontal'` | The orientation of the menubar.                                                                                                                                                              |
+| className   | `string \| ((state: Menubar.State) => string \| undefined)`                  | -              | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style       | `CSSProperties \| ((state: Menubar.State) => CSSProperties \| undefined)`    | -              | -                                                                                                                                                                                            |
+| render      | `ReactElement \| ((props: HTMLProps, state: Menubar.State) => ReactElement)` | -              | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |

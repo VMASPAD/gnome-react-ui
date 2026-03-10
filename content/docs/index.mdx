@@ -1,0 +1,50 @@
+---
+title: Documentation
+description: A token-driven, accessible UI library with GNOME-inspired Ubuntu Orange theming for modern React applications.
+---
+
+**gnome-ui** is a component library built on [Base UI](https://base-ui.com) with GNOME's Ubuntu Orange design language. It provides accessible, unstyled primitives with a production-ready token system — no magic classes, no overrides.
+
+## Explore the docs
+
+<Cards>
+  <Card title="Component catalog" description="Browse all 40+ components with live previews and code examples." href="/docs/components/Button" />
+  <Card title="Theming and tokens" description="CSS variables, Ubuntu fonts, and the orange token system." href="/docs/theming-and-tokens" />
+  <Card title="Technical guide" description="Architecture contracts, accessibility rules, and delivery strategy." href="/docs/technical-guide" />
+</Cards>
+
+## Installation
+
+```bash
+npm i gnome-ui
+```
+
+## Quick start
+
+Import each component directly from its entry point:
+
+```tsx
+import { Button } from "gnome-ui/button";
+import { Dialog } from "gnome-ui/dialog";
+import { Input } from "gnome-ui/input";
+
+export function Example() {
+  return <Button>Save changes</Button>;
+}
+```
+
+## Design principles
+
+| Principle | Description |
+| :--- | :--- |
+| **Tokens first** | Color, typography, and states are defined as CSS variables. No hardcoded values. |
+| **Explicit composition** | Complex components use `Root`, `Trigger`, `Content` parts for predictable APIs. |
+| **Accessibility by default** | Keyboard support, visible focus, and WAI-ARIA roles from the foundation layer. |
+| **Living docs** | API changes are always reflected in examples and component contracts. |
+
+## Core technology
+
+- **Base UI** — headless, unstyled React primitives
+- **Tailwind CSS v4** — utility-first styling with OKLCH color tokens
+- **Ubuntu / Ubuntu Mono** — GNOME system fonts
+- **Fumadocs** — documentation engine with full-text search

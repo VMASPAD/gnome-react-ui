@@ -1,0 +1,133 @@
+---
+title: Badge
+description: A small labeling component for statuses, categories, and counts. Supports 7 variants and 3 sizes.
+---
+
+import ComponentPreview from "@/components/component-preview";
+
+
+<ComponentPreview title="Badge component" name="badge">
+  <Badge.BadgeDefault />
+</ComponentPreview>
+
+```tsx
+import { Badge } from 'gnome-ui/badge';
+import { CheckCircle2, AlertTriangle, Zap } from 'lucide-react';
+
+export function BadgeDefault() {
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      <Badge>Default</Badge>
+      <Badge variant="primary"><Zap className="h-2.5 w-2.5" /> Primary</Badge>
+      <Badge variant="secondary">Secondary</Badge>
+      <Badge variant="success"><CheckCircle2 className="h-2.5 w-2.5" /> Success</Badge>
+      <Badge variant="warning"><AlertTriangle className="h-2.5 w-2.5" /> Warning</Badge>
+      <Badge variant="destructive">Destructive</Badge>
+      <Badge variant="outline">Outline</Badge>
+    </div>
+  );
+}
+```
+
+
+# Anatomy
+
+```tsx
+import { Badge } from 'gnome-ui/badge';
+
+<Badge variant="primary" size="md">
+  Label
+</Badge>
+```
+
+# Examples
+
+## All Variants
+
+Seven semantic variants covering the full range of contextual states.
+
+<ComponentPreview title="Badge component" name="badge">
+  <Badge.BadgeVariants />
+</ComponentPreview>
+
+```tsx
+import { Badge } from 'gnome-ui/badge';
+
+export function BadgeVariants() {
+  const variants = ["default", "primary", "secondary", "success", "warning", "destructive", "outline"];
+  return (
+    <div className="flex flex-wrap gap-2">
+      {variants.map((v) => (
+        <Badge key={v} variant={v as any}>{v}</Badge>
+      ))}
+    </div>
+  );
+}
+```
+
+
+---
+
+## Sizes
+
+Three sizes — use `sm` for dense UIs, `md` (default) for standard use, and `lg` for prominent labels.
+
+<ComponentPreview title="Badge component" name="badge">
+  <Badge.BadgeSizes />
+</ComponentPreview>
+
+```tsx
+import { Badge } from 'gnome-ui/badge';
+import { Star } from 'lucide-react';
+
+export function BadgeSizes() {
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      <Badge variant="primary" size="sm"><Star className="h-2 w-2" /> Small</Badge>
+      <Badge variant="primary" size="md"><Star className="h-2.5 w-2.5" /> Medium</Badge>
+      <Badge variant="primary" size="lg"><Star className="h-3 w-3" /> Large</Badge>
+    </div>
+  );
+}
+```
+
+
+---
+
+## With Icons
+
+Prefix the label with a small icon using Lucide React for contextual meaning.
+
+<ComponentPreview title="Badge component" name="badge">
+  <Badge.BadgeWithIcons />
+</ComponentPreview>
+
+```tsx
+import { Badge } from 'gnome-ui/badge';
+import { CheckCircle2, AlertTriangle, Info, Zap } from 'lucide-react';
+
+export function BadgeWithIcons() {
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      <Badge variant="success"><CheckCircle2 className="h-2.5 w-2.5" /> Verified</Badge>
+      <Badge variant="warning"><AlertTriangle className="h-2.5 w-2.5" /> Review</Badge>
+      <Badge variant="primary"><Info className="h-2.5 w-2.5" /> New</Badge>
+      <Badge variant="destructive"><Zap className="h-2.5 w-2.5" /> Urgent</Badge>
+    </div>
+  );
+}
+```
+
+
+---
+
+### Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **variant** | `"default" \| "primary" \| "secondary" \| "success" \| "warning" \| "destructive" \| "outline"` | `"default"` | Color/semantic variant of the badge. |
+| **size** | `"sm" \| "md" \| "lg"` | `"md"` | Controls padding and font size. |
+| **className** | `string` | — | Additional CSS classes merged via `cn()`. |
+| **children** | `ReactNode` | — | Badge content — text and/or icons. |
+
+

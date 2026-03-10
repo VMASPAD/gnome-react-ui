@@ -1,0 +1,162 @@
+---
+title: Toggle
+description: A two-state button that can be either on or off. Useful for switching between two states or modes.
+---
+
+import ComponentPreview from "@/components/component-preview";
+
+<ComponentPreview title="Toggle component" name="toggle">
+  <Toggle.ToggleDefault />
+</ComponentPreview>
+
+```tsx
+import * as React from 'react';
+import { Toggle } from 'gnome-ui/toggle';
+import { Italic } from 'lucide-react';
+
+export function ToggleDefault() {
+  const [pressed, setPressed] = React.useState(false);
+  
+  return (
+    <Toggle 
+      pressed={pressed} 
+      onPressedChange={setPressed} 
+      className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground"
+      aria-label="Toggle italic"
+    >
+      <Icons.Italic className="size-4" />
+    </Toggle>
+  );
+}
+
+```
+
+
+# Anatomy
+
+```tsx
+import { Toggle } from 'gnome-ui/toggle';
+import { ToggleGroup } from 'gnome-ui/toggle-group';
+
+<Toggle />
+
+// Or grouped
+<ToggleGroup>
+  <Toggle />
+  <Toggle />
+  <Toggle />
+</ToggleGroup>
+
+```
+
+# Examples
+
+## Toggle Group (Single Selection)
+
+By default, `ToggleGroup` allows only one item to be active at a time, acting like a set of radio buttons.
+
+<ComponentPreview title="Toggle component" name="toggle">
+  <Toggle.ToggleGroupSingle />
+</ComponentPreview>
+
+```tsx
+import * as React from 'react';
+import { Toggle } from 'gnome-ui/toggle';
+import { ToggleGroup } from 'gnome-ui/toggle-group';
+import { AlignLeft, AlignCenter, AlignRight } from 'lucide-react';
+
+export function ToggleGroupSingle() {
+  const [value, setValue] = React.useState<string[]>(['left']);
+
+  return (
+    <ToggleGroup 
+      value={value} 
+      onValueChange={setValue} 
+      className="inline-flex items-center gap-1 rounded-xl border border-border bg-card p-1 shadow-sm"
+    >
+      <Toggle value="left" className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground" aria-label="Align left">
+        <Icons.AlignLeft className="size-4" />
+      </Toggle>
+      <Toggle value="center" className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground" aria-label="Align center">
+        <Icons.AlignCenter className="size-4" />
+      </Toggle>
+      <Toggle value="right" className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground" aria-label="Align right">
+        <Icons.AlignRight className="size-4" />
+      </Toggle>
+    </ToggleGroup>
+  );
+}
+
+```
+
+
+---
+
+## Toggle Group (Multiple Selection)
+
+Add the `multiple` prop to allow selecting multiple items simultaneously.
+
+<ComponentPreview title="Toggle component" name="toggle">
+  <Toggle.ToggleGroupMultiple />
+</ComponentPreview>
+
+```tsx
+import * as React from 'react';
+import { Toggle } from 'gnome-ui/toggle';
+import { ToggleGroup } from 'gnome-ui/toggle-group';
+import { Bold, Italic, Underline } from 'lucide-react';
+
+export function ToggleGroupMultiple() {
+  const [value, setValue] = React.useState<string[]>(['bold']);
+
+  return (
+    <ToggleGroup 
+      multiple 
+      value={value} 
+      onValueChange={setValue} 
+      className="inline-flex items-center gap-1 rounded-xl border border-border bg-card p-1 shadow-sm"
+    >
+      <Toggle value="bold" className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground" aria-label="Bold">
+        <Icons.Bold className="size-4" />
+      </Toggle>
+      <Toggle value="italic" className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground" aria-label="Italic">
+        <Icons.Italic className="size-4" />
+      </Toggle>
+      <Toggle value="underline" className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-transparent text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-primary data-[pressed]:text-primary-foreground" aria-label="Underline">
+        <Icons.Underline className="size-4" />
+      </Toggle>
+    </ToggleGroup>
+  );
+}
+
+```
+
+
+
+
+
+
+## API reference
+
+A two-state button that can be on or off.
+Renders a `<button>` element.
+
+**Toggle Props:**
+
+| Prop            | Type                                                                        | Default | Description                                                                                                                                                                                  |
+| :-------------- | :-------------------------------------------------------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| value           | `string`                                                                    | -       | A unique string that identifies the toggle when used&#xA;inside a toggle group.                                                                                                              |
+| defaultPressed  | `boolean`                                                                   | `false` | Whether the toggle button is currently pressed.&#xA;This is the uncontrolled counterpart of `pressed`.                                                                                       |
+| pressed         | `boolean`                                                                   | -       | Whether the toggle button is currently pressed.&#xA;This is the controlled counterpart of `defaultPressed`.                                                                                  |
+| onPressedChange | `((pressed: boolean, eventDetails: Toggle.ChangeEventDetails) => void)`     | -       | Callback fired when the pressed state is changed.                                                                                                                                            |
+| nativeButton    | `boolean`                                                                   | `true`  | Whether the component renders a native `<button>` element when replacing it&#xA;via the `render` prop.&#xA;Set to `false` if the rendered element is not a button (e.g. `<div>`).            |
+| disabled        | `boolean`                                                                   | `false` | Whether the component should ignore user interaction.                                                                                                                                        |
+| className       | `string \| ((state: Toggle.State) => string \| undefined)`                  | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style           | `CSSProperties \| ((state: Toggle.State) => CSSProperties \| undefined)`    | -       | -                                                                                                                                                                                            |
+| render          | `ReactElement \| ((props: HTMLProps, state: Toggle.State) => ReactElement)` | -       | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |
+
+**Toggle Data Attributes:**
+
+| Attribute    | Type | Description                                |
+| :----------- | :--- | :----------------------------------------- |
+| data-pressed | -    | Present when the toggle button is pressed. |

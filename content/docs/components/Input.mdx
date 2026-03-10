@@ -1,0 +1,139 @@
+---
+title: Input
+description: A basic native input element that automatically integrates with Field components for accessibility and validation.
+---
+
+import ComponentPreview from "@/components/component-preview";
+
+
+<ComponentPreview title="Input component" name="input">
+  <Input.InputDefault />
+</ComponentPreview>
+
+```tsx
+import * as React from 'react';
+import { Input } from 'gnome-ui/input';
+
+export function InputDefault() {
+  return (
+    <div className="w-full max-w-sm">
+      <Input 
+        className="flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50" 
+        placeholder="Type something here..." 
+      />
+    </div>
+  );
+}
+
+```
+
+
+# Anatomy
+
+```tsx
+import { Input } from 'gnome-ui/input';
+
+<Input />
+
+```
+
+# Examples
+
+## Disabled
+
+The input can be disabled to prevent user interaction. It styles automatically based on the disabled state.
+
+<ComponentPreview title="Input component" name="input">
+  <Input.InputDisabled />
+</ComponentPreview>
+
+```tsx
+import * as React from 'react';
+import { Input } from 'gnome-ui/input';
+
+export function InputDisabled() {
+  return (
+    <div className="flex w-full max-w-sm flex-col gap-4">
+      <Input 
+        disabled 
+        className="flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50" 
+        placeholder="Disabled input" 
+      />
+      <Input 
+        disabled 
+        className="flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50" 
+        defaultValue="ubuntu-admin@local" 
+      />
+    </div>
+  );
+}
+
+```
+
+
+---
+
+## File Input
+
+The standard Input component can also handle `type="file"` cleanly using Tailwind's `file:` modifiers to style the file picker button.
+
+<ComponentPreview title="Input component" name="input">
+  <Input.InputFile />
+</ComponentPreview>
+
+```tsx
+import * as React from 'react';
+import { Input } from 'gnome-ui/input';
+
+export function InputFile() {
+  return (
+    <div className="w-full max-w-sm">
+      <Input 
+        type="file" 
+        className="flex h-10 w-full rounded-xl border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer file:mr-4 file:cursor-pointer file:font-semibold file:text-primary hover:file:text-primary/80" 
+      />
+    </div>
+  );
+}
+
+```
+
+
+```
+
+```
+
+A native input element that automatically works with [Field](https://base-ui.com/react/components/field).
+Renders an `&lt;input&gt;` element.
+
+Documentation: [Base UI Input](https://base-ui.com/react/components/input)
+
+
+
+
+## API reference
+
+A native input element that automatically works with [Field](https://base-ui.com/react/components/field).
+Renders an `<input>` element.
+
+**Input Props:**
+
+| Prop          | Type                                                                        | Default | Description                                                                                                                                                                                  |
+| :------------ | :-------------------------------------------------------------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| defaultValue  | `string \| number \| string[]`                                              | -       | -                                                                                                                                                                                            |
+| onValueChange | `((value: string, eventDetails: Field.Control.ChangeEventDetails) => void)` | -       | Callback fired when the `value` changes. Use when controlled.                                                                                                                                |
+| className     | `string \| ((state: Input.State) => string \| undefined)`                   | -       | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style         | `CSSProperties \| ((state: Input.State) => CSSProperties \| undefined)`     | -       | \*                                                                                                                                                                                           |
+| render        | `ReactElement \| ((props: HTMLProps, state: Input.State) => ReactElement)`  | -       | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |
+
+**Input Data Attributes:**
+
+| Attribute     | Type | Description                                                              |
+| :------------ | :--- | :----------------------------------------------------------------------- |
+| data-disabled | -    | Present when the input is disabled.                                      |
+| data-valid    | -    | Present when the input is in valid state (when wrapped in Field.Root).   |
+| data-invalid  | -    | Present when the input is in invalid state (when wrapped in Field.Root). |
+| data-dirty    | -    | Present when the input's value has changed (when wrapped in Field.Root). |
+| data-touched  | -    | Present when the input has been touched (when wrapped in Field.Root).    |
+| data-filled   | -    | Present when the input is filled (when wrapped in Field.Root).           |
+| data-focused  | -    | Present when the input is focused (when wrapped in Field.Root).          |

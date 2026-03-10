@@ -1,0 +1,159 @@
+---
+title: Separator
+description: Visually or semantically separates content.
+---
+
+import ComponentPreview from "@/components/component-preview";
+
+<ComponentPreview title="Separator component" name="separator">
+  <Separator.SeparatorDefault />
+</ComponentPreview>
+
+```tsx
+import * as React from 'react';
+import { Separator } from 'gnome-ui/separator';
+import { Settings, User, LogOut } from 'lucide-react';
+
+export function SeparatorDefault() {
+  return (
+    <div className="flex w-full max-w-sm flex-col rounded-xl border border-border bg-card p-4 shadow-sm">
+      <h3 className="text-lg font-medium text-foreground">PanOS Settings</h3>
+      <p className="text-sm text-muted-foreground">Manage your system settings.</p>
+      
+      <Separator className="my-4 h-px w-full bg-border" />
+      
+      <div className="flex flex-col gap-3">
+        <button className="flex items-center gap-2 text-sm text-foreground hover:text-primary">
+          <Icons.User className="size-4" /> User Profile
+        </button>
+        <button className="flex items-center gap-2 text-sm text-foreground hover:text-primary">
+          <Icons.Settings className="size-4" /> Preferences
+        </button>
+      </div>
+      
+      <Separator className="my-4 h-px w-full bg-border" />
+      
+      <button className="flex items-center gap-2 text-sm text-destructive hover:brightness-110">
+        <Icons.LogOut className="size-4" /> Log out
+      </button>
+    </div>
+  );
+}
+
+```
+
+
+# Anatomy
+
+```tsx
+import { Separator } from 'gnome-ui/separator';
+
+<Separator orientation="horizontal" />
+
+```
+
+# Examples
+
+## Vertical Orientation
+
+By setting `orientation="vertical"`, you can create vertical dividers. This is particularly useful in toolbars or horizontal menus.
+
+<ComponentPreview title="Separator component" name="separator">
+  <Separator.SeparatorVertical />
+</ComponentPreview>
+
+```tsx
+import * as React from 'react';
+import { Separator } from 'gnome-ui/separator';
+import { Terminal, Package, Monitor } from 'lucide-react';
+
+export function SeparatorVertical() {
+  return (
+    <div className="flex h-12 w-fit items-center gap-4 rounded-xl border border-border bg-card px-4 shadow-sm text-foreground">
+      <button className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors">
+        <Icons.Terminal className="size-4" /> Terminal
+      </button>
+      
+      <Separator orientation="vertical" className="h-6 w-px bg-border" />
+      
+      <button className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors">
+        <Icons.Package className="size-4" /> Software
+      </button>
+
+      <Separator orientation="vertical" className="h-6 w-px bg-border" />
+      
+      <button className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors">
+        <Icons.Monitor className="size-4" /> Display
+      </button>
+    </div>
+  );
+}
+
+```
+
+
+---
+
+## With Embedded Content
+
+Separators can be combined with flexbox layouts to create dividers with text in the middle. Since the `Separator` component renders a `<div role="separator">` by default, it works seamlessly alongside text spans.
+
+<ComponentPreview title="Separator component" name="separator">
+  <Separator.SeparatorWithContent />
+</ComponentPreview>
+
+```tsx
+import * as React from 'react';
+import { Separator } from 'gnome-ui/separator';
+
+export function SeparatorWithContent() {
+  return (
+    <div className="flex w-full max-w-md flex-col">
+      <div className="flex items-center text-sm text-muted-foreground">
+        <Separator className="flex-1 h-px bg-border" />
+        <span className="px-3 font-medium">Or continue with</span>
+        <Separator className="flex-1 h-px bg-border" />
+      </div>
+      
+      <div className="mt-4 flex gap-3">
+        <button className="flex h-10 flex-1 items-center justify-center rounded-xl border border-border bg-card text-sm font-medium text-foreground hover:bg-accent transition-colors">
+          Local Account
+        </button>
+        <button className="flex h-10 flex-1 items-center justify-center rounded-xl border border-border bg-card text-sm font-medium text-foreground hover:bg-accent transition-colors">
+          LDAP / Directory
+        </button>
+      </div>
+    </div>
+  );
+}
+
+```
+
+
+```
+
+```
+
+## Separator
+
+A separator element accessible to screen readers.
+Renders a `&lt;div&gt;` element.
+
+Documentation: [Base UI Separator](https://base-ui.com/react/components/separator)
+
+
+
+
+## API reference
+
+A separator element accessible to screen readers.
+Renders a `<div>` element.
+
+**Separator Props:**
+
+| Prop        | Type                                                                           | Default        | Description                                                                                                                                                                                  |
+| :---------- | :----------------------------------------------------------------------------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| orientation | `Orientation`                                                                  | `'horizontal'` | The orientation of the separator.                                                                                                                                                            |
+| className   | `string \| ((state: Separator.State) => string \| undefined)`                  | -              | CSS class applied to the element, or a function that&#xA;returns a class based on the component’s state.                                                                                     |
+| style       | `CSSProperties \| ((state: Separator.State) => CSSProperties \| undefined)`    | -              | -                                                                                                                                                                                            |
+| render      | `ReactElement \| ((props: HTMLProps, state: Separator.State) => ReactElement)` | -              | Allows you to replace the component’s HTML element&#xA;with a different tag, or compose it with another component.Accepts a `ReactElement` or a function that returns the element to render. |

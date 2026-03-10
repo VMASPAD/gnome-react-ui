@@ -1,0 +1,188 @@
+---
+title: Breadcrumb
+description: A file-explorer-style navigation trail showing the current location within a hierarchy. Composed of `Breadcrumb`, `BreadcrumbList`, `BreadcrumbItem`, `BreadcrumbLink`, `BreadcrumbSeparator`, and `BreadcrumbEllipsis`.
+---
+
+import ComponentPreview from "@/components/component-preview";
+
+
+<ComponentPreview title="Breadcrumb component" name="breadcrumb">
+  <BreadcrumbDemo.BreadcrumbDefault />
+</ComponentPreview>
+
+```tsx
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+} from 'gnome-ui/breadcrumb';
+import { Home } from 'lucide-react';
+
+function BreadcrumbDefault() {
+  return (
+    <Breadcrumb>
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="#">
+            <Home className="h-3.5 w-3.5" />
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbLink href="#">Documents</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbLink href="#">Projects</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbLink active>report.pdf</BreadcrumbLink>
+        </BreadcrumbItem>
+      </BreadcrumbList>
+    </Breadcrumb>
+  );
+}
+```
+
+
+# Anatomy
+
+```tsx
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+} from 'gnome-ui/breadcrumb';
+
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbLink active>Current</BreadcrumbLink>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
+```
+
+# Examples
+
+## With Ellipsis
+
+Deep paths can be collapsed with `BreadcrumbEllipsis` to keep the trail compact.
+
+<ComponentPreview title="Breadcrumb component" name="breadcrumb">
+  <BreadcrumbDemo.BreadcrumbWithEllipsis />
+</ComponentPreview>
+
+```tsx
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  BreadcrumbEllipsis,
+} from 'gnome-ui/breadcrumb';
+import { Home, FolderOpen, FileText } from 'lucide-react';
+
+function BreadcrumbWithEllipsis() {
+  return (
+    <Breadcrumb>
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="#">
+            <Home className="h-3.5 w-3.5" />
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbEllipsis />
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbLink href="#">
+            <FolderOpen className="h-3.5 w-3.5 inline mr-1" />
+            workspace
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbLink active>
+            <FileText className="h-3.5 w-3.5 inline mr-1" />
+            config.json
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+      </BreadcrumbList>
+    </Breadcrumb>
+  );
+}
+```
+
+
+---
+
+## Custom Separator
+
+Use a custom character like `/` instead of the default chevron icon.
+
+<ComponentPreview title="Breadcrumb component" name="breadcrumb">
+  <BreadcrumbDemo.BreadcrumbCustomSeparator />
+</ComponentPreview>
+
+```tsx
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+} from 'gnome-ui/breadcrumb';
+
+function BreadcrumbCustomSeparator() {
+  return (
+    <Breadcrumb>
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="#">Home</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator>/</BreadcrumbSeparator>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="#">Library</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator>/</BreadcrumbSeparator>
+        <BreadcrumbItem>
+          <BreadcrumbLink active>Music</BreadcrumbLink>
+        </BreadcrumbItem>
+      </BreadcrumbList>
+    </Breadcrumb>
+  );
+}
+```
+
+
+---
+
+### Props — BreadcrumbLink
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **active** | `boolean` | `false` | Marks the current page. Disables pointer events and applies bold text. |
+| **href** | `string` | — | The URL the link navigates to. |
+| **className** | `string` | — | Additional CSS classes. |
+
+### Props — BreadcrumbSeparator
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **children** | `ReactNode` | Chevron icon | Custom separator character or icon. |
+| **className** | `string` | — | Additional CSS classes. |
+
+
