@@ -288,6 +288,64 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Supported Frameworks ───────────────────────────────────────── */}
+      <section className="py-16 md:py-24 border-t border-border bg-muted/20">
+        <div className="container mx-auto max-w-7xl px-4 text-center">
+          <span className="mb-3 inline-block font-mono text-[11px] font-bold uppercase tracking-widest text-primary">
+            — Cross Platform
+          </span>
+          <h2 className="mb-4 text-3xl font-bold tracking-tighter text-foreground sm:text-4xl">
+            Supported Frameworks
+          </h2>
+          <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground">
+            gnome-ui brings GNOME aesthetics everywhere. Seamlessly integrated with modern frontend tools.
+          </p>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12 opacity-80">
+            {['react', 'vue', 'svelte', 'angular', 'solid', 'flutter', "remix"].map((fw) => (
+              <div key={fw} className="flex flex-col items-center justify-center gap-3 transition-transform hover:-translate-y-1 duration-200">
+                <Image src={`/${fw}.svg`} alt={`${fw} support`} width={48} height={48} className="dark:opacity-90" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{fw}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Technical Stack & Dependencies ─────────────────────────────── */}
+      <section className="py-16 md:py-24 border-t border-border bg-background">
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl font-bold tracking-tighter text-foreground">
+              Powered by Modern Tools
+            </h2>
+          </div>
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+            <div className="grid sm:grid-cols-2">
+              <div className="border-b sm:border-b-0 sm:border-r border-border p-6">
+                <h3 className="mb-4 font-mono text-xs font-bold uppercase text-primary">Core Dependencies</h3>
+                <ul className="space-y-3 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[oklch(0.55_0.15_150)]" /> React &amp; React DOM (&gt;19.0)</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[oklch(0.55_0.15_150)]" /> Next.js (16+)</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[oklch(0.55_0.15_150)]" /> Tailwind CSS (v4)</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[oklch(0.55_0.15_150)]" /> Fumadocs UI &amp; Core</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[oklch(0.55_0.15_150)]" /> Lucide React</li>
+                </ul>
+              </div>
+              <div className="p-6">
+                <h3 className="mb-4 font-mono text-xs font-bold uppercase text-[oklch(0.55_0.15_250)]">Utilities</h3>
+                <ul className="space-y-3 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[oklch(0.55_0.15_150)]" /> tailwind-merge</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[oklch(0.55_0.15_150)]" /> tailwindcss-animate</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[oklch(0.55_0.15_150)]" /> tw-animate-css</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[oklch(0.55_0.15_150)]" /> reselect</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[oklch(0.55_0.15_150)]" /> tabbable</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── New components banner ───────────────────────────────────────── */}
       <div className="border-y border-border bg-primary/4">
         <div className="container mx-auto max-w-7xl px-4 py-5">

@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Combobox } from '@/data/components/combobox';
 import { ChevronDown, Check, X } from 'lucide-react';
 
-const frameworks = ['React', 'Vue', 'Angular', 'Svelte', 'Ember', 'Solid', 'Next.js'];
+const frameworks = ['React', 'Vue', 'Angular', 'Svelte', 'Ember', 'Solid', 'Next.js', 'Remix'];
 
 export function ComboboxDefault() {
   return (
